@@ -225,11 +225,11 @@ export default function LiveMonitor() {
             </div>
 
             {/* Mindset de la IA */}
-            {activeChatData.find(m => m.role === 'assistant')?.strategic_note && (
+            {activeChatData.find((m: any) => m.role === 'assistant')?.strategic_note && (
               <div className="px-8 py-4 bg-orange-50/50 border-b border-orange-100">
                 <p className="text-xs text-orange-600 font-bold leading-relaxed italic">
                   <span className="uppercase opacity-50 mr-2 non-italic">Mindset AI:</span>
-                  "{activeChatData.find(m => m.role === 'assistant')?.strategic_note}"
+                  "{activeChatData.find((m: any) => m.role === 'assistant')?.strategic_note}"
                 </p>
               </div>
             )}
