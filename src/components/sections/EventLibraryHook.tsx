@@ -15,11 +15,11 @@ export default function EventLibraryHook() {
             <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse"></span>
             El Salto Estratégico: Growth Partner
           </div>
-          <h2 className="text-4xl lg:text-6xl font-black leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight text-balance">
             Pasa a la ofensiva.<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-orange-400">Multiplica tu facturación.</span>
           </h2>
-          <p className="text-xl text-gray-400 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 leading-relaxed text-pretty">
             Pasar al nivel Growth significa tener a un <strong className="text-white">Socio Estratégico</strong> trabajando en la sombra. 
             No somos una agencia tradicional; utilizamos nuestra propia tecnología impulsada por IA para ser más ágiles, dinámicos y precisos. 
             Tú ejecutas en tu local, nosotros desplegamos el ecosistema digital para duplicar la facturación de un viernes o reventar un martes aburrido.
