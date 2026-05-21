@@ -174,8 +174,12 @@ export default function ChatDemoWidget({ onClose }: Props) {
                           <button 
                             key={idx}
                             onClick={() => {
-                              setInputValue(sug);
-                              sendUserInput(sug);
+                              setInputValue(sug + " ");
+                              // Focalizar el textarea automáticamente después de hacer clic en una sugerencia
+                              const textarea = document.getElementById('chat-input-textarea');
+                              if (textarea) {
+                                textarea.focus();
+                              }
                             }}
                             className="px-4 py-2 bg-orange-100 text-orange-700 hover:bg-orange-200 rounded-full text-sm font-bold border border-orange-200 transition-colors shadow-sm"
                           >
@@ -221,6 +225,7 @@ export default function ChatDemoWidget({ onClose }: Props) {
                 {messages.length > 1 && (
                   <form onSubmit={(e) => { e.preventDefault(); sendUserInput(); }} className="flex gap-3 items-end">
                     <textarea 
+                      id="chat-input-textarea"
                       rows={1}
                       value={inputValue}
                       onChange={(e) => {
