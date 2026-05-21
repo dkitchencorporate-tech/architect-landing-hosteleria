@@ -1,6 +1,7 @@
 import React from "react";
 import "./globals.css";
 import AnalyticsPixel from "@/components/AnalyticsPixel";
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata = {
   title: "Architect.Sys | Agencias de Crecimiento para Hostelería",
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-background text-foreground antialiased">
         <AnalyticsPixel />
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

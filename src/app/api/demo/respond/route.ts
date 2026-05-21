@@ -4,79 +4,55 @@ import { generateGeminiContent } from '@/lib/gemini';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { mode, messages, leadContext } = body || {};
-
-    if (!mode) return NextResponse.json({ status: 'error', message: 'missing mode' }, { status: 400 });
+    const { messages, leadContext } = body || {};
 
     // Build system instruction based on mode with Arqui persona
-    let systemInstruction = `Eres Arqui, el asistente de Architect.Sys. Eres empático, útil y experto en hostelería. Responde en un tono profesional, limpio y orientado a negocio. Evita muletillas y texto redundante. Usa texto plano (no HTML) y limita las respuestas a 1–3 párrafos. Si formulas varias preguntas en un mismo turno en modo CONSULTING, preséntalas como lista numerada (1., 2., 3.) en líneas separadas. Usa frases cortas y separa preguntas con saltos de línea.`;
-    if (mode === 'CONSULTING') {
-      systemInstruction += `\nMODO CONSULTING: Recopila datos básicos del negocio con preguntas claras y breves. Prioriza: nombre del contacto, nombre del negocio, tipo de negocio (restaurante, bar, delivery, hotel, dark_kitchen, otro), ubicación, modelo de servicio (solo_reservas, solo_delivery, mixto), capacidad aproximada y canales (web/social/whatsapp/deliveryApps). No ofrezcas la demo hasta tener los datos básicos; cuando los tengas, sugiere una demo personalizada. Mantén preguntas cortas y, si hay varias, preséntalas numeradas en líneas separadas (1., 2., ...).`;
-    } else if (mode === 'BOOKING_DEMO') {
-      systemInstruction += `\nMODO BOOKING_DEMO: Actúa como agente operativo que simula una interacción real (reserva o pedido). Usa la información en leadContext para personalizar. Simula preguntas de confirmación, solicita fecha/hora/nº de personas o detalles del pedido, y realiza confirmaciones claras. Mantén respuestas breves y orientadas a la acción.`;
-    } else if (mode === 'CLOSING') {
-      systemInstruction += `\nMODO CLOSING: Actúa como agente comercial. Resume beneficios concretos, muestra la oferta especial: 650€ + 120€/mes. Invita a agendar una llamada con un enlace placeholder. Cierra la conversación con un CTA claro. Usa lenguaje persuasivo pero profesional, evitando párrafos largos.`;
-    }
+    let systemInstruction = `Eres Arqui, el asistente experto en digitalización de Architect.Sys. Tu objetivo principal es ayudar a hosteleros a entender el valor de nuestras soluciones y dirigirlos hacia agendar una auditoría. Eres empático, persuasivo y muy profesional. Responde SIEMPRE usando formato Markdown para que la lectura sea fluida y hermosa: usa negritas (**texto**) para resaltar conceptos clave, listas numeradas estructuradas y algunos emojis estratégicos. NUNCA devuelvas código JSON ni intentes extraer variables en formato JSON. Solo conversa de forma natural.`;
+
+    systemInstruction += `
+[OBJETIVO PRINCIPAL]
+Eres Arqui, Consultor Senior B2B de Architect.Sys (Agencia de Digitalización Estratégica Premium para Hostelería). Tu objetivo es realizar un DIAGNÓSTICO MUY PROFUNDO de la madurez digital del restaurante, detectar fugas de dinero, presentar nuestros 3 planes de digitalización y CAPTAR SUS DATOS DE CONTACTO (Email y WhatsApp) antes de enviarlo a una reunión.
+
+[FASES OBLIGATORIAS DE LA CONVERSACIÓN]
+1. IDENTIFICACIÓN (Mensaje 1): Pide su nombre, el nombre de su local y la ciudad. NO preguntes nada más. PROHIBIDO generar |SUGERENCIAS| aquí.
+2. INVESTIGACIÓN EXHAUSTIVA B2B (Mínimo 4 o 5 turnos de preguntas): Llámalo por su nombre. Debes averiguar TODO su contexto haciendo SOLO UNA pregunta por mensaje y esperando su respuesta. NO te apresures a vender. Áreas a investigar (una por turno):
+   - ¿Dependen del teléfono para reservas o de plataformas que les cobran comisiones?
+   - ¿Tienen web propia actualmente?
+   - ¿Trabajan sus redes sociales o han trabajado con agencias de marketing?
+   - ¿Tienen algún sistema de publicidad activo (Ads)?
+   - ¿Hacen eventos, tienen problemas con picos de aforo o días muertos?
+   *Regla de Oro:* En cada turno, empatiza con su respuesta anterior aportando valor ("Es común perder rentabilidad ahí...") y lanza TU SIGUIENTE pregunta de la lista. MANTÉN EL USO DE |SUGERENCIAS| en cada mensaje de esta fase.
+3. PRESENTACIÓN DEL PLAN (Solo cuando hayas hecho al menos 4 preguntas y tengas todo el contexto): Cuando conozcas a fondo sus problemas, explícale cómo Architect.Sys es la solución definitiva. Preséntale de forma clara nuestras opciones:
+   - **Plan Base (49€/mes):** Incluye Web Carta Premium, Códigos QR en mesas y automatización de reservas.
+   - **Plan Growth (99€/mes):** Para acelerar ventas y fidelización.
+   - **Licencia Pago Único (450€):** Sistema vitalicio.
+   Menciona que al activar hoy, se llevan los **Bonos Exclusivos (valorados en 620€) 100% GRATIS**.
+4. CAPTACIÓN DE DATOS (Al final del Mensaje de Presentación): Para enviarle el estudio de viabilidad, pídele OBLIGATORIAMENTE que te escriba en el chat su **correo electrónico y número de WhatsApp**. NO MUESTRES BOTONES AÚN.
+5. CIERRE Y BOTONES (Último turno, solo cuando te dé sus datos): Una vez que el cliente escriba su correo y teléfono, agradécele y genera OBLIGATORIAMENTE estos DOS botones en formato Markdown al final de tu mensaje:
+   [Agendar Video Llamada en Google Meet](https://meet.google.com/)
+   [Hablar por WhatsApp con un Asesor](https://wa.me/34611499674?text=Hola,%20quiero%20conocer%20el%20plan%20para%20mi%20restaurante)
+
+[RESPUESTAS SUGERIDAS (QUICK REPLIES)]
+Para mantener la fluidez, DEBES proponer SIEMPRE 2 o 3 opciones probables en CADA mensaje durante la fase de Investigación y Presentación.
+Añade SIEMPRE una última línea al final de tu respuesta EXACTAMENTE con este formato (separado por |):
+|SUGERENCIAS|Opción 1|Opción 2|Opción 3|
+
+[TONO DE VOZ]
+Jerarquía Senior B2B, trato exquisito pero directo. Cero emojis infantiles. Habla de negocio, rentabilidad y ecosistemas propios. Textos estructurados, persuasivos y fáciles de leer. NUNCA DEHES TEXTOS A MEDIAS.`;
 
     // Build conversation history for the prompt
     const historyText = Array.isArray(messages) ? messages.map((m: any) => `${m.role === 'user' ? 'Usuario' : 'Asistente'}: ${m.content}`).join('\n') : '';
-    // Build a human-readable lead summary (no JSON) to provide context to the model
-    let leadText = '';
-    if (leadContext && typeof leadContext === 'object') {
-      const parts: string[] = [];
-      if (leadContext.leadName) parts.push(`Nombre del contacto: ${leadContext.leadName}`);
-      if (leadContext.businessName) parts.push(`Nombre del negocio: ${leadContext.businessName}`);
-      if (leadContext.businessType) parts.push(`Tipo de negocio: ${leadContext.businessType}`);
-      if (leadContext.location) parts.push(`Ubicación: ${leadContext.location}`);
-      if (leadContext.serviceModel) parts.push(`Modelo de servicio: ${leadContext.serviceModel}`);
-      if (leadContext.capacity) parts.push(`Capacidad aproximada: ${leadContext.capacity}`);
-      if (leadContext.channels && Array.isArray(leadContext.channels)) parts.push(`Canales: ${leadContext.channels.join(', ')}`);
-      if (parts.length > 0) leadText = `Información del lead:\n- ${parts.join('\n- ')}`;
-    }
-
-    // Ask the model to respond in plain text. Also ask (optionally) to append a JSON object with detected leadContext when available.
-    const prompt = `${systemInstruction}\n\n${leadText}\n\nConversación previa:\n${historyText}\n\nResponde como asistente. No incluyas objetos JSON ni llaves ({, }) en la respuesta visible al usuario. Si puedes extraer datos estructurados sobre el lead, devuelve SOLO el texto natural para el usuario y, de forma separada (solo para el API), puedes incluir un objeto JSON con la clave \"leadContext\". En la respuesta visible al usuario, cuando hagas varias preguntas en modo CONSULTING, preséntalas como lista numerada (1., 2., ...), una pregunta por línea. Mantén respuestas de 1–3 párrafos cortos, separa bloques con saltos de línea.`;
+    
+    // Ask the model to respond in plain text with markdown
+    const prompt = `${systemInstruction}\n\nConversación previa:\n${historyText}\n\nResponde como asistente. NUNCA devuelvas objetos JSON ni llaves al final de tu respuesta. Usa formato markdown para estructurar visualmente tu texto.`;
 
     let text = await generateGeminiContent(prompt, false);
 
-    // Try to extract JSON leadContext from the model output (but remove JSON from visible text)
-    let parsedLeadContext: any = undefined;
-    try {
-      const jsonStart = text.indexOf('{');
-      if (jsonStart !== -1) {
-        const possible = text.slice(jsonStart);
-        // Try to find the last closing brace that balances
-        let depth = 0;
-        let endIdx = -1;
-        for (let i = 0; i < possible.length; i++) {
-          if (possible[i] === '{') depth++;
-          else if (possible[i] === '}') {
-            depth--;
-            if (depth === 0) { endIdx = i; break; }
-          }
-        }
-        if (endIdx !== -1) {
-          const jsonStr = possible.slice(0, endIdx + 1);
-          const maybe = JSON.parse(jsonStr);
-          if (maybe && typeof maybe === 'object' && maybe.leadContext) {
-            parsedLeadContext = maybe.leadContext;
-            // remove the JSON block from the visible text
-            text = text.slice(0, jsonStart).trim();
-          } else if (maybe && typeof maybe === 'object' && (maybe.leadName || maybe.businessName || maybe.businessType)) {
-            parsedLeadContext = maybe;
-            text = text.slice(0, jsonStart).trim();
-          }
-        }
-      }
-    } catch (err) {
-      // ignore parse errors
-      parsedLeadContext = undefined;
-    }
-
+    // No más parseo de JSON
     const response: any = { status: 'ok', text };
-    if (parsedLeadContext) response.leadContext = parsedLeadContext;
 
     return NextResponse.json(response);
+
   } catch (err: any) {
     console.error('[demo/respond] error', err);
     return NextResponse.json({ status: 'error', message: String(err) }, { status: 500 });
