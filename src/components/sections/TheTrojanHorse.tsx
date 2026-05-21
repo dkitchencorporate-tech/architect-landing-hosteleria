@@ -165,7 +165,7 @@ export default function TheTrojanHorse() {
               </div>
 
               <a 
-                href="#" 
+                href="https://wa.me/34611499674?text=Hola,%20quiero%20empezar%20con%20el%20Plan%20Base%20de%2049%E2%82%AC" 
                 className="w-full bg-[#FF4500] text-white px-8 py-5 rounded-full font-black text-xl hover:bg-orange-600 transition-colors shadow-[0_10px_30px_rgba(255,69,0,0.3)] hover:shadow-[0_10px_40px_rgba(255,69,0,0.5)] flex items-center justify-center gap-2"
               >
                 Empezar ahora por 49€
@@ -210,7 +210,7 @@ export default function TheTrojanHorse() {
               </ul>
 
               <a 
-                href="#" 
+                href="https://wa.me/34611499674?text=Hola,%20quiero%20comprar%20la%20Licencia%20Completa%20por%20450%E2%82%AC" 
                 className="w-full bg-white text-gray-900 px-8 py-5 rounded-full font-black text-xl hover:bg-gray-100 transition-colors shadow-lg flex items-center justify-center gap-2"
               >
                 Comprar Licencia (450€)

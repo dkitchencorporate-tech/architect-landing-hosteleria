@@ -15,18 +15,18 @@ export default function AggressiveHero() {
         {/* Etiqueta de Autoridad */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-bold tracking-widest uppercase mb-8 animate-fade-in-up">
           <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-          El 30% de tu caja se pierde en ineficiencias
+          Digitalización Profesional para Hostelería
         </div>
 
         {/* Titular Agresivo (El Dolor Financiero) */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight text-white mb-8 animate-fade-in-up text-balance" style={{animationDelay: '0.1s'}}>
-          Deja de perder <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-orange-400 border-b-4 border-[#FF4500]">tu margen</span><br className="hidden md:block"/>
-          en mesas lentas y delivery.
+          Atrae más clientes, agiliza tu servicio y <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-orange-400 border-b-4 border-[#FF4500]">domina</span><br className="hidden md:block"/>
+          tu presencia digital.
         </h1>
 
         {/* Subtítulo Orientado a Beneficio Rápido */}
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed font-medium mb-12 animate-fade-in-up text-pretty px-4 sm:px-0" style={{animationDelay: '0.2s'}}>
-          Digitaliza tu restaurante hoy. Tus clientes piden más rápido, el ticket medio sube un 15% y tú recuperas el control absoluto de tu negocio.
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed font-medium mb-12 animate-fade-in-up text-pretty px-4 sm:px-0" style={{animationDelay: '0.2s'}}>
+          Desde Cartas QR interactivas hasta Fichas de Google optimizadas y Redes Sociales impulsadas por IA. Te damos el sistema completo para modernizar tu negocio paso a paso.
         </p>
 
         {/* Call To Actions de Alta Fricción y Baja Fricción */}

@@ -18,11 +18,35 @@ export default function Home() {
       
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 shadow-xl transition-all">
-        <div className="flex justify-between items-center py-4 px-6 md:px-8 max-w-7xl mx-auto">
-          <div className="text-xl md:text-2xl font-black tracking-tighter text-white hover:scale-105 transition-transform cursor-pointer">
-            Architect<span className="text-[#FF4500]">.Sys</span>
+        <div className="flex flex-col md:flex-row justify-between items-center py-3 md:py-4 px-4 md:px-8 max-w-7xl mx-auto gap-3 md:gap-0">
+          <div className="flex justify-between items-center w-full md:w-auto">
+            <div className="text-xl md:text-2xl font-black tracking-tighter text-white hover:scale-105 transition-transform cursor-pointer">
+              Architect<span className="text-[#FF4500]">.Sys</span>
+            </div>
+            <a href="https://wa.me/34611499674?text=Hola,%20quiero%20solicitar%20la%20Auditoría%20Gratuita." className="md:hidden inline-flex bg-[#FF4500] text-white px-4 py-2 rounded-full font-bold text-[10px] sm:text-xs hover:bg-orange-600 transition-all shadow-lg">
+              Auditoría Gratuita
+            </a>
           </div>
-          <a href="https://wa.me/34611499674?text=Hola,%20quiero%20solicitar%20la%20Auditoría%20Gratuita." className="inline-flex bg-[#FF4500] text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full font-bold text-xs md:text-sm hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1 items-center gap-2">
+          
+          <div className="flex items-center bg-[#1A1A1A]/90 border border-white/10 rounded-full p-1.5 shadow-[0_4px_30px_rgba(255,69,0,0.2)] backdrop-blur-md w-full md:w-auto overflow-x-auto justify-start md:justify-center animate-pulse" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <a href="#suscripciones" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
+              Suscripciones
+            </a>
+            <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>
+            <a href="#eventos" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
+              Eventos
+            </a>
+            <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>
+            <a href="#automatizacion" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
+              Automatización
+            </a>
+            <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>
+            <a href="#dark-kitchen" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
+              Dark Kitchen
+            </a>
+          </div>
+
+          <a href="https://wa.me/34611499674?text=Hola,%20quiero%20solicitar%20la%20Auditoría%20Gratuita." className="hidden md:inline-flex bg-[#FF4500] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1 items-center gap-2">
             <span>Auditoría Gratuita</span>
           </a>
         </div>
@@ -56,21 +80,25 @@ export default function Home() {
       </section>
 
       {/* CORE FUNNEL */}
-      <DigitalPresenceValue />
-      
-      <div id="solucion-base">
-        <TheTrojanHorse />
+      <div id="suscripciones">
+        <DigitalPresenceValue />
+        <div id="solucion-base">
+          <TheTrojanHorse />
+        </div>
       </div>
 
-      <EventLibraryHook />
+      <div id="eventos">
+        <EventLibraryHook />
+      </div>
 
-      {/* SUCCESS STORY 2: QR MENUS */}
-      <section className="py-12 bg-[#FF4500] text-white">
-        <div className="max-w-5xl mx-auto px-8 flex flex-col md:flex-row items-center gap-8">
-           <div className="w-24 h-24 bg-white text-[#FF4500] rounded-full flex items-center justify-center text-4xl shrink-0 font-black shadow-2xl">⚡</div>
+      {/* SUCCESS STORY 2: EVENT LIBRARY */}
+      <section className="py-12 bg-[#FF4500] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"></div>
+        <div className="max-w-5xl mx-auto px-8 flex flex-col md:flex-row items-center gap-8 relative z-10">
+           <div className="w-24 h-24 bg-white text-[#FF4500] rounded-full flex items-center justify-center text-5xl shrink-0 font-black shadow-2xl">🍻</div>
            <div>
-              <h4 className="text-3xl font-black mb-3">"La Cervecería del Puerto" rota sus mesas un <span className="text-yellow-300">20% más rápido</span>.</h4>
-              <p className="text-white/90 text-lg italic">"En la terraza perdíamos mucho tiempo tomando nota de las bebidas. Instalamos la Carta Interactiva con fotos que dan hambre. Ahora, el cliente se sienta, escanea y sabe qué quiere antes de que lleguemos a la mesa. Servimos más rápido y el ticket medio ha subido un 15%."</p>
+              <h4 className="text-3xl font-black mb-3">"Taberna Los Arcos" facturó <span className="text-yellow-300">900€ extra en solo 2 horas</span> un jueves por la tarde.</h4>
+              <p className="text-white/90 text-lg italic">"Los jueves de 18h a 20h solían ser horas de pura angustia, con el local casi vacío y el personal parado. Activamos una 'Cata Premium' de la Biblioteca de Eventos y en 48 horas agotamos plazas. Transformaron un turno muerto en una experiencia sensorial ultra-premium que nos hizo facturar en dos horas lo que a veces nos costaba un día entero de trabajo."</p>
            </div>
         </div>
       </section>
@@ -105,10 +133,36 @@ export default function Home() {
 
       {/* TRANSITION TO HIGH TICKET */}
       <WhatsAppHero />
-      <HighTicketEcosystem />
+      <div id="automatizacion">
+        <HighTicketEcosystem />
+      </div>
+
+      {/* TRANSICIÓN DE DOLOR AL MODELO DARK KITCHEN */}
+      <section className="py-20 bg-[#050505] text-white relative overflow-hidden border-t border-white/10">
+        {/* Glow Effects */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#FF4500] rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-orange-600 rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+        
+        <div className="max-w-5xl mx-auto px-8 relative z-10 text-center">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-bold tracking-[0.2em] uppercase mb-8 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            El precio de improvisar
+          </div>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-8 text-balance">
+            Si tu sistema es un caos, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-orange-400 border-b-4 border-[#FF4500]/50 pb-1">más clientes significará tu ruina.</span>
+          </h2>
+          <p className="text-lg md:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-medium text-pretty mb-12">
+            Muchos negocios intentan escalar abriendo canales en 5 apps de delivery a la vez. ¿El resultado? Pierden hasta el 30% de rentabilidad en comisiones, colapsan los fogones y queman al equipo. El verdadero crecimiento exige una infraestructura quirúrgica.
+          </p>
+          <div className="w-px h-24 bg-gradient-to-b from-[#FF4500] to-transparent mx-auto"></div>
+        </div>
+      </section>
 
       {/* SECCIÓN DARK KITCHEN */}
-      <DarkKitchen />
+      <div id="dark-kitchen">
+        <DarkKitchen />
+      </div>
 
       {/* NUESTRO PROCESO */}
       <section className="py-16 md:py-24 bg-white">

@@ -31,16 +31,38 @@ export default function ChatDemoWidget({ onClose }: Props) {
 
   const welcomeText = "Hola, soy Arqui 🤖, Consultor Estratégico de Digitalización en Architect.Sys. Ayudamos a negocios de hostelería a escalar sus ventas, automatizar su operativa y ser 100% independientes de plataformas de terceros. Para poder darte una asesoría precisa, ¿qué tipo de negocio gestionas?";
 
+  const messagesRef = React.useRef<{ role: "user" | "assistant"; content: string }[]>([]);
+
   useEffect(() => {
     setMounted(true);
-    setMessages([{ role: "assistant", content: welcomeText }]);
+    const initialMsgs = [{ role: "assistant" as const, content: welcomeText }];
+    setMessages(initialMsgs);
+    messagesRef.current = initialMsgs;
     window.dispatchEvent(new Event('chat_opened'));
+    
+    const handleBeforeUnload = () => {
+      const currentMsgs = messagesRef.current;
+      if (currentMsgs && currentMsgs.length > 3) {
+        const blob = new Blob([JSON.stringify({ messages: currentMsgs })], { type: 'application/json' });
+        navigator.sendBeacon('/api/demo/transcript', blob);
+      }
+    };
+    
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
     return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
       window.dispatchEvent(new Event('chat_closed'));
     };
   }, []);
 
-  const pushMessage = (m: { role: "user" | "assistant"; content: string }) => setMessages((p) => [...p, m]);
+  const pushMessage = (m: { role: "user" | "assistant"; content: string }) => {
+    setMessages((p) => {
+      const newMsgs = [...p, m];
+      messagesRef.current = newMsgs;
+      return newMsgs;
+    });
+  };
 
   const messagesContainerRef = React.useRef<HTMLDivElement | null>(null);
   useEffect(() => {
@@ -70,6 +92,15 @@ export default function ChatDemoWidget({ onClose }: Props) {
       setLoading(false);
       if (json?.text) {
         pushMessage({ role: "assistant", content: json.text });
+        
+        // Si el Asistente genera los links finales, guardar la transcripción de inmediato
+        if (json.text.includes("Agendar Video Llamada") || json.text.includes("https://calendar.google.com")) {
+          fetch('/api/demo/transcript', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: [...messagesRef.current, { role: "assistant", content: json.text }] })
+          }).catch(console.error);
+        }
       } else if (json?.message) {
         pushMessage({ role: "assistant", content: `Error del servidor: ${json.message}` });
       } else {
@@ -117,7 +148,9 @@ export default function ChatDemoWidget({ onClose }: Props) {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-white">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-xl">🤖</div>
+              <div className="w-12 h-12 bg-black border border-[#FF4500]/30 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(255,69,0,0.2)] shrink-0">
+                <div className="text-[#FF4500] font-black text-xl font-mono">A.</div>
+              </div>
               <div className="flex flex-col">
                 <div className="text-xl font-black text-gray-900">Asistente Arqui</div>
                 <div className="text-base font-medium text-gray-500">Consultoría Interactiva</div>

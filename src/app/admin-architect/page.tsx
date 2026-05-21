@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import LiveMonitor from '@/components/dashboard/LiveMonitor';
+import TrafficMonitor from '@/components/dashboard/TrafficMonitor';
 import Link from 'next/link';
 import { supabaseClient } from '@/lib/supabase-client';
 import AuthLayer from '@/components/dashboard/AuthLayer';
@@ -16,17 +17,22 @@ export default function AdminDashboard() {
     sentiment: 'Neutro'
   });
 
+  const [trafficStats, setTrafficStats] = useState({
+    totalVisits: 0,
+    mobilePercentage: 0,
+    topSource: 'Calculando...'
+  });
+
   useEffect(() => {
     const fetchStats = async () => {
       if (!supabaseClient) return;
 
-      // Intento 1: Con filtro de status
+      // 1. Fetch Chats Stats
       let { data: chats, error } = await supabaseClient
         .from('chats')
         .select('intent, sentiment, topic, closing_stage, phone')
         .or('status.eq.active,status.is.null');
 
-      // Si la columna no existe, fallback a todos los registros
       if (error && error.code === '42703') {
         const fallback = await supabaseClient
           .from('chats')
@@ -42,7 +48,6 @@ export default function AdminDashboard() {
         const positive = chats.filter(c => c.sentiment === 'positivo').length;
         const actionLeads = chats.filter(c => c.closing_stage === 'accion').length;
 
-        // Calcular Top Topic
         const topics = chats.map(c => c.topic).filter(Boolean);
         const topTopic = topics.length > 0 
           ? topics.sort((a,b) => topics.filter(v => v===a).length - topics.filter(v => v===b).length).pop()
@@ -64,12 +69,35 @@ export default function AdminDashboard() {
           sentiment: avgSent
         });
       }
+
+      // 2. Fetch Traffic Stats
+      const { data: traffic } = await supabaseClient
+        .from('web_analytics')
+        .select('utm_source, device_type');
+
+      if (traffic) {
+        const totalVisits = traffic.length;
+        const mobile = traffic.filter(t => t.device_type === 'mobile').length;
+        const mobilePercentage = totalVisits > 0 ? Math.round((mobile / totalVisits) * 100) : 0;
+
+        const sources = traffic.map(t => t.utm_source).filter(Boolean);
+        const topSource = sources.length > 0
+          ? sources.sort((a,b) => sources.filter(v => v===a).length - sources.filter(v => v===b).length).pop()
+          : 'Directo / Orgánico';
+
+        setTrafficStats({
+          totalVisits,
+          mobilePercentage,
+          topSource: topSource || 'Directo'
+        });
+      }
     };
 
     fetchStats();
     
     const channel = supabaseClient?.channel('stats-sync-heavy')
       .on('postgres_changes', { event: '*', schema: 'public', table: 'chats' }, () => fetchStats())
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'web_analytics' }, () => fetchStats())
       .subscribe();
 
     return () => {
@@ -111,15 +139,15 @@ export default function AdminDashboard() {
         </header>
 
         <main className="max-w-[1600px] mx-auto p-6 space-y-8">
-          {/* GRID DE KPIs DE ALTA DENSIDAD */}
+          {/* GRID DE KPIs DE ALTA DENSIDAD (Conversaciones) */}
           <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
               { label: 'Conversaciones', value: stats.conversations, color: 'text-orange-600', trend: 'Live' },
               { label: 'IA Sentiment', value: stats.sentiment, color: 'text-green-600', trend: 'Análisis' },
               { label: 'Tasa de Cierre', value: `${stats.closingRate}%`, color: 'text-zinc-600', trend: 'ROI' },
-              { label: 'Tasa de Rechazo', value: `${stats.rejectionRate}%`, color: 'text-red-500', trend: 'Filtro' },
-              { label: 'Hot Topic', value: stats.topTopic, color: 'text-blue-600', trend: 'Tendencia' },
-              { label: 'Conversiones', value: stats.actionStage, color: 'text-orange-600', trend: 'Acción' },
+              { label: 'Visitas Totales', value: trafficStats.totalVisits, color: 'text-blue-500', trend: 'Orgánico' },
+              { label: 'Dispositivo', value: trafficStats.mobilePercentage > 50 ? 'Móvil' : 'Desktop', color: 'text-purple-500', trend: `${trafficStats.mobilePercentage}% Móvil` },
+              { label: 'Top Origen', value: trafficStats.topSource, color: 'text-orange-600', trend: 'UTM' },
             ].map((m, i) => (
               <div key={i} className="bg-white border border-zinc-100 p-4 rounded-3xl shadow-sm transition-all hover:shadow-xl hover:shadow-zinc-200/50">
                 <div className="flex justify-between items-start mb-2">
@@ -131,16 +159,33 @@ export default function AdminDashboard() {
             ))}
           </section>
 
-          <section>
-            <div className="mb-6 flex justify-between items-end">
-              <div>
-                <h2 className="text-2xl font-black tracking-tighter text-zinc-900">Live Conversation Stream</h2>
-                <p className="text-zinc-400 text-sm">Auditoría en tiempo real y control de respuesta manual.</p>
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Column: WhatsApp / IA */}
+            <div>
+              <div className="mb-6 flex justify-between items-end">
+                <div>
+                  <h2 className="text-2xl font-black tracking-tighter text-zinc-900">Live WhatsApp Stream</h2>
+                  <p className="text-zinc-400 text-sm">Auditoría en tiempo real y control manual.</p>
+                </div>
+              </div>
+              
+              <div className="bg-white border border-zinc-100 p-1 rounded-[2.5rem] shadow-xl shadow-zinc-200/20">
+                <LiveMonitor />
               </div>
             </div>
-            
-            <div className="bg-white border border-zinc-100 p-1 rounded-[2.5rem] shadow-xl shadow-zinc-200/20">
-              <LiveMonitor />
+
+            {/* Right Column: Traffic Analytics */}
+            <div>
+              <div className="mb-6 flex justify-between items-end">
+                <div>
+                  <h2 className="text-2xl font-black tracking-tighter text-zinc-900">Live Traffic Monitor</h2>
+                  <p className="text-zinc-400 text-sm">Métricas de entrada web y origen de leads.</p>
+                </div>
+              </div>
+              
+              <div className="bg-white border border-zinc-100 p-6 rounded-[2.5rem] shadow-xl shadow-zinc-200/20 h-full">
+                <TrafficMonitor />
+              </div>
             </div>
           </section>
         </main>
