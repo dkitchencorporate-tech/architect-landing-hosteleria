@@ -42,9 +42,10 @@ Jerarquía Senior B2B, trato exquisito pero directo y muy humano. Cero emojis in
     // Build conversation history for the prompt
     const historyText = Array.isArray(messages) ? messages.map((m: any) => `${m.role === 'user' ? 'Usuario' : 'Asistente'}: ${m.content}`).join('\n') : '';
     
-    // Inyección dinámica de las Sugerencias (Quick Replies) SOLO si ya ha pasado el primer turno
-    // Así Llama 3 no genera botones raros para pedir el nombre
-    if (messages && messages.length >= 2) {
+    // Inyección dinámica de las Sugerencias (Quick Replies) SOLO si ya ha pasado el primer turno real.
+    // El frontend siempre envía 2 mensajes en la primera petición (Bienvenida + Respuesta inicial).
+    // Queremos que las sugerencias aparezcan solo en las peticiones posteriores.
+    if (messages && messages.length > 2) {
       systemInstruction += `\n\n[FORMATO DE SUGERENCIAS OBLIGATORIO]
       La ÚLTIMA LÍNEA de tu mensaje debe contener OBLIGATORIAMENTE 2 o 3 opciones de respuesta rápida para el usuario.
       Tienes que usar EXACTAMENTE este formato con barras verticales, sin listas ni viñetas.
