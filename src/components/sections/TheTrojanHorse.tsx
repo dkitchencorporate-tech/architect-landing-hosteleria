@@ -12,7 +12,7 @@ export default function TheTrojanHorse() {
             <span className="w-2 h-2 rounded-full bg-[#FF4500] animate-pulse"></span>
             El Primer Paso Lógico
           </div>
-          <h2 className="text-4xl lg:text-5xl font-black leading-tight text-gray-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-gray-900 text-balance">
             Tapa la fuga de dinero hoy.<br/>
             <span className="text-[#FF4500]">Por lo que te cuesta invitar a una ronda.</span>
           </h2>
@@ -29,7 +29,7 @@ export default function TheTrojanHorse() {
               <div className="inline-block bg-red-100 text-red-600 px-6 py-2.5 rounded-full text-sm font-black tracking-widest uppercase mb-6 border border-red-200 shadow-sm">
                 PROMOCIÓN DE LANZAMIENTO (POR TIEMPO LIMITADO)
               </div>
-              <h3 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight text-balance">
                 Tu Pack de Arranque Exclusivo,<br/>
                 <span className="text-[#FF4500]">incluido en tu activación.</span>
               </h3>
