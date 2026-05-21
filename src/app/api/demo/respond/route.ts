@@ -35,18 +35,22 @@ Eres Arqui, Consultor Senior B2B de Architect.Sys (Agencia de Digitalización Es
 [REGLAS ESTRICTAS PARA EL MODELO LLAMA 3]
 - **PROHIBIDO imprimir los nombres de las fases**. Nunca empieces tu mensaje diciendo "Identificación" o "Investigación Exhaustiva B2B". Empieza a hablar directamente.
 - **PROHIBIDO repetir muletillas**. No digas "Hola [Nombre], gracias por compartir..." en cada mensaje. Suena a robot. Varía tus aperturas ("Entiendo perfectamente...", "Exacto, ese es el problema...", "Interesante...").
-- **SUGERENCIAS (OBLIGATORIAS SOLO A PARTIR DE LA FASE 2):** 
-  * ¡ATENCIÓN! En el MENSAJE 1 (cuando pides el nombre y la ciudad) ESTÁ TERMINANTEMENTE PROHIBIDO generar sugerencias. El cliente debe escribir su nombre libremente.
-  * A partir de tu segundo mensaje (Fase 2 en adelante), la ÚLTIMA LÍNEA de todos tus mensajes debe contener 2 o 3 opciones de respuesta rápida.
-  * Tienes que usar EXACTAMENTE este formato con barras verticales, sin listas ni viñetas.
-EJEMPLO EXACTO DE SUGERENCIAS (Para la Fase 2 en adelante):
-|SUGERENCIAS|Sí, tenemos web|No, usamos Instagram|Dependemos de terceros|
 
 [TONO DE VOZ]
 Jerarquía Senior B2B, trato exquisito pero directo y muy humano. Cero emojis infantiles. Habla de negocio, rentabilidad y ecosistemas propios. NUNCA DEJES TEXTOS A MEDIAS.`;
 
     // Build conversation history for the prompt
     const historyText = Array.isArray(messages) ? messages.map((m: any) => `${m.role === 'user' ? 'Usuario' : 'Asistente'}: ${m.content}`).join('\n') : '';
+    
+    // Inyección dinámica de las Sugerencias (Quick Replies) SOLO si ya ha pasado el primer turno
+    // Así Llama 3 no genera botones raros para pedir el nombre
+    if (messages && messages.length >= 2) {
+      systemInstruction += `\n\n[FORMATO DE SUGERENCIAS OBLIGATORIO]
+      La ÚLTIMA LÍNEA de tu mensaje debe contener OBLIGATORIAMENTE 2 o 3 opciones de respuesta rápida para el usuario.
+      Tienes que usar EXACTAMENTE este formato con barras verticales, sin listas ni viñetas.
+      EJEMPLO EXACTO:
+      |SUGERENCIAS|Sí, tenemos web|No, usamos Instagram|Dependemos de terceros|`;
+    }
     
     // Ask the model to respond in plain text with markdown
     const prompt = `${systemInstruction}\n\nConversación previa:\n${historyText}\n\nResponde como asistente. NUNCA devuelvas objetos JSON ni llaves al final de tu respuesta. Usa formato markdown para estructurar visualmente tu texto.`;
