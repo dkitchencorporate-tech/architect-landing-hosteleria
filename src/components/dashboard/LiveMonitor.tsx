@@ -123,37 +123,67 @@ export default function LiveMonitor() {
   const activeChatData = selectedChat ? leadsObj[selectedChat] : null;
 
   return (
-    <div className="p-4 bg-zinc-50/50 rounded-[2.5rem]">
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+    <div className="p-4 bg-zinc-50/50 rounded-[2.5rem] h-[500px] overflow-y-auto custom-scrollbar">
+      <div className="flex flex-col gap-2 pr-2">
         {phones.map(phone => {
           const conversation = leadsObj[phone];
           const lastMsg = conversation[0];
           const isEnabled = botSettings[phone] !== false;
 
           return (
-            <div key={phone} className="group relative bg-white border border-zinc-100 p-4 rounded-3xl shadow-sm hover:shadow-xl hover:shadow-orange-500/10 transition-all cursor-pointer overflow-hidden border-b-4 border-b-zinc-200 hover:border-b-orange-500" onClick={() => setSelectedChat(phone)}>
-              {/* ACCIÓN: ABRIR MODAL DE DECISIÓN */}
-              <button 
-                onClick={(e) => { 
-                  e.stopPropagation(); 
-                  setConfirmDelete({ show: true, phone });
-                }} 
-                className="absolute -top-1 -right-1 w-6 h-6 bg-zinc-100 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:bg-zinc-200 hover:text-orange-600 z-10 text-xs font-bold shadow-sm"
-              >
-                ×
-              </button>
+            <div key={phone} 
+                 className="group relative bg-white border border-zinc-100 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-between" 
+                 onClick={() => setSelectedChat(phone)}>
               
-              <div className="mb-2">
-                <p className="text-[10px] font-black text-zinc-400 uppercase tracking-tighter truncate">{phone}</p>
-                <div className="flex gap-1 mt-1">
-                  <span className={`w-2 h-2 rounded-full ${lastMsg.intent === 'venta' ? 'bg-green-500' : 'bg-orange-500'}`}></span>
-                  <span className="text-[8px] font-bold uppercase text-zinc-500">{lastMsg.topic || 'Chat'}</span>
+              {/* Información Principal */}
+              <div className="flex items-center gap-4 overflow-hidden flex-1">
+                {/* Avatar / Icono */}
+                <div className="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0 font-bold text-lg">
+                  👤
+                </div>
+                
+                {/* Textos */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <p className="text-xs font-black text-zinc-900 truncate">Sesión: {phone.substring(0,8)}...</p>
+                    <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider ${lastMsg.intent === 'venta' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'}`}>
+                      {lastMsg.intent}
+                    </span>
+                    {lastMsg.topic && (
+                      <span className="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-zinc-100 text-zinc-500 hidden md:inline-block">
+                        {lastMsg.topic}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs text-zinc-500 truncate italic">"{lastMsg.content}"</p>
                 </div>
               </div>
-              <p className="text-[10px] text-zinc-400 line-clamp-2 italic leading-tight">"{lastMsg.content}"</p>
+
+              {/* Botón Borrar / Archivar */}
+              <div className="shrink-0 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button 
+                  onClick={(e) => { 
+                    e.stopPropagation(); 
+                    setConfirmDelete({ show: true, phone });
+                  }} 
+                  className="w-8 h-8 bg-zinc-50 rounded-full flex items-center justify-center hover:bg-red-50 hover:text-red-500 text-zinc-400 transition-all font-bold"
+                  title="Gestionar"
+                >
+                  ×
+                </button>
+              </div>
+
             </div>
           );
         })}
+
+        {phones.length === 0 && (
+          <div className="flex flex-col items-center justify-center h-48 text-zinc-400">
+            <div className="text-4xl mb-2">🤖</div>
+            <p className="font-bold">El agente está a la espera...</p>
+            <p className="text-xs">No hay conversaciones activas.</p>
+          </div>
+        )}
       </div>
 
       {/* MODAL DE CONFIRMACIÓN DE ELIMINACIÓN/ARCHIVADO */}
@@ -165,7 +195,7 @@ export default function LiveMonitor() {
               <div className="w-16 h-16 bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">⚠️</span>
               </div>
-              <h3 className="text-xl font-black text-zinc-900 tracking-tight">Gestión de Conversación</h3>
+              <h3 className="text-xl font-black text-zinc-900 tracking-tight">Gestión de Sesión</h3>
               <p className="text-zinc-500 text-xs mt-2 font-medium">¿Qué deseas hacer con el registro de <br/><span className="font-bold text-zinc-800">{confirmDelete.phone}</span>?</p>
             </div>
             
@@ -174,14 +204,14 @@ export default function LiveMonitor() {
                 onClick={() => archiveChat(confirmDelete.phone!)}
                 className="w-full bg-zinc-900 text-white font-black py-4 rounded-xl text-[10px] uppercase tracking-widest hover:bg-zinc-800 transition-all"
               >
-                Archivar (Seguro / Recuperable)
+                Archivar (Recuperable)
               </button>
               
               <button 
                 onClick={() => deletePermanently(confirmDelete.phone!)}
                 className="w-full bg-transparent text-red-600 font-black py-4 rounded-xl text-[10px] uppercase tracking-widest border border-red-100 hover:bg-red-50 transition-all text-center"
               >
-                Eliminar Permanentemente (100%)
+                Eliminar Permanentemente
               </button>
               
               <button 
@@ -201,10 +231,10 @@ export default function LiveMonitor() {
           <div className="absolute inset-0 bg-zinc-900/60 backdrop-blur-md" onClick={() => setSelectedChat(null)}></div>
           <div className="relative w-full max-w-4xl max-h-[90vh] bg-[#FDFCF8] rounded-[3rem] shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in duration-300">
             {/* Header Modal */}
-            <div className="p-8 border-b border-zinc-100 flex justify-between items-center bg-white">
+            <div className="p-8 border-b border-zinc-100 flex flex-col md:flex-row justify-between items-start md:items-center bg-white gap-4">
               <div>
-                <h3 className="text-2xl font-black tracking-tighter">{selectedChat}</h3>
-                <div className="flex gap-2 mt-1">
+                <h3 className="text-xl font-black tracking-tighter text-zinc-900">Sesión: {selectedChat}</h3>
+                <div className="flex gap-2 mt-2 flex-wrap">
                   <span className="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border border-orange-200">
                     {activeChatData[0].intent}
                   </span>
@@ -216,9 +246,9 @@ export default function LiveMonitor() {
                   </span>
                 </div>
               </div>
-              <div className="flex gap-3 items-center">
-                <button onClick={() => toggleBot(selectedChat, botSettings[selectedChat] !== false)} className={`px-4 py-2 rounded-xl text-xs font-black uppercase transition-all ${botSettings[selectedChat] !== false ? 'bg-zinc-100 text-zinc-400 font-bold' : 'bg-orange-600 text-white shadow-lg shadow-orange-600/20'}`}>
-                  {botSettings[selectedChat] !== false ? 'Bot Activo' : 'Bot Pausado'}
+              <div className="flex gap-3 items-center w-full md:w-auto justify-end">
+                <button onClick={() => toggleBot(selectedChat, botSettings[selectedChat] !== false)} className={`px-4 py-2 rounded-xl text-[10px] tracking-wider font-black uppercase transition-all ${botSettings[selectedChat] !== false ? 'bg-zinc-100 text-zinc-400 hover:bg-zinc-200' : 'bg-orange-600 text-white shadow-lg shadow-orange-600/20'}`}>
+                  {botSettings[selectedChat] !== false ? 'Agente Activo' : 'Agente Pausado'}
                 </button>
                 <button onClick={() => setSelectedChat(null)} className="w-10 h-10 rounded-full bg-zinc-100 flex items-center justify-center text-xl hover:bg-zinc-200 transition-all font-bold">×</button>
               </div>
@@ -226,25 +256,29 @@ export default function LiveMonitor() {
 
             {/* Mindset de la IA */}
             {activeChatData.find((m: any) => m.role === 'assistant')?.strategic_note && (
-              <div className="px-8 py-4 bg-orange-50/50 border-b border-orange-100">
-                <p className="text-xs text-orange-600 font-bold leading-relaxed italic">
-                  <span className="uppercase opacity-50 mr-2 non-italic">Mindset AI:</span>
-                  "{activeChatData.find((m: any) => m.role === 'assistant')?.strategic_note}"
+              <div className="px-8 py-4 bg-orange-50/50 border-b border-orange-100 flex gap-3 items-center">
+                <span className="text-xl">🧠</span>
+                <p className="text-xs text-orange-700 font-medium leading-relaxed">
+                  <strong className="uppercase mr-1 tracking-wider text-[10px]">AI Mindset:</strong>
+                  {activeChatData.find((m: any) => m.role === 'assistant')?.strategic_note}
                 </p>
               </div>
             )}
 
-            {/* Historial */}
-            <div className="flex-1 overflow-y-auto p-10 space-y-6 flex flex-col-reverse bg-white/40">
+            {/* Historial de Chat */}
+            <div className="flex-1 overflow-y-auto p-6 md:p-10 space-y-4 flex flex-col-reverse bg-white/40">
               {activeChatData.map((msg: any) => (
-                <div key={msg.id} className={`p-6 rounded-[2rem] max-w-[80%] text-sm leading-relaxed shadow-sm transition-all ${msg.role === 'assistant' ? 'bg-white text-zinc-600 self-start border border-zinc-100 shadow-md' : 'bg-zinc-900 text-white self-end shadow-xl'}`}>
+                <div key={msg.id} className={`p-4 md:p-6 rounded-3xl max-w-[85%] text-sm leading-relaxed shadow-sm transition-all ${msg.role === 'assistant' ? 'bg-white text-zinc-600 self-start border border-zinc-100 rounded-tl-sm' : 'bg-zinc-900 text-white self-end rounded-tr-sm'}`}>
                   <p>{msg.content}</p>
+                  <span className={`block text-[9px] mt-2 font-bold uppercase tracking-widest ${msg.role === 'assistant' ? 'text-zinc-300' : 'text-zinc-500'}`}>
+                    {msg.role === 'assistant' ? 'Arqui AI' : 'Visitante'}
+                  </span>
                 </div>
               ))}
             </div>
             
-            <div className="p-6 bg-white border-t border-zinc-100 text-center">
-               <span className="text-[10px] font-black text-zinc-300 tracking-widest uppercase italic">Fin de la auditoría de conversación • Architect.Sys Master</span>
+            <div className="p-4 bg-white border-t border-zinc-100 text-center">
+               <span className="text-[9px] font-black text-zinc-400 tracking-widest uppercase">Architect.Sys Master Console • Modo Auditoría</span>
             </div>
           </div>
         </div>

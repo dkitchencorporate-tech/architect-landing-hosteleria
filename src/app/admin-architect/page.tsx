@@ -124,11 +124,8 @@ export default function AdminDashboard() {
             </div>
             
             <nav className="flex items-center gap-4">
-              <Link href="/onboarding" className="text-xs font-bold text-zinc-500 hover:text-orange-600 transition-colors">
-                Onboarding
-              </Link>
-              <Link href="/api/diagnostic" target="_blank" className="text-xs font-bold text-zinc-500 hover:text-orange-600 transition-colors">
-                Diagnostics
+              <Link href="/" target="_blank" className="text-xs font-bold text-zinc-500 hover:text-orange-600 transition-colors">
+                Ir a la Landing
               </Link>
               <div className="h-4 w-px bg-zinc-200 mx-2"></div>
               <button className="bg-zinc-900 text-white text-[10px] font-black uppercase px-4 py-2 rounded-lg hover:bg-zinc-800 transition-all">
@@ -164,8 +161,8 @@ export default function AdminDashboard() {
             <div>
               <div className="mb-6 flex justify-between items-end">
                 <div>
-                  <h2 className="text-2xl font-black tracking-tighter text-zinc-900">Live WhatsApp Stream</h2>
-                  <p className="text-zinc-400 text-sm">Auditoría en tiempo real y control manual.</p>
+                  <h2 className="text-2xl font-black tracking-tighter text-zinc-900">Live AI Agent Stream</h2>
+                  <p className="text-zinc-400 text-sm">Auditoría en tiempo real de leads web.</p>
                 </div>
               </div>
               
