@@ -112,112 +112,111 @@ export default function TheTrojanHorse() {
           </div>
         </div>
 
-        {/* Pricing Cards - AHORA ABAJO DE LOS BONOS */}
+        {/* Pricing Cards */}
         <div className="flex flex-col lg:flex-row items-stretch justify-center gap-8 max-w-6xl mx-auto">
           
-          {/* Tarjeta 1: Suscripción */}
-          <div className="flex-[3] bg-[#FDFCF8] rounded-[2rem] border-2 border-[#FF4500] shadow-2xl relative transform lg:scale-105 z-10 flex flex-col overflow-hidden">
-            <div className="bg-[#FF4500] text-white text-center py-3 text-sm font-black uppercase tracking-widest">
-              Recomendado para empezar
-            </div>
+          {/* Tarjeta 1: Sistema en Propiedad */}
+          <div className="flex-[3] bg-[#FDFCF8] rounded-[2rem] border-2 border-gray-200 shadow-xl relative flex flex-col overflow-hidden hover:border-[#FF4500] transition-colors duration-300">
             <div className="p-8 lg:p-10 flex flex-col flex-1">
-              <h3 className="text-3xl font-black text-gray-900 mb-2">Suscripción Base</h3>
-              <p className="text-gray-600 mb-6 font-medium text-lg">Despliegue rápido. Digitaliza tu local hoy.</p>
-              
-              <div className="flex items-baseline gap-1 text-[#FF4500] mb-8">
-                <span className="text-7xl font-black">49€</span>
-                <span className="text-2xl font-bold opacity-80">/mes</span>
+              <div className="inline-block bg-gray-100 text-gray-600 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider mb-6 self-start border border-gray-200">
+                PAGO FRACCIONADO DISPONIBLE
               </div>
+              <h3 className="text-3xl font-black text-gray-900 mb-2">Sistema en Propiedad</h3>
+              <p className="text-gray-600 mb-6 font-medium text-lg">Tu web, tu carta y tu base de datos. Sin alquileres.</p>
+              
+              <div className="flex items-baseline gap-1 text-gray-900 mb-2">
+                <span className="text-6xl font-black">700€</span>
+              </div>
+              <p className="text-gray-500 font-medium mb-8">Pago único de configuración inicial.</p>
 
-              {/* Contenido Ampliado (Fusión Copys) */}
               <ul className="space-y-6 text-gray-800 font-medium flex-1 mb-8">
                 <li className="flex items-start gap-4">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-100 text-[#FF4500] shrink-0 mt-0.5">1</span>
-                  <div>
-                    <span className="font-bold text-lg block text-gray-900">Tu Menú Siempre Perfecto</span>
-                    <span className="text-base text-gray-700 leading-relaxed block mt-1">Olvídate de tachar precios con bolígrafo. ¿Sube la cerveza? ¿Se acaba un plato? Lo cambias tú mismo desde el móvil en dos toques. Sin depender de nadie.</span>
-                  </div>
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-green-600 shrink-0 mt-1">✓</span>
+                  <div><span className="font-bold text-gray-900 block">Ecosistema Tuyo al 100%.</span> Te montamos la Web Premium, la Carta Digital Interactiva y te damos acceso total al sistema.</div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-100 text-[#FF4500] shrink-0 mt-0.5">2</span>
-                  <div>
-                    <span className="font-bold text-lg block text-gray-900">Recepcionista Inteligente (Web)</span>
-                    <span className="text-base text-gray-700 leading-relaxed block mt-1">Un asistente 24/7 integrado en tu carta digital que responde si hay opciones sin gluten o atrapa los datos del cliente mientras tú sacas el servicio.</span>
-                  </div>
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-green-600 shrink-0 mt-1">✓</span>
+                  <div><span className="font-bold text-gray-900 block">Facilidades de Pago.</span> Puedes dividirlo en 2 pagos cómodos de 350€ (Al iniciar y al entregarte el sistema).</div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-100 text-[#FF4500] shrink-0 mt-0.5">3</span>
-                  <div>
-                    <span className="font-bold text-lg block text-gray-900">Soporte Técnico Real</span>
-                    <span className="text-base text-gray-700 leading-relaxed block mt-1">Si la plataforma se cae, nosotros respondemos. Mantenimiento y actualizaciones incluidas para que tu negocio nunca pare.</span>
-                  </div>
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 text-green-600 shrink-0 mt-1">✓</span>
+                  <div><span className="font-bold text-gray-900 block">Mantenimiento y Servidores.</span> Cuota reducida de 69€/mes a partir del tercer mes para mantener todo online.</div>
                 </li>
               </ul>
 
-              {/* Add-ons integrados en la tarjeta */}
-              <div className="bg-white border border-orange-100 rounded-xl p-6 mb-8">
-                <h4 className="text-sm font-black uppercase text-gray-500 tracking-wider mb-4">Opciones para personalizar tu arranque:</h4>
-                <div className="space-y-3 text-base">
-                  <div className="flex justify-between border-b border-gray-100 pb-2"><span className="text-gray-700">+ Dominio Propio (.com o .es)</span> <span className="font-bold text-gray-900">15€/año</span></div>
-                  <div className="flex justify-between border-b border-gray-100 pb-2"><span className="text-gray-700">+ Diseño Web a Medida</span> <span className="font-bold text-gray-900">99€ (Pago único)</span></div>
-                  <div className="flex justify-between"><span className="text-gray-700">+ QRs Físicos en Metacrilato</span> <span className="font-bold text-gray-900">35€ (Instalación)</span></div>
-                </div>
+              <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-8 text-center">
+                <span className="text-[#FF4500] font-black uppercase text-sm block mb-1">🎁 REGALO DE BIENVENIDA</span>
+                <span className="text-gray-700 text-sm font-medium">Te regalamos los 2 primeros meses de mantenimiento (Ahorro de 138€).</span>
               </div>
 
               <a 
-                href="https://wa.me/34611499674?text=Hola,%20quiero%20empezar%20con%20el%20Plan%20Base%20de%2049%E2%82%AC" 
-                className="w-full bg-[#FF4500] text-white px-8 py-5 rounded-full font-black text-xl hover:bg-orange-600 transition-colors shadow-[0_10px_30px_rgba(255,69,0,0.3)] hover:shadow-[0_10px_40px_rgba(255,69,0,0.5)] flex items-center justify-center gap-2"
+                href="https://wa.me/34611499674?text=Hola,%20quiero%20empezar%20con%20el%20Sistema%20en%20Propiedad" 
+                className="w-full bg-gray-900 text-white px-8 py-5 rounded-full font-black text-xl hover:bg-[#FF4500] transition-colors shadow-lg flex items-center justify-center gap-2"
               >
-                Empezar ahora por 49€
+                Comprar Sistema Propio
               </a>
             </div>
           </div>
 
-          {/* Tarjeta 2: Pago Único (Licencia) */}
-          <div className="flex-[2] bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-[2rem] border border-gray-700 shadow-2xl relative transform transition-transform duration-500 flex flex-col mt-8 lg:mt-4">
+          {/* Tarjeta 2: Suscripción Growth All-in-One */}
+          <div className="flex-[3] bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-[2rem] border-2 border-[#FF4500] shadow-2xl relative transform lg:scale-105 z-10 flex flex-col overflow-hidden">
+            <div className="bg-[#FF4500] text-white text-center py-3 text-sm font-black uppercase tracking-widest">
+              NUESTRO SERVICIO ESTRELLA
+            </div>
             <div className="p-8 lg:p-10 flex flex-col flex-1">
-              <div className="inline-block bg-white/10 text-gray-300 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider mb-8 self-start border border-white/10">
-                PARA LOS QUE LO QUIEREN TODO
-              </div>
-              <h3 className="text-2xl font-black mb-3">Licencia Completa</h3>
-              <p className="text-gray-400 mb-8 font-medium text-lg">Pagas una vez. Es tuyo para siempre. Cero cuotas mensuales.</p>
+              <h3 className="text-3xl font-black mb-2">Suscripción "All-in-One"</h3>
+              <p className="text-gray-400 mb-6 font-medium text-lg">Nosotros nos encargamos de llenarte el restaurante.</p>
               
-              <div className="flex items-baseline gap-1 mb-10">
-                <span className="text-6xl font-black text-white">450€</span>
+              <div className="flex items-baseline gap-1 text-[#FF4500] mb-2">
+                <span className="text-6xl font-black text-white">249€</span>
+                <span className="text-2xl font-bold text-gray-400">/mes</span>
               </div>
+              <p className="text-gray-400 font-medium mb-8">Sin coste de setup inicial.</p>
 
-              <ul className="space-y-6 text-gray-300 font-medium flex-1 mb-10 text-base">
+              <ul className="space-y-6 text-gray-300 font-medium flex-1 mb-8 text-base">
                 <li className="flex items-start gap-4">
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400 shrink-0 mt-1">✓</span>
-                  <div><span className="font-bold text-white block">Tu Web a Medida Incluida.</span> No usamos plantillas, diseñamos tu carta desde cero con tu marca.</div>
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#FF4500]/20 text-[#FF4500] shrink-0 mt-1">✓</span>
+                  <div><span className="font-bold text-white block">Todo lo del Sistema Propio.</span> Web, carta interactiva y servidores incluidos.</div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400 shrink-0 mt-1">✓</span>
-                  <div><span className="font-bold text-white block">Dominio Propio Incluido (1er año).</span> La dirección profesional de tu local en internet.</div>
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#FF4500]/20 text-[#FF4500] shrink-0 mt-1">✓</span>
+                  <div><span className="font-bold text-white block">Acceso a la Biblioteca de Eventos.</span> Eliges un evento ganador y nosotros te montamos la campaña de Ads gratis (tú solo pagas la publicidad a Meta).</div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400 shrink-0 mt-1">✓</span>
-                  <div><span className="font-bold text-white block">Sin Ataduras.</span> El código y la plataforma son 100% tuyos. Ideal si no quieres gastos fijos.</div>
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#FF4500]/20 text-[#FF4500] shrink-0 mt-1">✓</span>
+                  <div><span className="font-bold text-white block">Comisión a Éxito.</span> Si el evento te revienta la caja de facturación, nos llevamos un 20% del beneficio neto. Si no ganas, no ganamos.</div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400 shrink-0 mt-1">✓</span>
-                  <div><span className="font-bold text-white block">Mismas Ventajas Base.</span> Carta interactiva y Asistente IA, pero sin pagar mes a mes.</div>
-                </li>
-                <li className="flex items-start gap-4 mt-6 pt-6 border-t border-white/10">
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-transparent border border-gray-600 text-gray-500 shrink-0 mt-0.5">ℹ</span>
-                  <div className="text-sm text-gray-400">Los QRs físicos en metacrilato se pueden añadir en el paso siguiente por 35€.</div>
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#FF4500]/20 text-[#FF4500] shrink-0 mt-1">✓</span>
+                  <div><span className="font-bold text-white block">Agente IA WhatsApp Incluido.</span> El mantenimiento mensual de la IA (39€/mes) está cubierto en esta cuota.</div>
                 </li>
               </ul>
 
               <a 
-                href="https://wa.me/34611499674?text=Hola,%20quiero%20comprar%20la%20Licencia%20Completa%20por%20450%E2%82%AC" 
-                className="w-full bg-white text-gray-900 px-8 py-5 rounded-full font-black text-xl hover:bg-gray-100 transition-colors shadow-lg flex items-center justify-center gap-2"
+                href="https://wa.me/34611499674?text=Hola,%20quiero%20solicitar%20el%20plan%20All-in-One" 
+                className="w-full bg-[#FF4500] text-white px-8 py-5 rounded-full font-black text-xl hover:bg-orange-600 transition-colors shadow-[0_10px_30px_rgba(255,69,0,0.3)] flex items-center justify-center gap-2"
               >
-                Comprar Licencia (450€)
+                Solicitar Plan All-in-One
               </a>
             </div>
           </div>
 
+        </div>
+
+        {/* Add-on: Agente Recepcionista IA */}
+        <div className="max-w-4xl mx-auto mt-16 bg-white border border-gray-200 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+          <div className="flex-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest mb-4">
+              <span className="text-lg">🤖</span> Add-on Opcional
+            </div>
+            <h3 className="text-2xl font-black text-gray-900 mb-2">Instalación Agente IA en WhatsApp</h3>
+            <p className="text-gray-600 font-medium text-pretty">Entrenamos a un recepcionista virtual inteligente que atiende a tus clientes 24/7 en tu propio número de WhatsApp. Cierra reservas mientras duermes.</p>
+          </div>
+          <div className="text-center md:text-right shrink-0 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+            <div className="text-3xl font-black text-gray-900 mb-1">290€ <span className="text-lg text-gray-500 font-medium">Setup</span></div>
+            <div className="text-sm text-gray-500 font-bold mb-4">+ 39€/mes (Operativa IA)</div>
+            <p className="text-xs text-gray-400 italic max-w-[200px] mx-auto">*La cuota mensual ya está incluida si tienes el plan All-in-One.</p>
+          </div>
         </div>
 
       </div>

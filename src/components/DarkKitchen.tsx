@@ -52,25 +52,25 @@ export default function DarkKitchen() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="bg-[#FDFCF8] p-8 rounded-[2rem] border border-gray-200 group hover:border-[#FF4500] hover:shadow-2xl transition-all duration-500 flex flex-col">
             <div className="w-16 h-16 bg-orange-100 text-[#FF4500] rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🍔</div>
-            <h3 className="text-2xl font-bold mb-4">Biblioteca de Marcas Virtuales</h3>
+            <h3 className="text-2xl font-bold mb-4">Múltiples Menús, Una Sola Cocina</h3>
             <p className="text-gray-600 flex-1 leading-relaxed">
-                ¿Tienes un restaurante tradicional? Accede a nuestro escaparate de <strong>marcas virtuales listas y probadas</strong> para funcionar. Te montamos una segunda línea de ingresos usando tu misma cocina y personal.
+                ¿Tienes un restaurante tradicional o una cocina a puerta cerrada? Te montamos un sistema donde puedes tener hasta <strong>7 menús de comida distintos operando a la vez</strong> desde la misma cocina. Más opciones, más pedidos, mismos gastos de alquiler.
             </p>
           </div>
           
           <div className="bg-[#FDFCF8] p-8 rounded-[2rem] border border-gray-200 group hover:border-[#FF4500] hover:shadow-2xl transition-all duration-500 flex flex-col">
             <div className="w-16 h-16 bg-orange-100 text-[#FF4500] rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🚀</div>
-            <h3 className="text-2xl font-bold mb-4">Infraestructura Tecnológica</h3>
+            <h3 className="text-2xl font-bold mb-4">Tu Propio Sistema de Pedidos</h3>
             <p className="text-gray-600 flex-1 leading-relaxed">
-                Si empiezas de cero o ya operas una Dark Kitchen, creamos tus <strong>plataformas de pedidos propias y sistemas de fidelización</strong>. Tú eres el dueño del cliente, del dinero al instante y de los datos.
+                Olvídate de regalarle el 30% a las apps de delivery. Te creamos una plataforma a medida donde tus clientes hacen el pedido y pagan directamente a tu cuenta. <strong>El cliente es tuyo, el dinero es tuyo y los datos son tuyos.</strong>
             </p>
           </div>
 
           <div className="bg-[#FDFCF8] p-8 rounded-[2rem] border border-gray-200 group hover:border-[#FF4500] hover:shadow-2xl transition-all duration-500 flex flex-col">
             <div className="w-16 h-16 bg-orange-100 text-[#FF4500] rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🎯</div>
-            <h3 className="text-2xl font-bold mb-4">Proyectos a Medida</h3>
+            <h3 className="text-2xl font-bold mb-4">Marcas Virtuales Listas para Usar</h3>
             <p className="text-gray-600 flex-1 leading-relaxed">
-                Cada modelo de delivery requiere una estrategia de marketing y un motor operativo diferente. Realizamos un estudio de viabilidad y <strong>ajustamos el presupuesto exclusivamente al tamaño de tu proyecto</strong>.
+                Si no sabes qué más vender, te damos acceso a nuestro catálogo de marcas virtuales (hamburguesas, sushi, etc.) que ya sabemos que funcionan. Te las instalamos en tu sistema y empiezas a recibir pedidos extra casi sin esfuerzo.
             </p>
           </div>
         </div>

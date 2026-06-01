@@ -41,16 +41,41 @@ export default function AggressiveHero() {
           </a>
         </div>
         
-        {/* Prueba Social Minimalista */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center gap-6 opacity-60 hover:opacity-100 transition-opacity animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-           <div className="flex -space-x-4">
-              <img className="w-12 h-12 rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=100&h=100&fit=crop" alt="Hostelero 1"/>
-              <img className="w-12 h-12 rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=100&h=100&fit=crop" alt="Hostelero 2"/>
-              <img className="w-12 h-12 rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=100&h=100&fit=crop" alt="Hostelero 3"/>
-           </div>
-           <div className="text-left text-sm text-gray-400">
-              <span className="text-white font-bold block">+50 Hosteleros locales</span>
-              ya han bajado sus tiempos de espera.
+        {/* Prueba Social / SEO Ticker */}
+        <div className="mt-16 pt-8 w-full border-t border-white/10 flex flex-col items-center animate-fade-in-up overflow-hidden" style={{animationDelay: '0.4s'}}>
+           <p className="text-gray-400 text-sm font-medium mb-8">
+             Ingeniería comercial diseñada específicamente para:
+           </p>
+           
+           <style dangerouslySetInnerHTML={{__html: `
+             @keyframes scroll {
+               0% { transform: translateX(0); }
+               100% { transform: translateX(-50%); }
+             }
+             .animate-scroll {
+               animation: scroll 40s linear infinite;
+             }
+             .animate-scroll:hover {
+               animation-play-state: paused;
+             }
+           `}} />
+
+           {/* Contenedor del Ticker con desvanecimiento a los lados */}
+           <div className="w-full relative max-w-6xl flex overflow-hidden">
+             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none"></div>
+             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none"></div>
+             
+             <div className="flex gap-4 md:gap-6 items-center w-max animate-scroll py-2">
+               {[...Array(2)].map((_, i) => (
+                 <React.Fragment key={i}>
+                   {["Restaurantes", "Asadores", "Bares de Tapas", "Discotecas", "Cafeterías", "Pubs", "Salones Recreativos", "Catering", "Mesones", "Pizzerías", "Beach Clubs", "Dark Kitchens"].map((niche, idx) => (
+                     <span key={`${i}-${idx}`} className="text-gray-200 font-bold uppercase tracking-wider text-[10px] md:text-xs whitespace-nowrap bg-white/10 px-5 py-2 rounded-full border border-[#FF4500]/40 shadow-[0_0_15px_rgba(255,69,0,0.25)] hover:shadow-[0_0_25px_rgba(255,69,0,0.5)] hover:bg-white/20 hover:text-white transition-all cursor-default">
+                       {niche}
+                     </span>
+                   ))}
+                 </React.Fragment>
+               ))}
+             </div>
            </div>
         </div>
 

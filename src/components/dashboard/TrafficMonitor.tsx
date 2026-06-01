@@ -13,6 +13,7 @@ interface WebAnalyticsRow {
   referrer: string;
   utm_source: string;
   device_type: string;
+  metadata?: any;
 }
 
 export default function TrafficMonitor() {
