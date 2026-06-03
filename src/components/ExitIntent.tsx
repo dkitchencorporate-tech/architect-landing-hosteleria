@@ -1,100 +1,121 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 /**
  * src/components/ExitIntent.tsx
- * Componente de captura de leads por intención de salida (Embudo 3 Fases).
- * Protocolo: B2B, Consultivo, Alta Conversión.
+ * Componente de captura de leads por intención de salida.
+ * Flujo optimizado: Bonos de 1.150€ -> Cierre dual (WhatsApp rápido / Calendly corporativo).
  */
 
 export default function ExitIntent() {
   const [isVisible, setIsVisible] = useState(false);
   const [hasShown, setHasShown] = useState(false);
-  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isAnyModalOpen, setIsAnyModalOpen] = useState(false);
   
-  // Estados del Embudo
-  const [step, setStep] = useState(1);
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', consent: false });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
+  // Refs para tracking de scroll en móvil
+  const lastScrollY = useRef(0);
+  const lastScrollTime = useRef(Date.now());
+  
   useEffect(() => {
     if (typeof window === 'undefined' || hasShown) return;
 
-    // Retrasar la activación para no ser invasivo al entrar (mínimo 10 segundos en la página)
+    // Retrasar la activación para no ser invasivo al entrar (mínimo 5 segundos en la página)
     let canTrigger = false;
-    const triggerDelay = setTimeout(() => { canTrigger = true; }, 10000);
+    const triggerDelay = setTimeout(() => { canTrigger = true; }, 5000);
 
-    // --- DETECCIÓN DESKTOP (Mouse Leave superior) ---
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (canTrigger && e.clientY <= 5) {
+    const showModal = () => {
+      if (canTrigger && !hasShown && !isAnyModalOpen) {
         setIsVisible(true);
         setHasShown(true);
       }
     };
 
-    // --- DETECCIÓN MOBILE (Interacción / Inactividad) ---
-    let inactivityTimer: NodeJS.Timeout;
+    // --- DETECCIÓN DESKTOP (Mouse Leave superior) ---
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 10) {
+        showModal();
+      }
+    };
 
+    // --- DETECCIÓN MOBILE (Scroll Up Rápido + Inactividad) ---
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const currentTime = Date.now();
+      
+      const scrollDelta = lastScrollY.current - currentScrollY;
+      const timeDelta = currentTime - lastScrollTime.current;
+      
+      // Velocidad del scroll (px por ms)
+      const scrollVelocity = timeDelta > 0 ? (scrollDelta / timeDelta) : 0;
+      
+      // Si el usuario scrollea hacia arriba rápido (velocidad > 1.5) y está por debajo de 600px
+      if (currentScrollY > 600 && scrollVelocity > 1.5) {
+        showModal();
+      }
+      
+      lastScrollY.current = currentScrollY;
+      lastScrollTime.current = currentTime;
+      resetInactivity();
+    };
+
+    let inactivityTimer: NodeJS.Timeout;
     const resetInactivity = () => {
       clearTimeout(inactivityTimer);
-      // Disparar tras 60 segundos de inactividad 
+      // Disparar tras 60 segundos de inactividad
       inactivityTimer = setTimeout(() => {
-        if (canTrigger) {
-          setIsVisible(true);
-          setHasShown(true);
-        }
+        showModal();
       }, 60000);
     };
 
-    const handleChatOpen = () => setIsChatOpen(true);
-    const handleChatClose = () => setIsChatOpen(false);
+    const handleModalOpen = () => setIsAnyModalOpen(true);
+    const handleModalClose = () => setIsAnyModalOpen(false);
 
     document.addEventListener('mouseleave', handleMouseLeave);
-    window.addEventListener('touchstart', resetInactivity);
-    window.addEventListener('scroll', resetInactivity);
-    window.addEventListener('chat_opened', handleChatOpen);
-    window.addEventListener('chat_closed', handleChatClose);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('touchstart', resetInactivity, { passive: true });
+    
+    // Escuchar eventos globales de otros modales (ej: Calendly)
+    window.addEventListener('modal_opened', handleModalOpen);
+    window.addEventListener('modal_closed', handleModalClose);
+    window.addEventListener('chat_opened', handleModalOpen); // si hay chat flotante
+    window.addEventListener('chat_closed', handleModalClose);
     
     resetInactivity();
 
     return () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('touchstart', resetInactivity);
-      window.removeEventListener('scroll', resetInactivity);
-      window.removeEventListener('chat_opened', handleChatOpen);
-      window.removeEventListener('chat_closed', handleChatClose);
+      window.removeEventListener('modal_opened', handleModalOpen);
+      window.removeEventListener('modal_closed', handleModalClose);
+      window.removeEventListener('chat_opened', handleModalOpen);
+      window.removeEventListener('chat_closed', handleModalClose);
       clearTimeout(inactivityTimer);
       clearTimeout(triggerDelay);
     };
-  }, [hasShown]);
+  }, [hasShown, isAnyModalOpen]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.email || !formData.consent) return;
+  // Si no está visible o hay otro modal abierto, no renderizamos nada
+  if (!isVisible || isAnyModalOpen) return null;
+
+  // Redirigir hacia el ancla del Calendly o disparar el modal
+  const handleOpenCalendly = () => {
+    setIsVisible(false);
+    // Encontramos el botón principal de agendar para abrir el ConsultingModal original
+    // Alternativamente, el usuario puede simplemente scrollear a una sección.
+    // Usaremos dispatchEvent para abrir el ConsultingModal si está montado globalmente,
+    // o redirigir a un ancla si existe. 
     
-    setIsSubmitting(true);
-    try {
-      const response = await fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      
-      if (response.ok) {
-        setStep(3);
-      } else {
-        alert('Hubo un error al enviar la solicitud. Por favor, inténtalo de nuevo.');
-      }
-    } catch (error) {
-      console.error('Error enviando lead:', error);
-      alert('Error de conexión. Por favor, inténtalo de nuevo.');
-    } finally {
-      setIsSubmitting(false);
+    // Dispatch custom event if your app structure supports it:
+    // window.dispatchEvent(new Event('open_consulting_modal'));
+    
+    // O simplemente alertar al usuario o hacer scroll suave a la tarjeta de precios:
+    const baseElement = document.getElementById('solucion-base');
+    if (baseElement) {
+      baseElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  if (!isVisible || isChatOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 drop-shadow-2xl">
@@ -114,143 +135,79 @@ export default function ExitIntent() {
           </svg>
         </button>
 
-        <div className="text-center flex flex-col items-center mt-2 sm:mt-0">
+        <div className="text-center flex flex-col items-center mt-2 sm:mt-0 h-full w-full">
           
-          {/* FASE 1: PITCH B2B */}
-          {step === 1 && (
-            <div className="flex flex-col h-full w-full animate-in slide-in-from-right-4 duration-300">
-              
-              <div className="flex-none text-center">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-[#FF4500] rounded-full flex items-center justify-center text-xl sm:text-2xl mb-3 mx-auto group animate-bounce">
-                  ✋
-                </div>
-                <h2 className="text-xl sm:text-2xl font-black leading-tight text-gray-900 mb-2 text-balance">
-                  ¡Espera! No te vayas sin reclamar tus <span className="text-[#FF4500]">Bonos Exclusivos</span>
-                </h2>
-                <div className="text-[#FF4500] font-black text-[10px] sm:text-xs uppercase tracking-widest mb-3">
-                   BONIFICACIÓN POR ACTIVACIÓN (Valor: 620€)
-                </div>
-              </div>
-              
-              <div className="flex-1 overflow-y-auto pr-1 mb-4 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full">
-                <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm text-left">
-                  <div className="space-y-3.5 text-xs sm:text-sm font-medium text-gray-800">
-                    
-                    <div className="flex items-start gap-2.5">
-                      <span className="text-[#25D366] font-bold mt-0.5">✔</span> 
-                      <div>
-                        <strong className="text-gray-900 font-bold block">Auditoría Google Maps & Redes (150€)</strong>
-                        <span className="text-gray-500 leading-tight block mt-0.5">Análisis de tu ficha, informe PDF y consultoría privada de 20 min.</span>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-2.5">
-                      <span className="text-[#25D366] font-bold mt-0.5">✔</span> 
-                      <div>
-                        <strong className="text-gray-900 font-bold block">Diseño de Carta Física Premium (150€)</strong>
-                        <span className="text-gray-500 leading-tight block mt-0.5">Maquetamos tu menú en un PDF elegante y listo para imprenta.</span>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start gap-2.5">
-                      <span className="text-[#25D366] font-bold mt-0.5">✔</span> 
-                      <div>
-                        <strong className="text-gray-900 font-bold block">Estrategia de Venta Local (120€)</strong>
-                        <span className="text-gray-500 leading-tight block mt-0.5">Diseñamos una promoción para subir las ventas en tus días más lentos.</span>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-2.5">
-                      <span className="text-[#25D366] font-bold mt-0.5">✔</span> 
-                      <div>
-                        <strong className="text-gray-900 font-bold block">Lanzamiento Redes Sociales (200€)</strong>
-                        <span className="text-gray-500 leading-tight block mt-0.5">Pack de 12 publicaciones profesionales con IA, textos e imágenes.</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex-none pt-2 mt-auto">
-                <button 
-                  onClick={() => setStep(2)}
-                  className="block w-full bg-gray-900 text-white py-3.5 sm:py-4 rounded-full font-black text-base sm:text-lg shadow-[0_10px_20px_rgba(0,0,0,0.1)] hover:bg-[#FF4500] hover:-translate-y-1 transition-all duration-300"
-                >
-                  Quiero mis Bonos y Consultoría
-                </button>
-              </div>
-
+          <div className="flex-none text-center">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-[#FF4500] rounded-full flex items-center justify-center text-xl sm:text-2xl mb-3 mx-auto group animate-bounce">
+              🎁
             </div>
-          )}
-
-          {/* FASE 2: FORMULARIO */}
-          {step === 2 && (
-            <div className="animate-in slide-in-from-right-4 duration-300 w-full">
-              <h2 className="text-2xl font-black text-gray-900 mb-2">Solicita tu Auditoría</h2>
-              <p className="text-sm text-gray-500 mb-6 font-medium">Déjanos tus datos para asignarte un Consultor Senior.</p>
-              
-              <form onSubmit={handleSubmit} className="space-y-4 text-left">
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Nombre Completo</label>
-                  <input type="text" required value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-[#FF4500] focus:ring-2 focus:ring-orange-100 transition-all font-medium text-gray-900" placeholder="Ej. Carlos Martínez" />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">WhatsApp</label>
-                  <input type="tel" required value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-[#FF4500] focus:ring-2 focus:ring-orange-100 transition-all font-medium text-gray-900" placeholder="+34 600 000 000" />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wide mb-1">Email Profesional</label>
-                  <input type="email" required value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-[#FF4500] focus:ring-2 focus:ring-orange-100 transition-all font-medium text-gray-900" placeholder="carlos@restaurante.com" />
+            <h2 className="text-xl sm:text-2xl font-black leading-tight text-gray-900 mb-2 text-balance">
+              ¿Te vas tan pronto? Llévate nuestro <span className="text-[#FF4500]">Pack de Arranque</span>
+            </h2>
+            <div className="text-[#FF4500] font-black text-[10px] sm:text-xs uppercase tracking-widest mb-4">
+               Totalmente GRATIS (Valor: 1.150€)
+            </div>
+          </div>
+          
+          <div className="flex-1 w-full overflow-y-auto pr-1 mb-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full">
+            <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm text-left">
+              <div className="space-y-4 text-xs sm:text-sm font-medium text-gray-800">
+                
+                <div className="flex items-start gap-3">
+                  <span className="text-[#25D366] font-bold mt-0.5">✔</span> 
+                  <div>
+                    <strong className="text-gray-900 font-bold block">Auditoría Fuga de Clientes (350€)</strong>
+                    <span className="text-gray-500 leading-tight block mt-0.5">Análisis de tu Google Maps para robar tráfico a tu competencia.</span>
+                  </div>
                 </div>
                 
-                <label className="flex items-start gap-3 mt-4 cursor-pointer group">
-                  <div className="relative flex items-center mt-1">
-                    <input type="checkbox" required checked={formData.consent} onChange={e => setFormData({...formData, consent: e.target.checked})} className="peer w-5 h-5 appearance-none border-2 border-gray-300 rounded-md checked:bg-[#FF4500] checked:border-[#FF4500] transition-colors cursor-pointer" />
-                    <svg className="absolute w-3 h-3 pointer-events-none opacity-0 peer-checked:opacity-100 text-white left-1 top-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
+                <div className="flex items-start gap-3">
+                  <span className="text-[#25D366] font-bold mt-0.5">✔</span> 
+                  <div>
+                    <strong className="text-gray-900 font-bold block">Ingeniería de Carta Física (250€)</strong>
+                    <span className="text-gray-500 leading-tight block mt-0.5">Rediseño con neuromarketing enfocado en platos de alto margen.</span>
                   </div>
-                  <span className="text-xs text-gray-500 font-medium leading-tight">
-                    Acepto las políticas de privacidad y consiento ser contactado vía WhatsApp para coordinar mi consultoría.
-                  </span>
-                </label>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <span className="text-[#25D366] font-bold mt-0.5">✔</span> 
+                  <div>
+                    <strong className="text-gray-900 font-bold block">Estrategia Días Valle (300€)</strong>
+                    <span className="text-gray-500 leading-tight block mt-0.5">Plan de acción táctico para llenar tu local martes y miércoles.</span>
+                  </div>
+                </div>
 
-                <button 
-                  type="submit"
-                  disabled={isSubmitting || !formData.consent}
-                  className="w-full mt-6 bg-[#FF4500] text-white py-4 rounded-xl font-black text-lg shadow-xl hover:bg-orange-600 transition-all duration-300 disabled:opacity-50 disabled:bg-gray-400 flex justify-center items-center gap-2"
-                >
-                  {isSubmitting ? (
-                    <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                  ) : "Confirmar Solicitud"}
-                </button>
-              </form>
-            </div>
-          )}
+                <div className="flex items-start gap-3">
+                  <span className="text-[#25D366] font-bold mt-0.5">✔</span> 
+                  <div>
+                    <strong className="text-gray-900 font-bold block">Kit Lanzamiento Redes (250€)</strong>
+                    <span className="text-gray-500 leading-tight block mt-0.5">12 publicaciones profesionales generadas con IA listas para subir.</span>
+                  </div>
+                </div>
 
-          {/* FASE 3: ÉXITO Y URGENCIA */}
-          {step === 3 && (
-            <div className="animate-in zoom-in-95 duration-500 py-6">
-              <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-4xl mb-6 mx-auto">
-                ✓
-              </div>
-              <h2 className="text-2xl font-black text-gray-900 mb-3">¡Solicitud Registrada!</h2>
-              <p className="text-gray-600 font-medium mb-8 leading-relaxed">
-                Hemos recibido tus datos correctamente. Un Consultor Senior analizará tu caso y te contactará en breve.
-              </p>
-              
-              <div className="border-t border-gray-100 pt-8 w-full">
-                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">¿Tu negocio necesita soluciones urgentes?</p>
-                <a 
-                  href={`https://wa.me/34611499674?text=Hola,%20acabo%20de%20dejar%20mis%20datos%20(${formData.name}).%20Quiero%20hablar%20con%20un%20consultor%20ahora%20mismo.`}
-                  className="block w-full bg-[#25D366] text-white py-4 rounded-full font-black text-lg shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:bg-[#1ebd5a] hover:-translate-y-1 transition-all duration-300"
-                >
-                  Quiero comunicarme YA
-                </a>
               </div>
             </div>
-          )}
+          </div>
+
+          <div className="flex-none w-full mt-auto space-y-4">
+            {/* CTA Primario: WhatsApp (Mínima Fricción) */}
+            <a 
+              href="https://wa.me/34611499674?text=Hola,%20iba%20a%20salir%20de%20la%20web%20pero%20vi%20el%20Pack%20de%20Arranque%20de%201.150€.%20Me%20interesa%20reclamarlo."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full bg-[#25D366] text-white py-4 px-4 rounded-xl font-black text-lg shadow-[0_10px_20px_rgba(37,211,102,0.2)] hover:bg-[#1ebd5a] hover:-translate-y-1 transition-all duration-300 justify-center items-center gap-2"
+            >
+              Reclamar Bonos por WhatsApp
+            </a>
+            
+            {/* CTA Secundario: Scroll suave */}
+            <button 
+              onClick={handleOpenCalendly}
+              className="w-full text-gray-500 font-bold hover:text-[#FF4500] transition-colors text-sm py-2 underline decoration-transparent hover:decoration-[#FF4500] underline-offset-4"
+            >
+              O leer más detalles sobre la Base Operativa
+            </button>
+          </div>
 
         </div>
       </div>

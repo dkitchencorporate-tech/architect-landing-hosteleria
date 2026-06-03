@@ -19,8 +19,29 @@ export default function WhatsAppHero() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-orange-400">La IA llena el local.</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-lg leading-relaxed font-medium">
-              El teléfono suena, tú estás sirviendo platos y pierdes reservas de mesas grandes. El Recepcionista IA atiende WhatsApp, cierra reservas e integra los pagos.
+              El teléfono suena y pierdes mesas grandes por no poder contestar. Nuestro Ecosistema (Kommo CRM + IA) atiende WhatsApp, califica al cliente y cierra la reserva.
             </p>
+            <div className="mt-4 space-y-3">
+              <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-400 text-xl mt-0.5">👁️</span>
+                  <div>
+                    <h4 className="text-white font-bold text-sm">Modo Híbrido en Tiempo Real</h4>
+                    <p className="text-gray-400 text-xs mt-1">Observa cómo la IA responde desde tu móvil. Si el cliente pide algo especial, intervienes con un clic y tomas el control del chat.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-[#1A1A1A] border border-orange-500/30 p-4 rounded-xl shadow-[0_10px_30px_rgba(255,69,0,0.1)]">
+                <div className="flex items-start gap-3">
+                  <span className="text-orange-400 text-xl mt-0.5">🧠</span>
+                  <div>
+                    <h4 className="text-white font-bold text-sm">Filtro Avanzado de Grupos y Alérgenos</h4>
+                    <p className="text-gray-400 text-xs mt-1 leading-relaxed">Si piden mesa para <strong className="text-gray-300">más de 8 personas</strong>, la IA no cierra a ciegas; pausa la reserva y te alerta en el CRM para que ofrezcas un menú cerrado de alto margen.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
               <DemoLauncher />
             </div>

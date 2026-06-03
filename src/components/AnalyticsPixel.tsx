@@ -9,35 +9,43 @@ function AnalyticsPixelLogic() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    // 0. EXCLUIR DASHBOARD ADMINISTRATIVO
+    if (pathname.startsWith('/admin-architect')) return;
+
     const trackView = async () => {
-      if (!supabaseClient) {
-        console.warn('[Analytics Pixel] Supabase client not initialized.');
-        return;
-      }
+      if (!supabaseClient) return;
 
       // 1. Gestionar Session ID
       let sessionId = localStorage.getItem('architect_session_id');
       if (!sessionId) {
-        // Generar UUID siguiendo especificación (usando crypto.randomUUID si está disponible)
         sessionId = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substring(2, 15);
         localStorage.setItem('architect_session_id', sessionId);
       }
 
-      // 2. Capturar UTMs
+      // 2. Geolocalización Inteligente (IPAPI)
+      let geo = { city: 'Desconocido', country_name: 'Desconocido' };
+      try {
+        const geoRes = await fetch('https://ipapi.co/json/');
+        if (geoRes.ok) {
+          const geoData = await geoRes.json();
+          geo = { city: geoData.city, country_name: geoData.country_name };
+        }
+      } catch (err) {
+        console.warn('[Analytics] Bloqueador de anuncios previno la geolocalización.');
+      }
+
+      // 3. Capturar UTMs
       const utm_source = searchParams.get('utm_source');
       const utm_medium = searchParams.get('utm_medium');
       const utm_campaign = searchParams.get('utm_campaign');
 
-      // 3. Determinar Device Type
+      // 4. Determinar Device Type
       const ua = navigator.userAgent;
       let deviceType = 'desktop';
-      if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-        deviceType = 'tablet';
-      } else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-        deviceType = 'mobile';
-      }
+      if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) deviceType = 'tablet';
+      else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) deviceType = 'mobile';
 
-      // 4. Preparar Data
+      // 5. Preparar Data
       const payload = {
         session_id: sessionId,
         path: pathname,
@@ -45,28 +53,23 @@ function AnalyticsPixelLogic() {
         utm_source,
         utm_medium,
         utm_campaign,
-        user_agent: ua,
         device_type: deviceType,
-        screen_width: window.innerWidth,
-        screen_height: window.innerHeight,
         metadata: {
+          user_agent: ua,
+          screen_width: window.innerWidth,
+          screen_height: window.innerHeight,
           language: navigator.language,
-          timestamp: new Date().toISOString()
+          timestamp: new Date().toISOString(),
+          city: geo.city,
+          country: geo.country_name,
+          event: 'page_view'
         }
       };
 
-      console.log("[Analytics] Evento enviado:", payload);
+      console.log("[Analytics] Lead Detectado:", payload);
 
-      // 5. Inserción en Supabase
-      const { error } = await supabaseClient
-        .from('web_analytics')
-        .insert([payload]);
-
-      if (error) {
-        console.error('[Analytics Pixel] Error inserting data:', error.message);
-      } else {
-        console.log('[Analytics Pixel] Event recorded successfully.');
-      }
+      // 6. Inserción en Supabase
+      await supabaseClient.from('web_analytics').insert([payload]);
     };
 
     trackView();

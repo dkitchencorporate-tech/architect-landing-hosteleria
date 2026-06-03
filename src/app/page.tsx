@@ -8,6 +8,7 @@ import HighTicketEcosystem from '@/components/sections/HighTicketEcosystem';
 import AggressiveHero from '@/components/sections/AggressiveHero';
 import WhatsAppHero from '@/components/sections/WhatsAppHero';
 import FAQ from '@/components/sections/FAQ';
+import VisionAndEmpathy from '@/components/sections/VisionAndEmpathy';
 
 export default function Home() {
   return (
@@ -18,11 +19,35 @@ export default function Home() {
       
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 shadow-xl transition-all">
-        <div className="flex justify-between items-center py-4 px-6 md:px-8 max-w-7xl mx-auto">
-          <div className="text-xl md:text-2xl font-black tracking-tighter text-white hover:scale-105 transition-transform cursor-pointer">
-            Architect<span className="text-[#FF4500]">.Sys</span>
+        <div className="flex flex-col md:flex-row justify-between items-center py-3 md:py-4 px-4 md:px-8 max-w-7xl mx-auto gap-3 md:gap-0">
+          <div className="flex justify-between items-center w-full md:w-auto">
+            <div className="text-xl md:text-2xl font-black tracking-tighter text-white hover:scale-105 transition-transform cursor-pointer">
+              Architect<span className="text-[#FF4500]">.Sys</span>
+            </div>
+            <a href="https://wa.me/34611499674?text=Hola,%20quiero%20solicitar%20la%20Auditoría%20Gratuita." className="md:hidden inline-flex bg-[#FF4500] text-white px-4 py-2 rounded-full font-bold text-[10px] sm:text-xs hover:bg-orange-600 transition-all shadow-lg">
+              Auditoría Gratuita
+            </a>
           </div>
-          <a href="https://wa.me/34611499674?text=Hola,%20quiero%20solicitar%20la%20Auditoría%20Gratuita." className="inline-flex bg-[#FF4500] text-white px-5 py-2 md:px-6 md:py-2.5 rounded-full font-bold text-xs md:text-sm hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1 items-center gap-2">
+          
+          <div className="flex items-center bg-[#1A1A1A]/90 border border-white/10 rounded-full p-1.5 shadow-[0_4px_30px_rgba(255,69,0,0.2)] backdrop-blur-md w-full md:w-auto overflow-x-auto justify-start md:justify-center animate-pulse" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <a href="#suscripciones" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
+              Suscripciones
+            </a>
+            <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>
+            <a href="#eventos" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
+              Eventos
+            </a>
+            <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>
+            <a href="#automatizacion" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
+              Automatización
+            </a>
+            <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>
+            <a href="#dark-kitchen" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
+              Dark Kitchen
+            </a>
+          </div>
+
+          <a href="https://wa.me/34611499674?text=Hola,%20quiero%20solicitar%20la%20Auditoría%20Gratuita." className="hidden md:inline-flex bg-[#FF4500] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1 items-center gap-2">
             <span>Auditoría Gratuita</span>
           </a>
         </div>
@@ -31,46 +56,29 @@ export default function Home() {
       {/* NEW SECTION 1: AGGRESSIVE HERO (TRAFICO FRIO) */}
       <AggressiveHero />
 
-      {/* SECTION 2: THE PAIN */}
-      <section className="bg-white py-16 md:py-24 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-12 md:mb-20 max-w-4xl mx-auto text-balance">¿Te suena familiar esta <span className="text-red-500">pesadilla?</span></h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            <div className="group bg-[#FDFCF8] p-10 rounded-[2rem] border border-gray-100 hover:border-red-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
-              <div className="text-4xl mb-6 transform group-hover:scale-125 transition-transform duration-500">📉</div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-red-500 transition-colors">El Martes Vacío</h3>
-              <p className="text-gray-600 leading-relaxed text-lg text-pretty">Gastas luz y pagas nóminas, pero el local está a la mitad. Necesitas que tus clientes vuelvan sin tener que rogarles.</p>
-            </div>
-            <div className="group bg-[#FDFCF8] p-10 rounded-[2rem] border border-gray-100 hover:border-red-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
-              <div className="text-4xl mb-6 transform group-hover:scale-125 transition-transform duration-500">👻</div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-red-500 transition-colors">El Teléfono Fantasma</h3>
-              <p className="text-gray-600 leading-relaxed text-lg text-pretty">Viernes, 21:00h. El teléfono suena y nadie lo coge. Acabas de perder dinero porque tu personal solo tiene dos manos.</p>
-            </div>
-            <div className="group bg-[#FDFCF8] p-10 rounded-[2rem] border border-gray-100 hover:border-red-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
-              <div className="text-4xl mb-6 transform group-hover:scale-125 transition-transform duration-500">🛵</div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-red-500 transition-colors">El Peaje de Glovo</h3>
-              <p className="text-gray-600 leading-relaxed text-lg text-pretty">Las apps de delivery te roban el 30%. Trabajas para ellos, corres para ellos, pero el riesgo y el sudor lo pones tú.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* NEW SECTION 2: VISION AND EMPATHY (Replaces the Pain 3-cards) */}
+      <VisionAndEmpathy />
 
       {/* CORE FUNNEL */}
-      <DigitalPresenceValue />
-      
-      <div id="solucion-base">
-        <TheTrojanHorse />
+      <div id="suscripciones">
+        <DigitalPresenceValue />
+        <div id="solucion-base">
+          <TheTrojanHorse />
+        </div>
       </div>
 
-      <EventLibraryHook />
+      <div id="eventos">
+        <EventLibraryHook />
+      </div>
 
-      {/* SUCCESS STORY 2: QR MENUS */}
-      <section className="py-12 bg-[#FF4500] text-white">
-        <div className="max-w-5xl mx-auto px-8 flex flex-col md:flex-row items-center gap-8">
-           <div className="w-24 h-24 bg-white text-[#FF4500] rounded-full flex items-center justify-center text-4xl shrink-0 font-black shadow-2xl">⚡</div>
+      {/* SUCCESS STORY 2: EVENT LIBRARY */}
+      <section className="py-12 bg-[#FF4500] text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"></div>
+        <div className="max-w-5xl mx-auto px-8 flex flex-col md:flex-row items-center gap-8 relative z-10">
+           <div className="w-24 h-24 bg-white text-[#FF4500] rounded-full flex items-center justify-center text-5xl shrink-0 font-black shadow-2xl">🍻</div>
            <div>
-              <h4 className="text-3xl font-black mb-3">"La Cervecería del Puerto" rota sus mesas un <span className="text-yellow-300">20% más rápido</span>.</h4>
-              <p className="text-white/90 text-lg italic">"En la terraza perdíamos mucho tiempo tomando nota de las bebidas. Instalamos la Carta Interactiva con fotos que dan hambre. Ahora, el cliente se sienta, escanea y sabe qué quiere antes de que lleguemos a la mesa. Servimos más rápido y el ticket medio ha subido un 15%."</p>
+              <h4 className="text-3xl font-black mb-3">"Taberna Los Arcos" facturó <span className="text-yellow-300">900€ extra en solo 2 horas</span> un jueves por la tarde.</h4>
+              <p className="text-white/90 text-lg italic">"Los jueves de 18h a 20h solían ser horas de pura angustia, con el local casi vacío y el personal parado. Activamos una 'Cata Premium' de la Biblioteca de Eventos y en 48 horas agotamos plazas. Transformó un turno muerto en una experiencia sensorial ultra-premium que nos hizo facturar en dos horas lo que a veces nos costaba un día entero de trabajo."</p>
            </div>
         </div>
       </section>
@@ -91,8 +99,9 @@ export default function Home() {
             </div>
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-24 h-24 bg-[#FF4500] rounded-full flex items-center justify-center text-3xl font-black text-white shadow-lg mb-6 group-hover:scale-110 transition-all duration-500 shadow-orange-500/40">2</div>
-              <h3 className="text-2xl font-bold mb-4">Cierre Automático</h3>
-              <p className="text-gray-600 text-lg">Tu Agente de IA atiende el WhatsApp en segundos, enamora al cliente y cierra la reserva o el pedido.</p>
+              <h3 className="text-2xl font-bold mb-1">Cierre Automático</h3>
+              <span className="block text-[10px] text-[#FF4500] font-black uppercase tracking-widest mb-4 border border-[#FF4500]/30 rounded-full px-3 py-1">(Fase Avanzada)</span>
+              <p className="text-gray-600 text-lg">Tu propio CRM con Agente IA atiende el WhatsApp en segundos, gestiona el flujo y cierra reservas sin que toques el móvil.</p>
             </div>
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-24 h-24 bg-gray-900 rounded-full flex items-center justify-center text-3xl font-black text-white shadow-lg mb-6 group-hover:scale-110 group-hover:bg-black transition-all duration-500">3</div>
@@ -105,10 +114,36 @@ export default function Home() {
 
       {/* TRANSITION TO HIGH TICKET */}
       <WhatsAppHero />
-      <HighTicketEcosystem />
+      <div id="automatizacion">
+        <HighTicketEcosystem />
+      </div>
+
+      {/* TRANSICIÓN DE DOLOR AL MODELO DARK KITCHEN */}
+      <section className="py-20 bg-[#050505] text-white relative overflow-hidden border-t border-white/10">
+        {/* Glow Effects */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#FF4500] rounded-full blur-[120px] opacity-20 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-orange-600 rounded-full blur-[150px] opacity-10 pointer-events-none"></div>
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+        
+        <div className="max-w-5xl mx-auto px-8 relative z-10 text-center">
+          <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-xs font-bold tracking-[0.2em] uppercase mb-8 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            El precio de improvisar
+          </div>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-8 text-balance">
+            Si tu sistema es un caos, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-orange-400 border-b-4 border-[#FF4500]/50 pb-1">más clientes significará tu ruina.</span>
+          </h2>
+          <p className="text-lg md:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-medium text-pretty mb-12">
+            Muchos negocios intentan escalar abriendo canales en 5 apps de delivery a la vez. ¿El resultado? Pierden hasta el 30% de rentabilidad en comisiones, colapsan los fogones y queman al equipo. El verdadero crecimiento exige una infraestructura quirúrgica.
+          </p>
+          <div className="w-px h-24 bg-gradient-to-b from-[#FF4500] to-transparent mx-auto"></div>
+        </div>
+      </section>
 
       {/* SECCIÓN DARK KITCHEN */}
-      <DarkKitchen />
+      <div id="dark-kitchen">
+        <DarkKitchen />
+      </div>
 
       {/* NUESTRO PROCESO */}
       <section className="py-16 md:py-24 bg-white">
@@ -122,27 +157,27 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-[#FDFCF8] p-8 rounded-2xl shadow-lg border border-gray-100 relative group hover:-translate-y-2 transition-transform duration-300">
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">1</div>
-              <div className="text-4xl mb-4 relative z-10">🤝</div>
-              <h3 className="text-xl font-bold mb-2 relative z-10">Acuerdo Claro</h3>
-              <p className="text-gray-600 relative z-10">Hablamos por WhatsApp. Confirmamos los detalles y el plan que necesitas.</p>
+              <div className="text-4xl mb-4 relative z-10">📊</div>
+              <h3 className="text-xl font-bold mb-2 relative z-10">Auditoría de Viabilidad</h3>
+              <p className="text-gray-600 relative z-10">Analizamos tus números, capacidad operativa y fugas de capital para diseñar un plan exacto.</p>
             </div>
             <div className="bg-[#FDFCF8] p-8 rounded-2xl shadow-lg border border-gray-100 relative group hover:-translate-y-2 transition-transform duration-300">
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">2</div>
-              <div className="text-4xl mb-4 relative z-10">🚀</div>
-              <h3 className="text-xl font-bold mb-2 relative z-10">Despliegue</h3>
-              <p className="text-gray-600 relative z-10">Activamos tu entorno web, los menús digitales y tu agente de captación en 48h.</p>
+              <div className="text-4xl mb-4 relative z-10">🏗️</div>
+              <h3 className="text-xl font-bold mb-2 relative z-10">Fundación Digital</h3>
+              <p className="text-gray-600 relative z-10">Desplegamos tu ecosistema propio: carta interactiva, PWA y base de datos sin comisiones.</p>
             </div>
             <div className="bg-[#FDFCF8] p-8 rounded-2xl shadow-lg border border-gray-100 relative group hover:-translate-y-2 transition-transform duration-300">
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">3</div>
-              <div className="text-4xl mb-4 relative z-10">📈</div>
-              <h3 className="text-xl font-bold mb-2 relative z-10">Crecimiento</h3>
-              <p className="text-gray-600 relative z-10">Iniciamos las estrategias de atracción para llenar tu restaurante (Plan Growth).</p>
+              <div className="text-4xl mb-4 relative z-10">🔥</div>
+              <h3 className="text-xl font-bold mb-2 relative z-10">Inyección de Tráfico</h3>
+              <p className="text-gray-600 relative z-10">Activamos el Plan Growth. Llenamos tus mesas los días valle y recuperamos tu inversión inicial.</p>
             </div>
             <div className="bg-[#FDFCF8] p-8 rounded-2xl shadow-lg border border-gray-100 relative group hover:-translate-y-2 transition-transform duration-300">
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">4</div>
-              <div className="text-4xl mb-4 relative z-10">✅</div>
-              <h3 className="text-xl font-bold mb-2 relative z-10">Escalabilidad</h3>
-              <p className="text-gray-600 relative z-10">Cuando no des abasto, implementamos el Recepcionista 24/7 en WhatsApp.</p>
+              <div className="text-4xl mb-4 relative z-10">🤖</div>
+              <h3 className="text-xl font-bold mb-2 relative z-10">Escalado Autónomo</h3>
+              <p className="text-gray-600 relative z-10">Implementamos el Agente IA en WhatsApp o KDS multimarca cuando necesites absorber más volumen.</p>
             </div>
           </div>
         </div>

@@ -3,20 +3,20 @@ import React, { useState } from 'react';
 
 const faqs = [
   {
-    question: "¿Qué pasa si mis camareros no saben usar la tecnología?",
-    answer: "No tienen que instalar nada ni aprender sistemas complejos. Nuestra plataforma está diseñada para ser más sencilla que usar WhatsApp. El cliente escanea, pide y tú recibes la orden clara. Cero curva de aprendizaje."
+    question: "¿Qué incluye exactamente la Base Operativa de 700€?",
+    answer: "Es un ecosistema llave en mano. Incluye el diseño de tu web profesional, la carta interactiva con menú QR, el sistema de reservas directas y la configuración de SEO local en Google Maps. Además de los 4 bonos de consultoría gratuitos. Tú solo tienes que darnos la información y nosotros construimos todo."
   },
   {
-    question: "¿Tengo que comprar tablets o hardware caro?",
-    answer: "Absolutamente no. El cliente usa su propio teléfono móvil para ver la carta y pedir. Tú puedes gestionar todo desde tu móvil actual, una tablet vieja o el ordenador de caja que ya tienes."
+    question: "¿Tengo que pagar comisiones por las reservas o pedidos?",
+    answer: "Cero comisiones. A diferencia de las apps de terceros que se quedan hasta un 30% de tu margen, nuestro sistema redirige los pagos y las reservas directamente a tu negocio. Es tu marca, son tus clientes y tuyos son los beneficios."
   },
   {
-    question: "¿La Licencia Completa (450€) tiene algún gasto oculto?",
-    answer: "No hay cuotas mensuales ni comisiones por venta. Es un pago único. El único mantenimiento anual sería la renovación de tu nombre de dominio web (.com o .es), que suele costar unos 15€ al año si decides comprarlo con nosotros."
+    question: "¿Hay algún gasto oculto después de la activación?",
+    answer: "No hay cuotas sorpresa. Como Bono Especial, te regalamos los primeros 2 meses de alojamiento y soporte técnico. A partir del tercer mes, el mantenimiento del servidor premium, la protección anti-caídas y el soporte continuo tiene un coste de 69€/mes. No hay permanencia; el sistema es tuyo."
   },
   {
-    question: "¿Cuánto tardáis en tener todo listo?",
-    answer: "Trabajamos rápido porque sabemos que el fin de semana está a la vuelta de la esquina. Una vez nos envíes tu carta actual, tendrás todo el sistema digital desplegado y tu agente IA configurado en un máximo de 48 horas."
+    question: "¿Tengo que instalar el Agente de Inteligencia Artificial obligatoriamente?",
+    answer: "No. El Agente Híbrido de Recepción (WhatsApp + CRM) es un módulo de escalabilidad avanzado. Lo recomendamos solo para restaurantes que ya tienen un alto volumen de clientes y pierden dinero al no poder contestar llamadas los fines de semana. Puedes añadirlo en el futuro."
   }
 ];
 
