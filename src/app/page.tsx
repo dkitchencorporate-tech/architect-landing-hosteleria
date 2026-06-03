@@ -8,6 +8,7 @@ import HighTicketEcosystem from '@/components/sections/HighTicketEcosystem';
 import AggressiveHero from '@/components/sections/AggressiveHero';
 import WhatsAppHero from '@/components/sections/WhatsAppHero';
 import FAQ from '@/components/sections/FAQ';
+import VisionAndEmpathy from '@/components/sections/VisionAndEmpathy';
 
 export default function Home() {
   return (
@@ -55,29 +56,8 @@ export default function Home() {
       {/* NEW SECTION 1: AGGRESSIVE HERO (TRAFICO FRIO) */}
       <AggressiveHero />
 
-      {/* SECTION 2: THE PAIN */}
-      <section className="bg-white py-16 md:py-24 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-center mb-12 md:mb-20 max-w-4xl mx-auto text-balance">¿Te suena familiar esta <span className="text-red-500">pesadilla?</span></h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-            <div className="group bg-[#FDFCF8] p-10 rounded-[2rem] border border-gray-100 hover:border-red-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
-              <div className="text-4xl mb-6 transform group-hover:scale-125 transition-transform duration-500">📉</div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-red-500 transition-colors">El Martes Vacío</h3>
-              <p className="text-gray-600 leading-relaxed text-lg text-pretty">Gastas luz y pagas nóminas, pero el local está a la mitad. Necesitas que tus clientes vuelvan sin tener que rogarles.</p>
-            </div>
-            <div className="group bg-[#FDFCF8] p-10 rounded-[2rem] border border-gray-100 hover:border-red-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
-              <div className="text-4xl mb-6 transform group-hover:scale-125 transition-transform duration-500">👻</div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-red-500 transition-colors">El Teléfono Fantasma</h3>
-              <p className="text-gray-600 leading-relaxed text-lg text-pretty">Viernes, 21:00h. El teléfono suena y nadie lo coge. Acabas de perder dinero porque tu personal solo tiene dos manos.</p>
-            </div>
-            <div className="group bg-[#FDFCF8] p-10 rounded-[2rem] border border-gray-100 hover:border-red-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-500">
-              <div className="text-4xl mb-6 transform group-hover:scale-125 transition-transform duration-500">🛵</div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-red-500 transition-colors">El Peaje de Glovo</h3>
-              <p className="text-gray-600 leading-relaxed text-lg text-pretty">Las apps de delivery te roban el 30%. Trabajas para ellos, corres para ellos, pero el riesgo y el sudor lo pones tú.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* NEW SECTION 2: VISION AND EMPATHY (Replaces the Pain 3-cards) */}
+      <VisionAndEmpathy />
 
       {/* CORE FUNNEL */}
       <div id="suscripciones">
@@ -98,7 +78,7 @@ export default function Home() {
            <div className="w-24 h-24 bg-white text-[#FF4500] rounded-full flex items-center justify-center text-5xl shrink-0 font-black shadow-2xl">🍻</div>
            <div>
               <h4 className="text-3xl font-black mb-3">"Taberna Los Arcos" facturó <span className="text-yellow-300">900€ extra en solo 2 horas</span> un jueves por la tarde.</h4>
-              <p className="text-white/90 text-lg italic">"Los jueves de 18h a 20h solían ser horas de pura angustia, con el local casi vacío y el personal parado. Activamos una 'Cata Premium' de la Biblioteca de Eventos y en 48 horas agotamos plazas. Transformaron un turno muerto en una experiencia sensorial ultra-premium que nos hizo facturar en dos horas lo que a veces nos costaba un día entero de trabajo."</p>
+              <p className="text-white/90 text-lg italic">"Los jueves de 18h a 20h solían ser horas de pura angustia, con el local casi vacío y el personal parado. Activamos una 'Cata Premium' de la Biblioteca de Eventos y en 48 horas agotamos plazas. Transformó un turno muerto en una experiencia sensorial ultra-premium que nos hizo facturar en dos horas lo que a veces nos costaba un día entero de trabajo."</p>
            </div>
         </div>
       </section>
@@ -119,8 +99,9 @@ export default function Home() {
             </div>
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-24 h-24 bg-[#FF4500] rounded-full flex items-center justify-center text-3xl font-black text-white shadow-lg mb-6 group-hover:scale-110 transition-all duration-500 shadow-orange-500/40">2</div>
-              <h3 className="text-2xl font-bold mb-4">Cierre Automático</h3>
-              <p className="text-gray-600 text-lg">Tu Agente de IA atiende el WhatsApp en segundos, enamora al cliente y cierra la reserva o el pedido.</p>
+              <h3 className="text-2xl font-bold mb-1">Cierre Automático</h3>
+              <span className="block text-[10px] text-[#FF4500] font-black uppercase tracking-widest mb-4 border border-[#FF4500]/30 rounded-full px-3 py-1">(Fase Avanzada)</span>
+              <p className="text-gray-600 text-lg">Tu propio CRM con Agente IA atiende el WhatsApp en segundos, gestiona el flujo y cierra reservas sin que toques el móvil.</p>
             </div>
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-24 h-24 bg-gray-900 rounded-full flex items-center justify-center text-3xl font-black text-white shadow-lg mb-6 group-hover:scale-110 group-hover:bg-black transition-all duration-500">3</div>
@@ -176,27 +157,27 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-[#FDFCF8] p-8 rounded-2xl shadow-lg border border-gray-100 relative group hover:-translate-y-2 transition-transform duration-300">
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">1</div>
-              <div className="text-4xl mb-4 relative z-10">🤝</div>
-              <h3 className="text-xl font-bold mb-2 relative z-10">Acuerdo Claro</h3>
-              <p className="text-gray-600 relative z-10">Hablamos por WhatsApp. Confirmamos los detalles y el plan que necesitas.</p>
+              <div className="text-4xl mb-4 relative z-10">📊</div>
+              <h3 className="text-xl font-bold mb-2 relative z-10">Auditoría de Viabilidad</h3>
+              <p className="text-gray-600 relative z-10">Analizamos tus números, capacidad operativa y fugas de capital para diseñar un plan exacto.</p>
             </div>
             <div className="bg-[#FDFCF8] p-8 rounded-2xl shadow-lg border border-gray-100 relative group hover:-translate-y-2 transition-transform duration-300">
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">2</div>
-              <div className="text-4xl mb-4 relative z-10">🚀</div>
-              <h3 className="text-xl font-bold mb-2 relative z-10">Despliegue</h3>
-              <p className="text-gray-600 relative z-10">Activamos tu entorno web, los menús digitales y tu agente de captación en 48h.</p>
+              <div className="text-4xl mb-4 relative z-10">🏗️</div>
+              <h3 className="text-xl font-bold mb-2 relative z-10">Fundación Digital</h3>
+              <p className="text-gray-600 relative z-10">Desplegamos tu ecosistema propio: carta interactiva, PWA y base de datos sin comisiones.</p>
             </div>
             <div className="bg-[#FDFCF8] p-8 rounded-2xl shadow-lg border border-gray-100 relative group hover:-translate-y-2 transition-transform duration-300">
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">3</div>
-              <div className="text-4xl mb-4 relative z-10">📈</div>
-              <h3 className="text-xl font-bold mb-2 relative z-10">Crecimiento</h3>
-              <p className="text-gray-600 relative z-10">Iniciamos las estrategias de atracción para llenar tu restaurante (Plan Growth).</p>
+              <div className="text-4xl mb-4 relative z-10">🔥</div>
+              <h3 className="text-xl font-bold mb-2 relative z-10">Inyección de Tráfico</h3>
+              <p className="text-gray-600 relative z-10">Activamos el Plan Growth. Llenamos tus mesas los días valle y recuperamos tu inversión inicial.</p>
             </div>
             <div className="bg-[#FDFCF8] p-8 rounded-2xl shadow-lg border border-gray-100 relative group hover:-translate-y-2 transition-transform duration-300">
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">4</div>
-              <div className="text-4xl mb-4 relative z-10">✅</div>
-              <h3 className="text-xl font-bold mb-2 relative z-10">Escalabilidad</h3>
-              <p className="text-gray-600 relative z-10">Cuando no des abasto, implementamos el Recepcionista 24/7 en WhatsApp.</p>
+              <div className="text-4xl mb-4 relative z-10">🤖</div>
+              <h3 className="text-xl font-bold mb-2 relative z-10">Escalado Autónomo</h3>
+              <p className="text-gray-600 relative z-10">Implementamos el Agente IA en WhatsApp o KDS multimarca cuando necesites absorber más volumen.</p>
             </div>
           </div>
         </div>
