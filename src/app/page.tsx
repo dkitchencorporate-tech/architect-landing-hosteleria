@@ -71,14 +71,14 @@ export default function Home() {
         <EventLibraryHook />
       </div>
 
-      {/* METHODOLOGY PENDING REAL CASE STUDY */}
+      {/* METHODOLOGY & LIVE DEMO ANNOUNCEMENT */}
       <section className="py-12 bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"></div>
         <div className="max-w-5xl mx-auto px-8 flex flex-col md:flex-row items-center gap-8 relative z-10">
            <div className="w-24 h-24 bg-[#FF4500] text-white rounded-full flex items-center justify-center text-4xl shrink-0 font-black shadow-2xl">📊</div>
            <div>
-              <h4 className="text-3xl font-black mb-3">Tu rentabilidad no es cuestión de suerte, es <span className="text-[#FF4500]">Matemática Pura</span>.</h4>
-              <p className="text-gray-300 text-lg">En Architect.Sys no vendemos "esperanza". Ejecutamos metodologías probadas de inyección de tráfico (Eventos Growth) y automatización IA (WhatsApp CRM). Estamos documentando nuestros próximos Casos de Estudio en vivo. Pronto verás aquí métricas auditadas con nombres y apellidos, sin maquillaje.</p>
+              <h4 className="text-3xl font-black mb-3">Tu rentabilidad no es suerte, es <span className="text-[#FF4500]">Matemática Pura</span>.</h4>
+              <p className="text-gray-300 text-lg">En Architect.Sys protegemos la privacidad operativa de nuestros clientes. No publicamos facturaciones ajenas para captar curiosos. En su lugar, pronto desplegaremos aquí una **Demo en Vivo**: escanea un QR, navega una carta PWA premium y pon a prueba a nuestro Agente IA haciendo un pedido en tiempo real. Juzga nuestra tecnología por ti mismo.</p>
            </div>
         </div>
       </section>
@@ -183,15 +183,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TRUST BANNER */}
+      {/* TRUST BANNER - KOMMO PARTNER */}
       <section className="bg-[#1A1A1A] py-12 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-8 text-center">
-          <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-6">Funciona con las herramientas que ya usas a diario</p>
+          <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-6">Integradores Oficiales y Ecosistema Tecnológico</p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="text-2xl font-black flex items-center gap-2"><span className="text-green-500">WhatsApp</span></div>
-            <div className="text-2xl font-black flex items-center gap-2"><span className="text-blue-600">Facebook</span> / Instagram</div>
-            <div className="text-2xl font-black flex items-center gap-2"><span className="text-red-500">Google</span> Maps</div>
-            <div className="text-2xl font-black flex items-center gap-2"><span className="text-purple-600">Tarjetas</span> / Bizum</div>
+            <div className="flex flex-col items-center">
+              <span className="text-xs text-[#FF4500] font-bold tracking-widest uppercase mb-1">Partner Oficial</span>
+              <div className="text-2xl font-black flex items-center gap-2 text-white"><span className="text-blue-400">Kommo</span> CRM</div>
+            </div>
+            <div className="text-xl md:text-2xl font-black flex items-center gap-2 text-gray-300"><span className="text-green-500">WhatsApp</span> API</div>
+            <div className="text-xl md:text-2xl font-black flex items-center gap-2 text-gray-300"><span className="text-blue-600">Meta</span> Cloud</div>
+            <div className="text-xl md:text-2xl font-black flex items-center gap-2 text-gray-300"><span className="text-red-500">Google</span> Cloud</div>
           </div>
         </div>
       </section>
