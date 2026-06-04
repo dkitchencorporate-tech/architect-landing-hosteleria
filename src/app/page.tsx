@@ -71,14 +71,14 @@ export default function Home() {
         <EventLibraryHook />
       </div>
 
-      {/* SUCCESS STORY 2: EVENT LIBRARY */}
-      <section className="py-12 bg-[#FF4500] text-white relative overflow-hidden">
+      {/* METHODOLOGY PENDING REAL CASE STUDY */}
+      <section className="py-12 bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"></div>
         <div className="max-w-5xl mx-auto px-8 flex flex-col md:flex-row items-center gap-8 relative z-10">
-           <div className="w-24 h-24 bg-white text-[#FF4500] rounded-full flex items-center justify-center text-5xl shrink-0 font-black shadow-2xl">🍻</div>
+           <div className="w-24 h-24 bg-[#FF4500] text-white rounded-full flex items-center justify-center text-4xl shrink-0 font-black shadow-2xl">📊</div>
            <div>
-              <h4 className="text-3xl font-black mb-3">"Taberna Los Arcos" facturó <span className="text-yellow-300">900€ extra en solo 2 horas</span> un jueves por la tarde.</h4>
-              <p className="text-white/90 text-lg italic">"Los jueves de 18h a 20h solían ser horas de pura angustia, con el local casi vacío y el personal parado. Activamos una 'Cata Premium' de la Biblioteca de Eventos y en 48 horas agotamos plazas. Transformó un turno muerto en una experiencia sensorial ultra-premium que nos hizo facturar en dos horas lo que a veces nos costaba un día entero de trabajo."</p>
+              <h4 className="text-3xl font-black mb-3">Tu rentabilidad no es cuestión de suerte, es <span className="text-[#FF4500]">Matemática Pura</span>.</h4>
+              <p className="text-gray-300 text-lg">En Architect.Sys no vendemos "esperanza". Ejecutamos metodologías probadas de inyección de tráfico (Eventos Growth) y automatización IA (WhatsApp CRM). Estamos documentando nuestros próximos Casos de Estudio en vivo. Pronto verás aquí métricas auditadas con nombres y apellidos, sin maquillaje.</p>
            </div>
         </div>
       </section>

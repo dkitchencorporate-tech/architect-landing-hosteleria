@@ -5,8 +5,8 @@ import CookieConsent from "@/components/CookieConsent";
 
 export const metadata = {
   title: "Architect.Sys | Agencias de Crecimiento para Hostelería",
-  description: "Deja de perder margen en mesas lentas. Sistemas de digitalización base (39€/mes), Cartas QR, Bots IA en WhatsApp y llenado de locales en España.",
-  keywords: ["agencia marketing hosteleria", "carta digital restaurantes", "reservas whatsapp ia", "aumentar ticket medio restaurante", "automatizacion restaurantes", "agencia saas"],
+  description: "Ingeniería de Procesos para Hostelería. Ecosistemas digitales sin comisiones, Agentes IA Híbridos en WhatsApp y sistemas Dark Kitchen Enterprise.",
+  keywords: ["ingeniería hostelería", "kds dark kitchen", "agente ia whatsapp restaurantes", "consultoría restaurantes", "automatización hostelería", "growth partner"],
   authors: [{ name: "Architect.Sys" }],
   robots: {
     index: true,
