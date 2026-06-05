@@ -3,12 +3,40 @@ import { supabase } from '@/lib/supabase';
 import type { LeadAnalyticsInsert } from '@/lib/types';
 
 /**
+ * Interfaces para el Webhook de Kommo
+ */
+interface KommoContact {
+  id?: number;
+  phone?: string;
+  email?: string;
+  custom_fields?: Array<{
+    name: string;
+    values: Array<{ value: string }>;
+  }>;
+}
+
+interface KommoWebhookPayload {
+  leads?: {
+    add?: Array<{
+      id: number;
+      name?: string;
+      price?: number;
+    }>;
+  };
+  contacts?: {
+    add?: Array<KommoContact>;
+    update?: Array<KommoContact>;
+  };
+  contact?: KommoContact; // Variación posible en el payload
+  [key: string]: any;
+}
+
+/**
  * ENDPOINT: /api/webhooks/kommo
  *
  * Diseñado para recibir webhooks oficiales de Kommo.
  * Seguridad: header `x-webhook-secret` comparado con env `WEBHOOK_SECRET_KOMMO`.
- * Nota: Actualmente `phone` y `email` se guardan como `null` por defecto.
- * Más adelante se mapearán desde el JSON real de Kommo (por ejemplo `body.contact.phone`).
+ * Normalización: Extrae `phone` y `email` del payload.
  */
 
 export async function POST(req: Request) {
@@ -21,12 +49,46 @@ export async function POST(req: Request) {
       return NextResponse.json({ status: 'unauthorized' }, { status: 401 });
     }
 
-    const body = await req.json();
+    const body = (await req.json()) as KommoWebhookPayload;
 
-    // Por ahora no inferimos phone/email hasta disponer del payload real
+    // Lógica de extracción de teléfono y correo
+    let phone: string | null = null;
+    let email: string | null = null;
+
+    // Buscar en la raíz de contact (si viene así)
+    if (body.contact) {
+        if (body.contact.phone) phone = body.contact.phone;
+        if (body.contact.email) email = body.contact.email;
+    }
+
+    // Buscar en contacts.add o contacts.update
+    const contacts = body.contacts?.add || body.contacts?.update;
+    if (!phone && !email && contacts && contacts.length > 0) {
+      const contact = contacts[0];
+      if (contact.phone) phone = contact.phone;
+      if (contact.email) email = contact.email;
+
+      // Intentar buscar en custom_fields si no están directamente
+      if ((!phone || !email) && contact.custom_fields) {
+         for (const field of contact.custom_fields) {
+             const fieldName = field.name.toLowerCase();
+             if (fieldName.includes('phone') || fieldName.includes('telefono') || fieldName.includes('teléfono')) {
+                 if (!phone && field.values && field.values.length > 0) {
+                     phone = field.values[0].value;
+                 }
+             }
+             if (fieldName.includes('email') || fieldName.includes('correo')) {
+                 if (!email && field.values && field.values.length > 0) {
+                     email = field.values[0].value;
+                 }
+             }
+         }
+      }
+    }
+
     const leadInsert: LeadAnalyticsInsert = {
-      phone: null,
-      email: null,
+      phone: phone,
+      email: email,
       source: 'kommo',
       payload: body,
       created_at: new Date().toISOString(),
