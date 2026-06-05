@@ -3,12 +3,30 @@ import { supabase } from '@/lib/supabase';
 import type { LeadAnalyticsInsert } from '@/lib/types';
 
 /**
+ * Interfaces para el Webhook de Woztell
+ */
+interface WoztellContact {
+  phone?: string;
+  email?: string;
+  [key: string]: any;
+}
+
+interface WoztellWebhookPayload {
+  contact?: WoztellContact;
+  message?: {
+     from?: string; // Suele ser el número de teléfono
+     [key: string]: any;
+  };
+  event?: string;
+  [key: string]: any;
+}
+
+/**
  * ENDPOINT: /api/webhooks/woztell
  *
  * Diseñado para recibir webhooks oficiales de Woztell.
  * Seguridad: header `x-webhook-secret` comparado con env `WEBHOOK_SECRET_WOZTELL`.
- * Nota: Actualmente `phone` y `email` se guardan como `null` por defecto.
- * El campo `payload` guarda el evento completo (mensajes/interacciones) para trazabilidad.
+ * Normalización: Extrae `phone` y `email` del payload.
  */
 
 export async function POST(req: Request) {
@@ -21,12 +39,24 @@ export async function POST(req: Request) {
       return NextResponse.json({ status: 'unauthorized' }, { status: 401 });
     }
 
-    const body = await req.json();
+    const body = (await req.json()) as WoztellWebhookPayload;
 
-    // Por ahora no inferimos phone/email hasta disponer del payload real
+    // Lógica de extracción de teléfono y correo
+    let phone: string | null = null;
+    let email: string | null = null;
+
+    if (body.contact) {
+        if (body.contact.phone) phone = body.contact.phone;
+        if (body.contact.email) email = body.contact.email;
+    }
+
+    if (!phone && body.message && body.message.from) {
+        phone = body.message.from;
+    }
+
     const leadInsert: LeadAnalyticsInsert = {
-      phone: null,
-      email: null,
+      phone: phone,
+      email: email,
       source: 'woztell',
       payload: body,
       created_at: new Date().toISOString(),

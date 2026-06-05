@@ -1,12 +1,70 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo, useCallback } from 'react';
 import { supabaseClient } from '@/lib/supabase-client';
 
+
+// Componente Memoizado para evitar re-renderizados del DOM entero
+const ChatRow = memo(({ phone, lastMsg, botEnabled, onSelect, onDelete }: any) => {
+  return (
+    <div className="group relative bg-white border border-zinc-100 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-between"
+         onClick={() => onSelect(phone)}>
+
+      {/* Información Principal */}
+      <div className="flex items-center gap-4 overflow-hidden flex-1">
+        {/* Avatar / Icono */}
+        <div className="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0 font-bold text-lg">
+          👤
+        </div>
+
+        {/* Textos */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1">
+            <p className="text-xs font-black text-zinc-900 truncate">Sesión: {phone.substring(0,8)}...</p>
+            <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider ${lastMsg.intent === 'venta' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'}`}>
+              {lastMsg.intent}
+            </span>
+            {lastMsg.topic && (
+              <span className="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-zinc-100 text-zinc-500 hidden md:inline-block">
+                {lastMsg.topic}
+              </span>
+            )}
+          </div>
+          <p className="text-xs text-zinc-500 truncate italic">"{lastMsg.content}"</p>
+        </div>
+      </div>
+
+      {/* Botón Borrar / Archivar */}
+      <div className="shrink-0 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onDelete(phone);
+          }}
+          className="w-8 h-8 bg-zinc-50 rounded-full flex items-center justify-center hover:bg-red-50 hover:text-red-500 text-zinc-400 transition-all font-bold"
+          title="Gestionar"
+        >
+          ×
+        </button>
+      </div>
+
+    </div>
+  );
+});
+
 export default function LiveMonitor() {
+
   const [chats, setChats] = useState<any[]>([]);
   const [botSettings, setBotSettings] = useState<Record<string, boolean>>({});
   const [loading, setLoading] = useState(true);
+  const handleDeleteClick = useCallback((phone: string) => {
+    setConfirmDelete({ show: true, phone });
+  }, []);
+
+  const handleChatSelect = useCallback((phone: string) => {
+    setSelectedChat(phone);
+  }, []);
+
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [selectedChat, setSelectedChat] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<{ show: boolean, phone: string | null } | null>(null);
@@ -125,55 +183,20 @@ export default function LiveMonitor() {
   return (
     <div className="p-4 bg-zinc-50/50 rounded-[2.5rem] h-[500px] overflow-y-auto custom-scrollbar">
       <div className="flex flex-col gap-2 pr-2">
-        {phones.map(phone => {
+        {phones.slice(0, 50).map(phone => {
           const conversation = leadsObj[phone];
           const lastMsg = conversation[0];
           const isEnabled = botSettings[phone] !== false;
 
           return (
-            <div key={phone} 
-                 className="group relative bg-white border border-zinc-100 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-between" 
-                 onClick={() => setSelectedChat(phone)}>
-              
-              {/* Información Principal */}
-              <div className="flex items-center gap-4 overflow-hidden flex-1">
-                {/* Avatar / Icono */}
-                <div className="w-10 h-10 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center shrink-0 font-bold text-lg">
-                  👤
-                </div>
-                
-                {/* Textos */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <p className="text-xs font-black text-zinc-900 truncate">Sesión: {phone.substring(0,8)}...</p>
-                    <span className={`px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider ${lastMsg.intent === 'venta' ? 'bg-green-100 text-green-600' : 'bg-orange-100 text-orange-600'}`}>
-                      {lastMsg.intent}
-                    </span>
-                    {lastMsg.topic && (
-                      <span className="px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-wider bg-zinc-100 text-zinc-500 hidden md:inline-block">
-                        {lastMsg.topic}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-xs text-zinc-500 truncate italic">"{lastMsg.content}"</p>
-                </div>
-              </div>
-
-              {/* Botón Borrar / Archivar */}
-              <div className="shrink-0 ml-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                <button 
-                  onClick={(e) => { 
-                    e.stopPropagation(); 
-                    setConfirmDelete({ show: true, phone });
-                  }} 
-                  className="w-8 h-8 bg-zinc-50 rounded-full flex items-center justify-center hover:bg-red-50 hover:text-red-500 text-zinc-400 transition-all font-bold"
-                  title="Gestionar"
-                >
-                  ×
-                </button>
-              </div>
-
-            </div>
+            <ChatRow
+              key={phone}
+              phone={phone}
+              lastMsg={lastMsg}
+              botEnabled={isEnabled}
+              onSelect={handleChatSelect}
+              onDelete={handleDeleteClick}
+            />
           );
         })}
 
