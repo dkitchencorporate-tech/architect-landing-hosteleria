@@ -8,14 +8,7 @@ module.exports = {
         foreground: "#0A0A0A", // Deep obsidian luxury black
         brand: "#FF4500", // Vibrant high-converting Orange-Red
         brandHover: "#CC3700",
-        trust: "#10B981", // WhatsApp/Trust Green
-        "dash-bg": "#050505", // Dashboard ultra dark background
-        "dash-surface": "#121212", // Dashboard surface elements
-        "dash-surface-hover": "#1A1A1A", // Dashboard surface elements on hover
-        "dash-border": "#2A2A2A", // Dashboard border
-        "dash-accent": "#EAB308", // Dashboard gold accent
-        "dash-text-primary": "#F3F4F6", // Dashboard main text
-        "dash-text-secondary": "#9CA3AF" // Dashboard muted text
+        trust: "#10B981" // WhatsApp/Trust Green
       },
       boxShadow: {
         'premium': '0 40px 60px -15px rgba(0, 0, 0, 0.05)',
