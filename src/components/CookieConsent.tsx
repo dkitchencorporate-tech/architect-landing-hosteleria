@@ -28,29 +28,29 @@ export default function CookieConsent() {
   if (!isVisible) return null;
 
   return (
-    <div className=&quot;fixed bottom-0 left-0 right-0 z-[9998] p-4 sm:p-6 pointer-events-none&quot;>
-      <div className=&quot;max-w-4xl mx-auto bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 pointer-events-auto animate-fade-in-up&quot;>
+    <div className="fixed bottom-0 left-0 right-0 z-[9998] p-4 sm:p-6 pointer-events-none">
+      <div className="max-w-4xl mx-auto bg-gray-900 border border-gray-700 rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 pointer-events-auto animate-fade-in-up">
         
-        <div className=&quot;flex-1 text-center md:text-left&quot;>
-          <h3 className=&quot;text-white font-bold text-lg mb-2 flex items-center justify-center md:justify-start gap-2&quot;>
+        <div className="flex-1 text-center md:text-left">
+          <h3 className="text-white font-bold text-lg mb-2 flex items-center justify-center md:justify-start gap-2">
             🍪 Privacidad y Cookies
           </h3>
-          <p className=&quot;text-gray-400 text-sm leading-relaxed text-pretty&quot;>
+          <p className="text-gray-400 text-sm leading-relaxed text-pretty">
             Utilizamos cookies propias y de terceros (Pixel de Meta) para entender cómo interactúas con nuestra web y poder ofrecerte anuncios relevantes que te ayuden a llenar tu restaurante. 
-            Al hacer clic en &quot;Aceptar&quot;, consientes el uso de todas las cookies. Tienes más detalles en nuestra <a href=&quot;/privacy&quot; className=&quot;text-orange-400 hover:underline&quot;>Política de Privacidad</a>.
+            Al hacer clic en "Aceptar", consientes el uso de todas las cookies. Tienes más detalles en nuestra <a href="/privacy" className="text-orange-400 hover:underline">Política de Privacidad</a>.
           </p>
         </div>
 
-        <div className=&quot;flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0&quot;>
+        <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
           <button 
             onClick={rejectNonEssential}
-            className=&quot;px-6 py-3 rounded-full text-sm font-bold text-gray-300 bg-gray-800 hover:bg-gray-700 transition-colors border border-gray-600&quot;
+            className="px-6 py-3 rounded-full text-sm font-bold text-gray-300 bg-gray-800 hover:bg-gray-700 transition-colors border border-gray-600"
           >
             Solo esenciales
           </button>
           <button 
             onClick={acceptAll}
-            className=&quot;px-6 py-3 rounded-full text-sm font-bold text-white bg-[#FF4500] hover:bg-orange-600 transition-colors shadow-lg hover:shadow-orange-500/50&quot;
+            className="px-6 py-3 rounded-full text-sm font-bold text-white bg-[#FF4500] hover:bg-orange-600 transition-colors shadow-lg hover:shadow-orange-500/50"
           >
             Aceptar todas
           </button>
