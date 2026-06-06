@@ -1,0 +1,15 @@
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> architect-landing-hosteleria@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1736ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 7.7s (570 modules)
+ GET /dashboard 200 in 8409ms
+ GET /dashboard 200 in 40ms
+ GET /dashboard 200 in 33ms
