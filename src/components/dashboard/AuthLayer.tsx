@@ -13,13 +13,6 @@ export default function AuthLayer({ children }: { children: React.ReactNode }) {
   const [signingIn, setSigningIn] = useState(false);
 
   useEffect(() => {
-    if (!supabaseClient) {
-      // Mock successful login for local testing
-      setSession({ user: { email: 'admin@local.test' } });
-      setLoading(false);
-      return;
-    }
-
     supabaseClient.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setLoading(false);
@@ -33,8 +26,6 @@ export default function AuthLayer({ children }: { children: React.ReactNode }) {
   }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
-    if (!supabaseClient) return;
-
     e.preventDefault();
     setSigningIn(true);
     setError('');
@@ -119,9 +110,7 @@ export default function AuthLayer({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative min-h-screen">
       <button 
-        onClick={() => {
-          if (supabaseClient) supabaseClient.auth.signOut();
-        }}
+        onClick={() => supabaseClient.auth.signOut()}
         className="absolute top-8 right-8 text-sm font-bold text-gray-500 hover:text-red-500 transition-colors z-50 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200"
       >
         Cerrar Sesión Segura
