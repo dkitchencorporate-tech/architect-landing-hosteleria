@@ -144,7 +144,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 shrink-0 text-xl font-bold mt-1 shadow-sm">✓</span>
                   <div>
-                    <span className="font-black text-gray-900 text-xl block mb-1">Control Total de tu Imagen.</span> 
+                    <span className="font-black text-gray-900 text-xl block mb-1">Control Total de tu Imagen.</span>
                     <p className="text-gray-600 font-medium leading-relaxed">Tu propia Web Profesional. Dejas de depender de directorios genéricos de internet y controlas exactamente qué ve tu cliente antes de visitarte.</p>
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 shrink-0 text-xl font-bold mt-1 shadow-sm">✓</span>
                   <div>
-                    <span className="font-black text-gray-900 text-xl block mb-1">Mesas veloces, camareros sin estrés.</span> 
+                    <span className="font-black text-gray-900 text-xl block mb-1">Mesas veloces, camareros sin estrés.</span>
                     <p className="text-gray-600 font-medium leading-relaxed">Carta Digital Interactiva ultra-rápida. El cliente se sienta, escanea y sabe lo que quiere. Aumenta el ticket medio y la rotación de mesas los fines de semana.</p>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 shrink-0 text-xl font-bold mt-1 shadow-sm">✓</span>
                   <div>
-                    <span className="font-black text-gray-900 text-xl block mb-1">Dejas de ser invisible.</span> 
+                    <span className="font-black text-gray-900 text-xl block mb-1">Dejas de ser invisible.</span>
                     <p className="text-gray-600 font-medium leading-relaxed">Incluye la creación y optimización de tu entorno digital para captar a los turistas y vecinos que buscan dónde cenar en Google Maps antes que tu competencia.</p>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 shrink-0 text-xl font-bold mt-1 shadow-sm">✓</span>
                   <div>
-                    <span className="font-black text-gray-900 text-xl block mb-1">Base de Datos Propia.</span> 
+                    <span className="font-black text-gray-900 text-xl block mb-1">Base de Datos Propia.</span>
                     <p className="text-gray-600 font-medium leading-relaxed">Cada reserva en tu sistema es un contacto que te guardas. Empiezas a conocer quién te visita para poder fidelizarlo en el futuro.</p>
                   </div>
                 </div>
@@ -176,7 +176,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4 bg-orange-50 p-4 rounded-2xl border border-orange-100">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-200 text-[#FF4500] shrink-0 text-xl font-bold mt-1 shadow-sm">🎁</span>
                   <div>
-                    <span className="font-black text-[#FF4500] text-xl block mb-1">Los 4 Bonos Consultivos Incluidos.</span> 
+                    <span className="font-black text-[#FF4500] text-xl block mb-1">Los 4 Bonos Consultivos Incluidos.</span>
                     <p className="text-gray-700 font-medium leading-relaxed">Al reservar tu activación hoy, te llevas los más de 1.150€ en valor de los bonos estratégicos sin ningún tipo de coste adicional.</p>
                   </div>
                 </div>

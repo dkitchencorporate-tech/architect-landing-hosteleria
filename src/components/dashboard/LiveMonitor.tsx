@@ -132,7 +132,7 @@ export default function LiveMonitor() {
 
           return (
             <div key={phone} 
-                 className="group relative bg-white border border-zinc-100 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-between" 
+                 className="group relative bg-white border border-zinc-100 p-4 rounded-2xl shadow-sm hover:shadow-md transition-all cursor-pointer flex items-center justify-between"
                  onClick={() => setSelectedChat(phone)}>
               
               {/* Información Principal */}
