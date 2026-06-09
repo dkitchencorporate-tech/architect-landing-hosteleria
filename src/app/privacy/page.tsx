@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
           <div>
             <h2 className="text-xl font-bold text-zinc-900 mb-4">1. Identidad del Tratamiento</h2>
             <p>
-              Architect.Sys (en adelante, "la Plataforma"), operando bajo el dominio <strong>hosteleria.architectsys.com</strong>, 
+              Architect.Sys (en adelante, "la Plataforma"), operando bajo el dominio <strong>hosteleria.architectsys.com</strong>,
               garantiza la protección de los datos personales de sus usuarios y clientes conforme al Reglamento General 
               de Protección de Datos (RGPD) y las normativas locales vigentes.
             </p>

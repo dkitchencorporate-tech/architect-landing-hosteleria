@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import ConsultingModal from './ConsultingModal';
+import DashboardShowcase from './DashboardShowcase';
 
 export default function TheTrojanHorse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,12 +51,12 @@ export default function TheTrojanHorse() {
                 <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-sm">📍</div>
                 <h4 className="text-gray-900 font-black text-2xl mb-4">Auditoría de Fuga de Clientes (Google Maps)</h4>
                 <p className="text-gray-700 text-lg mb-8 flex-grow leading-relaxed font-medium">
-                  ¿Por qué el bar de la competencia sale primero cuando alguien busca "dónde cenar"? Analizamos tu ficha de negocio y te entregamos un <strong>informe médico en PDF</strong> con las acciones exactas que tú o tu encargado debéis aplicar hoy mismo para robarle ese tráfico a tu competencia.
+                  ¿Por qué el bar de la competencia sale primero cuando alguien busca "dónde cenar"? Te entregamos un <strong>análisis de 14 factores de posicionamiento en Google Maps</strong>, y un informe en PDF de 8 páginas con acciones priorizadas que tú o tu encargado debéis aplicar hoy mismo para robarle ese tráfico.
                 </p>
                 <div className="mt-auto border-t border-gray-100 pt-6">
                   <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Precio habitual en agencia:</div>
                   <div className="flex items-center gap-4">
-                    <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">350€</span>
+                    <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">180€</span>
                     <span className="text-[#FF4500] font-black text-4xl">GRATIS</span>
                   </div>
                 </div>
@@ -116,6 +117,9 @@ export default function TheTrojanHorse() {
           </div>
         </div>
 
+        {/* MOCKUP INTERACTIVO DEL DASHBOARD DE JULES */}
+        <DashboardShowcase />
+
         {/* Pricing Card Unica: Base Operativa Digital (Luminosa/Confiable) */}
         <div className="max-w-4xl mx-auto mt-16 animate-fade-in-up">
           <div className="bg-[#FDFCF8] rounded-[2.5rem] shadow-2xl relative flex flex-col overflow-hidden border-2 border-[#FF4500]">
@@ -144,7 +148,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 shrink-0 text-xl font-bold mt-1 shadow-sm">✓</span>
                   <div>
-                    <span className="font-black text-gray-900 text-xl block mb-1">Control Total de tu Imagen.</span> 
+                    <span className="font-black text-gray-900 text-xl block mb-1">Control Total de tu Imagen.</span>
                     <p className="text-gray-600 font-medium leading-relaxed">Tu propia Web Profesional. Dejas de depender de directorios genéricos de internet y controlas exactamente qué ve tu cliente antes de visitarte.</p>
                   </div>
                 </div>
@@ -152,7 +156,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 shrink-0 text-xl font-bold mt-1 shadow-sm">✓</span>
                   <div>
-                    <span className="font-black text-gray-900 text-xl block mb-1">Mesas veloces, camareros sin estrés.</span> 
+                    <span className="font-black text-gray-900 text-xl block mb-1">Mesas veloces, camareros sin estrés.</span>
                     <p className="text-gray-600 font-medium leading-relaxed">Carta Digital Interactiva ultra-rápida. El cliente se sienta, escanea y sabe lo que quiere. Aumenta el ticket medio y la rotación de mesas los fines de semana.</p>
                   </div>
                 </div>
@@ -160,7 +164,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 shrink-0 text-xl font-bold mt-1 shadow-sm">✓</span>
                   <div>
-                    <span className="font-black text-gray-900 text-xl block mb-1">Dejas de ser invisible.</span> 
+                    <span className="font-black text-gray-900 text-xl block mb-1">Dejas de ser invisible.</span>
                     <p className="text-gray-600 font-medium leading-relaxed">Incluye la creación y optimización de tu entorno digital para captar a los turistas y vecinos que buscan dónde cenar en Google Maps antes que tu competencia.</p>
                   </div>
                 </div>
@@ -168,7 +172,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600 shrink-0 text-xl font-bold mt-1 shadow-sm">✓</span>
                   <div>
-                    <span className="font-black text-gray-900 text-xl block mb-1">Base de Datos Propia.</span> 
+                    <span className="font-black text-gray-900 text-xl block mb-1">Base de Datos Propia.</span>
                     <p className="text-gray-600 font-medium leading-relaxed">Cada reserva en tu sistema es un contacto que te guardas. Empiezas a conocer quién te visita para poder fidelizarlo en el futuro.</p>
                   </div>
                 </div>
@@ -176,7 +180,7 @@ export default function TheTrojanHorse() {
                 <div className="flex items-start gap-4 bg-orange-50 p-4 rounded-2xl border border-orange-100">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-200 text-[#FF4500] shrink-0 text-xl font-bold mt-1 shadow-sm">🎁</span>
                   <div>
-                    <span className="font-black text-[#FF4500] text-xl block mb-1">Los 4 Bonos Consultivos Incluidos.</span> 
+                    <span className="font-black text-[#FF4500] text-xl block mb-1">Los 4 Bonos Consultivos Incluidos.</span>
                     <p className="text-gray-700 font-medium leading-relaxed">Al reservar tu activación hoy, te llevas los más de 1.150€ en valor de los bonos estratégicos sin ningún tipo de coste adicional.</p>
                   </div>
                 </div>

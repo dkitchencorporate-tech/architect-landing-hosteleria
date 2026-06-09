@@ -9,6 +9,9 @@ import AggressiveHero from '@/components/sections/AggressiveHero';
 import WhatsAppHero from '@/components/sections/WhatsAppHero';
 import FAQ from '@/components/sections/FAQ';
 import VisionAndEmpathy from '@/components/sections/VisionAndEmpathy';
+import FounderBio from '@/components/sections/FounderBio';
+import LiveDemoCTA from '@/components/sections/LiveDemoCTA';
+import ChatDemoWidget from '@/components/ChatDemoWidget';
 
 export default function Home() {
   return (
@@ -29,7 +32,7 @@ export default function Home() {
             </a>
           </div>
           
-          <div className="flex items-center bg-[#1A1A1A]/90 border border-white/10 rounded-full p-1.5 shadow-[0_4px_30px_rgba(255,69,0,0.2)] backdrop-blur-md w-full md:w-auto overflow-x-auto justify-start md:justify-center animate-pulse" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div className="flex items-center bg-[#1A1A1A]/90 border border-white/10 rounded-2xl md:rounded-full p-1.5 shadow-[0_4px_30px_rgba(255,69,0,0.2)] backdrop-blur-md w-full md:w-auto flex-wrap justify-center animate-pulse" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             <a href="#suscripciones" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
               Suscripciones
             </a>
@@ -62,6 +65,7 @@ export default function Home() {
       {/* CORE FUNNEL */}
       <div id="suscripciones">
         <DigitalPresenceValue />
+        <LiveDemoCTA />
         <div id="solucion-base">
           <TheTrojanHorse />
         </div>
@@ -199,6 +203,7 @@ export default function Home() {
         </div>
       </section>
 
+      <FounderBio />
       <FAQ />
 
       {/* FOOTER */}
@@ -227,6 +232,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* ARQUI: AGENTE IA FLOTANTE */}
+      <ChatDemoWidget />
     </div>
   );
 }
