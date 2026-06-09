@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 /**
  * src/components/ExitIntent.tsx
  * Componente de captura de leads por intención de salida.
- * Flujo optimizado: Bonos de 1.150€ -> Cierre dual (WhatsApp rápido / Calendly corporativo).
+ * Flujo optimizado: Bonos de 980€ -> Cierre dual (WhatsApp rápido / Calendly corporativo).
  */
 
 export default function ExitIntent() {
@@ -145,7 +145,7 @@ export default function ExitIntent() {
               ¿Te vas tan pronto? Llévate nuestro <span className="text-[#FF4500]">Pack de Arranque</span>
             </h2>
             <div className="text-[#FF4500] font-black text-[10px] sm:text-xs uppercase tracking-widest mb-4">
-               Totalmente GRATIS (Valor: 1.150€)
+               Totalmente GRATIS (Valor: 980€)
             </div>
           </div>
           
@@ -192,7 +192,7 @@ export default function ExitIntent() {
           <div className="flex-none w-full mt-auto space-y-4">
             {/* CTA Primario: WhatsApp (Mínima Fricción) */}
             <a 
-              href="https://wa.me/34611499674?text=Hola,%20iba%20a%20salir%20de%20la%20web%20pero%20vi%20el%20Pack%20de%20Arranque%20de%201.150€.%20Me%20interesa%20reclamarlo."
+              href="https://wa.me/34611499674?text=Hola,%20iba%20a%20salir%20de%20la%20web%20pero%20vi%20el%20Pack%20de%20Arranque%20de%20980€.%20Me%20interesa%20reclamarlo."
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full bg-[#25D366] text-white py-4 px-4 rounded-xl font-black text-lg shadow-[0_10px_20px_rgba(37,211,102,0.2)] hover:bg-[#1ebd5a] hover:-translate-y-1 transition-all duration-300 justify-center items-center gap-2"

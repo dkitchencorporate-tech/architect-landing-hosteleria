@@ -145,7 +145,7 @@ export default function ConsultingModal({ isOpen, onClose }: ConsultingModalProp
       <div className="text-center mb-6">
         <div className="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 font-bold shadow-sm">✓</div>
         <h3 className="text-2xl font-black text-gray-900 mb-2">¡Perfecto! Tu perfil encaja.</h3>
-        <p className="text-gray-600 font-medium text-sm">Déjanos tus datos para asegurar tus bonos de 1.150€ y elegir la hora de tu consultoría gratuita.</p>
+        <p className="text-gray-600 font-medium text-sm">Déjanos tus datos para asegurar tus bonos de 980€ y elegir la hora de tu consultoría gratuita.</p>
       </div>
       <form onSubmit={handleFormSubmit} className="space-y-4">
         <div>
@@ -267,7 +267,7 @@ export default function ConsultingModal({ isOpen, onClose }: ConsultingModalProp
         <div className="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-md p-8 sm:p-12 text-center animate-bounce-in relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-2 bg-red-500"></div>
           <div className="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 border border-red-100 shadow-inner">⚠️</div>
-          <h2 className="text-3xl font-black text-gray-900 mb-4 leading-tight">¿Vas a dejar pasar tus bonos de 1.150€?</h2>
+          <h2 className="text-3xl font-black text-gray-900 mb-4 leading-tight">¿Vas a dejar pasar tus bonos de 980€?</h2>
           <p className="text-gray-600 mb-8 font-medium leading-relaxed">La digitalización de tu negocio no debería posponerse. Si no tienes tiempo para el formulario, hablemos directo por WhatsApp en menos de 1 minuto.</p>
           
           <div className="space-y-4">

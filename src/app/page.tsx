@@ -117,6 +117,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ARQUI INVITATION */}
+      <MeetArquiSection />
+
       {/* TRANSITION TO HIGH TICKET */}
       <WhatsAppHero />
       <div id="automatizacion">
@@ -204,7 +207,6 @@ export default function Home() {
         </div>
       </section>
 
-      <MeetArquiSection />
       <FounderBio />
       <FAQ />
 

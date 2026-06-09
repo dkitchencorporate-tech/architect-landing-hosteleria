@@ -15,7 +15,7 @@ export default function LiveDemoCTA() {
               Live Demo
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight text-balance">
-              No te fíes de nuestra palabra. <span className="text-[#FF4500]">Pruébalo tú mismo.</span>
+              La misma experiencia fluida que exigirán <span className="text-[#FF4500]">tus mejores clientes.</span>
             </h2>
             <p className="text-gray-400 text-lg md:text-xl font-medium mb-8 text-pretty">
               Escanea el código QR o haz clic en el botón para vivir la experiencia exacta que tendrán tus clientes al sentarse en tu mesa. Una carta interactiva ultra-rápida y persuasiva.

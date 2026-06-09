@@ -181,7 +181,7 @@ export default function TheTrojanHorse() {
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-200 text-[#FF4500] shrink-0 text-xl font-bold mt-1 shadow-sm">🎁</span>
                   <div>
                     <span className="font-black text-[#FF4500] text-xl block mb-1">Los 4 Bonos Consultivos Incluidos.</span>
-                    <p className="text-gray-700 font-medium leading-relaxed">Al reservar tu activación hoy, te llevas los más de 1.150€ en valor de los bonos estratégicos sin ningún tipo de coste adicional.</p>
+                    <p className="text-gray-700 font-medium leading-relaxed">Al reservar tu activación hoy, te llevas los 980€ en valor de los bonos estratégicos sin ningún tipo de coste adicional.</p>
                   </div>
                 </div>
               </div>

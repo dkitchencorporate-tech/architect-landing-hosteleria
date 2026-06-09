@@ -3,25 +3,37 @@ import React, { useState } from 'react';
 
 const faqs = [
   {
-    question: "¿Qué incluye exactamente la Base Operativa de 700€?",
-    answer: "Es un ecosistema llave en mano. Incluye el diseño de tu web profesional, la carta interactiva con menú QR, el sistema de reservas directas y la configuración de SEO local en Google Maps. Además de los 4 bonos de consultoría gratuitos. Tú solo tienes que darnos la información y nosotros construimos todo."
+    question: "¿Tengo que saber de tecnología para usar este sistema?",
+    answer: "Absolutamente no. Nuestro modelo es 100% 'Llave en Mano'. Nosotros diseñamos, programamos y conectamos todo el ecosistema. Tú solo sigues haciendo lo que mejor sabes: llevar tu restaurante. Y si tienes equipo nuevo, nosotros nos encargamos de educarlos en el uso de las nuevas cartas digitales."
   },
   {
-    question: "¿Tengo que pagar comisiones por las reservas o pedidos?",
-    answer: "Cero comisiones. A diferencia de las apps de terceros que se quedan hasta un 30% de tu margen, nuestro sistema redirige los pagos y las reservas directamente a tu negocio. Es tu marca, son tus clientes y tuyos son los beneficios."
+    question: "¿Pierdo la carta física de toda la vida?",
+    answer: "Al contrario, la elevamos. Creemos en un ecosistema híbrido. Integramos neuroventas tanto en tu carta digital como en tu menú físico, ubicando los platos de mayor margen donde la vista del cliente va primero. Lo digital acelera el pedido, lo físico ancla la experiencia."
   },
   {
-    question: "¿Hay algún gasto oculto después de la activación?",
-    answer: "No hay cuotas sorpresa. Como Bono Especial, te regalamos los primeros 2 meses de alojamiento y soporte técnico. A partir del tercer mes, el mantenimiento del servidor premium, la protección anti-caídas y el soporte continuo tiene un coste de 69€/mes. No hay permanencia; el sistema es tuyo."
+    question: "¿De quién es la web, el dominio y los datos de clientes?",
+    answer: "Son tuyos desde el minuto uno. A diferencia de agencias que secuestran tu dominio o plataformas de delivery que ocultan los datos de tus clientes, con Architect.Sys tú eres el único propietario de tus bases de datos, código y presencia digital."
   },
   {
-    question: "¿Tengo que instalar el Agente de Inteligencia Artificial obligatoriamente?",
-    answer: "No. El Agente Híbrido de Recepción (WhatsApp + CRM) es un módulo de escalabilidad avanzado. Lo recomendamos solo para restaurantes que ya tienen un alto volumen de clientes y pierden dinero al no poder contestar llamadas los fines de semana. Puedes añadirlo en el futuro."
+    question: "¿Qué son exactamente los Agentes IA que instaláis?",
+    answer: "Son sistemas híbridos entrenados específicamente para hostelería. Se conectan a tu WhatsApp o CRM para responder preguntas, captar datos de reservas y derivarlas a tu equipo. Solo se recomiendan para locales con alto volumen de consultas que ya no dan abasto respondiendo manualmente."
+  },
+  {
+    question: "¿Cuánto control pierdo si la IA responde por mí?",
+    answer: "Ninguno. El sistema es híbrido. Tú puedes ver todas las conversaciones en tiempo real en tu teléfono. Si un cliente hace una petición muy específica (ej. un evento privado), puedes intervenir en el chat, pausar a la IA y cerrar la venta tú mismo."
+  },
+  {
+    question: "¿Existen costes ocultos o comisiones por reserva?",
+    answer: "Cero comisiones por venta. Nunca. El pago de la Base Operativa es de 700€ (fraccionable). Además, te regalamos los 2 primeros meses de mantenimiento. A partir del tercer mes, el soporte premium y servidor cuesta solo 69€/mes, sin permanencia."
+  },
+  {
+    question: "¿Cómo es el formato de trabajo y la comunicación?",
+    answer: "Nos comunicamos directamente por un canal privado, sin intermediarios. Además de nuestra asistencia técnica continua, también celebramos eventos y consultorías donde tratamos estrategias de crecimiento para asegurar que tu inversión inicial se recupere en tiempo récord."
   }
 ];
 
 export default function FAQ() {
-  const [openIndices, setOpenIndices] = useState<number[]>([0, 1, 2, 3]);
+  const [openIndices, setOpenIndices] = useState<number[]>([]);
 
   const toggleFAQ = (index: number) => {
     setOpenIndices(prev => 
