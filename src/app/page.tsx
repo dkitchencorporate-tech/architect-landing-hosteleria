@@ -10,6 +10,7 @@ import WhatsAppHero from '@/components/sections/WhatsAppHero';
 import FAQ from '@/components/sections/FAQ';
 import VisionAndEmpathy from '@/components/sections/VisionAndEmpathy';
 import FounderBio from '@/components/sections/FounderBio';
+import MeetArquiSection from '@/components/sections/MeetArquiSection';
 import LiveDemoCTA from '@/components/sections/LiveDemoCTA';
 import ChatDemoWidget from '@/components/ChatDemoWidget';
 
@@ -203,6 +204,7 @@ export default function Home() {
         </div>
       </section>
 
+      <MeetArquiSection />
       <FounderBio />
       <FAQ />
 

@@ -22,8 +22,9 @@ type LeadContext = {
 // Z-index compartido para overlays globales: evita que se pise el modal de Arqui.
 const Z_INDEX_OVERLAY = 9999;
 
-export default function ChatDemoWidget({ onClose }: Props) {
+export default function ChatDemoWidget({ onClose, startOpen = false }: Props & { startOpen?: boolean }) {
   const [mounted, setMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(startOpen);
   const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([]);
   const [inputValue, setInputValue] = useState("");
   const [loading, setLoading] = useState(false);
@@ -33,12 +34,22 @@ export default function ChatDemoWidget({ onClose }: Props) {
 
   const messagesRef = React.useRef<{ role: "user" | "assistant"; content: string }[]>([]);
 
+  // Escuchar eventos globales para abrir Arqui desde cualquier botón
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true);
+    window.addEventListener('open_arqui', handleOpen);
+    return () => window.removeEventListener('open_arqui', handleOpen);
+  }, []);
+
   useEffect(() => {
     setMounted(true);
     const initialMsgs = [{ role: "assistant" as const, content: welcomeText }];
     setMessages(initialMsgs);
     messagesRef.current = initialMsgs;
-    window.dispatchEvent(new Event('chat_opened'));
+    
+    if (isOpen) {
+      window.dispatchEvent(new Event('chat_opened'));
+    }
     
     const handleBeforeUnload = () => {
       const currentMsgs = messagesRef.current;
@@ -52,9 +63,11 @@ export default function ChatDemoWidget({ onClose }: Props) {
 
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
-      window.dispatchEvent(new Event('chat_closed'));
+      if (isOpen) {
+        window.dispatchEvent(new Event('chat_closed'));
+      }
     };
-  }, []);
+  }, [isOpen]);
 
   const pushMessage = (m: { role: "user" | "assistant"; content: string }) => {
     setMessages((p) => {
@@ -67,7 +80,7 @@ export default function ChatDemoWidget({ onClose }: Props) {
   const messagesContainerRef = React.useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const scrollToNewMessage = () => {
-      if (messages.length > 0 && messagesContainerRef.current) {
+      if (isOpen && messages.length > 0 && messagesContainerRef.current) {
         const lastMsgId = `msg-${messages.length - 1}`;
         const lastMsgElement = document.getElementById(lastMsgId);
         if (lastMsgElement) {
@@ -78,7 +91,7 @@ export default function ChatDemoWidget({ onClose }: Props) {
     scrollToNewMessage();
     const timer = setTimeout(scrollToNewMessage, 150);
     return () => clearTimeout(timer);
-  }, [messages, loading]);
+  }, [messages, loading, isOpen]);
 
   const callApi = async (payload: any) => {
     try {
@@ -126,13 +139,43 @@ export default function ChatDemoWidget({ onClose }: Props) {
   };
 
   const resetAndClose = () => {
+    setIsOpen(false);
     if (onClose) onClose();
-    setMessages([{ role: "assistant", content: welcomeText }]);
-    setLeadContext({});
-    setInputValue("");
+    // Opcional: Reiniciar la conversación si quieres que cada vez que se cierre se reinicie.
+    // setMessages([{ role: "assistant", content: welcomeText }]);
+    // setLeadContext({});
+    // setInputValue("");
   };
 
   if (!mounted) return null;
+
+  // Botón flotante si está cerrado
+  if (!isOpen) {
+    return createPortal(
+      <div className="fixed bottom-6 right-6 z-[9999] group">
+        <div className="absolute inset-0 bg-[#FF4500] rounded-full blur-[20px] opacity-20 group-hover:opacity-40 animate-[pulse_3s_ease-in-out_infinite] transition-opacity duration-700 pointer-events-none"></div>
+        <button
+          onClick={() => setIsOpen(true)}
+          className="relative flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 shadow-[0_0_30px_rgba(255,69,0,0.4)] hover:shadow-[0_0_50px_rgba(255,69,0,0.8)] border border-[#FF4500]/30 hover:bg-black transition-all hover:-translate-y-2 group"
+          style={{ animation: 'float 6s ease-in-out infinite' }}
+        >
+          <span className="text-3xl filter grayscale brightness-200 group-hover:filter-none transition-all duration-300">🤖</span>
+          {/* Badge notificación roja */}
+          <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full border-2 border-black flex items-center justify-center">
+            <span className="w-1.5 h-1.5 bg-white rounded-full animate-ping"></span>
+          </span>
+        </button>
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+          }
+        `}} />
+      </div>,
+      document.body
+    );
+  }
 
   const content = (
     <>
