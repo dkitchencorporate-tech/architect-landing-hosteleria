@@ -156,7 +156,7 @@ export default function ExitIntent() {
                 <div className="flex items-start gap-3">
                   <span className="text-[#25D366] font-bold mt-0.5">✔</span> 
                   <div>
-                    <strong className="text-gray-900 font-bold block">Auditoría Fuga de Clientes (350€)</strong>
+                    <strong className="text-gray-900 font-bold block">Auditoría Fuga de Clientes (180€)</strong>
                     <span className="text-gray-500 leading-tight block mt-0.5">Análisis de tu Google Maps para robar tráfico a tu competencia.</span>
                   </div>
                 </div>

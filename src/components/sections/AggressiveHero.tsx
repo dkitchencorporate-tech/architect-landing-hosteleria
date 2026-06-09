@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AggressiveHero() {
   return (
-    <header className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#050505] pt-20">
+    <header className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#050505] pt-32 md:pt-20">
       {/* Patrón de fondo sutil (Grid) para dar aspecto tecnológico pero limpio */}
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/80 to-[#050505]"></div>

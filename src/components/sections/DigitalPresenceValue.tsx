@@ -37,6 +37,13 @@ export default function DigitalPresenceValue() {
             </p>
           </div>
         </div>
+
+        <div className="mt-16 text-center animate-fade-in-up">
+          <a href="/demo/carta" className="inline-flex bg-[#FF4500] text-white px-8 py-4 rounded-full font-black text-lg hover:bg-orange-600 transition-all shadow-xl hover:shadow-orange-500/30 hover:-translate-y-1 items-center gap-3">
+            <span>Probar Carta Interactiva en Vivo</span>
+            <span className="bg-white/20 px-2 py-1 rounded text-xs">GRATIS</span>
+          </a>
+        </div>
       </div>
     </section>
   );

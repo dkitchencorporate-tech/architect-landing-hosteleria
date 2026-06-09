@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import ConsultingModal from './ConsultingModal';
+import DashboardShowcase from './DashboardShowcase';
 
 export default function TheTrojanHorse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,12 +51,12 @@ export default function TheTrojanHorse() {
                 <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-sm">📍</div>
                 <h4 className="text-gray-900 font-black text-2xl mb-4">Auditoría de Fuga de Clientes (Google Maps)</h4>
                 <p className="text-gray-700 text-lg mb-8 flex-grow leading-relaxed font-medium">
-                  ¿Por qué el bar de la competencia sale primero cuando alguien busca "dónde cenar"? Analizamos tu ficha de negocio y te entregamos un <strong>informe médico en PDF</strong> con las acciones exactas que tú o tu encargado debéis aplicar hoy mismo para robarle ese tráfico a tu competencia.
+                  ¿Por qué el bar de la competencia sale primero cuando alguien busca "dónde cenar"? Te entregamos un <strong>análisis de 14 factores de posicionamiento en Google Maps</strong>, y un informe en PDF de 8 páginas con acciones priorizadas que tú o tu encargado debéis aplicar hoy mismo para robarle ese tráfico.
                 </p>
                 <div className="mt-auto border-t border-gray-100 pt-6">
                   <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Precio habitual en agencia:</div>
                   <div className="flex items-center gap-4">
-                    <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">350€</span>
+                    <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">180€</span>
                     <span className="text-[#FF4500] font-black text-4xl">GRATIS</span>
                   </div>
                 </div>
@@ -115,6 +116,9 @@ export default function TheTrojanHorse() {
             </div>
           </div>
         </div>
+
+        {/* MOCKUP INTERACTIVO DEL DASHBOARD DE JULES */}
+        <DashboardShowcase />
 
         {/* Pricing Card Unica: Base Operativa Digital (Luminosa/Confiable) */}
         <div className="max-w-4xl mx-auto mt-16 animate-fade-in-up">
