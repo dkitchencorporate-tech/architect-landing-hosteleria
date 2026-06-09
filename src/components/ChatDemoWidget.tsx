@@ -159,7 +159,7 @@ export default function ChatDemoWidget({ onClose, startOpen = false }: Props & {
           className="relative flex items-center justify-center w-16 h-16 rounded-full bg-gray-900 shadow-[0_0_30px_rgba(255,69,0,0.4)] hover:shadow-[0_0_50px_rgba(255,69,0,0.8)] border border-[#FF4500]/30 hover:bg-black transition-all hover:-translate-y-2 group"
           style={{ animation: 'float 6s ease-in-out infinite' }}
         >
-          <span className="text-3xl filter grayscale brightness-200 group-hover:filter-none transition-all duration-300">🤖</span>
+          <img src="/images/arqui.png" alt="Arqui" className="w-full h-full object-cover rounded-full" />
           {/* Badge notificación roja */}
           <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full border-2 border-black flex items-center justify-center">
             <span className="w-1.5 h-1.5 bg-white rounded-full animate-ping"></span>
@@ -191,8 +191,8 @@ export default function ChatDemoWidget({ onClose, startOpen = false }: Props & {
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-white">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-black border border-[#FF4500]/30 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(255,69,0,0.2)] shrink-0">
-                <div className="text-[#FF4500] font-black text-xl font-mono">A.</div>
+              <div className="w-12 h-12 bg-black border border-[#FF4500]/30 rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(255,69,0,0.2)] shrink-0 overflow-hidden">
+                <img src="/images/arqui.png" alt="Arqui Avatar" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col">
                 <div className="text-xl font-black text-gray-900">Asistente Arqui</div>

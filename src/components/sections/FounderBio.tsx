@@ -8,9 +8,9 @@ export default function FounderBio() {
           {/* Fondo sutil */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-[80px] -z-10"></div>
           
-          {/* Foto del Fundador (Logo) */}
-          <div className="w-40 h-40 shrink-0 relative flex items-center justify-center bg-gray-900 rounded-full border-4 border-white shadow-xl overflow-hidden">
-            <span className="text-7xl font-black text-white tracking-tighter">A<span className="text-[#FF4500]">.</span></span>
+          {/* Foto del Fundador */}
+          <div className="w-40 h-40 shrink-0 relative flex items-center justify-center rounded-full border-4 border-white shadow-xl overflow-hidden bg-black">
+            <img src="/images/founder.png" alt="Alex, CEO de Architect.Sys" className="w-full h-full object-cover" />
             {/* Badge Kommo */}
             <div className="absolute -bottom-2 -right-2 bg-white p-1.5 rounded-full shadow-lg z-10">
               <div className="bg-blue-600 text-white text-[9px] font-black uppercase tracking-wider px-2 py-1 rounded-full flex items-center gap-1">
