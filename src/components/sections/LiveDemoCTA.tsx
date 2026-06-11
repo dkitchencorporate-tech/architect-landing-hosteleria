@@ -32,9 +32,8 @@ export default function LiveDemoCTA() {
 
           <div className="shrink-0 flex flex-col items-center">
             <div className="bg-white p-4 rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 border-8 border-gray-800">
-              {/* Generaremos un QR de verdad, pero por ahora usamos una imagen abstracta o un placeholder */}
               <img 
-                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://architect-sys.com/demo/carta&color=FF4500" 
+                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://hosteleria.architectsys.com/demo/carta&color=FF4500" 
                 alt="QR Code Demo" 
                 className="w-48 h-48 rounded-xl"
               />

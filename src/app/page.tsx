@@ -22,19 +22,19 @@ export default function Home() {
       <ExitIntent />
       
       {/* NAVBAR */}
-      <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 shadow-xl transition-all">
+      <nav className="fixed top-0 w-full z-[100] bg-black/90 backdrop-blur-md border-b border-white/10 shadow-xl transition-all">
         <div className="flex flex-col md:flex-row justify-between items-center py-3 md:py-4 px-4 md:px-8 max-w-7xl mx-auto gap-3 md:gap-0">
           <div className="flex justify-between items-center w-full md:w-auto">
-            <div className="text-xl md:text-2xl font-black tracking-tighter text-white hover:scale-105 transition-transform cursor-pointer">
+            <div className="text-xl md:text-2xl font-black tracking-tighter text-white hover:scale-105 transition-transform cursor-pointer shrink-0">
               Architect<span className="text-[#FF4500]">.Sys</span>
             </div>
-            <a href="https://wa.me/34611499674?text=Hola,%20quiero%20solicitar%20la%20Auditoría%20Gratuita." className="md:hidden inline-flex bg-[#FF4500] text-white px-4 py-2 rounded-full font-bold text-[10px] sm:text-xs hover:bg-orange-600 transition-all shadow-lg">
+            <a href="https://wa.me/34611499674?text=Hola,%20quiero%20solicitar%20la%20Auditoría%20Gratuita." className="md:hidden inline-flex bg-[#FF4500] text-white px-4 py-2 rounded-full font-bold text-[10px] sm:text-xs hover:bg-orange-600 transition-all shadow-lg shrink-0 ml-2">
               Auditoría Gratuita
             </a>
           </div>
           
-          <div className="flex items-center bg-[#1A1A1A]/90 border border-white/10 rounded-2xl md:rounded-full p-1.5 shadow-[0_4px_30px_rgba(255,69,0,0.2)] backdrop-blur-md w-full md:w-auto flex-wrap justify-center animate-pulse" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            <a href="#suscripciones" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
+          <div className="flex items-center bg-[#1A1A1A]/90 border border-white/10 rounded-full p-1.5 shadow-[0_4px_30px_rgba(255,69,0,0.2)] backdrop-blur-md w-full md:w-auto overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] shrink-0">
+            <a href="#suscripciones" className="whitespace-nowrap shrink-0 px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
               Suscripciones
             </a>
             <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>

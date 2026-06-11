@@ -38,7 +38,13 @@ export default function ExitIntent() {
       }
     };
 
-    // --- DETECCIÓN MOBILE (Scroll Up Rápido + Inactividad) ---
+    // --- DETECCIÓN MOBILE Y PÉRDIDA DE FOCO ---
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        showModal();
+      }
+    };
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const currentTime = Date.now();
@@ -49,11 +55,12 @@ export default function ExitIntent() {
       // Velocidad del scroll (px por ms)
       const scrollVelocity = timeDelta > 0 ? (scrollDelta / timeDelta) : 0;
       
-      // Si el usuario scrollea hacia arriba rápido (velocidad > 1.5) y está por debajo de 600px
-      if (currentScrollY > 600 && scrollVelocity > 1.5) {
+      // Si el usuario scrollea hacia arriba rápido (velocidad > 1.5) y no está en la parte superior absoluta
+      if (currentScrollY > 200 && scrollVelocity > 1.5) {
         showModal();
       }
       
+      lastScrollY.current = currentScrollY;
       lastScrollY.current = currentScrollY;
       lastScrollTime.current = currentTime;
       resetInactivity();
@@ -72,6 +79,7 @@ export default function ExitIntent() {
     const handleModalClose = () => setIsAnyModalOpen(false);
 
     document.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('touchstart', resetInactivity, { passive: true });
     
@@ -85,6 +93,7 @@ export default function ExitIntent() {
 
     return () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('touchstart', resetInactivity);
       window.removeEventListener('modal_opened', handleModalOpen);
