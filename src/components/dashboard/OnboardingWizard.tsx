@@ -54,10 +54,41 @@ export default function OnboardingWizard({ onComplete }: OnboardingWizardProps) 
   const handleNext = () => setStep(step + 1);
   const handlePrev = () => setStep(step - 1);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    localStorage.setItem("onboarding_completed", "true");
-    onComplete();
+    if (step < 2) {
+      setStep(step + 1);
+    } else {
+      const { createClient } = await import("@/lib/supabase-browser");
+      const supabase = createClient();
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      const email = session?.user?.email || '';
+      const isAdmin = email === 'alex@architectsys.com' || email === 'admin@architectsys.com';
+
+      if (isAdmin) {
+        localStorage.setItem("onboarding_completed", "true");
+        onComplete();
+        return;
+      }
+
+      if (session) {
+        // Save project data
+        await supabase.from('projects').insert([{
+          profile_id: session.user.id,
+          restaurant_name: formData.businessName,
+          restaurant_type: formData.cuisineType,
+          monthly_revenue: formData.averageTicket, // Mapping for now
+          main_problem: "N/A", // From chat or default
+          team_size: formData.capacity // Mapping for now
+        }]);
+
+        // Update profile onboarding status
+        await supabase.from('profiles').update({ onboarding_completed: true }).eq('id', session.user.id);
+      }
+      
+      onComplete();
+    }
   };
 
   const handleSendMessage = (e: React.FormEvent) => {

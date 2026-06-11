@@ -6,20 +6,46 @@ import EventsLibrary from "@/components/dashboard/EventsLibrary";
 import Autogestion from "@/components/dashboard/Autogestion";
 import Marketplace from "@/components/dashboard/Marketplace";
 import Pipeline from "@/components/dashboard/Pipeline";
+import { createClient } from "@/lib/supabase-browser";
 
 export default function DashboardPage() {
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState<boolean | null>(null);
   const [isGrowthPlan, setIsGrowthPlan] = useState(false);
   const [activeTab, setActiveTab] = useState("events");
+  const [isAdminDemo, setIsAdminDemo] = useState(false);
+  const [userProfile, setUserProfile] = useState<any>(null);
+  
+  const supabase = createClient();
 
   useEffect(() => {
-    // Check initial state
-    const checkState = () => {
-      const completed = localStorage.getItem("onboarding_completed") === "true";
-      setHasCompletedOnboarding(completed);
+    const checkState = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) return;
+      
+      const email = session.user.email;
+      const isAdmin = email === 'alex@architectsys.com' || email === 'admin@architectsys.com';
+      setIsAdminDemo(isAdmin);
 
-      const plan = localStorage.getItem("saas_plan");
-      setIsGrowthPlan(plan === "growth");
+      if (isAdmin) {
+        // Modo Demo para presentaciones
+        setHasCompletedOnboarding(true);
+        setIsGrowthPlan(true);
+      } else {
+        // Cliente Real: Leer de Base de Datos
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('id', session.user.id)
+          .single();
+          
+        if (profile) {
+          setUserProfile(profile);
+          setHasCompletedOnboarding(profile.onboarding_completed);
+          setIsGrowthPlan(profile.plan === 'growth');
+        } else {
+          setHasCompletedOnboarding(false);
+        }
+      }
     };
 
     checkState();
@@ -32,16 +58,11 @@ export default function DashboardPage() {
       }
     };
 
-    // Set initial tab based on hash
     if (window.location.hash) handleHashChange();
-
     window.addEventListener("hashchange", handleHashChange);
-    // Listen for custom event from Layout for real-time plan switching
-    window.addEventListener("storage", checkState);
 
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
-      window.removeEventListener("storage", checkState);
     };
   }, []);
 

@@ -144,7 +144,33 @@ export default function EventsLibrary({ isGrowthPlan }: EventsLibraryProps) {
 
               {(!(!isGrowthPlan && !selectedEvent.isUnlockedForBase)) && (
                 <div className="mt-10 flex justify-end">
-                  <button className="bg-white text-black px-8 py-3 rounded font-bold hover:bg-gray-200 transition-colors shadow-lg">
+                  <button 
+                    onClick={async () => {
+                      const { createClient } = await import("@/lib/supabase-browser");
+                      const supabase = createClient();
+                      const { data: { session } } = await supabase.auth.getSession();
+                      
+                      const email = session?.user?.email || '';
+                      const isAdmin = email === 'alex@architectsys.com' || email === 'admin@architectsys.com';
+
+                      if (isAdmin) {
+                        alert("Modo Demo: Evento simulado activado.");
+                        setSelectedEvent(null);
+                        return;
+                      }
+
+                      if (session) {
+                        await supabase.from('client_events').insert([{
+                          profile_id: session.user.id,
+                          event_id: selectedEvent.id,
+                          status: 'requested'
+                        }]);
+                        alert("Protocolo Iniciado. Nuestro equipo se pondrá en contacto pronto.");
+                      }
+                      setSelectedEvent(null);
+                    }}
+                    className="bg-white text-black px-8 py-3 rounded font-bold hover:bg-gray-200 transition-colors shadow-lg"
+                  >
                     Iniciar Protocolo de Lanzamiento
                   </button>
                 </div>
