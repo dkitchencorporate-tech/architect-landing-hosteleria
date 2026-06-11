@@ -124,32 +124,32 @@ export default function ExitIntent() {
         onClick={() => setIsVisible(false)}
       ></div>
       
-      <div className="relative bg-[#FDFCF8] max-w-lg w-full rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-8 border border-white/20 shadow-[0_30px_100px_rgba(255,69,0,0.2)] animate-in fade-in zoom-in duration-500 max-h-[95vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <div className="relative bg-[#FDFCF8] max-w-lg w-full rounded-[2rem] sm:rounded-[3rem] p-6 sm:p-8 border border-white/20 shadow-[0_30px_100px_rgba(255,69,0,0.2)] animate-in fade-in zoom-in duration-500 max-h-[90vh] md:max-h-[95vh] flex flex-col overflow-hidden">
         
         <button 
           onClick={() => setIsVisible(false)}
-          className="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-400 hover:text-gray-900 transition-all hover:rotate-90 z-10"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 text-gray-400 hover:text-gray-900 transition-all hover:rotate-90 z-10 bg-white/80 backdrop-blur-sm rounded-full p-1"
         >
           <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
-        <div className="text-center flex flex-col items-center mt-2 sm:mt-0 h-full w-full">
+        <div className="text-center flex flex-col items-center mt-2 sm:mt-0 h-full w-full min-h-0">
           
-          <div className="flex-none text-center">
+          <div className="flex-shrink-0 text-center w-full">
             <div className="w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-[#FF4500] rounded-full flex items-center justify-center text-xl sm:text-2xl mb-3 mx-auto group animate-bounce">
               🎁
             </div>
             <h2 className="text-xl sm:text-2xl font-black leading-tight text-gray-900 mb-2 text-balance">
               ¿Te vas tan pronto? Llévate nuestro <span className="text-[#FF4500]">Pack de Arranque</span>
             </h2>
-            <div className="text-[#FF4500] font-black text-[10px] sm:text-xs uppercase tracking-widest mb-4">
+            <div className="text-[#FF4500] font-black text-[10px] sm:text-xs uppercase tracking-widest mb-2">
                Totalmente GRATIS (Valor: 980€)
             </div>
           </div>
           
-          <div className="flex-1 w-full overflow-y-auto pr-1 mb-6 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full">
+          <div className="flex-1 w-full overflow-y-auto pr-2 my-4 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full min-h-0">
             <div className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm text-left">
               <div className="space-y-4 text-xs sm:text-sm font-medium text-gray-800">
                 
@@ -189,13 +189,13 @@ export default function ExitIntent() {
             </div>
           </div>
 
-          <div className="flex-none w-full mt-auto space-y-4">
+          <div className="flex-shrink-0 w-full mt-auto space-y-3 pt-2 bg-[#FDFCF8]">
             {/* CTA Primario: WhatsApp (Mínima Fricción) */}
             <a 
               href="https://wa.me/34611499674?text=Hola,%20iba%20a%20salir%20de%20la%20web%20pero%20vi%20el%20Pack%20de%20Arranque%20de%20980€.%20Me%20interesa%20reclamarlo."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full bg-[#25D366] text-white py-4 px-4 rounded-xl font-black text-lg shadow-[0_10px_20px_rgba(37,211,102,0.2)] hover:bg-[#1ebd5a] hover:-translate-y-1 transition-all duration-300 justify-center items-center gap-2"
+              className="flex w-full bg-[#25D366] text-white py-3 sm:py-4 px-4 rounded-xl font-black text-lg shadow-[0_10px_20px_rgba(37,211,102,0.2)] hover:bg-[#1ebd5a] hover:-translate-y-1 transition-all duration-300 justify-center items-center gap-2"
             >
               Reclamar Bonos por WhatsApp
             </a>
@@ -203,7 +203,7 @@ export default function ExitIntent() {
             {/* CTA Secundario: Scroll suave */}
             <button 
               onClick={handleOpenCalendly}
-              className="w-full text-gray-500 font-bold hover:text-[#FF4500] transition-colors text-sm py-2 underline decoration-transparent hover:decoration-[#FF4500] underline-offset-4"
+              className="w-full text-gray-500 font-bold hover:text-[#FF4500] transition-colors text-xs sm:text-sm py-2 underline decoration-transparent hover:decoration-[#FF4500] underline-offset-4"
             >
               O leer más detalles sobre la Base Operativa
             </button>

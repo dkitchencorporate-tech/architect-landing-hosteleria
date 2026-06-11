@@ -23,9 +23,7 @@ export default function FounderBio() {
           <div className="text-center md:text-left flex-grow">
             <h3 className="text-2xl font-black text-gray-900 mb-2">Tu acceso directo a la Dirección Estratégica</h3>
             <p className="text-gray-700 font-medium text-lg mb-6 leading-relaxed text-pretty">
-              "Soy <strong className="text-gray-900">Alex</strong>, Partner Oficial de Kommo desde 2025, y llevo años cruzando el mundo de la hostelería y la tecnología. 
-              He visto a decenas de hosteleros perder dinero pagando comisiones abusivas y comprando webs inútiles. 
-              Construí este ecosistema porque creo que tú mereces tener el control absoluto de tu negocio digital y tus márgenes."
+              "Soy <strong className="text-gray-900">Alex</strong>. Construí este ecosistema tras años siendo propietario de bares, restaurantes y locales recreativos, además de invertir en discotecas. En 2020, fundé una Dark Kitchen en Madrid donde desarrollamos 7 marcas propias desde cero. He vivido en carne propia lo que es pagar comisiones abusivas y trabajar con sistemas lentos. Por eso creamos Architect.Sys: para devolverte el control absoluto de tu negocio digital y tus márgenes."
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4">

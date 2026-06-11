@@ -28,11 +28,11 @@ export default function MeetArquiSection() {
 
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight text-balance">
-              Conoce a nuestro <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-orange-400">Especialista en Operaciones HORECA.</span>
+              Conoce a tu Nuevo <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4500] to-orange-400">Director de Atención Digital.</span>
             </h2>
             <p className="text-gray-400 text-lg md:text-xl font-medium mb-8 text-pretty max-w-2xl">
-              Esa burbuja flotante en la esquina inferior derecha no es un bot básico. Es Arqui, nuestra IA entrenada para entender el caos de la hostelería. Cuéntale qué te roba tiempo: ¿Camareros saturados los fines de semana? ¿Una carta en PDF que nadie lee? ¿Pagando un 30% a apps de delivery? Arqui diagnosticará tu caso y preparará un informe para nuestra reunión.
+              Esa burbuja flotante no es un simple bot. Es Arqui, una IA inteligente diseñada para estar siempre presente ante cualquier situación de atención al cliente. Arqui escucha a tus comensales, responde dudas al instante, gestiona reservas y se asegura de que ninguna oportunidad se escape mientras tú y tu equipo os encargáis de dar el mejor servicio en el local.
             </p>
             
             <button 
