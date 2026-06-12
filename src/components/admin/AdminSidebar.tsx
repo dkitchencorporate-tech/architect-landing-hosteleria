@@ -8,6 +8,7 @@ export default function AdminSidebar() {
     { name: 'Base de Eventos (Master)', href: '/admin-architect/events-master', icon: '📅' },
     { name: 'Creative Factory', href: '/admin-architect/creative-factory-hub', icon: '🎨' },
     { name: 'Pipeline de Agencia', href: '/admin-architect/pipeline', icon: '🚀' },
+    { name: 'SOPs y Manuales', href: '/manuals', icon: '📚' },
     { name: 'Visión SaaS (Demo)', href: '/dashboard', icon: '🖥️' }
   ];
 

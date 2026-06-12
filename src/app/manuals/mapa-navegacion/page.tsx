@@ -30,7 +30,6 @@ export default function MapaNavegacionManual() {
         <ul>
           <li><strong>Landing Page Principal:</strong> <code>https://hosteleria.architectsys.com/</code> <br/>El funnel B2B, presentación de servicios, matriz de precios y FAQs.</li>
           <li><strong>Carta Digital Demo:</strong> <code>/demo/carta</code> <br/>Simulación de cómo se ve una carta digital interactiva en el móvil.</li>
-          <li><strong>Centro de Manuales:</strong> <code>/manuals</code> <br/>Este mismo Hub de documentación (Público para transparencia de la marca).</li>
           <li><strong>Legal - Privacidad:</strong> <code>/privacy</code> <br/>Obligatorio para Google OAuth y normativas europeas.</li>
           <li><strong>Legal - Términos:</strong> <code>/terms</code> <br/>Condiciones de uso y contratación del servicio SaaS.</li>
         </ul>
@@ -51,10 +50,11 @@ export default function MapaNavegacionManual() {
         </ul>
 
         <h2>Área de Administración (God Mode)</h2>
-        <p>Rutas exclusivas para monitorizar a los clientes. Están ocultas de los menús principales.</p>
+        <p>Rutas exclusivas para monitorizar a los clientes. Están ocultas de los menús principales y protegidas por Middleware.</p>
         <ul>
           <li><strong>Centro de Clientes:</strong> <code>/admin-architect/clients</code> <br/>Tabla de monitoreo en tiempo real. Extrae datos de Supabase de todos los usuarios registrados, sus proyectos y el estado del Onboarding.</li>
           <li><strong>Overview de Sistema:</strong> <code>/admin-architect/overview</code> <br/>Métricas globales de facturación (Pendiente de conexión futura con pasarela de pagos).</li>
+          <li><strong>Centro de Manuales (SOPs):</strong> <code>/manuals</code> <br/>Directorio de protocolos operativos protegido para uso exclusivo del administrador.</li>
         </ul>
 
         <h2>APIs y Webhooks (Rutas de Servidor)</h2>

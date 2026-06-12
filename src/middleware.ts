@@ -38,16 +38,29 @@ export async function middleware(request: NextRequest) {
   
   const url = request.nextUrl;
 
-  // Rutas internas protegidas
+  // Rutas internas protegidas (para clientes normales)
   const isProtectedRoute = 
     url.pathname.startsWith('/dashboard') || 
-    url.pathname.startsWith('/creative-factory') || 
-    url.pathname.startsWith('/admin-architect');
+    url.pathname.startsWith('/creative-factory');
 
-  if (isProtectedRoute && !user) {
+  // Rutas exclusivas de administrador
+  const isAdminRoute = 
+    url.pathname.startsWith('/admin-architect') || 
+    url.pathname.startsWith('/manuals');
+
+  if ((isProtectedRoute || isAdminRoute) && !user) {
     // Redirigir al login si no hay sesión
     url.pathname = '/auth/login';
     return NextResponse.redirect(url);
+  }
+
+  if (isAdminRoute && user) {
+    const isAdmin = user.email === 'alex@architectsys.com' || user.email === 'admin@architectsys.com';
+    if (!isAdmin) {
+      // Si está logueado pero no es admin, enviarlo a su dashboard
+      url.pathname = '/dashboard';
+      return NextResponse.redirect(url);
+    }
   }
 
   // Si intenta ir a /auth y ya está logueado, llevarlo al dashboard
@@ -60,5 +73,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/creative-factory/:path*', '/admin-architect/:path*', '/auth/:path*'],
+  matcher: ['/dashboard/:path*', '/creative-factory/:path*', '/admin-architect/:path*', '/auth/:path*', '/manuals/:path*'],
 };
