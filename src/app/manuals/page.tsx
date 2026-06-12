@@ -6,7 +6,49 @@ import Link from 'next/link';
 export default function ManualsIndex() {
   const manuals = [
     {
-      title: 'Configuración de Google OAuth',
+      title: '1. Mapa Integral de Navegación y URLs',
+      description: 'Directorio completo de todos los enlaces y rutas de Architect.Sys, incluyendo los niveles de acceso requeridos.',
+      href: '/manuals/mapa-navegacion',
+      date: '12 Junio 2026',
+      tag: 'Directorio'
+    },
+    {
+      title: '2. Arquitectura SaaS y Base de Datos',
+      description: 'Esquemas de Supabase, tablas de clientes, reglas de seguridad RLS y el Trigger de registro automatizado.',
+      href: '/manuals/arquitectura-saas',
+      date: '12 Junio 2026',
+      tag: 'Infraestructura'
+    },
+    {
+      title: '3. Embudos de Venta y Psicología B2B',
+      description: 'Lógica comercial detrás de la Landing Page, justificación de planes High-Ticket y posicionamiento de mercado.',
+      href: '/manuals/estrategia-ventas',
+      date: '12 Junio 2026',
+      tag: 'Ventas'
+    },
+    {
+      title: '4. Onboarding de Clientes B2B',
+      description: 'Flujo post-compra, asistente de configuración inicial del restaurante y solicitud de campañas en el Dashboard.',
+      href: '/manuals/onboarding-b2b',
+      date: '12 Junio 2026',
+      tag: 'Operaciones'
+    },
+    {
+      title: '5. Agente de Ventas IA (Arqui)',
+      description: 'Leyes operativas del asistente conversacional, integraciones con Kommo CRM y arquitectura de Webhooks.',
+      href: '/manuals/agente-ia',
+      date: '12 Junio 2026',
+      tag: 'Inteligencia Artificial'
+    },
+    {
+      title: '6. Centro de Control de Administración',
+      description: 'Manejo del panel de monitoreo de clientes, gestión de proyectos y activación del Modo Demo para presentaciones.',
+      href: '/manuals/centro-control',
+      date: '12 Junio 2026',
+      tag: 'Administración'
+    },
+    {
+      title: '7. Configuración de Google OAuth',
       description: 'Protocolo para autorizar el botón de inicio de sesión con Google y publicar la aplicación de autenticación para producción.',
       href: '/manuals/google-oauth',
       date: '12 Junio 2026',
