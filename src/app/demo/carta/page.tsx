@@ -33,7 +33,7 @@ const ImageWithFallback = ({ src, alt, className }: { src: string, alt: string, 
 // ==========================================
 // 1. LAYOUT: ALTA COCINA (EDITORIAL)
 // ==========================================
-function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiveDiner, tableParam, setLang, onAdd, onAsk }: any) {
+function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiveDiner, tableParam, setLang, onAdd, onAsk, onImageClick }: any) {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-[#f5f5f5] font-serif pb-48">
       
@@ -93,8 +93,9 @@ function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiv
                 {items.map((item: any, idx: number) => (
                   <div key={item.id} className={`flex flex-col ${idx % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-6 sm:gap-12 items-center`}>
                     <div className="w-full md:w-1/2">
-                      <div className="aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-white/5 relative rounded-sm sm:rounded-none">
-                        <ImageWithFallback src={item.image} alt={item.name[lang]} className="grayscale-[30%] hover:grayscale-0 transition-all duration-1000" />
+                      <div onClick={() => onImageClick(item)} className="aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-white/5 relative rounded-sm sm:rounded-none cursor-pointer group">
+                        <ImageWithFallback src={item.image} alt={item.name[lang]} className="grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 flex items-center justify-center transition-all duration-500 opacity-0 group-hover:opacity-100"><span className="bg-black/80 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full uppercase tracking-widest border border-white/20 shadow-xl">Ampliar Plato</span></div>
                       </div>
                     </div>
                     <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
@@ -151,7 +152,7 @@ function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiv
 // ==========================================
 // 2. LAYOUT: BAR GRANADINO (LISTA DENSA)
 // ==========================================
-function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDiner, tableParam, setLang, onAdd, onAsk }: any) {
+function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDiner, tableParam, setLang, onAdd, onAsk, onImageClick }: any) {
   const [loyaltyStep, setLoyaltyStep] = useState(1);
   const [selectedReward, setSelectedReward] = useState<string | null>(null);
   const [loyaltyName, setLoyaltyName] = useState('');
@@ -229,8 +230,9 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {items.map((item: any) => (
                   <div key={item.id} className="bg-[#fefdfa] border border-[#e6dfcf] rounded-2xl p-4 md:p-5 flex gap-4 md:gap-6 items-center hover:shadow-md hover:border-[#cc5203] transition-all duration-300 group relative">
-                    <div className="relative w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-2xl overflow-hidden shadow-sm border border-[#e8e4d9] bg-[#f4ecd8]">
-                      <ImageWithFallback src={item.image} alt={item.name[lang]} className="group-hover:scale-105 transition-transform duration-500" />
+                    <div onClick={() => onImageClick(item)} className="relative w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-2xl overflow-hidden shadow-sm border border-[#e8e4d9] bg-[#f4ecd8] cursor-pointer group/img">
+                      <ImageWithFallback src={item.image} alt={item.name[lang]} className="group-hover/img:scale-110 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 flex items-center justify-center transition-all opacity-0 group-hover/img:opacity-100"><span className="bg-white/90 text-[#2c3e2e] text-[10px] px-2 py-1 rounded-full font-bold shadow-md">🔍 Ver</span></div>
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col h-full justify-between">
                       <div>
@@ -521,8 +523,8 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
                   <div key={item.id} className="bg-[#111] rounded-3xl overflow-hidden border border-zinc-800 flex flex-col group relative">
                     <div className="absolute inset-0 border-2 border-[#ff003c] opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity z-20 pointer-events-none"></div>
                     
-                    <div className="aspect-[4/3] w-full relative overflow-hidden bg-black">
-                      <ImageWithFallback src={item.image} alt={item.name[lang]} className="group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" />
+                    <div onClick={() => onImageClick(item)} className="aspect-[4/3] w-full relative overflow-hidden bg-black cursor-pointer group/img">
+                      <ImageWithFallback src={item.image} alt={item.name[lang]} className="group-hover/img:scale-110 transition-transform duration-500 opacity-90 group-hover/img:opacity-100" />
                       {item.isChefRecommendation && (
                         <div className="absolute top-3 left-3 z-10 bg-[#ff003c] text-white text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-lg">
                           HYPE
@@ -601,6 +603,26 @@ function CartaContent() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isSalesModalOpen, setIsSalesModalOpen] = useState(false);
   const [isSwitcherModalOpen, setIsSwitcherModalOpen] = useState(false);
+  const [selectedImageItem, setSelectedImageItem] = useState<MenuItem | null>(null);
+
+  // THEME GENERATOR
+  const theme = {
+    sushi: { 
+      bg: 'bg-[#0a0a0a]', card: 'bg-[#1a1a1a]', border: 'border-white/10', text: 'text-white', textSec: 'text-gray-400',
+      primary: 'bg-amber-600', primaryHover: 'hover:bg-amber-500', textPrimary: 'text-amber-500', 
+      btnText: 'text-white', sendBtn: 'bg-emerald-500 text-black hover:bg-emerald-400', secondaryBtn: 'border border-white/20 text-white hover:bg-white/10'
+    },
+    tapas: { 
+      bg: 'bg-[#faf8f5]', card: 'bg-white', border: 'border-[#e8e4d9]', text: 'text-[#2c3e2e]', textSec: 'text-[#6b7264]',
+      primary: 'bg-[#cc5203]', primaryHover: 'hover:bg-[#e85d04]', textPrimary: 'text-[#e85d04]', 
+      btnText: 'text-white', sendBtn: 'bg-[#2c3e2e] text-white hover:bg-[#1e2a1f]', secondaryBtn: 'border border-[#2c3e2e]/20 text-[#2c3e2e] hover:bg-[#2c3e2e]/5'
+    },
+    burger: { 
+      bg: 'bg-[#050505]', card: 'bg-[#111]', border: 'border-zinc-800', text: 'text-white', textSec: 'text-zinc-400',
+      primary: 'bg-[#ff003c]', primaryHover: 'hover:bg-[#ff3366]', textPrimary: 'text-[#ff003c]', 
+      btnText: 'text-white', sendBtn: 'bg-[#ff003c] text-white hover:bg-[#ff3366]', secondaryBtn: 'border border-zinc-700 text-white hover:bg-zinc-800'
+    }
+  }[activeTemplate];
 
   // Chat State
   const [chatMessages, setChatMessages] = useState<{role: string, content: string}[]>([]);
@@ -683,9 +705,9 @@ function CartaContent() {
       </div>
 
       {/* RENDER ACTIVE LAYOUT (HEADERS ARE INSIDE THEM NOW) */}
-      {activeTemplate === 'sushi' && <EditorialSushiLayout menu={currentMenu} categories={currentCategories} lang={lang} t={t} activeDiner={activeDiner} setActiveDiner={setActiveDiner} tableParam={tableParam} setLang={setLang} onAdd={addToCart} onAsk={openContextualChat} />}
-      {activeTemplate === 'tapas' && <ListTapasLayout menu={currentMenu} categories={currentCategories} lang={lang} t={t} activeDiner={activeDiner} setActiveDiner={setActiveDiner} tableParam={tableParam} setLang={setLang} onAdd={addToCart} onAsk={openContextualChat} />}
-      {activeTemplate === 'burger' && <GridBurgerLayout menu={currentMenu} categories={currentCategories} lang={lang} t={t} activeDiner={activeDiner} setActiveDiner={setActiveDiner} tableParam={tableParam} setLang={setLang} onAdd={addToCart} onAsk={openContextualChat} />}
+      {activeTemplate === 'sushi' && <EditorialSushiLayout menu={currentMenu} categories={currentCategories} lang={lang} t={t} activeDiner={activeDiner} setActiveDiner={setActiveDiner} tableParam={tableParam} setLang={setLang} onAdd={addToCart} onAsk={openContextualChat} onImageClick={setSelectedImageItem} />}
+      {activeTemplate === 'tapas' && <ListTapasLayout menu={currentMenu} categories={currentCategories} lang={lang} t={t} activeDiner={activeDiner} setActiveDiner={setActiveDiner} tableParam={tableParam} setLang={setLang} onAdd={addToCart} onAsk={openContextualChat} onImageClick={setSelectedImageItem} />}
+      {activeTemplate === 'burger' && <GridBurgerLayout menu={currentMenu} categories={currentCategories} lang={lang} t={t} activeDiner={activeDiner} setActiveDiner={setActiveDiner} tableParam={tableParam} setLang={setLang} onAdd={addToCart} onAsk={openContextualChat} onImageClick={setSelectedImageItem} />}
 
       {/* GLOBAL FIXED DOCK (B2B SALES & SWITCHER) */}
       <div className="fixed bottom-0 left-0 w-full z-40 p-4 pointer-events-none pb-8">
@@ -759,42 +781,42 @@ function CartaContent() {
       )}
 
       {/* --------------------------------------------------------- */}
-      {/* GLOBAL CART MODAL (DESACOPLADO) */}
+      {/* GLOBAL CART MODAL (DESACOPLADO Y CAMALEONICO) */}
       {/* --------------------------------------------------------- */}
       {isCartOpen && (
         <div className="fixed inset-0 z-50 flex flex-col justify-end px-4 pb-4 sm:px-8 sm:pb-8">
-          <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={() => setIsCartOpen(false)}></div>
-          <div className="relative w-full max-w-2xl mx-auto h-[80vh] sm:h-[85vh] rounded-3xl p-6 sm:p-8 flex flex-col bg-[#0a0a0a] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-fade-in-up">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsCartOpen(false)}></div>
+          <div className={`relative w-full max-w-3xl mx-auto h-[80vh] sm:h-[85vh] rounded-3xl p-6 sm:p-8 flex flex-col ${theme.bg} ${theme.border} border shadow-2xl animate-fade-in-up`}>
             
             {/* Header Comanda */}
-            <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4 shrink-0">
-              <h2 className="font-serif text-2xl sm:text-3xl text-white flex items-center gap-3">
+            <div className={`flex justify-between items-center mb-6 pb-4 shrink-0 border-b ${theme.border}`}>
+              <h2 className={`font-serif text-2xl sm:text-3xl ${theme.text} flex items-center gap-3`}>
                 <span>Tu Comanda</span>
-                <span className="text-[10px] sm:text-xs uppercase tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full font-sans font-bold">Mesa {tableParam}</span>
+                <span className={`text-[10px] sm:text-xs uppercase tracking-widest ${theme.primary} ${theme.btnText} px-3 py-1 rounded-full font-sans font-bold`}>Mesa {tableParam}</span>
               </h2>
-              <button onClick={() => setIsCartOpen(false)} className="text-white bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center transition-colors">✕</button>
+              <button onClick={() => setIsCartOpen(false)} className={`${theme.text} bg-black/5 hover:bg-black/10 dark:bg-white/10 dark:hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center transition-colors`}>✕</button>
             </div>
 
             {/* Listado de Platos */}
-            <div className="flex-1 overflow-y-auto space-y-6 pr-2 mb-6 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
+            <div className={`flex-1 overflow-y-auto space-y-6 pr-2 mb-6 scrollbar-thin`}>
               {[1, 2, 3, 4].map(d => {
                 const dinerCart = cart.filter(c => c.dinerId === d);
                 if (dinerCart.length === 0) return null;
                 return (
-                  <div key={d} className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5">
-                    <div className="flex justify-between items-center mb-4 border-b border-white/5 pb-3">
-                      <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Comensal {d}</h3>
-                      <span className="font-serif text-base sm:text-lg text-white">{getDinerTotal(d).toFixed(2)}€</span>
+                  <div key={d} className={`${theme.card} border ${theme.border} rounded-2xl p-4 sm:p-6 shadow-sm`}>
+                    <div className={`flex justify-between items-center mb-4 border-b ${theme.border} pb-3`}>
+                      <h3 className={`text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] ${theme.textSec}`}>Comensal {d}</h3>
+                      <span className={`font-serif text-base sm:text-lg ${theme.textPrimary}`}>{getDinerTotal(d).toFixed(2)}€</span>
                     </div>
                     <div className="space-y-4">
                       {dinerCart.map(item => (
-                        <div key={item.id} className="flex justify-between items-center gap-2">
-                          <div className="flex items-center gap-3">
-                            <span className="text-[10px] sm:text-xs font-bold bg-white/10 text-white px-2 py-1 rounded">{item.qty}x</span>
-                            <div className="text-sm sm:text-base text-gray-200 line-clamp-1">{item.name[lang]}</div>
+                        <div key={item.id} className="flex justify-between items-center gap-4">
+                          <div className="flex items-center gap-3 flex-1 min-w-0">
+                            <span className={`text-[10px] sm:text-xs font-bold ${theme.primary} ${theme.btnText} px-2 py-1 rounded shadow-sm shrink-0`}>{item.qty}x</span>
+                            <div className={`text-sm sm:text-base ${theme.text} truncate`}>{item.name[lang]}</div>
                           </div>
                           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-                            <span className="font-serif text-sm sm:text-base text-gray-400">{(item.price * item.qty).toFixed(2)}€</span>
+                            <span className={`font-serif text-sm sm:text-base ${theme.textSec}`}>{(item.price * item.qty).toFixed(2)}€</span>
                             <button onClick={() => {
                               setCart(prev => {
                                 const existing = prev.findIndex(i => i.id === item.id && i.dinerId === d);
@@ -805,7 +827,7 @@ function CartaContent() {
                                 }
                                 return prev;
                               });
-                            }} className="text-[10px] sm:text-xs text-red-500 hover:text-red-400 bg-red-500/10 px-2 sm:px-3 py-1 sm:py-1.5 rounded transition-colors uppercase font-bold tracking-wider">
+                            }} className={`text-[10px] sm:text-xs text-red-500 hover:text-red-400 bg-red-500/10 px-2 sm:px-3 py-1.5 rounded transition-colors uppercase font-bold tracking-wider`}>
                               Eliminar
                             </button>
                           </div>
@@ -817,29 +839,29 @@ function CartaContent() {
               })}
 
               {cart.length === 0 && (
-                <div className="h-full flex flex-col items-center justify-center text-center text-gray-500 py-12">
-                  <span className="text-5xl mb-4">🛒</span>
-                  <p className="text-sm sm:text-base">Tu bandeja está vacía.</p>
-                  <p className="text-xs text-gray-600 mt-2 max-w-[200px] mx-auto">Selecciona productos de la carta para comenzar tu pedido.</p>
+                <div className={`h-full flex flex-col items-center justify-center text-center py-12 ${theme.textSec}`}>
+                  <span className="text-5xl mb-4 grayscale opacity-50">🛒</span>
+                  <p className={`text-sm sm:text-base font-bold ${theme.text}`}>Tu bandeja está vacía.</p>
+                  <p className="text-xs mt-2 max-w-[200px] mx-auto">Selecciona productos de la carta para comenzar tu pedido.</p>
                 </div>
               )}
             </div>
 
             {/* Footer con Total y los 3 Botones Solicitados */}
-            <div className="shrink-0 border-t border-white/10 pt-4 bg-[#0a0a0a]">
+            <div className={`shrink-0 border-t ${theme.border} pt-6 ${theme.bg}`}>
               {cartTotal > 0 && (
                 <div className="flex justify-between items-end mb-6">
-                  <span className="text-xs sm:text-sm uppercase tracking-[0.2em] font-bold text-gray-500">Total a Pagar</span>
-                  <span className="font-serif text-3xl sm:text-4xl text-white">{cartTotal.toFixed(2)}€</span>
+                  <span className={`text-xs sm:text-sm uppercase tracking-[0.2em] font-bold ${theme.textSec}`}>Total a Pagar</span>
+                  <span className={`font-serif text-3xl sm:text-4xl ${theme.text}`}>{cartTotal.toFixed(2)}€</span>
                 </div>
               )}
               
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {/* Botón Principal: Enviar Comanda */}
                 {cartTotal > 0 && (
                   <button 
                     onClick={() => { alert('Pedido Enviado a Cocina exitosamente.'); setCart([]); setIsCartOpen(false); }} 
-                    className="col-span-2 py-4 sm:py-5 rounded-2xl text-xs sm:text-sm font-black uppercase tracking-widest bg-emerald-500 text-black hover:bg-emerald-400 transition-transform active:scale-[0.98] shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                    className={`col-span-2 py-4 sm:py-5 rounded-2xl text-xs sm:text-sm font-black uppercase tracking-widest ${theme.sendBtn} transition-transform active:scale-[0.98] shadow-lg`}
                   >
                     🚀 Enviar Pedido a Cocina
                   </button>
@@ -848,7 +870,7 @@ function CartaContent() {
                 {/* Botón Secundario: Camarero IA */}
                 <button 
                   onClick={() => { setIsCartOpen(false); setIsChatOpen(true); }}
-                  className={`py-3 sm:py-4 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-[#e85d04] text-white hover:bg-[#cc5203] transition-colors flex items-center justify-center gap-2 ${cartTotal === 0 ? 'col-span-2' : 'col-span-1'}`}
+                  className={`py-4 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-widest ${theme.primary} ${theme.primaryHover} ${theme.btnText} transition-colors flex items-center justify-center gap-2 shadow-sm ${cartTotal === 0 ? 'col-span-2' : 'col-span-1'}`}
                 >
                   <span className="text-base sm:text-lg">🤖</span> Abrir Asistente IA
                 </button>
@@ -856,7 +878,7 @@ function CartaContent() {
                 {/* Botón Terciario: Llamar Camarero Humano */}
                 <button 
                   onClick={() => alert('El camarero ha sido notificado y se dirige a su mesa.')}
-                  className={`py-3 sm:py-4 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-widest border border-white/20 text-white hover:bg-white/10 transition-colors flex items-center justify-center gap-2 ${cartTotal === 0 ? 'col-span-2' : 'col-span-1'}`}
+                  className={`py-4 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-widest ${theme.secondaryBtn} transition-colors flex items-center justify-center gap-2 ${cartTotal === 0 ? 'col-span-2' : 'col-span-1'}`}
                 >
                   <span className="text-base sm:text-lg">🛎️</span> Llamar Camarero
                 </button>
@@ -867,41 +889,46 @@ function CartaContent() {
       )}
 
       {/* --------------------------------------------------------- */}
-      {/* GLOBAL AI CHAT MODAL (NUEVO - INDEPENDIENTE) */}
+      {/* GLOBAL AI CHAT MODAL (NUEVO - CAMALEONICO) */}
       {/* --------------------------------------------------------- */}
       {isChatOpen && (
         <div className="fixed inset-0 z-[60] flex flex-col justify-end sm:justify-center px-0 sm:px-8 pb-0 sm:pb-8">
           <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setIsChatOpen(false)}></div>
           
-          <div className="relative w-full h-[90vh] sm:h-[85vh] max-w-md mx-auto bg-[#121212] sm:border border-white/10 sm:rounded-3xl flex flex-col shadow-[0_0_50px_rgba(232,93,4,0.15)] animate-fade-in-up">
+          <div className={`relative w-full h-[90vh] sm:h-[85vh] max-w-2xl mx-auto ${theme.bg} sm:border ${theme.border} sm:rounded-3xl flex flex-col shadow-2xl animate-fade-in-up`}>
             
             {/* Header Chat */}
-            <div className="bg-[#1a1a1a] px-5 py-4 sm:rounded-t-3xl border-b border-white/5 flex items-center justify-between shrink-0 shadow-md">
-              <div className="flex items-center gap-3">
+            <div className={`${theme.card} px-6 py-5 sm:rounded-t-3xl border-b ${theme.border} flex items-center justify-between shrink-0 shadow-sm z-10`}>
+              <div className="flex items-center gap-4">
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#e85d04] to-amber-500 flex items-center justify-center text-xl shadow-lg">🤖</div>
-                  <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#1a1a1a] animate-pulse"></div>
+                  <div className={`w-12 h-12 rounded-full ${theme.primary} flex items-center justify-center text-2xl shadow-lg`}>🤖</div>
+                  <div className={`absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 ${theme.card} animate-pulse`}></div>
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-white tracking-wider">Asistente IA</div>
-                  <div className="text-[10px] text-[#e85d04] font-medium uppercase tracking-widest">En línea - Mesa {tableParam}</div>
+                  <div className={`text-base font-bold ${theme.text} tracking-wider`}>Asistente IA</div>
+                  <div className={`text-[10px] ${theme.textPrimary} font-black uppercase tracking-widest`}>En línea - Mesa {tableParam}</div>
                 </div>
               </div>
-              <button onClick={() => setIsChatOpen(false)} className="text-gray-400 bg-white/5 hover:bg-white/10 hover:text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors">✕</button>
+              <div className="flex gap-2">
+                <button onClick={() => setIsChatOpen(false)} className={`${theme.secondaryBtn} px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest hidden sm:flex items-center gap-2`}>
+                  ← Seguir Pidiendo
+                </button>
+                <button onClick={() => setIsChatOpen(false)} className={`text-gray-400 bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 hover:${theme.text} w-10 h-10 rounded-full flex items-center justify-center transition-colors`}>✕</button>
+              </div>
             </div>
             
             {/* Mensajes del Chat */}
-            <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5 text-sm bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed" style={{backgroundColor: '#0a0a0a'}}>
+            <div className={`flex-1 overflow-y-auto p-4 sm:p-8 space-y-6 text-sm ${theme.bg} ${activeTemplate==='sushi'? "bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" : ""} bg-fixed`}>
               {/* Mensaje de Bienvenida */}
               <div className="flex justify-start">
-                <div className="p-4 rounded-2xl rounded-tl-sm max-w-[85%] bg-[#1a1a1a] text-gray-200 font-light leading-relaxed border border-white/5 shadow-md">
+                <div className={`p-5 rounded-2xl rounded-tl-sm max-w-[85%] ${theme.card} ${theme.text} border ${theme.border} font-medium leading-relaxed shadow-sm`}>
                   ¡Hola! Soy el asistente inteligente de Architect.Sys. Estoy conectado a la carta de este restaurante. Puedo recomendarte maridajes, explicarte ingredientes o añadir platos a tu comanda. ¿Qué te apetece hoy?
                 </div>
               </div>
               
               {chatMessages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`p-4 rounded-2xl max-w-[85%] font-light leading-relaxed shadow-md ${msg.role === 'user' ? 'bg-[#e85d04] text-white rounded-tr-sm' : 'bg-[#1a1a1a] text-gray-200 border border-white/5 rounded-tl-sm'}`}>
+                  <div className={`p-5 rounded-2xl max-w-[85%] font-medium leading-relaxed shadow-sm ${msg.role === 'user' ? `${theme.primary} ${theme.btnText} rounded-tr-sm` : `${theme.card} ${theme.text} border ${theme.border} rounded-tl-sm`}`}>
                     {msg.content}
                   </div>
                 </div>
@@ -909,10 +936,10 @@ function CartaContent() {
               
               {isTyping && (
                 <div className="flex justify-start animate-fade-in">
-                  <div className="p-4 rounded-2xl rounded-tl-sm bg-[#1a1a1a] border border-white/5 flex gap-1.5 shadow-md">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gray-500 animate-bounce"></div>
-                    <div className="w-1.5 h-1.5 rounded-full bg-gray-500 animate-bounce" style={{animationDelay:'150ms'}}></div>
-                    <div className="w-1.5 h-1.5 rounded-full bg-gray-500 animate-bounce" style={{animationDelay:'300ms'}}></div>
+                  <div className={`p-5 rounded-2xl rounded-tl-sm ${theme.card} border ${theme.border} flex gap-1.5 shadow-sm`}>
+                    <div className="w-2 h-2 rounded-full bg-gray-500 animate-bounce"></div>
+                    <div className="w-2 h-2 rounded-full bg-gray-500 animate-bounce" style={{animationDelay:'150ms'}}></div>
+                    <div className="w-2 h-2 rounded-full bg-gray-500 animate-bounce" style={{animationDelay:'300ms'}}></div>
                   </div>
                 </div>
               )}
@@ -920,48 +947,92 @@ function CartaContent() {
             </div>
             
             {/* Sugerencias Rápidas */}
-            <div className="px-4 py-3 bg-[#1a1a1a] border-t border-white/5 flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-none shrink-0">
+            <div className={`${theme.card} px-6 py-4 border-t ${theme.border} flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-none shrink-0`}>
               <button onClick={() => {
                 const msg = "Quiero ver las opciones sin gluten.";
                 setChatInput(msg); handleSendMessage();
-              }} className="text-[11px] bg-white/5 border border-white/10 rounded-full px-4 py-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors">
+              }} className={`text-[11px] ${theme.secondaryBtn} rounded-full px-4 py-2 font-bold transition-colors`}>
                 🌾 Sin Gluten
               </button>
               <button onClick={() => {
                 const msg = "¿Qué me recomiendas que sea rápido?";
                 setChatInput(msg); handleSendMessage();
-              }} className="text-[11px] bg-white/5 border border-white/10 rounded-full px-4 py-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors">
+              }} className={`text-[11px] ${theme.secondaryBtn} rounded-full px-4 py-2 font-bold transition-colors`}>
                 ⚡ Algo Rápido
               </button>
               {cartItemCount > 0 && (
                 <button onClick={() => {
                   const msg = "¿Con qué bebida puedo acompañar mi pedido actual?";
                   setChatInput(msg); handleSendMessage();
-                }} className="text-[11px] bg-[#e85d04]/20 border border-[#e85d04]/30 rounded-full px-4 py-2 text-[#e85d04] hover:bg-[#e85d04]/30 transition-colors font-bold">
+                }} className={`text-[11px] ${theme.primary} ${theme.btnText} bg-opacity-20 hover:bg-opacity-30 border ${theme.border} rounded-full px-4 py-2 transition-colors font-bold`}>
                   🍷 Maridar mi pedido
                 </button>
               )}
             </div>
             
             {/* Input de Texto */}
-            <div className="p-4 bg-[#121212] border-t border-white/5 flex gap-3 shrink-0 sm:rounded-b-3xl">
-              <input
-                type="text"
-                value={chatInput}
-                onChange={e => setChatInput(e.target.value)}
-                onKeyDown={e => e.key === 'Enter' && handleSendMessage()}
-                placeholder="Pregúntale al camarero IA..."
-                className="flex-1 rounded-2xl px-5 py-3.5 bg-[#1a1a1a] text-white border border-white/10 focus:outline-none focus:border-[#e85d04] text-sm transition-colors shadow-inner"
-              />
-              <button 
-                onClick={handleSendMessage} 
-                disabled={isTyping || !chatInput.trim()} 
-                className="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#e85d04] text-white hover:bg-[#cc5203] disabled:opacity-50 transition-colors shadow-lg active:scale-95"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+            <div className={`p-6 ${theme.bg} border-t ${theme.border} flex flex-col sm:flex-row gap-4 shrink-0 sm:rounded-b-3xl`}>
+              <button onClick={() => setIsChatOpen(false)} className={`sm:hidden w-full ${theme.secondaryBtn} py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest flex items-center justify-center gap-2 mb-2`}>
+                ← Seguir Pidiendo
               </button>
+              <div className="flex gap-3 w-full">
+                <input
+                  type="text"
+                  value={chatInput}
+                  onChange={e => setChatInput(e.target.value)}
+                  onKeyDown={e => e.key === 'Enter' && handleSendMessage()}
+                  placeholder="Pregúntale al camarero IA..."
+                  className={`flex-1 rounded-2xl px-6 py-4 ${theme.card} ${theme.text} border ${theme.border} focus:outline-none focus:border-opacity-100 font-medium text-sm transition-colors shadow-inner`}
+                />
+                <button 
+                  onClick={handleSendMessage} 
+                  disabled={isTyping || !chatInput.trim()} 
+                  className={`w-14 h-14 flex items-center justify-center rounded-2xl ${theme.primary} ${theme.btnText} ${theme.primaryHover} disabled:opacity-50 transition-colors shadow-lg active:scale-95 shrink-0`}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+                </button>
+              </div>
             </div>
 
+          </div>
+        </div>
+      )}
+
+      {/* --------------------------------------------------------- */}
+      {/* FULLSCREEN IMAGE MODAL (VISOR DE PLATOS) */}
+      {/* --------------------------------------------------------- */}
+      {selectedImageItem && (
+        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/95 backdrop-blur-lg p-4 sm:p-8 animate-fade-in" onClick={() => setSelectedImageItem(null)}>
+          <div className={`relative w-full max-w-2xl flex flex-col ${theme.bg} rounded-[2rem] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)] border ${theme.border} animate-fade-in-up`} onClick={e => e.stopPropagation()}>
+            <button onClick={() => setSelectedImageItem(null)} className="absolute top-4 right-4 z-20 bg-black/40 backdrop-blur-md hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors border border-white/20">✕</button>
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] bg-black">
+              <Image src={selectedImageItem.image} alt={selectedImageItem.name[lang]} fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            </div>
+            <div className="p-6 sm:p-10 flex flex-col gap-4 relative z-10 -mt-10 sm:-mt-16 bg-gradient-to-b from-transparent to-black">
+               <div className="flex justify-between items-end gap-4 mt-8 sm:mt-12">
+                 <div>
+                   <h3 className={`text-2xl sm:text-3xl font-black ${theme.text} mb-2`}>{selectedImageItem.name[lang]}</h3>
+                   {selectedImageItem.allergens.length > 0 && (
+                     <div className="flex gap-1.5 flex-wrap">
+                       {selectedImageItem.allergens.map((a: string) => (
+                         <span key={a} title={ALLERGEN_ICONS[a]} className={`text-[9px] ${theme.card} ${theme.textSec} border ${theme.border} px-2 py-1 rounded-sm font-bold uppercase`}>{a}</span>
+                       ))}
+                     </div>
+                   )}
+                 </div>
+                 <span className={`text-2xl sm:text-3xl ${theme.textPrimary} font-black shrink-0`}>{selectedImageItem.price.toFixed(2)}€</span>
+               </div>
+               <p className={`text-sm sm:text-base ${theme.textSec} leading-relaxed mt-4 font-medium`}>{selectedImageItem.description[lang]}</p>
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                 <button onClick={() => { openContextualChat(selectedImageItem.name[lang]); setSelectedImageItem(null); }} className={`py-4 rounded-2xl font-bold uppercase tracking-widest text-xs sm:text-sm ${theme.secondaryBtn} transition-colors flex items-center justify-center gap-2`}>
+                   🤖 Consultar a la IA
+                 </button>
+                 <button onClick={() => { addToCart(selectedImageItem); setSelectedImageItem(null); setIsCartOpen(true); }} className={`py-4 rounded-2xl font-black uppercase tracking-widest text-xs sm:text-sm ${theme.primary} ${theme.btnText} ${theme.primaryHover} shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2`}>
+                   ➕ Añadir al Pedido
+                 </button>
+               </div>
+            </div>
           </div>
         </div>
       )}
