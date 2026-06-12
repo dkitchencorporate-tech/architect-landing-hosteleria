@@ -455,7 +455,7 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
 // ==========================================
 // 3. LAYOUT: FAST FOOD (APP GRID / NEON)
 // ==========================================
-function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDiner, tableParam, setLang, onAdd, onAsk }: any) {
+function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDiner, tableParam, setLang, onAdd, onAsk, onImageClick }: any) {
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans pb-48 selection:bg-[#ff003c] selection:text-white">
       
