@@ -63,9 +63,10 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  // Si intenta ir a /auth y ya está logueado, llevarlo al dashboard
+  // Si intenta ir a /auth y ya está logueado, llevarlo a su zona correspondiente
   if (url.pathname.startsWith('/auth') && user) {
-    url.pathname = '/dashboard';
+    const isAdmin = user.email === 'alex@architectsys.com' || user.email === 'admin@architectsys.com';
+    url.pathname = isAdmin ? '/admin-architect/clients' : '/dashboard';
     return NextResponse.redirect(url);
   }
 

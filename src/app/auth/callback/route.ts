@@ -27,9 +27,11 @@ export async function GET(request: Request) {
       }
     );
 
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (!error) {
-      return NextResponse.redirect(`${origin}${next}`);
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+    if (!error && data.user) {
+      const isAdmin = data.user.email === 'alex@architectsys.com' || data.user.email === 'admin@architectsys.com';
+      const finalNext = next === '/dashboard' && isAdmin ? '/admin-architect/clients' : next;
+      return NextResponse.redirect(`${origin}${finalNext}`);
     }
   }
 
