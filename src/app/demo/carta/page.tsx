@@ -38,23 +38,23 @@ function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiv
     <div className="min-h-screen bg-[#0a0a0a] text-[#f5f5f5] font-serif pb-48">
       
       {/* 1. Unique Header (Inline, elegant, transparent) */}
-      <header className="px-8 py-10 flex flex-col md:flex-row justify-between items-center border-b border-white/10">
+      <header className="px-4 sm:px-8 py-6 sm:py-10 flex flex-col md:flex-row justify-between items-center border-b border-white/10">
         <div className="text-center md:text-left mb-6 md:mb-0">
-          <h1 className="text-3xl tracking-[0.2em] uppercase font-light">Nobu <span className="text-amber-600 font-serif">Sense</span></h1>
-          <p className="text-[10px] tracking-widest text-amber-600/70 mt-2 uppercase">{t.table_prefix} {tableParam}</p>
+          <h1 className="text-2xl sm:text-3xl tracking-[0.2em] uppercase font-light">Nobu <span className="text-amber-600 font-serif">Sense</span></h1>
+          <p className="text-[9px] sm:text-[10px] tracking-widest text-amber-600/70 mt-2 uppercase">{t.table_prefix} {tableParam}</p>
         </div>
         
-        <div className="flex flex-col items-center gap-6">
-          <div className="flex gap-4">
+        <div className="flex flex-col items-center gap-4 sm:gap-6">
+          <div className="flex gap-3 sm:gap-4">
             {(['es', 'en', 'fr'] as LanguageCode[]).map(l => (
-              <button key={l} onClick={() => setLang(l)} className={`text-[10px] uppercase tracking-widest transition-colors ${lang === l ? 'text-amber-500' : 'text-gray-600 hover:text-white'}`}>
+              <button key={l} onClick={() => setLang(l)} className={`text-[9px] sm:text-[10px] uppercase tracking-widest transition-colors ${lang === l ? 'text-amber-500' : 'text-gray-600 hover:text-white'}`}>
                 {l}
               </button>
             ))}
           </div>
-          <div className="flex gap-2 bg-white/5 p-1 rounded-full border border-white/10">
+          <div className="flex flex-wrap justify-center gap-2 bg-white/5 p-1 rounded-full border border-white/10 w-full sm:w-auto">
             {[1, 2, 3, 4].map(d => (
-              <button key={d} onClick={() => setActiveDiner(d)} className={`px-4 py-2 text-[10px] uppercase tracking-widest rounded-full transition-all ${activeDiner === d ? 'bg-amber-600 text-white' : 'text-gray-500'}`}>
+              <button key={d} onClick={() => setActiveDiner(d)} className={`px-3 sm:px-4 py-1.5 sm:py-2 text-[9px] sm:text-[10px] uppercase tracking-widest rounded-full transition-all ${activeDiner === d ? 'bg-amber-600 text-white' : 'text-gray-500'}`}>
                 {t.diner_prefix} {d}
               </button>
             ))}
@@ -63,61 +63,61 @@ function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiv
       </header>
 
       {/* 2. Unique Hero Promo */}
-      <div className="relative py-32 px-6 flex items-center justify-center border-b border-white/5 overflow-hidden">
+      <div className="relative py-20 sm:py-32 px-4 sm:px-6 flex items-center justify-center border-b border-white/5 overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=1200&q=30')] bg-cover bg-center mix-blend-luminosity"></div>
         <div className="relative z-10 text-center max-w-2xl">
-          <span className="text-amber-500 text-xs tracking-[0.3em] uppercase mb-4 block">Experiencia Omakase</span>
-          <h2 className="text-4xl md:text-6xl font-light leading-tight mb-8">
+          <span className="text-amber-500 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-4 block">Experiencia Omakase</span>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-light leading-tight mb-6 sm:mb-8">
             Únete a The Club y recibe un <span className="italic text-amber-500">Sake Premium</span> de cortesía.
           </h2>
-          <button className="px-8 py-3 border border-amber-500 text-amber-500 text-xs uppercase tracking-widest hover:bg-amber-500 hover:text-black transition-colors">
+          <button className="px-6 sm:px-8 py-3 border border-amber-500 text-amber-500 text-[10px] sm:text-xs uppercase tracking-widest hover:bg-amber-500 hover:text-black transition-colors">
             Descubrir Beneficios
           </button>
         </div>
       </div>
 
       {/* 3. Menu Content */}
-      <div className="max-w-4xl mx-auto px-6 py-24 space-y-32">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24 space-y-24 sm:space-y-32">
         {categories.map((cat: any, index: number) => {
           const items = menu.filter((i: any) => i.category === cat.id);
           if (!items.length) return null;
 
           return (
             <section key={cat.id}>
-              <h3 className="text-2xl text-white mb-16 pb-4 flex items-center gap-6">
-                <span className="w-12 h-[1px] bg-amber-500/50"></span>
+              <h3 className="text-xl sm:text-2xl text-white mb-10 sm:mb-16 pb-4 flex items-center gap-4 sm:gap-6">
+                <span className="w-8 sm:w-12 h-[1px] bg-amber-500/50"></span>
                 {cat.name[lang]}
               </h3>
               
-              <div className="flex flex-col space-y-24">
+              <div className="flex flex-col space-y-16 sm:space-y-24">
                 {items.map((item: any, idx: number) => (
-                  <div key={item.id} className={`flex flex-col ${idx % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}>
+                  <div key={item.id} className={`flex flex-col ${idx % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-6 sm:gap-12 items-center`}>
                     <div className="w-full md:w-1/2">
-                      <div className="aspect-[16/9] w-full overflow-hidden bg-white/5 relative">
+                      <div className="aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-white/5 relative rounded-sm sm:rounded-none">
                         <ImageWithFallback src={item.image} alt={item.name[lang]} className="grayscale-[30%] hover:grayscale-0 transition-all duration-1000" />
                       </div>
                     </div>
-                    <div className="w-full md:w-1/2 flex flex-col justify-center">
+                    <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
                       <div className="flex justify-between items-baseline mb-2">
-                        <h4 className="text-xl text-white font-light">{item.name[lang]}</h4>
-                        <span className="text-lg text-amber-500 ml-4">{item.price.toFixed(2)}€</span>
+                        <h4 className="text-lg sm:text-xl text-white font-light">{item.name[lang]}</h4>
+                        <span className="text-base sm:text-lg text-amber-500 ml-4">{item.price.toFixed(2)}€</span>
                       </div>
                       {item.isChefRecommendation && <span className="text-[9px] uppercase tracking-[0.2em] text-amber-500 mb-2 block">✧ {t.chef_rec}</span>}
                       {item.allergens.length > 0 && (
-                        <div className="flex gap-2 mb-4">
+                        <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
                           {item.allergens.map((a: string) => (
                             <span key={a} title={ALLERGEN_ICONS[a]} className="text-[8px] border border-amber-500/30 text-amber-500/70 px-1.5 py-0.5 uppercase tracking-widest">{a}</span>
                           ))}
                         </div>
                       )}
-                      <p className="text-gray-400 font-sans font-light text-sm mb-10 leading-relaxed">
+                      <p className="text-gray-400 font-sans font-light text-xs sm:text-sm mb-6 sm:mb-10 leading-relaxed px-2 md:px-0">
                         {item.description[lang]}
                       </p>
-                      <div className="flex gap-4">
-                        <button onClick={() => onAdd(item)} className="px-6 py-3 border border-white/20 text-white text-[10px] tracking-[0.2em] uppercase hover:border-amber-500 hover:text-amber-500 transition-colors">
+                      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
+                        <button onClick={() => onAdd(item)} className="px-6 py-3 border border-white/20 text-white text-[10px] tracking-[0.2em] uppercase hover:border-amber-500 hover:text-amber-500 transition-colors w-full sm:w-auto">
                           {t.add_to_order} ({activeDiner})
                         </button>
-                        <button onClick={() => onAsk(item.name[lang])} className="px-4 py-3 text-gray-500 text-[10px] tracking-[0.2em] uppercase hover:text-amber-500 transition-colors">
+                        <button onClick={() => onAsk(item.name[lang])} className="px-4 py-3 text-gray-500 text-[10px] tracking-[0.2em] uppercase hover:text-amber-500 transition-colors w-full sm:w-auto">
                           {t.ask_ai}
                         </button>
                       </div>
@@ -131,12 +131,12 @@ function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiv
       </div>
 
       {/* 4. Unique Loyalty Form */}
-      <div className="max-w-2xl mx-auto px-6 py-24 text-center border-t border-white/10 mt-16">
-        <h3 className="text-3xl font-light mb-4">Membresía <span className="text-amber-500 italic">Exclusiva</span></h3>
-        <p className="text-sm text-gray-400 mb-8 font-sans font-light">Déjenos su email para acceder a mesas ocultas, eventos de cata privados y reclamar su Sake de bienvenida.</p>
-        <div className="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
-          <input type="email" placeholder="Su correo electrónico..." className="flex-1 bg-transparent border-b border-white/30 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors font-sans" />
-          <button className="px-6 py-3 bg-amber-600 text-white text-[10px] uppercase tracking-widest hover:bg-amber-500 transition-colors">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center border-t border-white/10 mt-8 sm:mt-16">
+        <h3 className="text-2xl sm:text-3xl font-light mb-4">Membresía <span className="text-amber-500 italic">Exclusiva</span></h3>
+        <p className="text-xs sm:text-sm text-gray-400 mb-8 font-sans font-light">Déjenos su email para acceder a mesas ocultas, eventos de cata privados y reclamar su Sake de bienvenida.</p>
+        <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input type="email" placeholder="Su correo electrónico..." className="flex-1 bg-transparent border-b border-white/30 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors font-sans text-center sm:text-left" />
+          <button className="px-6 py-3 sm:py-0 bg-amber-600 text-white text-[10px] uppercase tracking-widest hover:bg-amber-500 transition-colors shrink-0">
             Solicitar Acceso
           </button>
         </div>
@@ -636,7 +636,7 @@ function CartaContent() {
 
   const openContextualChat = (dishName: string) => {
     setActiveDishContext(dishName);
-    setIsCartOpen(true);
+    setIsChatOpen(true);
     const initialPrompt = `Me gustaría consultar sobre: ${dishName}.`;
     setChatMessages(prev => [...prev, { role: 'user', content: initialPrompt }]);
     sendToAi(initialPrompt, dishName);
@@ -758,170 +758,210 @@ function CartaContent() {
         </div>
       )}
 
-      {/* GLOBAL CART & CHAT (Simplified internal structure for brevity, identical functionality) */}
-      {/* (Cart Drawer logic kept intact) */}
+      {/* --------------------------------------------------------- */}
+      {/* GLOBAL CART MODAL (DESACOPLADO) */}
+      {/* --------------------------------------------------------- */}
       {isCartOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col justify-end px-2 pb-2">
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsCartOpen(false)}></div>
-          <div className="relative w-full max-w-5xl mx-auto h-[85vh] rounded-3xl p-6 md:p-8 flex flex-col bg-[#0a0a0a] border border-white/10 animate-fade-in">
-            {/* Header */}
-            <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
-              <h2 className="font-serif text-2xl md:text-3xl text-white flex items-center gap-3">
-                <span>Comanda Activa</span>
-                <span className="text-xs uppercase tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full font-sans font-bold">Mesa {tableParam}</span>
+        <div className="fixed inset-0 z-50 flex flex-col justify-end px-4 pb-4 sm:px-8 sm:pb-8">
+          <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={() => setIsCartOpen(false)}></div>
+          <div className="relative w-full max-w-2xl mx-auto h-[80vh] sm:h-[85vh] rounded-3xl p-6 sm:p-8 flex flex-col bg-[#0a0a0a] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-fade-in-up">
+            
+            {/* Header Comanda */}
+            <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4 shrink-0">
+              <h2 className="font-serif text-2xl sm:text-3xl text-white flex items-center gap-3">
+                <span>Tu Comanda</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-1 rounded-full font-sans font-bold">Mesa {tableParam}</span>
               </h2>
               <button onClick={() => setIsCartOpen(false)} className="text-white bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center transition-colors">✕</button>
             </div>
 
-            {/* Split layout: Order on left, Camarero IA on right (Desktop) */}
-            <div className="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8">
-              
-              {/* Order side (3/5 width on desktop) */}
-              <div className="md:col-span-3 flex flex-col h-full min-h-0 justify-between">
-                <div className="flex-1 overflow-y-auto space-y-6 pr-2">
-                  {[1, 2, 3, 4].map(d => {
-                    const dinerCart = cart.filter(c => c.dinerId === d);
-                    if (dinerCart.length === 0) return null;
-                    return (
-                      <div key={d} className="bg-white/5 border border-white/10 rounded-2xl p-5">
-                        <div className="flex justify-between items-center mb-4 border-b border-white/5 pb-3">
-                          <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Comensal {d}</h3>
-                          <span className="font-serif text-lg text-white">{getDinerTotal(d).toFixed(2)}€</span>
+            {/* Listado de Platos */}
+            <div className="flex-1 overflow-y-auto space-y-6 pr-2 mb-6 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
+              {[1, 2, 3, 4].map(d => {
+                const dinerCart = cart.filter(c => c.dinerId === d);
+                if (dinerCart.length === 0) return null;
+                return (
+                  <div key={d} className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5">
+                    <div className="flex justify-between items-center mb-4 border-b border-white/5 pb-3">
+                      <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-gray-400">Comensal {d}</h3>
+                      <span className="font-serif text-base sm:text-lg text-white">{getDinerTotal(d).toFixed(2)}€</span>
+                    </div>
+                    <div className="space-y-4">
+                      {dinerCart.map(item => (
+                        <div key={item.id} className="flex justify-between items-center gap-2">
+                          <div className="flex items-center gap-3">
+                            <span className="text-[10px] sm:text-xs font-bold bg-white/10 text-white px-2 py-1 rounded">{item.qty}x</span>
+                            <div className="text-sm sm:text-base text-gray-200 line-clamp-1">{item.name[lang]}</div>
+                          </div>
+                          <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+                            <span className="font-serif text-sm sm:text-base text-gray-400">{(item.price * item.qty).toFixed(2)}€</span>
+                            <button onClick={() => {
+                              setCart(prev => {
+                                const existing = prev.findIndex(i => i.id === item.id && i.dinerId === d);
+                                if (existing >= 0) {
+                                  const nc = [...prev];
+                                  if (nc[existing].qty > 1) { nc[existing].qty -= 1; } else { nc.splice(existing, 1); }
+                                  return nc;
+                                }
+                                return prev;
+                              });
+                            }} className="text-[10px] sm:text-xs text-red-500 hover:text-red-400 bg-red-500/10 px-2 sm:px-3 py-1 sm:py-1.5 rounded transition-colors uppercase font-bold tracking-wider">
+                              Eliminar
+                            </button>
+                          </div>
                         </div>
-                        <div className="space-y-4">
-                          {dinerCart.map(item => (
-                            <div key={item.id} className="flex justify-between items-center">
-                              <div className="flex items-center gap-3">
-                                <span className="text-[10px] font-bold bg-white/10 text-white px-2 py-1 rounded">{item.qty}x</span>
-                                <div className="text-sm text-gray-200">{item.name[lang]}</div>
-                              </div>
-                              <div className="flex items-center gap-4">
-                                <span className="font-serif text-sm text-gray-400">{(item.price * item.qty).toFixed(2)}€</span>
-                                <button onClick={() => {
-                                  // Quick remove / decrement
-                                  setCart(prev => {
-                                    const existing = prev.findIndex(i => i.id === item.id && i.dinerId === d);
-                                    if (existing >= 0) {
-                                      const nc = [...prev];
-                                      if (nc[existing].qty > 1) {
-                                        nc[existing].qty -= 1;
-                                      } else {
-                                        nc.splice(existing, 1);
-                                      }
-                                      return nc;
-                                    }
-                                    return prev;
-                                  });
-                                }} className="text-[10px] text-red-500 hover:text-red-400 bg-red-500/10 px-2.5 py-1 rounded transition-colors">
-                                  Borrar
-                                </button>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    );
-                  })}
-
-                  {cart.length === 0 && (
-                    <div className="h-full flex flex-col items-center justify-center text-center text-gray-500 py-12">
-                      <span className="text-5xl mb-4">🛒</span>
-                      <p className="text-sm">Tu bandeja de pedido está vacía.</p>
-                      <p className="text-xs text-gray-600 mt-2">¡Pídele recomendaciones al Camarero IA a la derecha!</p>
-                    </div>
-                  )}
-                </div>
-
-                {/* Confirm Order section */}
-                {cartTotal > 0 && (
-                  <div className="mt-4 pt-4 border-t border-white/10 bg-[#0a0a0a]">
-                    <div className="flex justify-between items-end mb-4">
-                      <span className="text-xs uppercase tracking-[0.2em] font-bold text-gray-500">Total Comanda</span>
-                      <span className="font-serif text-3xl text-white">{cartTotal.toFixed(2)}€</span>
-                    </div>
-                    <button onClick={() => { alert('Pedido Enviado a Cocina'); setCart([]); setIsCartOpen(false); }} className="w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest bg-white text-black hover:bg-gray-200 transition-colors">
-                      Enviar a Cocina (Mesa {tableParam})
-                    </button>
-                  </div>
-                )}
-              </div>
-
-              {/* Camarero IA side (2/5 width on desktop, acts as chat section) */}
-              <div className="md:col-span-2 flex flex-col h-full min-h-0 bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
-                <div className="bg-white/5 px-5 py-4 border-b border-white/10 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
-                    <div>
-                      <div className="text-xs font-bold text-white uppercase tracking-wider">Camarero IA Interactiva</div>
-                      <div className="text-[9px] text-gray-400">Gestiona tu pedido y responde tus dudas</div>
+                      ))}
                     </div>
                   </div>
-                  <span className="text-lg">🤖</span>
-                </div>
-                
-                {/* Chat Message Window */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-4 text-xs">
-                  <div className="flex justify-start">
-                    <div className="p-3.5 rounded-2xl rounded-tl-sm max-w-[90%] bg-white/5 text-gray-300 font-light leading-relaxed border border-white/5">
-                      ¡Hola! Soy tu camarero de mesa interactivo. Puedo ayudarte a añadir platos a tu bandeja, sugerirte maridajes o responder dudas sobre alergias. ¿Qué te apetece hoy?
-                    </div>
-                  </div>
-                  {chatMessages.map((msg, i) => (
-                    <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                      <div className={`p-3.5 rounded-2xl max-w-[90%] font-light leading-relaxed ${msg.role === 'user' ? 'bg-[#e85d04] text-white rounded-tr-sm' : 'bg-white/5 text-gray-300 border border-white/5 rounded-tl-sm'}`}>
-                        {msg.content}
-                      </div>
-                    </div>
-                  ))}
-                  {isTyping && (
-                    <div className="flex justify-start animate-pulse">
-                      <div className="p-3 rounded-2xl rounded-tl-sm bg-white/5 border border-white/5 flex gap-1">
-                        <div className="w-1 h-1 rounded-full bg-gray-500 animate-bounce"></div>
-                        <div className="w-1 h-1 rounded-full bg-gray-500 animate-bounce" style={{animationDelay:'150ms'}}></div>
-                        <div className="w-1 h-1 rounded-full bg-gray-500 animate-bounce" style={{animationDelay:'300ms'}}></div>
-                      </div>
-                    </div>
-                  )}
-                  <div ref={messagesEndRef} />
-                </div>
-                
-                {/* Chat Suggestion Pills */}
-                {cart.length > 0 && (
-                  <div className="px-4 py-2 bg-black/40 border-t border-white/5 flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-none">
-                    <button onClick={() => {
-                      const msg = "¿Qué postre me recomiendas para terminar?";
-                      setChatInput(msg);
-                      setChatMessages(prev => [...prev, { role: 'user', content: msg }]);
-                      sendToAi(msg, "recomendación postre");
-                    }} className="text-[9px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-gray-400 hover:text-white transition-colors">
-                      🍰 ¿Qué postre me recomiendas?
-                    </button>
-                    <button onClick={() => {
-                      const msg = "¿Qué vino marida mejor con mi comanda?";
-                      setChatInput(msg);
-                      setChatMessages(prev => [...prev, { role: 'user', content: msg }]);
-                      sendToAi(msg, "maridaje vino");
-                    }} className="text-[9px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 text-gray-400 hover:text-white transition-colors">
-                      🍷 ¿Qué vino marida mejor?
-                    </button>
-                  </div>
-                )}
-                
-                {/* Chat Inputs */}
-                <div className="p-3 bg-black/40 border-t border-white/10 flex gap-2">
-                  <input
-                    type="text"
-                    value={chatInput}
-                    onChange={e => setChatInput(e.target.value)}
-                    onKeyDown={e => e.key === 'Enter' && handleSendMessage()}
-                    placeholder="Escribe aquí al camarero..."
-                    className="flex-1 rounded-xl px-4 py-2.5 bg-black/60 text-white border border-white/10 focus:outline-none focus:border-white/30 text-xs"
-                  />
-                  <button onClick={handleSendMessage} disabled={isTyping} className="w-10 h-10 flex items-center justify-center rounded-xl bg-white text-black hover:bg-gray-200 disabled:opacity-50 transition-colors">↗</button>
-                </div>
-              </div>
+                );
+              })}
 
+              {cart.length === 0 && (
+                <div className="h-full flex flex-col items-center justify-center text-center text-gray-500 py-12">
+                  <span className="text-5xl mb-4">🛒</span>
+                  <p className="text-sm sm:text-base">Tu bandeja está vacía.</p>
+                  <p className="text-xs text-gray-600 mt-2 max-w-[200px] mx-auto">Selecciona productos de la carta para comenzar tu pedido.</p>
+                </div>
+              )}
             </div>
+
+            {/* Footer con Total y los 3 Botones Solicitados */}
+            <div className="shrink-0 border-t border-white/10 pt-4 bg-[#0a0a0a]">
+              {cartTotal > 0 && (
+                <div className="flex justify-between items-end mb-6">
+                  <span className="text-xs sm:text-sm uppercase tracking-[0.2em] font-bold text-gray-500">Total a Pagar</span>
+                  <span className="font-serif text-3xl sm:text-4xl text-white">{cartTotal.toFixed(2)}€</span>
+                </div>
+              )}
+              
+              <div className="grid grid-cols-2 gap-3">
+                {/* Botón Principal: Enviar Comanda */}
+                {cartTotal > 0 && (
+                  <button 
+                    onClick={() => { alert('Pedido Enviado a Cocina exitosamente.'); setCart([]); setIsCartOpen(false); }} 
+                    className="col-span-2 py-4 sm:py-5 rounded-2xl text-xs sm:text-sm font-black uppercase tracking-widest bg-emerald-500 text-black hover:bg-emerald-400 transition-transform active:scale-[0.98] shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                  >
+                    🚀 Enviar Pedido a Cocina
+                  </button>
+                )}
+
+                {/* Botón Secundario: Camarero IA */}
+                <button 
+                  onClick={() => { setIsCartOpen(false); setIsChatOpen(true); }}
+                  className={`py-3 sm:py-4 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-[#e85d04] text-white hover:bg-[#cc5203] transition-colors flex items-center justify-center gap-2 ${cartTotal === 0 ? 'col-span-2' : 'col-span-1'}`}
+                >
+                  <span className="text-base sm:text-lg">🤖</span> Abrir Asistente IA
+                </button>
+
+                {/* Botón Terciario: Llamar Camarero Humano */}
+                <button 
+                  onClick={() => alert('El camarero ha sido notificado y se dirige a su mesa.')}
+                  className={`py-3 sm:py-4 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-widest border border-white/20 text-white hover:bg-white/10 transition-colors flex items-center justify-center gap-2 ${cartTotal === 0 ? 'col-span-2' : 'col-span-1'}`}
+                >
+                  <span className="text-base sm:text-lg">🛎️</span> Llamar Camarero
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* --------------------------------------------------------- */}
+      {/* GLOBAL AI CHAT MODAL (NUEVO - INDEPENDIENTE) */}
+      {/* --------------------------------------------------------- */}
+      {isChatOpen && (
+        <div className="fixed inset-0 z-[60] flex flex-col justify-end sm:justify-center px-0 sm:px-8 pb-0 sm:pb-8">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setIsChatOpen(false)}></div>
+          
+          <div className="relative w-full h-[90vh] sm:h-[85vh] max-w-md mx-auto bg-[#121212] sm:border border-white/10 sm:rounded-3xl flex flex-col shadow-[0_0_50px_rgba(232,93,4,0.15)] animate-fade-in-up">
+            
+            {/* Header Chat */}
+            <div className="bg-[#1a1a1a] px-5 py-4 sm:rounded-t-3xl border-b border-white/5 flex items-center justify-between shrink-0 shadow-md">
+              <div className="flex items-center gap-3">
+                <div className="relative">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#e85d04] to-amber-500 flex items-center justify-center text-xl shadow-lg">🤖</div>
+                  <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#1a1a1a] animate-pulse"></div>
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white tracking-wider">Asistente IA</div>
+                  <div className="text-[10px] text-[#e85d04] font-medium uppercase tracking-widest">En línea - Mesa {tableParam}</div>
+                </div>
+              </div>
+              <button onClick={() => setIsChatOpen(false)} className="text-gray-400 bg-white/5 hover:bg-white/10 hover:text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors">✕</button>
+            </div>
+            
+            {/* Mensajes del Chat */}
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5 text-sm bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed" style={{backgroundColor: '#0a0a0a'}}>
+              {/* Mensaje de Bienvenida */}
+              <div className="flex justify-start">
+                <div className="p-4 rounded-2xl rounded-tl-sm max-w-[85%] bg-[#1a1a1a] text-gray-200 font-light leading-relaxed border border-white/5 shadow-md">
+                  ¡Hola! Soy el asistente inteligente de Architect.Sys. Estoy conectado a la carta de este restaurante. Puedo recomendarte maridajes, explicarte ingredientes o añadir platos a tu comanda. ¿Qué te apetece hoy?
+                </div>
+              </div>
+              
+              {chatMessages.map((msg, i) => (
+                <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                  <div className={`p-4 rounded-2xl max-w-[85%] font-light leading-relaxed shadow-md ${msg.role === 'user' ? 'bg-[#e85d04] text-white rounded-tr-sm' : 'bg-[#1a1a1a] text-gray-200 border border-white/5 rounded-tl-sm'}`}>
+                    {msg.content}
+                  </div>
+                </div>
+              ))}
+              
+              {isTyping && (
+                <div className="flex justify-start animate-fade-in">
+                  <div className="p-4 rounded-2xl rounded-tl-sm bg-[#1a1a1a] border border-white/5 flex gap-1.5 shadow-md">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gray-500 animate-bounce"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-gray-500 animate-bounce" style={{animationDelay:'150ms'}}></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-gray-500 animate-bounce" style={{animationDelay:'300ms'}}></div>
+                  </div>
+                </div>
+              )}
+              <div ref={messagesEndRef} />
+            </div>
+            
+            {/* Sugerencias Rápidas */}
+            <div className="px-4 py-3 bg-[#1a1a1a] border-t border-white/5 flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-none shrink-0">
+              <button onClick={() => {
+                const msg = "Quiero ver las opciones sin gluten.";
+                setChatInput(msg); handleSendMessage();
+              }} className="text-[11px] bg-white/5 border border-white/10 rounded-full px-4 py-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors">
+                🌾 Sin Gluten
+              </button>
+              <button onClick={() => {
+                const msg = "¿Qué me recomiendas que sea rápido?";
+                setChatInput(msg); handleSendMessage();
+              }} className="text-[11px] bg-white/5 border border-white/10 rounded-full px-4 py-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors">
+                ⚡ Algo Rápido
+              </button>
+              {cartItemCount > 0 && (
+                <button onClick={() => {
+                  const msg = "¿Con qué bebida puedo acompañar mi pedido actual?";
+                  setChatInput(msg); handleSendMessage();
+                }} className="text-[11px] bg-[#e85d04]/20 border border-[#e85d04]/30 rounded-full px-4 py-2 text-[#e85d04] hover:bg-[#e85d04]/30 transition-colors font-bold">
+                  🍷 Maridar mi pedido
+                </button>
+              )}
+            </div>
+            
+            {/* Input de Texto */}
+            <div className="p-4 bg-[#121212] border-t border-white/5 flex gap-3 shrink-0 sm:rounded-b-3xl">
+              <input
+                type="text"
+                value={chatInput}
+                onChange={e => setChatInput(e.target.value)}
+                onKeyDown={e => e.key === 'Enter' && handleSendMessage()}
+                placeholder="Pregúntale al camarero IA..."
+                className="flex-1 rounded-2xl px-5 py-3.5 bg-[#1a1a1a] text-white border border-white/10 focus:outline-none focus:border-[#e85d04] text-sm transition-colors shadow-inner"
+              />
+              <button 
+                onClick={handleSendMessage} 
+                disabled={isTyping || !chatInput.trim()} 
+                className="w-12 h-12 flex items-center justify-center rounded-2xl bg-[#e85d04] text-white hover:bg-[#cc5203] disabled:opacity-50 transition-colors shadow-lg active:scale-95"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+              </button>
+            </div>
+
           </div>
         </div>
       )}
