@@ -1,6 +1,6 @@
 import React from 'react';
 import AdminSidebar from '@/components/admin/AdminSidebar';
-import AuthLayer from '@/components/dashboard/AuthLayer';
+// AuthLayer removed: middleware.ts handles secure SSR authentication
 
 export const metadata = {
   title: 'Architect Agency Hub',
@@ -13,7 +13,7 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <AuthLayer>
+    <>
       <div className="flex min-h-screen bg-[#FDFCF8]">
         {/* Navigation Sidebar */}
         <AdminSidebar />
@@ -25,6 +25,6 @@ export default function AdminLayout({
           </div>
         </main>
       </div>
-    </AuthLayer>
+    </>
   );
 }

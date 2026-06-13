@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
-import AuthLayer from '@/components/dashboard/AuthLayer';
+// AuthLayer removed: middleware.ts handles secure SSR authentication
 
 const DEFAULT_MOCK_CLIENTS = [
   {
@@ -423,7 +423,7 @@ export default function CreativeFactoryPage() {
   ]) : [];
 
   return (
-    <AuthLayer>
+    <>
       <div className="min-h-screen bg-[#050505] text-zinc-100 font-sans flex antialiased selection:bg-orange-500/30">
         
         {/* SIDEBAR COMPLETO (Vault de control) */}
@@ -1289,6 +1289,6 @@ export default function CreativeFactoryPage() {
 
         </main>
       </div>
-    </AuthLayer>
+    </>
   );
 }
