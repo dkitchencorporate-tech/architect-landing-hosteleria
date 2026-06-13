@@ -826,24 +826,39 @@ function CartaContent() {
                       {dinerCart.map(item => (
                         <div key={item.id} className="flex justify-between items-center gap-4">
                           <div className="flex items-center gap-3 flex-1 min-w-0">
-                            <span className={`text-[10px] sm:text-xs font-bold ${theme.primary} ${theme.btnText} px-2 py-1 rounded shadow-sm shrink-0`}>{item.qty}x</span>
-                            <div className={`text-sm sm:text-base ${theme.text} truncate`}>{item.name[lang]}</div>
+                            <div className={`text-sm sm:text-base ${theme.text} truncate font-medium`}>{item.name[lang]}</div>
                           </div>
                           <div className="flex items-center gap-3 sm:gap-4 shrink-0">
                             <span className={`font-serif text-sm sm:text-base ${theme.textSec}`}>{(item.price * item.qty).toFixed(2)}€</span>
-                            <button onClick={() => {
-                              setCart(prev => {
-                                const existing = prev.findIndex(i => i.id === item.id && i.dinerId === d);
-                                if (existing >= 0) {
-                                  const nc = [...prev];
-                                  if (nc[existing].qty > 1) { nc[existing].qty -= 1; } else { nc.splice(existing, 1); }
-                                  return nc;
-                                }
-                                return prev;
-                              });
-                            }} className={`text-[10px] sm:text-xs text-red-500 hover:text-red-400 bg-red-500/10 px-2 sm:px-3 py-1.5 rounded transition-colors uppercase font-bold tracking-wider`}>
-                              {t.remove}
-                            </button>
+                            <div className={`flex items-center border ${theme.border} rounded-xl overflow-hidden shadow-sm`}>
+                              <button onClick={() => {
+                                setCart(prev => {
+                                  const existing = prev.findIndex(i => i.id === item.id && i.dinerId === d);
+                                  if (existing >= 0) {
+                                    const nc = [...prev];
+                                    if (nc[existing].qty > 1) { nc[existing].qty -= 1; } else { nc.splice(existing, 1); }
+                                    return nc;
+                                  }
+                                  return prev;
+                                });
+                              }} className={`w-8 h-8 flex items-center justify-center ${item.qty === 1 ? 'text-red-500 hover:bg-red-500/10' : theme.text + ' hover:bg-black/5 dark:hover:bg-white/5'} transition-colors font-black text-lg`}>
+                                -
+                              </button>
+                              <span className={`w-6 text-center text-xs font-bold ${theme.text}`}>{item.qty}</span>
+                              <button onClick={() => {
+                                setCart(prev => {
+                                  const existing = prev.findIndex(i => i.id === item.id && i.dinerId === d);
+                                  if (existing >= 0) {
+                                    const nc = [...prev];
+                                    nc[existing].qty += 1;
+                                    return nc;
+                                  }
+                                  return prev;
+                                });
+                              }} className={`w-8 h-8 flex items-center justify-center text-green-500 hover:bg-green-500/10 transition-colors font-black text-lg`}>
+                                +
+                              </button>
+                            </div>
                           </div>
                         </div>
                       ))}
