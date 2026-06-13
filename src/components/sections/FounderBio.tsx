@@ -9,10 +9,12 @@ export default function FounderBio() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-[80px] -z-10"></div>
           
           {/* Foto del Fundador */}
-          <div className="w-40 h-40 shrink-0 relative flex items-center justify-center rounded-full border-4 border-white shadow-xl overflow-hidden bg-black">
-            <img src="/images/founder_ugc.png" alt="Alex, CEO de Architect.Sys" className="w-full h-full object-cover" />
+          <div className="w-40 h-40 shrink-0 relative">
+            <div className="w-full h-full flex items-center justify-center rounded-full border-4 border-white shadow-xl overflow-hidden bg-black">
+              <img src="/images/founder_ugc.png" alt="Alex, CEO de Architect.Sys" className="w-full h-full object-cover" />
+            </div>
             {/* Badge Kommo */}
-            <div className="absolute -bottom-2 -right-2 bg-white p-1.5 rounded-full shadow-lg z-10">
+            <div className="absolute bottom-2 right-2 translate-x-4 translate-y-2 bg-white p-1.5 rounded-full shadow-lg z-10">
               <div className="bg-blue-600 text-white text-[9px] font-black uppercase tracking-wider px-2 py-1 rounded-full flex items-center gap-1">
                 <span>✓</span> Partner
               </div>
