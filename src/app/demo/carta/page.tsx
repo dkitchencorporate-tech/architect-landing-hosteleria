@@ -1017,15 +1017,15 @@ function CartaContent() {
       {/* --------------------------------------------------------- */}
       {selectedImageItem && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/95 backdrop-blur-lg p-4 sm:p-8 animate-fade-in" onClick={() => setSelectedImageItem(null)}>
-          <div className={`relative w-full max-w-2xl flex flex-col ${theme.bg} rounded-[2rem] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)] border ${theme.border} animate-fade-in-up`} onClick={e => e.stopPropagation()}>
+          <div className={`relative w-full max-w-md sm:max-w-4xl flex flex-col sm:flex-row ${theme.bg} rounded-[2rem] overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)] border ${theme.border} animate-fade-in-up`} onClick={e => e.stopPropagation()}>
             <button onClick={() => setSelectedImageItem(null)} className="absolute top-4 right-4 z-20 bg-black/40 backdrop-blur-md hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors border border-white/20">✕</button>
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] bg-black">
+            <div className="relative w-full sm:w-1/2 aspect-[4/3] sm:aspect-[4/4] bg-black shrink-0">
               <Image src={selectedImageItem.image} alt={selectedImageItem.name[lang]} fill className="object-cover" />
             </div>
-            <div className={`p-6 sm:p-10 flex flex-col gap-4 relative z-10`}>
-               <div className="flex justify-between items-end gap-4">
+            <div className={`w-full sm:w-1/2 p-6 sm:p-10 md:p-12 flex flex-col justify-center gap-4 relative z-10`}>
+               <div className="flex justify-between items-start sm:items-end gap-4 flex-col sm:flex-row">
                  <div>
-                   <h3 className={`text-2xl sm:text-3xl font-black ${theme.text} mb-2`}>{selectedImageItem.name[lang]}</h3>
+                   <h3 className={`text-2xl sm:text-3xl md:text-4xl font-black ${theme.text} mb-3 leading-tight`}>{selectedImageItem.name[lang]}</h3>
                    {selectedImageItem.allergens.length > 0 && (
                      <div className="flex gap-1.5 flex-wrap">
                        {selectedImageItem.allergens.map((a: string) => (
@@ -1034,15 +1034,15 @@ function CartaContent() {
                      </div>
                    )}
                  </div>
-                 <span className={`text-2xl sm:text-3xl ${theme.textPrimary} font-black shrink-0`}>{selectedImageItem.price.toFixed(2)}€</span>
+                 <span className={`text-2xl sm:text-4xl ${theme.textPrimary} font-black shrink-0`}>{selectedImageItem.price.toFixed(2)}€</span>
                </div>
                <p className={`text-sm sm:text-base ${theme.textSec} leading-relaxed mt-2 font-medium`}>{selectedImageItem.description[lang]}</p>
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-                 <button onClick={() => { openContextualChat(selectedImageItem.name[lang]); setSelectedImageItem(null); }} className={`py-4 rounded-2xl font-bold uppercase tracking-widest text-xs sm:text-sm ${theme.secondaryBtn} transition-colors flex items-center justify-center gap-2`}>
-                   {t.smart_waiter}
-                 </button>
-                 <button onClick={() => { addToCart(selectedImageItem); setSelectedImageItem(null); setIsCartOpen(true); }} className={`py-4 rounded-2xl font-black uppercase tracking-widest text-xs sm:text-sm ${theme.primary} ${theme.btnText} ${theme.primaryHover} shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2`}>
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+                 <button onClick={() => { addToCart(selectedImageItem); setSelectedImageItem(null); setIsCartOpen(true); }} className={`py-4 rounded-2xl font-black uppercase tracking-widest text-xs sm:text-sm ${theme.primary} ${theme.btnText} ${theme.primaryHover} shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2 order-1 sm:order-2`}>
                    {t.add_to_order_modal}
+                 </button>
+                 <button onClick={() => { openContextualChat(selectedImageItem.name[lang]); setSelectedImageItem(null); }} className={`py-4 rounded-2xl font-bold uppercase tracking-widest text-xs sm:text-sm ${theme.secondaryBtn} transition-colors flex items-center justify-center gap-2 order-2 sm:order-1`}>
+                   {t.smart_waiter}
                  </button>
                </div>
             </div>
