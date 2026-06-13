@@ -461,6 +461,7 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
 // 3. LAYOUT: FAST FOOD (APP GRID / NEON)
 // ==========================================
 function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDiner, tableParam, setLang, onAdd, onAsk, onImageClick }: any) {
+  const [isSubscribed, setIsSubscribed] = useState(false);
   return (
     <div className="min-h-screen bg-[#050505] text-white font-sans pb-48 selection:bg-[#ff003c] selection:text-white">
       
@@ -468,7 +469,7 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
       <header className="sticky top-0 z-30 bg-[#050505]/90 backdrop-blur-xl border-b border-white/5 px-4 py-3">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#ff003c] rounded-xl flex items-center justify-center font-black text-2xl italic shadow-[0_0_15px_rgba(255,0,60,0.5)]">
+            <div className="w-10 h-10 bg-[#ff003c] rounded-xl flex items-center justify-center font-black text-2xl italic shadow-[0_0_15px_rgba(255,0,60,0.5)] animate-pulse">
               B
             </div>
             <div>
@@ -485,10 +486,10 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
                 </button>
               ))}
             </div>
-            <div className="flex bg-[#111] p-1 rounded-xl w-full sm:w-auto overflow-x-auto">
+            <div className="flex bg-[#111] p-1 rounded-xl w-full sm:w-auto overflow-x-auto scrollbar-none flex-nowrap">
               {[1, 2, 3, 4].map(d => (
-                <button key={d} onClick={() => setActiveDiner(d)} className={`flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all ${activeDiner === d ? 'bg-[#ff003c] text-white shadow-[0_0_10px_rgba(255,0,60,0.4)]' : 'text-zinc-500'}`}>
-                  Diner {d}
+                <button key={d} onClick={() => setActiveDiner(d)} className={`flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all whitespace-nowrap ${activeDiner === d ? 'bg-[#ff003c] text-white shadow-[0_0_10px_rgba(255,0,60,0.4)]' : 'text-zinc-500'}`}>
+                  {t.diner_prefix} {d}
                 </button>
               ))}
             </div>
@@ -501,12 +502,12 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
         <div className="bg-gradient-to-r from-[#ff003c] to-[#ff7b00] rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-[0_20px_50px_rgba(255,0,60,0.2)]">
           <div className="relative z-10">
             <div className="bg-black text-white text-[10px] font-black px-3 py-1 inline-block uppercase tracking-widest rounded-full mb-4">{t.burger_promo_tag}</div>
-            <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-4 text-white drop-shadow-lg">
+            <h2 className="text-3xl md:text-6xl font-black italic uppercase tracking-tighter mb-4 text-white drop-shadow-lg">
               {t.burger_promo_title}
             </h2>
-            <p className="text-lg font-bold opacity-90 mb-6 max-w-md">{t.burger_promo_desc}</p>
+            <p className="text-base md:text-lg font-bold opacity-90 mb-6 max-w-md">{t.burger_promo_desc}</p>
           </div>
-          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-[url('https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=800&q=80')] bg-cover rounded-full border-8 border-[#ff003c] shadow-2xl transform -rotate-12 hidden md:block"></div>
+          <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-[url('/images/demo/burger/b06_smash_double.jpeg')] bg-cover bg-center rounded-full border-8 border-[#ff003c] shadow-[0_0_50px_rgba(255,0,60,0.3)] transform -rotate-12 hidden md:block"></div>
         </div>
       </div>
 
@@ -525,7 +526,7 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
               
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {items.map((item: any) => (
-                  <div key={item.id} className="bg-[#111] rounded-3xl overflow-hidden border border-zinc-800 flex flex-col group relative">
+                  <div key={item.id} className="bg-[#111] rounded-3xl overflow-hidden border border-zinc-800 flex flex-col group relative hover:shadow-[0_0_30px_rgba(255,0,60,0.15)] transition-shadow duration-500">
                     <div className="absolute inset-0 border-2 border-[#ff003c] opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity z-20 pointer-events-none"></div>
                     
                     <div onClick={() => onImageClick(item)} className="aspect-[4/3] w-full relative overflow-hidden bg-black cursor-pointer group/img">
@@ -579,10 +580,18 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
             <p className="text-zinc-400 text-sm mb-0">{t.burger_loyalty_desc}</p>
           </div>
           <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3 relative z-10">
-            <input type="email" placeholder={t.burger_email_placeholder} className="w-full sm:w-64 px-5 py-4 rounded-2xl bg-black text-white border border-zinc-700 focus:outline-none focus:border-[#ff003c] font-black uppercase text-sm" />
-            <button className="px-8 py-4 bg-white text-black font-black rounded-2xl uppercase tracking-widest hover:bg-gray-200 transition-colors">
-              {t.burger_loyalty_submit}
-            </button>
+            {!isSubscribed ? (
+              <>
+                <input type="email" placeholder={t.burger_email_placeholder} className="w-full sm:w-64 px-5 py-4 rounded-2xl bg-black text-white border border-zinc-700 focus:outline-none focus:border-[#ff003c] font-black uppercase text-sm" />
+                <button onClick={() => setIsSubscribed(true)} className="px-8 py-4 bg-white text-black font-black rounded-2xl uppercase tracking-widest hover:bg-gray-200 transition-colors w-full sm:w-auto">
+                  {t.burger_loyalty_submit}
+                </button>
+              </>
+            ) : (
+              <div className="px-6 py-4 bg-white/10 text-white font-black rounded-2xl border border-white/20 uppercase tracking-widest flex items-center justify-center gap-2 w-full sm:w-auto animate-fade-in">
+                <span>🔥</span> ¡Bienvenido al Sindicato!
+              </div>
+            )}
           </div>
         </div>
       </div>
