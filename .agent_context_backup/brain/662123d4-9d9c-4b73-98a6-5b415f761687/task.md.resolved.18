@@ -1,0 +1,20 @@
+# Pipeline de Reingeniería: Imágenes IA & Estandarización B2B
+
+- `[ ]` 1. Bases de Datos (`demo-data.ts`)
+  - Enriquecer 84 descripciones con neuromarketing.
+  - Asegurar matriz estricta de alérgenos por producto.
+  - Migrar 84 rutas a locales (`/images/demo/*.webp`).
+- `[ ]` 2. Backend IA (`api/demo/waiter/route.ts`)
+  - Entrenar prompt para detectar y advertir sobre alérgenos.
+  - Forzar reconocimiento estricto del idioma activo.
+- `[ ]` 3. UI Frontend (`page.tsx`)
+  - Inyectar selectores de idioma en Header Tapas y Header Burger.
+  - Añadir renderizado visual de etiquetas de alérgenos en las cards.
+- `[ ]` 4. Generación de Activos IA (Batch 1: Sushi)
+  - Generar 28 imágenes IA ultra-realistas.
+- `[ ]` 5. Generación de Activos IA (Batch 2: Tapas)
+  - Generar 28 imágenes IA ultra-realistas.
+- `[ ]` 6. Generación de Activos IA (Batch 3: Burger)
+  - Generar 28 imágenes IA ultra-realistas.
+- `[ ]` 7. Despliegue Local de Activos
+  - Mover los 84 archivos `.webp` al directorio `public/images/demo/`.

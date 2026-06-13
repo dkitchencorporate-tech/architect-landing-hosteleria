@@ -1,0 +1,24 @@
+# Analíticas B2B Inteligentes Activadas 🧠
+
+Hemos transformado el sistema de analíticas para que funcione como una verdadera herramienta B2B. A continuación un resumen visual y técnico de los cambios:
+
+## 1. El Filtro "Anti-Fantasmas"
+Para evitar que tus propias visitas al panel de administración engordaran las métricas, he añadido un escudo en `AnalyticsPixel.tsx`. Si el píxel detecta que estás en `/admin-architect`, se apaga automáticamente y **no envía datos a Supabase**.
+
+## 2. Geolocalización en Tiempo Real
+El Píxel ahora incluye un pequeño "radar" que conecta con un proveedor de IPs (ipapi.co) en milisegundos cuando un usuario entra a tu Landing.
+- Extrae la **Ciudad** y el **País**.
+- Lo inyecta de forma silenciosa dentro de la columna `metadata` en Supabase.
+
+> [!TIP]
+> Esto es oro puro si decides correr campañas de pago en Facebook o Google Ads, ya que podrás ver instantáneamente si el tráfico te está llegando desde Granada (tu zona objetivo) o si es tráfico basura de otros lugares.
+
+## 3. Rediseño del Monitor de Tráfico
+La UI del monitor en tu Dashboard (`TrafficMonitor.tsx`) ha sido rediseñada para parecer una auténtica consola de ciberseguridad/marketing:
+- **Vista Cuadrícula de Datos:** Cada visita muestra 4 cuadrantes con Ubicación, Página de aterrizaje y Sistema Operativo / Navegador exacto.
+- **Formato más ancho:** Se aprovecha mejor el espacio lateral para evitar textos truncados y favorecer la lectura rápida.
+
+## Siguientes Pasos
+1. Refresca el panel de control. Todo debe estar en 0.
+2. Abre la Landing Page en una pestaña normal o de incógnito.
+3. Vuelve al panel y maravíllate viendo cómo salta tu ciudad en el localizador.

@@ -1,0 +1,57 @@
+# Arquitectura de Rutas y Protocolo de Ecosistema: Architect.Sys
+
+Se han completado los ajustes en el Modal de Salida (responsividad nativa), el rediseño abstracto de FounderBio y el reenfoque de Arqui hacia la **Atención Continua al Cliente**. A continuación, presento el mapeo estandarizado de nuestro ecosistema SaaS para que tú y tu equipo tengáis un control absoluto de qué ocurre cuando un lead se convierte en cliente.
+
+---
+
+## 1. Landing Page y Embudos de Atracción
+
+### URL: `/` (Raíz)
+- **Función:** El epicentro de captación *High-Ticket*.
+- **Contiene:**
+  - **Base Operativa (`/#solucion-base`):** Nuestro "Caballo de Troya" (Web, Carta IA, Reservas).
+  - **Experiencias (`/#eventos`):** Módulo de fidelización de eventos.
+  - **Ecosistema High-Ticket (`/#automatizacion`):** Automatización con Kommo y Bot Híbrido.
+  - **Dark Kitchen (`/#dark-kitchen`):** Desarrollo avanzado para cocinas fantasma.
+- **Protocolo:** Aquí llega el tráfico frío/tibio, interactúa con Arqui y cualifica su intención de compra antes de pasar a tu WhatsApp o Calendario.
+
+### URL: `/demo/carta`
+- **Función:** Entorno interactivo de prueba para la **Carta Digital Inteligente**.
+- **Protocolo:** Utilizado como demostración en vivo durante la llamada de consultoría, o enlazado por Arqui para demostrar el impacto del neuromarketing en los menús.
+
+---
+
+## 2. Herramientas Internas y de Control
+
+### URL: `/dashboard`
+- **Función:** Panel de control central (MVP). Demuestra cómo los hosteleros visualizarán sus analíticas de reservas, facturación de la carta y métricas de adquisición.
+- **Protocolo:** En la reunión estratégica, compartes pantalla y muestras esta URL: "Así es como tendrás el control total de los márgenes de tu local, sin Excel, sin estrés".
+
+### URL: `/creative-factory`
+- **Función:** Nuestra fábrica privada de creativos (Ads, Carruseles, Copywriting).
+- **Protocolo:** Herramienta interna para que tú o tu equipo genere los materiales publicitarios que vienen incluidos en el bono de "Kit Lanzamiento Redes". También sirve para demostrar el poder técnico de la agencia.
+
+### URL: `/admin-architect`
+- **Función:** Panel de Administración Maestro.
+- **Protocolo:** Espacio de uso exclusivo para tu equipo. Desde aquí gestionan credenciales, estado de integraciones (Kommo/WhatsApp) y monitorizan la salud técnica del sistema global.
+
+---
+
+## 3. Infraestructura Legal (Imprescindible para Meta Ads)
+
+### URLs: `/privacy` y `/terms`
+- **Función:** Políticas de Privacidad y Términos y Condiciones.
+- **Protocolo:** Absolutamente necesarias para pasar cualquier revisión de cumplimiento (Compliance) en Meta, Google Ads y para la API Oficial de WhatsApp Business (Meta Business Manager).
+
+### URL: `/data-deletion`
+- **Función:** Instrucciones de eliminación de datos.
+- **Protocolo:** Requisito obligatorio para las aplicaciones que se conectan con APIs de redes sociales (Instagram/Facebook Login).
+
+---
+
+> [!IMPORTANT]
+> **Protocolo Estandarizado de Cliente Nuevo:**
+> 1. **Captación:** El Lead entra en `/`, habla con Arqui y reserva en Calendly.
+> 2. **Cierre:** Reunión contigo apoyada en el `/dashboard` y la demo `/demo/carta`.
+> 3. **Onboarding:** Se levanta su propio entorno clonando la *Base Operativa*. Se crean sus *Ads* usando la `/creative-factory`.
+> 4. **Entrega:** El cliente recibe sus accesos y se activa el webhook de Kommo.

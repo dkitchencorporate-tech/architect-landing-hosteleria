@@ -1,0 +1,8 @@
+# Gemini API Connection Verification Plan
+
+- [ ] Open http://localhost:3000
+- [ ] Locate chat sidebar and input field
+- [ ] Send test message: 'Prueba de conexión tras reinicio'
+- [ ] Wait for bot response
+- [ ] Verify response is not an error
+- [ ] Report the result

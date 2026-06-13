@@ -1,0 +1,22 @@
+# Tracker de Generación de Imágenes (Sushi Menu)
+
+## Batch 1: Entrantes Fríos y Calientes (8 Platos)
+- `[x]` Tartar de Atún Balfegó (`s1.png`)
+- `[x]` Carpaccio de Pez Limón (`s2.png`)
+- `[x]` Ensalada Wakame Imperial (`s3.png`)
+- `[x]` Ostras Amélie al Ponzu (`s4.png`)
+- `[x]` Gyozas de Wagyu A5 (`s5.png`)
+- `[x]` Edamame Ahumado a la Brasa (`s6.png`)
+- `[x]` Tempura de Langostino Tigre (`s7.png`)
+- `[x]` Berenjena Nasu Dengaku (`s8.png`)
+
+## Batch 2: Nigiris, Sashimi y Rolls (8 Platos)
+- `[x]` Generación y exportación de imágenes `s9` a `s16`
+
+## Batch 3: Principales, Postres y Bodega (12 Platos)
+- `[x]` Generación y exportación de imagen `s17` (Bacalao Negro)
+- `[-]` Bloqueado por cuota (Límite de la API de IA): `s18` a `s28`. Se generarán en el próximo ciclo disponible.
+
+## Deployment
+- `[x]` Mover 17 artefactos generados a `/public/images/demo/`
+- `[/]` Subir cambios a Vercel

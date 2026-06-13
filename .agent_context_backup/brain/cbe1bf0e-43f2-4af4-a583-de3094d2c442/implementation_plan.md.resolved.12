@@ -1,0 +1,53 @@
+# Plan de Refactorización: Backend, Captación y Retención
+
+## Diagnóstico
+1. **Chatbot (UI):** El modal se queda por debajo de ciertas secciones porque hereda el `z-index` de su contenedor padre (`DemoLauncher`). Hay que "escapar" de ese contenedor.
+2. **Chatbot (Backend):** El prompt de cierre (`CLOSING`) sigue ofreciendo los precios antiguos (650€ + 120€). Debe actualizarse al nuevo modelo de embudo.
+3. **Exit Intent (Popup):** Salta demasiado rápido en móviles (15 segundos) y la oferta (50€ en ads) ya no cuadra con el nuevo "Trojan Horse".
+4. **Cookies:** Obligatorio implementar un banner de consentimiento para cumplir con GDPR y captar leads legalmente.
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Oferta del Popup de Salida (Exit Intent):** He propuesto cambiar los "50€ en Ads" por: *"Te regalamos la Auditoría 1 a 1 + El Diseño Premium de tu Carta en PDF si agendamos hoy."* ¿Te parece bien esta oferta para evitar que se vayan, o prefieres otra distinta?
+
+## Proposed Changes
+
+### 1. Reparación UI del Chatbot (Z-Index absoluto)
+Vamos a usar `createPortal` de React. Esto sacará físicamente el código del Chatbot fuera de su contenedor actual y lo inyectará directamente en la raíz de la página (`document.body`). Así es matemáticamente imposible que ninguna otra sección se ponga por encima.
+
+#### [MODIFY] [ChatDemoWidget.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ChatDemoWidget.tsx)
+- Importar `createPortal` y usar un estado `mounted`.
+- Retornar el modal a través del portal.
+
+### 2. Actualización del Backend (Vendedor IA)
+Reescribiremos las instrucciones del sistema (`systemInstruction`) en el modo `CLOSING` para que la IA actúe como un Closer de alto nivel.
+
+#### [MODIFY] [route.ts](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/demo/respond/route.ts)
+- **Nuevo Prompt:** "Actúa como agente comercial. Resume beneficios concretos. Muestra nuestras opciones: Suscripción Base (49€/mes), Suscripción Growth (69€/mes) y Licencia Completa (450€ un solo pago). Remarca que si activan hoy, se llevan el Pack de Arranque (Auditoría, Diseño, Estrategia y Redes) valorado en 620€ TOTALMENTE GRATIS."
+
+### 3. Rediseño del Exit Intent (Retención de Tráfico)
+Ajustaremos el "timing" y el copywriting del popup de salida.
+
+#### [MODIFY] [ExitIntent.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ExitIntent.tsx)
+- **Timing:** Subir de 15 a 45 segundos el tiempo de inactividad en móviles. En ordenador se mantendrá cuando el ratón salga por arriba.
+- **Copy:** Actualizar la oferta de 50€ a los bonos físicos (Auditoría + Carta).
+
+### 4. Banner de Cookies (Captación Legal)
+Crearé un componente global que aparecerá sutilmente en la parte inferior para pedir el consentimiento.
+
+#### [NEW] [CookieConsent.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/CookieConsent.tsx)
+- Banner flotante inferior.
+- Botones: "Aceptar todas" y "Rechazar no esenciales".
+#### [MODIFY] [layout.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/layout.tsx)
+- Importar e inyectar `<CookieConsent />` en el layout raíz.
+
+## Verification Plan
+
+### Manual Verification
+- Cargar `localhost:3000`.
+- Abrir el Chatbot y verificar que aparece por encima de **todo** (incluyendo el sticky header y las tarjetas de precios).
+- Escribir en el chat hasta llegar al modo CLOSING y verificar que la IA ofrece los 49€/450€.
+- Dejar el móvil inactivo 45 segundos para comprobar que el Exit Intent no interrumpe la lectura temprana.

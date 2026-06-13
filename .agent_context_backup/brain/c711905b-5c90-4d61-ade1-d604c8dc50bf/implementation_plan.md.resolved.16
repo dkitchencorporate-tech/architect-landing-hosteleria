@@ -1,0 +1,41 @@
+# Reingeniería del Modal de Salida (Exit Intent)
+
+*Respuesta a tu feedback estratégico (CRO y Psicología)*
+
+Tienes toda la razón. Te doy mi apreciación profesional: **Tu lectura psicológica del usuario que está a punto de abandonar la web es impecable.**
+
+Cuando un usuario activa un "Exit Intent" (quiere cerrar la pestaña), su nivel de atención está bajo y su fricción es alta. Ponerle un formulario o forzarlo directamente a elegir fecha y hora en Calendly es un "muro" demasiado alto. Lo más inteligente es ofrecerle la vía de menor resistencia (WhatsApp) y, como opción secundaria, la vía corporativa (Calendly).
+
+Además, tienes razón con los bonos. Para mantener la coherencia absoluta en la oferta, debemos mostrar exactamente los mismos 4 bonos de alto valor que ofrecemos antes de la venta del servicio de 700€ (Base Operativa).
+
+Aquí tienes el plan actualizado para modificar el código de `ExitIntent.tsx`:
+
+## 1. Alineación de Bonos (Coherencia Total)
+Actualizaré la lista de bonos del modal para que sean exactamente los 4 del "Pack de Arranque":
+1.  **Auditoría de Fuga de Clientes (Google Maps)** (Valor: 350€)
+2.  **Ingeniería de Carta Física (Neuromarketing)** (Valor: 250€)
+3.  **Estrategia de Inyección de Tráfico (Días Valle)** (Valor: 300€)
+4.  **Kit de Anuncios y Lanzamiento en Redes** (Valor: 250€)
+*Valor total sumado a mostrar:* **1.150€**
+
+## 2. Destrucción del Formulario y Creación de CTA Dual
+Vamos a eliminar por completo la fase del formulario (Step 2 y Step 3) que pedía Nombre/Email. Ese paso genera una caída brutal de leads.
+En su lugar, la "Fase 1" del modal tendrá dos botones de acción directa en la parte inferior:
+
+*   **Opción A (La Vía Rápida - Baja Fricción):**
+    Un botón verde, muy visible: **"Reclamar Bonos por WhatsApp (Rápido)"**. Al hacer clic, abre WhatsApp directamente con un mensaje predefinido: *"Hola, iba a salir de la web pero vi los bonos de 1.150€. Me interesa saber más."*
+*   **Opción B (La Vía Corporativa):**
+    Un botón secundario u enlace de texto destacado: **"O agendar Consultoría por Videollamada"**. Al hacer clic, cerramos el modal y abrimos el Calendly.
+
+## 3. Mejora del Copy (El Hook)
+Cambiaremos *"¡Espera! No te vayas sin reclamar tus Bonos Exclusivos (620€)"* por:
+**"¿Te vas tan pronto? Llévate nuestro Pack de Arranque Exclusivo (Valor: 1.150€) totalmente GRATIS."**
+
+---
+
+> [!IMPORTANT]
+> **Aprobación de la Estrategia Dual**
+> 
+> Esta estrategia aniquila la fricción del formulario, mantiene la coherencia de tu oferta (1.150€ en bonos) y salva al usuario ofreciéndole hablar por WhatsApp en 1 clic.
+> 
+> ¿Tienes el *Go* para que destruya el formulario viejo y construya este cierre rápido en `ExitIntent.tsx`?

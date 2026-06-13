@@ -1,0 +1,34 @@
+# Resumen de Optimización: Carta Digital (Adaptive UX)
+
+He completado la refactorización profunda de la Interfaz de Usuario y la Responsividad de la demo de la Carta Digital (`/demo/carta`). 
+
+Este cambio transforma la aplicación de un simple "prototipo" a un producto de grado Enterprise, listo para ser grabado en campañas publicitarias móviles.
+
+## 1. Modales Desacoplados (Limpieza Visual)
+Anteriormente, pulsar "Ver Pedido" abría un panel gigante que aplastaba el carrito y el chat de IA en móviles. Esto ha sido rediseñado:
+
+*   **Modal de Comanda Exclusivo:** Ahora solo se enfoca en el desglose de precios y comensales.
+*   **La Matriz de 3 Botones:** Al final de la cuenta, inyecté una cuadrícula táctil optimizada para dedos (pulgares), con jerarquía de color:
+    1.  🟩 **Enviar Pedido a Cocina** (Botón primario, ancho completo).
+    2.  🟧 **Abrir Asistente IA** (Secundario, resalta por color vibrante).
+    3.  ⬜ **Llamar Camarero** (Terciario, estilo outline elegante).
+
+> [!TIP]
+> Esta estructura reduce la fatiga cognitiva del usuario. Sabe exactamente dónde presionar para pagar, preguntar o pedir ayuda humana.
+
+## 2. Modal de Asistente IA Independiente
+*   Se creó un estado aislado (`isChatOpen`).
+*   Al abrir la IA, ahora se despliega una interfaz idéntica a WhatsApp o iMessage flotante, con fondo oscuro texturizado, burbujas de chat contrastantes y píldoras de sugerencias rápidas ("Sin Gluten", "Maridaje").
+*   La animación de "escribiendo..." ahora tiene el espacio necesario para lucir natural y mágica en video.
+
+## 3. Responsividad Adaptativa (Adaptive Intelligence)
+La **Carta 1 (Sushi/Nobu Sense)** era la que más sufría de problemas de márgenes en móviles.
+*   **Imágenes Inteligentes:** Cambié la relación de aspecto (`aspect-ratio`) de `16/9` en escritorio a `4/3` en móviles, evitando el desbordamiento horizontal.
+*   **Tipografía Escalable:** Los textos microscópicos (`10px`) ahora usan selectores dinámicos (`sm:text-xs`) para crecer automáticamente en tablets y móviles, mejorando la accesibilidad y lectura.
+*   **Grid Fluido:** Los botones y descripciones ya no se amontonan, fluyen en columna en pantallas estrechas y en fila en pantallas anchas.
+
+## 4. Estado del Despliegue
+Todo el código ha sido inyectado en la rama `main` y sincronizado con Vercel. 
+
+> [!IMPORTANT]
+> **Acción Requerida:** Entra desde tu teléfono móvil (o usando las herramientas de desarrollador de tu navegador simulando un iPhone) a `https://hosteleria.architectsys.com/demo/carta`. Añade platos y presiona "Ver Pedido" para que sientas la fluidez de la nueva interfaz. Está lista para tus campañas.

@@ -1,0 +1,176 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwiT94250MOUAxUuklYBHQl2BHQQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DRestaurante%2BLos%2BNazar%25C3%25ADes%2BPlaza%2BLarga%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Restaurante+Los+Nazar%C3%ADes+Plaza+Larga+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwiT94250MOUAxUuklYBHQl2BHQQ2J8OegQICRAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Los+Nazar%C3%ADes+Plaza+Larga+Granada&sa=X&ved=2ahUKEwiT94250MOUAxUuklYBHQl2BHQQtKgLegQIEhAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Los+Nazar%C3%ADes+Plaza+Larga+Granada&sa=X&ved=2ahUKEwiT94250MOUAxUuklYBHQl2BHQQs6gLegQIERAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Los+Nazar%C3%ADes+Plaza+Larga+Granada&sa=X&ved=2ahUKEwiT94250MOUAxUuklYBHQl2BHQQtKgLegQIDxAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Los+Nazar%C3%ADes+Plaza+Larga+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwiT94250MOUAxUuklYBHQl2BHQQ0pQJegQIEBAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Los+Nazar%C3%ADes+Plaza+Larga+Granada&sa=X&ved=2ahUKEwiT94250MOUAxUuklYBHQl2BHQQs6gLegQIDhAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (262,321)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d27701992-Reviews-Restaurante_Los_Nazaries_Plaza_Larga-Granada_Province_of_Granada_Andalucia.html' />
+	[48] (262,350)<h3 >RESTAURANTE LOS NAZARÍES PLAZA LARGA, Granada />
+	[49] (205,296)<div  />
+		[50] (205,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (220,296)<div  />
+				[55] (220,282)<div  />
+					[56] (220,282)<span >Tripadvisor />
+				[57] (220,312)<div  />
+					[58] (220,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[59] (273,311)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[60] (355,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[61] (355,310)<span  />
+		[62] (355,312)<span  />
+En pleno corazón del barrio del Albaicin
+, restaurante típico con comida típica a muy buen precio y un servicio inmejorable. Recomiendo la carne que te ...
+4.3
+(64)
+·
+Rango de precios: €€ - €€€
+[63] (321,467)<div role='button' />
+[64] (273,587)<a class='zReHs' href='https://www.tripadvisor.co/ShowUserReviews-g187441-d27701992-r968553213-Restaurante_Los_Nazaries_Plaza_Larga-Granada_Province_of_Granada_Andalucia.html' />
+	[65] (273,616)<h3 >genial - Opiniones sobre Restaurante Los Nazaríes Plaza ... />
+	[66] (203,562)<div  />
+		[67] (203,562)<div  />
+			[68] (81,562)<span  />
+				[69] (81,562)<div  />
+					[70] (81,562)<img  />
+			[71] (219,562)<div  />
+				[72] (219,548)<div  />
+					[73] (219,548)<span >tripadvisor.co />
+				[74] (219,578)<div  />
+					[75] (219,578)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.co />
+						[76] (271,577)<span class='ylgVCe ob9lvb' role='text'>› ShowUserReviews-g18744... />
+[77] (352,576)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[78] (352,576)<span  />
+		[79] (352,578)<span  />
+Las mejores habas con jamon de Granada
+!La mejor paella del Albaycin y la mejor carne a la piedra de Granada.Camareros atentos y amables! Fecha de la visita: ...
+5.0
+·
+Comentario de T1453JSluisab
+[80] (314,733)<div role='button' />
+[81] (208,853)<a class='zReHs' href='https://esquinapadillamalaga.es/restaurante-los-nazaries-plaza-larga-en-albaicin-ciudad-de-granada/' />
+	[82] (200,882)<h3 >Restaurante Los Nazaríes Plaza Larga />
+	[83] (208,828)<div  />
+		[84] (208,828)<div  />
+			[85] (81,828)<span  />
+				[86] (81,828)<div  />
+					[87] (81,828)<img  />
+			[88] (223,828)<div  />
+				[89] (223,814)<div  />
+					[90] (223,814)<span >esquinapadillamalaga.es />
+				[91] (223,844)<div  />
+					[92] (223,844)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://esquinapadillamalaga.es />
+						[93] (289,843)<span class='ylgVCe ob9lvb' role='text'>› restaurante-los-nazarie... />
+[94] (361,842)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[95] (361,842)<span  />
+		[96] (361,844)<span  />
+Si buscas un rincón donde disfrutar de la cocina española en todo su esplendor, Los
+Nazaríes Plaza Larga
+es tu parada obligada en
+Granada
+. Este
+restaurante
+...
+[97] (707,392)<button class='KJY1Gc' />
+	[98] (707,392)<div  />
+		[99] (707,392)<div  />
+			[100] (722,392)<img  />
+		[101] (745,494)<span >Ver fotos />
+[102] (835,392)<a  />
+[103] (853,458)<a href='/local/place/fid/0xd71fdd4574719ff:0x64d72acaafedd867/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DDxRzMCdwee9rhGIEDWgtMg%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D29.67767%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFkR4UnpNQ2R3ZWU5cmhHSUVEV2d0TWc%3D&sa=X&ved=2ahUKEwiT94250MOUAxUuklYBHQl2BHQQpx96BAgbEA8' />
+	[104] (853,458)<div  />
+		[105] (870,458)<img  />
+	[106] (890,495)<span >Ver por fuera />
+RESTAURANTE LOS NAZARÍES PLAZA LARGA
+4.6
+[107] (754,647)<a href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Los+Nazar%C3%ADes+Plaza+Larga+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOb6QPzAJK0_BBx8Un3rMWkYG_9rVgJ1ov_qcr-jEa19MCRaVm9MCZHGuEIcUwp5CEA6T3tE%3D&uds=ALYpb_ljP0qwosUzNRH803CGNWI9Y5IuPtT7T8EJ4I7r2CVi3JdFHxn4ZA4Rc_GMD5gy8P0ckcCjnh-ZRKBjiYJg1e0Dqm2k8Ln1zK5vgeFC3uyqgx1UqP2FrAUlhqEX0DP--Abrau_ODeccEkegDXq34Vpph2AIOQ&sa=X&ved=2ahUKEwiT94250MOUAxUuklYBHQl2BHQQ3PALegQIGRAE'>3,168 opiniones />
+[108] (805,642)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[109] (805,642)<span  />
+€10-20
+‧
+Restaurante de cocina española
+[110] (853,649)<div class='mTpL7c' role='button' />
+	[111] (853,649)<span aria-label='Más opciones para RESTAURANTE LOS NAZARÍES PLAZA LARGA' class='Zj92Hf' role='img' />
+		[112] (851,646)<span  />
+[113] (688,767)<div  />
+	[114] (656,767)<div  />
+	[115] (697,767)<span >Cómo llegar />
+[116] (787,767)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOb6QPzAJK0_BBx8Un3rMWkYKmgLMOY0W5-Y3yjHRc4_xXiYX7TOi_NmXsbAW9sQwUil705ffdzhpJWNI3_XeBijui5olCVUx9Vr44CcHRunw-SGDg68E0fMceWqabtGqhW4SPGI%3D&q=RESTAURANTE+LOS+NAZAR%C3%8DES+PLAZA+LARGA+Opiniones&sa=X&ved=2ahUKEwiT94250MOUAxUuklYBHQl2BHQQ0bkNegQIKxAF' />
+	[117] (787,767)<div  />
+		[118] (759,767)<div  />
+		[119] (796,767)<span >Opiniones />
+[120] (876,767)<div  />
+	[121] (876,767)<div  />
+		[122] (876,767)<div  />
+			[123] (876,767)<span aria-label='Guardar RESTAURANTE LOS NAZARÍES PLAZA LARGA en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar RESTAURANTE LOS NAZARÍES PLAZA LARGA en una colección' />
+				[124] (884,767)<span >Guardar />
+[125] (684,843)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[126] (684,843)<div  />
+		[127] (656,843)<div  />
+		[128] (692,843)<span >Compartir />
+[129] (769,843)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[130] (769,843)<div  />
+		[131] (750,843)<div  />
+		[132] (778,843)<span >Llamar />
+[133] (843,843)<span  />
+	[134] (843,843)<div id='sXDlyb/g/11s3txdkd5' role='button' />
+		[135] (843,843)<div  />
+			[136] (827,843)<div  />
+			[137] (851,843)<span >Menú />
+Opciones de servicio:
+Asientos al aire libre
+· Música en vivo
+
+</current_dom>

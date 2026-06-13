@@ -1,0 +1,15 @@
+# Task Tracker: Enciclopedia Operativa
+
+## Fase 1: Arquitectura de Índices
+- `[/]` Actualizar `src/app/manuals/page.tsx` con las 7 guías.
+
+## Fase 2: Redacción de Manuales (SOPs)
+- `[ ]` `mapa-navegacion/page.tsx`: Mapa completo de URLs.
+- `[ ]` `arquitectura-saas/page.tsx`: Base de datos, RLS, Triggers.
+- `[ ]` `estrategia-ventas/page.tsx`: Funnels y Psicología.
+- `[ ]` `onboarding-b2b/page.tsx`: Dashboard y experiencia de usuario.
+- `[ ]` `agente-ia/page.tsx`: Lógica de Arqui y Webhooks.
+- `[ ]` `centro-control/page.tsx`: Panel de administrador y Demo.
+
+## Fase 3: Despliegue Final
+- `[ ]` Subir a Vercel.

@@ -1,0 +1,138 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8QPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DTaberna%2BLa%2BZarzamora%2BGranada%2Btelefono%2Bdireccion&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Taberna+La+Zarzamora+Granada+telefono+direccion&sca_esv=006960b001859e84&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZCpgoVNT-Hv_3MhYRw44HyBUrrtie6s6NU7_r63gLLB0KEboa1P2EXxho6wyi-Q4nKY5mnk52kahy7WmtlL7ojC65YxaADxPZ0JQm3g_8W_pkY6rs&aep=1&ntc=1&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8Q2J8OegQIDBAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=006960b001859e84&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZCpgoVNT-Hv_3MhYRw44HyBUrrtie6s6NU7_r63gLLB0KEboa1P2EXxho6wyi-Q4nKY5mnk52kahy7WmtlL7ojC65YxaADxPZ0JQm3g_8W_pkY6rs&q=Taberna+La+Zarzamora+Granada+telefono+direccion&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8QtKgLegQIFhAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (262,180)<a class='C6AK7c' href='/search?sca_esv=006960b001859e84&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZCpgoVNT-Hv_3MhYRw44HyBUrrtie6s6NU7_r63gLLB0KEboa1P2EXxho6wyi-Q4nKY5mnk52kahy7WmtlL7ojC65YxaADxPZ0JQm3g_8W_pkY6rs&q=Taberna+La+Zarzamora+Granada+telefono+direccion&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8QtKgLegQIEhAB' />
+	[26] (262,180)<div  />
+		[27] (262,194)<span >Videos />
+[28] (333,180)<a class='C6AK7c' href='/search?sca_esv=006960b001859e84&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZCpgoVNT-Hv_3MhYRw44HyBUrrtie6s6NU7_r63gLLB0KEboa1P2EXxho6wyi-Q4nKY5mnk52kahy7WmtlL7ojC65YxaADxPZ0JQm3g_8W_pkY6rs&q=Taberna+La+Zarzamora+Granada+telefono+direccion&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8Qs6gLegQIFRAB' />
+	[29] (333,180)<div  />
+		[30] (333,194)<span >Videos cortos />
+[31] (399,180)<a class='C6AK7c' href='/search?sca_esv=006960b001859e84&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZCpgoVNT-Hv_3MhYRw44HyBUrrtie6s6NU7_r63gLLB0KEboa1P2EXxho6wyi-Q4nKY5mnk52kahy7WmtlL7ojC65YxaADxPZ0JQm3g_8W_pkY6rs&q=Taberna+La+Zarzamora+Granada+telefono+direccion&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8Qs6gLegQIExAB' />
+	[32] (399,180)<div  />
+		[33] (399,194)<span >Web />
+[34] (450,180)<a class='C6AK7c' href='/search?sca_esv=006960b001859e84&q=Taberna+La+Zarzamora+Granada+telefono+direccion&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZCpgoVNT-Hv_3MhYRw44HyBUrrtie6s6NU7_r63gLLB0KEboa1P2EXxho6wyi-Q4nKY5mnk52kahy7WmtlL7ojC65YxaADxPZ0JQm3g_8W_pkY6rs&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8Q0pQJegQIFBAB' />
+	[35] (450,180)<div  />
+		[36] (450,194)<span >Noticias />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+Granada
+∙
+[47] (170,275)<a class='N5az4b' href='#' role='button' />
+	[48] (170,281)<span >Elegir área />
+[49] (215,281)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[50] (216,280)<span  />
+[51] (147,414)<a href='#' />
+	[52] (147,414)<span >633 52 36 46 />
+Taberna La Zarzamora, teléfono principal
+[53] (316,538)<div class='VUbcAb XNfAUb' id='_QXALasiGKI7f2roPzLHg-AI_54' scrollable='true' />
+	[54] (121,538)<a aria-label='Llamar al número de teléfono 633523646' class='JmPt0d' href='tel:633523646' role='button' />
+		[55] (121,538)<span >Llamar />
+			[56] (99,538)<span  />
+	[57] (218,538)<a class='JmPt0d' href='/maps/dir//Taberna+La+Zarzamora/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0xd71fd0798f8dedd:0x7eb649da9b809ee6?sa=X&ved=1t:97007&ictx=111' />
+		[58] (218,538)<span >Cómo llegar />
+			[59] (184,538)<span  />
+	[60] (315,538)<a aria-label='Copiar el número de teléfono 633 52 36 46' class='JmPt0d' href='#' role='button' />
+		[61] (315,538)<span >Copiar />
+			[62] (294,538)<span  />
+[63] (325,635)<a href='/search?sca_esv=006960b001859e84&q=Taberna+La+Zarzamora&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLncUY3PsCluOaOxrEOpGKOlS2WjyiYo3_KrHB3Z-kGHVxyQla-QE28SQxGDf9gyfOulKksZVm6yBcysqzbfMnD6ihKfG_&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8Q-5YCKAF6BAgcEA4' />
+	[64] (325,635)<div  />
+		[65] (325,635)<div class='w6VsEc' role='button' />
+			[66] (325,659)<div  />
+				[67] (325,646)<div  />
+					[68] (317,646)<span >Más sobre Taberna La Zarzamora />
+					[69] (413,646)<span  />
+Buscando
+[70] (712,393)<button class='KJY1Gc' />
+	[71] (712,393)<div  />
+		[72] (712,393)<div  />
+			[73] (712,393)<img  />
+		[74] (755,495)<span >Ver fotos />
+[75] (858,393)<a  />
+[76] (858,459)<a href='/local/place/fid/0xd71fd0798f8dedd:0x7eb649da9b809ee6/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3D6Nbc0wm6pVshKDcZ2yAaeg%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D254.6567%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFjZOYmMwd202cFZzaEtEY1oyeUFhZWc%3D&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8Qpx96BAg3EA8' />
+	[77] (858,459)<div  />
+		[78] (858,459)<img  />
+	[79] (890,496)<span >Ver por fuera />
+[80] (740,569)<a class='ssJ7i' href='/search?sca_esv=006960b001859e84&q=Taberna+La+Zarzamora&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLncUY3PsCluOaOxrEOpGKOlS2WjyiYo3_KrHB3Z-kGHVxyQla-QE28SQxGDf9gyfOulKksZVm6yBcysqzbfMnD6ihKfG_&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8Q_coHegQIIBAB'>Taberna La Zarzamora />
+4.4
+[81] (762,616)<a href='/search?sca_esv=006960b001859e84&q=Taberna+La+Zarzamora+Granada+telefono+direccion&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUg-ANYP920VWOB13Ej7I_Vb4e9Hs6hXKa2_bf5KZ26wLLKDOvpoG2KLOGESLTmRXigViLU%3D&uds=ALYpb_k9UVSPJ4qPZ1GgFsB_fQ147uJQ4rBHr9tPwpVbIqdpXJMHZr6uNyHMNlbSLz1KPzSgkbg12V7JsPKe_a0SGmaOUAkMcEnmatIaxDCxqlINtjmHZhDcCyBwl9tJ-rIDHuJ2J0sPqMb0sltVWEPXHfvQ_ZkRtA&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8Q3PALegQIIBAF'>317 opiniones />
+[82] (809,611)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[83] (809,611)<span  />
+€10-20
+‧
+Restaurante
+[84] (688,744)<a class='n1obkb mI8Pwc' href='https://www.facebook.com/lazarzamoragranada/' />
+	[85] (688,744)<div  />
+		[86] (663,744)<div  />
+		[87] (697,744)<span >Sitio web />
+[88] (784,744)<div  />
+	[89] (752,744)<div  />
+	[90] (793,744)<span >Cómo llegar />
+[91] (690,820)<a class='n1obkb mI8Pwc' href='/search?sca_esv=006960b001859e84&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUg-ANYP920VWOB13Ej7I_WzAxdkqHhR4oEfhBverCrAryPFW74pX6ePvrwbAtDBmMNyHzkxsHLhAJ1qlBpTHG4QZmkQ-veXwHUMiZNWZnQKHEfnkg%3D%3D&q=Taberna+La+Zarzamora+Opiniones&sa=X&ved=2ahUKEwiIq5fN0MOUAxWOr1YBHcwYGC8Q0bkNegQIMRAH' />
+	[92] (690,820)<div  />
+		[93] (663,820)<div  />
+		[94] (699,820)<span >Opiniones />
+[95] (779,820)<div  />
+	[96] (779,820)<div  />
+		[97] (779,820)<div  />
+			[98] (779,820)<span aria-label='Guardar Taberna La Zarzamora en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Taberna La Zarzamora en una colección' />
+				[99] (788,820)<span >Guardar />
+[100] (868,820)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[101] (868,820)<div  />
+		[102] (840,820)<div  />
+		[103] (877,820)<span >Compartir />
+[104] (682,896)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[105] (682,896)<div  />
+		[106] (663,896)<div  />
+		[107] (691,896)<span >Llamar />
+[108] (756,896)<span  />
+	[109] (756,896)<div id='sXDlyb/g/11gr1_dmx5' role='button' />
+		[110] (756,896)<div  />
+			[111] (740,896)<div  />
+			[112] (764,896)<span >Menú />
+Opciones de servicio:
+Tiene asientos al aire libre
+Dirección
+:
+Calle, Gta. de Arabial, 4, 18003 Granada
+
+</current_dom>

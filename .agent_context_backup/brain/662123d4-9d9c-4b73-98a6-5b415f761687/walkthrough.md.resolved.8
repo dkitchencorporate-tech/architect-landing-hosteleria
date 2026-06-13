@@ -1,0 +1,40 @@
+# Walkthrough: Factoría Creativa Dinámica Multi-Cliente
+
+Hemos rediseñado y completado el flujo de la **Factoría Creativa** (`/creative-factory`). En lugar de depender de tres cartas estáticas predefinidas, el panel ahora gira completamente alrededor del **Cliente Activo seleccionado**. Esto permite al consultor B2B trabajar con cualquier restaurante del sistema de forma adaptativa.
+
+---
+
+## 🚀 Mejoras en la Arquitectura
+
+### 1. Integración con el Onboarding de Clientes
+- **Persistencia Dinámica:** La aplicación carga la lista de clientes desde `localStorage` bajo la clave `architect_clients`.
+- **Mock Pre-cargado:** Para pruebas inmediatas, inicializamos tres perfiles de restaurantes de diferentes categorías:
+  1. *Pizzería Don Giovanni* (Barrio - ticket medio-bajo. Platos: Pizza Margherita, Calzone, Tiramisú).
+  2. *L'Atelier de L'Océan* (Gourmet - ticket alto. Platos: Tartar de Vieira, Rodaballo, Soufflé de Cítricos).
+  3. *El Tardeo de Lola* (Casual - bar de tapas de ticket medio. Platos: Croquetas, Patatas Bravas, Claras de Limón).
+- Si un nuevo cliente completa el formulario de Onboarding, su perfil comercial y platos se inyectarán en esta misma lista de `localStorage` y aparecerá de inmediato en el selector del Creative Factory.
+
+### 2. Generación Contextual por IA
+- **[`/api/creative-factory/generate`](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/creative-factory/generate/route.ts):** Ahora procesa las variables `clientName`, `clientCuisine` y `clientTier`.
+- **Adaptación de Copys:** Gemini adapta el tono e intención según la categoría:
+  - *Barrio:* Tono cercano, campechano ("Vecino, hablemos claro y de tú a tú"), enfocado en precios honestos y la comunidad.
+  - *Gourmet:* Lenguaje sofisticado, técnico y exclusivo, enfocado en ingredientes de autor.
+  - *Casual:* Tono moderno, asertivo y directo.
+- El copy principal hace mención orgánica y directa al nombre del local y a sus especialidades gastronómicas para demostrar personalización.
+- El prompt visual generado por la IA en inglés solicita a Imagen 4 una composición culinaria que respete la temática del restaurante (pizzas, mariscos, tapas).
+
+### 3. Guardado Físico Personalizado
+- **Asignador de Menú:** En lugar de guardar archivos generales como `s18.png` o `t1.png`, el panel ahora muestra la lista real de platos del cliente seleccionado (ej: *Pizza Margherita con Borde de Queso*).
+- **Nombre de archivo estructurado:** Al vincular la foto, se escribe físicamente en el servidor como:
+  `public/images/demo/client_[clientId]_[dishId].png` (ej: `client_dongiovanni_1.png`).
+
+---
+
+## 📷 Verificación Visual del Funcionamiento
+
+Ejecutamos pruebas con el cliente **Pizzería Don Giovanni** (Categoría: **Barrio**):
+- El panel de la izquierda resume su ficha técnica al seleccionarlo.
+- El copy se personaliza abordando el horno, el vecindario y las pizzas de la Pizzería Don Giovanni.
+- El gancho publicitario se ajusta a: *"De cada 3 pizzas, una es para ellos."* (atacando la comisión de apps de delivery).
+
+![Generación para Pizzería](/C:/Users/Administrator/.gemini/antigravity/brain/662123d4-9d9c-4b73-98a6-5b415f761687/campaign_pizzeria_generated_1780752064166.png)

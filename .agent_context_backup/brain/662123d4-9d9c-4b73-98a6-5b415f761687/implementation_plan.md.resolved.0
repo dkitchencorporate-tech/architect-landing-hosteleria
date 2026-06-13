@@ -1,0 +1,44 @@
+# Arquitectura del Puente Autónomo: Telegram ↔ Workspace (Gemini Agent)
+
+*Rol Activo: Arquitecto de Sistemas e IA*
+
+El objetivo es permitirte gestionar tu proyecto, solicitar cambios de código, pedir análisis y realizar despliegues desde tu teléfono móvil vía Telegram mientras estás fuera de casa.
+
+## ⚠️ Aclaración Técnica (Corrección al Asesor Externo)
+
+El informe de tu asesor mezcla conceptos de otros frameworks de código abierto. En mi ecosistema actual (Antigravity IDE), las capas de seguridad y aprobación manual (los botones de "Approve" para comandos destructivos) son inquebrantables por diseño de Google DeepMind. No existe un parámetro `Always Proceed` oculto en `.agents/rules/` ni una "Antigravity CLI" nativa que pueda engancharse mágicamente a esta misma ventana de chat.
+
+**La Verdadera Solución (Custom LOMP):**
+Vamos a construir un **Agente Independiente en Python** que correrá en tu máquina virtual. Este agente usará mi mismo "cerebro" (tu `GEMINI_API_KEY`), tendrá acceso total a la carpeta `architect-landing-hosteleria` y podrá ejecutar comandos en tu servidor. Será una extensión de mí, dedicada exclusivamente a atenderte por Telegram.
+
+---
+
+## 🏗️ Fases de Implementación del Puente
+
+### Fase 1: Creación de la Infraestructura en Telegram
+Necesitamos crear la "identidad" de tu asistente en Telegram.
+1. Debes ir a la app de Telegram, buscar a **@BotFather**.
+2. Enviar el comando `/newbot` y darle un nombre (ej. `ArchitectSys_Bot`).
+3. BotFather te dará un **Token HTTP API** (ej. `123456789:ABCdefGHIjklmNOPqrsTUVwxyz`). Necesitaremos guardar este token en tu archivo `.env.local`.
+
+### Fase 2: Desarrollo del Script Base (El Cerebro Local)
+Crearemos un archivo `telegram_agent.py` en el directorio de tu proyecto.
+Este script utilizará:
+- `python-telegram-bot`: Para escuchar tus mensajes en tiempo real (Polling).
+- `google-generativeai`: Para procesar tus peticiones usando el modelo Gemini 1.5 Pro/Flash.
+- Modulos nativos de Python (`os`, `subprocess`): Para que el bot pueda leer archivos, escribir código y ejecutar comandos de terminal (ej. `npm run build`, `git push`).
+
+### Fase 3: Inyección de Contexto (Clonación de Identidad)
+Para que el bot de Telegram entienda el proyecto igual que yo, le inyectaremos como "System Prompt" el contenido de nuestro `MASTER_CONTEXT.md` y `AGENTS.md`. Así, cuando le pidas desde la calle "Ajusta la tarjeta de la Base Operativa", el bot sabrá exactamente de qué le hablas y modificará el archivo `TheTrojanHorse.tsx` correcto.
+
+### Fase 4: Despliegue en Segundo Plano (Background Service)
+Ejecutaremos el script de Python en segundo plano en tu Máquina Virtual. Al ser un servidor que siempre está encendido, el bot estará disponible 24/7 en tu teléfono.
+
+---
+
+## 🚦 Pregunta para ti (El Siguiente Paso)
+
+Para arrancar con este flujo, ¿qué prefieres hacer primero?
+
+1. **Opción A (Código Primero):** Quieres que te escriba ya mismo el código de `telegram_agent.py` y el archivo `requirements.txt` para que veas cómo funciona la lógica internamente.
+2. **Opción B (Infraestructura Primero):** Prefieres ir a Telegram ahora mismo, hablar con `@BotFather`, obtener tu Token y pasármelo para que dejemos las credenciales configuradas antes de picar código.

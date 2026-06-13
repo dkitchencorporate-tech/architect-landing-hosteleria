@@ -1,0 +1,21 @@
+# Despliegue Final: Menú Tapas (Bar Granadino)
+
+Hemos finalizado con éxito la refactorización y despliegue del menú demo "Bar Granadino". El sistema ahora cuenta con el mismo nivel de lujo y responsividad que el menú de Sushi.
+
+## Mejoras Implementadas
+
+### 1. Activos Fotográficos (IA)
+- Se han integrado **22 imágenes hiperrealistas** (Batch 4), sustituyendo todas las imágenes genéricas de stock por fotografías de calidad Michelin bajo la misma dirección de arte.
+- Las imágenes fueron remapeadas localmente (`t1.jpeg` a `t22.jpeg`) y subidas al servidor sin perder la jerarquía.
+- Se ha incluido con éxito la **Tarta de Queso Fluida** (t21) de último minuto.
+
+### 2. Refactorización Responsiva y Táctil
+- Las tarjetas de producto del Bar Granadino ya no sufren aglutinamiento en dispositivos móviles. Ahora, el diseño utiliza una estructura híbrida apilada con la imagen al 100% del ancho (`aspect-[4/3]`), garantizando un impacto visual total y textos legibles.
+- Los botones de conversión ("+ Añadir" y "🤖 Asistente") se han redimensionado (`h-12`) para asegurar una **experiencia táctil inmejorable** ("fat finger friendly").
+- El modal inmersivo de pantalla completa (Lightbox) ha sido activado, permitiendo a los comensales ver en detalle cada tapa con tan solo tocar la foto.
+
+> [!SUCCESS]
+> **El despliegue en Vercel se ha completado.** La compilación de `Next.js 14` pasó todos los controles sin errores. El sistema de demos está blindado, cohesivo en colores y totalmente preparado para recibir tráfico de tu campaña en 3 días.
+
+### Próximos Pasos Recomendados
+- **Test de Estrés Manual:** Visita la URL de producción desde tu propio teléfono inteligente (simulando a un prospecto). Cambia de la pestaña Sushi a Tapas, abre el carrito, interactúa con Arqui y confirma que todo fluye con absoluta perfección.

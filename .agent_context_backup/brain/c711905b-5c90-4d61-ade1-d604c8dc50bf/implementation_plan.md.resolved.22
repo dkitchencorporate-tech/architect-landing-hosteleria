@@ -1,0 +1,33 @@
+# Resolución de Deuda Técnica y Credibilidad
+
+He analizado el reporte de tu asesor externo y te doy mi veredicto como Director de Proyecto: **El asesor es excepcionalmente bueno y tiene el 100% de la razón.** 
+
+No se equivoca en absolutamente nada. Sus tres puntos apuntan a la yugular del negocio. 
+
+## 1. El Bug Crítico de SEO (Confirmado)
+He auditado el archivo raíz `src/app/layout.tsx` (que es el que lee Google). 
+Efectivamente, en la línea 8 todavía tenemos este código fantasma:
+> `description: "... Sistemas de digitalización base (39€/mes), Cartas QR..."`
+
+**Por qué es letal:** Si alguien busca "agencia hostelería", Google muestra "39€/mes" en el texto azul. El cliente hace clic esperando una ganga de software barato, y se encuentra con tu web High-Ticket de "Base Operativa 700€". El cerebro del cliente desconecta por la disonancia cognitiva y rebota (se va de la web). Esto arruinaría cualquier campaña de Ads.
+
+**Solución Inmediata:** Modificaré las etiquetas de Metadatos y OpenGraph para eliminar el precio y alinearlas al posicionamiento de "Socio Operativo":
+> *"Ingeniería de Procesos para Hostelería. PWA sin comisiones, Agentes IA en WhatsApp y Sistemas Dark Kitchen. Escala tu rentabilidad sin abrir más locales."*
+
+## 2. La Capacidad Operativa (Growth)
+El asesor valida que pasar a cobrar **299€/mes** te salva de la ruina matemática (145 clientes vs 34 clientes). Pero tiene razón: ahora tu cuello de botella no es vender, es **entregar el servicio**. 
+*Nota estratégica:* No modificaremos código aquí, pero como agencia, tu siguiente paso interno debe ser documentar en un PDF cómo ejecutas un evento de la Biblioteca para poder delegarlo a un *Junior* en el futuro.
+
+## 3. La Deuda de Credibilidad (El Caso Falso)
+Actualmente en la web tenemos la sección de `"Taberna Los Arcos"`. Es un gran texto publicitario, pero huele a "caso inventado" a kilómetros de distancia. Un inversor o dueño de un restaurante que factura 50.000€ al mes no le da 3.000€ a nadie sin ver una cara real y datos tangibles.
+
+**Solución Estratégica:**
+Vamos a cambiar la sección de la "Taberna Los Arcos" por un bloque de **"Casos de Estudio Pendientes de Publicación"** o un bloque que hable de **Metodología Probada**. Y aceptaremos la ayuda del asesor: te recomiendo que le pidas ese "guion de caso de estudio" para que, en cuanto tengas a tu primer cliente real (el "Paciente Cero"), grabes un video de 2 minutos con él y lo insertemos ahí.
+
+---
+
+> [!WARNING]
+> **Acción Inmediata Requerida**
+> 
+> El bug de SEO (39€) es una fuga de dinero pasiva. 
+> ¿Me das luz verde para corregir los metadatos de Google en `layout.tsx` y neutralizar la historia falsa de la "Taberna Los Arcos" en la landing page?

@@ -1,0 +1,91 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[6] (28,57)<div  />
+		[7] (28,57)<span > />
+[8] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[9] (28,146)<div  />
+		[10] (28,146)<span > />
+	[11] (28,190)<div  />
+		[12] (28,190)<div >Guardado />
+
+Recientes
+[13] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[14] (28,892)<div  />
+		[15] (28,892)<span > />
+	[16] (28,943)<div  />
+		[17] (28,943)<div >Obtener app />
+[18] (216,528)<div aria-label='Resultados de restaurante Chana Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd' role='feed' scrollable='true' />
+	Resultados
+	[19] (162,149)<button aria-label='Más información sobre la divulgación legal de las opiniones públicas en Google Maps' class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-icon-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe LQeN7 s73B3c MyHLpd wphPJc Q8G3mf' />
+		
+	[20] (317,152)<button aria-label='Compartir' class='M77dve ' />
+		[21] (317,152)<div  />
+			[22] (288,152)<span > />
+			[23] (324,152)<span >Compartir />
+	[24] (213,334)<a aria-label='Restaurante Los Marines' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Los+Marines/data=!4m7!3m6!1s0xd71fc5685b17c3b:0xbf6195ec7eac721d!8m2!3d37.1930873!4d-3.6248242!16s%2Fg%2F1tgdvh45!19sChIJO3yxhVb8cQ0RHXKsfuyVYb8?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Los Marines
+	4.4
+	(843)
+	·
+	€10-20
+	Restaurante
+	·
+	
+	·
+	Calle Dr. Vaca Castro, 2
+	Abierto
+	· Cierra a las 11:55 p.m.
+	"Exelente
+	restaurante
+	en la
+	Chana
+	con comida casera de calidad"
+	[25] (213,612)<a aria-label='El Jardín de las Brasas' class='hfpxzc' href='https://www.google.com/maps/place/El+Jard%C3%ADn+de+las+Brasas/data=!4m7!3m6!1s0xd71fd4bc5c5e1fb:0x8044d9156f3dd67a!8m2!3d37.1873779!4d-3.6188585!16s%2Fg%2F11q2665897!19sChIJ--HFxUv9cQ0RetY9bxXZRIA?authuser=0&hl=es-419&rclk=1' />
+	El Jardín de las Brasas
+	4.5
+	(285)
+	·
+	€10-20
+	Brasería
+	·
+	
+	·
+	C. Dorada, 25
+	Cerrado
+	· Abre a las 7:30 p.m. del mar
+	"La mejor comida y servicio de todas las torres de la
+	Chana
+	, bar excelente"
+	[26] (213,904)<a aria-label='Bar El Ancla' class='hfpxzc' href='https://www.google.com/maps/place/Bar+El+Ancla/data=!4m7!3m6!1s0xd71fd3e02629309:0x79d8c0df2469446d!8m2!3d37.1923256!4d-3.628231!16s%2Fg%2F11fnpzsvdl!19sChIJCZNiAj79cQ0RbURpJN_A2Hk?authuser=0&hl=es-419&rclk=1' />
+	Bar El Ancla
+	4.6
+	(374)
+	·
+	€10-20
+	Bar
+	·
+	
+	·
+	C. Estrellas, 18
+	Abierto
+	· Cierra a las 12 a.m.
+	"Situado en el barrio de la
+	Chana
+	."
+	
+	Pedir en línea
+[27] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[28] (80,972)<div  />
+		[29] (80,972)<span > />
+[30] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[31] (384,500)<span > />
+
+</current_dom>

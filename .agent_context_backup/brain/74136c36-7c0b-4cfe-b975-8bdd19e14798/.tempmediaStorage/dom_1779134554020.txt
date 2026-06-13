@@ -1,0 +1,86 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Sitios sobre lugares
+[0] (325,226)<div class='RyIFgf rAdPSe' scrollable='true' />
+	LA MEJOR comida marroquí en Granada - Tripadvisor
+	Tripadvisor
+	Pide Comida Marroquí a domicilio cerca de ti en Granada
+	Just Eat
+	Meknes Rahma Restaurante
+	Facebook
+	Los 15 Mejores Restaurantes de cocina Arabe en Granada en nuestro ranking.
+	Gastroranking
+	La mejor comida marroquí sin tener que salir de la Península. La tenemos en Granada.
+	El Nacional.cat
+	Restaurante Tajin Dar en Granada - Menú 2026, opiniones, precios y reserva
+	TheFork
+	Entrega Marroquí a domicilio en Granada
+	Uber Eats
+	Los 5 mejores restaurantes marroquíes en Granada, mayo 2026
+[1] (580,226)<g-right-button aria-label='Siguiente' class='wgbRNb VdehBf OZ5bRd btpNFe tHT0l' role='button' />
+	[2] (580,227)<g-fab  />
+		[3] (580,227)<span  />
+[4] (325,455)<div  />
+	[5] (325,455)<a class='jRKCUd' href='/search?q=restaurante+marroqui+Granada&sca_esv=53e99bddec16fb1e&udm=11&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QhbILegQIUhA4' />
+		[6] (325,455)<div  />
+			[7] (317,455)<span >Más sitios />
+			[8] (354,455)<span  />
+Resultados web
+[9] (212,611)<a class='zReHs' href='https://www.tripadvisor.es/Restaurants-g187441-c10633-Granada_Province_of_Granada_Andalucia.html' />
+	[10] (212,640)<h3 >LA MEJOR comida marroquí en Granada />
+	[11] (205,586)<div  />
+		[12] (205,586)<div  />
+			[13] (81,586)<span  />
+				[14] (81,586)<div  />
+					[15] (81,586)<img  />
+			[16] (220,586)<div  />
+				[17] (220,572)<div  />
+					[18] (220,572)<span >Tripadvisor />
+				[19] (220,602)<div  />
+					[20] (220,602)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[21] (273,601)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[22] (355,600)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[23] (355,600)<span  />
+		[24] (355,602)<span  />
+[25] (325,857)<div class='RyIFgf rAdPSe' scrollable='true' />
+	Palacio Andaluz Almona
+	4.8/5.0
+	(3.2 K)
+	·
+	€€ - €€€
+	Restaurante Arrayanes
+	4.4/5.0
+	(1.5 K)
+	·
+	€€ - €€€
+	Om-Kalsum
+	4.5/5.0
+	(356)
+	·
+	€
+	Papas Elvira
+	4.8/5.0
+	(576)
+	·
+	€
+	Restaurante Tetería Alhambra
+	4/5.0
+	(283)
+	·
+	€
+	Restaurante Árabe Sultán
+	3.7/5.0
+	(494)
+	·
+	€€ - €€€
+	La Mancha Chica Chaoen
+	4.1/5.0
+	(211)
+	·
+	€€ - €€€
+	Kasbah Restaurante Teteria
+	3.5/5.0
+
+</current_dom>

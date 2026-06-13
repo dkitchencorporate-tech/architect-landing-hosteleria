@@ -1,0 +1,138 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (431,59)<button class='e2moi' />
+		[7] (431,59)<div  />
+			[8] (405,59)<span > />
+			[9] (431,59)<span >Precio />
+			[10] (457,59)<span > />
+	[11] (531,59)<button class='e2moi' />
+		[12] (531,59)<div  />
+			[13] (488,59)<span > />
+			[14] (532,59)<span >Clasificación />
+			[15] (574,59)<span > />
+	[16] (632,59)<button class='e2moi' />
+		[17] (632,59)<div  />
+			[18] (605,59)<span > />
+			[19] (633,59)<span >Cocina />
+			[20] (661,59)<span > />
+	[21] (716,59)<button class='e2moi' />
+		[22] (716,59)<div  />
+			[23] (691,59)<span > />
+			[24] (717,59)<span >Horas />
+			[25] (741,59)<span > />
+	[26] (772,59)<span > />
+	Todos los filtros
+[27] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[28] (827,59)<span > />
+[29] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[30] (28,57)<div  />
+		[31] (28,57)<span > />
+[32] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[33] (28,146)<div  />
+		[34] (28,146)<span > />
+	[35] (28,190)<div  />
+		[36] (28,190)<div >Guardado />
+
+Recientes
+[37] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[38] (28,892)<div  />
+		[39] (28,892)<span > />
+	[40] (28,943)<div  />
+		[41] (28,943)<div >Obtener app />
+[42] (216,528)<div aria-label='Resultados de restaurante Centro Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd QjC7t' role='feed' scrollable='true' />
+	Restaurante de comida marroquí y narguiles
+	Cerrado
+	· Abre a la 1:30 p.m. del mar
+	"Comida, servicio y atención inmejorables, espectacular el sitio"
+	[43] (213,317)<a aria-label='Jardines de Zoraya' class='hfpxzc' href='https://www.google.com/maps/place/Jardines+de+Zoraya/data=!4m7!3m6!1s0xd71fcc620c4000f:0x5029860442078625!8m2!3d37.182424!4d-3.591649!16s%2Fg%2F1td1lbnf!19sChIJDwDEIMb8cQ0RJYYHQgSGKVA?authuser=0&hl=es-419&rclk=1' />
+	Jardines de Zoraya
+	4.8
+	(11,929)
+	·
+	$$
+	Teatro flamenco
+	·
+	
+	·
+	C. Panaderos, 32
+	Restaurante andaluz con espectáculos de flamenco
+	"Gastos
+	de
+	unos 60 euros para cenar por persona."
+	[44] (213,647)<a aria-label='La Auténtica Carmela' class='hfpxzc' href='https://www.google.com/maps/place/La+Aut%C3%A9ntica+Carmela/data=!4m7!3m6!1s0xd71fcbed369f557:0x2db45169cd7ff703!8m2!3d37.1755875!4d-3.5964599!16s%2Fg%2F1hhgrgl46!19sChIJV_Vp0778cQ0RA_d_zWlRtC0?authuser=0&hl=es-419&rclk=1' />
+	La Auténtica Carmela
+	4.5
+	(7,046)
+	·
+	€20-30
+	Española
+	·
+	
+	·
+	C. Colcha, 13
+	Restaurante español de estilo rústico chic
+	Abierto
+	· Cierra a las 12 a.m.
+	"Espectacular, buen servicio, buenas tapas y una carta muy buena."
+	[45] (213,785)<div  />
+		[46] (213,785)<div  />
+			[47] (213,785)<div  />
+				[48] (213,785)<a class='A1zNzb' href='https://www.google.com/searchviewer/42?cvd=CLw_EiYKJOICITIfEhgiFtLX29IPEAoML2cvMWhoZ3JnbDQ2GAA6AwjwDQ%3D%3D&hl=es-419&gl=es&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=Am4LavnfI_zt7M8P17Lr6QM&ei=Am4LavnfI_zt7M8P17Lr6QM&fo_s=OA,SOE&opi=79508299&ebb=1&cs=0&foub=mcpp' />
+					[49] (213,785)<div >Pedir en línea />
+						[50] (176,785)<span > />
+	Restaurante Granada - Aylin Art Cuisine
+	4.7
+	(1,787)
+	·
+	€20-30
+	Restaurante
+	·
+	
+	·
+	Av. de la Constitución, 12, Centro
+[51] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[52] (80,972)<div  />
+		[53] (80,972)<span > />
+[54] (216,886)<button class='e2moi' />
+	[55] (216,886)<div >
+Volver al principio />
+		[56] (216,886)<div  />
+		
+		Volver al principio
+[57] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[58] (384,500)<span > />
+[59] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[60] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2Frestaurante%2BCentro%2BGranada%2F%4037.1764861%2C-3.6009384%2C15z%2Fdata%3D!3m1!4b1%3Fved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[61] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[62] (973,799)<span > />
+[63] (973,871)<div  />
+	[64] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[65] (973,849)<div  />
+	[66] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[67] (973,893)<div  />
+	[68] (973,871)<div  />
+[69] (973,945)<div  />
+	[70] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[71] (973,945)<div  />
+
+Capas
+[72] (421,906)<button class='yHc72 qk5Wte' />
+Datos del mapa © 2026 Inst. Geogr. Nacional, Google
+[73] (647,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[74] (693,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[75] (745,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[76] (839,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[77] (950,989)<button class='LNGekf' />
+	[78] (927,989)<label class='U5ELMd'>200 m />
+	[79] (961,989)<div  />
+
+</current_dom>

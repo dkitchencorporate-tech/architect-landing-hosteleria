@@ -1,0 +1,12 @@
+# Task Tracker: Final UX Fixes & Deployment
+
+## Fase 1: Correcciones de UX/UI Móvil
+- `[x]` Ajustar responsividad del header principal (`src/app/page.tsx`).
+- `[x]` Aumentar padding superior en `AggressiveHero.tsx` para evitar solapamiento.
+
+## Fase 2: Botones de Acceso a Demo
+- `[x]` Inyectar botón "Ver Demo Interactiva" en `DigitalPresenceValue.tsx`.
+- `[x]` Inyectar botón flotante de retorno "Volver a Architect.Sys" en `demo/carta/page.tsx`.
+
+## Fase 3: Despliegue a Producción
+- `[x]` Realizar `git add .`, `git commit` y `git push origin master`.

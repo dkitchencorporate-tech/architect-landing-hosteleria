@@ -1,0 +1,16 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Architect
+.Sys
+Acceso a la Sala de Análisis Visual
+Credenciales incorrectas
+[0] (500,388)<label class='block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider text-[11px]'>Email Administrativo />
+[1] (500,459)<input class='w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF4500] focus:border-transparent outline-none transition-all' placeholder='admin@architect.sys' />
+[2] (500,551)<label class='block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wider text-[11px]'>Contraseña de Acceso />
+[3] (500,622)<input class='w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF4500] focus:border-transparent outline-none transition-all' placeholder='••••••••' />
+[4] (500,744)<button class='w-full bg-[#FF4500] text-white font-bold py-4 rounded-xl hover:bg-[#E03E00] hover:shadow-lg transition-all duration-300 transform active:scale-[0.98] disabled:opacity-50'>Ingresar a la Sala Segura />
+Cifrado Militar de Extremo a Extremo 🔒
+
+</current_dom>

@@ -1,0 +1,31 @@
+# Walkthrough: Reingeniería Arquitectónica (3 Ecosistemas B2B)
+
+Siguiendo tus indicaciones, hemos destruido el diseño "genérico" anterior. Ahora, el sistema renderiza **tres componentes de React completamente independientes** según la selección del cliente. No es un cambio de colores, es un cambio radical de infraestructura UI.
+
+## 1. Divergencia Estructural (Los 3 Layouts)
+
+### 🍣 Ecosistema "Alta Cocina" (EditorialSushiLayout)
+- **Filosofía:** Lujo, exclusividad y *Negative Space*.
+- **Diseño:** 1 sola columna asimétrica. Las imágenes son panorámicas enormes y el texto es tipografía Serif extrafina.
+- **Detalle:** Hemos eliminado los botones toscos. Ahora son acciones minimalistas con bordes sutiles.
+
+### 🍺 Ecosistema "Bar Granadino" (ListTapasLayout)
+- **Filosofía:** Rotación alta, taberna tradicional y familiaridad.
+- **Diseño:** Lista densa vertical (estilo menú físico). Imágenes cuadradas pequeñas a la izquierda, título a la derecha conectado con una línea punteada clásica hacia el precio.
+- **Detalle:** Botones rápidos de añadir sin robar protagonismo visual.
+
+### 🍔 Ecosistema "Fast Food App" (GridBurgerLayout)
+- **Filosofía:** Compra impulsiva, apetito visual, estilo "Crave".
+- **Diseño:** Grid/Masonry de tarjetas gruesas. Fondo negro puro, bordes de contenedor estilo Neón, imágenes que desbordan el margen superior.
+- **Detalle:** Tipografía Sans-Serif gruesa, mayúsculas, formato itálico y botones gigantes.
+
+## 2. Rigurosidad de Datos (El Catálogo)
+
+La base de datos `demo-data.ts` ha sido rescrita desde cero con precisión quirúrgica:
+- **84 Productos Exactos:** (28 por cada plantilla).
+- **21 Categorías Lógicas:** (7 exactas por plantilla).
+- **Mapeo Visual 1:1:** Si el usuario elige "Croquetas de Rabo de Toro", verá croquetas reales de Unsplash. Si elige "Pizza Pepperoni Detroit", verá una pizza cuadrada gruesa. No hay fallos de contexto.
+- **Rendimiento:** Todas las URLs incluyen `&w=400&q=50&fm=webp` para asegurar carga en milisegundos.
+
+## 3. Estado Global y B2B
+El *Dock* inferior (Glassmorphism oscuro) y el selector de comensales (Header) permanecen flotando de forma agnóstica para no perder nunca el gancho comercial (Cierre en Calendly/WhatsApp), sin importar cuán extremo sea el cambio de layout de fondo.

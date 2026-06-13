@@ -1,0 +1,151 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dbar%2Btapas%2BGranada%26sca_esv%3D53e99bddec16fb1e%26udm%3D11%26sa%3DX%26ved%3D2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQhbILegQITRBE%26cshid%3D1779134001779402%26biw%3D1280%26bih%3D632%26dpr%3D1.5&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=bar+tapas+Granada&sa=X&sca_esv=53e99bddec16fb1e&biw=1280&bih=632&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTbSVldBrj9mdwFjfwIgEUgRGC1wpc2RYOTEe_z2er3DHTfYdQbjAlJV50mQAlTxiC2hP9kEMT5iXJWNqorfe-qO9WOqHcUW0LD-Y4r24AY5orJegzkWk2FkkqEpwL138ZoYYC5LfMqqMqsDMo1_VCNnK7MmdOd3kFmd3ypVIidi7yZUTxUwehjvVvlp1G6OReJ3bp1w&aep=1&ntc=1&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQ2J8OegQIDhAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=bar+tapas+Granada&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTbSVldBrj9mdwFjfwIgEUgRGC1wpc2RYOTEe_z2er3DHTfYdQbjAlJV50mQAlTxiC2hP9kEMT5iXJWNqorfe-qO9WOqHcUW0LD-Y4r24AY5orJegzkWk2FkkqEpwL138ZoYYC5LfMqqMqsDMo1_VCNnK7MmdOd3kFmd3ypVIidi7yZUTxUwehjvVvlp1G6OReJ3bp1w&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQ0pQJegQIEBAB' />
+	[22] (144,180)<div  />
+		[23] (144,194)<span >Todo />
+[24] (201,180)<a class='C6AK7c' href='/search?sa=X&sca_esv=53e99bddec16fb1e&biw=1280&bih=632&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTbSVldBrj9mdwFjfwIgEUgRGC1wpc2RYOTEe_z2er3DHTfYdQbjAlJV50mQAlTxiC2hP9kEMT5iXJWNqorfe-qO9WOqHcUW0LD-Y4r24AY5orJegzkWk2FkkqEpwL138ZoYYC5LfMqqMqsDMo1_VCNnK7MmdOd3kFmd3ypVIidi7yZUTxUwehjvVvlp1G6OReJ3bp1w&q=bar+tapas+Granada&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQtKgLegQIFBAB' />
+	[25] (201,180)<div  />
+		[26] (201,194)<span >Imágenes />
+[27] (265,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=bar+tapas+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTbSVldBrj9mdwFjfwIgEUgRGC1wpc2RYOTEe_z2er3DHTfYdQbjAlJV50mQAlTxiC2hP9kEMT5iXJWNqorfe-qO9WOqHcUW0LD-Y4r24AY5orJegzkWk2FkkqEpwL138ZoYYC5LfMqqMqsDMo1_VCNnK7MmdOd3kFmd3ypVIidi7yZUTxUwehjvVvlp1G6OReJ3bp1w&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQ0pQJegQIExAB' />
+	[28] (265,180)<div  />
+		[29] (265,194)<span >Noticias />
+[30] (326,180)<a class='C6AK7c' href='/search?sa=X&sca_esv=53e99bddec16fb1e&biw=1280&bih=632&udm=1&lsack=PG4LaqqRKuf4kdUP87TYgAM&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTbSVldBrj9mdwFjfwIgEUgRGC1wpc2RYOTEe_z2er3DHTfYdQbjAlJV50mQAlTxiC2hP9kEMT5iXJWNqorfe-qO9WOqHcUW0LD-Y4r24AY5orJegzkWk2FkkqEpwL138ZoYYC5LfMqqMqsDMo1_VCNnK7MmdOd3kFmd3ypVIidi7yZUTxUwehjvVvlp1G6OReJ3bp1w&q=bar+tapas+Granada&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQs6gLegQIEhAB' />
+	[31] (326,180)<div  />
+		[32] (326,194)<span >Lugares />
+[33] (400,180)<a class='C6AK7c' href='/search?sa=X&sca_esv=53e99bddec16fb1e&biw=1280&bih=632&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTbSVldBrj9mdwFjfwIgEUgRGC1wpc2RYOTEe_z2er3DHTfYdQbjAlJV50mQAlTxiC2hP9kEMT5iXJWNqorfe-qO9WOqHcUW0LD-Y4r24AY5orJegzkWk2FkkqEpwL138ZoYYC5LfMqqMqsDMo1_VCNnK7MmdOd3kFmd3ypVIidi7yZUTxUwehjvVvlp1G6OReJ3bp1w&q=bar+tapas+Granada&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQs6gLegQIERAB' />
+	[34] (400,180)<div  />
+		[35] (400,194)<span >Videos cortos />
+[36] (505,180)<a class='C6AK7c' role='link' />
+	Sitios sobre lugares
+[37] (592,180)<div class='mTpL7c' role='button' />
+	[38] (592,180)<div  />
+		[39] (592,194)<div  />
+			[40] (585,186)<span >Más />
+			[41] (602,186)<span  />
+[42] (686,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (686,180)<div  />
+		[44] (686,194)<div  />
+			[45] (679,186)<span >Herramientas />
+			[46] (720,186)<span  />
+[47] (86,266)<a aria-label='Agregar Centro' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=Bar+tapas+Granada+centro&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-nKY35LSivhHEWuTEAptjfMQaGbdXA17RY-PqO0ZHsIMkXZYaGarA4b2YrThLmwxv5iM2yz1F_dWmV8rOtXNDuKqDiIORzojUtq7CQpTpuqBSFKdF1o6Q4MKhXxAXf_SCdsjSE37iQUKQ6L5MFkGlgdlmvVYDFPAu2fSv4oOgxAQNIJHQH7xcuOFSdzoWDvk2m8Vxnw&udm=11&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQxKsJKAB6BAgVEAE&ictx=0' role='link' />
+	[48] (86,266)<div  />
+		[49] (86,266)<span >Centro />
+[50] (149,266)<a aria-label='Agregar Barato' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=bar+tapas+granada+barato&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-nKY35LSivhHEWuTEAptjfMQaGbdXA17RY-PqO0ZHsIMWfeLWxy5Hm5bBcFiZQFIBL08Gw3Czzsjq1D2nKmfwvHgy2OfFhpEpEjeVpui6SAMWz8gx-67DVP7ADEoRtWV4-vRpyvd-9PEIm76OhpEEzLOZ12vndfom3o694V0w3ARE281lfkHxUQnkGjsJ4BJWRP68vA&udm=11&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQxKsJKAF6BAgYEAE&ictx=0' role='link' />
+	[51] (149,266)<div  />
+		[52] (149,266)<span >Barato />
+[53] (223,266)<a aria-label='Agregar Calle elvira' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=bar+tapas+calle+elvira+granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-f0NoD4Pz8uWT5l-EYFKNUw6WDewznHVIJ3aYU8tJkcUljmAtnJExFrj1v7G6_W7RpYSarqmrAn7tX_YQjv9xR_ENXK-xI0fcZG1nDNk_ApekHplIsimGCgICNVI-6LcYTsVEu1npjHxMs7gp-gqP3oE01KSBcQUcfS80MXOFSsSqVAMN4INNRVzsBvMNeqEOxAh3GTOr3bfN5ZdsCuNvH5SZCDI&udm=11&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQxKsJKAJ6BAgZEAE&ictx=0' role='link' />
+	[54] (223,266)<div  />
+		[55] (223,266)<span >Calle elvira />
+[56] (307,266)<a aria-label='Agregar Calle navas' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=mejor+bar+tapas+calle+navas+granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-TUXk-vf-oUM8rx918UHEL9hqTNbzWPl3i1euJKYNjLh2Ec8MEuj0NhpIYULmtIjPOLC6tYZgm7YBjafGE7qhHnSgVnMhIBIGhq9GKjjDDxUfeyQuxiDwRPOmVZyaOX138G3exti_aHMrgx2SaQCaZj3zr7cZuyiSdF0KpVUfGplBy5dKknk4Yk345tbk2WR5rVhgq_w7048cocXdHeczxk6BeqQ&udm=11&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQxKsJKAN6BAgXEAE&ictx=0' role='link' />
+	[57] (307,266)<div  />
+		[58] (307,266)<span >Calle navas />
+[59] (383,266)<a aria-label='Agregar Capital' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=bar+de+tapas+en+granada+capital&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-abCMD71QA4fUOI_hMfwyRDVECaytwCD89N86C6BPclFm5H7w3ZksMczdMKT-2o3vgLPfkQSqlr3O5hqCnRRTp78armT7dc3jocX22GyGbn_EXuMq6CZnioHvWnQrTWgKzE0IE-ei46dlDHSIwtNrPL_F-c0IlkKmHRytY6XeqGyI4Vs06G_-_jH73Q7cdhUQyxmeLAzBdmQWEsZhNLopvFRqBUk1wiqrhBsyF1GJ9FgwUFPn&udm=11&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQxKsJKAR6BAgWEAE&ictx=0' role='link' />
+	[60] (383,266)<div  />
+		[61] (383,266)<span >Capital />
+[62] (446,266)<a aria-label='Agregar Chana' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=Bar+de+tapas+en+La+chana+granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-kVrGtxoUVzqH0-0F_eNwds90y7xHpiFcdxra55yQyRU5HyN7A-qusdCDTOmaTDWHi1jCvwT-NnTz9hGRRwl1UpEMBxnSfz9B0bzGnJXs_2mCgdGjkhs8RJu3GiqVTIn2tj4kt-ekYOFVqJ347v_jLFTvjy4hb-1F98Ue2ZVkyiDyXBOSTmO1sRXdowHltLo0qFcBeK8I3r61f_aY-wgGp1vzBPrvdyXNJqyhD346rplkAoAZ&udm=11&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQxKsJKAV6BAhgEAE&ictx=0' role='link' />
+	[63] (446,266)<div  />
+		[64] (446,266)<span >Chana />
+[65] (516,266)<a aria-label='Agregar Churriana' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=bar+de+tapas+churriana+granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-ClMSRyXAURQ5KGdWtQ2W42E_tS2dNzReNdsAe9Uvke2gHVlyX9-AyEVmiLb9E-Y_eDrsZJt6X2dbGxANsJpIlvLJjuW0DgJlstx5kulproaB0kw85-73WzmWC_QdgoHOsTw40J2XHxhx7rHbb0tzFv0dwtnpD4lGJi2beMblI7PbeVirWxxOrKtMDZDKcm7DRSUWCGeRLIzknViphxJREuf_lCc&udm=11&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQxKsJKAZ6BAhiEAE&ictx=0' role='link' />
+	[66] (516,266)<div  />
+		[67] (516,266)<span >Churriana />
+[68] (592,266)<a aria-label='Agregar Pescado' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&biw=1280&bih=632&q=bar+tapas+pescado+granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-i30ktpb-ek_lujuWbFW3XXxQ6J8Yo8uFss-XXj_xeOA2lt7hrDVB3sPBk8_iRusggcYA5rAarOGDryRciyGwmxNWEjRsWLENQ7Al5oxrLRJkC0ZQEMripBoYATOiOlO4PYe75Z1TUsIDoosrlC8z10H7X-M1M7wBNwKetdo5KX2S8-ZYvQaZrb8gI_x7VV498knwaw&udm=11&sa=X&ved=2ahUKEwiqn9bWzsOUAxVnfKQEHXMaFjAQxKsJKAd6BAhhEAE&ictx=0' role='link' />
+	[69] (592,266)<div  />
+		[70] (592,266)<span >Pescado />
+Resultados de búsqueda
+Resultados web
+[71] (243,436)<a href='https://imanesdeviaje.com/mejores-bares-donde-ir-de-tapas-granada/' />
+	[72] (243,430)<h3 >6 bares para ir de cañas por Granada con tapas ... />
+	[73] (81,372)<span  />
+		[74] (81,372)<div  />
+			[75] (81,372)<img  />
+	[76] (210,372)<div  />
+		[77] (210,358)<div  />
+			[78] (210,358)<span >Imanes de viaje />
+		[79] (210,388)<div  />
+			[80] (210,388)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://imanesdeviaje.com />
+				[81] (265,387)<span class='ylgVCe ob9lvb' role='text'>› ... › Andalucía › Granada />
+[82] (336,386)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[83] (336,386)<span  />
+		[84] (336,388)<span  />
+[85] (544,415)<a href='https://imanesdeviaje.com/mejores-bares-donde-ir-de-tapas-granada/' />
+	[86] (544,415)<div  />
+		[87] (544,415)<img  />
+Los 6 mejores bares para ir de tapas en Granada con tapas cojonudas ·
+1. Taberna El Aviso
+[Actualmente cerrado] · 2. Entre Brasas · 3. Bar los Diamantes · 4. La ...
+[88] (231,670)<a href='https://lacosmopolilla.com/guia-tapas-granada/' />
+	[89] (231,664)<h3 >Guía de tapas por Granada (por una granaína) />
+	[90] (81,606)<span  />
+		[91] (81,606)<div  />
+			[92] (81,606)<img  />
+	[93] (200,606)<div  />
+		[94] (200,592)<div  />
+			[95] (200,592)<span >La Cosmopolilla />
+		[96] (200,622)<div  />
+			[97] (200,622)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://lacosmopolilla.com />
+				[98] (253,621)<span class='ylgVCe ob9lvb' role='text'>› guia-tapas-granada />
+[99] (314,620)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[100] (314,620)<span  />
+		[101] (314,622)<span  />
+[102] (544,649)<a href='https://lacosmopolilla.com/guia-tapas-granada/' />
+	[103] (544,649)<div  />
+		[104] (544,649)<img  />
+16 dic 2025
+—
+Top 5 Imprescindibles de Tapas en Granada ·
+Los Diamantes: Para amantes del pescaíto frito
+(Calle Navas). · Bodegas Castañeda: El clásico ...
+[105] (143,792)<a class='dM1Yyd brKmxb' href='https://lacosmopolilla.com/guia-tapas-granada/#Manual_de_uso_Como_ir_de_tapas_por_Granada_sin_parecer_guiri' />
+	[106] (143,794)<div  />
+		[107] (143,794)<div >Manual de uso: Cómo ir de... />
+[108] (289,792)<a class='dM1Yyd brKmxb' href='https://lacosmopolilla.com/guia-tapas-granada/#Ruta_de_Bares_de_Tapas_por_Granada_Zona_a_Zona' />
+	[109] (289,794)<div  />
+		[110] (289,794)<div >Ruta de Bares de Tapas por... />
+[111] (269,960)<a href='https://elviajemehizoami.com/bares-de-tapas-en-granada/' />
+	[112] (269,954)<h3 >10 bares de tapas en Granada TOP y cómo tapear por allí />
+	[113] (81,896)<span  />
+		[114] (81,896)<div  />
+			[115] (81,896)<span  />
+	[116] (204,896)<div  />
+		[117] (204,882)<div  />
+			[118] (204,882)<span >El viaje me hizo a mí />
+		[119] (204,912)<div  />
+			[120] (204,912)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://elviajemehizoami.com />
+				[121] (264,911)<span class='ylgVCe ob9lvb' role='text'>› España › Granada />
+[122] (324,910)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[123] (324,910)<span  />
+		[124] (324,912)<span  />
+[125] (544,939)<a href='https://elviajemehizoami.com/bares-de-tapas-en-granada/' />
+	[126] (544,939)<div  />
+		[127] (544,939)<img  />
+Bares de tapas de Granada que podemos recomendar · 1.
+La Bella Kurva, mi bar favorito de toda la ciudad
+
+</current_dom>

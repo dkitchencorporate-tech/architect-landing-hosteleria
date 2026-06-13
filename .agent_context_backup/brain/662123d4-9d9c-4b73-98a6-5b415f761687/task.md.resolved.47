@@ -1,0 +1,20 @@
+# Task Tracker: Correcciones Finales y Seguridad
+
+## Fase 1: Corrección de QR (LiveDemoCTA)
+- `[/]` Modificar `LiveDemoCTA.tsx`: Cambiar URL de la API generadora de QR a `hosteleria.architectsys.com/demo/carta`.
+
+## Fase 2: Responsividad del Menú Móvil (Navbar)
+- `[ ]` Modificar `page.tsx` (Navbar): Reemplazar `flex-wrap` por `overflow-x-auto whitespace-nowrap` y asegurar que la barra de scroll esté oculta (`scrollbar-width: none`).
+- `[ ]` Subir `z-index` general del header si es necesario para evitar superposición.
+
+## Fase 3: Disparador Móvil (ExitIntent)
+- `[ ]` Modificar `ExitIntent.tsx`: Bajar el umbral de `currentScrollY > 600` a `200`.
+- `[ ]` Añadir evento `visibilitychange` para detectar cuando el usuario minimiza el navegador en el móvil.
+
+## Fase 4: Seguridad (Middleware)
+- `[ ]` Crear archivo `src/middleware.ts` implementando HTTP Basic Auth.
+- `[ ]` Proteger las rutas `/dashboard`, `/creative-factory` y `/admin-architect`.
+- `[ ]` Credenciales estáticas temporales (admin:architect2026).
+
+## Fase 5: Despliegue
+- `[ ]` Desplegar cambios en Vercel (`vercel --prod`).

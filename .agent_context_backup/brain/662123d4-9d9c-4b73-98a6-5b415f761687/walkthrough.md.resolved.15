@@ -1,0 +1,31 @@
+# Resumen de Cambios: Refinamiento Estratégico
+
+He aplicado el plan completo y la landing page de producción ya refleja todos los cambios con un enfoque 100% orientado a Neuroventas y autoridad.
+
+## 1. Copywriting Destructivo Eliminado
+Se ha erradicado la frase *"No te fíes de nuestra palabra"* de la sección `LiveDemoCTA`. Ahora dice:
+> **"La misma experiencia fluida que exigirán tus mejores clientes."**
+
+## 2. Precisión Matemática (Bonos)
+La sumatoria de los 4 bonos consultivos (180€ + 250€ + 300€ + 250€) se ha ajustado estrictamente a **980€**. Este cambio se ha aplicado en:
+- El texto explicativo de `TheTrojanHorse.tsx`.
+- El modal de captura de leads `ConsultingModal.tsx`.
+- El pop-up de intención de salida `ExitIntent.tsx`.
+
+## 3. Reposicionamiento del Agente Arqui
+- **Cambio de ubicación:** He subido a Arqui en el embudo. Ahora aparece **antes** de ofrecer la automatización masiva, preparando al lead mentalmente.
+- **Copy de Autoridad:** Ya no lo vendemos. Lo presentamos como nuestro *Analista Estratégico IA*. Su única misión es cualificar al restaurante y preparar la reunión para ti (Alex).
+
+## 4. Biografía del Fundador (Alex)
+- La foto genérica fue reemplazada por una "A" negra y naranja brutalista.
+- El nombre cambió a **Alex**.
+- El botón de contacto pasó de ser pasivo ("Contesto en 1 hora") a un cierre de autoridad: **"Trato directo y sin intermediarios. Tu éxito es mi prioridad."**
+
+## 5. FAQs Estratégicas (Cerradas)
+He reestructurado la sección de preguntas frecuentes:
+- **UI:** Las preguntas ahora inician completamente **cerradas**, obligando a la interacción para leerlas y manteniendo la página limpia.
+- **Contenido (7 Preguntas):** Desarrolladas con PNL abarcando que no requieren nivel técnico, que mantienen el menú físico (elevado con neuroventas), que son dueños de sus datos, que no hay comisiones por reserva, y la utilidad de la IA.
+
+## Estado
+> [!IMPORTANT]
+> El despliegue a **Vercel** (`hosteleria.architectsys.com`) ha concluido exitosamente. Los cambios están vivos y listos para recibir tráfico.

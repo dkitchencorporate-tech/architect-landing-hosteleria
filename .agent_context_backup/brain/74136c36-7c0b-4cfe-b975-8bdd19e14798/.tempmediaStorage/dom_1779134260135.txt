@@ -1,0 +1,84 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[6] (28,57)<div  />
+		[7] (28,57)<span > />
+[8] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[9] (28,146)<div  />
+		[10] (28,146)<span > />
+	[11] (28,190)<div  />
+		[12] (28,190)<div >Guardado />
+
+Recientes
+[13] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[14] (28,892)<div  />
+		[15] (28,892)<span > />
+	[16] (28,943)<div  />
+		[17] (28,943)<div >Obtener app />
+[18] (216,528)<div aria-label='Resultados de restaurante Plaza Nueva Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd' role='feed' scrollable='true' />
+	Resultados
+	[19] (162,149)<button aria-label='Más información sobre la divulgación legal de las opiniones públicas en Google Maps' class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-icon-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe LQeN7 s73B3c MyHLpd wphPJc Q8G3mf' />
+		
+	[20] (317,152)<button aria-label='Compartir' class='M77dve ' />
+		[21] (317,152)<div  />
+			[22] (288,152)<span > />
+			[23] (324,152)<span >Compartir />
+	[24] (213,350)<a aria-label='Los Diamantes - Plaza Nueva' class='hfpxzc' href='https://www.google.com/maps/place/Los+Diamantes+-+Plaza+Nueva/data=!4m7!3m6!1s0xd71fcbe859d99e3:0x2cee42447f1a7de!8m2!3d37.1766076!4d-3.5959423!16s%2Fg%2F1tvw68j8!19sChIJ45mdhb78cQ0R3qfxRyTkzgI?authuser=0&hl=es-419&rclk=1' />
+	Los Diamantes - Plaza Nueva
+	4.3
+	(13,558)
+	·
+	€10-20
+	Bar de tapas
+	·
+	
+	·
+	Pl. Nueva, 13
+	Bar de tapas refinado especializado en marisco
+	Abierto
+	· Cierra a las 11:30 p.m.
+	"Ahora si no eres celíaco
+	restaurante
+	muy bueno con raciones generosas."
+	[25] (213,655)<a aria-label='La Gran Taberna' class='hfpxzc' href='https://www.google.com/maps/place/La+Gran+Taberna/data=!4m7!3m6!1s0xd71fcb8cff1ec17:0x4e92c2e1a9e54c0c!8m2!3d37.1766351!4d-3.595853!16s%2Fg%2F11xkwnnxh!19sChIJF-zxz7j8cQ0RDEzlqeHCkk4?authuser=0&hl=es-419&rclk=1' />
+	La Gran Taberna
+	4.2
+	(2,867)
+	·
+	€10-20
+	Bar de tapas
+	·
+	
+	·
+	Pl. Nueva, 12
+	Montaditos y tablas en un local clásico
+	Abierto
+	· Cierra a la 1 a.m.
+	"Bebidas con tapas riquisimas incluidas a buen precio"
+	EL CAMPESINO FALAFEL
+	4.7
+	(327)
+	·
+	€1-10
+	Restaurante
+	·
+	
+	·
+	Pl. Nueva, 1
+	Abierto
+	· Cierra a las 3 a.m.
+	"Muy buen lugar para comer, super rico, barato, muy buena atención."
+[26] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[27] (80,972)<div  />
+		[28] (80,972)<span > />
+[29] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[30] (384,500)<span > />
+
+</current_dom>

@@ -1,0 +1,59 @@
+# Plan de Adaptación: Creative Factory Centrada en Clientes Dinámicos
+
+Este plan detalla cómo reestructurar la **Factoría Creativa** para desvincularla de las 3 demos estáticas (Sushi, Tapas, Burger) y orientarla a un flujo multi-cliente. La interfaz se adaptará dinámicamente según el cliente seleccionado (tipo de local, nombre, nivel de ticket y su propia carta de platos), alimentando a la IA con su contexto para generar copys e imágenes personalizadas.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Integración con Onboarding:**
+> El selector de clientes en la Creative Factory leerá los datos desde `localStorage`. Esto significa que cuando un cliente complete el formulario de onboarding (que Jules está desarrollando), su local y sus platos aparecerán automáticamente en la Creative Factory para ser trabajados en tiempo real.
+
+---
+
+## Proposed Changes
+
+### 1. Frontend: Interfaz Dinámica por Cliente
+
+#### [MODIFY] `src/app/creative-factory/page.tsx`
+- **Selector de Cliente Activo:**
+  - Inyectar en la cabecera un selector de cliente.
+  - Almacenar en local una base de datos mock inicial con 3 tipos de clientes para pruebas inmediatas:
+    1. *Pizzería Don Giovanni* (Barrio, ticket medio-bajo, platos: Margherita, Calzone, Tiramisú).
+    2. *L'Atelier de L'Océan* (Gourmet de alto nivel, platos: Tartar de vieira, Rodaballo salvaje, Soufflé de Cítricos).
+    3. *El Tardeo de Lola* (Bar de tapas mediano, platos: Croquetas de jamón, Patatas bravas, Claras con limón).
+  - Al seleccionar un cliente, cargar sus datos y mostrar un resumen en pantalla (Nombre, Tipo, Especialidad).
+- **Adaptación del Formulario y prompt:**
+  - Enviar en la petición `/api/creative-factory/generate` el contexto completo del cliente activo (Nombre, Tipo, Nivel, etc.).
+- **Asignador de Menú Dinámico:**
+  - Reemplazar el selector rígido de cartas (Sushi, Tapas, Burger) por un selector que liste **las especialidades reales de la carta del cliente seleccionado**.
+  - El botón "Guardar y Vincular" guardará la imagen en disco con el patrón `client_[clientId]_[dishIndex].png` y actualizará el estado de la carta del cliente.
+
+---
+
+### 2. Backend: Contextualización por IA
+
+#### [MODIFY] `src/app/api/creative-factory/generate/route.ts`
+- **Lógica de Prompting Contextual:**
+  - Capturar las variables del cliente en el POST: `clientName`, `clientCuisine`, `clientTier` (Gourmet, Barrio, etc.) y `clientSpecialty`.
+  - Instruir a Gemini para redactar el copy adaptando el tono al perfil del cliente:
+    - *Gourmet:* Lenguaje sofisticado, enfoque en exclusividad y técnica culinaria.
+    - *Barrio:* Tono cercano, campechano, familiar, enfocado en precios justos y cercanía.
+    - *Casual/Mediano:* Enfoque dinámico, moderno.
+  - El prompt visual de Imagen 4 se adaptará automáticamente para coincidir con la estética del cliente (ej. manteles rústicos para barrio, platos minimalistas oscuros para gourmet).
+
+#### [MODIFY] `src/app/api/creative-factory/save-image/route.ts`
+- **Estructuración de Rutas por Cliente:**
+  - Sanitizar y validar los nombres de archivo generados para cada cliente.
+
+---
+
+## Verification Plan
+
+### Automated Tests
+- Comprobar que el endpoint `/api/creative-factory/generate` genera textos coherentes con el cliente seleccionado (ej. que si el cliente es la Pizzería, el texto hable de pizzas y no de sushi).
+
+### Manual Verification
+- Entrar en `/creative-factory`.
+- Cambiar el cliente activo a "L'Atelier de L'Océan" (Gourmet) y fabricar una campaña. Verificar que el tono del copy es sofisticado.
+- Cambiar el cliente a "Pizzería Don Giovanni" (Barrio) y comprobar el tono más rústico y cercano.
+- Generar una imagen para el plato "Calzone" de la Pizzería y verificar que se guarda de forma independiente.

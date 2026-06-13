@@ -1,0 +1,44 @@
+# Reingeniería del Modal de Salida (Exit Intent)
+
+*Rol Activo: Especialista en CRO (Optimización de Conversión)*
+
+He analizado el modal actual (`ExitIntent.tsx`) y tienes toda la razón. Los bonos actuales ("Diseño de Carta Física", "Publicaciones de Redes") huelen a agencia de marketing tradicional barata. No encajan con tu nuevo posicionamiento de **Socio Operativo High-Ticket**.
+
+Además, analizando el flujo tras pulsar el botón, he visto una fisura:
+*   **Flujo Actual:** El usuario hace clic -> Rellena un formulario manual -> Ve un mensaje de éxito con un botón a WhatsApp.
+*   **El Problema:** Pierdes el compromiso. Si ya estamos usando **Calendly** como arma principal de cierre (implementado en secciones anteriores), este formulario manual es un paso atrás.
+
+Aquí está mi plan de choque para este modal:
+
+## 1. Nuevos Bonos (Alineados al Plan Growth)
+Cambiamos los regalos tácticos por regalos **estratégicos** que fuercen la necesidad de consultoría.
+
+*   **Bono 1: Auditoría de Fuga de Capital (Valor: 150€)**
+    *Análisis en vivo de por qué tu local pierde reservas los fines de semana y cómo tapar esa fuga.*
+*   **Bono 2: Mockup de Carta Interactiva (Valor: 150€)**
+    *Creamos una simulación gratuita de cómo se vería tu menú con nuestro sistema de Upsell integrado.*
+*   **Bono 3: Blueprint de Eventos (Valor: 200€)**
+    *Te regalamos el esquema exacto de 1 evento de nuestra biblioteca adaptado a tu local.*
+
+## 2. Modificación del Flujo de Botones
+Vamos a eliminar la "Fase 2" del formulario manual porque genera fricción innecesaria y no agenda la llamada.
+
+*   **Nuevo Flujo:** 
+    1. Aparece el modal con los Nuevos Bonos.
+    2. El botón dirá: **"Agendar Consultoría y Reclamar Bonos"**.
+    3. Al hacer clic, **cerramos el modal de salida y abrimos el Modal de Consultoría (Calendly) que ya tenemos programado y perfeccionado.** Así unificamos el embudo de ventas en un solo cierre profesional.
+
+## 3. Rediseño del Copy
+El título actual: *"¡Espera! No te vayas sin reclamar tus Bonos Exclusivos"* es un poco agresivo-genérico. 
+Lo cambiaremos por algo más B2B: 
+**"¿Te vas tan pronto? Llévate este Pack de Crecimiento para tu local (Valor: 500€) gratis al agendar tu consultoría hoy."**
+
+---
+
+> [!IMPORTANT]
+> **Decisiones de Implementación**
+> 
+> 1. ¿Te gustan los 3 nuevos bonos estratégicos (Auditoría, Mockup y Blueprint de Eventos)? Elevan mucho el valor percibido.
+> 2. ¿Apruebas que al hacer clic en el botón, en lugar de un formulario aburrido, salte directamente tu Calendly para cerrar la cita en caliente?
+> 
+> Confírmame estos puntos y reescribo el componente `ExitIntent.tsx` al instante.

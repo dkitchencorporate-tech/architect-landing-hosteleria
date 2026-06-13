@@ -1,0 +1,57 @@
+# Plan de Reestructuración: Panel de Control Creativo B2B (Architect.Sys Agency)
+
+Este plan detalla la transformación de la Factoría Creativa en un panel SaaS interno de alto nivel para uso diario de la agencia **Architect.Sys**. Este sistema permitirá estructurar estrategias, diseñar visualmente menús interactivos, chatear con un Agente Gestor de Ejecución, y consultar los protocolos y leyes comerciales de la agencia bajo un diseño obsidian-glassmorphic ultra premium.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Nuevas Secciones del Vault Lateral:**
+> 1. `🎯 Matriz de Despliegue`: El panel con los Meta Ads aprobados.
+> 2. `⚡ Motor Generativo`: Formulario de copy + generación de Imagen 4 adaptado.
+> 3. `🍽️ Especialidades de la Carta`: Vista interactiva del menú del cliente para pintar las fotos de sus platos una por una.
+> 4. `🗺️ Creador de Estrategias`: Genera un plan de acción de 30 días para captación y retención.
+> 5. `🤖 Agente de Ejecución (Chat)`: Un copiloto IA interactivo entrenado en marketing gastronómico.
+> 6. `📚 Dossier de Protocolos`: Manual operativo de la agencia (leyes B2B, flujos de prospección).
+
+---
+
+## Proposed Changes
+
+### 1. Nuevos Endpoints de Inteligencia Artificial
+
+#### [NEW] `src/app/api/creative-factory/strategy/route.ts`
+- Recibe el perfil del cliente y genera una estrategia B2B y B2C detallada de 30 días (Plan de prospección, ganchos de contenido, embudo offline).
+
+#### [NEW] `src/app/api/creative-factory/agent-chat/route.ts`
+- Endpoint de chat que interactúa con un agente copiloto gastronómico, respondiendo consultas con el contexto del cliente activo.
+
+---
+
+### 2. Frontend: Rediseño Visual & Secciones del Vault
+
+#### [MODIFY] `src/app/creative-factory/page.tsx`
+- **Cambios en el Layout y Cabecera:**
+  - Eliminar la cabecera actual con fondo translúcido y reemplazarla por una barra lateral y un encabezado limpios y minimalistas.
+  - Paleta de colores: Obsidian profundo (`#050505`), Zinc oscuro (`#0f0f11` / `#18181b`), y acentos en naranja quemado premium (`#FF4500` / HSL `16, 100%, 50%`).
+  - Tipografía: Outfit/Inter.
+- **Implementación de las Nuevas Vistas (Tabs):**
+  - **Especialidades de la Carta:** Renderiza una rejilla interactiva de los platos del cliente seleccionado. Permite hacer clic en un plato para abrir un generador/cargador de imágenes específico para ese plato.
+  - **Creador de Estrategias:** Pestaña con un botón de generación de plan de acción. Muestra el roadmap paso a paso de captación B2B, anuncios Meta Ads, y dinámicas de local.
+  - **Agente de Ejecución (Chatbot):** Un chat interactivo con el avatar del agente (Arqui) que permite al consultor pedirle copys, variaciones de anuncios o resolver dudas de marketing.
+  - **Dossier de Protocolos:** Una sección con pestañas internas que documenta las leyes de prospección de la agencia, protocolos de captación, y el embudo de eventos.
+
+---
+
+## Verification Plan
+
+### Automated Tests
+- Compilar el proyecto con TypeScript (`npx tsc --noEmit`) para garantizar integridad de tipos.
+- Probar llamadas REST con Node.js a los nuevos endpoints.
+
+### Manual Verification
+- Iniciar el navegador de pruebas y simular la jornada de trabajo de la agencia:
+  1. Iniciar sesión como administrador.
+  2. Seleccionar el cliente "L'Atelier de L'Océan" y generar una estrategia de 30 días.
+  3. Cambiar a "Pizzería Don Giovanni", entrar en "Especialidades de la Carta" y generar la foto para la Pizza Margherita.
+  4. Abrir la pestaña del Agente de Ejecución, enviarle un mensaje ("Dame 3 ideas de copies cortos para Instagram") y validar que responde de acuerdo al contexto de la Pizzería.
+  5. Consultar las Leyes de Prospección en el Dossier Operativo.

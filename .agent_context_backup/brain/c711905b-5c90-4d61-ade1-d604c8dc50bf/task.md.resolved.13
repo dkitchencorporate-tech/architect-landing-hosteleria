@@ -1,0 +1,5 @@
+- [x] Actualizar precio a 299€/mes en `EventLibraryHook.tsx`.
+- [x] Añadir toggle mensual/anual con Klarna (Próximamente).
+- [x] Detallar el modelo a éxito: 20% del ticket condicionado a cumplir el 100% del objetivo de afluencia (riesgo inverso).
+- [x] Ampliar la sección con matriz de responsabilidades (qué hace la IA vs qué hace el humano).
+- [ ] Levantar el túnel y presentar.

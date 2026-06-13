@@ -1,0 +1,173 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DLa%2BBodega%2BDe%2BVinny%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=La+Bodega+De+Vinny+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQ2J8OegQICRAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=La+Bodega+De+Vinny+Granada&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQtKgLegQIDxAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=La+Bodega+De+Vinny+Granada&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQs6gLegQIERAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=La+Bodega+De+Vinny+Granada&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQtKgLegQIDhAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=La+Bodega+De+Vinny+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQ0pQJegQIEBAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=La+Bodega+De+Vinny+Granada&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQs6gLegQIEhAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (274,321)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d34110983-Reviews-La_Bodega_de_Vinny-Granada_Province_of_Granada_Andalucia.html' />
+	[48] (274,350)<h3 >LA BODEGA DE VINNY, Granada - Carta, fotos y opiniones />
+	[49] (205,296)<div  />
+		[50] (205,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (220,296)<div  />
+				[55] (220,282)<div  />
+					[56] (220,282)<span >Tripadvisor />
+				[57] (220,312)<div  />
+					[58] (220,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[59] (273,311)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[60] (355,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[61] (355,310)<span  />
+		[62] (355,312)<span  />
+7 ene 2026
+—
+Este local es un "Bar de tapas" tradicional y muy popular de la ciudad
+,con una amable atención del mozo. Tiene un menú variado de tapas y buenas ...
+4.0
+(1)
+[63] (177,467)<div role='button' />
+[64] (217,582)<a class='zReHs' href='http://detapeoporgranada.blogspot.com/2013/12/la-bodega-de-vinni.html' />
+	[65] (217,616)<h3 >Probando el tapeo de La Bodega de Vinny />
+	[66] (205,562)<div  />
+		[67] (205,562)<div  />
+			[68] (81,562)<span  />
+				[69] (81,562)<div  />
+					[70] (81,562)<img  />
+			[71] (220,562)<div  />
+				[72] (220,548)<div  />
+					[73] (220,548)<span >Blogger.com />
+				[74] (220,578)<div  />
+					[75] (220,578)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>http://detapeoporgranada.blogspot.com />
+						[76] (302,577)<span class='ylgVCe ob9lvb' role='text'>› 2013/12 › la-b... />
+[77] (356,576)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[78] (356,576)<span  />
+		[79] (356,578)<span  />
+5 dic 2013
+—
+De Tapeo Por Granada ...
+La Bodega De Vinny está situada en la calle Sol
+, una perpendicular a Emperatriz Eugenia que va a desembocar en el ...
+[80] (170,818)<a class='zReHs' href='https://www.instagram.com/explore/locations/264193549/bodega-de-vinny/' />
+	[81] (130,847)<h3 >Bodega De Vinny />
+	[82] (170,793)<div  />
+		[83] (170,793)<div  />
+			[84] (81,793)<span  />
+				[85] (81,793)<div  />
+					[86] (81,793)<img  />
+			[87] (185,793)<div  />
+				[88] (185,779)<div  />
+					[89] (185,779)<span >Instagram />
+				[90] (185,809)<div  />
+					[91] (185,809)<cite class='qLRx3b tjvcx GvPZzd dTxz9 cHaqb' role='text'>https://www.instagram.com />
+						[92] (226,808)<span class='ylgVCe ob9lvb' role='text'>› bo... />
+·
+[93] (294,809)<a class='dEEN8c' href='https://www.instagram.com/explore/locations/264193549/bodega-de-vinny/' />
+	[94] (294,808)<span >Traducir esta página />
+[95] (354,807)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[96] (354,807)<span  />
+		[97] (354,809)<span  />
+Bodega De Vinny. 18002.
+Tapas Bar & Restaurant
+•131 posts. $$$$•Open until 12:00 AM. +34 651 18 39 90.
+[98] (712,392)<button class='KJY1Gc' />
+	[99] (711,392)<div  />
+		[100] (711,392)<div  />
+			[101] (728,392)<img  />
+		[102] (755,494)<span >Ver fotos />
+[103] (841,392)<a  />
+[104] (857,458)<a href='/local/place/fid/0xd71fc931411769b:0xc9c8ef10d1854de2/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DrqYwEclrLGzm0w9qIyO1MQ%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D178.96199%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFnJxWXdFY2xyTEd6bTB3OXFJeU8xTVE%3D&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQpx96BAgbEA8' />
+	[105] (857,458)<div  />
+		[106] (874,458)<img  />
+	[107] (890,495)<span >Ver por fuera />
+La Bodega De Vinny
+4.7
+[108] (749,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=La+Bodega+De+Vinny+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUKw87ARRf9BBYKhhGiTEZVx6ZjMjc4lH-PVG-bKxPomT1W9XtizyFGCOEqEhq7ohzZU-hA%3D&uds=ALYpb_n4BwUhK1uaN1SPx2VrIkEtxBLK72WAH7IXkR-WYTFJI_K_FjF2ct_kard_bDxVDDT6sx-JRo3uKK97DHoW07r_rkj5whIWwKrKFDLAlg8onWkyZd6cAsZXkPRpWDkCHW3jdIse&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQ3PALegQIGRAE'>492 opiniones />
+[109] (796,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[110] (796,598)<span  />
+€1-10
+‧
+Bar de tapas
+[111] (816,604)<div class='mTpL7c' role='button' />
+	[112] (816,604)<span aria-label='Más opciones para La Bodega De Vinny' class='Zj92Hf' role='img' />
+		[113] (814,601)<span  />
+[114] (688,723)<div  />
+	[115] (656,723)<div  />
+	[116] (697,723)<span >Cómo llegar />
+[117] (787,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUKw87ARRf9BBYKhhGiTEZWGaTm5tKZfs97p43McolrWc5J6mrB3Ld1Hvh-wlWSKBJU1uPy_vqw4Zb8pbh6JuTmyfUJo29X4SKnqr7DZKEWZbxWrBA%3D%3D&q=La+Bodega+De+Vinny+Opiniones&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQ0bkNegQIIRAF' />
+	[118] (787,723)<div  />
+		[119] (759,723)<div  />
+		[120] (796,723)<span >Opiniones />
+[121] (876,723)<div  />
+	[122] (876,723)<div  />
+		[123] (876,723)<div  />
+			[124] (876,723)<span aria-label='Guardar La Bodega De Vinny en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar La Bodega De Vinny en una colección' />
+				[125] (884,723)<span >Guardar />
+[126] (684,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[127] (684,799)<div  />
+		[128] (656,799)<div  />
+		[129] (692,799)<span >Compartir />
+[130] (769,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[131] (769,799)<div  />
+		[132] (750,799)<div  />
+		[133] (778,799)<span >Llamar />
+Opciones de servicio:
+Asientos al aire libre
+· Sillas altas
+[134] (664,992)<a class='fl' href='/search?sca_esv=53e99bddec16fb1e&q=la+bodega+de+vinny+direcci%C3%B3n&ludocid=14540134252479335906&sa=X&ved=2ahUKEwj2n47fzsOUAxWejK8BHXf1IhgQ6BN6BAglEAI'>Dirección />
+:
+[135] (784,992)<a href='/maps/place//data=!4m2!3m1!1s0xd71fc931411769b:0xc9c8ef10d1854de2?sa=X&ved=1t:8290&ictx=111' />
+	[136] (784,992)<span >Calle Sol, 3, Ronda, 18002 Granada />
+
+</current_dom>

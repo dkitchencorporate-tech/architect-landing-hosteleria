@@ -1,0 +1,18 @@
+# Task Tracker: Refinamiento de Copy y Neuroventas
+
+## Fase 1: Copywriting y Matemáticas (Bonos y Demo)
+- `[x]` Modificar `LiveDemoCTA.tsx` para eliminar la frase autodestructiva y usar neuroventas.
+- `[x]` Ajustar el total de los bonos a 980€ en `TheTrojanHorse.tsx`.
+- `[x]` Ajustar el total de los bonos a 980€ en `ConsultingModal.tsx`.
+- `[x]` Ajustar el total de los bonos a 980€ en `ExitIntent.tsx`.
+
+## Fase 2: Reposicionamiento de Arqui
+- `[x]` Modificar `MeetArquiSection.tsx` para clarificar que Arqui es el analista de la agencia, agendador de Alex.
+- `[x]` Reubicar `<MeetArquiSection />` en `page.tsx` justo antes de `<WhatsAppHero />`.
+
+## Fase 3: Autoridad y FAQs
+- `[x]` Modificar `FounderBio.tsx`: Cambiar a Alex, foto de A, copy de autoridad.
+- `[x]` Modificar `FAQ.tsx`: Iniciar cerradas (`[]`), redactar 7 preguntas estratégicas de neuroventas.
+
+## Fase 4: Despliegue
+- `[ ]` `vercel --prod` para subir los cambios en vivo.

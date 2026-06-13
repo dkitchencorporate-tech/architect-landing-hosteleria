@@ -1,0 +1,93 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,472)<details  />
+	[1] (158,41)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_amd64.apk' />
+		[2] (154,41)<span >supabase_2.98.2_linux_amd64.apk />
+		[3] (244,41)<span  />
+	sha256:b33f1594819c6da771753c81c0b4eb967d2371b1e42851d34144982135e25e38
+	[4] (762,41)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_amd64.apk' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:b33f1594819c6da771753c81c0b4eb967d2371b1e42851d34144982135e25e38' role='button' />
+	30.5 MB
+	[5] (159,110)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_amd64.deb' />
+		[6] (154,110)<span >supabase_2.98.2_linux_amd64.deb />
+		[7] (245,110)<span  />
+	sha256:8ee0c9662b15b8adad47e79ba98a34ec7728dce1627521bfb80a884106468d3a
+	[8] (762,110)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_amd64.deb' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:8ee0c9662b15b8adad47e79ba98a34ec7728dce1627521bfb80a884106468d3a' role='button' />
+	29 MB
+	[9] (175,179)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_amd64.pkg.tar.zst' />
+		[10] (170,179)<span >supabase_2.98.2_linux_amd64.pkg.tar.zst />
+		[11] (277,179)<span  />
+	sha256:8cd74f10a2e285402b80214a6cf3f87df781b5ee3f95d894d38409f6af6c15f0
+	[12] (762,179)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_amd64.pkg.tar.zst' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:8cd74f10a2e285402b80214a6cf3f87df781b5ee3f95d894d38409f6af6c15f0' role='button' />
+	28 MB
+	[13] (160,248)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_amd64.rpm' />
+		[14] (155,248)<span >supabase_2.98.2_linux_amd64.rpm />
+		[15] (246,248)<span  />
+	sha256:2b12d92ab6232c7faf99b9d776ca5c17e38b3286e8691bf0c0148d14288d2fb5
+	[16] (762,248)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_amd64.rpm' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:2b12d92ab6232c7faf99b9d776ca5c17e38b3286e8691bf0c0148d14288d2fb5' role='button' />
+	29 MB
+	[17] (157,317)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_arm64.apk' />
+		[18] (153,317)<span >supabase_2.98.2_linux_arm64.apk />
+		[19] (242,317)<span  />
+	sha256:076c02ba0d7d964e10e3ea72b3678c75d93c5c1fd8b324983fb86a078b71b99d
+	[20] (762,317)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_arm64.apk' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:076c02ba0d7d964e10e3ea72b3678c75d93c5c1fd8b324983fb86a078b71b99d' role='button' />
+	27.5 MB
+	[21] (158,386)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_arm64.deb' />
+		[22] (153,386)<span >supabase_2.98.2_linux_arm64.deb />
+		[23] (242,386)<span  />
+	sha256:25adaa52817a648d66dcac8c105848a27867d9f21daa6618710b148da4c2ffaa
+	[24] (762,386)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_arm64.deb' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:25adaa52817a648d66dcac8c105848a27867d9f21daa6618710b148da4c2ffaa' role='button' />
+	26.2 MB
+	[25] (173,455)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_arm64.pkg.tar.zst' />
+		[26] (169,455)<span >supabase_2.98.2_linux_arm64.pkg.tar.zst />
+		[27] (274,455)<span  />
+	sha256:a6034510866b70c0d59e1ebe41ab83e3044cf14cad19e649bcf1ecb31f703c12
+	[28] (762,455)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_arm64.pkg.tar.zst' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:a6034510866b70c0d59e1ebe41ab83e3044cf14cad19e649bcf1ecb31f703c12' role='button' />
+	25.1 MB
+	[29] (158,524)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_arm64.rpm' />
+		[30] (154,524)<span >supabase_2.98.2_linux_arm64.rpm />
+		[31] (244,524)<span  />
+	sha256:9824f368b39ba5b2416d3efca3c17827f5ad12cf0369f5fc282818764234bf45
+	[32] (762,524)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_arm64.rpm' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:9824f368b39ba5b2416d3efca3c17827f5ad12cf0369f5fc282818764234bf45' role='button' />
+	26.2 MB
+	[33] (151,593)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_darwin_amd64.tar.gz' />
+		[34] (147,593)<span >supabase_darwin_amd64.tar.gz />
+		[35] (229,593)<span  />
+	sha256:d11af509b945510ba01cb33d151b5749a687bfbaacb64a1a0d832c9cd1f12d30
+	[36] (762,593)<clipboard-copy aria-label='Copy to clipboard digest for supabase_darwin_amd64.tar.gz' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:d11af509b945510ba01cb33d151b5749a687bfbaacb64a1a0d832c9cd1f12d30' role='button' />
+	29.5 MB
+	[37] (150,662)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_darwin_arm64.tar.gz' />
+		[38] (145,662)<span >supabase_darwin_arm64.tar.gz />
+		[39] (227,662)<span  />
+	sha256:d29d34b2cc1299b98ae03202309962b692993e2b1934d45870912b26af89f03d
+	[40] (762,662)<clipboard-copy aria-label='Copy to clipboard digest for supabase_darwin_arm64.tar.gz' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:d29d34b2cc1299b98ae03202309962b692993e2b1934d45870912b26af89f03d' role='button' />
+	27.4 MB
+	[41] (146,732)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_linux_amd64.tar.gz' />
+		[42] (141,732)<span >supabase_linux_amd64.tar.gz />
+		[43] (219,732)<span  />
+	sha256:0f59df9e6837e876f309e0b4f47005133c51296e85a02727b2927f33ed9adb2d
+	[44] (762,732)<clipboard-copy aria-label='Copy to clipboard digest for supabase_linux_amd64.tar.gz' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:0f59df9e6837e876f309e0b4f47005133c51296e85a02727b2927f33ed9adb2d' role='button' />
+	29 MB
+	[45] (145,801)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_linux_arm64.tar.gz' />
+		[46] (140,801)<span >supabase_linux_arm64.tar.gz />
+		[47] (216,801)<span  />
+	sha256:d82f8533301cf24111c4a04d146cdb9c06a0496ed64c5a2f52f00a3cc55cbef7
+	[48] (762,801)<clipboard-copy aria-label='Copy to clipboard digest for supabase_linux_arm64.tar.gz' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:d82f8533301cf24111c4a04d146cdb9c06a0496ed64c5a2f52f00a3cc55cbef7' role='button' />
+	26.2 MB
+	[49] (156,870)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_windows_amd64.tar.gz' />
+		[50] (151,870)<span >supabase_windows_amd64.tar.gz />
+		[51] (239,870)<span  />
+	sha256:b2c923bcceed8451d4c332545dba15e87dbf4e2505d200cd3a8e25583ef2751d
+	[52] (762,870)<clipboard-copy aria-label='Copy to clipboard digest for supabase_windows_amd64.tar.gz' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:b2c923bcceed8451d4c332545dba15e87dbf4e2505d200cd3a8e25583ef2751d' role='button' />
+	29.7 MB
+	[53] (154,939)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_windows_arm64.tar.gz' />
+		[54] (150,939)<span >supabase_windows_arm64.tar.gz />
+		[55] (236,939)<span  />
+	sha256:7b38c24d00109611fe09c1f4bc67679544566ad89f13dd88cd1987c54f6fb06d
+	[56] (762,939)<clipboard-copy aria-label='Copy to clipboard digest for supabase_windows_arm64.tar.gz' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:7b38c24d00109611fe09c1f4bc67679544566ad89f13dd88cd1987c54f6fb06d' role='button' />
+	26.3 MB
+	Source code
+	(zip)
+
+</current_dom>

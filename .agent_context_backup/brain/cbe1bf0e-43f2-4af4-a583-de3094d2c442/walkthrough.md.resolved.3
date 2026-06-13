@@ -1,0 +1,27 @@
+# Walkthrough: Modales Premium y Conversión Inteligente
+
+He aplicado las correcciones extremas a la arquitectura visual de los modales para solucionar los problemas en pantallas pequeñas y mejorar radicalmente el primer impacto visual.
+
+## 1. El Nuevo Chat de Arqui (Software Modal)
+El chat ya no es una "burbuja" pequeña en la esquina. Ahora se comporta como una interfaz de software premium.
+
+- **Diseño Majestuoso:** Al hacer clic en "Probar demo en vivo", el fondo se oscurece (`backdrop-blur`) y un modal amplio se sitúa en el centro absoluto de la pantalla.
+- **Tamaño Adaptativo:** En escritorio (`md:max-w-2xl`), ocupa un gran bloque visual que respira profesionalidad. En móviles, sigue ocupando el `90%` del ancho para asegurar que el teclado no rompa la estructura.
+- **Gancho de Alta Conversión:** El texto de bienvenida se ha pulido: *"Hola, soy Arqui 🤖. Puedo atender a tus clientes por WhatsApp 24/7 y llenar tus mesas sin que pagues comisiones a plataformas externas. ¿Qué tipo de negocio tienes...?"*.
+- **Cero Fricción (Botones):** Justo debajo del mensaje inicial, ahora hay 4 botones naranjas: `Restaurante`, `Dark Kitchen`, `Bar / Copas`, y `Hotel`. El usuario ya no necesita pensar ni teclear en su primer contacto; un solo clic inicia la experiencia interactiva, y el campo de texto libre solo aparece *después* de que ya estén "enganchados".
+
+## 2. Exit Intent Anti-Desbordamiento
+El popup de retención (Exit Intent) ha sido blindado contra pantallas de baja altura (como portátiles de 14 pulgadas o 13").
+
+- **Límites Físicos (`max-h-95vh`):** El modal nunca ocupará más del 95% del alto de la pantalla, sin importar los paddings.
+- **Scroll Inteligente (`overflow-y-auto`):** Si estás en un monitor diminuto y el contenido (título gigante, beneficios, botones) no cabe, aparecerá mágicamente una barra de desplazamiento interna sin romper los bordes del navegador.
+- **Ajuste de Paddings:** En pantallas pequeñas o móviles, los márgenes gigantes se han reducido drásticamente (`p-6 sm:p-8 md:p-10`) para que el botón de WhatsApp y la cruz de cierre (X) estén siempre visibles.
+
+## 3. Backend (Inteligencia Contextual)
+He ajustado las instrucciones internas de la IA (el archivo `route.ts`).
+Como ahora el primer dato que enviamos es "seco" (ej: "Restaurante" inyectado mediante un botón), he enseñado a Gemini a absorber ese dato con naturalidad conversacional ("¡Perfecto! ¿Y cómo te llamas...?") en lugar de volverse loco pidiendo de nuevo el tipo de negocio.
+
+---
+
+> [!TIP]
+> **Siguiente paso:** Recarga la web en tu navegador (`localhost:3001`). Prueba a abrir el chatbot para ver la nueva interfaz con botones, y simula el modal de salida en esa pantalla de 14 pulgadas para comprobar que ya no desborda.

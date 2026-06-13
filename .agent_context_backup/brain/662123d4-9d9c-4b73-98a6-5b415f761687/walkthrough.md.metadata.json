@@ -1,0 +1,7 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "Resumen de los cambios implementados: internacionalización global, fixes de UI en modales y refactorización del Layout de Comida Rápida.",
+  "updatedAt":  "2026-06-13T01:18:24.886065300Z",
+  "version":  "25",
+  "requestFeedback":  true
+}

@@ -1,0 +1,87 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[4] (442,59)<button class='e2moi' />
+		[5] (442,59)<div >
+Restaurantes />
+			[6] (442,59)<div  />
+			
+			Restaurantes
+	[7] (534,59)<button class='e2moi' />
+		[8] (534,59)<div >
+Hoteles />
+			[9] (534,59)<div  />
+			
+			Hoteles
+	[10] (635,59)<button class='e2moi' />
+		[11] (635,59)<div >
+Cosas que hacer />
+			[12] (635,59)<div  />
+			
+			Cosas que hacer
+	[13] (736,59)<button class='e2moi' />
+		[14] (736,59)<div >
+Museos />
+			[15] (736,59)<div  />
+			
+			Museos
+	
+	Estaciones de transporte público
+	
+	Farmacias
+[16] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[17] (827,59)<span > />
+[18] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[19] (28,57)<div  />
+		[20] (28,57)<span > />
+[21] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[22] (28,146)<div  />
+		[23] (28,146)<span > />
+	[24] (28,190)<div  />
+		[25] (28,190)<div >Guardado />
+[26] (28,297)<button class='wR3cXd fontLabelMedium' />
+	[27] (28,272)<div  />
+		[28] (28,272)<span > />
+	[29] (28,329)<div  />
+		[30] (28,329)<div >Recientes />
+[31] (28,463)<button class='wR3cXd aJPqP fontBodySmall QyI6Nb' />
+	[32] (28,463)<div  />
+		[33] (28,463)<div  />
+			[34] (28,463)<div  />
+[35] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[36] (28,892)<div  />
+		[37] (28,892)<span > />
+	[38] (28,943)<div  />
+		[39] (28,943)<div >Obtener app />
+[40] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[41] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2F%4037.1807746%2C-3.598902%2C16z%3Fauthuser%3D0%26hl%3Des-419%26ved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[42] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[43] (973,799)<span > />
+[44] (973,871)<div  />
+	[45] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[46] (973,849)<div  />
+	[47] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[48] (973,893)<div  />
+	[49] (973,871)<div  />
+[50] (973,945)<div  />
+	[51] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[52] (973,945)<div  />
+
+Capas
+[53] (103,906)<button class='yHc72 qk5Wte' />
+Datos del mapa © 2026 Inst. Geogr. Nacional
+[54] (607,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[55] (653,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[56] (704,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[57] (799,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[58] (929,989)<button class='LNGekf' />
+	[59] (886,989)<label class='U5ELMd'>200 m />
+	[60] (941,989)<div  />
+
+</current_dom>

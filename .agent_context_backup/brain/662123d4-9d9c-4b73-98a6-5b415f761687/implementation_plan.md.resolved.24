@@ -1,0 +1,38 @@
+# Rediseño Premium de la Carta de Tapas y Camarero Integrado
+
+Este plan detalla las mejoras para la sección intermedia ("Bar & Tapas") del ecosistema de cartas digitales interactivo de Architect.Sys. El objetivo es elevar la experiencia de usuario a un nivel SaaS premium y súper detallado, con un flujo de interacción natural del asistente de mesa.
+
+## User Review Required
+
+> [!IMPORTANT]
+> - **Rediseño de Carta de Tapas**: Se aumentará el tamaño de las imágenes a `w-24 h-24 md:w-32 md:h-32` y se agrupará en una cuadrícula elegante de dos columnas en escritorio con texturas y bordes más detallados que evoquen una taberna tradicional premium de autor.
+> - **Fidelización Interactiva**: Se sustituirá el formulario plano por un widget dinámico de fidelización por pasos (Selección de Premio -> Datos de Registro -> Simulación de Código -> Tarjeta Digital con Sellos y QR).
+> - **Camarero en el Flujo de Pedido**: Se removerá el chat flotante desconectado y se integrará el Asistente de IA directamente en el lateral derecho del cajón de la comanda activa (cesta de pedido), facilitando que el usuario chatee con él para modificar, preguntar o complementar su pedido.
+
+## Proposed Changes
+
+### Componentes de la Carta
+
+#### [MODIFY] [page.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/demo/carta/page.tsx)
+
+1. **Renombrar la sección**: Cambiar `Casa Lola` a `La Taberna de Baco: Gastrobar & Solera`.
+2. **Rediseñar `ListTapasLayout`**:
+   - Cambiar la estructura de la lista simple por una cuadrícula detallada de tarjetas con relieve, bordes en color de latón/madera (`#d4af37` o similar) y sombras suaves.
+   - Incrementar el tamaño de la imagen de cada tapa a un contenedor cuadrado redondeado con zoom sutil al pasar el cursor.
+   - Resaltar platos recomendados por el chef con insignias especiales del restaurante.
+3. **Integrar Asistente de IA en el Cajón de Pedido**:
+   - Rediseñar el componente del Carrito (`isCartOpen`) para dividir la pantalla en escritorio (60% lista de comensales, 40% Asistente Camarero IA) y en móvil (pestañas superiores para alternar entre "Mi Comanda" y "Camarero IA").
+   - El Camarero IA tendrá acceso visual directo al total de la comanda y sugerirá tapas/maridajes específicos en tiempo real con un botón rápido para agregarlos directamente.
+4. **Implementar el Proceso de Fidelización Premium**:
+   - Crear un estado local en la sección de fidelización para guiar al usuario por un widget dinámico:
+     - **Paso 1 (Recompensa)**: Tarjetas visuales para elegir su premio (Caña gratis, Ración de croquetas o postre).
+     - **Paso 2 (Registro)**: Introducción de teléfono/email y nombre con diseño premium.
+     - **Paso 3 (Código)**: Simulación animada de verificación con un código OTP de 4 dígitos.
+     - **Paso 4 (Perfil)**: Tarjeta de socio virtual con 1 sello activo y 9 vacíos, además de un código QR simulado para validación en mesa.
+
+## Verification Plan
+
+### Automated & Manual Verification
+- **Verificación Visual**: Utilizar el subagent de navegador para comprobar que el diseño de `La Taberna de Baco` cargue correctamente con las nuevas dimensiones de imagen.
+- **Flujo del Camarero**: Probar el proceso de añadir platos, abrir la comanda activa, chatear con el camarero interactivo para pedir adiciones y confirmar que los artículos se añadan a los comensales correspondientes.
+- **Flujo de Fidelización**: Ejecutar los pasos del widget de fidelización desde el navegador para verificar la lógica de animación, verificación de código y visualización de la tarjeta de sellos digital.

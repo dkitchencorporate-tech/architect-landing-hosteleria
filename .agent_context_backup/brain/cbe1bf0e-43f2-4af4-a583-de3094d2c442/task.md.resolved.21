@@ -1,0 +1,7 @@
+# Tareas de Ejecución: Actualización del Dashboard
+
+- [ ] Verificar el estado de la base de datos de Supabase.
+- [ ] Crear el componente `TrafficMonitor.tsx`.
+- [ ] Actualizar `admin-architect/page.tsx` para obtener y mostrar métricas de tráfico.
+- [ ] Integrar `TrafficMonitor` en el dashboard.
+- [ ] Verificar que todo funcione en el entorno local.

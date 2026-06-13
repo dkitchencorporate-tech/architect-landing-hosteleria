@@ -1,0 +1,122 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dteteria%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=teteria+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-ZOaC4lxfD8dS5oZygdb6fB5qeCAGqQxzdYslYYrVWlMCQVly1JUX-8Q_bVZdaeK7Gp0Ei5a3jmGSnR_p8Afrz6GNbz2kYj-_OTypz5RTGsQoWp0CnNVr1JMHFPDSzLecx1TD3ylof-FUI28NqK2gS3GyZ5P8qbFuC2zZrG5P8fl0pNFYdVhHG-N8yqrqW-CMa6uA-sjCINQKIfO19VUBziaeIucQ&aep=1&ntc=1&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQ2J8OegQIDxAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-ZOaC4lxfD8dS5oZygdb6fB5qeCAGqQxzdYslYYrVWlMCQVly1JUX-8Q_bVZdaeK7Gp0Ei5a3jmGSnR_p8Afrz6GNbz2kYj-_OTypz5RTGsQoWp0CnNVr1JMHFPDSzLecx1TD3ylof-FUI28NqK2gS3GyZ5P8qbFuC2zZrG5P8fl0pNFYdVhHG-N8yqrqW-CMa6uA-sjCINQKIfO19VUBziaeIucQ&q=teteria+Granada&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQtKgLegQIFRAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (265,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=1&lsack=eXALaqrSOaXm2roP9sqTyAY&fbs=ADc_l-ZOaC4lxfD8dS5oZygdb6fB5qeCAGqQxzdYslYYrVWlMCQVly1JUX-8Q_bVZdaeK7Gp0Ei5a3jmGSnR_p8Afrz6GNbz2kYj-_OTypz5RTGsQoWp0CnNVr1JMHFPDSzLecx1TD3ylof-FUI28NqK2gS3GyZ5P8qbFuC2zZrG5P8fl0pNFYdVhHG-N8yqrqW-CMa6uA-sjCINQKIfO19VUBziaeIucQ&q=teteria+Granada&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQs6gLegQIFBAB' />
+	[26] (265,180)<div  />
+		[27] (265,194)<span >Lugares />
+[28] (355,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=11&fbs=ADc_l-ZOaC4lxfD8dS5oZygdb6fB5qeCAGqQxzdYslYYrVWlMCQVly1JUX-8Q_bVZdaeK7Gp0Ei5a3jmGSnR_p8Afrz6GNbz2kYj-_OTypz5RTGsQoWp0CnNVr1JMHFPDSzLecx1TD3ylof-FUI28NqK2gS3GyZ5P8qbFuC2zZrG5P8fl0pNFYdVhHG-N8yqrqW-CMa6uA-sjCINQKIfO19VUBziaeIucQ&q=teteria+Granada&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQs6gLegQIExAB' />
+	[29] (355,180)<div  />
+		[30] (355,194)<span >Sitios sobre lugares />
+[31] (442,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-ZOaC4lxfD8dS5oZygdb6fB5qeCAGqQxzdYslYYrVWlMCQVly1JUX-8Q_bVZdaeK7Gp0Ei5a3jmGSnR_p8Afrz6GNbz2kYj-_OTypz5RTGsQoWp0CnNVr1JMHFPDSzLecx1TD3ylof-FUI28NqK2gS3GyZ5P8qbFuC2zZrG5P8fl0pNFYdVhHG-N8yqrqW-CMa6uA-sjCINQKIfO19VUBziaeIucQ&q=teteria+Granada&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQtKgLegQIEhAB' />
+	[32] (442,180)<div  />
+		[33] (442,194)<span >Videos />
+[34] (499,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=teteria+Granada&tbm=nws&source=lnms&fbs=ADc_l-ZOaC4lxfD8dS5oZygdb6fB5qeCAGqQxzdYslYYrVWlMCQVly1JUX-8Q_bVZdaeK7Gp0Ei5a3jmGSnR_p8Afrz6GNbz2kYj-_OTypz5RTGsQoWp0CnNVr1JMHFPDSzLecx1TD3ylof-FUI28NqK2gS3GyZ5P8qbFuC2zZrG5P8fl0pNFYdVhHG-N8yqrqW-CMa6uA-sjCINQKIfO19VUBziaeIucQ&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQ0pQJegQIERAB' />
+	[35] (499,180)<div  />
+		[36] (499,194)<span >Noticias />
+[37] (556,180)<div class='mTpL7c' role='button' />
+	[38] (556,180)<div  />
+		[39] (556,194)<div  />
+			[40] (549,186)<span >Más />
+			[41] (566,186)<span  />
+[42] (634,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (634,180)<div  />
+		[44] (634,194)<div  />
+			[45] (627,186)<span >Herramientas />
+			[46] (669,186)<span  />
+[47] (117,259)<a aria-label='Agregar Abierto ahora' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=teteria+Granada+abierto+ahora&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-i5gyXvftODCYyXjaX26s8jU5S6Gp_DnZ1UXsCRXEvc8D7NfFySh1NbidgNGo0rj6Zu9rQ4eAZ8a4m7u1bQ6TmhMRx5tclIK9hi-wDCb3BdyYWWpOnblBSlnd5W37X3PIYaNQbQ-Ik15BkbW8vHzOAhBwE6jMuZONM3J6rMSoftDyQGt7&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQxKsJKAB6BAgXEAE&ictx=0' role='link' />
+	[48] (117,259)<div  />
+		[49] (117,259)<span >Abierto ahora />
+[50] (200,259)<div role='button' />
+	[51] (200,259)<div  />
+		[52] (196,259)<span >Precio />
+		[53] (219,259)<span  />
+			[54] (219,259)<span  />
+[55] (279,259)<a aria-label='Agregar Cerca de mi' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Granada+cerca+de+m%C3%AD&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-50jQMSU5z0K8goIkYHo7XJ3wP1GRZ9-hAn1e311vW0pLr6dk3-XFnapJco3QGWOSBjvWISanmsJ7IbR1xOtSnpUt1jaSRiyO-b_yVxLRtMCTJLs1nkCyIdAqC6UXHjhGMfYbdgHyOxfa2KZu4CtGOzULirDluKz9xVjmHUzsk8DHcfp30tT6mTAqeCffarRBq9p-4Lj6kIIR7Oa1T39Lt5cQ2yaT86T_LY0AwOIi5hTmrSMi&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQxKsJKAJ6BAgaEAE&ictx=0' role='link' />
+	[56] (279,259)<div  />
+		[57] (279,259)<span >Cerca de mi />
+[58] (378,259)<a aria-label='Agregar Vistas Alhambra' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Granada+vistas+Alhambra&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-GJ1bPa4iXHT6GKBu-8TSmCFXRNMKillEPnY9VID0X7dDYlI8bvHsV9mfO-X0uW9MfUtdYtehv4sf8RJqkv9duceLcoGk3TZ0JIWe6PNuwoMRxYXex91_ImKs4SttA9Kgy_O4N1tgRujlkf9QI3gxJuHhwX4mZ9aQyeMoZkPPc92E0u35vvsRne6yiyuQins3S3nccCfFT7klSePkkewOSbGO6ELx0ezqiVPappvwbvfoUWPk&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQxKsJKAN6BAgYEAE&ictx=0' role='link' />
+	[59] (378,259)<div  />
+		[60] (378,259)<span >Vistas Alhambra />
+[61] (465,259)<a aria-label='Agregar Centro' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Granada+centro&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-nKY35LSivhHEWuTEAptjfBlLoyeAJjsFZ1cCYdAgHgSd7LfUtXf7rAM-Qwh7aAL-BaVpCd4OoiTbxqL2mWO1MBW6m43Kc1SwontdQWe_u7mEYEq-SMOtil48fNT1LiHjkkFj3cOmKCh7FUJ4R_sho2-7L698jWpOFWLns9WdsuJjcciwzqNwxAm4dJUwdYTVQOXfvQUiaDuRcydBWUxDshDkKWY&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQxKsJKAR6BAgZEAE&ictx=0' role='link' />
+	[62] (465,259)<div  />
+		[63] (465,259)<span >Centro />
+[64] (551,259)<a aria-label='Agregar Mejor valorados' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=teteria+Granada+mejor+valorados&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-hWVXQd_ws1EB244ZTb0x-cMEBmky3LZ4nUdReL9uo3bj1DpSI15_Zxy3Hq_PjKmyjW_LDU9p1BrWtg8V4fRxU0MFQH1mqVRBWzqnOap82kpJt2ZPnpyAG4Fg0ebVm2kDkiLI0-cSguSWkgaxyQtJyKG_7Nslo7-zPQpn80PBgqQyLhth&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQxKsJKAV6BQiAARAB&ictx=0' role='link' />
+	[65] (551,259)<div  />
+		[66] (551,259)<span >Mejor valorados />
+[67] (640,259)<a aria-label='Agregar Albaicin' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Teteria+granada+Albaic%C3%ADn&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-i30ktpb-ek_lujuWbFW3XV6oiwgW1DBP-0Fd5E3ysgwTJqU027vRTI0apNtNhnFz7DS8GDYtzZTWZeRCugPpm5wqY8WOsxWAQefJmbJ17yrTWXhBgovZNVuk11QUftWHrBeIDXZELQbfPovtZ9Tonn_qMgKxBoEsVDb2mq-gdGfYODlI691tKbP8qTsyktgIfwL-yUTjSVtOZxIpzBdsKdKBovA&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQxKsJKAZ6BAh_EAE&ictx=0' role='link' />
+	[68] (640,259)<div  />
+		[69] (640,259)<span >Albaicin />
+[70] (714,259)<a aria-label='Agregar Cachimba' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Granada+cachimba&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-WMsu8YM0yeJ0CAFS02mEealEIcGMr0XZH4Hazwhhfbpk5GCMbMAqoYgx2kI3aMQ-DacCExGbpjOnk-pQRfgMvqXd2aqEb2bxRZ36WlkjpV6qPt9wuo4a6riwAGZDgpaIYhD_wEP6YVwGyedWpyrUlAQVgO04JLDGGQCI9eI6vp4U-oaSY-XiisvHH3ZPGeMotS4ZPZmOARP2JF6WtGDPUeSNQ7k&sa=X&ved=2ahUKEwjq8oLo0MOUAxUls1YBHXblBGkQxKsJKAd6BAh-EAE&ictx=0' role='link' />
+	[71] (714,259)<div  />
+		[72] (714,259)<span >Cachimba />
+Resultados de búsqueda
+Granada
+∙
+[73] (170,351)<a class='N5az4b' href='#' role='button' />
+	[74] (170,357)<span >Elegir área />
+[75] (215,357)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[76] (216,356)<span  />
+Resultados locales
+Sitios
+[77] (573,448)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[78] (573,448)<span  />
+Mapa
+[79] (325,894)<div id='pv-/g/11cs5kvjzw' role='button' />
+	[80] (325,894)<div  />
+		[81] (289,894)<div  />
+			[82] (289,887)<div  />
+				[83] (289,887)<div  />
+					[84] (289,838)<div class='dbg0pd' role='heading' />
+						[85] (122,837)<span >Teteria Baghdad />
+					[86] (289,871)<div >· Salón de té />
+						[87] (120,871)<span  />
+							[88] (120,871)<span aria-label='Calificación: 4.5 de 5, 848 opiniones de usuarios' class='Y0A0hc' role='img' />
+								[89] (78,871)<span >4.5 />
+								[90] (115,871)<span aria-label='Calificación: 4.5 de 5,' class='z3HNkc' role='img' />
+									[91] (115,871)<span  />
+										[92] (115,869)<span  />
+								[93] (158,871)<span >(848) />
+					[94] (289,906)<div >C. Elvira, 12 />
+					[95] (289,938)<div  />
+						[96] (289,938)<div  />
+							[97] (126,938)<span  />
+								[98] (121,937)<span >Consumo en el lugar />
+								[99] (176,937)<span >· />
+							[100] (231,938)<span  />
+								[101] (231,937)<span >Entrega sin contacto />
+		[102] (544,894)<a class='uQ4NLd b9tNq wzN8Ac rllt__link a-no-hover-decoration' />
+			[103] (544,894)<div  />
+				[104] (544,894)<img  />
+
+</current_dom>

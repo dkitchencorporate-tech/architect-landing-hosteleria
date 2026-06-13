@@ -1,0 +1,53 @@
+# Arquitectura de Agentes: Claude Code CLI vs Antigravity IDE
+
+*Rol Activo: Investigador de IA y Arquitecto de Sistemas*
+
+He completado la investigación sobre cómo funciona **Claude Code** y cómo logra esa coexistencia fluida en la terminal. Aquí tienes el desglose técnico al máximo nivel para que entiendas exactamente cómo operan estos ecosistemas y cómo podemos replicarlo.
+
+## 1. ¿Cómo funciona Claude Code? (El Paradigma CLI)
+
+Claude Code **no** es un plugin de un editor de código. Es una aplicación nativa de consola (construida en TypeScript, React e Ink para terminales) que se instala globalmente en el sistema. 
+
+**Su Arquitectura (El Bucle Agentivo):**
+1. **El Motor:** Cuando ejecutas `claude` en tu terminal, se abre un proceso en bucle (*Agentic Loop*).
+2. **La Conexión:** Ese proceso se conecta a la API de Anthropic.
+3. **Las Manos (Tools):** La aplicación le da permiso al modelo de IA para ejecutar herramientas locales: leer archivos (`FileRead`), editar código (`FileEdit`), y ejecutar comandos de Bash/PowerShell (`Bash`).
+4. **La Interfaz:** Como vive directamente en la terminal, cualquier entrada que hagas con tu teclado se envía al modelo, y cualquier salida del modelo se imprime en la pantalla negra.
+
+**Por qué funciona bien en remoto:**
+Al ser un proceso puro de terminal (`CLI`), desarrolladores avanzados pueden ejecutar Claude Code dentro de sesiones SSH o "envolver" su entrada/salida (stdin/stdout) con scripts de Telegram o Slack. No necesitan una interfaz gráfica (GUI) abierta.
+
+---
+
+## 2. ¿Cómo funciona Antigravity? (El Paradigma IDE)
+
+Yo, Antigravity, fui diseñado por Google DeepMind bajo un paradigma distinto: **Soy un Agente Integrado en el IDE**.
+
+* **Mis Ventajas:** Tengo contexto absoluto e instantáneo de qué archivos tienes abiertos, dónde está tu cursor, los errores de *linting* en tiempo real y la estructura visual de tu proyecto.
+* **Mi Limitación Técnica:** Mi existencia está "atada" a la ventana gráfica del editor. **No tengo un archivo `.exe` ni un comando nativo en PowerShell que puedas ejecutar de forma independiente.** Si cierras el IDE, mi sesión se pausa.
+
+---
+
+## 3. ¿Cómo logramos el comportamiento de Claude Code en PowerShell?
+
+Como no puedes "invocarme" directamente escribiendo un comando en PowerShell, la única forma de que yo (o un agente con mi mismo nivel de inteligencia y contexto) "viva" en tu terminal es **construir nuestro propio Claude Code a medida**.
+
+Lo que te estaba proponiendo antes con el archivo `subagent.py` es **exactamente** la arquitectura subyacente de Claude Code, pero impulsada por Gemini y adaptada a tu proyecto:
+
+**La Réplica Arquitectónica (Nuestro Puente):**
+1. **El CLI Personalizado:** `subagent.py` es un programa de consola que se ejecuta en PowerShell.
+2. **El Bucle Agentivo:** Este script mantiene una conexión permanente con la API de Gemini (mi cerebro).
+3. **Las Manos:** Le programamos la capacidad (`Function Calling`) de ejecutar comandos de PowerShell nativos en tu máquina.
+4. **La Ventaja de Telegram:** En lugar de usar la biblioteca *Ink* para dibujar texto en la consola de tu servidor (lo cual no podrías ver desde la calle), conectamos las "orejas y la boca" del script directamente a la API de Telegram. 
+
+### Conclusión Tecnológica
+
+Para tener un agente "vivo" en la terminal (como Claude Code) que no dependa de la interfaz visual del IDE y que puedas controlar desde el móvil, **forzosamente debemos crear ese script intermediario en Python (o Node.js)**. Es el "cuerpo" de terminal que mi cerebro (Gemini) necesita para operar de forma autónoma en tu servidor.
+
+---
+
+## 🚦 Siguiente Paso
+
+Ahora que entiendes la "física" de cómo operan las IA en terminales vs IDEs:
+
+¿Comprendes por qué es obligatorio crear ese script puente (`subagent.py`) para poder emular el comportamiento remoto/CLI de herramientas como Claude Code? Si estamos 100% alineados en la teoría, podemos proceder a construir este motor.

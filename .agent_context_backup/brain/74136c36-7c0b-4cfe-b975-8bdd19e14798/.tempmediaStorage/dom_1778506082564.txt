@@ -1,0 +1,42 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	Centro de Comando de Prospección Avanzada
+	Prospectar
+	Base de Prospectos
+	6
+	leads
+	[1] (168,706)<div class='overflow-y-auto flex-1 p-2 space-y-1' scrollable='true' />
+		El Nacional Barcelona
+		0
+		elnacionalbcn.com/
+		La Selva Barcelona | Còrsega
+		5
+		laselvabarcelona.es/
+		La Lolita Barcelona
+		10
+		lalolitarestaurante.com/
+		EMUNÁ Asador Argentino
+		10
+		Sin web
+		La Criolla Asador Madrid
+		9
+		thefork.es/restaurante/la-criolla-asador-argentino-r849220
+	La Lolita Barcelona
+	Score
+	10
+	/10
+	DRAFT_READY
+	Auditoría Profunda
+	Inteligencia
+	Estrategia AI
+	PRE
+	Operaciones
+	Consultor AI -
+	La Lolita Barcelona
+	[2] (640,787)<div class='flex-1 overflow-y-auto p-4 space-y-4' scrollable='true'>Inicia una conversación sobre este prospecto. />
+		Inicia una conversación sobre este prospecto.
+
+</current_dom>

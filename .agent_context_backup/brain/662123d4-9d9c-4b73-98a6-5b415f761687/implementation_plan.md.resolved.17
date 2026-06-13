@@ -1,0 +1,43 @@
+# Plan de Reingeniería: Diferenciación Estructural y Psicológica
+
+*Rol Activo: Arquitecto Digital B2B*
+
+Entendido. Como bien dictamina Jules, no somos obreros usando plantillas CSS de colores; somos ingenieros de conversión. El error anterior fue aplicar un único "esqueleto" (Layout) y solo pintarlo de distintos colores. Eso no vende autoridad.
+
+Para demostrar que nuestro ecosistema se adapta al "alma" de cada local, voy a reescribir el motor desde cero para que **la estructura HTML/CSS cambie por completo** según el negocio seleccionado.
+
+## 1. Divergencia Estructural (3 Layouts Únicos)
+
+No habrá grillas repetidas. Cada local tendrá una psicología visual y una disposición de elementos diametralmente opuesta:
+
+*   **🍣 Alta Cocina (Enfoque: Lujo y Exclusividad)**
+    *   *Layout:* Estilo Editorial/Revista. Diseño asimétrico de 1 columna ancha, con imágenes apaisadas, inmenso espacio en blanco (Negative Space) y tipografías Serif muy finas. El botón de compra será un texto minimalista con un borde sutil.
+*   **🍺 Bar Granadino (Enfoque: Tradición y Volumen)**
+    *   *Layout:* Estilo Menú Clásico de Barra. Lista densa (List View). Imágenes pequeñas y cuadradas a la izquierda, título y descripción a la derecha. Líneas divisorias punteadas, tipografías rústicas y botones de "Añadir" en forma de icono pequeño para fomentar pedidos rápidos y múltiples.
+*   **🍔 Fast Food Premium (Enfoque: Hambre Visual e Impulso)**
+    *   *Layout:* Estilo App de Delivery (Masonry/Grid cerrado). Tarjetas gruesas en 2 o 3 columnas, imágenes enormes que desbordan la tarjeta, fondos negros puros con bordes neón. Botones gigantes y audaces para compra compulsiva.
+
+## 2. Rigurosidad de Datos (84 Productos Exactos)
+
+Crearé una base de datos monumental (`demo-data.ts`) con **exactamente 7 secciones por local, y exactamente 4 productos por sección**.
+
+*   **Sushi:** Entrantes Fríos, Entrantes Calientes, Nigiris, Rolls, Principales, Postres, Bodega/Sakes.
+*   **Tapas:** Para Compartir, Frituras, Ibéricos/Quesos, Guisos, Especialidades, Postres, Vinos/Cervezas.
+*   **Burger:** Entrantes, Smash Clásicas, Smash Premium, Pizzas, Complementos, Batidos, Refrescos.
+
+*Garantía Visual:* Mapearé meticulosamente cada ID de producto con fotografías reales de Unsplash que correspondan EXÁCTAMENTE al plato (nada de pasta en croquetas). Si es una Smash Burger, la foto será una burger. Si es una Alhambra, será una cerveza de grifo.
+
+## 3. Experiencia B2B Cuidada
+
+El "Dock" inferior de ventas y la IA se mantendrán operativas, pero el envoltorio (el contenedor principal de la carta) se destruirá y reconstruirá en React con condicionales pesados:
+`if (template === 'sushi') return <EditorialLayout />`
+`if (template === 'tapas') return <ListLayout />`
+`if (template === 'burger') return <GridAppLayout />`
+
+---
+
+### 🚦 Autorización para Reingeniería Profunda
+
+Este nivel de desarrollo implica reescribir por completo `page.tsx` separándolo en 3 sub-componentes masivos y generar una base de datos gigante. Tomará esfuerzo y precisión milimétrica para evitar la mediocridad.
+
+No voy a correr. Lo haré bien. Si estás de acuerdo con esta separación arquitectónica (Editorial vs Lista vs App Grid) y la estructura de 84 productos, dame **Luz Verde** para comenzar a picar código con nivel de Arquitecto.

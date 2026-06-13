@@ -1,0 +1,125 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (431,59)<button class='e2moi' />
+		[7] (431,59)<div  />
+			[8] (405,59)<span > />
+			[9] (431,59)<span >Precio />
+			[10] (457,59)<span > />
+	[11] (531,59)<button class='e2moi' />
+		[12] (531,59)<div  />
+			[13] (488,59)<span > />
+			[14] (532,59)<span >Clasificación />
+			[15] (574,59)<span > />
+	[16] (632,59)<button class='e2moi' />
+		[17] (632,59)<div  />
+			[18] (605,59)<span > />
+			[19] (633,59)<span >Cocina />
+			[20] (661,59)<span > />
+	[21] (716,59)<button class='e2moi' />
+		[22] (716,59)<div  />
+			[23] (691,59)<span > />
+			[24] (717,59)<span >Horas />
+			[25] (741,59)<span > />
+	[26] (772,59)<span > />
+	Todos los filtros
+[27] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[28] (827,59)<span > />
+[29] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[30] (28,57)<div  />
+		[31] (28,57)<span > />
+[32] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[33] (28,146)<div  />
+		[34] (28,146)<span > />
+	[35] (28,190)<div  />
+		[36] (28,190)<div >Guardado />
+
+Recientes
+[37] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[38] (28,892)<div  />
+		[39] (28,892)<span > />
+	[40] (28,943)<div  />
+		[41] (28,943)<div >Obtener app />
+[42] (216,528)<div aria-label='Resultados de restaurantes Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd QjC7t' role='feed' scrollable='true' />
+	"Excelente servicio, comida deliciosa, atención excelente."
+	[43] (213,203)<a aria-label='Restaurante Jero' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Jero/data=!4m7!3m6!1s0xd71fdf0b7492d1f:0x9bddaad66612890f!8m2!3d37.1791731!4d-3.5985914!16s%2Fg%2F11rf6_3cdj!19sChIJHy1Jt_D9cQ0RD4kSZtaq3Zs?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Jero
+	4.8
+	(689)
+	·
+	€10-20
+	Restaurante
+	·
+	
+	·
+	C. Elvira, 70
+	Abierto
+	· Cierra a las 11 p.m.
+	"Muy buena comida, buen servicio ambiente tranquilo."
+	[44] (213,522)<a aria-label='La Jefa Granada' class='hfpxzc' href='https://www.google.com/maps/place/La+Jefa+Granada/data=!4m7!3m6!1s0xd71fd0c9761ded3:0xdebf51aab41693f7!8m2!3d37.1744984!4d-3.6001729!16s%2Fg%2F11wq8zjfjk!19sChIJ095hlwz9cQ0R95MWtKpRv94?authuser=0&hl=es-419&rclk=1' />
+	La Jefa Granada
+	4.7
+	(1,663)
+	·
+	€20-30
+	Restaurante
+	·
+	
+	·
+	Pcta. de Santo Cristo, 3
+	Abierto
+	· Cierra a las 2 a.m.
+	"Buen ambiente, buena comida y un trato espectacular."
+	[45] (213,643)<div  />
+		[46] (213,643)<div  />
+			[47] (213,643)<div  />
+				[48] (213,643)<a class='A1zNzb' href='https://www.google.com/maps/reserve/v/dine/c/1RqtSfvNmhM?source=pa&opi=79508299&hl=es-419&gei=32wLaqaqOKv_7M8Pg5_9mAg&sourceurl=https://www.google.com/search?tbm%3Dmap%26authuser%3D0%26hl%3Des-419%26gl%3Des%26pb%3D!4m8!1m3!1d25431.708701495056!2d-3.5985571!3d37.1773363!3m2!1i1024!2i768!4f13.1!7i20!8i20!10b1!12m53!1m5!18b1!30b1!31m1!1b1!34e1!2m4!5m1!6e2!20e3!39b1!6m26!49b1!63m0!66b1!74i150000!85b1!91b1!114b1!149b1!206b1!209b1!212b1!216b1!222b1!223b1!232b1!234b1!235b1!239b1!244b1!246b1!250b1!253b1!260b1!266b1!272b1!273b1!10b1!12b1!13b1!14b1!16b1!17m1!3e1!20m3!5e2!6b1!14b1!46m1!1b0!96b1!99b1!19m4!2m3!1i360!2i120!4i8!20m65!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m16!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!22m5!1sz2wLat76Meb_7M8PmaDXkQU:67!2s1i:0,t:246204,p:z2wLat76Meb_7M8PmaDXkQU:67!7e81!12e22!17sz2wLat76Meb_7M8PmaDXkQU:68!24m107!1m25!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m14!3b1!4b1!5b1!6b1!13b1!14b1!17b1!21b1!22b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!26m4!2m3!1i80!2i92!4i8!30m28!1m6!1m2!1i0!2i0!2m2!1i530!2i768!1m6!1m2!1i974!2i0!2m2!1i1024!2i768!1m6!1m2!1i0!2i0!2m2!1i1024!2i20!1m6!1m2!1i0!2i748!2m2!1i1024!2i768!34m19!2b1!3b1!4b1!6b1!8m6!1b1!3b1!4b1!5b1!6b1!7b1!9b1!12b1!14b1!20b1!23b1!25b1!26b1!31b1!37m1!1e81!42b1!46m1!1e9!47m0!49m10!3b1!6m2!1b1!2b1!7m2!1e3!2b1!8b1!9b1!10e2!50m375!1m371!2m7!1u3!4sAbierto%2Bahora!5e1!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCBQoAg!10m2!3m1!1e1!2m7!1u5!4sMediterr%25C3%25A1nea!5e1!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCBUoAw!10m2!5m1!1sgcid:mediterranean_restaurant!2m7!1u5!4zRXNwYcOxb2xh!5e1!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCBYoBA!10m2!5m1!1sgcid:spanish_restaurant!2m7!1u2!4sMejor%2Bcalificados!5e1!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCBcoBQ!10m2!2m1!1e1!2m7!1u1!4sEcon%25C3%25B3micos!5e1!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCBgoBg!10m2!1m1!1e1!2m7!1u1!4sExclusivos!5e1!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCBkoBw!10m2!1m1!1e2!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCBooCA!10m5!64m4!2m3!1i1!2i10!3sEUR!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCBsoCQ!10m5!64m4!2m3!1i10!2i20!3sEUR!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCBwoCg!10m5!64m4!2m3!1i20!2i30!3sEUR!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCB0oCw!10m5!64m4!2m3!1i30!2i40!3sEUR!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCB4oDA!10m5!64m4!2m3!1i40!2i50!3sEUR!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCB8oDQ!10m5!64m4!2m3!1i50!2i60!3sEUR!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCCAoDg!10m5!64m4!2m3!1i60!2i70!3sEUR!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCCEoDw!10m5!64m4!2m3!1i70!2i80!3sEUR!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCCIoEA!10m5!64m4!2m3!1i80!2i90!3sEUR!2m11!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCCMoEQ!10m5!64m4!2m3!1i90!2i100!3sEUR!2m10!1u62!2e1!4s!5e3!9s0ahUKEwiFi-6ozcOUAxUYVqQEHYqfOmgQ_KkBCCQoEg!10m4!64m3!2m2!1i100!3sEUR!3m88!1u62!2m7!1m5!64m4!2m3!1i1!2i10!3sEUR!2s!2m7!1m5!64m4!2m3!1i10!2i20!3sEUR!2s!2m7!1m5!64m4!2m3!1i20!2i30!3sEUR!2s!2m7!1m5!64m4!2m3!1i30!2i40!3sEUR!2s!2m7!1m5!64m4!2m3!1i40!2i50!3sEUR!2s!2m7!1m5!64m4!2m3!1i50!2i60!3sEUR!2s!2m7!1m5!64m4!2m3!1i60!2i70!3sEUR!2s!2m7!1m5!64m4!2m3!1i70!2i80!3sEUR!2s!2m7!1m5!64m4!2m3!1i80!2i90!3sEUR!2s!2m7!1m5!64m4!2m3!1i90!2i100!3sEUR!2s!2m6!1m4!64m3!2m2!1i100!3sEUR!2s!3m1!1u2!3m1!1u3!3m97!1u5!2m7!1m2!5m1!1sgcid:argentinian_restaurant!2sArgentina!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/steakhouse.png!2m7!1m2!5m1!1sgcid:chinese_restaurant!2sChina!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/chinese.png!2m7!1m2!5m1!1sgcid:hamburger_restaurant!2sHamburguesa!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/burger.png!2m7!1m2!5m1!1sgcid:italian_restaurant!2sItaliana!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/italian.png!2m7!1m2!5m1!1sgcid:japanese_restaurant!2sJaponesa!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/japanese.png!2m7!1m2!5m1!1sgcid:mediterranean_restaurant!2sMediterr%25C3%25A1nea!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/tapas.png!2m7!1m2!5m1!1sgcid:mexican_restaurant!2sMexicana!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/mexican.png!2m7!1m2!5m1!1sgcid:pizza_restaurant!2sPizza!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/pizza.png!2m7!1m2!5m1!1sgcid:seafood_restaurant!2sMarisco!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/seafood.png!2m7!1m2!5m1!1sgcid:spanish_restaurant!2zRXNwYcOxb2xh!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/restaurant.png!2m7!1m2!5m1!1sgcid:tapas_bar!2sBar%2Bde%2Btapas!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/restaurant.png!2m7!1m2!5m1!1sgcid:vegetarian_restaurant!2sVegetariana!3m2!2m1!1shttps://ssl.gstatic.com/local/refinements/cuisineicons/restaurant.png!4BIAEqAkVT!2e2!3m1!3b1!59BQ2dBd0Fn!61b1!67m5!7b1!10b1!14b1!15m1!1b0!69i779!77b1%26q%3Drestaurantes%2BGranada%26ech%3D1%26psi%3Dz2wLat76Meb_7M8PmaDXkQU.1779133649105.1' />
+					[49] (213,643)<div >Reservar mesa />
+						[50] (173,643)<span > />
+	Aprovecha al máximo Google Maps
+	Acceder
+[51] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[52] (80,972)<div  />
+		[53] (80,972)<span > />
+[54] (216,886)<button class='e2moi' />
+	[55] (216,886)<div >
+Volver al principio />
+		[56] (216,886)<div  />
+		
+		Volver al principio
+[57] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[58] (384,500)<span > />
+[59] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[60] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2Frestaurantes%2BGranada%2F%4037.1773327%2C-3.5985571%2C14z%2Fdata%3D!4m2!2m1!6e5%3Fved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[61] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[62] (973,799)<span > />
+[63] (973,871)<div  />
+	[64] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[65] (973,849)<div  />
+	[66] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[67] (973,893)<div  />
+	[68] (973,871)<div  />
+[69] (973,945)<div  />
+	[70] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[71] (973,945)<div  />
+
+Capas
+[72] (421,906)<button class='yHc72 qk5Wte' />
+Datos del mapa © 2026 Inst. Geogr. Nacional, Google
+[73] (637,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[74] (683,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[75] (735,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[76] (829,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[77] (945,989)<button class='LNGekf' />
+	[78] (917,989)<label class='U5ELMd'>500 m />
+	[79] (956,989)<div  />
+
+</current_dom>

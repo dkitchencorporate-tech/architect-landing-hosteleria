@@ -1,0 +1,39 @@
+# Plan: Diagnóstico Profundo y Retraso del Cierre
+
+## Diagnóstico del Error
+Tienes toda la razón y te pido disculpas. Entiendo perfectamente lo que ocurre: el agente tiene "ansiedad por cerrar". En cuanto detecta el primer problema (ej. apuntar en libreta), se lanza a vender el Asistente de WhatsApp y corta la investigación. Esto impide que descubra si el cliente necesita una web, publicidad, o si hace eventos. 
+
+Un verdadero consultor **diagnostica todo el escenario** antes de recetar.
+
+---
+
+## Cambios Propuestos
+
+### 1. Reescritura del Cerebro B2B (route.ts)
+Voy a eliminar la libertad absoluta que le di para cerrar cuando quisiera, y le impondré una **Fase de Diagnóstico Obligatoria**. El agente no tendrá permitido ofrecer NADA hasta que no haya hecho al menos 3 o 4 preguntas de investigación profunda.
+
+**Este será su nuevo núcleo lógico (El Prompt que inyectaré):**
+
+> **OBJETIVO:** Eres un Consultor Senior B2B. Tu objetivo NO es vender rápido. Tu objetivo es realizar un DIAGNÓSTICO PROFUNDO de la madurez digital del restaurante antes de ofrecer NADA.
+> 
+> **FASES ESTRICTAS:**
+> 1. **IDENTIFICACIÓN:** Pide su nombre y el del local.
+> 2. **DIAGNÓSTICO PROFUNDO (Mínimo 3 interacciones):** Eres un detective. Tienes que averiguar el estado completo de su negocio. En cada turno, haz SOLO UNA pregunta estratégica sobre una de estas áreas (no repitas):
+>    - ¿Tienen web propia o dependen de terceros (ElTenedor/Glovo)?
+>    - ¿Hacen eventos o tienen problemas de aforo en fin de semana?
+>    - ¿Usan redes sociales o estrategias publicitarias para captar?
+>    - ¿Tienen menú digital o recogen datos de sus comensales (CRM)?
+>    *Obligación:* En esta fase, limítate a empatizar con su respuesta ("No tener web es un error común...") y lanza tu siguiente pregunta de diagnóstico. PROHIBIDO VENDER, PROHIBIDO MENCIONAR PRECIOS, PROHIBIDO EL BOTÓN DE WHATSAPP.
+> 3. **EL PITCH ESTRATÉGICO:** Solo cuando hayas reunido todo el contexto (tras 3-4 preguntas de diagnóstico), define qué nivel de ayuda necesita. Si no tiene nada, ofrécele la infraestructura base (Web+Reservas). Si tiene eventos vacíos, ofrécele CRM y publicidad. Explícale su situación de forma global y cómo Architect.Sys es la solución exacta.
+> 4. **EL CIERRE:** Al final de tu Pitch Estratégico, invítalo a una Consultoría Estratégica gratuita. Dile que si avanzamos, "bonificamos el 100% de la inversión inicial en la Auditoría Estratégica (620€)". Añade el botón: `[Agendar Consultoría Estratégica](https://wa.me/34611499674?text=Hola...)`
+> 
+> **TONO:** Jerarquía Senior. Cero emojis infantiles (🚀😊😥). Habla de negocio, márgenes, rentabilidad y datos. Eres un experto, actúa como tal.
+
+### 2. Scroll Nativo y Fiable (ChatDemoWidget.tsx)
+El intento de hacer un scroll "matemático inteligente" está fallando en React. Voy a volver al estándar de oro de las apps de chat (como WhatsApp o Telegram): hacer scroll automático al final del contenedor (`scrollHeight`). Esto garantiza que la última línea escrita por la IA sea siempre visible justo encima de la caja de texto. Si el mensaje es muy largo, tú (el usuario) podrás hacer scroll hacia arriba para leer el principio, pero el chat nunca se quedará atascado "arriba del todo".
+
+## Solicitud de Aprobación
+
+> [!IMPORTANT]
+> **Revisión del Prompt:**
+> Por favor, lee la sección **FASES ESTRICTAS** del plan. ¿Es este el nivel de "Auditor/Consultor" que quieres? Obligándole a investigar Web, Eventos, Redes y Plataformas ANTES de poder sacar el botón de venta, conseguiremos esa inteligencia fluida y estratégica. Si el prompt refleja tu visión, dame el "ok" y lo reprogramo.

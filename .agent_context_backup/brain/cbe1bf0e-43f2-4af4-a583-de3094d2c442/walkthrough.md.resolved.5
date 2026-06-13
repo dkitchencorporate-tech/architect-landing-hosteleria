@@ -1,0 +1,26 @@
+# Implementación del Motor de Captación de Leads y Notificaciones
+
+He terminado de implementar toda la lógica que convierte al chat en una auténtica herramienta de ventas y remarketing.
+
+Aquí tienes el resumen de lo que he integrado en tu entorno local:
+
+## 1. El Nuevo "Cerebro" de Correos (Transcript API)
+He creado un nuevo endpoint en el backend (`/api/demo/transcript`) que se encarga exclusivamente de procesar el texto de la conversación:
+- **Inteligencia de Datos:** Lee todo el historial y usa expresiones regulares (Regex) para buscar automáticamente si el usuario escribió un correo electrónico en su último mensaje.
+- **Correo a tu Equipo (Admin):** Manda un correo de forma silenciosa a `dkitchencorporate@gmail.com` con el asunto `🚨 LEAD COMPLETADO` o `⚠️ LEAD ABANDONADO` (dependiendo de si dejaron correo o no). Dentro del correo, tienes el chat completo con un diseño limpio para que puedas ver qué restaurante es y hacerles remarketing en frío.
+- **Auto-Responder (Branded):** Si el usuario dejó su correo, se dispara un correo automático hacia él con un diseño 100% corporativo de Architect.Sys (colores oscuros, logo, estilo premium). En este correo se le agradece su tiempo, se le confirma que los **Bonos de 620€** están reservados, y se le deja un enlace a tu calendario para que agende directamente.
+
+## 2. Detección Inteligente de Final o Abandono
+Modifiqué el frontend del Chat (`ChatDemoWidget.tsx`) para que no se escape ni un solo lead:
+- **Captura al Cierre (Drop-off):** Si un usuario llega hasta la pregunta 2 o 3 (por ejemplo, ya te dijo el nombre de su local) y de repente **cierra la pestaña** o el navegador, el sistema usa una tecnología llamada `navigator.sendBeacon`. Esto permite enviar la transcripción al servidor en los microsegundos que tarda en cerrarse la pestaña.
+- **Captura al Éxito:** Si el usuario completa el chat con normalidad, en el instante en que Arqui genera los botones de "Agendar Video Llamada", el chat guarda y envía la transcripción automáticamente.
+
+## 3. Configuración de Enlaces Fácil
+Ya no tienes que buscar dentro del enorme prompt de la IA para cambiar el link de tu Google Meet o tu WhatsApp. He extraído los enlaces a la **primera línea** del archivo `src/app/api/demo/respond/route.ts`:
+
+```typescript
+// === CONFIGURACIÓN DE ENLACES ===
+const MEET_LINK = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0"; 
+const WHATSAPP_LINK = "https://wa.me/34611499674?text=Hola,%20quiero%20conocer%20el%20plan%20para%20mi%20restaurante";
+```
+Si el día de mañana usas Calendly, o cambias el teléfono, solo cambias esas dos líneas y la IA actualizará los botones finales automáticamente.

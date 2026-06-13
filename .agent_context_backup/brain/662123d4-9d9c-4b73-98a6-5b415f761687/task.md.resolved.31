@@ -1,0 +1,19 @@
+# Task Tracker: Optimización Final y Lanzamiento
+
+## FASE 1: Ajustes de Copy y Confianza
+- `[x]` Modificar `FAQ.tsx` para que el acordeón esté abierto por defecto (o primer párrafo visible).
+- `[x]` Bajar precio de bono Auditoría Google Maps a 180€ en `HighTicketEcosystem.tsx` y ajustar copy.
+- `[x]` Crear y añadir `FounderBio.tsx` en `src/app/page.tsx`.
+
+## FASE 2: Exposición del "Producto Oculto"
+- `[x]` Generar/Obtener screenshots del `/dashboard` (Pipeline, Onboarding, Eventos). (Solución: Live Mockup)
+- `[x]` Modificar `DigitalPresenceValue.tsx` o `TheTrojanHorse.tsx` para inyectar estos screenshots.
+- `[x]` Destacar un botón/QR gigante para la Demo en Vivo en la landing.
+
+## FASE 3: Caballo de Troya (Arqui V2)
+- `[ ]` Crear/Modificar widget de chat flotante "Consultoría Interactiva" (Arqui V2) en la landing.
+
+## FASE 4: Revisión de Ecosistema Interno
+- `[ ]` Probar que `/dashboard` compila y funciona.
+- `[ ]` Probar que `/admin-architect` compila y funciona.
+- `[ ]` Revisar flujos de Up-Sell y Marketplace.

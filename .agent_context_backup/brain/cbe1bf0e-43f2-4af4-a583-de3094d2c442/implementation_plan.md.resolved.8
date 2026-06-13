@@ -1,0 +1,58 @@
+# Especificación Técnica y Estrategia Comercial (Tech Spec)
+*Rol Activo: Senior Product Manager & Outbound Strategist*
+
+He desplegado la web en local (localhost:3000) y he auditado visualmente el flujo actual. Tienes toda la razón: el orden actual de la oferta es difuso y frena la conversión. Presentas un servicio de Ads de 400€/mes en la mitad de la página, y escondes el servicio de entrada (Carta Interactiva) al final junto al sistema de 650€. Eso rompe la psicología de ventas.
+
+Aplicando las directrices de mis *Skills* (Product Manager para la priorización y Outbound Strategist para el cierre), este es el plan definitivo para atacar el mercado, reordenar el código de forma no-monolítica y facturar.
+
+---
+
+## 1. Reestructuración del Embudo en la Landing Page
+
+Vamos a aplicar el concepto de **"Caballo de Troya"**. Eliminaremos el monolito actual de `page.tsx` y crearemos componentes en carpetas separadas (`src/components/sections/`).
+
+### El Nuevo Orden Psicológico (De arriba hacia abajo):
+
+1. **[SIN CAMBIOS] Hero & The Pain:** Mantenemos el problema (Mesas vacías, teléfono que no se coge).
+2. **[NUEVO] `src/components/sections/DigitalPresenceValue.tsx`:** 
+   *   *Objetivo:* Explicar *por qué* digitalizarse ahorra dinero. Preparar el terreno para la primera venta.
+3. **[NUEVO] `src/components/sections/EntryOffer.tsx` (El Caballo de Troya):**
+   *   *Ubicación:* Justo después de explicar el valor. Ya no irá al final.
+   *   *La Oferta:* Presentaremos la **Carta Interactiva** con el modelo híbrido.
+      *   Opción A: Pago Único (350€) - Alto costo inicial.
+      *   Opción B: Suscripción Starter (39€/mes) - Costo de fricción cero. Incluye el "Agente Básico" (como el de tu widget) para web.
+4. **[NUEVO] `src/components/sections/EventLibrary.tsx` (El Upsell de Retención):**
+   *   *La Oferta:* Suscripción Growth (50€/mes). "Por 11€ más, te damos acceso a la Biblioteca de Eventos Llave en Mano. Nosotros atraemos a la gente, tú solo cocinas".
+5. **[MODIFICADO] `src/components/sections/PremiumEcosystem.tsx` (El High Ticket):**
+   *   *Ubicación:* Al final del embudo.
+   *   *La Oferta:* El Recepcionista 24/7 (650€ + 49€/mes). Para los clientes que ya confían en nosotros o que tienen un dolor masivo con el teléfono.
+6. **[ELIMINADO] La sección suelta de 400€ de Ads:** La publicidad (Meta Ads) se venderá como un servicio de backend en llamadas de consultoría, no expuesto directamente al tráfico frío para evitar rechazo por precio.
+
+---
+
+## 2. Estrategia de Prospección (Go-to-Market)
+
+Para conseguir el objetivo urgente (conseguir el primer cliente), aplicaremos el framework de ventas *Signal-based Selling*.
+
+### A. Prospección Digital (Prioridad 1)
+No iremos a puerta fría todavía. Gastaremos menos energía atacando a clientes que ya están demostrando necesidad en internet.
+*   **El Filtro:** Buscaremos en Google Maps (Granada) restaurantes con reseñas de 3 o 4 estrellas donde los clientes se quejen de: *"Tardaron mucho en tomar nota"* o *"Nadie coge el teléfono para reservar"*.
+*   **El Mensaje (Outbound):** Les enviaremos un WhatsApp o mensaje en Instagram con un enfoque de ayuda, no de venta: *"Hola [Nombre], vi una reseña sobre los tiempos de espera. Hemos creado un sistema de 39€/mes que elimina el 50% del tiempo de los camareros tomando nota de bebidas. ¿Te paso una demo?"*
+
+### B. Prospección Física (Prioridad 2)
+Una vez validado el modelo digital o para cerrar negocios clave en tu zona.
+*   **La Táctica:** Visitar el local en horario de baja afluencia. No llevaremos un folleto, llevaremos un **Código QR físico impreso en metacrilato** (de prueba).
+*   **El Pitch:** "Toma este QR. Si lo pones en tus mesas, tus clientes pedirán cervezas antes de que el camarero se acerque. El sistema cuesta menos que un menú del día al mes."
+
+---
+
+## 3. Plan de Ejecución (Paso a Paso)
+
+1.  **Aprobación del Plan:** Tú revisas esta arquitectura de embudo y la estrategia de prospección.
+2.  **Desarrollo en Local:** Como Tech Lead, crearé las carpetas `src/components/sections/`, picaré el código de los 3 nuevos componentes (EntryOffer, EventLibrary, DigitalPresence) y los inyectaré en `page.tsx` comentando el código viejo.
+3.  **Validación Visual:** Comprobaremos en `localhost:3000` que el diseño (Tailwind, colores `#FF4500`, tipografía) respeta la calidad de un desarrollador Senior.
+4.  **Cierre (Commit):** Solo tras tu "OK", usaré la consola para hacer el *commit* a GitHub.
+
+Como Project Manager y estratega, te confirmo que esto elimina el ruido de la landing y pone la oferta irresistible (39€/mes) en la cara del cliente desde el minuto uno.
+
+**¿Autorizas la construcción de los componentes en local bajo esta arquitectura?**

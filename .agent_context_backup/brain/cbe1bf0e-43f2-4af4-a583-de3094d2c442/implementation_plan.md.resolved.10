@@ -1,0 +1,60 @@
+# Estrategia de Conversión Agresiva y SEO Técnico
+*Rol Activo: Growth Hacker, SEO Specialist & Sales Outbound Strategist*
+
+Has tomado una decisión de Director de Producto excelente. Mover el Hero actual (el del chat de WhatsApp) hacia abajo, justo encima del servicio de Recepcionista de 650€, tiene todo el sentido lógico. Ese bloque visual vende *ese* servicio, no la Carta QR.
+
+Aquí tienes el plan técnico y comercial reestructurado para ejecutar esta visión agresiva.
+
+---
+
+## 1. El Nuevo Embudo (De Mayor a Menor Fricción)
+
+### A. El Nuevo Hero (Impacto Directo y Agresivo)
+Dado que movemos el hero actual, la parte superior de la web queda libre. Propongo un **Hero estilo VSL (Video Sales Letter) Híbrido** sin distracciones.
+*   **Fondo:** Oscuro puro (`#0a0a0a`) para máximo contraste.
+*   **Titular:** Directo a la yugular financiera: *"Deja de perder el 30% de tus beneficios en comisiones de Delivery y mesas que rotan lento."*
+*   **Subtítulo:** *"Digitaliza tu restaurante hoy. Tus clientes piden más rápido, tu ticket medio sube un 15% y tú recuperas el control."*
+*   **Call To Action (CTA):** Dos botones claros. [Ver Oferta de 39€/mes] y [Hacer Auditoría Gratuita].
+
+### B. The Trojan Horse (Oferta Híbrida y Upsells Positivos)
+Cambiamos el enfoque negativo por "Add-ons" (Ventas cruzadas) en el componente de 39€/mes.
+*   **Modalidad 1: Suscripción (39€/mes).** Fricción baja.
+*   **Modalidad 2: Pago Único (350€).** Para el hostelero "anti-suscripciones". Incluye el sistema base, pero sin actualizaciones constantes ni el Agente IA de captación activo (para justificar el precio vs valor recurrente).
+*   **Upsells (En positivo):**
+    *   `[+] Dominio Propio (Turestaurante.com)`: +15€/año.
+    *   `[+] Personalización de Diseño Extrema (A medida)`: +99€ (Pago único).
+    *   `[+] Setup de QRs en Metacrilato`: +35€ (Pago único).
+
+### C. La Transición al High Ticket
+1.  **Event Library (69€/mes):** Se mantiene como el primer salto para llenar mesas.
+2.  **El Antiguo Hero (El chat de WA):** Lo movemos aquí abajo. Actúa como introducción visual al servicio Premium.
+3.  **High Ticket Ecosystem (650€):** El remate final para cerrar a los clientes de alto volumen.
+
+---
+
+## 2. SEO Técnico y Visibilidad para IAs (Deep Indexing)
+
+Para que ChatGPT, Perplexity y Google te indexen agresivamente como "Agencia de Hostelería", no basta con tener texto en la web. Implementaré los estándares de la Web Semántica:
+
+1.  **`src/app/sitemap.ts`**: Generación dinámica del mapa del sitio para obligar a Google a rastrear.
+2.  **`src/app/robots.txt`**: Directivas `Allow: /` para todos los bots (incluyendo GPTBot).
+3.  **Metadatos Estructurados (`layout.tsx`)**: Inyección de etiquetas OpenGraph (Facebook/LinkedIn) y Twitter Cards, definiendo exactamente de qué va el negocio para que las IAs lo lean en milisegundos sin renderizar la página.
+
+---
+
+## 3. Auditoría de Conversión (Score Real)
+
+Me pides que evalúe del 1 al 10 el potencial de conversión de la landing *actual* (con los cambios hechos hasta hoy). Basándome en los modelos de *Growth Hacking*:
+
+**Puntuación Actual: 6.5 / 10**
+*   *¿Por qué no es un 10?* Porque la oferta base sigue estando muy abajo en la estructura y el Hero actual distrae ofreciendo el servicio de 650€ (WhatsApp) cuando intentamos venderles el de 39€ de entrada.
+*   *¿Qué pasará cuando aplique este nuevo plan?* Subirá a un **8.5 / 10**. Al poner un Hero agresivo que hable del problema general (Delivery/Lentitud) y empujar rápidamente hacia la oferta de 39€ (ahora con pago único opcional), el tráfico frío (Ads) convertirá mucho más rápido porque no se asustará viendo chatbots de WhatsApp de 650€ nada más entrar.
+
+---
+
+## User Review Required
+> [!IMPORTANT]
+> 1. ¿Estás de acuerdo con el titular propuesto para el Nuevo Hero ("Deja de perder el 30%..."), o prefieres un enfoque diferente?
+> 2. ¿Autorizas la creación de los archivos SEO (`sitemap.ts`, `robots.txt`) y la refactorización final de `page.tsx` para mover el Hero antiguo abajo e inyectar el nuevo arriba?
+> 
+> Dame tu "OK" y reescribo la arquitectura al instante.

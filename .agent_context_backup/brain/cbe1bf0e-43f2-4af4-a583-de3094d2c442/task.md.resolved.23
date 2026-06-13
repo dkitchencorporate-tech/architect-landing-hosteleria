@@ -1,0 +1,6 @@
+# Tareas: Analíticas Avanzadas 2.0
+
+- [ ] Limpiar tabla `web_analytics` para poner contadores a 0.
+- [ ] Actualizar `AnalyticsPixel.tsx` (Excluir admin, Geolocalización, Scroll Tracking).
+- [ ] Actualizar `TrafficMonitor.tsx` (Mostrar UI con ciudad, país y scroll).
+- [ ] Validación final.

@@ -1,0 +1,37 @@
+# Plan: Escalamiento del Agente en Producción (Solución a Límites de API)
+
+## Estado Actual (Bloqueado y Protegido)
+La configuración del prompt en `route.ts` y la interfaz han sido **bloqueadas**. No realizaré ninguna modificación sobre ellas, ya que han alcanzado el comportamiento óptimo de "Consultor B2B".
+
+## El Problema: Límites de Tokens y Cuotas
+Actualmente dependemos de la capa "Free Tier" de Google Gemini. Cuando recibas tráfico en producción, el límite de peticiones gratuitas se agotará rápidamente y la API empezará a dar errores 429 (Rate Limit).
+
+Has propuesto una excelente idea: **usar un modelo de IA en local** para mantener al agente vivo sin depender de cuotas. Aquí te analizo las 3 mejores soluciones para producción:
+
+---
+
+### Opción 1: IA Local Auto-Hospedada (Ollama / Llama 3) - *Tu idea*
+Podemos instalar un modelo open-source (como Llama 3 de Meta o Mistral) directamente en tu propio servidor usando Ollama.
+*   **Pros:** 100% gratuito por cada petición, privacidad total de los datos, sin cortes de Google.
+*   **Contras (El coste oculto):** Para que un modelo local responda rápido en un chat web (latencia menor a 2 segundos), necesitas alquilar un servidor con **GPU dedicada** (tarjeta gráfica). Un servidor VPS normal (CPU) tardaría 10-15 segundos en escribir cada mensaje. Un servidor con GPU barata cuesta entre **$50 y $100 al mes**.
+
+### Opción 2: Pasar a Gemini "Pago por Uso" (La más recomendada)
+La versión de pago de Gemini Flash es increíblemente barata y elimina todos los límites diarios.
+*   **Coste:** Cobran unos **0,07€ por cada millón de tokens**. Para que te hagas una idea, podrías tener unas **1.000 conversaciones completas de ventas por menos de 1 euro**.
+*   **Pros:** Mantienes la inteligencia exacta que acabamos de configurar, velocidad ultrarrápida y no tienes que mantener servidores complejos. Solo requiere meter una tarjeta de débito en Google Cloud (solo te cobran céntimos según lo uses).
+
+### Opción 3: Proveedor Ultrarrápido Gratuito (Groq)
+Groq es una empresa que usa chips especiales (LPUs) y aloja modelos open-source (Llama 3). Son los más rápidos del mundo.
+*   **Pros:** Tienen una capa gratuita muy generosa para producción y la velocidad de escritura es casi instantánea (800 palabras por segundo).
+*   **Contras:** Tendríamos que reescribir una pequeña parte del archivo `gemini.ts` para conectarnos a la API de Groq en lugar de a la de Google.
+
+---
+
+## 🙋‍♂️ Solicitud de Decisión
+
+> [!IMPORTANT]
+> Para tener la web lista para recibir tráfico real, ¿qué camino prefieres tomar?
+> 
+> **A.** Continuar con Google Gemini pero pasando tu cuenta a "Pago por uso" (requiere que pongas tu tarjeta en Google Cloud, gastarás céntimos al mes).
+> **B.** Migrar el código a **Groq** (usando Llama 3) para aprovechar su inmensa capa gratuita ultrarrápida.
+> **C.** Montar la infraestructura para una **IA Local** (tendrías que alquilar un servidor VPS con GPU en sitios como Hetzner o RunPod).

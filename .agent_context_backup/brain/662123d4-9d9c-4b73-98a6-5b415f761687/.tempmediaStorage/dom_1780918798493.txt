@@ -1,0 +1,16 @@
+[0] (100,80)<a class='flex items-center gap-3' href='#' />
+	[1] (100,80)<img  />
+[2] (698,80)<button class='px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-300 text-gray-400 hover:text-white' title='Català'>CA />
+[3] (732,80)<button class='px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-300 text-gray-400 hover:text-white' title='English'>EN />
+[4] (765,80)<button class='px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-300 bg-[#C9A962] text-black' title='Español'>ES />
+[5] (863,80)<a class='inline-flex items-center justify-center gap-3 font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl bg-[#25D366] hover:bg-[#20BD5A] text-white text-sm py-2.5 px-5' href='https://wa.me/34602053894?text=Hola%20Restaurants%20IA%2C%20vengo%20de%20la%20web%20y%20quiero%20automatizar%20mi%20restaurante'>Contactar ahora />
+¿Tienes más dudas? Escríbenos
+100% Gratuito
+Agenda tu diagnóstico
+gratuito
+Descubre cómo la IA puede transformar tu restaurante en una sesión de 30 minutos sin compromiso
+Agendar Demo Gratuita
+[6] (906,933)<button class='absolute top-2 right-2 text-gray-400 hover:text-gray-600' />
+¿Necesitas ayuda?
+Escríbenos por WhatsApp
+[7] (956,906)<button class='w-16 h-16 rounded-full bg-amber-500 hover:bg-amber-400 text-white flex items-center justify-center shadow-xl shadow-amber-500/40 hover:shadow-2xl hover:shadow-amber-500/50 transition-all duration-300 hover:scale-110' />

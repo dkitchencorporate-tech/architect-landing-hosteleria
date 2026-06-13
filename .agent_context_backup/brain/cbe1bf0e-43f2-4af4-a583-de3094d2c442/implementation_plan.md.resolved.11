@@ -1,0 +1,56 @@
+# Auditoría de Proyecto & Plan de Optimización Final
+
+## Diagnóstico del PM (Auditoría de Embudo)
+**Calificación actual del embudo: 8.5 / 10**
+**Motivo:** A nivel de *copywriting*, arquitectura de precios ("Godfather offer") y psicología del consumidor (dolores vs. beneficios), la página está en un 10. Es agresiva, clara y sin jerga técnica. Sin embargo, a nivel de **UX/UI Móvil y Cierre Técnico**, baja a 8.5 por los puntos que acabas de detectar:
+1. Sin un *Header Sticky*, perdemos la conversión por impulso cuando el usuario hace scroll profundo.
+2. Sin enlaces legales en el footer, perdemos autoridad y podríamos tener problemas con las políticas de Meta Ads.
+3. Sin FAQs, dejamos objeciones de última hora sin resolver, lo que mata ventas en el borde del embudo.
+4. Falta de jerarquía en móvil: En pantallas pequeñas, si los textos no están bien centrados, justificados o con el "line-height" correcto, genera fatiga visual.
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> Revisa la propuesta de las **Preguntas Frecuentes (FAQs)** detallada a continuación y confírmame si estás de acuerdo con el contenido o si quieres añadir/quitar alguna.
+
+## Proposed Changes
+
+### 1. Cabecera Flotante (Sticky Header)
+Cambiaremos el Navbar para que se mantenga fijo en la parte superior. Le daremos un fondo oscuro translúcido (`backdrop-blur`) para que no ensucie la lectura pero mantenga el botón de "Auditoría Gratuita" a un solo toque en todo momento.
+
+#### [MODIFY] [page.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/page.tsx)
+- Reemplazar `<nav className="absolute top-0...">` por `<nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 shadow-xl transition-all">`.
+
+### 2. Responsividad Móvil (Tipografía y Jerarquía)
+Voy a inyectar clases de Tailwind específicas para móviles (`text-balance`, `text-pretty`, `leading-relaxed`, y ajustes de padding) en todos los componentes clave para asegurar que el texto se lea como un libro en el móvil.
+
+#### [MODIFY] [page.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/page.tsx)
+#### [MODIFY] [AggressiveHero.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/AggressiveHero.tsx)
+#### [MODIFY] [TheTrojanHorse.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/TheTrojanHorse.tsx)
+#### [MODIFY] [EventLibraryHook.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/EventLibraryHook.tsx)
+
+### 3. Sección de FAQs (Preguntas Frecuentes)
+Crearé un nuevo componente `FAQ.tsx` para matar objeciones finales.
+
+#### [NEW] [FAQ.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/FAQ.tsx)
+Insertaremos este bloque justo antes del Footer. Las 4 preguntas estratégicas serán:
+1. **¿Qué pasa si mis camareros no saben usar la tecnología?** (Respuesta: Es más fácil que WhatsApp, no requiere instalación).
+2. **¿Tengo que comprar tablets o hardware caro?** (Respuesta: No, el cliente usa su móvil, tú usas el que ya tienes).
+3. **¿La Licencia Completa (450€) tiene algún gasto oculto?** (Respuesta: Solo la renovación anual de tu dominio si decides tener uno).
+4. **¿Cuánto tardáis en tener todo listo?** (Respuesta: Máximo 48 horas desde la firma).
+
+### 4. Footer Legal
+Añadiremos los enlaces de Política de Privacidad y Términos y Condiciones, los cuales son estrictamente necesarios para hacer campañas en Meta (Facebook/Instagram Ads).
+
+#### [MODIFY] [page.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/page.tsx)
+- Añadir sección en el footer: `Enlaces Legales: Privacidad | Términos de Servicio`.
+
+## Verification Plan
+
+### Manual Verification
+- Renderizar la web localmente (`localhost:3000`).
+- Usar el emulador móvil de Chrome (iPhone 12/14) para comprobar línea a línea que el texto es legible y jerárquico.
+- Verificar que el Header se queda fijo al hacer scroll sin romper el diseño de abajo.
+- Navegar a `/privacy` desde el footer para comprobar los enlaces.

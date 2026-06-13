@@ -1,0 +1,50 @@
+# Plan de Refinamiento: Copywriting, Neuroventas y Arquitectura
+
+## Análisis del Problema
+1. **Copy Autodestructivo:** La frase "No te fíes" rompe la confianza.
+2. **Matemática Inexacta:** Los 4 bonos (180+250+300+250) suman 980€, pero la landing publicita 1.150€.
+3. **Posicionamiento de Arqui:** Se está vendiendo como un producto para el cliente, cuando en realidad es el cualificador interno de la agencia. Además, aparece muy abajo en el embudo.
+4. **Bio del Fundador:** Falta autoridad y cercanía (neuroventas). Debe ser Alex, con logo de Architect.Sys, eliminando frases débiles como "mensaje honesto".
+5. **FAQs Expuestas:** Aparecen abiertas por defecto, arruinando el diseño y faltando contexto clave sobre el ecosistema.
+
+## Proposed Changes
+
+### [MODIFY] [LiveDemoCTA.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/LiveDemoCTA.tsx)
+- **Eliminar:** "No te fíes de nuestra palabra. Pruébalo tú mismo."
+- **Reemplazar por (Neuromarketing):** "Vive la experiencia de una carta de Alto Nivel." o "La misma experiencia fluida que exigirán tus mejores clientes."
+
+### [MODIFY] Ajuste Matemático de Bonos (980€)
+- **Archivos afectados:** 
+  - `TheTrojanHorse.tsx` (Texto del bono)
+  - `ConsultingModal.tsx` (Títulos y descripciones del modal)
+  - `ExitIntent.tsx` (Pop-up de salida)
+- **Acción:** Sumarizar correctamente: 180€ + 250€ + 300€ + 250€ = **980€**. Reemplazar todas las menciones de "1.150€" por "980€".
+
+### [MODIFY] [MeetArquiSection.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/MeetArquiSection.tsx)
+- **Cambio de Enfoque:** Dejar claro que Arqui es *nuestro* agente. Sirve para diagnosticar, entender el negocio del prospecto y agendar la reunión directamente con **Alex**.
+- **Copy:** "Habla con nuestro Analista IA. Pon a prueba su capacidad de diagnóstico y agendemos una reunión estratégica."
+
+### [MODIFY] [page.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/page.tsx)
+- Mover `<MeetArquiSection />` justo **antes** de `<WhatsAppHero />` (la sección donde empezamos a ofrecer la automatización y agentes 24/7). Esto inyecta autoridad previa.
+
+### [MODIFY] [FounderBio.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/FounderBio.tsx)
+- **Nombre:** Alex.
+- **Imagen:** Logo genérico/elegante de la 'A' de Architect.Sys.
+- **Copy:** Eliminar "Mensaje honesto". Título con PNL: "Tu acceso directo a la Dirección Estratégica".
+- **Botón:** En vez de "Contesto en 1 hora", poner "Trato directo y sin intermediarios. Tu éxito es mi prioridad."
+
+### [MODIFY] [FAQ.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/FAQ.tsx)
+- Cerrar todos los acordeones por defecto (`openIndices: []`).
+- Crear **exactamente 7 FAQs** estratégicas que cubran:
+  1. Modelo de Servicio (Llave en mano).
+  2. Nivel técnico requerido por el cliente (Cero, nosotros enseñamos).
+  3. Integración de Neuroventas en diseño físico y digital.
+  4. Los Agentes IA y su capacidad de escalar.
+  5. Accesos y Propiedad (todo es del cliente).
+  6. Modelos de Pago y Transparencia.
+  7. Formato de Trabajo y eventos presenciales.
+
+## Verification Plan
+1. Revisión de copys en vivo para validar aplicación de Neuroventas.
+2. Comprobación matemática (CTRL+F de "1.150" en todo el repo para garantizar que no haya rastros).
+3. Despliegue en Vercel para revisión final del usuario.

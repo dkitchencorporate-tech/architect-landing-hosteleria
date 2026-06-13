@@ -1,0 +1,8 @@
+# Tareas: Refactorización Fast Food y Fixes de UI
+
+- [/] Tarea 1: Añadir variables de traducción a `UI_TRANSLATIONS` en `src/lib/demo-data.ts`.
+- [ ] Tarea 2: Reemplazar textos estáticos por `t.key` en `src/app/demo/carta/page.tsx` (layouts y modales globales).
+- [ ] Tarea 3: Arreglar el desbordamiento y habilitar scroll en el Modal Switcher.
+- [ ] Tarea 4: Refactorizar `GridBurgerLayout` (botones h-12, responsividad, visor lightbox).
+- [ ] Tarea 5: Construir y verificar localmente la sintaxis.
+- [ ] Tarea 6: Desplegar a Vercel.

@@ -1,0 +1,178 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,55)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (302,60)<button aria-label='Buscar' class='mL3xi' />
+	[2] (302,57)<span > />
+[3] (341,59)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,57)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (468,59)<button class='e2moi' />
+		[7] (468,59)<div >
+Restaurantes cercanos />
+			[8] (468,59)<div  />
+			
+			Restaurantes cercanos
+	[9] (585,59)<button class='e2moi' />
+		[10] (585,59)<div >
+Hoteles />
+			[11] (585,59)<div  />
+			
+			Hoteles
+	[12] (686,59)<button class='e2moi' />
+		[13] (686,59)<div >
+Cosas que hacer />
+			[14] (686,59)<div  />
+			
+			Cosas que hacer
+	[15] (782,59)<button class='e2moi' />
+		[16] (782,59)<div >
+Bares />
+			[17] (782,59)<div  />
+			
+			Bares
+	
+	Cafés
+	
+	Para llevar
+	
+[18] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[19] (827,59)<span > />
+[20] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[21] (28,57)<div  />
+		[22] (28,57)<span > />
+[23] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[24] (28,146)<div  />
+		[25] (28,146)<span > />
+	[26] (28,190)<div  />
+		[27] (28,190)<div >Guardado />
+[28] (28,297)<button class='wR3cXd fontLabelMedium' />
+	[29] (28,272)<div  />
+		[30] (28,272)<span > />
+	[31] (28,329)<div  />
+		[32] (28,329)<div >Recientes />
+[33] (28,476)<button class='atHn2d wR3cXd aJPqP fontBodySmall QyI6Nb' />
+	[34] (28,463)<div  />
+		[35] (28,463)<div  />
+			[36] (28,463)<div  />
+	[37] (28,507)<div  />
+		[38] (28,509)<div >El Higo />
+[39] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[40] (28,892)<div  />
+		[41] (28,892)<span > />
+	[42] (28,943)<div  />
+		[43] (28,943)<div >Obtener app />
+[44] (216,500)<div class='e07Vkf kA9KIf dS8AEf' scrollable='true' />
+	Tapas y platos de la cocina española que incluyen opciones veganas en un pintoresco restaurante con mesas en el patio.
+	[45] (130,138)<div aria-label='Ofrece consumo en el lugar' class='LTs0Rc' role='group'>· />
+		·
+		[46] (79,138)<span > />
+		[47] (142,138)<div >Consumo en el lugar />
+	[48] (235,138)<div aria-label='Ofrece comida para llevar' class='LTs0Rc' role='group' />
+		[49] (198,138)<div class='EKGMvf' role='presentation'>· />
+		[50] (211,138)<span > />
+		[51] (248,138)<div >Para llevar />
+	[52] (126,170)<div aria-label='No ofrece servicio de entrega a domicilio' class='LTs0Rc' role='group'>· />
+		·
+		[53] (79,170)<span > />
+		[54] (138,170)<div >Entrega a domicilio />
+	
+	[55] (216,275)<button aria-label='Dirección: C. Horno del Hoyo, 17, Albaicín, 18010 Granada ' class='CsEnBe' />
+		[56] (216,275)<div  />
+			
+			[57] (234,275)<div  />
+				[58] (234,275)<div >C. Horno del Hoyo, 17, Albaicín, 18010 Granada />
+	[59] (348,275)<button aria-label='Copiar la dirección' class='S9kvJb ' />
+		[60] (347,275)<span  />
+			[61] (347,275)<span  />
+	[62] (216,350)<div class='OMl5r hH0dDd ' role='button' />
+		[63] (84,339)<span aria-label='Horario de atención' class='LT79uc google-symbols PHazN' role='img'> />
+		[64] (234,350)<div  />
+			[65] (234,335)<div  />
+				[66] (209,335)<span  />
+					[67] (209,335)<span  />
+						[68] (133,335)<span >Cerrado />
+						[69] (229,335)<span >· Abre a las 12:30 p.m. del mar />
+				[70] (325,335)<span aria-label='Mostrar el horario de atención durante la semana' class='puWIL hKrmvd google-symbols OazX1c' role='img'> />
+			[71] (234,367)<div >Actualizado por este negocio hace 1 semana />
+	[72] (216,434)<div class='MNVeJb eXOdV eF9eN PnPrlf' role='button'>€10-20
+por persona />
+		€10-20
+		por persona
+		Informado por 309 personas
+	[73] (216,506)<a aria-label='Sitio web: facebook.com ' class='CsEnBe' href='https://www.facebook.com/ElHigoGranada/' />
+		[74] (216,506)<div  />
+			
+			[75] (234,506)<div  />
+				[76] (234,506)<div >facebook.com />
+	[77] (325,506)<a aria-label='Abrir el sitio web' class='lcr4fd S9kvJb ' href='https://www.facebook.com/ElHigoGranada/' />
+		[78] (323,506)<span  />
+			[79] (323,506)<span  />
+	[80] (348,506)<button aria-label='Copiar el sitio web' class='S9kvJb ' />
+		[81] (347,506)<span  />
+			[82] (347,506)<span  />
+	[83] (216,570)<button aria-label='Teléfono: 858 98 41 02 ' class='CsEnBe' />
+		[84] (216,570)<div  />
+			
+			[85] (234,570)<div  />
+				[86] (234,570)<div >858 98 41 02 />
+	[87] (325,570)<button aria-label='Copiar el número de teléfono' class='S9kvJb ' />
+		[88] (323,570)<span  />
+			[89] (323,570)<span  />
+	[90] (348,570)<a aria-label='Llamar al número de teléfono' class='lcr4fd S9kvJb ' href='tel:858984102' />
+		[91] (347,570)<span  />
+			[92] (347,570)<span  />
+	[93] (216,633)<button aria-label='Plus Code: 5CM4+7W Granada' class='CsEnBe' />
+		[94] (216,633)<div  />
+			
+			[95] (234,633)<div  />
+				[96] (234,633)<div >5CM4+7W Granada />
+	[97] (325,633)<button aria-label='Agrega el Plus Code' class='S9kvJb ' />
+		[98] (323,633)<span  />
+			[99] (323,633)<span  />
+	[100] (348,633)<button aria-label='Obtén más información sobre los Plus Codes' class='S9kvJb ' />
+		[101] (347,633)<span  />
+			[102] (347,633)<span  />
+	[103] (216,722)<button aria-label='Sugerir una edición' class='S9kvJb ' />
+		[104] (216,722)<span  />
+			[105] (160,722)<span > />
+			[106] (224,722)<span >Sugerir una edición />
+	Actualizaciones de los clientes
+	[107] (216,952)<button class='wjCxie waIsr' />
+		[108] (148,952)<div  />
+			[109] (148,900)<div >bacalau gratinado />
+			[110] (148,932)<div >Hace un año />
+[111] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[112] (384,500)<span > />
+[113] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[114] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FEl%2BHigo%2F%4037.1831339%2C-3.5926795%2C17z%2Fdata%3D!3m1!4b1!4m6!3m5!1s0xd71fcc66cb5daeb%3A0xb4bb89f0659d068a!8m2!3d37.1831339!4d-3.5926795!16s%252Fg%252F11bwh5cmx7%3Fauthuser%3D0%26hl%3Des-419%26ved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[115] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[116] (973,799)<span > />
+[117] (973,871)<div  />
+	[118] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[119] (973,849)<div  />
+	[120] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[121] (973,893)<div  />
+	[122] (973,871)<div  />
+[123] (973,945)<div  />
+	[124] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[125] (973,945)<div  />
+[126] (917,906)<button aria-label='Street View' class='dQDAle' />
+	[127] (917,906)<div  />
+		[128] (917,906)<div  />
+			[129] (917,907)<div  />
+
+Capas
+[130] (421,906)<button class='yHc72 qk5Wte' />
+Datos del mapa © 2026 Google, Inst. Geogr. Nacional
+[131] (607,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[132] (653,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[133] (704,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[134] (799,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[135] (929,989)<button class='LNGekf' />
+	[136] (886,989)<label class='U5ELMd'>100 m />
+	[137] (941,989)<div  />
+
+</current_dom>

@@ -1,0 +1,65 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (909,85)<button class='absolute top-8 right-8 text-sm font-bold text-gray-500 hover:text-red-500 transition-colors z-50 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200'>Cerrar Sesión Segura />
+[1] (125,459)<div class='p-6 flex flex-col gap-8 flex-1 overflow-y-auto' scrollable='true' />
+	A
+	Architect.Sys
+	SALA DE CONTROL
+	Cliente Seleccionado
+	[2] (119,270)<select class='w-full bg-black border border-zinc-800 rounded-xl text-xs font-bold text-white px-3 py-2.5 focus:outline-none focus:border-orange-600 appearance-none' />
+	Cocina:
+	Marisco de Autor y Alta Cocina
+	Target:
+	Gourmet
+	Vaults de Control
+	[3] (119,547)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-between text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30' />
+		[4] (85,547)<span >Matriz de Despliegue />
+			[5] (35,547)<span >🎯 />
+	[6] (119,614)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Motor Generativo B2B />
+		[7] (34,614)<span >⚡ />
+	[8] (119,681)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Especialidades de la Carta />
+		[9] (35,681)<span >🍽️ />
+	[10] (119,748)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Creador de Estrategias />
+		[11] (35,748)<span >🗺️ />
+	[12] (119,816)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 bg-zinc-900 text-white border border-zinc-800'>Agente de Ejecución (Chat) />
+		[13] (35,816)<span >🤖 />
+	[14] (119,884)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Dossier de Protocolos />
+		[15] (34,884)<span >📚 />
+MODO AGENCIA v2.0
+Vault Activo
+🤖 Coordinador IA de Ejecución
+Trabajando con:
+L'Atelier de L'Océan
+Ver Cartas Demo
+A
+Arqui (AI Marketing Co-Pilot)
+En línea - Contexto:
+L'Atelier de L'Océan
+[16] (625,571)<div class='flex-1 overflow-y-auto p-6 space-y-4' scrollable='true' />
+	, el lujo no es un detalle; es nuestro estándar. Ven a vivir el ritual de la alta cocina, donde cada segundo está diseñado para celebrar tus logros. Te lo mereces.
+	Llamado a la Acción (CTA):
+	Haz de esta noche una celebración de tu éxito. Reserva tu mesa exclusiva en el link de la bio. 🎟️
+	Ángulo de Neuromarketing:
+	Neuromarketing del ritual y la auto-recompensa. Conecta la visita al restaurante con un premio al esfuerzo y estatus del cliente, reduciendo la "fricción del precio" al transformarlo en una inversión de bienestar.
+	📋 LISTA DE TAREAS PARA LA EJECUCIÓN (Tu Plan de Acción Rápido):
+	[ ]
+	Paso 1: Control de Paleta de Color.
+	Para mantener el posicionamiento Gourmet, asegúrate de que el feed de Instagram de
+	L'Atelier de L'Océan
+	mantenga tonos oscuros (negros, grises, dorados) y azules profundos. Esto comunica lujo y frescura marina de forma subconsciente.
+	[ ]
+	Paso 2: Campaña de Retargeting.
+	Utiliza la
+	Opción 3
+	(Ritual de Estatus) específicamente para campañas de retargeting dirigidas a personas que ya visitaron la web de reservas pero no completaron el proceso. Háblales directamente de "auto-recompensa".
+	[ ]
+	Paso 3: Automatización de Respuestas.
+	Configura tu herramienta de automatización (como ManyChat) para que cuando alguien comente "ARTE" o "RITUAL" en estas publicaciones, reciban un mensaje privado personalizado:
+	"Un asesor de L'Atelier de L'Océan está listo para gestionar su reserva VIP. ¿Qué fecha prefiere?"
+	¿Cómo lo ves, consultor? ¿Lanzamos este tercer bloque para reventar las reservas de la semana, o quieres que elaboremos una estrategia de copywriting para el menú de maridaje con vinos de alta gama? ¡Estoy listo para ejecutar!
+[17] (587,876)<input class='flex-1 bg-black border border-zinc-900 rounded-xl px-4 text-xs text-white focus:outline-none focus:border-orange-600' placeholder='Pregúntale a Arqui sobre la campaña de L'Atelier de L'Océan...' />
+Enviar
+
+</current_dom>

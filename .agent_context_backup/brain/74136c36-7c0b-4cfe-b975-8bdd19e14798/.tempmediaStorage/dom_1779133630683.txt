@@ -1,0 +1,137 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (431,59)<button class='e2moi' />
+		[7] (431,59)<div  />
+			[8] (405,59)<span > />
+			[9] (431,59)<span >Precio />
+			[10] (457,59)<span > />
+	[11] (531,59)<button class='e2moi' />
+		[12] (531,59)<div  />
+			[13] (488,59)<span > />
+			[14] (532,59)<span >Clasificación />
+			[15] (574,59)<span > />
+	[16] (632,59)<button class='e2moi' />
+		[17] (632,59)<div  />
+			[18] (605,59)<span > />
+			[19] (633,59)<span >Cocina />
+			[20] (661,59)<span > />
+	[21] (716,59)<button class='e2moi' />
+		[22] (716,59)<div  />
+			[23] (691,59)<span > />
+			[24] (717,59)<span >Horas />
+			[25] (741,59)<span > />
+	[26] (772,59)<span > />
+	Todos los filtros
+[27] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[28] (827,59)<span > />
+[29] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[30] (28,57)<div  />
+		[31] (28,57)<span > />
+[32] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[33] (28,146)<div  />
+		[34] (28,146)<span > />
+	[35] (28,190)<div  />
+		[36] (28,190)<div >Guardado />
+
+Recientes
+[37] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[38] (28,892)<div  />
+		[39] (28,892)<span > />
+	[40] (28,943)<div  />
+		[41] (28,943)<div >Obtener app />
+[42] (216,528)<div aria-label='Resultados de restaurantes Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd QjC7t' role='feed' scrollable='true' />
+	"La comida espectacular, al igual que la presentación de los platos."
+	
+	Reservar mesa
+	[43] (213,258)<a aria-label='El Higo' class='hfpxzc' href='https://www.google.com/maps/place/El+Higo/data=!4m7!3m6!1s0xd71fcc66cb5daeb:0xb4bb89f0659d068a!8m2!3d37.1831339!4d-3.5926795!16s%2Fg%2F11bwh5cmx7!19sChIJ69q1bMb8cQ0RigadZfCJu7Q?authuser=0&hl=es-419&rclk=1' />
+	El Higo
+	4.4
+	(1,591)
+	·
+	€10-20
+	Parrilla
+	·
+	
+	·
+	C. Horno del Hoyo, 17
+	Acogedor restaurante español con patio
+	Cerrado
+	· Abre a las 12:30 p.m. del mar
+	"Comida exquisita, servicio inmejorable y buen ambiente."
+	[44] (213,577)<a aria-label='RESTAURANTE NEO SIRIAN FOOD' class='hfpxzc' href='https://www.google.com/maps/place/RESTAURANTE+NEO+SIRIAN+FOOD/data=!4m7!3m6!1s0xd71fdb799b9d153:0xd69c83a6d360526f!8m2!3d37.1786107!4d-3.5982069!16s%2Fg%2F11tmfg27h7!19sChIJU9G5mbf9cQ0Rb1Jg06aDnNY?authuser=0&hl=es-419&rclk=1' />
+	RESTAURANTE NEO SIRIAN FOOD
+	4.9
+	(305)
+	·
+	€1-10
+	Comida rápida
+	·
+	
+	·
+	C. Elvira, 53
+	Abierto
+	· Cierra a las 5 a.m. del mar
+	"Comida de 10 y trato de 10, 100% recomendable, lo mejor de calle Elvira"
+	[45] (213,688)<div  />
+		[46] (213,688)<div  />
+			[47] (213,688)<div  />
+				[48] (213,688)<a class='A1zNzb' href='https://www.google.com/searchviewer/42?cvd=CLw_EicKJeICIjIgEhkiF9LX29IPEQoNL2cvMTF0bWZnMjdoNxgAOgMI8A0%3D&hl=es-419&gl=es&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=o2wLasT9DuaokdUPmeWOyAI&ei=o2wLasT9DuaokdUPmeWOyAI&fo_s=OA,SOE&opi=79508299&ebb=1&cs=0&foub=mcpp' />
+					[49] (213,688)<div >Pedir en línea />
+						[50] (176,688)<span > />
+	[51] (213,937)<a aria-label='Mercato Italiano Restaurante Pizzeria' class='hfpxzc' href='https://www.google.com/maps/place/Mercato+Italiano+Restaurante+Pizzeria/data=!4m7!3m6!1s0xd71fd39e1fc1d81:0xedcfa1adbec801c6!8m2!3d37.1777342!4d-3.5991691!16s%2Fg%2F11sg85h7wm!19sChIJgR384Tn9cQ0RxgHIvq2hz-0?authuser=0&hl=es-419&rclk=1' />
+	Mercato Italiano Restaurante Pizzeria
+	4.8
+	(910)
+	·
+	€10-20
+	Italiana
+	·
+	
+	·
+	Pl. de San Agustín, 2
+	Abierto
+	· Cierra a las 12 a.m.
+	"Pizza, pasta, carpaccio y la atención del camaleón Mario fue exquisita."
+[52] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[53] (80,972)<div  />
+		[54] (80,972)<span > />
+[55] (216,886)<button class='e2moi' />
+	[56] (216,886)<div >
+Volver al principio />
+		[57] (216,886)<div  />
+		
+		Volver al principio
+[58] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[59] (384,500)<span > />
+[60] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[61] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2Frestaurantes%2BGranada%2F%4037.1773327%2C-3.5985571%2C14z%2Fdata%3D!4m2!2m1!6e5%3Fved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[62] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[63] (973,799)<span > />
+[64] (973,871)<div  />
+	[65] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[66] (973,849)<div  />
+	[67] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[68] (973,893)<div  />
+	[69] (973,871)<div  />
+[70] (973,945)<div  />
+	[71] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[72] (973,945)<div  />
+Datos del mapa © 2026 Inst. Geogr. Nacional, Google
+[73] (637,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[74] (683,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[75] (735,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[76] (829,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[77] (945,989)<button class='LNGekf' />
+	[78] (917,989)<label class='U5ELMd'>500 m />
+	[79] (956,989)<div  />
+
+</current_dom>

@@ -1,0 +1,43 @@
+# Plan: Pipeline de Captación de Leads
+
+## Análisis de Opciones
+
+Has propuesto tres caminos muy válidos. Aquí tienes mi visión técnica como Consultor:
+
+1.  **Kommo CRM (La Más Profesional):** Es el estándar B2B. El problema es que requiere generar tokens de API, mapear campos (ID del pipeline, ID del estado) y puede alargar el desarrollo hoy. Es ideal para una fase 2.
+2.  **Firebase + WhatsApp (La Más Compleja):** Requiere crear un proyecto en Firebase, configurar reglas de seguridad, inyectar el SDK y luego montar un "trigger" para conectarlo con la API de WhatsApp. Demasiada infraestructura para validar si la landing convierte.
+3.  **Correo Electrónico (La Recomendada Hoy):** Es la **solución perfecta, rápida y directa**. Si un lead deja sus datos, en menos de 2 segundos tienes un correo estructurado en `dkitchencorporate@gmail.com`.
+
+---
+
+## Plan de Implementación (Opción Correo Electrónico)
+
+Voy a construir un "puente" interno en tu servidor (Next.js) para que se encargue de enviar el correo de forma invisible y segura.
+
+### Paso 1: Instalación del Motor de Correo
+Instalaremos la librería estándar de la industria para Node.js: `nodemailer`.
+
+### Paso 2: Creación del Endpoint (API Route)
+Crearé una ruta oculta en el backend (`/api/lead/route.ts`). Su única función será:
+1.  Recibir los datos del formulario (Nombre, Email, WhatsApp).
+2.  Ensamblar un correo electrónico con un diseño HTML limpio (tipo "¡NUEVO LEAD DE HOSTELERÍA!").
+3.  Enviarlo directamente a tu bandeja de `dkitchencorporate@gmail.com`.
+
+### Paso 3: Conexión del Popup
+Modificaré el archivo `ExitIntent.tsx` para que, cuando el usuario le dé a "Confirmar Solicitud", los datos viajen silenciosamente a esta nueva API antes de mostrar el mensaje de éxito.
+
+---
+
+## Solicitud de Aprobación y Requisito Previo
+
+> [!IMPORTANT]
+> **Lo que necesito de ti para que esto funcione hoy mismo:**
+> Para que nuestro servidor pueda enviar correos usando una cuenta de Gmail sin ser bloqueado por Google, Google exige una **"Contraseña de Aplicación"**. 
+> 
+> Es muy fácil de obtener:
+> 1. Ve a tu cuenta de Google (`dkitchencorporate@gmail.com`).
+> 2. Entra en "Seguridad" -> Activa la "Verificación en 2 pasos" (si no la tienes).
+> 3. En el buscador de ajustes de Google, busca "Contraseñas de Aplicación".
+> 4. Crea una llamada "Landing Web" y te dará una clave de 16 letras (ej: `abcd efgh ijkl mnop`).
+> 
+> ¿Me das luz verde para montar la infraestructura de código mientras tú generas esa clave? Cuando la tengas, me la pasas y la inyectamos en el código de forma segura.

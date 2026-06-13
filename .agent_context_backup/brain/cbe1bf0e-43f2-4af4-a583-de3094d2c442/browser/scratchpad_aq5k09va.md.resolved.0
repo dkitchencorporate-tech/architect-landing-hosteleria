@@ -1,0 +1,7 @@
+# Task: Analyze '[Analytics Pixel]' logs on http://localhost:3002/
+
+## Steps:
+- [ ] Open http://localhost:3002/ in the browser
+- [ ] Retrieve and analyze the console logs
+- [ ] Document findings and any '[Analytics Pixel]' log messages
+- [ ] Report findings to the user

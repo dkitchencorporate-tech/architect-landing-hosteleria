@@ -1,0 +1,14 @@
+# Tareas: Hub Multitemático y Optimización
+
+- `[ ]` 1. Bases de Datos (`demo-data.ts`)
+  - Crear `DEMO_MENU_SUSHI`, `DEMO_MENU_TAPAS`, `DEMO_MENU_BURGER`.
+  - Inyectar parámetros de compresión extrema en Unsplash (`w=400&q=50&fm=webp`).
+- `[ ]` 2. Backend IA Dinámico (`route.ts`)
+  - Recibir parámetro `template` y cambiar la personalidad (Sumiller, Camarero Rústico, Cajero Urbano).
+- `[ ]` 3. Motor de Interfaz Multitema (`page.tsx`)
+  - Lógica de estado `activeTemplate`.
+  - Switcher de variables CSS/Tailwind según el tema seleccionado.
+  - Crear "Dock Flotante" central con botones "Ver otro diseño" y "Quiero mi carta".
+  - Crear Modal de Selección de Diseño.
+- `[ ]` 4. Reinicio y Pruebas
+  - Verificar Next.js y relanzar túnel.

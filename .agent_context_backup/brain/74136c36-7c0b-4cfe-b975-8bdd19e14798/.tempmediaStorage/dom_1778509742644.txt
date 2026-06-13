@@ -1,0 +1,100 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	0
+	/10
+	EVALUATED
+	elnacionalbcn.com/
+	Sin teléfono
+	Sin email
+	Ver Prospecto Completo
+	5
+	/10
+	EVALUATED
+	laselvabarcelona.es/
+	Sin teléfono
+	hola@laselvabarcelona.es
+	Menú digital estático (no PDF, pero falta de interactividad/optimización)
+	Ver Prospecto Completo
+	10
+	/10
+	DRAFT_READY
+	Auditado
+	lalolitarestaurante.com/
+	Sin teléfono
+	hola@lalolitarestaurante.com
+	Síndrome del PDF
+	Obsolescencia Digital
+	+
+	1
+	señales más
+	Ver Prospecto Completo
+	EMUNÁ Asador Argentino
+	10
+	/10
+	DRAFT_READY
+	Sin web detectada
+	Sin teléfono
+	Sin email
+	Ausencia total de presencia web
+	Dependencia extrema de plataformas de terceros para visibilidad y pedidos
+	+
+	1
+	señales más
+	Ver Prospecto Completo
+	La Criolla Asador Madrid
+	9
+	/10
+	DRAFT_READY
+	thefork.es/restaurante/la-criolla-asador-argentino-r849220
+	Sin teléfono
+	Sin email
+	Síndrome del PDF
+	Obsolescencia Digital
+	+
+	1
+	señales más
+	Ver Prospecto Completo
+	Restaurante Asador Casa Juan
+	9
+	/10
+	DRAFT_READY
+	casajuanrestaurante.es/
+	Sin teléfono
+	reservas@casajuanrestaurante.es
+	Obsolescencia Digital (web antigua)
+	Menú en imágenes estáticas (equivalente al PDF)
+	+
+	1
+	señales más
+	Ver Prospecto Completo
+	[1] (76,47)<button class='flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors'>Volver a prospectos />
+	[2] (875,47)<button class='flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-sm bg-violet-600 text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 disabled:opacity-40 disabled:cursor-not-allowed'>Auditoría Profunda />
+	La Criolla Asador Madrid
+	Score
+	9
+	/10
+	DRAFT_READY
+	[3] (391,210)<a class='flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400 hover:underline' href='https://www.thefork.es/restaurante/la-criolla-asador-argentino-r849220'>thefork.es/restaurante/la-criolla-asador-argentino-r849220 />
+	[4] (150,283)<button class='flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 shadow-sm'>Inteligencia />
+	[5] (269,283)<button class='flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800'>Estrategia AI
+PRE />
+		PRE
+	[6] (393,283)<button class='flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800'>Operaciones />
+	[7] (500,672)<div class='flex-1 overflow-y-auto' scrollable='true' />
+		Datos de Contacto
+		[8] (307,509)<a class='text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 truncate' href='https://www.thefork.es/restaurante/la-criolla-asador-argentino-r849220'>https://www.thefork.es/restaurante/la-criolla-asador-argentino-r849220 />
+		Sin teléfono
+		Sin email
+		Señales de Dolor Técnicas
+		▸
+		Síndrome del PDF
+		▸
+		Obsolescencia Digital
+		▸
+		Desconexión Tecnológica
+		La Criolla Asador Madrid demuestra una dependencia total de TheFork para su presencia online, reservas y la gestión de su carta. Esto implica una fuerte desconexión tecnológica al no poseer una web propia ni un canal digital directo. La ausencia de un escaparate digital propio se traduce en obsolescencia digital y, por extensión, un posible 'Síndrome del PDF' o una gestión de menú limitada y sin control total sobre la experiencia del cliente y los datos.
+
+</current_dom>

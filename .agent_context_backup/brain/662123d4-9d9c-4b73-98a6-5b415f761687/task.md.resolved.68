@@ -1,0 +1,11 @@
+# Tracker: Refactorización UI Menú Tapas
+
+## 1. Mejoras de Responsividad (Tarjetas de Producto)
+- `[/]` Cambiar layout flex horizontal estático a `flex-col sm:flex-row` para evitar solapamientos en móviles.
+- `[ ]` Ampliar imagen en móviles a 100% width (`w-full aspect-[4/3]`) y en tablet mantener `w-32 aspect-square`.
+- `[ ]` Aumentar altura de botones de acción a `h-12` para mejor experiencia táctil (Pulgares grandes).
+- `[ ]` Mejorar estética del precio (Badge naranja).
+- `[ ]` Mejorar botón "Ver" sobre la imagen (añadir icono de lupa y centrado perfecto).
+
+## 2. Bloqueo de Cambios Innecesarios
+- `[x]` Confirmado: No tocar `EditorialSushiLayout` bajo ninguna circunstancia.

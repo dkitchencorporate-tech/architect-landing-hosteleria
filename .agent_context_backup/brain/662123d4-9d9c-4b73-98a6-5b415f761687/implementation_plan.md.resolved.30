@@ -1,0 +1,30 @@
+# Plan de Identidad Visual y Ajuste de Comunicación
+
+## Análisis del Problema
+1. **Comunicación de Arqui:** Mencionarle a un hostelero términos como "High-Ticket" o "Analista de Ventas" puede generar rechazo o incomprensión. Debemos enfocar a Arqui como un experto en resolver *sus* problemas reales: camareros saturados, cartas PDF lentas y pedidos erróneos.
+2. **Avatar de Arqui:** El ícono actual del bot es muy genérico y frío. Se requiere un avatar de un "camarero humanoide", empático, moderno y que conecte psicológicamente.
+3. **Bio del Fundador (Foto):** La "A" actual se ve plana y poco profesional. Necesitamos generar una imagen premium, potente, que proyecte autoridad (un retrato corporativo/tecnológico de alto nivel o un emblema hiperrealista).
+
+## Proposed Changes
+
+### [MODIFY] Generación de Imágenes (IA)
+Usaremos la herramienta generadora de imágenes para crear dos assets clave:
+1. **Avatar Arqui (`arqui_humanoid_waiter.png`):** Un diseño de un camarero humanoide con estética premium, colores corporativos (naranja/negro), con un rostro amigable y profesional que transmita confianza y eficiencia.
+2. **Foto Fundador (`founder_premium_profile.png`):** Un retrato cinemático o un emblema de altísima calidad que sustituya la actual "A" plana por algo que irradie estatus y neuroautoridad.
+
+### [MODIFY] [MeetArquiSection.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/MeetArquiSection.tsx)
+- **Cambio de Copy:** Eliminar referencias a "Cerrador" o "High-Ticket".
+- **Nuevo Enfoque:** "Conoce a nuestro Especialista en Operaciones HORECA." 
+- **Nuevo Texto:** "Esa burbuja flotante no es un bot básico. Es Arqui, nuestra IA entrenada para entender el caos de la hostelería. Cuéntale qué te roba tiempo: ¿Camareros saturados los fines de semana? ¿Una carta en PDF que nadie lee? ¿Pagando un 30% a apps de delivery? Arqui diagnosticará tu caso y preparará un informe para nuestra reunión."
+- **Imagen:** Reemplazar el SVG del bot por la nueva imagen generada.
+
+### [MODIFY] [ChatDemoWidget.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ChatDemoWidget.tsx)
+- Reemplazar el ícono del bot flotante por la nueva imagen en miniatura de Arqui (camarero humanoide).
+
+### [MODIFY] [FounderBio.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/FounderBio.tsx)
+- Reemplazar el contenedor negro con la "A" por la nueva imagen generada de alta calidad.
+
+## Verification Plan
+1. Generar los bocetos con IA y guardarlos en `public/images/`.
+2. Actualizar los componentes para usar las nuevas imágenes.
+3. Desplegar a Vercel y verificar visualmente en la URL de producción que el diseño sea cohesivo y premium.

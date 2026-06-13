@@ -1,0 +1,15 @@
+# Verification of Phase 1: LeadDetail Redesign
+
+## Plan
+- [ ] Navigate to http://localhost:3000
+- [ ] Take screenshot of the main dashboard
+- [ ] Click the first lead in the list
+- [ ] Verify LeadDetail appearance (Tabs, "Auditoría Profunda" button)
+- [ ] Capture screenshots of each tab:
+    - [ ] Tab 1: Inteligencia (Overview)
+    - [ ] Tab 2: Estrategia AI
+    - [ ] Tab 3: Operaciones
+- [ ] Summarize findings
+
+## Progress
+- Initialized plan.

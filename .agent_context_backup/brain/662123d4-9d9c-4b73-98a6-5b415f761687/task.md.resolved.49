@@ -1,0 +1,24 @@
+# Task Tracker: Migración SaaS Backend (Supabase Auth)
+
+## Fase 1: Instalación y Configuración Base
+- `[/]` Instalar dependencias `@supabase/ssr` y actualizar `@supabase/supabase-js`.
+- `[ ]` Refactorizar clientes de Supabase para soportar cookies (SSR, Middleware y CSR).
+- `[ ]` Generar script SQL para la base de datos (Tablas: profiles, projects, client_events).
+
+## Fase 2: Autenticación y Rutas (Auth)
+- `[ ]` Crear la página de Login (`/auth/login`).
+- `[ ]` Crear la página de Registro (`/auth/register`).
+- `[ ]` Actualizar `middleware.ts` para usar Supabase Auth en lugar de HTTP Basic Auth.
+
+## Fase 3: Refactorización Dashboard Cliente
+- `[ ]` Conectar `OnboardingWizard.tsx` a Supabase (Guardar respuestas).
+- `[ ]` Conectar `EventsLibrary.tsx` a Supabase (Leer plan real, guardar selección de evento).
+- `[ ]` Implementar la lógica del **Modo Demo**: si el email es `alex@architectsys.com`, inyectar datos falsos en lugar de consultar la BBDD.
+
+## Fase 4: Refactorización Admin Control Center
+- `[ ]` `/admin-architect`: Leer todos los clientes (`role='client'`).
+- `[ ]` Mostrar lista de clientes, estado de Onboarding y Eventos activos.
+
+## Fase 5: Despliegue
+- `[ ]` Verificar todo localmente.
+- `[ ]` `vercel --prod`.

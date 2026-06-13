@@ -1,0 +1,41 @@
+Agente IA
+Conectado a Gemini 1.5
+Analiza este prospecto en detalle:
+- Nombre: EMUNÁ Asador Argentino
+- Score: 0/10
+- Señales de Dolor: Ninguno específico
+- Web: No disponible
+
+¿Qué estrategia de aproximación me recomiendas?
+❌ Hubo un error de conexión con mi cerebro (Gemini). Inténtalo más tarde.
+[0] (125,939)<input class='w-full bg-transparent pl-2 pr-10 py-1.5 text-sm text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none' placeholder='Pregunta a la IA...' />
+[1] (625,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	Consultor AI CRM
+	Centro de Comando de Prospección Avanzada
+	[2] (944,97)<button aria-label='Toggle Dark Mode' class='p-2 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors shadow-sm' />
+	[3] (533,281)<input class='w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 shadow-inner rounded-lg p-3 text-lg text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100' placeholder='Buscar leads en una zona (ej: Madrid Centro)...' />
+	Prospectar
+	[4] (854,281)<button class='bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-400 dark:hover:bg-red-900/50 shadow-sm font-medium px-4 py-3 rounded-lg transition-all flex items-center justify-center ml-2 hover:scale-105' title='Vaciar Base de Datos' />
+	Base de Prospectos
+	3
+	leads
+	0
+	EMUNÁ Asador Argentino
+	hace 10 minutos
+	[5] (537,641)<button class='transition-colors p-1 flex items-center gap-1 rounded-md text-xs font-medium text-zinc-400 hover:text-red-500' title='Eliminar Lead' />
+	Sin teléfono
+	Sin web
+	Sin email extraído
+	Estado
+	EVALUATED
+	Analizar en Chat
+	0
+	La Criolla Asador Madrid
+	hace 10 minutos
+	[6] (884,641)<button class='transition-colors p-1 flex items-center gap-1 rounded-md text-xs font-medium text-zinc-400 hover:text-red-500' title='Eliminar Lead' />
+	Sin teléfono
+	Sin web
+	Sin email extraído
+	Estado
+	EVALUATED
+	[7] (887,977)<button class='flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors bg-zinc-50 dark:bg-zinc-800/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 px-2.5 py-1.5 rounded-lg border border-zinc-200 dark:border-zinc-700'>Analizar en Chat />

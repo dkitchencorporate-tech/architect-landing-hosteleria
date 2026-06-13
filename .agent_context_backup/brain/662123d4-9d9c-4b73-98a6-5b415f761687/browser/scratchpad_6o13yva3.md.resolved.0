@@ -1,0 +1,12 @@
+# Task: Verify Billing Error on Creative Factory
+
+## Plan
+- [ ] Log in (if not already logged in, currently looks logged in)
+- [ ] Select Dolor: 'Márgenes comidos por Delivery'
+- [ ] Select Ángulo: 'El Sangrado Financiero'
+- [ ] Click 'Fabricar Campaña'
+- [ ] Wait for texts to generate
+- [ ] Click orange button 'Generar Imagen con IA'
+- [ ] Wait 3-4 seconds for billing error
+- [ ] Capture screenshot of the error
+- [ ] Report finding

@@ -1,0 +1,15 @@
+# Task Tracker: Rediseño Premium de Autenticación
+
+## Fase 1: Rutas de Servidor
+- `[x]` Crear `src/app/auth/callback/route.ts` para manejar el código de sesión de OAuth.
+
+## Fase 2: Interfaz Visual (Login)
+- `[x]` Implementar diseño de tarjeta flotante (Glassmorphism) en `/auth/login`.
+- `[x]` Añadir botón interactivo de "Continuar con Google".
+- `[x]` Rediseñar campos de texto con iconos SVG integrados.
+- `[x]` Añadir micro-animaciones CSS y manejo avanzado de errores.
+
+## Fase 3: Interfaz Visual (Registro)
+- `[x]` Implementar simetría visual en `/auth/register`.
+- `[x]` Añadir botón de Google.
+- `[x]` Desplegar cambios en Vercel.

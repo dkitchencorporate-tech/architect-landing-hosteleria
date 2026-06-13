@@ -1,0 +1,6 @@
+- [x] Conectar `ConsultingModal.tsx` con la ruta `/api/lead` (Supabase).
+- [x] Inyectar copia "Llave en Mano" y justificación del mantenimiento en `TheTrojanHorse.tsx`.
+- [ ] Eliminar Google Calendar del modal.
+- [ ] Integrar el iframe de Calendly (`https://calendly.com/dkitchencorporate/30min`) con variables por URL (`name`, `email`).
+- [ ] Implementar un listener para el evento `calendly.event_scheduled` que transicione automáticamente a la Fase 4.
+- [ ] Diseñar y crear la Fase 4 (Pantalla de Éxito Premium) para cerrar el ciclo psicológico.

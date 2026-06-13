@@ -1,0 +1,19 @@
+# Resumen de Ejecución: Fase 2 (Conversión Agresiva)
+
+Hemos completado la transformación de la Landing Page hacia un modelo de alta conversión y hemos sentado las bases técnicas para el rastreo de Inteligencia Artificial (SEO).
+
+## 1. El Nuevo Embudo Visual (Frontend)
+- **`AggressiveHero.tsx`**: Hemos creado una cabecera totalmente nueva. Un diseño oscuro, VSL-style, con un mensaje directo a la yugular financiera ("Deja de perder el 30%..."). Elimina las distracciones y ofrece dos caminos: Comprar o Auditoría.
+- **`WhatsAppHero.tsx`**: El antiguo hero con el móvil simulado no se ha perdido. Lo hemos extraído y movido estratégicamente hacia abajo, actuando como la introducción perfecta para el sistema de Recepcionista de 650€.
+- **`TheTrojanHorse.tsx`**: La oferta Base de 39€ ahora muestra claramente la alternativa de **Pago Único (350€)** para los clientes que odian las suscripciones. Además, los extras físicos (QRs, Dominios, Diseño a medida) se han paquetizado como **Upsells** claros, eliminando el tono negativo ("no incluye") y cambiándolo por una oportunidad de venta cruzada ("Añadir por +X€").
+
+## 2. Inyección SEO (Deep Indexing)
+La web ya no es invisible para los robots. He configurado Next.js para ser un imán de indexación:
+- **`sitemap.ts`**: Genera un mapa dinámico para Google.
+- **`robots.ts`**: Autoriza explícitamente a GPTBot, GoogleBot y otras arañas a leer el contenido.
+- **`layout.tsx` (Metadatos)**: Se han inyectado `keywords` (como "agencia marketing hosteleria", "automatizacion restaurantes") y metaetiquetas OpenGraph para que cuando compartas el enlace por WhatsApp o LinkedIn, genere una tarjeta visual perfecta (Twitter Cards incluidas).
+
+## Siguientes Pasos
+Ve a tu navegador en `localhost:3000` y experimenta el nuevo flujo de arriba abajo. Comprueba cómo el nuevo Hero retiene la atención y cómo la bajada por el embudo tiene un orden lógico de precios (39€ -> 69€ -> 650€).
+
+Si la estructura visual y de precios queda aprobada y cerrada al 100%, **el siguiente paso técnico crítico será reparar la API del Chatbot** (`route.ts`) para que el Widget de Captación de Leads funcione de verdad sin romperse al procesar el JSON.

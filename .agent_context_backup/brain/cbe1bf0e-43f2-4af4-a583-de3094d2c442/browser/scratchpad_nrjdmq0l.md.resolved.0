@@ -1,0 +1,7 @@
+# Task Checklist: Verify Dashboard Functionality
+- [ ] Refresh the admin dashboard page (`http://localhost:3002/admin-architect`)
+- [ ] Check if the Next.js `Cannot read properties of null (reading 'auth')` error is resolved
+- [ ] Scroll through the dashboard interface
+- [ ] Verify that `LiveMonitor` component loads successfully
+- [ ] Verify that `TrafficMonitor` component loads successfully
+- [ ] Report details of the dashboard content

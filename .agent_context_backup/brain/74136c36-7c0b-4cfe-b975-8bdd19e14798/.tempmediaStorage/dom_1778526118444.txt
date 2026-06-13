@@ -1,0 +1,239 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (431,59)<button class='e2moi' />
+		[7] (431,59)<div  />
+			[8] (405,59)<span > />
+			[9] (431,59)<span >Precio />
+			[10] (457,59)<span > />
+	[11] (531,59)<button class='e2moi' />
+		[12] (531,59)<div  />
+			[13] (488,59)<span > />
+			[14] (532,59)<span >Clasificación />
+			[15] (574,59)<span > />
+	[16] (632,59)<button class='e2moi' />
+		[17] (632,59)<div  />
+			[18] (605,59)<span > />
+			[19] (633,59)<span >Cocina />
+			[20] (661,59)<span > />
+	[21] (716,59)<button class='e2moi' />
+		[22] (716,59)<div  />
+			[23] (691,59)<span > />
+			[24] (717,59)<span >Horas />
+			[25] (741,59)<span > />
+	[26] (772,59)<span > />
+	Todos los filtros
+[27] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[28] (827,59)<span > />
+[29] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[30] (28,57)<div  />
+		[31] (28,57)<span > />
+[32] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[33] (28,146)<div  />
+		[34] (28,146)<span > />
+	[35] (28,190)<div  />
+		[36] (28,190)<div >Guardado />
+[37] (28,297)<button class='wR3cXd fontLabelMedium' />
+	[38] (28,272)<div  />
+		[39] (28,272)<span > />
+	[40] (28,329)<div  />
+		[41] (28,329)<div >Recientes />
+[42] (28,476)<button class='xkqFBc  wR3cXd aJPqP fontBodySmall flwnib' />
+	[43] (28,463)<div  />
+		[44] (25,466)<div >2 />
+	[45] (28,508)<div  />
+		[46] (28,511)<div >Granada />
+[47] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[48] (28,892)<div  />
+		[49] (28,892)<span > />
+	[50] (28,943)<div  />
+		[51] (28,943)<div >Obtener app />
+[52] (216,528)<div aria-label='Resultados de asador Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd' role='feed' scrollable='true' />
+	Resultados
+	[53] (162,149)<button aria-label='Más información sobre la divulgación legal de las opiniones públicas en Google Maps' class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-icon-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe LQeN7 s73B3c MyHLpd wphPJc Q8G3mf' />
+		
+	[54] (317,152)<button aria-label='Compartir' class='M77dve ' />
+		[55] (317,152)<div  />
+			[56] (288,152)<span > />
+			[57] (324,152)<span >Compartir />
+	[58] (213,375)<a aria-label='Negro Carbón Albayzin' class='hfpxzc' href='https://www.google.com/maps/place/Negro+Carb%C3%B3n+Albayzin/data=!4m7!3m6!1s0xd71fcb863e6f34b:0xfd1040ba94430663!8m2!3d37.1777162!4d-3.5936084!16s%2Fg%2F11c75xf8gl!19sChIJS_PmY7j8cQ0RYwZDlLpAEP0?authuser=0&hl=es-419&rclk=1' />
+	Negro Carbón Albayzin
+	4.4
+	(1,746)
+	·
+	€30-80
+	Restaurante
+	·
+	
+	·
+	C. de Puente Cabrera, 9
+	Abierto
+	· Cierra a las 11 p.m.
+	"Especial mención su Carne a la brasa, recomiendo el aguacate con ceviche."
+	[59] (213,497)<div  />
+		[60] (213,497)<div  />
+			[61] (213,497)<div  />
+				[62] (213,497)<a class='A1zNzb' href='https://www.google.com/maps/reserve/v/dine/c/v7gmX3YOLe8?source=pa&opi=79508299&hl=es-419&gei=gScCapLiB4PhkdUPjtS0oA8&sourceurl=https://www.google.com/search?tbm%3Dmap%26authuser%3D0%26hl%3Des-419%26gl%3Des%26q%3Dasador%2BGranada%26pb%3D!1sasador%2BGranada!4m8!1m3!1d25431.708701495056!2d-3.5985571!3d37.1773363!3m2!1i1024!2i768!4f13.1!7i20!10b1!12m53!1m5!18b1!30b1!31m1!1b1!34e1!2m4!5m1!6e2!20e3!39b1!6m26!49b1!63m0!66b1!74i150000!85b1!91b1!114b1!149b1!206b1!209b1!212b1!216b1!222b1!223b1!232b1!234b1!235b1!239b1!244b1!246b1!250b1!253b1!260b1!266b1!272b1!273b1!10b1!12b1!13b1!14b1!16b1!17m1!3e1!20m3!5e2!6b1!14b1!46m1!1b0!96b1!99b1!19m4!2m3!1i360!2i120!4i8!20m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!22m5!1sgCcCaoy3O6eikdUPlstP!7e81!14m1!3sgCcCaoy3O6eikdUPlstP!15i9937!24m107!1m25!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m14!3b1!4b1!5b1!6b1!13b1!14b1!17b1!21b1!22b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!26m4!2m3!1i80!2i92!4i8!30m28!1m6!1m2!1i0!2i0!2m2!1i530!2i768!1m6!1m2!1i974!2i0!2m2!1i1024!2i768!1m6!1m2!1i0!2i0!2m2!1i1024!2i20!1m6!1m2!1i0!2i748!2m2!1i1024!2i768!34m19!2b1!3b1!4b1!6b1!8m6!1b1!3b1!4b1!5b1!6b1!7b1!9b1!12b1!14b1!20b1!23b1!25b1!26b1!31b1!37m1!1e81!42b1!49m10!3b1!6m2!1b1!2b1!7m2!1e3!2b1!8b1!9b1!10e2!50m3!2e2!3m1!3b1!61b1!67m5!7b1!10b1!14b1!15m1!1b0!69i778!77b1' />
+					[63] (213,497)<div >Reservar mesa />
+						[64] (173,497)<span > />
+	[65] (213,705)<a aria-label='Casa Gabriel Especialistas en Brasas' class='hfpxzc' href='https://www.google.com/maps/place/Casa+Gabriel+Especialistas+en+Brasas/data=!4m7!3m6!1s0xd71fcc678cb8ae9:0x521f246894226284!8m2!3d37.1838332!4d-3.5933826!16s%2Fg%2F11c12nnhpr!19sChIJ6YrLeMb8cQ0RhGIilGgkH1I?authuser=0&hl=es-419&rclk=1' />
+	Casa Gabriel Especialistas en Brasas
+	4.6
+	(2,530)
+	·
+	€20-30
+	Restaurante
+	·
+	
+	·
+	C. Pagés, 29
+	Abierto
+	· Cierra a las 11:30 p.m.
+	"Comida espectacular, de las mejores carnes a la brasa que hemos probado."
+	Asador Curro
+	4.7
+	(3,189)
+	·
+	€20-60
+	Parrilla
+	·
+	
+	·
+	Ctra. de la Sierra, 78
+	Mesón de cochinillo asado y gin tonics
+[66] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[67] (80,972)<div  />
+		[68] (80,972)<span > />
+Negro Carbón Albayzin
+[69] (684,139)<button aria-label='Cerrar' class='VfPpkd-icon-LgbsSe yHy1rc eT1oJ mN1ivc' />
+	[70] (684,145)<span  />
+[71] (550,532)<div class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ' scrollable='true' />
+	Indicaciones
+	Guardar
+	Cerca
+	Enviar al teléfono
+	Compartir
+	
+	Reservar mesa
+	[72] (548,220)<button class='XJ8h0e waIsr' />
+		[73] (548,220)<div > />
+			[74] (537,220)<div  />
+				[75] (537,227)<div  />
+					[76] (464,227)<div aria-label='Ofrece consumo en el lugar' class='LTs0Rc' role='group'>· />
+						·
+						[77] (414,227)<span > />
+						[78] (476,227)<div >Consumo en el lugar />
+					[79] (591,227)<div aria-label='No ofrece servicio de entrega a domicilio' class='LTs0Rc' role='group' />
+						[80] (533,227)<div class='EKGMvf' role='presentation'>· />
+						[81] (545,227)<span > />
+						[82] (604,227)<div >Entrega a domicilio />
+			
+	[83] (548,345)<button aria-label='Dirección: C. de Puente Cabrera, 9, Centro, 18009 Granada ' class='CsEnBe' />
+		[84] (548,345)<div  />
+			
+			[85] (566,345)<div  />
+				[86] (566,345)<div >C. de Puente Cabrera, 9, Centro, 18009 Granada />
+	[87] (678,332)<button aria-label='Copiar la dirección' class='S9kvJb ' />
+		[88] (677,332)<span  />
+			[89] (677,332)<span  />
+	[90] (548,421)<div class='OMl5r hH0dDd jBYmhd' role='button' />
+		[91] (419,421)<span aria-label='Horario de atención' class='LT79uc google-symbols PHazN' role='img'> />
+		[92] (566,421)<div  />
+			[93] (566,421)<div  />
+				[94] (515,421)<span  />
+					[95] (515,421)<span  />
+						[96] (465,421)<span >Abierto />
+						[97] (534,421)<span >· Cierra a las 11 p.m. />
+				[98] (604,421)<span aria-label='Mostrar el horario de atención durante la semana' class='puWIL hKrmvd google-symbols OazX1c' role='img'> />
+	[99] (548,494)<div class='MNVeJb eXOdV eF9eN PnPrlf' role='button'>€30-80
+por persona />
+		€30-80
+		por persona
+		Informado por 427 personas
+	[100] (548,579)<a class='CsEnBe' href='https://www.restaurantenegrocarbon.es/carta/' />
+		[101] (548,579)<div  />
+			
+			[102] (566,579)<div  />
+				[103] (566,566)<div >Menú />
+				[104] (566,595)<div >restaurantenegrocarbon.es />
+	[105] (655,579)<a aria-label='Abrir el vínculo del menú' class='lcr4fd S9kvJb ' href='https://www.restaurantenegrocarbon.es/carta/' />
+		[106] (653,579)<span  />
+			[107] (653,579)<span  />
+	[108] (678,579)<button aria-label='Copiar el vínculo del menú' class='S9kvJb ' />
+		[109] (677,579)<span  />
+			[110] (677,579)<span  />
+	[111] (548,655)<a aria-label='Sitio web: restaurantenegrocarbon.es ' class='CsEnBe' href='https://www.restaurantenegrocarbon.es/' />
+		[112] (548,655)<div  />
+			
+			[113] (566,655)<div  />
+				[114] (566,655)<div >restaurantenegrocarbon.es />
+	[115] (655,655)<a aria-label='Abrir el sitio web' class='lcr4fd S9kvJb ' href='https://www.restaurantenegrocarbon.es/' />
+		[116] (653,655)<span  />
+			[117] (653,655)<span  />
+	[118] (678,655)<button aria-label='Copiar el sitio web' class='S9kvJb ' />
+		[119] (677,655)<span  />
+			[120] (677,655)<span  />
+	[121] (548,718)<button aria-label='Teléfono: 608 09 49 01 ' class='CsEnBe' />
+		[122] (548,718)<div  />
+			
+			[123] (566,718)<div  />
+				[124] (566,718)<div >608 09 49 01 />
+	[125] (655,718)<button aria-label='Copiar el número de teléfono' class='S9kvJb ' />
+		[126] (653,718)<span  />
+			[127] (653,718)<span  />
+	[128] (678,718)<a aria-label='Llamar al número de teléfono' class='lcr4fd S9kvJb ' href='tel:608094901' />
+		[129] (677,718)<span  />
+			[130] (677,718)<span  />
+	[131] (548,782)<button aria-label='Plus Code: 5CH4+3H Granada' class='CsEnBe' />
+		[132] (548,782)<div  />
+			
+			[133] (566,782)<div  />
+				[134] (566,782)<div >5CH4+3H Granada />
+	[135] (655,782)<button aria-label='Agrega el Plus Code' class='S9kvJb ' />
+		[136] (653,782)<span  />
+			[137] (653,782)<span  />
+	[138] (678,782)<button aria-label='Obtén más información sobre los Plus Codes' class='S9kvJb ' />
+		[139] (677,782)<span  />
+			[140] (677,782)<span  />
+	[141] (548,870)<button aria-label='Sugerir una edición' class='S9kvJb ' />
+		[142] (548,870)<span  />
+			[143] (492,870)<span > />
+			[144] (556,870)<span >Sugerir una edición />
+	Del propietario
+[145] (718,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[146] (718,500)<span > />
+[147] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[148] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FNegro%2BCarb%25C3%25B3n%2BAlbayzin%2F%4037.1734057%2C-3.6336462%2C14z%2Fdata%3D!4m10!1m2!2m1!1sasador%2BGranada!3m6!1s0xd71fcb863e6f34b%3A0xfd1040ba94430663!8m2!3d37.1777162!4d-3.5936084!15sCg5hc2Fkb3IgR3JhbmFkYVoQIg5hc2Fkb3IgZ3JhbmFkYZIBCnJlc3RhdXJhbnSaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTmxhMUJQTkVoM0VBReABAPoBBAgAEEk!16s%252Fg%252F11c75xf8gl%3Fved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[149] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[150] (973,799)<span > />
+[151] (973,871)<div  />
+	[152] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[153] (973,849)<div  />
+	[154] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[155] (973,893)<div  />
+	[156] (973,871)<div  />
+[157] (973,945)<div  />
+	[158] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[159] (973,945)<div  />
+[160] (917,906)<button aria-label='Street View' class='dQDAle' />
+	[161] (917,906)<div  />
+		[162] (917,906)<div  />
+			[163] (917,907)<div  />
+Datos del mapa © 2026 Inst. Geogr. Nacional, Google
+[164] (637,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[165] (683,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[166] (735,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[167] (829,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[168] (945,989)<button class='LNGekf' />
+	[169] (917,989)<label class='U5ELMd'>500 m />
+	[170] (956,989)<div  />
+
+</current_dom>

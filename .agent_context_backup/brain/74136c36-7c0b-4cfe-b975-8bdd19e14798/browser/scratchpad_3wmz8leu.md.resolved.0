@@ -1,0 +1,16 @@
+# Task: Verify Prospector Hosteleria Fixes
+
+## Checklist
+- [ ] Navigate to http://localhost:3000
+- [ ] Wait 4 seconds
+- [ ] Clear leads
+- [ ] Search for "Restaurante La Merced Madrid"
+- [ ] Wait for processing
+- [ ] Verify phone number is not empty (e.g., 614 35 22 34)
+- [ ] Verify index error (red banner) is gone from detailed view and chat
+- [ ] Search for "Restaurantes Madrid Central"
+- [ ] Verify only high-potential leads are saved (no leads with >1500 reviews)
+- [ ] Report findings
+
+## Observations
+- 

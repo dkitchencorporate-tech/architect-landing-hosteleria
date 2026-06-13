@@ -1,0 +1,30 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+F
+Creative Factory
+Generador AI Activo
+[0] (944,64)<a class='text-xs font-bold text-zinc-400 hover:text-white transition-colors' href='/demo/carta'>Ver Cartas Demo />
+2. Ángulo de Ataque
+Primary Text (Cuerpo del Post)
+Haces números a final de mes y la cuenta no cuadra. 📉
+
+Tu cocina no para de sacar comandas y el repartidor entra y sale sin pausa... pero tu beneficio neto sigue congelado.
+
+No es tu gestión. Es matemática pura: si facturas 15.000€ al mes en delivery, las plataformas se están llevando 4.500€ directos a su bolsillo. Eso son 54.000€ al año que estás regalando a un tercero. 💸
+
+Estás asumiendo todo el riesgo, el coste de la materia prima, el alquiler y el personal... para quedarte con las migajas de tu propio esfuerzo.
+
+Es hora de detener este sangrado financiero silencioso. 🩸
+
+Diseñamos estrategias de ingeniería de menús y sistemas de venta directa que devuelven el control de los márgenes a tu restaurante. Sin comisiones abusivas. Sin intermediarios que se queden con tu mejor tajada.
+
+Recupera tu rentabilidad hoy mismo. Haz clic abajo y solicita una auditoría de márgenes gratuita para tu restaurante. 👇
+
+👉 [QUIERO RECUPERAR MI MARGEN]
+🎨
+Visual Asset (Modelo Imagen 4)
+Prompt Visual Generado
+
+</current_dom>

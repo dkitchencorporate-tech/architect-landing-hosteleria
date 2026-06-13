@@ -1,0 +1,7 @@
+# Task: Verify Creative Factory page
+
+## Checklist
+- [ ] Open http://localhost:3002/creative-factory
+- [ ] Verify page layout (authenticate if needed - we saw credentials earlier: admin@architect.sys / architectPass123!)
+- [ ] Test switching between vaults or selector options
+- [ ] Document findings and issues if any

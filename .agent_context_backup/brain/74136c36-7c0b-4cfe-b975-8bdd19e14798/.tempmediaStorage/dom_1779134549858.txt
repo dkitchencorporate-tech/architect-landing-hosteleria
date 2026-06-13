@@ -1,0 +1,133 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Drestaurante%2Bmarroqui%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=restaurante+marroqui+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&aep=1&ntc=1&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4Q2J8OegQIDxAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+marroqui+Granada&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QtKgLegQIFRAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+marroqui+Granada&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4Qs6gLegQIExAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (354,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=1&lsack=THALaoXAFYui2roP5MO18Q4&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+marroqui+Granada&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4Qs6gLegQIFBAB' />
+	[29] (354,180)<div  />
+		[30] (354,194)<span >Lugares />
+[31] (444,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=11&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+marroqui+Granada&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4Qs6gLegQIEhAB' />
+	[32] (444,180)<div  />
+		[33] (444,194)<span >Sitios sobre lugares />
+[34] (531,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+marroqui+Granada&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QtKgLegQIERAB' />
+	[35] (531,180)<div  />
+		[36] (531,194)<span >Videos />
+[37] (585,180)<div class='mTpL7c' role='button' />
+	[38] (585,180)<div  />
+		[39] (585,194)<div  />
+			[40] (578,186)<span >Más />
+			[41] (595,186)<span  />
+[42] (663,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (663,180)<div  />
+		[44] (663,194)<div  />
+			[45] (656,186)<span >Herramientas />
+			[46] (697,186)<span  />
+[47] (117,259)<a aria-label='Agregar Abierto ahora' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+marroqui+Granada+abierto+ahora&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-E_oqKApqX20vjBzG4qgb--66FvIY8O0kp5lPntmifQjsGroiJJTf134JxrlDunkuyNFbo6EfhZP-QzYHKhCu8P1GQBnePD_I0-0rgAF991LuD_K1NxDHyKU9_KJ6W5SgF20u3aG8rWnuK_cn9nO1JP4P3YL0V0mDLcyh5TM8XoDtwKpssVKm83F1Lr2QGamTWWB_3w&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QxKsJKAB6BAgZEAE&ictx=0' role='link' />
+	[48] (117,259)<div  />
+		[49] (117,259)<span >Abierto ahora />
+[50] (200,259)<div role='button' />
+	[51] (200,259)<div  />
+		[52] (196,259)<span >Precio />
+		[53] (219,259)<span  />
+			[54] (219,259)<span  />
+[55] (266,259)<a aria-label='Agregar Centro' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+marroqu%C3%AD+Granada+Centro&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-fbCyqF-dzVsBD3PYyFB2EzGuic2p_rjlNcO8z3_bUur53LGWSKEOB4gRCFx03wA5k4XxJt1kwZVNq7w5NxVaca6uIyu0Wpl2WUIsQKV4TnFSUcMSTDYFKkCBD_jaZJhvyjqFq6lWsP4S6CXN7rFTjFyoin2MgfxFProlUiZqPYfLXATIpp0mLVJA9F99qxd0Zx9w_Tqj04q4IP-WBXuHfittX53GklVv9mLNeFLR0wRxvH6e&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QxKsJKAJ6BAgXEAE&ictx=0' role='link' />
+	[56] (266,259)<div  />
+		[57] (266,259)<span >Centro />
+[58] (327,259)<a aria-label='Agregar Mejor' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Mejor+restaurante+marroqu%C3%AD+Granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-fmvCdQg8XzafP9YrH4_nfpJYlZvxq8cm7Y54kZoq5PS9taq_bqQ_DGONW4OsSOtvjKBW0BjJtH2RS-EMOEsAgj7RxNij_qmDOy2WrjxVE1Xpl4HvtVc4S6B3RiT9uX6pdXXYXuDANuMbGtvSRSmJuPu3CTEnF2O8czWfKFJXTYtSmsDqPdb1lp9R1Q-iaWciu1oikCqbSxoLboM7BzxOmu69sVcoiBCvBQY0V7QEYq6aprLU&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QxKsJKAN6BAgaEAE&ictx=0' role='link' />
+	[59] (327,259)<div  />
+		[60] (327,259)<span >Mejor />
+[61] (391,259)<a aria-label='Agregar Albaicin' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+marroqui+albaicin+granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-hsPugoRIDr4CU9RVlIxI8kl83FwTnjPCau29HH-V8HAXdss16_vQX5TTI5-tCmU_yV9K48lxd89NwFGxKsD3lUh_zLAl0syhH5vG3GkhmGx0zMb_fkKiNHvq10Y3QlErv6EsNDk8hR-tvu_N4atLLSmPQ-Pe6BXwBgOf2OCE4z-krBh8WvDcs0galZUPR8wpZo9XQ0eqFPG9qSuZ0hVMrK5LEj1QSjASmKYj5juBXlKZoF4q&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QxKsJKAR6BAgYEAE&ictx=0' role='link' />
+	[62] (391,259)<div  />
+		[63] (391,259)<span >Albaicin />
+[64] (485,259)<a aria-label='Agregar Calle san jeronimo' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+marroqui+calle+san+jeronimo+granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-aEnHS1O6pksaMpGwMHwVVuYrv7isKrDIOpvllxl3A1psL8MuzW3zcxnzSk9S3aK_6tiJKmDCtsF0oySFsjSWqo88dhmHEJ80IegCmNDYjpiO2qtkQ7kAKAqJFe6_hmA3CHwBH6NMH1uq2qFVw2rhxLKYYyZNS7p3KApDctyH08JpYTuylTQg6gtgwIgwbAM9TFxdRoiUj4Dzo1TrwK3fJljZSOfx6yNhjoGbgYhOjvyFYhaX&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QxKsJKAV6BAhqEAE&ictx=0' role='link' />
+	[65] (485,259)<div  />
+		[66] (485,259)<span >Calle san jeronimo />
+[67] (591,259)<a aria-label='Agregar Económicos' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+marroqui+granada+econ%C3%B3micos&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-ah6Q9uI9w09f74Czg3hzaZ3nEzpCrLVSSd5uFtiG3g4OtGRFiqosSUHTi_Fw2ZIkjB13rT-dKdzEjdoX9iBJaZeqJD7aH7l_cF2F6vRSxdMb_QO4T7FGrE598Fl_p7dlXKBCOwgHnV0f8LiVvnzxoT33Etfr8vzWsBu_hSz-bXpWJQb1m4mGx7uXjPQvHFi5C-TzvDg3XBhuyrVaPCoEvLyXnIs&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QxKsJKAZ6BAhpEAE&ictx=0' role='link' />
+	[68] (591,259)<div  />
+		[69] (591,259)<span >Económicos />
+[70] (675,259)<a aria-label='Agregar Valorados' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+marroqui+granada+mejor+valorados&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-3QdV-D-z9LVgPF56mQ6m4BRLjkpWk-u7OtI72Uk1SfTJyWkQFjgIgZ7zkpRu6hyQTMSuu6lGKc6btQX1VZnHd2qpmMqI2bJb6H0qzAXrAY-e6Ttu2jEu7ZdO2AkQhqzNF1Rkq4T1-xOjP4h0YnhP3QJJJ1rPwGzOpBv_U5o6Hmm3uKtd_Ny7AU3e8VmlLUphYaF0aEsAVUYaUWjAgTf4-3MggKVmUvR_pXpCZtLA951-9jTo&sa=X&ved=2ahUKEwiFlqTS0MOUAxULkVYBHeRhLe4QxKsJKAd6BAhoEAE&ictx=0' role='link' />
+	[71] (675,259)<div  />
+		[72] (675,259)<span >Valorados />
+Resultados de búsqueda
+Granada
+∙
+[73] (170,351)<a class='N5az4b' href='#' role='button' />
+	[74] (170,357)<span >Elegir área />
+[75] (215,357)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[76] (216,356)<span  />
+Resultados locales
+Sitios
+[77] (573,448)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[78] (573,448)<span  />
+Mapa
+[79] (561,518)<div aria-label='Expandir el mapa' class='LIvF6e zyiMDe' role='button' />
+Datos del mapa ©2026 Inst. Geogr. Nacional
+[80] (549,785)<a class='Y7LMZc' href='//www.google.com/intl/es-419/help/terms_maps/'>Condiciones />
+[81] (325,902)<div id='pv-/g/11rkmv6wln' role='button' />
+	[82] (325,902)<div  />
+		[83] (289,902)<div  />
+			[84] (289,902)<div  />
+				[85] (289,902)<div  />
+					[86] (289,838)<div class='dbg0pd' role='heading' />
+						[87] (137,837)<span >Restaurante Tajin Dar />
+					[88] (289,871)<div >·
+· Marroquí />
+						[89] (124,871)<span  />
+							[90] (124,871)<span aria-label='Calificación: 4.3 de 5, 1.1 K opiniones de usuarios' class='Y0A0hc' role='img' />
+								[91] (78,871)<span >4.3 />
+								[92] (115,871)<span aria-label='Calificación: 4.3 de 5,' class='z3HNkc' role='img' />
+									[93] (115,871)<span  />
+										[94] (115,869)<span  />
+								[95] (161,871)<span >(1.1 K) />
+						[96] (204,871)<span >€10-20 />
+					[97] (289,906)<div >C. Elvira, 46 />
+					[98] (289,953)<div  />
+						[99] (253,953)<div  />
+							[100] (253,953)<div  />
+								[101] (126,938)<span  />
+									[102] (121,937)<span >Consumo en el lugar />
+									[103] (176,937)<span >· />
+								[104] (212,938)<span  />
+									[105] (207,937)<span >Para llevar />
+									[106] (238,937)<span >· />
+								[107] (169,968)<span  />
+									[108] (169,967)<span >No ofrece servicio de entrega a domicilio />
+						[109] (443,953)<span >· />
+						Sitio web
+		[110] (544,902)<a class='uQ4NLd b9tNq wzN8Ac rllt__link a-no-hover-decoration' />
+			[111] (544,894)<div  />
+				[112] (544,894)<img  />
+
+</current_dom>

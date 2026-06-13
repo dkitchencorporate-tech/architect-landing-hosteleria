@@ -1,0 +1,12 @@
+# Task Progress
+- [x] Visit http://localhost:3002/admin-architect
+- [x] Observe the interface (Page crashed with `TypeError: Cannot read properties of null (reading 'auth')` in `AuthLayer.tsx` because `supabaseClient` is null)
+
+## Findings
+- Visited http://localhost:3002/admin-architect.
+- Encountered a Next.js Unhandled Runtime Error: `TypeError: Cannot read properties of null (reading 'auth')`.
+- The error occurs in `src\components\dashboard\AuthLayer.tsx` line 16.
+- The `supabaseClient` is `null`.
+- The page is not rendering the actual dashboard, only the Next.js error overlay is visible.
+- After dismissing the overlay, the page is entirely blank (light grey background) with a "1 error" toast in the bottom left.
+

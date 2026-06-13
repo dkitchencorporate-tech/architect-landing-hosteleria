@@ -1,0 +1,38 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Spider Roll Soft Shell
+21.00
+€
+CR
+GL
+HU
+SO
+Cangrejo de concha blanda en tempura crujiente, aguacate y mayonesa picante.
+[0] (567,279)<button class='px-6 py-3 border border-white/20 text-white text-[10px] tracking-[0.2em] uppercase hover:border-amber-500 hover:text-amber-500 transition-colors'>Añadir
+(
+1
+) />
+[1] (676,279)<button class='px-4 py-3 text-gray-500 text-[10px] tracking-[0.2em] uppercase hover:text-amber-500 transition-colors'>Asistente IA />
+Volcano Roll Picante
+22.00
+€
+✧
+Top Ventas
+CR
+PE
+GL
+HU
+Núcleo de langostino tempurizado envuelto en tartar de atún extra picante con crujiente de tempura.
+[2] (217,834)<button class='px-6 py-3 border border-white/20 text-white text-[10px] tracking-[0.2em] uppercase hover:border-amber-500 hover:text-amber-500 transition-colors'>Añadir
+(
+1
+) />
+[3] (326,834)<button class='px-4 py-3 text-gray-500 text-[10px] tracking-[0.2em] uppercase hover:text-amber-500 transition-colors'>Asistente IA />
+[4] (414,899)<button class='flex-1 bg-transparent text-white px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-white/10'>🎨
+Ver Otro Diseño />
+[5] (586,899)<button class='flex-1 bg-[#10b981] hover:bg-[#059669] text-black px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest'>💰
+Quiero esta Carta />
+
+</current_dom>

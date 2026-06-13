@@ -1,0 +1,15 @@
+# Task Tracker: Optimización UX/UI y Responsividad de Carta Demo
+
+## Fase 1: Desacople de Modales (Cart vs Chat)
+- `[/]` Modificar `src/app/demo/carta/page.tsx` para separar el estado `isCartOpen` y el nuevo `isChatModalOpen`.
+- `[ ]` Rediseñar el modal del carrito para que solo muestre la cuenta.
+- `[ ]` Añadir los 3 botones principales: Enviar Pedido, Llamar Camarero, Asistente IA.
+- `[ ]` Crear el modal exclusivo para el Chat de IA, optimizado para móvil.
+
+## Fase 2: Responsividad Adaptativa (Adaptive Intelligence)
+- `[ ]` Carta 1 (Sushi): Aumentar legibilidad móvil, corregir grids e imágenes.
+- `[ ]` Carta 2 (Tapas): Mejorar márgenes y visualización de lista en pantallas pequeñas.
+- `[ ]` Carta 3 (Burger): Ajustar los menús estáticos y escalas para diseño neon-app.
+
+## Fase 3: Despliegue
+- `[ ]` Subir a Vercel.

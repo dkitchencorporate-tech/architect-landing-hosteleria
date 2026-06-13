@@ -1,0 +1,20 @@
+# Walkthrough - Finalización de Cartas y Robustecimiento del Sistema Generativo
+
+Hemos completado las tareas pendientes para la fábrica de creativos y cartas de Architect.Sys:
+
+## Cambios Realizados
+
+### 1. Finalización del Reemplazo de Imágenes
+- Se reemplazaron todas las referencias y la función auxiliar obsoleta `opt` en `src/lib/demo-data.ts`.
+- Todos los elementos de la carta **Sushi** (`s1` a `s28`), **Burger** y **Tapas** ahora apuntan a URLs directas de alta definición de Unsplash, garantizando que el menú digital interactivo cargue imágenes gastronómicas reales y premium.
+
+### 2. Robustecimiento de Parsers JSON de IA (Resiliencia B2B)
+- **Motor Generativo de Copys (`/api/creative-factory/generate`)**: Implementación de limpieza de JSON y reparación en caso de caracteres unescaped o truncamiento en la respuesta de la IA.
+- **Creador de Estrategias (`/api/creative-factory/strategy`)**: Se añadió extracción manual mediante Regex por fallback si el JSON de la IA se trunca o tiene sintaxis rota debido al tamaño del markdown.
+- **Hub de Auto-Promoción (`/api/creative-factory/architect-promo`)**: Añadido parseo tolerante a fallos y reparación para asegurar la continuidad de carruseles y posts estáticos de Architect.Sys.
+
+## Pruebas de Funcionamiento y Verificación
+
+- **Compilación de Producción**: Se ejecutó `npm run build` con éxito total (0 errores de TypeScript y linting).
+- **Ejecución Local**: Servidor de desarrollo levantado en `http://localhost:3002`.
+- **Prueba en Vivo**: Se verificó mediante un subagente de navegador que el Creador de Estrategias genera y renderiza la hoja de ruta de 30 días de marketing de guerrilla para clientes activos (ej. Pizzería Don Giovanni) sin fallos de parseo.

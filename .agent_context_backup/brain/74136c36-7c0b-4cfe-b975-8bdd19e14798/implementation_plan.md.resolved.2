@@ -1,0 +1,53 @@
+# Refactorización Visual Premium y Chat Bidireccional IA (Fase 5)
+
+El objetivo de esta fase es elevar el nivel del CRM a un estándar de grado empresarial (estética de Consultor Senior, 50k$ UI) integrando temas Duales (Light/Dark), Glassmorphism, y un Chat en tiempo real con Gemini a través de Firestore.
+
+## User Review Required
+
+> [!WARNING]
+> **Modo de Tema Dual (Dark/Light)**
+> Para implementar el cambio dinámico entre "modo black" y "modo white" conservando los efectos de Glassmorphism sin destellos (FOUC), usaremos la librería `next-themes`. Esto requiere envolver la aplicación en un `ThemeProvider`.
+> ¿Confirmas la instalación de `next-themes` y `lucide-react` para la iconografía del chat?
+
+## Proposed Changes
+
+### 1. Backend Worker (El Cerebro)
+
+#### [MODIFY] `packages/backend-worker/src/index.ts`
+* Importar un nuevo módulo de escucha de chat.
+* No se altera la escucha de comandos (`PROSPECT`).
+
+#### [NEW] `packages/backend-worker/src/firebase/chat.ts`
+* Crear un listener `onSnapshot` en la colección `messages`.
+* Si detecta un mensaje con `sender: "USER"`, lo pasa a una instancia de Gemini (`genAI.getGenerativeModel`).
+* Escribe la respuesta de Gemini en la misma colección con `sender: "AGENT"`.
+
+---
+
+### 2. Frontend PWA (UI/UX Overhaul)
+
+#### [MODIFY] `apps/frontend/src/app/layout.tsx` y `globals.css`
+* Configurar `next-themes` (`ThemeProvider`).
+* Definir las variables CSS de paleta de colores para Light y Dark mode:
+  * **Dark:** Fondo Slate oscuro (`#0f172a`), acentos Teal (`#14b8a6`) y Azure Blue (`#2563eb`).
+  * **Light:** Fondo casi blanco/gris perla, acentos Teal y Blue oscurecidos.
+* Clases utilitarias de Glassmorphism.
+
+#### [NEW] `apps/frontend/src/components/SidebarChat.tsx`
+* Barra lateral para el Chat bidireccional.
+* Componente que se suscribe a `messages` (Firestore) ordenados por fecha.
+* Input para enviar mensajes libres al Agente (IA).
+
+#### [MODIFY] `apps/frontend/src/components/LeadCard.tsx`
+* **Rediseño Glassmorphism:** Opacidad baja, bordes sutiles, `backdrop-blur`.
+* **Score Visual:** Barra de progreso / SVG Radial en lugar de texto plano. Colores dinámicos: Crimson Red para bajos (<4), Gold/Amber para altos (>7).
+* Aumento de espaciados (padding) para un look profesional.
+
+#### [MODIFY] `apps/frontend/src/app/page.tsx`
+* Reestructuración del layout: Sidebar a la izquierda (Chat) y Dashboard a la derecha (Comandos + Tarjetas).
+
+## Verification Plan
+
+1. **Test del Worker:** Insertar un mensaje manual en `messages` desde Firebase Console y verificar si el worker responde.
+2. **Test Visual:** Alternar el botón de Light/Dark Mode en el frontend. Comprobar la elegancia de las tarjetas (Score radial, padding) y el Glassmorphism en ambos temas.
+3. **Flujo C2 Completo:** Lanzar una prospección desde el panel, mientras se interactúa por el chat de la barra lateral.

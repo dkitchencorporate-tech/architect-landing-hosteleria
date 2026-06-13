@@ -1,0 +1,42 @@
+# Creación del Filtro High-Ticket (Enterprise Modal)
+
+*Respuesta Estratégica como Director de Proyecto*
+
+Tu pregunta es la que define a un cerrador de alto nivel: **¿Debemos dejarlos ir al Calendly directamente?**
+La respuesta rotunda es **NO**. 
+
+Si dejas abierto el Calendly para un proyecto de 10.000€, se te va a llenar de "curiosos" y gente que quiere abrir una Dark Kitchen con 500€ en el bolsillo. Tu tiempo vale oro y solo debes hablar con prospectos calificados.
+
+Vamos a crear un componente completamente nuevo: `EnterpriseModal.tsx`.
+
+## 1. Corrección de los Micro-Detalles
+*   *Nota sobre el texto duplicado:* He revisado el código y **no hay texto duplicado** en la versión actual en producción. Está perfectamente limpio empezando por el título "INGENIERÍA DE PROYECTOS".
+*   *Corrección del KDS:* Modificaré la frase final de la Fase 3 para que diga magistralmente: *"directamente a tu pantalla de cocina (KDS)."*
+
+## 2. El "Enterprise Modal" (Filtro de Admisión)
+Al hacer clic en "Solicitar Entrevista de Admisión", no iremos a Calendly ni a WhatsApp. Levantaremos un modal elegante, oscuro (para mantener la estética Enterprise) que exigirá información de negocio antes de poder hablar contigo.
+
+### Los Campos de Pre-Cualificación
+Obligaremos al prospecto a revelar sus cartas:
+1.  **Nombre Completo y Cargo** (Dueño, Inversor, Director de Operaciones).
+2.  **Nombre del Negocio / Proyecto**.
+3.  **Facturación Mensual Actual** (Opciones: Menos de 10k, 10k-30k, 30k-50k, +50k).
+4.  **Presupuesto de Inversión Disponible** (Opciones: Busco algo barato, 3.000€ - 5.000€, +10.000€).
+5.  **Teléfono y Email Corporativo**.
+
+### El Flujo de Cierre (La "Falsa" Espera)
+Una vez envíen el formulario:
+*   NO mostraremos un calendario.
+*   Mostraremos un mensaje de autoridad: *"Solicitud recibida. Nuestro equipo de ingeniería está evaluando tu perfil. Si tu proyecto es viable y tenemos capacidad en este trimestre, te enviaremos el enlace privado para agendar la entrevista."*
+
+## Por qué esto multiplica tu estatus
+El cliente sentirá que está aplicando a Harvard, no comprando una página web. Cuando lo llames (porque viste que tiene presupuesto), él te respetará desde el segundo cero.
+
+---
+
+> [!IMPORTANT]
+> **Decisión de Negocio**
+> 
+> Esta estrategia sacrificará el "volumen" de llamadas para darte un 100% de "calidad" en las reuniones. Solo hablarás con gente dispuesta a invertir miles de euros.
+> 
+> ¿Me das luz verde para desarrollar e integrar este `EnterpriseModal.tsx`?

@@ -1,0 +1,14 @@
+# Task: Verify "Auditoría Profunda" functionality
+
+## Checklist
+- [ ] Navigate to http://localhost:3000 and check for build errors.
+- [ ] Take screenshot of the main dashboard.
+- [ ] Select a lead with a website URL.
+- [ ] Verify tabs: "Inteligencia", "Estrategia AI", "Operaciones".
+- [ ] Verify "Auditoría Profunda" button (purple).
+- [ ] Click "Auditoría Profunda" and wait 15 seconds.
+- [ ] Take screenshot of the results.
+- [ ] Report changes (badges, tab content).
+
+## Findings
+- 

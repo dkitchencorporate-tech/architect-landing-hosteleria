@@ -1,0 +1,44 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+B
+Bite
+Corp
+Demo
+es
+en
+fr
+Diner
+1
+Diner
+2
+Diner
+3
+Diner
+4
+Limited Time
+FREE LOADED FRIES
+Join the Crave Syndicate and get a massive portion of Bacon Fries with your first Smash.
+Entrantes & Fritos
+HYPE
+🎨
+Ver Otro Diseño
+💰
+Quiero esta Carta
+Seleccionar Tipo de Negocio (Demostración)
+[0] (282,508)<button class='p-8 rounded-2xl border transition-all bg-black border-white/10 hover:border-white/30' />
+	[1] (282,441)<div >🍣 />
+	[2] (282,545)<div >Alta Cocina />
+	[3] (282,599)<div >Diseño Editorial y Minimalista. />
+[4] (500,508)<button class='p-8 rounded-2xl border transition-all bg-black border-white/10 hover:border-white/30' />
+	[5] (500,425)<div >🍺 />
+	[6] (500,528)<div >Bar & Tapas />
+	[7] (500,599)<div >Diseño Lista. Tradición y Cuchareo. />
+[8] (718,508)<button class='p-8 rounded-2xl border transition-all bg-[#ff003c]/10 border-[#ff003c]' />
+	[9] (718,425)<div >🍔 />
+	[10] (718,528)<div >Fast Food App />
+	[11] (718,599)<div >Diseño Grid/Neon. Compra Impulsiva. />
+[12] (500,767)<button class='mt-10 w-full text-xs uppercase tracking-[0.2em] text-gray-500 hover:text-white'>Cerrar Panel />
+
+</current_dom>

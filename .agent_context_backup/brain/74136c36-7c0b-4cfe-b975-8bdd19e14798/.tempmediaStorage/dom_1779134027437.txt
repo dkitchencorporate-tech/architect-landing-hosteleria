@@ -1,0 +1,128 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+La Trastienda
+4.5
+(1.2 K)
+·
+€10-20
+· Bar de tapas
+Pl. de Cuchilleros, 11
+[0] (289,117)<div  />
+	[1] (253,117)<div  />
+		[2] (253,117)<div  />
+			Consumo en el lugar
+			·
+			Para llevar
+			·
+			[3] (169,132)<span  />
+				[4] (169,131)<span >No ofrece servicio de entrega a domicilio />
+	[5] (443,117)<span >· />
+	[6] (479,117)<a class='MRe4xd' href='http://latrastienda1836.com/'>Sitio web />
+		Sitio web
+[7] (325,271)<div id='pv-/g/11cfd9h4k' role='button' />
+	[8] (325,271)<div  />
+		[9] (289,271)<div  />
+			[10] (289,267)<div  />
+				[11] (289,267)<div  />
+					[12] (289,215)<div class='dbg0pd' role='heading' />
+						[13] (161,214)<span >Bar Minotauro - Café y Tapas />
+					[14] (289,248)<div >·
+· Bar de tapas />
+						[15] (133,248)<span  />
+							[16] (124,248)<span aria-label='Calificación: 4.4 de 5, 2.1 K opiniones de usuarios' class='Y0A0hc' role='img' />
+								[17] (78,248)<span >4.4 />
+								[18] (115,248)<span aria-label='Calificación: 4.4 de 5,' class='z3HNkc' role='img' />
+									[19] (115,248)<span  />
+										[20] (115,247)<span  />
+								[21] (161,248)<span >(2.1 K) />
+							[22] (187,248)<span role='button' />
+								[23] (190,248)<span  />
+									[24] (190,243)<div  />
+										[25] (190,243)<span  />
+											[26] (190,243)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+												[27] (190,243)<span  />
+						[28] (223,248)<span >€10-20 />
+					[29] (289,283)<div >Carrera del Darro, 23 />
+					[30] (289,318)<div  />
+						[31] (289,318)<div  />
+							[32] (165,318)<span >Cálida tapería con vistas a la Alhambra />
+		[33] (544,271)<a class='uQ4NLd b9tNq wzN8Ac rllt__link a-no-hover-decoration' />
+			[34] (544,271)<div  />
+				[35] (544,271)<img  />
+[36] (325,469)<div id='pv-/g/1tvw68j8' role='button' />
+	[37] (325,469)<div  />
+		[38] (289,469)<div  />
+			[39] (289,464)<div  />
+				[40] (289,464)<div  />
+					[41] (289,413)<div class='dbg0pd' role='heading' />
+						[42] (161,412)<span >Los Diamantes - Plaza Nueva />
+					[43] (289,445)<div >·
+· Bar de tapas />
+						[44] (131,445)<span  />
+							[45] (122,445)<span aria-label='Calificación: 4.3 de 5, 14 k opiniones de usuarios' class='Y0A0hc' role='img' />
+								[46] (78,445)<span >4.3 />
+								[47] (115,445)<span aria-label='Calificación: 4.3 de 5,' class='z3HNkc' role='img' />
+									[48] (115,445)<span  />
+										[49] (115,444)<span  />
+								[50] (159,445)<span >(14 k) />
+							[51] (182,445)<span role='button' />
+								[52] (185,445)<span  />
+									[53] (185,440)<div  />
+										[54] (185,440)<span  />
+											[55] (185,440)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+												[56] (185,440)<span  />
+						[57] (218,445)<span >€10-20 />
+					[58] (289,480)<div >Pl. Nueva, 13 />
+					[59] (289,515)<div  />
+						[60] (186,515)<div  />
+							[61] (186,515)<div  />
+								[62] (186,515)<span >Bar de tapas refinado especializado en marisco />
+						[63] (309,515)<span >· />
+						[64] (345,515)<a class='MRe4xd' href='https://losdiamantes.es/?utm_source=google_my_business&utm_medium=ficha_gmb&utm_campaign=plaza_nueva' />
+							[65] (339,515)<span >Sitio web />
+		[66] (544,469)<a class='uQ4NLd b9tNq wzN8Ac rllt__link a-no-hover-decoration' />
+			[67] (544,469)<div  />
+				[68] (544,469)<img  />
+[69] (325,666)<div id='pv-/g/11b6vd8svz' role='button' />
+	[70] (325,666)<div  />
+		[71] (289,666)<div  />
+			[72] (289,659)<div  />
+				[73] (289,659)<div  />
+					[74] (289,610)<div class='dbg0pd' role='heading' />
+						[75] (133,609)<span >La Bodega De Vinny />
+					[76] (289,642)<div >·
+· Bar de tapas />
+						[77] (130,642)<span  />
+							[78] (120,642)<span aria-label='Calificación: 4.7 de 5, 492 opiniones de usuarios' class='Y0A0hc' role='img' />
+								[79] (78,642)<span >4.7 />
+								[80] (115,642)<span aria-label='Calificación: 4.7 de 5,' class='z3HNkc' role='img' />
+									[81] (115,642)<span  />
+										[82] (115,641)<span  />
+								[83] (158,642)<span >(492) />
+							[84] (180,642)<span role='button' />
+								[85] (183,642)<span  />
+									[86] (183,637)<div  />
+										[87] (183,637)<span  />
+											[88] (183,637)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+												[89] (183,637)<span  />
+						[90] (213,642)<span >€1-10 />
+					[91] (289,677)<div >Calle Sol, 3 />
+					[92] (289,710)<div  />
+						[93] (289,710)<div  />
+							[94] (126,710)<span  />
+								[95] (121,709)<span >Consumo en el lugar />
+								[96] (176,709)<span >· />
+							[97] (236,710)<span  />
+								[98] (231,709)<span >Entrega sin contacto />
+								[99] (286,709)<span >· />
+							[100] (360,710)<span  />
+								[101] (360,709)<span >No vende comida para llevar />
+		[102] (544,666)<a class='uQ4NLd b9tNq wzN8Ac rllt__link a-no-hover-decoration' />
+			[103] (544,666)<div  />
+				[104] (544,666)<img  />
+Mapa
+[105] (561,802)<div aria-label='Expandir el mapa' class='LIvF6e zyiMDe' role='button' />
+
+</current_dom>

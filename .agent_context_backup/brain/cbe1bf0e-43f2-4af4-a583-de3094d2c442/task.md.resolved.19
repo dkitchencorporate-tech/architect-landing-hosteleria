@@ -1,0 +1,15 @@
+# Tareas de Implementación: Captura de Leads y Notificaciones
+
+- [x] 1. Crear endpoint `/api/demo/transcript`
+  - [x] Implementar extracción de email mediante Regex
+  - [x] Implementar envío de email interno con el historial (para el equipo comercial)
+  - [x] Implementar diseño HTML branded (colores corporativos, logo) para el email automático al usuario
+  - [x] Implementar envío del email de agradecimiento al usuario
+- [ ] 2. Modificar `route.ts` (Respond)
+  - [ ] Extraer los links de Google Meet y WhatsApp a variables/constantes fáciles de editar.
+- [ ] 3. Modificar `ChatDemoWidget.tsx`
+  - [ ] Escuchar el evento `beforeunload` y enviar la transcripción por `sendBeacon` (si hay más de 3 mensajes)
+  - [ ] Detectar el final de la conversación (cuando la IA da los botones) y hacer un POST al endpoint de la transcripción para asegurar el guardado.
+- [ ] 4. Pruebas Locales
+  - [ ] Probar desconexión / cierre de pestaña
+  - [ ] Probar flujo completo hasta dar un email ficticio

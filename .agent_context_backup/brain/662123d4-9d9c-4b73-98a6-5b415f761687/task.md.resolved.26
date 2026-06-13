@@ -1,0 +1,16 @@
+# Checklist: Transformación al Panel de Control Creativo B2B
+
+- [x] Crear API Route `/api/creative-factory/strategy` para planificación estratégica de 30 días
+- [x] Crear API Route `/api/creative-factory/agent-chat` para el chatbot copiloto de la agencia
+- [x] Rediseñar la interfaz de `/creative-factory` con el nuevo layout limpio, tipografía Outfit e iluminación obsidian-glassmorphic (sin cabecera flotante)
+- [x] Implementar la sección interactiva `🍽️ Especialidades de la Carta` para el cliente activo
+- [x] Implementar la sección `🗺️ Creador de Estrategias` con persistencia temporal y plan paso a paso
+- [x] Implementar la sección de chat `🤖 Agente de Ejecución` conectado al endpoint de la IA
+- [x] Implementar la pestaña `📚 Dossier de Protocolos` con leyes y procesos de prospección B2B
+- [x] Validar con TypeScript y realizar simulación en el navegador simulando jornada diaria
+
+## Segunda Fase: Hub de Auto-Promoción Architect.Sys
+- [x] Crear API Route `/api/creative-factory/architect-promo` alimentada por el perfil comercial de la marca
+- [x] Modificar `/creative-factory` en `page.tsx` para agregar la pestaña `✨ Promoción Architect.Sys` con selector de objetivos y formatos
+- [x] Desarrollar el visor interactivo de carrusel B2B slide-by-slide con prompts e imágenes integradas
+- [x] Validar con TypeScript y realizar tests de interfaz en el navegador

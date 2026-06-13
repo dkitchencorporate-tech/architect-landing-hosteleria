@@ -1,0 +1,56 @@
+# Auditoría Visual y Plan de Generación de Imágenes (Menú Sushi)
+
+## 1. Validación de UX/UI y Flujo Móvil (Carta Sushi)
+He analizado el archivo `page.tsx` en el componente `EditorialSushiLayout`. 
+**Veredicto:** El tamaño y la coloración son **correctos y óptimos** para dispositivos móviles.
+*   **Tipografía y Color:** Los títulos de los platos (`sm:text-xl text-white font-light`) contrastan perfectamente sobre el fondo negro (`#0a0a0a`). Los acentos como precios o recomendaciones del chef usan un tono ámbar (`text-amber-500`) que evoca lujo y resalta sin cansar la vista.
+*   **Tamaños Táctiles:** Los botones "Añadir" y "Asistente IA" crecen dinámicamente en móvil y se colocan uno al lado del otro con el gap adecuado.
+*   **Flujo Operativo (User Journey):** 
+    1.  El usuario hace scroll viendo imágenes proporcionales (`aspect-[4/3]` en móvil).
+    2.  Al pulsar "Añadir", el plato se suma al estado global.
+    3.  Al pulsar "Asistente IA", se abre un modal de chat inmersivo donde el usuario pregunta sobre alergias o maridajes sin perder el contexto.
+    4.  Al pulsar "Ver Comanda" (Botón global), se abre el nuevo modal que concentra el resumen y presenta el botón primario verde: "Enviar Pedido a Cocina".
+    **El flujo está simplificado a prueba de errores.**
+
+## 2. Auditoría de Imágenes (Menú Sushi)
+
+> [!WARNING]
+> **Problema Detectado:** Tras analizar el sistema de archivos (`/public/images/demo/`), he verificado que las 28 imágenes actuales (`s1.png` a `s28.png`) **son archivos duplicados/placeholders** idénticos a los del menú de hamburguesas (`b1.png` a `b28.png`). Por lo tanto, **NO coinciden** con los títulos de Alta Cocina Japonesa (Tartar de Atún, Wagyu, Sakes, etc.) y actualmente se estarían usando imágenes falsas o de stock.
+
+Como especificaste que "está prohibido usar imágenes de stock y todo debe ser generado por mí", he diseñado el siguiente plan de acción.
+
+## Proposed Changes (Generación Autónoma de Imágenes)
+
+Procederé a utilizar mi motor de generación de imágenes para crear **28 imágenes hiperrealistas y de nivel culinario premium**, exportadas directamente al directorio de tu proyecto. 
+
+Dividiré la generación en los siguientes lotes (Batches) de Prompts de Alta Fidelidad fotográfica:
+
+### [Batch 1] Entrantes
+*   `s1.png`: Tartar de Atún Balfegó con yuzu.
+*   `s2.png`: Carpaccio de Pez Limón trufado.
+*   `s3.png`: Ensalada Wakame Imperial.
+*   `s4.png`: Ostras Amélie al Ponzu.
+*   `s5.png`: Gyozas de Wagyu A5.
+*   `s6.png`: Edamame Ahumado a la Brasa.
+*   `s7.png`: Tempura de Langostino Tigre.
+*   `s8.png`: Berenjena Nasu Dengaku.
+
+### [Batch 2] Sushi y Rolls
+*   `s9.png`: Nigiri de Ootoro Flambeado.
+*   `s10.png`: Nigiri de Vieira y Trufa.
+*   `s11.png`: Sashimi Moriawase Imperial.
+*   `s12.png`: Nigiri Anguila Unagi.
+*   `s13.png`: Spider Roll Soft Shell.
+*   `s14.png`: Volcano Roll Picante.
+*   `s15.png`: Dragon Roll Vegetal.
+*   `s16.png`: Trufa Rainbow Roll.
+
+### [Batch 3] Principales y Postres/Bodega
+*   `s17.png` a `s28.png`: Bacalao Negro, Costilla Wagyu, Mochi Matcha, Sakes, etc.
+
+*Todas las imágenes serán generadas con estética "Dark Mood Food Photography, Michelin star plating, 85mm lens, soft studio lighting".*
+
+## User Review Required
+
+> [!IMPORTANT]
+> Generar 28 imágenes de alta calidad tomará unos minutos de procesamiento intensivo de mi parte. ¿Apruebas este plan para comenzar de inmediato a generar y reemplazar los 28 archivos falsos por imágenes de alta cocina creadas con IA?

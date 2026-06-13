@@ -1,0 +1,3 @@
+- [x] Conectar `ConsultingModal.tsx` con la ruta `/api/lead` (Supabase) para guardar los datos de forma asíncrona antes de mostrar el calendario.
+- [x] Inyectar el enlace de Google Calendar proporcionado.
+- [x] Actualizar `TheTrojanHorse.tsx` con los copies "100% Llave en Mano" y la justificación de los 69€/mes (servidores premium, anti-caídas).

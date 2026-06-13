@@ -1,0 +1,69 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+B
+Bite
+Corp
+Demo
+[0] (690,57)<button class='w-6 h-6 rounded-full text-[9px] font-black uppercase border bg-[#ff003c] text-white border-transparent'>es />
+[1] (712,57)<button class='w-6 h-6 rounded-full text-[9px] font-black uppercase border border-zinc-800 text-zinc-500'>en />
+[2] (734,57)<button class='w-6 h-6 rounded-full text-[9px] font-black uppercase border border-zinc-800 text-zinc-500'>fr />
+[3] (787,57)<button class='flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all bg-[#ff003c] text-white shadow-[0_0_10px_rgba(255,0,60,0.4)]'>Diner
+1 />
+[4] (843,57)<button class='flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all text-zinc-500'>Diner
+2 />
+[5] (899,57)<button class='flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all text-zinc-500'>Diner
+3 />
+[6] (956,57)<button class='flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all text-zinc-500'>Diner
+4 />
+Montaña de patatas rizadas sepultadas bajo una cascada de queso cheddar derretido y trozos de bacon ultra crujiente.
+[7] (53,148)<button class='col-span-1 h-12 flex items-center justify-center rounded-2xl bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors'>🤖 />
+[8] (152,148)<button class='col-span-3 h-12 flex items-center justify-center rounded-2xl bg-[#ff003c] text-white font-black uppercase tracking-widest text-xs hover:bg-[#ff3366] transition-colors active:scale-95'>ADD TO TRAY />
+Alitas de pollo carnudas y fritas, pringadas en nuestra salsa buffalo roja ardiente. Servidas con salsa ranch.
+[9] (302,148)<button class='col-span-1 h-12 flex items-center justify-center rounded-2xl bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors'>🤖 />
+[10] (400,148)<button class='col-span-3 h-12 flex items-center justify-center rounded-2xl bg-[#ff003c] text-white font-black uppercase tracking-widest text-xs hover:bg-[#ff3366] transition-colors active:scale-95'>ADD TO TRAY />
+Cinco deditos de masa hojaldrada frita que esconden un núcleo expansivo de queso blanco que se estira al morder.
+[11] (550,148)<button class='col-span-1 h-12 flex items-center justify-center rounded-2xl bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors'>🤖 />
+[12] (649,148)<button class='col-span-3 h-12 flex items-center justify-center rounded-2xl bg-[#ff003c] text-white font-black uppercase tracking-widest text-xs hover:bg-[#ff3366] transition-colors active:scale-95'>ADD TO TRAY />
+Totopos crujientes de maíz amarillo repletos de cerdo deshilachado dulce, jalapeños ardientes y crema agria fresca.
+[13] (799,148)<button class='col-span-1 h-12 flex items-center justify-center rounded-2xl bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors'>🤖 />
+[14] (897,148)<button class='col-span-3 h-12 flex items-center justify-center rounded-2xl bg-[#ff003c] text-white font-black uppercase tracking-widest text-xs hover:bg-[#ff3366] transition-colors active:scale-95'>ADD TO TRAY />
+Smash Clásicas
+9.50
+€
+Classic Single Smash
+GL
+LE
+SU
+SE
+Un disco de vaca rubia gallega aplastado hasta lograr costra perfecta, queso americano, pepinillos y mostaza en pan brioche.
+HYPE
+13.50
+€
+Bacon Double Smash
+GL
+LE
+SE
+El estándar de oro. Dos carnes smash crujientes, doble capa de queso americano fundido y tiras gruesas de bacon ahumado.
+11.50
+€
+Oklahoma Fried Onion
+GL
+LE
+SE
+Carne prensada directamente sobre una cama de cebolla cortada en mandolina, caramelizándose junta en la plancha.
+12.00
+€
+Crispy Chicken Sandwich
+GL
+LE
+HU
+SO
+Muslo de pollo deshuesado, marinado en buttermilk y frito estilo sureño, con ensalada coleslaw refrescante.
+[15] (414,899)<button class='flex-1 bg-transparent text-white px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-white/10'>🎨
+Ver Otro Diseño />
+[16] (586,899)<button class='flex-1 bg-[#10b981] hover:bg-[#059669] text-black px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest'>💰
+Quiero esta Carta />
+
+</current_dom>

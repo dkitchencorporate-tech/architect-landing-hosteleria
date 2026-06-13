@@ -1,0 +1,112 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwiG54H80cOUAxVKlFYBHSdpPfgQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DTeter%25C3%25ADa%2BMeknes%2BRahma%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Teter%C3%ADa+Meknes+Rahma+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bjFd3hEyhkKbHowRB1wzROKX_qdU0wpC128iBgMiMCcCd9RaQk2jFeatUpQMdJ1UzG7ChHUr7HBeVK-Y2qvk_NaaLYY6NhxJ05Qwr0l-WgJaZG8z6WUJStQwm5VKpquQm2ZXzMVC8e3TfV0_xfVLQ9Y52ULP7fW_7_JnarTvKdeD9bqkR7laNoxKv_D5HmyRH5V5sa5hHq30yrRR2ZPzUVkN_lAA&aep=1&ntc=1&sa=X&ved=2ahUKEwiG54H80cOUAxVKlFYBHSdpPfgQ2J8OegQIDxAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bjFd3hEyhkKbHowRB1wzROKX_qdU0wpC128iBgMiMCcCd9RaQk2jFeatUpQMdJ1UzG7ChHUr7HBeVK-Y2qvk_NaaLYY6NhxJ05Qwr0l-WgJaZG8z6WUJStQwm5VKpquQm2ZXzMVC8e3TfV0_xfVLQ9Y52ULP7fW_7_JnarTvKdeD9bqkR7laNoxKv_D5HmyRH5V5sa5hHq30yrRR2ZPzUVkN_lAA&q=Teter%C3%ADa+Meknes+Rahma+Granada&sa=X&ved=2ahUKEwiG54H80cOUAxVKlFYBHSdpPfgQtKgLegQIFBAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (265,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=1&lsack=sHELaobPEsqo2roPp9L1wQ8&fbs=ADc_l-bjFd3hEyhkKbHowRB1wzROKX_qdU0wpC128iBgMiMCcCd9RaQk2jFeatUpQMdJ1UzG7ChHUr7HBeVK-Y2qvk_NaaLYY6NhxJ05Qwr0l-WgJaZG8z6WUJStQwm5VKpquQm2ZXzMVC8e3TfV0_xfVLQ9Y52ULP7fW_7_JnarTvKdeD9bqkR7laNoxKv_D5HmyRH5V5sa5hHq30yrRR2ZPzUVkN_lAA&q=Teter%C3%ADa+Meknes+Rahma+Granada&sa=X&ved=2ahUKEwiG54H80cOUAxVKlFYBHSdpPfgQs6gLegQIFRAB' />
+	[26] (265,180)<div  />
+		[27] (265,194)<span >Lugares />
+[28] (355,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=11&fbs=ADc_l-bjFd3hEyhkKbHowRB1wzROKX_qdU0wpC128iBgMiMCcCd9RaQk2jFeatUpQMdJ1UzG7ChHUr7HBeVK-Y2qvk_NaaLYY6NhxJ05Qwr0l-WgJaZG8z6WUJStQwm5VKpquQm2ZXzMVC8e3TfV0_xfVLQ9Y52ULP7fW_7_JnarTvKdeD9bqkR7laNoxKv_D5HmyRH5V5sa5hHq30yrRR2ZPzUVkN_lAA&q=Teter%C3%ADa+Meknes+Rahma+Granada&sa=X&ved=2ahUKEwiG54H80cOUAxVKlFYBHSdpPfgQs6gLegQIExAB' />
+	[29] (355,180)<div  />
+		[30] (355,194)<span >Sitios sobre lugares />
+[31] (460,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bjFd3hEyhkKbHowRB1wzROKX_qdU0wpC128iBgMiMCcCd9RaQk2jFeatUpQMdJ1UzG7ChHUr7HBeVK-Y2qvk_NaaLYY6NhxJ05Qwr0l-WgJaZG8z6WUJStQwm5VKpquQm2ZXzMVC8e3TfV0_xfVLQ9Y52ULP7fW_7_JnarTvKdeD9bqkR7laNoxKv_D5HmyRH5V5sa5hHq30yrRR2ZPzUVkN_lAA&q=Teter%C3%ADa+Meknes+Rahma+Granada&sa=X&ved=2ahUKEwiG54H80cOUAxVKlFYBHSdpPfgQs6gLegQIEhAB' />
+	[32] (460,180)<div  />
+		[33] (460,194)<span >Videos cortos />
+[34] (531,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bjFd3hEyhkKbHowRB1wzROKX_qdU0wpC128iBgMiMCcCd9RaQk2jFeatUpQMdJ1UzG7ChHUr7HBeVK-Y2qvk_NaaLYY6NhxJ05Qwr0l-WgJaZG8z6WUJStQwm5VKpquQm2ZXzMVC8e3TfV0_xfVLQ9Y52ULP7fW_7_JnarTvKdeD9bqkR7laNoxKv_D5HmyRH5V5sa5hHq30yrRR2ZPzUVkN_lAA&q=Teter%C3%ADa+Meknes+Rahma+Granada&sa=X&ved=2ahUKEwiG54H80cOUAxVKlFYBHSdpPfgQtKgLegQIERAB' />
+	[35] (531,180)<div  />
+		[36] (531,194)<span >Videos />
+[37] (585,180)<div class='mTpL7c' role='button' />
+	[38] (585,180)<div  />
+		[39] (585,194)<div  />
+			[40] (578,186)<span >Más />
+			[41] (595,186)<span  />
+[42] (663,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (663,180)<div  />
+		[44] (663,194)<div  />
+			[45] (656,186)<span >Herramientas />
+			[46] (697,186)<span  />
+[47] (117,259)<a aria-label='Agregar Abierto ahora' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Meknes+Rahma+Granada+abierto+ahora&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c--j-8-rgrpNPCZhmSlXPgONbwgQPA3odDV-czqa22xFx65bmRa2CCJemuB5l29UzsXVyVmy5mXxRpbKTR22u2d1zCourHE8Wafj2QBE2G9RPV3lRuTrq9tpbcjKxMtxnxa6LUcfOmGYu5maJfyLrx9yMrrLxTPEwlpEohLq9yXadWL2FfrGTdc85Z0aqULkUvTAtLWA&sa=X&ved=2ahUKEwiG54H80cOUAxVKlFYBHSdpPfgQxKsJKAB6BAgYEAE&ictx=0' role='link' />
+	[48] (117,259)<div  />
+		[49] (117,259)<span >Abierto ahora />
+[50] (200,259)<div role='button' />
+	[51] (200,259)<div  />
+		[52] (196,259)<span >Precio />
+		[53] (219,259)<span  />
+			[54] (219,259)<span  />
+[55] (289,259)<a aria-label='Agregar Mejor valorados' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Meknes+Rahma+Granada+mejor+valorados&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-wuGxQvhDnRAE7fpP-EfFk3vbeHNlwlctVBieMgFrctJUPpuwKrhAJ1Qted1cQGbrTIjZqa505EMU8VXYRZCyCDiBP3kDtL5xbH9beC5dzknIS4KUZiXbE0t2DGgEKaMVfZgh49RcLmbb94Xx2Q3KhrWgwwSCMFSreTycMpQP7eLCWUIzF7OBQJLunq4BFhMfujvC5A&sa=X&ved=2ahUKEwiG54H80cOUAxVKlFYBHSdpPfgQxKsJKAJ6BAgZEAE&ictx=0' role='link' />
+	[56] (289,259)<div  />
+		[57] (289,259)<span >Mejor valorados />
+Resultados de búsqueda
+Restaurante Teteria meknes rahma, C. Elvira, 3, Bajo, Granada
+∙
+[58] (453,351)<a class='N5az4b' href='#' role='button' />
+	[59] (453,357)<span >Elegir área />
+[60] (499,357)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[61] (499,356)<span  />
+Resultados locales
+Sitios
+[62] (573,448)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[63] (573,448)<span  />
+Mapa
+[64] (325,894)<div id='pv-/g/11x123ktwg' role='button' />
+	[65] (325,894)<div  />
+		[66] (289,894)<div  />
+			[67] (289,887)<div  />
+				[68] (289,887)<div  />
+					[69] (289,838)<div class='dbg0pd' role='heading' />
+						[70] (142,837)<span >Meknes Rahma brunch />
+					[71] (289,871)<div >·
+· Tetería tradicional />
+						[72] (117,871)<span  />
+							[73] (117,871)<span aria-label='Calificación: 4.4 de 5, 45 opiniones de usuarios' class='Y0A0hc' role='img' />
+								[74] (78,871)<span >4.4 />
+								[75] (115,871)<span aria-label='Calificación: 4.4 de 5,' class='z3HNkc' role='img' />
+									[76] (115,871)<span  />
+										[77] (115,869)<span  />
+								[78] (155,871)<span >(45) />
+						[79] (191,871)<span >€20-30 />
+					[80] (289,906)<div >C. Elvira, 3 />
+					[81] (289,938)<div  />
+						[82] (289,938)<div  />
+							[83] (126,938)<span  />
+								[84] (121,937)<span >Consumo en el lugar />
+								[85] (176,937)<span >· />
+							[86] (212,938)<span  />
+								[87] (207,937)<span >Para llevar />
+								[88] (238,937)<span >· />
+							[89] (342,938)<span  />
+								[90] (342,937)<span >No ofrece servicio de entrega a domicilio />
+		[91] (544,894)<a class='uQ4NLd b9tNq wzN8Ac rllt__link a-no-hover-decoration' />
+			[92] (544,894)<div  />
+				[93] (544,894)<img  />
+
+</current_dom>

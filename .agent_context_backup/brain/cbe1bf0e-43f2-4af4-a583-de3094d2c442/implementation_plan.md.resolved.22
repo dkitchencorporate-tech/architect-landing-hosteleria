@@ -1,0 +1,48 @@
+# Automatización de Leads y Notificaciones de Arqui
+
+Este plan detalla cómo implementaremos el sistema de guardado de conversaciones, correos automáticos al usuario y configuración de enlaces, sin alterar la "Configuración Dorada" actual de Gemini.
+
+## User Review Required
+
+> [!IMPORTANT]
+> Revisa la **Fase 1** (Detección de Abandono). Usar `navigator.sendBeacon` es el estándar para enviar datos cuando el usuario cierra la pestaña, pero puede fallar en móviles si el navegador cierra los procesos de golpe. Como alternativa, podríamos guardar un registro en tu base de datos (Supabase) en cada mensaje, pero eso requeriría activar la base de datos. Para empezar ligero, he propuesto `sendBeacon` + Correo. ¿Estás de acuerdo?
+
+## Open Questions
+
+1. **Email del remitente:** Usaremos `dkitchencorporate@gmail.com` (ya configurado en `.env.local`) tanto para recibir los leads como para enviar el correo de agradecimiento al cliente. ¿Te parece bien?
+2. **Remitente visible:** ¿Quieres que el correo de agradecimiento llegue a nombre de "Arqui de Architect.Sys" o "Alex de Architect.Sys"?
+
+## Proposed Changes
+
+---
+
+### API de Transcripciones y Leads (Backend)
+
+#### [NEW] [route.ts](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/demo/transcript/route.ts)
+Crearemos un nuevo endpoint dedicado EXCLUSIVAMENTE a procesar el final de la conversación (ya sea por abandono o por éxito).
+- Recibirá el historial completo de mensajes.
+- Buscará mediante expresiones regulares (Regex) si el usuario dejó un correo o teléfono.
+- **Acción 1:** Enviará un email interno a tu equipo (`dkitchencorporate@gmail.com`) con la transcripción completa del chat para que puedas hacer retargeting en frío (si solo dejaron el nombre del restaurante).
+- **Acción 2:** Si detecta un correo del usuario, le enviará automáticamente un email de agradecimiento y bienvenida.
+
+#### [MODIFY] [route.ts](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/demo/respond/route.ts)
+- Vamos a extraer los enlaces de Google Meet y WhatsApp a **constantes claras** al principio del archivo. Así, cuando quieras cambiar tu calendario de Meet o tu número, solo tendrás que editar la primera línea del archivo, sin tocar el prompt de la IA.
+
+---
+
+### Lógica de Captura (Frontend)
+
+#### [MODIFY] [ChatDemoWidget.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ChatDemoWidget.tsx)
+- Implementaremos un `useEffect` que escuche el evento `beforeunload` (cuando el usuario cierra la pestaña o recarga la página).
+- Cuando el usuario se vaya, si la conversación tiene más de 3 mensajes (es decir, ya hay chicha), enviaremos el historial al nuevo endpoint `/api/demo/transcript` usando `navigator.sendBeacon` (que permite enviar peticiones HTTP incluso mientras la pestaña se está cerrando).
+- También añadiremos un trigger explícito: si la IA detecta el final (genera los botones de "Agendar Video Llamada"), enviaremos el historial inmediatamente sin esperar a que cierren la pestaña.
+
+## Verification Plan
+
+### Automated Tests
+- Simular el cierre de la pestaña en el navegador y verificar en los logs si se disparó el evento `sendBeacon`.
+- Escribir un correo electrónico ficticio en el chat ("Mi correo es test@gmail.com") y verificar si el Regex del backend lo captura correctamente.
+
+### Manual Verification
+- Te pediré que entres en tu entorno local, inicies una conversación, des tu nombre y local, y cierres la pestaña de golpe. Revisaremos tu bandeja de Gmail para confirmar que el "Lead Frío" llegó.
+- En otra prueba, te pediré que llegues hasta el final y des un correo real tuyo, para verificar que te llega el mensaje automático de agradecimiento.

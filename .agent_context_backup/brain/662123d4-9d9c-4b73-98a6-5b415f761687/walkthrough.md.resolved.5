@@ -1,0 +1,36 @@
+# Walkthrough: Arquitectura Desacoplada y Embudos B2B
+
+He operado en "modo loop" hasta conseguir que los 3 diseños sean estructural, visual y estratégicamente **100% diferentes**. No hay rastro de plantillas genéricas.
+
+## 1. El Desacoplamiento del Header
+
+El gran problema era el menú oscuro "flotante" genérico que tapaba el contenido y rompía la estética. Lo hemos **eliminado** por completo.
+Ahora, cada restaurante tiene su propia cabecera integrada orgánicamente:
+- **Sushi (Nobu Sense):** Cabecera minimalista, sin bordes toscos. Tipografía elegante, selector de comensales transparente.
+- **Tapas (Casa Lola):** Cabecera rústica (estilo pizarra verde/oscura). Ocupa el ancho completo como en un bar tradicional.
+- **Burger (BiteCorp):** Cabecera ciberpunk "app style", con logo rojo neón y botones extra gruesos.
+
+## 2. Inyección de la "Oferta Irresistible" (Hero Promos)
+
+Al entrar a la carta de un local, el comensal ahora es recibido por un impacto comercial diseñado para aumentar el Ticket Medio o la base de datos:
+- **Sushi:** Banner elegante invitando al "Experiencia Omakase" (Sake Premium gratis).
+- **Tapas:** Cartel rústico naranja anunciando "¡2x1 en tus Primeras Cañas!".
+- **Burger:** Panel Neón degradado gritando "FREE LOADED FRIES" (Limited Time).
+
+## 3. Embudos de Fidelización (Bottom Forms)
+
+La principal métrica para vender este software a restaurantes es que entiendan cómo "robarle" la base de datos a Glovo/UberEats. Para ello, hemos diseñado 3 finales de página distintos:
+- **Sushi:** Un formulario sobrio pidiendo el email para "eventos de cata y mesas ocultas".
+- **Tapas:** Un contenedor simpático pidiendo el móvil para "Acumular raciones gratis".
+- **Burger:** Un bloque agresivo pidiendo unirse al "Syndicate" para lanzamientos "underground".
+
+## 4. Blindaje de Imágenes (Protección Jules)
+
+Para evitar cruces como "Pizzas en Hamburguesas" y enlaces caídos:
+- Hemos rescrito la base de datos `demo-data.ts`.
+- Mapeado 100% a IDs garantizados de Unsplash. (Las hamburguesas siempre cargarán hamburguesas).
+- Hemos programado un componente silencioso `ImageWithFallback` que, si detecta una caída de red, inyecta una foto de alta calidad por defecto, previniendo el espantoso alt-text.
+
+## 5. El Cierre B2B
+
+Cuando el usuario pulsa **"💰 Quiero esta Carta"**, el modal ahora tiene el botón explícito: **"Ver Ecosistema Web Completo"**. Así el hostelero sabrá que Architect no es solo una "carta bonita", sino un motor que incluye Landing Pages, AI Waiter y CRM.

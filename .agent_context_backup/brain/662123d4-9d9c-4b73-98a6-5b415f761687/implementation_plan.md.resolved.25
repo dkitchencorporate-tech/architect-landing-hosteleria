@@ -1,0 +1,70 @@
+# Plan de Generación de Imágenes para Carta "Bar y Tapas"
+
+El objetivo es generar imágenes premium, fotorrealistas y sumamente apetitosas para cada uno de los productos de la carta (desde t7 hasta t28) utilizando IA, garantizando que coincidan con absoluta exactitud anatómica y gastronómica con el nombre y la descripción.
+
+## Consideraciones de Diseño Estilístico
+Para mantener una coherencia perfecta en toda la carta, todos los *prompts* seguirán este estilo fotográfico base:
+> *Professional food photography, dark moody background, dramatic cinematic studio lighting, top-down and 45-degree angle mix, macro details, rich colors, shot on 85mm lens, 4k resolution, Michelin star plating style, highly appetizing, no text.*
+
+## User Review Required
+
+> [!IMPORTANT]
+> A continuación presento los *prompts* exactos que utilizaré para generar las imágenes. Revisaremos esto en lotes. Aquí tienes el plan completo. **Por favor, aprueba este plan para que yo comience inmediatamente a generar el primer lote de 10 imágenes (t7 a t16).** Si la cuota de mi herramienta se agota, te indicaré exactamente qué prompts faltan para que puedas generarlas por tu cuenta.
+
+## Prompts Propuestos
+
+### Lote 1 (Generación Inmediata tras tu aprobación)
+
+- **t7 - Berenjenas con Miel de Caña**
+  - *Prompt*: Professional food photography, thin crispy fried eggplant slices stacked elegantly on a rustic ceramic plate, drizzled generously with thick dark cane honey, golden brown crispy edges, dark moody background, cinematic lighting, macro details.
+- **t8 - Calamares de Pota Fritos**
+  - *Prompt*: Professional food photography, thick tender fried calamari rings with a light golden Andalusian batter, served in a traditional clay dish, accompanied by a fresh lemon wedge, steam rising slightly, crispy texture, dark moody lighting.
+- **t9 - Tabla Jamón 100% Bellota**
+  - *Prompt*: Professional food photography, premium 100% acorn-fed Iberian ham slices, hand-carved, translucent and marbled with healthy fat, arranged beautifully on a rustic wooden board, dark moody background, high end gourmet presentation.
+- **t10 - Queso Oveja Viejo Curado**
+  - *Prompt*: Professional food photography, thick wedges of aged cured sheep cheese, crumbly texture, served on a slate board with roasted almonds and rustic breadsticks, dark moody lighting, highly appetizing macro details.
+- **t11 - Surtido Ibérico de la Dehesa**
+  - *Prompt*: Professional food photography, premium selection of Iberian cured meats: sliced pork loin, chorizo, and pepper salami, beautifully arranged on a wooden platter, dark moody lighting, rich red colors and fat marbling.
+- **t12 - Tosta de Cecina de León**
+  - *Prompt*: Professional food photography, artisan baked crystal bread toasted, topped with thin slices of dark red smoked cecina, parmesan cheese flakes, and a delicate drizzle of truffle oil, dark moody lighting.
+- **t13 - Carrillada Ibérica Estofada**
+  - *Prompt*: Professional food photography, tender slow-stewed Iberian pork cheeks covered in a thick, dark, glossy Pedro Ximenez wine reduction sauce, resting on creamy truffled mashed potatoes, dark moody background.
+- **t14 - Callos a la Andaluza**
+  - *Prompt*: Professional food photography, hearty traditional Spanish tripe stew with chorizo and blood sausage slices, thick red spicy sauce, served in a traditional rustic clay bowl, dark moody lighting, highly appetizing.
+- **t15 - Albóndigas Caseras en Salsa**
+  - *Prompt*: Professional food photography, tender beef and pork meatballs in a rich, thick, golden-brown roasted almond sauce, garnished with parsley, served in a rustic ceramic bowl, dark moody background.
+- **t16 - Guiso de Espinacas con Garbanzos**
+  - *Prompt*: Professional food photography, traditional Sevillian spinach and chickpea stew, thick texture with fried bread and garlic mash, sweet paprika oil drizzle, served in a clay pot, dark moody lighting.
+
+### Lote 2 y 3 (Se generarán después del Lote 1)
+
+- **t17 - Huevos Rotos con Jamón**
+  - *Prompt*: Bed of crispy homemade fries topped with three sunny-side-up fried eggs with runny liquid yolks, generously covered in Iberian ham shavings, dark moody lighting, appetizing macro.
+- **t18 - Pluma Ibérica a la Brasa**
+  - *Prompt*: Grilled Iberian pork flank, juicy inside with a crispy seared crust, coarse sea salt flakes on top, served sliced on a hot stone or dark slate, smoky atmosphere, dark moody lighting.
+- **t19 - Pulpo a la Gallega Premium**
+  - *Prompt*: Extremely tender whole octopus tentacle served over sliced boiled potatoes, heavily drizzled with golden extra virgin olive oil and bright red sweet and spicy paprika, served on a traditional wooden plate, dark moody lighting.
+- **t20 - Flamenquín XXL Casero**
+  - *Prompt*: Spectacular XXL fried pork loin roll stuffed with Iberian ham and melted cheese oozing out from the center cut, golden crispy breading, served on a rustic plate, dark moody lighting.
+- **t21 - Tarta de Queso Fluida**
+  - *Prompt*: La Viña style baked cheesecake, rustic toasted and slightly burnt exterior, cut open showing a warm, runny, fluid creamy center spilling onto the plate, dark moody lighting.
+- **t22 - Torrija Caramelizada al Momento**
+  - *Prompt*: Thick brioche bread soaked in milk, caramelized golden brown crust, served warm with a perfect scoop of vanilla ice cream melting slightly on top, dark moody lighting, fine dining plating.
+- **t23 - Piononos de Santa Fe**
+  - *Prompt*: Traditional Granadan Pionono pastries, small rolled sponge cakes topped with a crown of perfectly toasted creamy custard (crema tostada), dark moody lighting, elegant presentation.
+- **t24 - Arroz con Leche Cremoso**
+  - *Prompt*: Creamy traditional rice pudding served in a rustic ceramic bowl, thick texture, topped with a cinnamon stick and burnt lemon peel garnish, dark moody lighting.
+- **t25 - Cerveza Alhambra 1925**
+  - *Prompt*: Iconic Alhambra 1925 beer in its distinctive green glass bottle without a label, heavy condensation and water droplets on the cold glass, dark moody bar background, dramatic lighting.
+- **t26 - Caña de Grifo Helada**
+  - *Prompt*: Ice cold draft blonde beer served in a wide 400ml glass, perfectly poured with exactly two fingers of thick creamy white foam, heavy condensation on the glass, dark moody bar setting.
+- **t27 - Copa de Vino Tinto Rioja Crianza**
+  - *Prompt*: Elegant glass of classic Rioja red wine, deep ruby color, placed on a dark wooden table with soft reflections, dark moody lighting, premium feel.
+- **t28 - Tinto de Verano Premium**
+  - *Prompt*: Refreshing Tinto de Verano in a large glass filled with ice cubes, dark red young wine mixed with lemon soda, garnished with fresh citrus slices, dark moody summer night lighting.
+
+## Verification Plan
+1. Recibir tu aprobación sobre este plan y estos *prompts*.
+2. Utilizar mi herramienta `generate_image` para crear el **Lote 1**.
+3. Guardar estas imágenes en el directorio `/public/images/demo/` reemplazando los enlaces de Unsplash.
+4. Mostrarte el resultado para confirmar que el estilo te agrada antes de continuar con el resto.

@@ -1,0 +1,22 @@
+# Hub de Documentación y Procedimientos (SOPs)
+
+La nueva infraestructura para documentar la tecnología, los procesos operativos y de ventas de Architect.Sys está viva y en producción.
+
+## 1. El Índice Principal
+He desplegado la matriz de manuales, accesible desde cualquier dispositivo:
+*   [https://hosteleria.architectsys.com/manuals](https://hosteleria.architectsys.com/manuals)
+
+Esta pantalla tiene un diseño corporativo oscuro que lista todas las guías disponibles. A medida que vayamos escalando (o si necesitas que documente más cosas), las iremos añadiendo a esta lista automáticamente.
+
+## 2. El Reporte de Google OAuth
+He redactado el manual específico resolviendo las dudas sobre la autenticación, los 100 usuarios límite, y las pantallas de publicación:
+*   [https://hosteleria.architectsys.com/manuals/google-oauth](https://hosteleria.architectsys.com/manuals/google-oauth)
+
+## 3. Motor de Exportación PDF (La Magia)
+Si entras al manual desde tu computadora o tablet y presionas el botón que dice **"Exportar PDF"** (o haces `Ctrl + P`), verás que el diseño oscuro de la pantalla desaparece por completo. 
+
+El navegador procesará el reporte utilizando **estilos CSS especiales de impresión**, entregándote un documento A4 blanco, con tipografía nítida y encabezados corporativos de alto contraste. Esto te permitirá guardar todos estos manuales en una carpeta local de forma profesional sin gastar un litro de tinta en fondos negros.
+
+> [!TIP]
+> ### Para futuros manuales
+> Solo pídeme: *"Documenta el proceso X en el hub de manuales"*, y yo me encargaré de redactarlo, aplicarle el diseño tipográfico avanzado y programarle el botón de PDF para que lo descargues.

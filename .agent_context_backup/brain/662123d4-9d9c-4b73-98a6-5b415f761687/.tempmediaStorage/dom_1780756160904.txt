@@ -1,0 +1,69 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (909,85)<button class='absolute top-8 right-8 text-sm font-bold text-gray-500 hover:text-red-500 transition-colors z-50 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200'>Cerrar Sesión Segura />
+[1] (125,459)<div class='p-6 flex flex-col gap-8 flex-1 overflow-y-auto' scrollable='true' />
+	A
+	Architect.Sys
+	SALA DE CONTROL
+	Cliente Seleccionado
+	[2] (119,270)<select class='w-full bg-black border border-zinc-800 rounded-xl text-xs font-bold text-white px-3 py-2.5 focus:outline-none focus:border-orange-600 appearance-none' />
+	Cocina:
+	Marisco de Autor y Alta Cocina
+	Target:
+	Gourmet
+	Vaults de Control
+	[3] (119,547)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-between text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30' />
+		[4] (85,547)<span >Matriz de Despliegue />
+			[5] (35,547)<span >🎯 />
+	[6] (119,614)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Motor Generativo B2B />
+		[7] (34,614)<span >⚡ />
+	[8] (119,681)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Especialidades de la Carta />
+		[9] (35,681)<span >🍽️ />
+	[10] (119,748)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Creador de Estrategias />
+		[11] (35,748)<span >🗺️ />
+	[12] (119,816)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 bg-zinc-900 text-white border border-zinc-800'>Agente de Ejecución (Chat) />
+		[13] (35,816)<span >🤖 />
+	[14] (119,884)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Dossier de Protocolos />
+		[15] (34,884)<span >📚 />
+MODO AGENCIA v2.0
+Vault Activo
+🤖 Coordinador IA de Ejecución
+Trabajando con:
+L'Atelier de L'Océan
+Ver Cartas Demo
+A
+Arqui (AI Marketing Co-Pilot)
+En línea - Contexto:
+L'Atelier de L'Océan
+[16] (625,571)<div class='flex-1 overflow-y-auto p-6 space-y-4' scrollable='true' />
+	Llamado a la Acción (CTA):
+	Crea tu próximo gran recuerdo con nosotros. Reservas exclusivas en el link de la bio. 🥂
+	Ángulo de Neuromarketing:
+	Activación de Memoria Episódica. Al enmarcar el ticket alto como una "adquisición de recuerdos/experiencias" en lugar de un gasto de consumo, el cerebro del consumidor de lujo elimina la culpa de compra (
+	pain of paying
+	) y prioriza la gratificación emocional a largo plazo.
+	📋 LISTA DE TAREAS PARA LA EJECUCIÓN (Tu Plan de Acción Rápido):
+	[ ]
+	Paso 1: Storytelling del Origen.
+	Para la
+	Opción 1
+	, publica una secuencia de Stories mostrando un mapa o imágenes del origen geográfico del marisco de la semana (ej. las costas de Galicia, Bretaña o Alaska). Conectar el plato con su origen geográfico real dispara la percepción de autenticidad.
+	[ ]
+	Paso 2: Segmentación de Alta Intención.
+	Al pautar la
+	Opción 2
+	en Meta Ads, acota el público combinando "Gastronomía gourmet" con "Compradores que interactuaron" y "Viajeros frecuentes". Esto nos asegura llegar a personas con alta intención de compra y presupuesto listo para gastar.
+	[ ]
+	Paso 3: Detalle en Mesa (La Tarjeta de Origen).
+	Imprime pequeñas tarjetas minimalistas para colocar en la mesa que expliquen brevemente el origen y la técnica del plato estrella de la noche. Esto tangibiliza la
+	Opción 3
+	y le da al cliente un elemento de conversación intelectual durante la cena.
+	¿Cómo ves este noveno bloque de copies, consultor? ¿Los mandamos a producción para el feed de
+	L'Atelier de L'Océan
+	, o prefieres que armemos una estrategia de "Stories de Conversión Rápida" para llenar las mesas de este fin de semana? ¡Dime y ejecutamos!
+[17] (587,876)<input class='flex-1 bg-black border border-zinc-900 rounded-xl px-4 text-xs text-white focus:outline-none focus:border-orange-600' placeholder='Pregúntale a Arqui sobre la campaña de L'Atelier de L'Océan...' />
+Enviar
+
+</current_dom>

@@ -1,0 +1,67 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Bug fixes
+[0] (88,106)<a class='commit-link' href='https://github.com/supabase/cli/commit/e4a7ace0226dfd7ee8886ebc550a4b5c476c047e' />
+	[1] (88,109)<tt >e4a7ace />
+: fix: mailer links regression (
+[2] (284,106)<a class='issue-link js-issue-link' href='https://github.com/supabase/cli/pull/5166'>#5166 />
+) (
+[3] (334,106)<a class='user-mention notranslate' href='https://github.com/jgoux'>@jgoux />
+)
+Others
+[4] (88,248)<a class='commit-link' href='https://github.com/supabase/cli/commit/893c2840996c7ec8cfaa38a2907b973a7859957c' />
+	[5] (88,251)<tt >893c284 />
+: chore: sync API types from infrastructure (
+[6] (366,248)<a class='issue-link js-issue-link' href='https://github.com/supabase/cli/pull/5160'>#5160 />
+) (@supabase-cli-releaser[bot])
+[7] (88,292)<a class='commit-link' href='https://github.com/supabase/cli/commit/9da7facef2f648ef2a58b61731327c3ba2ce31af' />
+	[8] (88,296)<tt >9da7fac />
+: fix (
+[9] (156,292)<a class='user-mention notranslate' href='https://github.com/7ttp'>@7ttp />
+)
+[10] (88,337)<a class='commit-link' href='https://github.com/supabase/cli/commit/f6c1529132e6d3f5d397db6e2830771966133e4a' />
+	[11] (88,341)<tt >f6c1529 />
+: test (
+[12] (164,337)<a class='user-mention notranslate' href='https://github.com/7ttp'>@7ttp />
+)
+Contributors
+[13] (51,515)<a href='https://github.com/jgoux' />
+	[14] (51,519)<img  />
+[15] (82,515)<a href='https://github.com/7ttp' />
+	[16] (82,519)<img  />
+jgoux and 7ttp
+[17] (500,639)<summary role='button' />
+	[18] (86,639)<span  />
+		[19] (77,639)<span >Assets />
+		[20] (115,639)<span >17 />
+[21] (152,724)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_checksums.txt' />
+	[22] (147,724)<span >supabase_2.98.2_checksums.txt />
+	[23] (230,724)<span  />
+sha256:8ca1a82a1f55f374e64ab6755e5ce6355b0b186329d58da0193ded5937e44440
+[24] (762,724)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_checksums.txt' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:8ca1a82a1f55f374e64ab6755e5ce6355b0b186329d58da0193ded5937e44440' role='button' />
+1.34 KB
+[25] (158,793)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_amd64.apk' />
+	[26] (154,793)<span >supabase_2.98.2_linux_amd64.apk />
+	[27] (244,793)<span  />
+sha256:b33f1594819c6da771753c81c0b4eb967d2371b1e42851d34144982135e25e38
+[28] (762,793)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_amd64.apk' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:b33f1594819c6da771753c81c0b4eb967d2371b1e42851d34144982135e25e38' role='button' />
+30.5 MB
+[29] (159,862)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_amd64.deb' />
+	[30] (154,862)<span >supabase_2.98.2_linux_amd64.deb />
+	[31] (245,862)<span  />
+sha256:8ee0c9662b15b8adad47e79ba98a34ec7728dce1627521bfb80a884106468d3a
+[32] (762,862)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_amd64.deb' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:8ee0c9662b15b8adad47e79ba98a34ec7728dce1627521bfb80a884106468d3a' role='button' />
+29 MB
+[33] (175,931)<a class='Truncate' href='/supabase/cli/releases/download/v2.98.2/supabase_2.98.2_linux_amd64.pkg.tar.zst' />
+	[34] (170,931)<span >supabase_2.98.2_linux_amd64.pkg.tar.zst />
+	[35] (277,931)<span  />
+sha256:8cd74f10a2e285402b80214a6cf3f87df781b5ee3f95d894d38409f6af6c15f0
+[36] (762,931)<clipboard-copy aria-label='Copy to clipboard digest for supabase_2.98.2_linux_amd64.pkg.tar.zst' class='Button--invisible Button--small Button Button--invisible-noVisuals color-fg-muted' id='clipboard-button-sha256:8cd74f10a2e285402b80214a6cf3f87df781b5ee3f95d894d38409f6af6c15f0' role='button' />
+28 MB
+supabase_2.98.2_linux_amd64.rpm
+sha256:2b12d92ab6232c7faf99b9d776ca5c17e38b3286e8691bf0c0148d14288d2fb5
+29 MB
+
+</current_dom>

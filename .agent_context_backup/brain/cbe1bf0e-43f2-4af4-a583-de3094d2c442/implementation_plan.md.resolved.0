@@ -1,0 +1,66 @@
+# Plan de Choque: Adquisición del Primer Cliente (Hostelería)
+
+A petición tuya, he activado el protocolo de la "Agencia" (Growth Hacker + Outbound Strategist + SEO Specialist). Seré **brutalmente honesto**: has construido un sistema técnico nivel *Enterprise* (Gemini, Supabase, Meta API, Next.js), pero estás cometiendo el error número uno de los ingenieros: **creer que un buen producto se vende solo**.
+
+Tener la landing page desplegada no sirve de absolutamente nada si nadie la visita, y menos si los que la visitan no confían en ti porque eres una marca nueva.
+
+Aquí tienes la auditoría sin filtros, la solución al problema técnico y el plan de ataque que vamos a ejecutar esta misma semana.
+
+---
+
+## 🚨 Auditoría Brutal (Por qué tienes 0 clientes)
+
+1. **El Problema del Subdominio (El "Bloqueo" de las IAs)**
+   - **El Error:** Estás usando `architect-landing-hosteleria.vercel.app`. Vercel, por defecto e inalterable, inyecta una cabecera HTTP (`X-Robots-Tag: noindex`) a todos los subdominios gratuitos `.vercel.app` para evitar que Google y las IAs indexen entornos de prueba.
+   - **La Verdad:** Ninguna IA externa ni Google va a indexar o scrapear esa web correctamente mientras uses ese dominio gratuito. No es un problema de tu código (`layout.tsx` está bien).
+   - **La Solución:** Tienes que comprar un dominio profesional (ej. `architectsys.es` o `architect-ia.com`), conectarlo a Vercel (te toma 2 minutos) y luego nosotros generaremos un `robots.txt` y un `sitemap.xml` para forzar la indexación agresiva. No hay atajos para esto. Si le vas a cobrar 650€ a un restaurante, tu web no puede terminar en `.vercel.app`.
+
+2. **El Problema del Tráfico (Estás esperando un milagro)**
+   - Tu landing page tiene un Copy (texto) espectacular ("El Teléfono Fantasma", "El Peaje de Glovo"). El problema no es la web, es que **nadie la está viendo**.
+   - Los dueños de restaurantes no buscan "Agentes IA para WhatsApp" en Google. Están demasiado ocupados sudando en la cocina. Tienes que ir tú a por ellos.
+
+3. **La Fricción del Precio Inicial**
+   - Pedir 650€ de entrada a un hostelero que no te conoce es casi imposible. El hostelero es desconfiado por naturaleza. Necesitamos una oferta de "Riesgo Cero" o de "Caballo de Troya" para meter el pie en la puerta.
+
+---
+
+## 🛑 User Review Required (Decisiones Estratégicas)
+
+> [!CAUTION]
+> **Dominio Propio Requerido:**
+> Para solucionar el bloqueo de SEO y dar una imagen profesional, ¿Estás dispuesto a comprar un dominio propio hoy mismo (cuesta unos 10$-15$)? Si es así, yo te haré los archivos SEO (robots/sitemap) para ese dominio.
+
+> [!WARNING]
+> **Oferta de Entrada (Caballo de Troya):**
+> Te propongo que al primer cliente NO le cobres los 650€. Ofrécele montar el bot de WhatsApp 100% GRATIS por 14 días. Que vea cómo le entran reservas solas. Al día 15, le dices: *"El sistema se apaga mañana. Si quieres mantenerlo, son 200€ al mes (o 650€ de pago único)"*. Cuando el hostelero vea el dinero que le genera, te lo pagará sin dudar. ¿Aceptas esta táctica agresiva para el primer cliente?
+
+---
+
+## ⚔️ Plan de Ataque (Lo que haré como tu Agencia)
+
+Si apruebas este plan, usaré las habilidades de los agentes para automatizar y crear todo este ecosistema para ti:
+
+### Fase 1: Desbloqueo Técnico y SEO (SEO Specialist)
+- [NEW] Crear `public/robots.txt` para habilitar el rastreo completo.
+- [NEW] Crear `public/sitemap.xml` dinámico para indexación en Google.
+- *(Tú deberás enlazar tu dominio propio en Vercel).*
+
+### Fase 2: Estrategia Organica Híbrida (Outbound Strategist)
+- **Prospección Física (Flyers):** Redactaré el diseño y el texto de un Flyer disruptivo. No un folleto aburrido. Algo que diga: *"Mientras lees esto, acabas de perder 2 reservas por no coger el teléfono. Yo te lo soluciono gratis por 14 días"*. Lo imprimirás y lo dejarás debajo de la puerta de 50 restaurantes de tu zona.
+- **Prospección en Frío (Mensaje Directo):** Crearé una secuencia de 3 mensajes de Instagram/WhatsApp diseñada con psicología de ventas (Gap Selling) para contactar a restaurantes de tu ciudad que veas que tienen mucho flujo pero pésimo servicio al cliente.
+
+### Fase 3: Modificación del Embudo en la Landing (Growth Hacker)
+- [MODIFY] `src/app/page.tsx`: Cambiaremos el botón de "Auditoría Gratuita" y los precios a una oferta más agresiva y directa centrada en la "Prueba de 14 Días sin Tarjeta" o "Demo en Vivo en tu propio WhatsApp".
+- [MODIFY] `src/components/DemoLauncher.tsx`: Asegurar que el botón de WhatsApp abra con un mensaje predefinido que obligue a iniciar el flujo de ventas.
+
+---
+
+## 🎯 Verificación
+
+Para considerar esto un éxito esta semana:
+1. Tendrás tu SEO desbloqueado (con tu dominio).
+2. Tendrás los textos exactos para tus flyers y mensajes en frío.
+3. Repartirás 50 flyers en tu ciudad o enviarás 50 DMs en Instagram.
+4. **Objetivo:** Conseguir 1 a 3 restaurantes que acepten la prueba gratuita. De ahí, cerraremos al primer cliente de pago.
+
+¿Apruebas este enfoque agresivo y la táctica del "Riesgo Cero" para empezar la ejecución ahora mismo?

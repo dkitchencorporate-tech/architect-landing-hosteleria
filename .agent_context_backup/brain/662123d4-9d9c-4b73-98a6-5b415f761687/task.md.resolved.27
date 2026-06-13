@@ -1,0 +1,5 @@
+- `[ ]` Renombrar el Bar a "La Taberna de Baco: Gastrobar & Solera"
+- `[ ]` Rediseñar `ListTapasLayout` con imágenes más grandes y cuadrícula detallada de dos columnas en escritorio
+- `[ ]` Integrar el Asistente Camarero IA en el cajón/modal de comanda activa (`isCartOpen`)
+- `[ ]` Crear el widget interactivo de fidelización por pasos en la carta de Tapas
+- `[ ]` Verificar cambios visuales y de interacción usando el navegador

@@ -1,0 +1,65 @@
+# Especificación Técnica y de Producto (Tech Lead & PM)
+*Estatus: En Revisión (Rigor Máximo)*
+
+Tienes toda la razón y acepto el escrutinio. He caído en contradicciones lógicas entre la estrategia que te propuse (subir la oferta) y la implementación técnica (reemplazarla abajo), además de omitir el flujo de control de versiones. 
+
+Esta es la Especificación Definitiva, estructurada como lo haría un *Tech Lead* y un *Senior Product Manager* en un entorno de alta disponibilidad.
+
+---
+
+## 1. Flujo de Trabajo (Protocolo de Entorno Local)
+
+**Bajo ninguna circunstancia haremos un *push* directo a producción.**
+Todo el trabajo se realizará en el repositorio local clonado (`C:\Users\Administrator\.gemini\antigravity\scratch\architect-landing-hosteleria`).
+
+1. **Desarrollo Aislado:** Crearé los componentes nuevos sin tocar `page.tsx`.
+2. **Integración Segura:** Importaré los componentes en `page.tsx`. La sección vieja de precios (`SECTION 6`) será **comentada**, jamás eliminada de golpe, para poder hacer *rollback* inmediato si el layout se rompe.
+3. **Validación Local:** Lanzaré el servidor de Next.js (`npm run build` para comprobar errores de compilación, y luego verificar la UI localmente).
+4. **Despliegue Controlado:** Solo cuando el flujo de usuario (UX) sea perfecto en local, realizaremos el *commit* y *push* hacia GitHub, lo que disparará el despliegue automático en Vercel.
+
+---
+
+## 2. Re-Arquitectura Estratégica del Embudo (Landing Page)
+
+Corrigiendo mi error anterior, no vamos a esconder la Carta Interactiva abajo. Vamos a reestructurar el flujo psicológico (Storytelling) de arriba hacia abajo en `page.tsx`:
+
+*   **1. Hero & The Pain (Sin cambios mayores):** Mantenemos el enfoque en el dolor (Martes vacíos, teléfono fantasma).
+*   **2. [NUEVO COMPONENTE] La Transformación Digital (`src/components/DigitalTransformation.tsx`):**
+    *   *Ubicación:* Justo después de "The Pain".
+    *   *Objetivo:* Explicar *por qué* necesitan presencia digital. Se detallará el ahorro de horas/hombre, la eliminación de errores en comandas y la proyección de imagen premium que permite cobrar más caro.
+*   **3. [NUEVO COMPONENTE] La Oferta Irresistible de Entrada (`src/components/EntryOffer.tsx`):**
+    *   *Ubicación:* Inmediatamente después del paso 2. Aquí presentamos la Carta Interactiva.
+    *   *Estructura de la Oferta:* Explicaremos claramente las dos modalidades.
+        *   **El Ancla (Pago Único 350€):** Alto desembolso inicial.
+        *   **La Oferta Irresistible (Suscripción 39€/50€):** Se posiciona psicológicamente como la opción lógica. Por el precio de 3 menús del día, tienen la tecnología + el Agente IA + acceso a eventos.
+*   **4. [NUEVO COMPONENTE] La Biblioteca de Eventos (`src/components/EventLibrary.tsx`):**
+    *   *Ubicación:* Vinculado a la suscripción Premium (50€). Una sección visual que demuestre nuestro poder de co-producción (maridajes, llenos garantizados).
+*   **5. El Ecosistema 24/7 (Upsell de 650€):**
+    *   *Ubicación:* Hacia el final del embudo, destinado a clientes que ya pasaron por la entrada o que tienen dolores operativos masivos.
+
+---
+
+## 3. Metodología de Desarrollo (Paso a Paso)
+
+Este es el orden exacto de operaciones que ejecutaré como tu Desarrollador Senior:
+
+1.  **Fase de Creación (Nuevos Componentes):**
+    *   Generar `src/components/DigitalTransformation.tsx`.
+    *   Generar `src/components/EntryOffer.tsx` (con el comparador 350€ vs Suscripción).
+    *   Generar `src/components/EventLibrary.tsx` (con UI premium, Tailwind `#1A1A1A`).
+    *   *A este punto, `page.tsx` sigue intacto al 100%.*
+2.  **Fase de Ensamblaje (`page.tsx`):**
+    *   Insertaré los componentes en el orden estratégico detallado arriba.
+    *   Comentaré el bloque `SECTION 6: VALUE LADDER` original (`{/* ... */}`) para evitar duplicidades pero mantener la copia de seguridad in-situ.
+3.  **Fase SEO (`robots.ts` y `sitemap.ts`):**
+    *   Generación de las reglas para GoogleBot, asegurando que cuando Vercel despliegue, el dominio pase a ser público para las IAs.
+4.  **Verificación Final:**
+    *   Te mostraré las diferencias (Diffs) del código y esperaré tu validación antes de gestionar el control de versiones (Git).
+
+---
+
+## Aprobación para Compilar
+
+Esta es una planificación con grado de ingeniería real. Contempla el riesgo (entorno local vs producción), el flujo comercial correcto (embudo de ventas lógico) y la seguridad de la refactorización (no borrar, comentar y sustituir).
+
+Como director del proyecto, ¿apruebas esta arquitectura de embudo y la metodología de desarrollo local para empezar a crear los componentes?

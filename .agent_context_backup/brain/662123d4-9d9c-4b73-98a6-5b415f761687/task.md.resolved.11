@@ -1,0 +1,15 @@
+# Tareas: Escala Multi-Comensal y Cierre B2B
+
+- `[x]` 1. Expansión de Catálogo (`demo-data.ts`)
+  - Crear categorías separadas (Vinos/Sakes, Cócteles, Refrescos, Infusiones).
+  - Añadir 4 items mínimos por categoría con fotos optimizadas de Unsplash.
+- `[x]` 2. IA Transaccional (`route.ts`)
+  - Modificar el System Prompt para forzar respuesta en JSON con propiedad `action`.
+  - Habilitar lógica de "Añadir a cuenta" desde el chat.
+- `[x]` 3. Refactorización de Interfaz (`page.tsx`)
+  - Lógica Multi-Comensal (Selector de cliente actual).
+  - Carrito segmentado por comensal.
+  - Implementación del botón y Modal B2B (Cierre de Venta).
+  - Integración del parseo JSON de la IA.
+- `[x]` 4. Despliegue y Pruebas
+  - Validar puerto 3000 y levantar `localhost.run`.

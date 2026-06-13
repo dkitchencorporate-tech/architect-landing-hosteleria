@@ -1,0 +1,59 @@
+# Plan de Refactorización: Modales Adaptativos y Visor de Imágenes
+
+He analizado tus requerimientos. Este plan cubre la adaptación dinámica de los colores de los modales para que coincidan con la carta activa, la creación del visor de imágenes en pantalla completa, y la lista de prompts para que puedas generar las imágenes restantes.
+
+## 1. Visor de Imágenes en Pantalla Completa (Fullscreen Image Modal)
+Actualmente las imágenes son estáticas. 
+*   **Nuevo Estado:** Crearemos `const [selectedImageItem, setSelectedImageItem] = useState<MenuItem | null>(null);`
+*   **Comportamiento:** Al tocar cualquier imagen de la carta (Sushi, Tapas o Burger), se abrirá un modal a pantalla completa (estilo "Lightbox" de Instagram/UberEats).
+*   **Diseño:** La imagen ocupará la mayor parte de la pantalla. En la parte inferior habrá un panel superpuesto con el título, descripción, precio y un botón gigante de **"Añadir al Pedido"**.
+*   **Modificación:** Actualizaré los componentes `EditorialSushiLayout`, `ListTapasLayout` y `GridBurgerLayout` para envolver las imágenes en botones clickeables.
+
+## 2. Modales Camaleónicos (Cart y Chat Adaptativos)
+Actualmente, los modales del carrito y del asistente IA tienen un diseño oscuro genérico (`#0a0a0a` con toques esmeralda/naranja). Vamos a hacer que hereden el diseño exacto de la carta que el usuario esté viendo mediante la variable `activeTemplate`:
+
+*   **Si `activeTemplate === 'sushi'` (Alta Cocina):**
+    *   Fondo: Negro profundo (`#0a0a0a`).
+    *   Acentos: Ámbar (`#f59e0b`).
+    *   Tipografía: Serif elegante.
+*   **Si `activeTemplate === 'tapas'` (Bar Granadino):**
+    *   Fondo: Blanco roto o crema (`#faf8f5`).
+    *   Textos: Verde oscuro (`#2c3e2e`).
+    *   Acentos: Naranja teja (`#cc5203`).
+    *   Tipografía: Sans-serif limpia con bordes redondeados.
+*   **Si `activeTemplate === 'burger'` (Fast Food Neon):**
+    *   Fondo: Negro carbón (`#050505`).
+    *   Textos: Blanco puro.
+    *   Acentos: Rojo neón (`#ff003c`).
+    *   Tipografía: Itálica gruesa (Black italic).
+
+## 3. Mejoras de Espaciado (Antiglutinamiento)
+*   Aumentaré los márgenes internos (`padding`) y las separaciones (`gap`) dentro de los modales.
+*   En el **Chat de IA**, añadiré un botón fijo en la parte superior/inferior que diga **"← Volver a la Carta"** o **"Seguir Pidiendo"** para facilitar el cierre del modal de forma intuitiva, en lugar de depender únicamente de la pequeña "X".
+
+---
+
+## 4. Prompts para las Imágenes Faltantes (Batch 3)
+
+Aquí tienes los prompts exactos para que puedas copiarlos y pegarlos en tu generador de imágenes. Usa un formato cuadrado (1:1) o 4:3 para obtener los mejores resultados.
+
+> [!TIP]
+> **Estética Base (Úsala siempre al principio del prompt):** 
+> *Dark Mood Food Photography, Michelin star plating, 85mm lens, soft studio lighting, ultra realistic.*
+
+*   **`s18.png` (Costilla de Wagyu A5):** `Dark Mood Food Photography, Michelin star plating, 85mm lens, soft studio lighting. Impressive slow-cooked boneless Wagyu A5 rib in dark aged soy broth. Fall-apart tender meat shining under dramatic lighting. High-end culinary style.`
+*   **`s19.png` (Yakisoba Secreto Ibérico):** `Dark Mood Food Photography, Michelin star plating, 85mm lens, soft studio lighting. Artisan yakisoba noodles stir-fried with juicy Iberian pork strips and crispy organic vegetables. Served in a minimalist matte black bowl. Steam rising slightly.`
+*   **`s20.png` (Tonkatsu de Solomillo):** `Dark Mood Food Photography, Michelin star plating, 85mm lens, soft studio lighting. Tender pork medallions breaded in golden airy panko crust (Tonkatsu), sliced to show the juicy center. Served with thick dark Japanese sauce on the side. Elegantly plated.`
+*   **`s21.png` (Mochi Helado de Té Matcha):** `Dark Mood Food Photography, Michelin star plating, 85mm lens, soft studio lighting. Matcha ice cream mochi. Elastic sweet rice dough cut in half, revealing an intense vibrant green ceremonial matcha ice cream core. Served on dark slate.`
+*   **`s22.png` (Tarta de Queso Cítrica Yuzu):** `Dark Mood Food Photography, Michelin star plating, 85mm lens, soft studio lighting. Fluid mascarpone cheesecake topped with a bright, tart yellow wild yuzu jelly layer. Minimalist Japanese dessert presentation.`
+*   **`s23.png` (Volcán de Sésamo Negro):** `Dark Mood Food Photography, Michelin star plating, 85mm lens, soft studio lighting. Black Sesame Volcano dessert. Freshly baked dark coulant cake spilling a thick, warm, and glossy dark grey black sesame lava onto the plate. Dramatic shadows.`
+*   **`s24.png` (Kakigori Nieve de Fresa):** `Dark Mood Food Photography, Michelin star plating, 85mm lens, soft studio lighting. Strawberry Snow Kakigori. A towering mountain of purified ice shaved to snow texture, bathed in deep red natural candied strawberry syrup. Elegant dark background.`
+*   **`s25.png` (Sake Premium Dassai 23):** `Dark Mood Photography, 85mm lens, soft studio lighting. Premium Dassai 23 Sake presentation. An elegant frosted sake bottle with Japanese calligraphy and a small traditional glass filled with clear sake on a dark wooden table. Luxury beverage photography.`
+*   **`s26.png` (Albariño Gran Reserva):** `Dark Mood Photography, 85mm lens, soft studio lighting. A crystal-clear wine glass filled with vibrant golden Galician Albariño white wine. Condensation on the chilled glass, dramatic lighting against a dark background.`
+*   **`s27.png` (Té Verde Orgánico Sencha):** `Dark Mood Photography, 85mm lens, soft studio lighting. A comforting cup of Organic Sencha Green tea in a beautiful artisanal dark ceramic Japanese cup. Steam gently rising. Minimalist zen aesthetic.`
+*   **`s28.png` (Cerveza Asahi Super Dry):** `Dark Mood Photography, 85mm lens, soft studio lighting. A frosty, condensation-covered glass of crisp Japanese Asahi draft beer with a perfect two-finger white foam head. Cinematic lighting against a dark background.`
+
+## User Review Required
+
+> [!IMPORTANT]
+> Revisa la sección de **Modales Camaleónicos** y confírmame si estás de acuerdo con que los colores y estilos del Carrito y del Chat cambien dinámicamente según la carta que estemos viendo. Si das luz verde, comienzo inmediatamente con la refactorización en el código.

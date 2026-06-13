@@ -1,0 +1,17 @@
+# Task Tracker: Refinamiento de ExitIntent, Arqui y FounderBio
+
+## Fase 1: Corrección Responsiva de ExitIntent
+- `[/]` Modificar `ExitIntent.tsx` para aplicar flexbox al modal. Hacer el contenedor de bonos `overflow-y-auto` y anclar los botones inferiores con `flex-shrink-0`.
+
+## Fase 2: Reenfoque de Arqui
+- `[ ]` Modificar `MeetArquiSection.tsx` para presentarlo como "Director de Atención Digital" y enfocar su rol en la gestión de reservas y dudas constantes de comensales.
+
+## Fase 3: Identidad Corporativa FounderBio
+- `[ ]` Generar imagen IA `founder_corporate_emblem.png` y mover a `public/images/founder.png`.
+- `[ ]` Modificar `FounderBio.tsx`: reemplazar texto para incluir la historia (Madrid 2020, Dark Kitchen 7 marcas, Bares, Discotecas) y poner a Kommo como mención secundaria.
+
+## Fase 4: Mapeo de Rutas SaaS
+- `[x]` Crear un *walkthrough* / reporte detallando todas las URLs del ecosistema.
+
+## Fase 5: Despliegue
+- `[x]` Desplegar cambios en Vercel (`vercel --prod`).

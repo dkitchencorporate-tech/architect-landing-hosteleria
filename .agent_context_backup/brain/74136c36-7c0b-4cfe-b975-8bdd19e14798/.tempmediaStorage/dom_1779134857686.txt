@@ -1,0 +1,175 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8QPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DTeter%25C3%25ADa%2BEl%2BBa%25C3%25B1uelo%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Teter%C3%ADa+El+Ba%C3%B1uelo+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&aep=1&ntc=1&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8Q2J8OegQIBhAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&q=Teter%C3%ADa+El+Ba%C3%B1uelo+Granada&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8QtKgLegQIERAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (262,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&q=Teter%C3%ADa+El+Ba%C3%B1uelo+Granada&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8QtKgLegQIEBAB' />
+	[26] (262,180)<div  />
+		[27] (262,194)<span >Videos />
+[28] (333,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&q=Teter%C3%ADa+El+Ba%C3%B1uelo+Granada&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8Qs6gLegQICRAB' />
+	[29] (333,180)<div  />
+		[30] (333,194)<span >Videos cortos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+El+Ba%C3%B1uelo+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8Q0pQJegQIChAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&q=Teter%C3%ADa+El+Ba%C3%B1uelo+Granada&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8Qs6gLegQIDhAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (225,321)<a class='zReHs' href='https://www.instagram.com/teteriabanuelo/?hl=es' />
+	[48] (225,350)<h3 >Teteria Bañuelo (@teteriabanuelo) · Granada />
+	[49] (150,296)<div  />
+		[50] (150,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (165,296)<div  />
+				[55] (165,282)<div  />
+					[56] (165,282)<span >Instagram · teteriabanuelo />
+				[57] (165,312)<div  />
+					[58] (149,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 2 K seguidores />
+[59] (245,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[60] (245,310)<span  />
+		[61] (245,312)<span  />
+Algo de beber algo de comer y mucha paz
+Granada
+· No olvideis de nuestras opciones veganas. Tarta de chocolate y tarta de zanahoria 100% · Quien quiere tarta ...
+[62] (258,552)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d5775922-Reviews-La_Teteria_Del_Banuelo-Granada_Province_of_Granada_Andalucia.html' />
+	[63] (258,581)<h3 >LA TETERIA DEL BANUELO, Granada - Carta, fotos y ... />
+	[64] (205,527)<div  />
+		[65] (205,527)<div  />
+			[66] (81,527)<span  />
+				[67] (81,527)<div  />
+					[68] (81,527)<img  />
+			[69] (220,527)<div  />
+				[70] (220,513)<div  />
+					[71] (220,513)<span >Tripadvisor />
+				[72] (220,543)<div  />
+					[73] (220,543)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[74] (273,542)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[75] (355,541)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[76] (355,541)<span  />
+		[77] (355,543)<span  />
+Teteria típica de Granada con vistas a la Alhambra
+. Las infusiones están muy bien, los batidos también y la limonada con hierbabuena de vicio.
+[78] (544,582)<a href='https://www.tripadvisor.es/Restaurant_Review-g187441-d5775922-Reviews-La_Teteria_Del_Banuelo-Granada_Province_of_Granada_Andalucia.html' />
+	[79] (544,582)<div  />
+		[80] (544,582)<img  />
+4.1
+(268)
+·
+Rango de precios: €€ - €€€
+[81] (327,698)<div role='button' />
+[82] (192,818)<a class='zReHs' href='https://secretspotsgranada.com/comercios/teteria-el-banuelo/' />
+	[83] (132,847)<h3 >Tetería El Bañuelo />
+	[84] (192,793)<div  />
+		[85] (192,793)<div  />
+			[86] (81,793)<span  />
+				[87] (81,793)<div  />
+					[88] (81,793)<img  />
+			[89] (207,793)<div  />
+				[90] (207,779)<div  />
+					[91] (207,779)<span >Secret Spots Granada />
+				[92] (207,809)<div  />
+					[93] (207,809)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://secretspotsgranada.com />
+						[94] (272,808)<span class='ylgVCe ob9lvb' role='text'>› teteria-el-banuelo />
+[95] (329,807)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[96] (329,807)<span  />
+		[97] (329,809)<span  />
+Situada en la Calle Bañuelo, número 5, en pleno Albaicín
+, este lugar es mucho más que una simple tetería: es un refugio en el que los tés, los dulces árabes y ...
+[98] (678,392)<button class='KJY1Gc' />
+	[99] (677,392)<div  />
+		[100] (677,392)<div  />
+			[101] (686,392)<img  />
+		[102] (687,494)<span >Ver fotos />
+[103] (798,392)<a  />
+[104] (823,458)<a href='/local/place/fid/0xd71fd7307e821d3:0xe3e853ccaaf8388b/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DjWbvncL_fVm2XJNNi_O3pg%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D185.07138%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFmpXYnZuY0xfZlZtMlhKTk5pX08zcGc%3D&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8Qpx96BAgbEA8' />
+	[105] (823,458)<div  />
+		[106] (848,458)<img  />
+	[107] (890,495)<span >Ver por fuera />
+Tetería El Bañuelo
+4.5
+[108] (754,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+El+Ba%C3%B1uelo+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcd2x9lTdR5atJr348r8WHs9yE0pdsUc8w8bqfScCJ1VlXz0fF6-LK7ZLqeYeX_M2UzxNfI%3D&uds=ALYpb_l6DyU7gEufbC-T-1UgqmR0byL-UI5xVDciH0juiPnaq2_ssDKiYaYGKJp_Z1DgH4C3BM-ShrdDtXZBQ6hEz_8c4RCDPeSMx2lobNLdjIjm0KTNQ3lKtntzo9J81yA9DwNZOxOn&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8Q3PALegQIFBAE'>1,326 opiniones />
+[109] (805,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[110] (805,598)<span  />
+€1-10
+‧
+Tetería tradicional
+[111] (825,604)<div class='mTpL7c' role='button' />
+	[112] (825,604)<span aria-label='Más opciones para Tetería El Bañuelo' class='Zj92Hf' role='img' />
+		[113] (823,601)<span  />
+[114] (688,723)<div  />
+	[115] (656,723)<div  />
+	[116] (697,723)<span >Cómo llegar />
+[117] (787,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcd2x9lTdR5atJr348r8WHt3RU852sCFpdXFu2ccvMOtbxz7-iQ6emAAInSp_VextnRgpyu__aWaLHx3bzIFkpNBjYvti1CnRte2zxb6mPZz5diODA%3D%3D&q=Teter%C3%ADa+El+Ba%C3%B1uelo+Opiniones&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8Q0bkNegQIJxAF' />
+	[118] (787,723)<div  />
+		[119] (759,723)<div  />
+		[120] (796,723)<span >Opiniones />
+[121] (876,723)<div  />
+	[122] (876,723)<div  />
+		[123] (876,723)<div  />
+			[124] (876,723)<span aria-label='Guardar Tetería El Bañuelo en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Tetería El Bañuelo en una colección' />
+				[125] (884,723)<span >Guardar />
+[126] (684,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[127] (684,799)<div  />
+		[128] (656,799)<div  />
+		[129] (692,799)<span >Compartir />
+[130] (769,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[131] (769,799)<div  />
+		[132] (750,799)<div  />
+		[133] (778,799)<span >Llamar />
+[134] (843,799)<span  />
+	[135] (843,799)<div id='sXDlyb/g/11s5fwfdr3' role='button' />
+		[136] (843,799)<div  />
+			[137] (827,799)<div  />
+			[138] (851,799)<span >Menú />
+[139] (664,931)<a class='fl' href='/search?sca_esv=53e99bddec16fb1e&q=teter%C3%ADa+el+ba%C3%B1uelo+direcci%C3%B3n&ludocid=16422468179713341579&sa=X&ved=2ahUKEwiB2dPm0cOUAxU7r1YBHS_9GD8Q6BN6BAglEAI'>Dirección />
+:
+[140] (808,931)<a href='/maps/place//data=!4m2!3m1!1s0xd71fd7307e821d3:0xe3e853ccaaf8388b?sa=X&ved=1t:8290&ictx=111' />
+	[141] (808,931)<span >C. Bañuelo, 5, Local, Albaicín, 18010 Granada />
+Teléfono
+:
+[142] (722,979)<a href='#' />
+	[143] (722,979)<span >666 02 63 78 />
+
+</current_dom>

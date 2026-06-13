@@ -1,0 +1,61 @@
+# Refactorización Visual y Fotográfica: Menú Tapas / Bar Granadino
+
+El objetivo es equiparar el nivel estético y de usabilidad del menú "Bar Granadino" (Tapas) al estándar ultra-premium que acabamos de establecer con el menú de Sushi.
+
+## Propuesta de Cambios UI (Responsividad y Flujo)
+
+Actualmente la plantilla de Tapas usa un modelo de `lista horizontal`. En pantallas de móvil muy pequeñas, la imagen de 96x96px (`w-24`) y los textos pueden verse aglutinados. 
+Voy a implementar las siguientes mejoras en la tarjeta de producto de Tapas:
+1. **Responsividad Adaptativa:** En pantallas muy pequeñas (smartphones), la tarjeta pasará a un diseño híbrido o apilado inteligentemente (`flex-col sm:flex-row`) para evitar el estrangulamiento del texto.
+2. **Espaciado y Táctil:** Aumentaremos el tamaño de las zonas táctiles de los botones "+ Añadir" y "🤖 Asistente" para pulgares grandes.
+3. **Flujo de Visor HD:** El visor de imágenes *Lightbox* ya está conectado (`onImageClick`), pero aseguraré que herede perfectamente los detalles visuales de la plantilla Tapas (colores crema/verde/naranja).
+
+---
+
+## Generación de Activos Visuales (Batch 4: Menú Tapas)
+
+A continuación, tienes la lista de los 22 prompts diseñados inteligentemente. Al igual que con el Sushi, usa Midjourney o tu generador de confianza con estos prompts para mantener una coherencia fotográfica hiperrealista y de "Alta Cocina Rústica". 
+
+> [!IMPORTANT]
+> **Estilo Base Obligatorio:** Todos los prompts incluyen el sufijo de dirección de arte: *"(Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3)"* para que la estética sea uniforme.
+
+**Por favor, nómbralos exactamente de `t1` a `t22` y guárdalos en una carpeta.**
+
+### Para Compartir
+- **t1:** `A beautiful gourmet presentation of authentic Spanish "Ensaladilla Rusa" topped with premium white prawns, served on a rustic ceramic plate. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t2:** `A thick slice of runny Spanish potato omelette "Tortilla de Patatas", liquid center oozing out, slowly caramelized onion. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t3:** `A sophisticated bowl of silky cold "Salmorejo" soup, topped with Iberian ham cubes and hard-boiled egg crumbles, extra virgin olive oil drizzle. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t4:** `Gourmet "Patatas Bravas", crispy confit potato cubes bathed in rich smoky red brava sauce and aioli dots. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+
+### Fritura Andaluza
+- **t5:** `Crispy golden oxtail croquettes cut in half showing unctuous creamy bechamel filling. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t6:** `Andalusian marinated fried dogfish "Cazón en adobo", crispy golden fish cubes on a rustic wooden board with a lemon wedge. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t7:** `Crispy thin fried eggplant slices drizzled with pure thick cane honey, dark rustic background. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t8:** `Thick tender fried calamari rings "Calamares a la andaluza", light crispy batter, served on a rustic stone plate with lemon. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+
+### Ibéricos y Quesos
+- **t9:** `A premium board of 100% acorn-fed Iberian ham "Jamón Ibérico de Bellota", sweaty marbled slices carved by hand. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t10:** `Wedges of aged 12-month cured sheep cheese, accompanied by roasted almonds and rustic breadsticks on a dark wooden board. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t11:** `A premium assortment of Spanish Iberian cured meats: sliced pork loin, chorizo, and pepper salami on a slate board. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t12:** `Baked crystal bread toast topped with smoked Leon cecina (cured beef), parmesan flakes, and truffle oil drizzle. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+
+### Guisos Tradicionales
+- **t13:** `Melt-in-your-mouth stewed Iberian pork cheeks "Carrillada", in a dark rich Pedro Ximenez wine reduction over truffled potato puree. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t14:** `Traditional Andalusian tripe stew "Callos", hearty, dense, and spicy with chorizo and blood sausage in a rustic clay pot. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t15:** `Tender homemade beef and pork meatballs sunken in a rich thick roasted almond sauce. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t16:** `Classic Sevillian vegetarian spinach and chickpea stew "Espinacas con garbanzos" in a traditional clay cazuela. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+
+### Especialidades
+- **t17:** `Gourmet "Huevos Rotos", bed of homemade fries covered by three fried eggs with runny golden yolks and Iberian ham shavings. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t18:** `Grilled juicy Iberian pork flank "Pluma Ibérica", seared over high heat with a crispy crust and coarse sea salt flakes. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t19:** `Extremely tender whole premium Galician octopus leg over boiled potatoes, drizzled with olive oil and bright red paprika. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t20:** `Spectacular homemade XXL "Flamenquín", crispy breaded pork loin roll stuffed with Iberian ham and melting cheese. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+
+### Postres Caseros
+- **t21:** `Fluid Spanish "La Viña" style cheesecake, toasted rustic exterior with a warm melting cream cheese center oozing out. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+- **t22:** `Freshly caramelized traditional "Torrija", brioche soaked in milk and spices, seared crust with a scoop of vanilla ice cream melting on top. Rustic Spanish tapas photography, dark mood food photography, Michelin star plating, 85mm lens, f/1.8, dramatic sidelighting, hyperrealistic, 8k --ar 4:3`
+
+---
+
+> [!NOTE]
+> Genera estas imágenes y ponlas en una carpeta igual que hiciste con el menú sushi. Mientras tanto, dime si apruebas este plan para comenzar a refactorizar el código de la tarjeta de producto de Tapas. ¡No tocaré nada del código de Sushi!

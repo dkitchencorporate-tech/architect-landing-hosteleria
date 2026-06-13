@@ -1,0 +1,35 @@
+# Plan de Correcciones e Identidad Corporativa
+
+## Análisis de Requerimientos
+1. **Modal de Intención de Salida (ExitIntent):** Falla en móviles porque los botones inferiores quedan ocultos fuera del *viewport*. Necesitamos un ajuste estructural en el diseño *Flexbox* (añadir `h-[90vh]` o reestructurar el contenedor `overflow-y-auto` y poner `min-h-0`) para garantizar que el botón primario de WhatsApp quede anclado visiblemente en la parte inferior de cualquier pantalla.
+2. **Copy de Arqui (MeetArquiSection):** Seguimos mencionando "operaciones, delivery y dolores". Quieres enfocarlo más en la **atención al cliente continua, presencia y autoridad**. 
+3. **Bio del Fundador (FounderBio):** 
+   - **Imagen:** Quitar el retrato de la persona. Reemplazarlo por una imagen/emblema empresarial abstracto, profesional y potente (estilo corporativo premium).
+   - **Copy:** Reestructurar la biografía. Destacar tus años como propietario de bares, restaurantes y discotecas, además del desarrollo de 7 marcas para una Dark Kitchen en Madrid (2020). Mover lo de "Partner de Kommo" a una nota secundaria.
+4. **Mapeo de Rutas SaaS:** Generaré un documento detallado con todas las URLs del proyecto y sus respectivos componentes para estandarizar el proceso de uso.
+
+## Cambios Propuestos
+
+### [MODIFY] [ExitIntent.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ExitIntent.tsx)
+- Reestructurar el modal interno para que tenga un contenedor `flex flex-col max-h-[85vh]` en móviles.
+- Asignar la clase `flex-shrink-0` a los botones finales y al header, y `flex-1 overflow-y-auto min-h-0` al área de los bonos para asegurar que el contenido scrollea, pero el botón de acción jamás desaparece.
+
+### [MODIFY] [MeetArquiSection.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/MeetArquiSection.tsx)
+- **Título:** "Conoce a tu Nuevo Director de Atención Digital."
+- **Descripción:** "Esa burbuja flotante no es un simple bot. Es Arqui, una IA inteligente diseñada para estar siempre presente ante cualquier situación de atención al cliente. Arqui escucha a tus comensales, responde dudas al instante, gestiona reservas y se asegura de que ninguna oportunidad se escape mientras tú y tu equipo os encargáis de dar el mejor servicio en el local."
+
+### [MODIFY] Generación de Imagen Empresarial (FounderBio)
+- Utilizaré la IA para generar una nueva imagen: `founder_corporate_emblem.png`. El *prompt* forzará un emblema o logo arquitectónico/tecnológico de lujo en colores naranja y negro, sin personas, sin texto basura.
+
+### [MODIFY] [FounderBio.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/FounderBio.tsx)
+- Insertar la nueva imagen.
+- **Copy Nuevo:** "Construí este ecosistema tras años siendo propietario de bares, restaurantes, locales recreativos e invirtiendo en discotecas. En 2020, fundé una Dark Kitchen en Madrid donde desarrollamos 7 marcas propias desde cero. He vivido en carne propia lo que es pagar comisiones abusivas y trabajar con sistemas lentos. Por eso creamos Architect.Sys: para devolverte el control absoluto de tu negocio digital y tus márgenes."
+- Mover "Partner Oficial de Kommo" a una etiqueta final o secundaria.
+
+### [NEW] Mapeo del Ecosistema SaaS (Artifact)
+- Crearé un documento con todas las rutas detectadas: `/`, `/dashboard`, `/creative-factory`, `/demo/carta`, `/admin-architect`, etc., describiendo su función y protocolo de uso.
+
+## Plan de Verificación
+1. Validar responsividad del modal *ExitIntent* simulando vistas móviles en Chrome DevTools.
+2. Comprobar que el emblema empresarial generado no contenga humanos.
+3. Desplegar en Vercel y entregar los URLs en vivo.

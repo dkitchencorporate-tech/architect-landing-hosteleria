@@ -1,0 +1,46 @@
+# Tareas del Proyecto: Sistema de Prospección Autónomo
+
+- [x] 1. Inicializar Monorepo
+  - [x] Crear directorio raíz `prospector-hosteleria`.
+  - [x] Inicializar `package.json` base con `pnpm init`.
+  - [x] Crear `pnpm-workspace.yaml` para vincular aplicaciones y paquetes.
+- [x] 2. Configurar Frontend
+  - [x] Ejecutar `create-next-app` para generar el dashboard en `apps/frontend`.
+- [x] 3. Configurar Backend Worker (TypeScript)
+  - [x] Crear directorio `packages/backend-worker`.
+  - [x] Inicializar `package.json` del worker.
+  - [x] Instalar dependencias base (`whatsapp-web.js`, `puppeteer`, `firebase-admin`, `@google/generative-ai`, `express`).
+  - [x] Instalar herramientas de compilación/ejecución (`typescript`, `tsx`, `@types/node`).
+  - [x] Configurar `tsconfig.json`.
+  - [x] Crear estructura de directorios modular (scrapers, ai/evaluators, whatsapp/handlers, firebase).
+- [x] 4. Control de Versiones
+  - [x] Inicializar repositorio Git.
+  - [x] Crear archivo `.gitignore` robusto en la raíz.
+- [x] 5. Implementación Core (Fase 2 - OBSOLETA)
+  - [x] Implementar cliente de WhatsApp Web (QR y Comandos).
+  - [x] Implementar Scraper básico de Google con Puppeteer.
+  - [x] Conectar Orquestador principal (`!prospectar`).
+  - [x] Añadir script `dev` al `package.json`.
+- [x] 6. Pivotaje Arquitectónico (Fase 2.1)
+  - [x] Eliminar dependencias y módulo de WhatsApp.
+  - [x] Crear puente C2 en Firestore (`src/firebase/db.ts`).
+  - [x] Refactorizar Orquestador para escuchar comandos en Firebase.
+  - [x] Mejorar Scraper (extraer email/formularios).
+  - [x] Mejorar Evaluador IA (borrador Cold Email).
+- [x] 7. Módulo de Email en Frío (Fase 3)
+  - [x] Instalar `nodemailer`.
+  - [x] Configurar variables de entorno (GMAIL).
+  - [x] Crear servicio `src/mailer/index.ts`.
+  - [x] Refactorizar Orquestador para enviar correos automáticos si Score >= 7.
+- [x] 8. Frontend CRM (Fase 4)
+  - [x] Instalar SDK de Firebase en Frontend.
+  - [x] Configurar cliente `src/lib/firebase.ts`.
+  - [x] Crear componente Panel C2 (Command).
+  - [x] Crear componente CRM de Leads en tiempo real.
+  - [x] Integrar despliegue de Borrador de Email en Tarjeta de Lead.
+- [ ] 9. Refactorización Premium y Chat IA (Fase 5)
+  - [ ] Añadir listener de Chat (`src/firebase/chat.ts`) en Backend Worker.
+  - [ ] Integrar `next-themes` y paleta Premium en Frontend.
+  - [ ] Crear componente `SidebarChat.tsx`.
+  - [ ] Refactorizar `LeadCard.tsx` (Score Radial, Glassmorphism).
+  - [ ] Integrar Layout de pantalla dividida (Sidebar + Dashboard).

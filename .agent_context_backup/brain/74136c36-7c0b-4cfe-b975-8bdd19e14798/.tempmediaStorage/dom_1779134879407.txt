@@ -1,0 +1,142 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+3.5
+(63)
+·
+Rango de precios: €
+[0] (281,142)<h3 >Nos despedimos de Granada con unos dulces marroquies ... />
+Instagram · cocinandojuntos
+Más de 60 "me gusta"  ·  hace 1 año
+Nos despedimos de Granada con unos dulces marroquies en una de las teterías del Albaicin .
+Teteria Dar Ziryab
+Una maravilla. Local con encanto
+[1] (195,343)<a class='zReHs' href='https://www.facebook.com/Sal%C3%B3n-de-t%C3%A9-Dar-Ziryab-229970800355503/' />
+	[2] (183,373)<h3 >Salón de té Dar Ziryab | Granada />
+	[3] (195,318)<div  />
+		[4] (195,318)<div  />
+			[5] (81,318)<span  />
+				[6] (81,318)<div  />
+					[7] (81,318)<img  />
+			[8] (210,318)<div  />
+				[9] (210,304)<div  />
+					[10] (210,304)<span >Facebook · Salón de té Dar Ziryab | Granada />
+				[11] (210,334)<div  />
+					[12] (150,334)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 120 seguidores />
+[13] (336,332)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[14] (336,332)<span  />
+		[15] (336,334)<span  />
+Lugar: SALÓN DE TÉ DAR ZIRYAB
+c/Calderería Nueva 11 (local), Granada
+. Entrada 10 € (incluye una consumición) Aforo limitado Venta de entradas: Salón de té Dar ...
+5.0
+(1)
+[16] (177,489)<div role='button' />
+[17] (174,609)<a class='zReHs' href='http://teteriadarziryab.blogspot.com/' />
+	[18] (132,639)<h3 >Tetería Dar Ziryab />
+	[19] (174,584)<div  />
+		[20] (174,584)<div  />
+			[21] (81,584)<span  />
+				[22] (81,584)<div  />
+					[23] (81,584)<img  />
+			[24] (189,584)<div  />
+				[25] (189,570)<div  />
+					[26] (189,570)<span >Blogger.com />
+				[27] (189,600)<div  />
+					[28] (189,600)<cite class='tjvcx GvPZzd dTxz9 cHaqb' role='text'>http://teteriadarziryab.blogspot.com />
+·
+[29] (302,600)<a class='dEEN8c' href='http://teteriadarziryab.blogspot.com/' />
+	[30] (302,600)<span >Traducir esta página />
+[31] (362,598)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[32] (362,598)<span  />
+		[33] (362,600)<span  />
+La tetería DAR ZIRYAB
+se encuentra ubicada en una calle peatonal de la capital granadina
+conocida como "La calle de las teterías... 1 comentario: · Inicio · Ver ...
+[34] (250,840)<a class='zReHs' href='https://hotelgranadacentro.com/vive-granada/teterias-y-casas-de-te-con-mas-encanto-de-granada/' />
+	[35] (250,870)<h3 >Teterías y casas de té con más encanto de Granada />
+	[36] (205,815)<div  />
+		[37] (205,815)<div  />
+			[38] (81,815)<span  />
+				[39] (81,815)<div  />
+					[40] (81,815)<img  />
+			[41] (220,815)<div  />
+				[42] (220,801)<div  />
+					[43] (220,801)<span >Hotel Granada Centro />
+				[44] (220,831)<div  />
+					[45] (220,831)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://hotelgranadacentro.com />
+						[46] (285,831)<span class='ylgVCe ob9lvb' role='text'>› vive-granada › teterias... />
+[47] (356,829)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[48] (356,829)<span  />
+		[49] (356,831)<span  />
+28 ago 2025
+—
+Ubicación: Calle Elvira, a 7 minutos del hotel
+. Especialidad: Té blanco con flores de azahar. Ambiente: Minimalista, elegante y acogedor. 6 ...
+Ver fotos
+Ver por fuera
+Tetería Dar Ziryab
+4.2
+[50] (754,128)<a href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Dar+Ziryab+Granada&si=AL3DRZFIhG6pAqfNLal55wUTwygCG0fClF3UxiOmgw9Hq7nbWSpFjJx2zCHX7sUkn1zhQlB61eocz9e_xMf0MjUpf74W17ivv8fB64fa_m4bY2ny2CTxZFo%3D&uds=ALYpb_l2fW9FmhMyhdOPbWGe4NHtn9R3_E5x_G0FXAsk5mEpb2_4ezOTsBzKhSBB2bBKjTTOxT1OWIwZt8_GuIcaCfYLETMQm2SIeRUAbxTq80e1-Rw531USHeW0go_O-g5JCUCA7K0A&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQ3PALegQIGRAE'>1,443 opiniones />
+[51] (805,123)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[52] (805,123)<span  />
+€1-10
+‧
+Cafetería
+[53] (825,130)<div class='mTpL7c' role='button' />
+	[54] (825,130)<span aria-label='Más opciones para Tetería Dar Ziryab' class='Zj92Hf' role='img' />
+		[55] (823,127)<span  />
+[56] (688,248)<div  />
+	[57] (656,248)<div  />
+	[58] (697,248)<span >Cómo llegar />
+[59] (787,248)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZFIhG6pAqfNLal55wUTwygCG0fClF3UxiOmgw9Hq7nbWfWZ0iw5i5EcSQ79ZK3mA7vdBSHmLQkYTlGSBHxbXH9eRzvcvSDwJs0M6gPMbrtoLCMB1Z6L9zVhMmBtSxXt63ndYyo2LRmP_vFI2X-aygNA5MW3JA%3D%3D&q=Teter%C3%ADa+Dar+Ziryab+Opiniones&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQ0bkNegQIKBAF' />
+	[60] (787,248)<div  />
+		[61] (759,248)<div  />
+		[62] (796,248)<span >Opiniones />
+[63] (876,248)<div  />
+	[64] (876,248)<div  />
+		[65] (876,248)<div  />
+			[66] (876,248)<span aria-label='Guardar Tetería Dar Ziryab en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Tetería Dar Ziryab en una colección' />
+				[67] (884,248)<span >Guardar />
+[68] (684,324)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[69] (684,324)<div  />
+		[70] (656,324)<div  />
+		[71] (692,324)<span >Compartir />
+[72] (769,324)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[73] (769,324)<div  />
+		[74] (750,324)<div  />
+		[75] (778,324)<span >Llamar />
+[76] (843,324)<span  />
+	[77] (843,324)<div id='sXDlyb/g/1262k3dhs' role='button' />
+		[78] (843,324)<div  />
+			[79] (827,324)<div  />
+			[80] (851,324)<span >Menú />
+Tés orientales, batidos naturales y repostería andalusí en clásico salón de té con arcos y columnas árabes.
+[81] (664,533)<a class='fl' href='/search?sca_esv=53e99bddec16fb1e&q=dar+ziryab+direcci%C3%B3n&ludocid=941427402767140759&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQ6BN6BAgpEAI'>Dirección />
+:
+[82] (766,550)<a href='/maps/place//data=!4m2!3m1!1s0xd71fcbf4ff4dce5:0xd109f3c23c10797?sa=X&ved=1t:8290&ictx=111' />
+	[83] (766,550)<span >C. Calderería Nueva, 11, Albaicín, 18010 Granada />
+Teléfono
+:
+[84] (722,615)<a href='#' />
+	[85] (722,615)<span >655 44 67 75 />
+[86] (686,670)<a href='#' role='button'>Sugerir una edición />
+·
+[87] (830,670)<a href='https://business.google.com/create?hl=es-419&getstarted&authuser=0&fp=941427402767140759&gmbsrc=es-es-419-et-ip-z-gmb-s-z-l~skp%7Cclaimbz_aoc_a%7Cu&ppsrc=GMBSI'>¿Eres propietario de esta empresa? />
+Agregar la información que falta
+[88] (784,767)<div class='Kq7ICe ElkDDc Qh9l3d' role='link' />
+	[89] (712,771)<span >Agregar el horario de atención />
+[90] (784,802)<div class='Kq7ICe ElkDDc Qh9l3d' role='link' />
+	[91] (681,806)<span >Agregar sitio web />
+[92] (710,886)<div class='MNVeJb lnxHfb' role='button' />
+	[93] (710,886)<div  />
+		[94] (710,886)<div  />
+			[95] (710,886)<div  />
+				[96] (690,868)<span >Precio por persona: />
+				[97] (710,888)<span >€1-10 />
+					[98] (779,867)<span  />
+					[99] (710,903)<div >Informado por 201 personas />
+Opiniones
+
+</current_dom>

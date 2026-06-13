@@ -1,0 +1,66 @@
+# Plan de Trabajo: Activación de la Creative Factory y Generación de Cartas con Gemini API
+
+Este plan detalla cómo conectar la **Factoría Creativa** con el modelo Gemini Flash (para textos y copys B2B) y el modelo **Imagen 3 en Google AI Studio** (usando la API Key del usuario) para generar tanto creatividades publicitarias como las imágenes de platos de la carta que nos faltan, guardándolas físicamente en el servidor Next.js.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Uso de tu API Key de Gemini:**
+> El sistema utilizará la variable `GEMINI_API_KEY` ya configurada en tu archivo `.env.local`. Dado que activaste el saldo/créditos en tu cuenta de Google AI Studio, las llamadas a la API de Imagen 3 e Imagen de Google se cobrarán de tu saldo (centavos por imagen), evitando por completo los bloqueos de cuota gratuita de mi sandbox.
+
+---
+
+## Proposed Changes
+
+### 1. Backend: Endpoints Generativos y de Guardado
+
+#### [NEW] `src/app/api/creative-factory/generate/route.ts`
+- **Función:** Recibe el "Dolor del Cliente" y el "Ángulo de Ataque" seleccionados en el panel.
+- **Lógica:** Consulta a Gemini Flash mediante un prompt estructurado de copywriting B2B para hostelería.
+- **Respuesta:** Devuelve un JSON con:
+  - `hook`: Texto corto de impacto para sobreimprimir en la imagen.
+  - `primaryText`: Copia persuasiva para el post de Meta Ads.
+  - `visualPrompt`: El prompt altamente descriptivo para alimentar a Imagen 3.
+
+#### [NEW] `src/app/api/creative-factory/generate-image/route.ts`
+- **Función:** Recibe un prompt visual de imagen.
+- **Lógica:** Llama al endpoint oficial de Google AI Studio para Imagen 3:
+  `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:generateImages?key=${process.env.GEMINI_API_KEY}`
+- **Respuesta:** Devuelve la imagen generada en formato Base64.
+
+#### [NEW] `src/app/api/creative-factory/save-image/route.ts`
+- **Función:** Recibe un Base64 y un nombre de archivo objetivo (ej: `s18.png`, `t1.png`).
+- **Lógica:** Guarda la imagen en la ruta `public/images/demo/` convirtiéndola a PNG físicamente en el servidor Next.js.
+- **Respuesta:** Estado de éxito e URL local del asset.
+
+---
+
+### 2. Frontend: Interfaz Interactiva de la Factoría
+
+#### [MODIFY] `src/app/creative-factory/page.tsx`
+- **Integración del Generador:**
+  - Conectar el formulario de Dolor y Ángulo de Ataque al endpoint `/api/creative-factory/generate`.
+  - Mostrar estados de carga y animaciones mientras la IA genera el texto.
+- **Generación Visual:**
+  - Inyectar el botón "Generar Imagen con Imagen 3" que consume la API con el prompt visual generado.
+  - Renderizar la imagen generada en el cuadro de previsualización 4:5.
+- **Asignador de Menú (Solución de Imágenes Faltantes):**
+  - Añadir una sección de "Asignar a Plato de la Carta".
+  - Un desplegable que listará los platos sin imagen (ej: "Sushi 18: Costilla Wagyu", "Tapas 1: Tabla de Ibéricos", etc.).
+  - Un botón de acción "Guardar y Asignar" que llamará al endpoint `/save-image` para que el archivo se guarde localmente y actualice la carta de forma inmediata.
+
+---
+
+## Verification Plan
+
+### Automated Tests
+- Validar las respuestas JSON del endpoint `/api/creative-factory/generate`.
+- Confirmar que la llamada a Imagen 3 devuelve correctamente la estructura de Base64.
+
+### Manual Verification
+- Entrar en `/creative-factory` desde el navegador.
+- Seleccionar un dolor (ej. "Local vacío entre semana") y ángulo de ataque.
+- Hacer clic en "Fabricar Campaña" y comprobar que genera los textos y el prompt de imagen en segundos.
+- Hacer clic en "Generar Imagen", verificar la visualización.
+- Seleccionar el plato "s18_costilla_wagyu" en el selector y guardarlo.
+- Ir a la carta de Sushi y verificar que la costilla Wagyu ahora tiene su imagen cargada de forma instantánea sin placeholders.

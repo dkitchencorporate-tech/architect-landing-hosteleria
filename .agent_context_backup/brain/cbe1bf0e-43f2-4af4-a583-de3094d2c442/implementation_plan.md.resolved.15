@@ -1,0 +1,37 @@
+# Plan: Agente Autónomo Experto y Scroll Inteligente
+
+## Diagnóstico y Comprensión
+Tienes toda la razón. Al forzar a la IA con "Fase 1, Fase 2, Fase 3", la hemos convertido en un robot de Call Center. Le hemos castrado la inteligencia natural que tiene Gemini para analizar y responder de forma adaptativa.
+
+Lo que necesitas es un **Agente Autónomo Basado en Conocimiento (Knowledge-Base Agent)**. En lugar de darle un guion rígido, le daremos el "Cerebro" de tu empresa (qué vendes, por qué es mejor que la competencia, cuáles son los precios y bonos) y le daremos un **Objetivo** (perfilar al cliente y llevarlo a agendar una auditoría). La IA usará ese conocimiento para conversar libremente, adaptándose a si el cliente es seco, hablador, si tiene problemas de reservas o si quiere una web.
+
+> [!NOTE]
+> Sobre Firebase: Para darle este nivel de inteligencia, **no necesitamos Firebase todavía**. Los modelos actuales (Gemini 1.5) tienen una ventana de contexto enorme. Podemos inyectar toda la base de conocimiento de tu negocio directamente en el `route.ts`. Si en el futuro tuvieras cientos de PDFs de manuales de tu empresa, sí montaríamos una base de datos vectorial (RAG), pero para el contexto de ventas, el Prompt de Conocimiento es la arquitectura perfecta.
+
+---
+
+## Proposed Changes
+
+### 1. El Cerebro Autónomo (route.ts)
+Eliminaremos las fases estructuradas. Transformaremos el `systemInstruction` en una Base de Conocimiento estructurada que el agente leerá y usará a su libre albedrío para conversar.
+
+#### [MODIFY] [route.ts](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/demo/respond/route.ts)
+- **Rol:** Eres Arqui, Consultor Senior de Digitalización Estratégica en Architect.Sys.
+- **Base de Conocimiento (Lo que sabes):** 
+  - Que plataformas como ElTenedor/Glovo cobran hasta 30% y secuestran datos.
+  - Que Architect.Sys crea ecosistemas propios (IA en WhatsApp, Cartas QR Inteligentes, Web propia).
+  - Que el coste va desde 49€/mes a 69€/mes.
+  - Que el bono de acción rápida es de 620€ (Diseño, Estrategia, etc.).
+- **Objetivo Autónomo:** Eres libre de conversar. Presentate, averigua qué tipo de negocio tienen y cuáles son sus cuellos de botella actuales. Usa la base de conocimiento para darles soluciones personalizadas a sus respuestas, de forma conversacional, empática y persuasiva, para convencerles de que pulsen el botón de ver planes. NO uses plantillas, sé natural y creativo en cada respuesta.
+
+### 2. Scroll Inteligente (ChatDemoWidget.tsx)
+El problema de que el mensaje se lea desde abajo es porque el chat hace scroll hasta el último píxel (el fondo total). Si el mensaje es largo, la parte de arriba queda oculta.
+
+#### [MODIFY] [ChatDemoWidget.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ChatDemoWidget.tsx)
+- Cambiaré la lógica de auto-scroll. En lugar de hacer `scrollTop = scrollHeight`, le pondré una referencia (`ref`) al **último mensaje renderizado**, y usaré `scrollIntoView({ block: 'start' })`. De esta forma, cuando la IA responda, la pantalla bajará exactamente hasta el **principio** del nuevo mensaje, permitiéndote leer cómodamente de arriba hacia abajo sin tocar el ratón.
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Aprobación del Nuevo Enfoque:**
+> ¿Estás de acuerdo con inyectar este "Cerebro de Conocimiento" libre en lugar del guion por fases, y arreglar el scroll para que apunte al inicio del mensaje? Si me das el "Ok", ejecuto esto de inmediato para que sientas la verdadera inteligencia de Gemini en tu app.

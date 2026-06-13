@@ -1,0 +1,81 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Skip to content
+Navigation Menu
+[0] (38,57)<a aria-label='Homepage' class='tmp-mr-lg-3 color-fg-inherit flex-order-2 js-prevent-focus-on-mobile-nav' href='/' />
+[1] (100,57)<button class='NavDropdown-module__button__PEHWX js-details-target'>Platform />
+[2] (177,57)<button class='NavDropdown-module__button__PEHWX js-details-target'>Solutions />
+[3] (258,57)<button class='NavDropdown-module__button__PEHWX js-details-target'>Resources />
+[4] (350,57)<button class='NavDropdown-module__button__PEHWX js-details-target'>Open Source />
+[5] (441,57)<button class='NavDropdown-module__button__PEHWX js-details-target'>Enterprise />
+[6] (508,57)<a class='NavLink-module__link__EG3d4 MarketingNavigation-module__navLink__hUomM' href='https://github.com/pricing' />
+	[7] (508,57)<span >Pricing />
+[8] (801,57)<button aria-label='Search or jump to…' class='header-search-button placeholder input-button form-control d-flex flex-1 flex-self-stretch flex-items-center no-wrap width-full py-0 pl-2 pr-0 text-left border-0 box-shadow-none' placeholder='Search or jump to...' />
+	[9] (801,57)<div  />
+[10] (849,57)<a class='HeaderMenu-link HeaderMenu-link--sign-in HeaderMenu-button flex-shrink-0 no-underline d-none d-lg-inline-flex border border-lg-0 rounded px-2 py-1' href='/login?return_to=https%3A%2F%2Fgithub.com%2Fsupabase%2Fcli%2Freleases%2Ftag%2Fv2.98.2'>Sign in />
+[11] (912,57)<a class='HeaderMenu-link HeaderMenu-link--sign-up HeaderMenu-button flex-shrink-0 d-flex d-lg-inline-flex no-underline border color-border-default rounded px-2 py-1' href='/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Freleases%2Fshow&source=header-repo&source_repo=supabase%2Fcli'>Sign up />
+[12] (963,57)<button class='Button Button--iconOnly Button--invisible Button--medium AppHeader-button HeaderMenu-link border' id='icon-button-ae4e0857-9098-4dae-8445-cf5560dce972' />
+[13] (76,162)<a class='url fn' href='/supabase'>supabase />
+/
+[14] (128,162)<a href='/supabase/cli'>cli />
+Public
+[15] (738,161)<a aria-label='You must be signed in to change notification settings' class='btn-sm btn' href='/login?return_to=%2Fsupabase%2Fcli' id='repository-details-watch-button'>Notifications />
+[16] (835,161)<a class='btn-sm btn' href='/login?return_to=%2Fsupabase%2Fcli' id='fork-button'>Fork />
+	[17] (856,160)<span >454 />
+[18] (930,161)<a aria-label='You must be signed in to star a repository' class='tooltipped tooltipped-sw btn-sm btn' href='/login?return_to=%2Fsupabase%2Fcli' />
+	[19] (925,161)<span >Star />
+	[20] (951,160)<span >2.2k />
+[21] (53,250)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item selected' href='/supabase/cli/tree/v2.98.2' id='code-tab' />
+	[22] (63,250)<span >Code />
+[23] (133,250)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/issues' id='issues-tab' />
+	[24] (128,250)<span >Issues />
+	[25] (161,250)<span >311 />
+[26] (246,250)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/pulls' id='pull-requests-tab' />
+	[27] (241,250)<span >Pull requests />
+	[28] (290,250)<span >82 />
+[29] (347,250)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/actions' id='actions-tab' />
+	[30] (356,250)<span >Actions />
+[31] (452,250)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/security' id='security-and-quality-tab' />
+	[32] (461,250)<span >Security and quality />
+[33] (558,250)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/pulse' id='insights-tab' />
+	[34] (567,250)<span >Insights />
+[35] (45,342)<a class='Link' href='/supabase/cli/releases'>Releases />
+[36] (94,342)<a class='Link' href='/supabase/cli/releases/tag/v2.98.2'>v2.98.2 />
+v2.98.2
+[37] (153,482)<a class='Link v-align-text-bottom d-none d-md-inline-block' href='/supabase/cli/releases/latest' />
+	[38] (153,482)<span >Latest />
+[39] (928,458)<button class='Button--secondary Button--small Button' id='select-panel-e70b5da2-067c-4878-932e-0241053cbb0b-button' />
+	[40] (928,458)<span  />
+		[41] (920,458)<span >Compare />
+[42] (93,553)<a class='text-bold color-fg-muted' href='/apps/github-actions'>github-actions />
+released this
+·
+[43] (304,556)<a href='/supabase/cli/compare/v2.98.2...develop'>111 commits />
+to develop
+          since this release
+[44] (518,556)<a class='Link Link--muted' href='/supabase/cli/tree/v2.98.2' />
+	[45] (518,556)<span  />
+		[46] (527,556)<span >v2.98.2 />
+[47] (593,555)<a class='Link Link--muted' href='/supabase/cli/commit/e4a7ace0226dfd7ee8886ebc550a4b5c476c047e' />
+	[48] (602,557)<code >e4a7ace />
+[49] (636,556)<details class='dropdown dropdown-signed-commit details-reset details-overlay js-dropdown-details d-inline-block ml-1' />
+	[50] (636,556)<summary class='color-fg-success' />
+Changelog
+Bug fixes
+[51] (88,832)<a class='commit-link' href='https://github.com/supabase/cli/commit/e4a7ace0226dfd7ee8886ebc550a4b5c476c047e' />
+	[52] (88,835)<tt >e4a7ace />
+: fix: mailer links regression (
+[53] (284,832)<a class='issue-link js-issue-link' href='https://github.com/supabase/cli/pull/5166'>#5166 />
+) (
+[54] (334,832)<a class='user-mention notranslate' href='https://github.com/jgoux'>@jgoux />
+)
+Others
+[55] (88,973)<a class='commit-link' href='https://github.com/supabase/cli/commit/893c2840996c7ec8cfaa38a2907b973a7859957c' />
+	[56] (88,976)<tt >893c284 />
+: chore: sync API types from infrastructure (
+[57] (366,973)<a class='issue-link js-issue-link' href='https://github.com/supabase/cli/pull/5160'>#5160 />
+) (@supabase-cli-releaser[bot])
+
+</current_dom>

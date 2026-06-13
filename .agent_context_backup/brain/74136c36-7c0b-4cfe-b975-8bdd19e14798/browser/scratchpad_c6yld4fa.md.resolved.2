@@ -1,0 +1,16 @@
+# Task: Verify Architect.Sys Pro Re-engineering
+
+## Checklist
+- [x] Navigate to http://localhost:3000
+- [x] Search for "Restaurantes Menú del día en Vallecas"
+- [x] Verify low score for leads with high reviews/booking links
+- [/] Check `evaluationReason` for low-score leads
+- [ ] Perform Deep Audit on a lead with website and low reviews
+- [ ] Verify expert tone and absence of false PDF mentions
+- [x] Confirm Firebase index error is gone
+
+## Findings
+- Search for "Restaurantes Vallecas" (no accents) worked and returned relevant leads.
+- Leads with >500 reviews (e.g., Restaurante La Merced - 875, Restaurante Amordmadre - 2500, Sultan Palast - 1000) all received a score of 0/10. This confirms negative filtering.
+- Firebase index error (red banner) is NOT present.
+- Currently checking `evaluationReason` for "Restaurante La Merced".

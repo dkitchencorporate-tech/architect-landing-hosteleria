@@ -1,0 +1,6 @@
+# Tareas: Solución de Bugs y Enfoque de Ventas (Chatbot)
+
+- `[x]` 1. Disparar eventos desde ChatDemoWidget.
+- `[x]` 2. Bloquear ExitIntent con estados globales (eventos).
+- `[x]` 3. Limpiar markdown `json` en el backend (route.ts).
+- `[x]` 4. Reescribir el prompt del bot hacia venta consultiva.

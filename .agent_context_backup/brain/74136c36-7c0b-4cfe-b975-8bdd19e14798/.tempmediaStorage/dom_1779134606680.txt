@@ -1,0 +1,162 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DTeter%25C3%25ADa-Restaurante%2BKasbah%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Teter%C3%ADa-Restaurante+Kasbah+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQ2J8OegQIChAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Teter%C3%ADa-Restaurante+Kasbah+Granada&sa=X&ved=2ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQtKgLegQIExAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Teter%C3%ADa-Restaurante+Kasbah+Granada&sa=X&ved=2ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQs6gLegQIERAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Teter%C3%ADa-Restaurante+Kasbah+Granada&sa=X&ved=2ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQtKgLegQIDhAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa-Restaurante+Kasbah+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQ0pQJegQIFBAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Teter%C3%ADa-Restaurante+Kasbah+Granada&sa=X&ved=2ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQs6gLegQIFRAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+Resultado web con vínculos a sitio
+[47] (185,321)<a class='zReHs' href='https://kasbahgranada.com/' />
+	[48] (185,350)<h3 >Kasbah Granada: Sobre nosotros />
+	[49] (142,296)<div  />
+		[50] (142,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (158,296)<div  />
+				[55] (158,282)<div  />
+					[56] (158,282)<span >Kasbah Granada />
+				[57] (158,312)<div  />
+					[58] (158,312)<cite class='tjvcx GvPZzd cHaqb' role='text'>https://kasbahgranada.com />
+[59] (230,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[60] (230,310)<span  />
+		[61] (230,312)<span  />
+Situado en una de las calles históricas más bellas de
+Granada
+, el
+restaurante
+-
+tetería Kasbah
+ofrece a los visitantes y a los habitantes de
+Granada
+lo mejor ...
+[62] (128,517)<a class='l' href='https://kasbahgranada.com/kasbah-carta/'>Nuestra carta />
+	[63] (561,532)<span  />
+		[64] (561,531)<div  />
+Kasbah Granada - Restaurante-Tetería - Logo ... ¡Síguenos ...
+[65] (149,628)<a class='l' href='https://kasbahgranada.com/reservas-y-contacto/'>Reservas y contacto />
+	[66] (561,644)<span  />
+		[67] (561,643)<div  />
+¡Síguenos! Encuéntranos en Facebook · Síguenos en ...
+[68] (106,739)<a class='l' href='https://kasbahgranada.com/teteria/category/teteria/'>Tetería />
+	[69] (561,755)<span  />
+		[70] (561,754)<div  />
+Hemos decorado la Tetería y Restaurante Kasbah Granada ...
+[71] (136,851)<a class='l' href='https://kasbahgranada.com/teteria-restaurante/'>Conócenos más />
+	[72] (561,866)<span  />
+		[73] (561,865)<div  />
+Hemos decorado la Tetería y Restaurante Kasbah Granada ...
+[74] (169,962)<a class='l' href='https://kasbahgranada.com/wp-content/uploads/2024/11/Carta-teteria-restaurante-andalucia-Granada-24-ES.pdf'>Carta tetería restaurante ... />
+	[75] (561,977)<span  />
+		[76] (561,977)<div  />
+TETERÍA - RESTAURANTE. ¡Etiquétanos! Page 2. Kasbah ...
+[77] (712,392)<button class='KJY1Gc' />
+	[78] (711,392)<div  />
+		[79] (711,392)<div  />
+			[80] (728,392)<img  />
+		[81] (755,494)<span >Ver fotos />
+[82] (841,392)<a  />
+[83] (857,458)<a href='/local/place/fid/0xd71fdccacf0f423:0x467337d4d3eebed9/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3D4wE2o5rdX45vcgByO91Xuw%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D157.38985%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFjR3RTJvNXJkWDQ1dmNnQnlPOTFYdXc%3D&sa=X&ved=2ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQpx96BAgcEA8' />
+	[84] (857,458)<div  />
+		[85] (874,458)<img  />
+	[86] (890,495)<span >Ver por fuera />
+Tetería - Restaurante Kasbah Granada
+4.2
+[87] (754,647)<a href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa-Restaurante+Kasbah+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOd0ur3txh7LtK8rsxxj6Vto6sEoCggB_dFucnv2G530VZqZPqTfuXYrTuvh21TAwZwnDL-U%3D&uds=ALYpb_mgZNSyW_-r_VJg3_KzT_ZRPExSBj22wGaJbPPZE-YxbFL8TUM43Z0Geu_pVhOL_6xRj--r635Sy1d6ftXxtG_NzVz7ovnurtcsXhlvyuGSI4JIWyB4szMi8m2Y00fTLSRbpJAX&sa=X&ved=2ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQ3PALegQIGhAE'>1,777 opiniones />
+[88] (805,642)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[89] (805,642)<span  />
+€10-20
+‧
+Restaurante
+[90] (825,649)<div class='mTpL7c' role='button' />
+	[91] (825,649)<span aria-label='Más opciones para Tetería - Restaurante Kasbah Granada' class='Zj92Hf' role='img' />
+		[92] (823,646)<span  />
+[93] (681,767)<a class='n1obkb mI8Pwc' href='https://kasbahgranada.com/' />
+	[94] (681,767)<div  />
+		[95] (656,767)<div  />
+		[96] (690,767)<span >Sitio web />
+[97] (777,767)<div  />
+	[98] (745,767)<div  />
+	[99] (786,767)<span >Cómo llegar />
+[100] (876,767)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOd0ur3txh7LtK8rsxxj6VtpYPK483FlaivpsGaTSsCaNoF5vjHZ39FKOt55U8CKNBNLIWRePtOJrtB-2AMQ_Lcxr9u1S30vSug5bv9tKaS-x5fMHy32vobxV9Fb7GgL5EPmkyWw%3D&q=Teter%C3%ADa+-+Restaurante+Kasbah+Granada+Opiniones&sa=X&ved=2ahUKEwjVmPPw0MOUAxU3r1YBHV5UOgwQ0bkNegQINBAH' />
+	[101] (876,767)<div  />
+		[102] (848,767)<div  />
+		[103] (884,767)<span >Opiniones />
+[104] (678,843)<div  />
+	[105] (678,843)<div  />
+		[106] (678,843)<div  />
+			[107] (678,843)<span aria-label='Guardar Tetería - Restaurante Kasbah Granada en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Tetería - Restaurante Kasbah Granada en una colección' />
+				[108] (687,843)<span >Guardar />
+[109] (768,843)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[110] (768,843)<div  />
+		[111] (740,843)<div  />
+		[112] (776,843)<span >Compartir />
+[113] (853,843)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[114] (853,843)<div  />
+		[115] (834,843)<div  />
+		[116] (862,843)<span >Llamar />
+[117] (672,919)<span  />
+	[118] (672,919)<div id='sXDlyb/g/11k05ychxf' role='button' />
+		[119] (672,919)<div  />
+			[120] (656,919)<div  />
+			[121] (680,919)<span >Menú />
+[122] (707,998)<div class='K9ZSQ' id='pYQAIb/g/11k05ychxf' role='button' />
+	[123] (707,998)<div  />
+		[124] (663,998)<div  />
+		[125] (715,998)<span >Pedir para llevar />
+[126] (852,998)<div class='K9ZSQ' id='pYQAIb/g/11k05ychxf' role='button' />
+	[127] (852,998)<div  />
+		[128] (808,998)<div  />
+		[129] (861,998)<span >Pedir a domicilio />
+
+</current_dom>

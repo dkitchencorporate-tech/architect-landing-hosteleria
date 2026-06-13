@@ -1,0 +1,34 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (66,100)<a class='flex items-center gap-4 group no-underline' href='/' />
+	[1] (66,100)<img  />
+[2] (371,100)<a class='text-[11px] font-black uppercase tracking-[0.3em] transition-all duration-300 no-underline flex items-center gap-2 text-neutral-dark' href='/' />
+	[3] (380,100)<span >Menu />
+[4] (476,100)<a class='text-[11px] font-black uppercase tracking-[0.3em] transition-all duration-300 no-underline flex items-center gap-2 text-neutral-dark/40 hover:text-neutral-dark' href='/nosotros' />
+	[5] (485,100)<span >Nosotros />
+[6] (589,100)<a class='text-[11px] font-black uppercase tracking-[0.3em] transition-all duration-300 no-underline flex items-center gap-2 text-neutral-dark/40 hover:text-neutral-dark' href='/llegar' />
+	[7] (597,100)<span >Llegar />
+[8] (737,100)<a class='text-[11px] font-black uppercase tracking-[0.3em] transition-all duration-300 no-underline flex items-center gap-2 text-neutral-dark/40 hover:text-neutral-dark' href='https://open.spotify.com/user/encapaco?si=t1PY-0vMRMKJW5ISArIJ7g' />
+	[9] (745,100)<span >PLAYLIST ENCAPACO />
+[10] (907,100)<button class='text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 text-neutral-dark'>ES />
+[11] (934,100)<button class='text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 text-neutral-dark/30 hover:text-neutral-dark hover:scale-105'>EN />
+[12] (962,100)<button class='text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 text-neutral-dark/30 hover:text-neutral-dark hover:scale-105'>FR />
+Carta Digital
+Nuestros
+Sabores.
+[13] (500,497)<a class='bg-neutral-dark text-white px-10 py-5 rounded-full flex items-center gap-4 hover:bg-sierra-gold transition-all duration-500 shadow-xl no-underline' href='tel:+34616600772' />
+	[14] (513,497)<span >Llamar ahora />
+Categoría
+Bocadillos
+ENCAPACO
+Uso de cookies
+Usamos cookies propias y de terceros para mejorar tu experiencia. Puedes aceptarlas todas, solo las necesarias, o personalizar tu elección. Más info en nuestra
+[15] (850,677)<a class='underline underline-offset-2 text-neutral-dark/80 hover:text-sierra-gold transition-colors' href='/politica-de-cookies'>Política de Cookies />
+.
+[16] (750,735)<button class='flex items-center gap-1 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-dark/30 hover:text-neutral-dark/60 transition-colors mb-5'>Personalizar />
+[17] (831,815)<button class='w-full py-3 rounded-full bg-neutral-dark text-pearl-white text-[10px] font-black uppercase tracking-[0.3em] hover:bg-black transition-colors'>Aceptar todas />
+[18] (831,897)<button class='w-full py-3 rounded-full border border-black/10 text-neutral-dark/50 text-[10px] font-black uppercase tracking-[0.3em] hover:border-black/30 hover:text-neutral-dark transition-colors'>Solo necesarias />
+
+</current_dom>

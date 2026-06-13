@@ -1,0 +1,26 @@
+# Resumen de Optimizaciones Backend y Conversión Local
+
+He implementado los cuatro ajustes estratégicos en el entorno local para asegurar que la máquina de ventas funcione como un reloj suizo sin generar fricción en el usuario.
+
+## 1. Chatbot Inmortal (Fix de Z-Index)
+Se ha modificado la arquitectura de renderizado del `ChatDemoWidget.tsx`. En lugar de montarse dentro del flujo normal de la página (lo que lo ocultaba bajo ciertas secciones), ahora utiliza `createPortal` de React.
+Esto significa que el código HTML del chatbot se inyecta dinámicamente en el nivel más alto posible de tu navegador (`document.body`). **Resultado:** El chatbot ahora flota siempre por encima de cualquier elemento (incluyendo el menú superior y las tarjetas), garantizando que el usuario siempre pueda interactuar con Arqui sin molestias visuales.
+
+## 2. El Closer Inteligente (Backend API)
+He modificado el archivo `api/demo/respond/route.ts` que controla el "Cerebro" de Gemini.
+Cuando el usuario llega a la fase de cierre (`CLOSING`), Arqui ya no menciona los precios obsoletos.
+**Nuevo Comportamiento:** Arqui resume los beneficios y empuja a la conversión ofreciendo el modelo exacto que acabamos de diseñar: Suscripción Base (49€), Growth (69€) o Licencia (450€). Además, recalca el incentivo masivo de regalar los **620€ en Bonos Físicos** (Auditoría, Diseño, Estrategia y Redes) como urgencia para cerrar la venta hoy.
+
+## 3. Retención de Tráfico (Exit Intent)
+El componente `ExitIntent.tsx` ha sido completamente rediseñado para cumplir con su objetivo: salvar al lead sin ser molesto.
+- **Timing:** He elevado el temporizador móvil de 15 a **45 segundos**. Esto le da tiempo al hostelero de leer tranquilamente la propuesta inicial sin sentirse acorralado apenas entra a la web.
+- **Oferta Irresistible:** Se ha eliminado la mención al "Bono de 50€ en Ads". Ahora, el diseño es naranja agresivo ("¡Última Oportunidad!") y ofrece regalar la **Auditoría 1 a 1 + Diseño Premium de Carta PDF** si agendan en ese preciso instante. El botón conecta directamente a tu WhatsApp pre-llenado con este mensaje.
+
+## 4. Legalidad y Captación (Cookie Banner)
+He creado el componente `CookieConsent.tsx` y lo he inyectado en el `layout.tsx` de la app.
+Aparecerá un banner negro elegante, anclado al fondo, que informa sobre la recolección de datos para el Pixel de Meta. Tiene dos botones ("Solo esenciales" y "Aceptar todas") e incluye un pequeño retraso de 1.5 segundos al cargar la página para que la primera impresión visual de la web siga siendo el titular rojo impactante, y no el banner legal.
+
+---
+
+> [!TIP]
+> **Siguiente paso:** Revisa estos cambios arrancando el entorno local (`npm run dev`). Prueba a abrir el Chatbot para comprobar que nada lo tapa, y espera 45 segundos sin tocar el móvil (o saca el ratón de la ventana en PC) para ver en acción el nuevo Popup de retención.

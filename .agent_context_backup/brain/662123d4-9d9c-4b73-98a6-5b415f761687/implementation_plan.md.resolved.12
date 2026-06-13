@@ -1,0 +1,33 @@
+# Plan de Ejecución: La "Carta Premium Interactiva" (El Arma de Prospección)
+
+*Rol Activo: Creador Principal y Arquitecto UX/UI*
+
+Tienes toda la razón. Ha sido un desvío de atención causado por el protocolo interno, pero el **Roadmap Estratégico** dicta que lo primero es construir la "Bala de Plata" para tu prospección física: la Carta Interactiva. 
+
+He recuperado las especificaciones exactas que me pediste antes de la interrupción. Vamos a construir un mini-SaaS completo en una sola ruta para que el impacto visual al escanear el QR sea devastador para la competencia.
+
+## 1. Arquitectura de Ruta y Datos
+*   **La Ruta Maestra:** Crearemos `src/app/demo/carta/page.tsx`. Esta será la aplicación de la carta.
+*   **Identidad de Mesa (El QR):** La aplicación leerá la URL (ej. `?table=7`). Al abrir la carta, saludará diciendo "Mesa 7 - Haga su pedido".
+*   **Base de Datos Local (El Menú):** Crearemos un archivo `src/lib/demo-data.ts` con platos reales de alta cocina (ej. Sushi o Fusión), estructurados con traducciones reales (ES, EN, FR), precios, imágenes (Unsplash) y *flags* de alérgenos.
+
+## 2. Los 3 Pilares de UX/UI
+1.  **Multi-Idioma Funcional:** Un selector en la cabecera. Al cambiar a `EN` o `FR`, todo el estado de la aplicación (platos, botones, chatbot) se traducirá en tiempo real sin recargar la página.
+2.  **Motor de Temas (Claro/Oscuro):** 
+    *   *Modo Oscuro:* Fondos profundos `bg-slate-950` con tarjetas de cristal (`backdrop-blur`).
+    *   *Modo Claro Ultra-Premium:* Fondos blanco crudo/marfil (`bg-[#FDFBF7]`), con sombras sutiles y textos en gris carbón para una legibilidad perfecta.
+3.  **Sistema de Pedidos (Carrito):** Un cajón inferior fijo donde el usuario verá su cuenta actual (ej. "Total Mesa 7: 45.50€"). Podrá añadir platos con animaciones fluidas.
+
+## 3. El Agente IA "Camarero Virtual" (La Joya de la Corona)
+No usaremos el bot de ventas de tu landing. Crearemos uno nuevo y especializado:
+*   **El Endpoint:** `src/app/api/demo/waiter/route.ts`.
+*   **El Prompt del Agente:** *"Eres el sumiller y camarero del restaurante. Conoces la carta. Si el cliente tiene alergia al gluten, dile qué no puede comer. Habla en el idioma que el usuario seleccione en la web."*
+*   **La Interfaz:** Un widget flotante elegante en la esquina inferior derecha. Al abrirlo, el cliente puede escribir *"¿Qué vino me recomiendas para el Nigiri?"* y la IA responderá al instante.
+
+---
+
+## 🚦 Aprobación para Construir
+
+Este es el desarrollo más complejo de la interfaz hasta ahora, porque incluye gestión de estado global (carrito, idioma, tema) y un nuevo backend de IA. 
+
+¿Estás de acuerdo con esta arquitectura para la **Carta Premium**? Dame el **"SÍ"** y empezaré inmediatamente a crear la estructura de archivos y el código base.

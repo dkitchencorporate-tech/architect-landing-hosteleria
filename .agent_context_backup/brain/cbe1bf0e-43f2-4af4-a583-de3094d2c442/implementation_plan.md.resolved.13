@@ -1,0 +1,47 @@
+# Plan de Optimización de Modales y Conversión
+
+## Diagnóstico tras revisión de capturas
+He analizado las imágenes que has enviado de tu pantalla de 14 pulgadas:
+1. **Exit Intent (Desbordamiento vertical):** El modal es muy alto por los paddings y tamaños de fuente, y en pantallas de portátiles (que suelen tener poca altura, ej. 768px), se sale de los bordes impidiendo ver el botón superior o el inferior.
+2. **Chatbot (Tamaño y Posición):** Está configurado con `sm:items-end`, lo que lo tira hacia abajo. Además, el tamaño `max-w-[480px]` se ve pequeño y "pobre" para una demostración de software. El texto inicial es muy largo y pide demasiadas cosas de golpe (nombre + tipo de negocio), lo que genera fricción (pereza de escribir).
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Nuevo Gancho del Chatbot:** En lugar de hacerles escribir desde cero, propongo que el chat empiece con un mensaje muy directo y ofrezca **BOTONES RÁPIDOS** para iniciar. 
+> *Ejemplo de mensaje:* "Hola, soy Arqui 🤖. Puedo atender a tus clientes por WhatsApp 24/7 y llenar tus mesas sin que pagues comisiones a ElTenedor o Glovo. ¿Qué tipo de negocio tienes para mostrarte una demo?"
+> *Botones:* [Restaurante] [Dark Kitchen] [Bar / Copas] [Hotel]
+> ¿Te gusta este enfoque de botones para reducir la fricción inicial?
+
+## Proposed Changes
+
+### 1. Responsividad Extrema para el Exit Intent
+Vamos a hacer que el modal se adapte dinámicamente a la altura de la pantalla, reduciendo tamaños en pantallas pequeñas y añadiendo un `overflow-y-auto` por si la pantalla es enana.
+
+#### [MODIFY] [ExitIntent.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ExitIntent.tsx)
+- Añadir `max-h-[90vh]` y `overflow-y-auto` al contenedor del modal.
+- Reducir paddings en pantallas pequeñas (`p-6 sm:p-8` en lugar de `p-12`).
+- Ajustar el tamaño del icono y los márgenes inferiores (`mb-4` en lugar de `mb-8`) usando *media queries* de altura en Tailwind (ej. `@media (max-height: 800px)` indirectamente mediante clases relativas o `max-h-` constraints).
+
+### 2. Rediseño Estructural del Chatbot (Widget)
+El chat pasará de ser un "globo de chat" a un **Modal de Demostración Centrado y Amplio** en pantallas de ordenador, dándole una jerarquía visual de software premium.
+
+#### [MODIFY] [ChatDemoWidget.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ChatDemoWidget.tsx)
+- Cambiar la alineación: de `sm:items-end` a `items-center justify-center`.
+- Aumentar el tamaño en desktop: de `sm:max-w-[480px]` a `md:max-w-2xl` (unos 672px de ancho) y una altura controlada de `h-[80vh]`.
+- Modificar el estado inicial (`messages`) para que el gancho sea agresivo y ofrezca **botones de selección rápida** (Restaurante, Delivery, etc.) antes de pedirles escribir texto libre. Una vez pulsen el botón, el bot les pedirá el nombre y pasará al modo DEMO.
+
+### 3. Actualización de Backend (Prompt Inicial)
+Si cambiamos la forma en que el widget recoge el tipo de negocio (mediante botones), el backend debe adaptarse para ser más natural una vez el usuario ha pulsado el botón.
+
+#### [MODIFY] [route.ts](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/demo/respond/route.ts)
+- Suavizar el `CONSULTING` mode para que solo pida los datos faltantes (como el nombre del local o del dueño) si el tipo de negocio ya se envió mediante el botón.
+
+## Verification Plan
+
+### Manual Verification
+- Reducir la altura de la ventana del navegador al mínimo para simular una pantalla de 11/14 pulgadas y abrir el Exit Intent; comprobar que aparece la barra de scroll interna y no se corta nada.
+- Abrir el Chatbot y verificar que aparece centrado, más grande y majestuoso.
+- Comprobar que los nuevos botones de inicio rápido en el chat funcionan correctamente e inyectan el texto.

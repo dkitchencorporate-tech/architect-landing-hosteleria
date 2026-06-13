@@ -1,0 +1,44 @@
+# Estrategia de Escalamiento: Suscripción "Growth Partner" (399€/mes)
+
+*Rol Activo: Consultor de Negocios y Arquitecto de Producto B2B*
+
+Has tocado el verdadero núcleo de rentabilidad de este negocio. El servicio de 700€ es para adquirir al cliente (Front-End) y cubrir costes, pero el **Socio Operativo** es lo que genera el MRR (Ingresos Recurrentes Mensuales) y la valoración real de tu empresa.
+
+Al subirlo de 249€ a **399€/mes**, nos posicionamos firmemente como un servicio *Premium B2B*, alejándonos del "SaaS barato" que se cancela al primer mes, y acercándonos al concepto de "Director de Marketing Externalizado".
+
+Aquí tienes mi análisis estratégico y la propuesta de arquitectura para modificar esta sección:
+
+## 1. Psicología del Precio y Financiación (El Cierre por Impulso)
+Cambiaremos la tarjeta de precios actual para ofrecer un modelo híbrido irresistible:
+*   **Plan Mensual:** 399€ / mes. (Se vende como: "Contrata un departamento de marketing entero impulsado por IA por menos de lo que te cuesta un camarero a media jornada").
+*   **Plan Anual (Pago Único):** 3.990€ / año. (Ahorran 2 meses enteros, casi 800€).
+*   **Acelerador de Impulso (Klarna):** Añadiremos un "badge" visual que diga: *"Paga el plan anual en 3 plazos sin intereses con Klarna"*. Esto rompe la fricción económica. El cliente ve el ahorro del plan anual, pero su caja mensual no sufre el golpe de los 3.990€ de golpe.
+
+## 2. Claridad en el Porcentaje a Éxito (El Riesgo Compartido)
+Actualmente el texto es vago ("Nos llevamos un porcentaje"). Para que no requiera reuniones, debe ser matemático y transparente:
+*   **Propuesta de Copy:** *"Además de la cuota tecnológica (399€), operamos como verdaderos socios. Solo cobramos un 10% (o X€ fijos) sobre el ticket de las mesas que nuestra IA logre reservar y sentar en tus días valle. Si no te traemos clientes extra, no hay comisión. Así de simple."*
+
+## 3. Escalabilidad Operativa: ¿Cuántos clientes por Consultor?
+Me pediste analizar la capacidad operativa. Con una arquitectura tradicional (Agencia), un Account Manager se satura con 15 clientes. 
+Sin embargo, con nuestra **Arquitectura AI-First** (Repos en Github autodesplegables en Vercel, bases de datos centralizadas en Supabase y agentes de IA respondiendo WhatsApps 24/7):
+*   **Capacidad por Operador:** Un consultor Senior puede gestionar cómodamente **entre 40 y 50 clientes mensuales**.
+*   *¿Por qué?* Porque el operador no crea anuncios desde cero ni atiende reservas; solo supervisa el *Dashboard*, aprueba las creatividades generadas por la IA y mantiene una reunión estratégica de 15 min al mes con el cliente.
+*   **MRR por Operador:** 50 clientes x 399€ = **~20.000€/mes facturados por cada empleado**.
+
+## 4. Modificaciones en el Código (UX/UI)
+Enriqueceré el archivo `EventLibraryHook.tsx` (y si es necesario crearé nuevos componentes) con lo siguiente:
+1.  **Toggle Mensual/Anual:** Un interruptor interactivo para cambiar entre 399€/mes y el pago anual con el cálculo de ahorro dinámico.
+2.  **Etiqueta Klarna:** Integración visual de "Compra ahora, paga después" para impulsar conversiones directas en la web.
+3.  **Matriz de Responsabilidades (Transparencia):** Añadiré un bloque debajo llamado *"¿Cómo funciona el ecosistema?"* donde se compare visualmente qué hace la IA (captar, responder, reservar) vs qué hace el Humano (cocinar, servir mesas).
+4.  **Botón de Pago Directo:** Cambiaremos el CTA de "Agendar reunión" por "Activar Ecosistema Growth (Pasarela Segura)", asumiendo que Stripe o similar irá integrado después.
+
+---
+
+> [!IMPORTANT]
+> **Decisiones Clave antes de programar:**
+> 
+> 1. ¿Estás de acuerdo con fijar el precio en **399€/mes** y el anual en **3.990€** (2 meses gratis)?
+> 2. ¿Aprobamos el gancho de **Klarna** para financiar el plan anual sin fricción?
+> 3. En el modelo a éxito, ¿prefieres hablar de un **porcentaje sobre el ticket** (ej. 10%) o de un **fijo por mesa reservada** (ej. 2€ por comensal)? *(El fijo por comensal suele ser mucho más fácil de rastrear técnicamente).*
+> 
+> Respóndeme a estos 3 puntos y reestructuro la sección entera con código de producción de inmediato.

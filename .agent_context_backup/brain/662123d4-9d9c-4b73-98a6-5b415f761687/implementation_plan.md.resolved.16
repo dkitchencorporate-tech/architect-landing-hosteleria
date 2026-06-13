@@ -1,0 +1,37 @@
+# Plan Arquitectónico: Hub Multitemático y Optimización de Velocidad
+
+*Rol Activo: Arquitecto UX/UI y Maker*
+
+Has tocado un punto clave: la autoridad total no se demuestra con un solo estilo, sino demostrando que la tecnología se adapta a cualquier modelo de negocio. Vamos a convertir esta URL en un **Hub de Demostración con 3 Motores Estéticos Independientes** y a erradicar el problema de carga de imágenes.
+
+## 1. Arquitectura Multitemática (3 en 1)
+Modificaremos la interfaz para que soporte tres "Templates" distintos. Cambiar de diseño será instantáneo y transformará por completo los datos, colores y tipografías.
+
+*   **Template A: Alta Gastronomía (Fusión Asiática)**
+    *   *Ajuste de Originalidad:* Para separarnos de Encapaco, cambiaremos el Hueso/Negro a una combinación de **Gris Pizarra Muy Oscuro (`bg-slate-900`) con acentos Cobre (`text-amber-600`)** y tipografía Serif moderna.
+*   **Template B: Bar Granadino (Tapas y Raciones)**
+    *   *Estética:* "Rústico Premium". Tonos terracota (`bg-stone-50`), verde oliva (`text-lime-800`) y tipografía robusta.
+    *   *Catálogo Nuevo:* Croquetas, Ensaladilla, Tablas de Ibéricos, Cervezas Alhambra, Vinos de Jerez.
+*   **Template C: Fast Food Premium (Burgers/Pizzas)**
+    *   *Estética:* "Urbano Oscuro". Modo noche puro (`bg-black`), acentos Neón (Amarillo/Rojo eléctrico) y tipografía Sans-Serif ultra ancha (impactante).
+    *   *Catálogo Nuevo:* Smash Burgers, Pizzas Artesanales, Entrantes fritos, Batidos (Delivery/Takeaway focus).
+
+## 2. El "Dock" Flotante (Botonera Centrada)
+En lugar de un botón enorme que tape el contenido, crearé un "Dock" (estilo iOS) flotante y centrado en la parte inferior con dos botones B2B claros:
+1.  **👀 Ver Otro Diseño:** Abre el nuevo modal con 3 tarjetas visuales grandes para cambiar entre Sushi, Tapas o Fast Food.
+2.  **💰 Quiero esta Carta:** Abre el modal de cierre de ventas (Calendly / WhatsApp).
+
+## 3. Resolución de Latencia (Carga Ultrarrápida)
+El problema de lentitud se debe a que las imágenes de Unsplash se estaban trayendo en alta resolución. 
+*   **La Solución:** Voy a crear 3 bases de datos en `demo-data.ts` (Sushi, Tapas, Fast Food) e inyectaré parámetros agresivos de compresión en las URLs de Unsplash (`&w=400&q=50&fm=webp`). Las imágenes cargarán instantáneamente pesando menos de 30kb cada una.
+
+## 4. Agente IA Multiestilo
+El Sumiller se adaptará automáticamente. Si estás en Tapas, será el "Camarero de Barra". Si estás en Burgers, será el "Asistente de Pedidos".
+
+---
+
+### 🚦 Autorización para Construir
+
+Este es el mayor despliegue técnico hasta la fecha. Convertirá tu landing en un "SaaS Showcase" completo. 
+
+¿Estás de acuerdo con la división de los 3 estilos y el rediseño del botón flotante? Dame **Luz Verde** y me pongo a construir las 3 bases de datos y la interfaz dinámica.

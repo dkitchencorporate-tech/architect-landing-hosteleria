@@ -1,0 +1,12 @@
+# Verification Plan: Architect.Sys Transformation
+
+- [ ] Navigate to http://localhost:3000
+- [ ] Clear existing leads (if any)
+- [ ] Search for "Restaurantes Barcelona"
+- [ ] Verify lead cards show STARS and RATING
+- [ ] Select lead with website and click "Ver Prospecto Completo"
+- [ ] Click "Auditoría Profunda" and wait 20s
+- [ ] Verify "Estrategia AI" tone (Professional Expert)
+- [ ] Check for "Menú en PDF detectado" badge
+- [ ] Take final screenshot of detail view (Estrategia AI tab)
+- [ ] Report findings

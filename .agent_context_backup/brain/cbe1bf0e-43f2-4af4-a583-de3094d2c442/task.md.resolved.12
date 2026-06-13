@@ -1,0 +1,5 @@
+# Tareas de Implementación
+
+- [/] Modificar `ChatDemoWidget.tsx` para usar scrollHeight (comportamiento estándar de chat).
+- [ ] Modificar `route.ts` para inyectar el nuevo prompt de Diagnóstico Profundo.
+- [ ] Verificar el comportamiento localmente.

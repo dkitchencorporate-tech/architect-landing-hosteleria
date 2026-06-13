@@ -1,0 +1,20 @@
+# Reporte de Pruebas de Experiencia de Usuario: Creative Factory Multi-Cliente
+
+Este informe recopila el plan de pruebas de experiencia de usuario (UX) y validación funcional simulando el trabajo diario de un consultor B2B en la **Factoría Creativa** al gestionar diferentes clientes.
+
+---
+
+## 📋 Plan de Casos de Prueba
+
+| ID | Caso de Prueba | Objetivo | Datos de Entrada | Resultado Esperado |
+|---|---|---|---|---|
+| **TC-01** | Cambio de Contexto de Cliente | Validar que la interfaz se actualiza al cambiar de cliente. | Selector: *L'Atelier de L'Océan* | Ficha lateral y selector de platos actualizan especialidades gourmet. |
+| **TC-02** | Tono de Redacción Gourmet | Comprobar que la IA adapta el tono sofisticado al generar copy. | Cliente: *L'Atelier de L'Océan* | Copys elegantes, menciones a marisco y vieiras. |
+| **TC-03** | Tono de Redacción Barrio | Comprobar que la IA adapta el tono rústico/cercano. | Cliente: *Pizzería Don Giovanni* | Copys cercanos ("Vecino", "masa de pizza", "vecindario"). |
+| **TC-04** | Vinculación Dinámica de Plato | Validar la persistencia de imágenes en disco para platos específicos. | Plato: *Patatas Bravas* (El Tardeo de Lola) | Mensaje de éxito al vincular y archivo creado correctamente. |
+
+---
+
+## 🛠️ Ejecución de Pruebas (Evidencias)
+
+A continuación se detallan los resultados y capturas reales de cada prueba realizada mediante simulación interactiva.

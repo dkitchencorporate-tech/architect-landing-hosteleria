@@ -1,0 +1,31 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	Consultor AI CRM
+	Centro de Comando de Prospección Avanzada
+	[1] (488,184)<button aria-label='Toggle Dark Mode' class='p-2 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors shadow-sm' />
+	Buscando
+	Base de Prospectos
+	5
+	leads
+	[2] (488,888)<div class='overflow-y-auto flex-1 p-2 space-y-1' scrollable='true' />
+		[3] (476,722)<div  />
+			[4] (476,707)<div  />
+				[5] (224,707)<h4 >La Selva Barcelona | Còrsega />
+				[6] (867,703)<span >5 />
+			[7] (476,741)<div  />
+				[8] (170,741)<span >laselvabarcelona.es/ />
+		[9] (476,832)<div  />
+			[10] (476,816)<div  />
+				[11] (172,816)<h4 >La Lolita Barcelona />
+				[12] (862,812)<span >10 />
+			[13] (476,851)<div  />
+				[14] (181,851)<span >lalolitarestaurante.com/ />
+		[15] (476,926)<div  />
+			[16] (204,926)<h4 >EMUNÁ Asador Argentino />
+			[17] (862,922)<span >10 />
+		[18] (117,961)<span >Sin web />
+
+</current_dom>

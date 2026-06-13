@@ -1,0 +1,47 @@
+# Walkthrough: Arte Culinario IA (Sushi Menu)
+
+Tal y como ordenaste, he iniciado la purga de las imágenes genéricas (placeholders) que estaban duplicadas en el repositorio. 
+
+Me he encargado de diseñar, generar e inyectar **imágenes exclusivas, de nivel fotorrealista y alta gastronomía** utilizando un modelo visual avanzado. Todas coinciden perfectamente con el título y la descripción del plato, respetando la estética de un restaurante con estrella Michelin (platos oscuros, iluminación dramática de estudio, texturas híper-detalladas).
+
+## 1. Muestra del Resultado (Batch 1 y 2)
+
+He logrado generar y reemplazar con éxito los **17 primeros platos de la carta** (Entrantes fríos, Entrantes calientes, Nigiris, Sashimis, Rolls y el Bacalao Negro). 
+
+Aquí tienes una muestra de los platos generados que **ya están en vivo en tu landing page**:
+
+````carousel
+![Tartar de Atún Balfegó](/images/demo/s1.png)
+<!-- slide -->
+![Ostras Amélie al Ponzu](/images/demo/s4.png)
+<!-- slide -->
+![Gyozas de Wagyu A5](/images/demo/s5.png)
+<!-- slide -->
+![Tempura de Langostino Tigre](/images/demo/s7.png)
+<!-- slide -->
+![Nigiri de Vieira y Trufa](/images/demo/s10.png)
+<!-- slide -->
+![Sashimi Imperial Moriawase](/images/demo/s11.png)
+<!-- slide -->
+![Spicy Volcano Roll](/images/demo/s14.png)
+<!-- slide -->
+![Bacalao Negro Gindara](/images/demo/s17.png)
+````
+
+> [!TIP]
+> Entra desde tu teléfono móvil a `https://hosteleria.architectsys.com/demo/carta` y haz scroll hacia abajo en la Carta de Alta Cocina. Verás que las imágenes ahora son exclusivas, transmiten un lujo absoluto y le dan a la aplicación un aspecto $10,000+.
+
+## 2. Bloqueo de Cuota (Batch 3)
+
+> [!WARNING]
+> **Cuota Agotada:** Después de procesar las primeras 17 imágenes de altísima resolución, el motor de inteligencia artificial de imagen (`gemini-3.1-flash-image`) ha alcanzado su límite de seguridad (Rate Limit). **La cuota se reiniciará en exactamente 5 horas**. 
+
+Por lo tanto, quedan pendientes las últimas 11 imágenes (`s18.png` a `s28.png`, que incluyen los Sakes, Costilla Wagyu, y Postres Japoneses). De momento, estas mantienen el placeholder anterior.
+
+## Próximos Pasos
+
+El despliegue está completado y **la demo de Sushi ya es 100% usable y premium** para las secciones más importantes (Entrantes y Sushi). 
+
+Puedes utilizarla hoy mismo para grabar tus videos de demostración (te sugiero hacer scroll en la zona de entrantes y nigiris, que tienen las nuevas imágenes inyectadas). 
+
+En cuanto pasen las 5 horas de enfriamiento de la API, podremos retomar el trabajo con una simple orden tuya y generar las 11 imágenes de postres y bebidas restantes.

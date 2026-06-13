@@ -1,0 +1,47 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	[1] (408,149)<input class='w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 shadow-inner rounded-lg p-3 text-lg text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100' placeholder='Buscar leads en una zona (ej: Madrid Centro)...' />
+	Prospectar
+	[2] (729,149)<button class='bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-400 dark:hover:bg-red-900/50 shadow-sm font-medium px-4 py-3 rounded-lg transition-all flex items-center justify-center ml-2 hover:scale-105' title='Vaciar Base de Datos' />
+	Base de Prospectos
+	3
+	leads
+	Restaurante Bel Mondo
+	0
+	/10
+	EVALUATED
+	[3] (280,563)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[4] (305,563)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	bigmammagroup.com/es/restaurantes-italianos/bel-mondo?utm_source=google&utm_medium=organic&utm_campaign=mybusiness-website
+	Sin teléfono
+	love@bigmamma.es
+	Falta de una solución de carta interactiva QR dedicada para acceso directo en mesa
+	[5] (180,878)<button class='w-full flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-semibold py-2.5 rounded-xl transition-all shadow-sm hover:shadow-md group-hover:scale-[1.01]'>Ver Prospecto Completo />
+	La Taberna de Peñalver
+	3
+	/10
+	EVALUATED
+	[6] (594,563)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[7] (619,563)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	latabernadepenalver.com/
+	Sin teléfono
+	Sin email
+	Menú web actual estático, carente de interactividad y soporte visual dinámico para optimización del ticket medio.
+	[8] (494,878)<button class='w-full flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-semibold py-2.5 rounded-xl transition-all shadow-sm hover:shadow-md group-hover:scale-[1.01]'>Ver Prospecto Completo />
+	El Jardín Secreto Madrid
+	3
+	/10
+	EVALUATED
+	Auditado
+	[9] (908,563)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[10] (933,563)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	eljardinsecretomadrid.es/
+	Sin teléfono
+	Sin email
+	Carta en formato de imágenes estáticas que dificulta la interacción y accesibilidad en dispositivos móviles.
+	[11] (808,878)<button class='w-full flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-semibold py-2.5 rounded-xl transition-all shadow-sm hover:shadow-md group-hover:scale-[1.01]'>Ver Prospecto Completo />
+
+</current_dom>

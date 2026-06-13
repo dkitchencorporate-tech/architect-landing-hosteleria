@@ -1,0 +1,34 @@
+# Hub de Manuales Operativos y Protocolos
+
+Es una decisión estratégica excelente. Conforme Architect.Sys crezca, necesitarás protocolos estandarizados (SOPs) que tanto tú como tu equipo (o clientes) puedan consultar, imprimir y guardar.
+
+Propongo construir un **Centro de Documentación Interno** directamente integrado en tu plataforma web.
+
+## 1. Centro de Manuales en Línea (`/manuals`)
+Crearé una nueva sección privada/pública en la ruta `https://hosteleria.architectsys.com/manuals`.
+*   **Índice de Protocolos:** Una página principal elegante donde listaremos todas las guías operativas que vayamos creando.
+*   **Diseño Premium en Pantalla:** Mantendrá el estilo High-Ticket (Glassmorphism, oscuro, profesional) para su lectura online.
+
+## 2. Motor de Exportación a PDF (Eco-Print)
+Aquí está la magia. Programaré estilos especiales usando **CSS `@media print`**.
+¿Qué significa esto?
+*   Cuando lo leas en tu pantalla, se verá como un SaaS de élite oscuro y brillante.
+*   Pero cuando presiones `Ctrl + P` (o le des clic al botón "Descargar PDF" que añadiré), el código automáticamente **transformará la página a formato A4 de alta resolución**, con fondo blanco puro, tipografía de imprenta y sin menús ni botones molestos.
+*   De este modo, obtendrás PDFs impecables y corporativos, listos para imprimir o archivar, sin gastar tinta negra en fondos oscuros.
+
+## 3. Primer Manual: Protocolo de Google OAuth
+Para inaugurar este Hub, el primer reporte será el **"Protocolo de Configuración de Google Auth y Publicación OAuth"** que acabamos de discutir, con el paso a paso exacto, los enlaces y explicaciones de la pantalla de consentimiento y la verificación de 100 usuarios.
+
+## Tareas a Ejecutar
+### [NEW] `src/app/manuals/layout.tsx`
+Layout maestro para la documentación, inyectando estilos para pantalla y para impresión PDF.
+
+### [NEW] `src/app/manuals/page.tsx`
+El índice interactivo de manuales.
+
+### [NEW] `src/app/manuals/google-oauth/page.tsx`
+El primer reporte técnico redactado y maquetado para su lectura y exportación.
+
+---
+
+¿Apruebas esta infraestructura para que empiece a programar el Centro de Protocolos y el primer manual descargable en PDF?

@@ -1,0 +1,38 @@
+# Checklist de Auditoría: Corrección de Errores y Aumento de Nivel
+
+He analizado las capturas de pantalla y tus comentarios. Tienes absoluta razón. Un diseño con imágenes rotas y elementos solapados es inaceptable para Jules y para cualquier cliente B2B. Asumo la responsabilidad total del fallo en las URLs de Unsplash y el padding del header.
+
+A continuación presento el **Mapeo de Errores** y la **Solución Arquitectónica** (Checklist) para tu aprobación antes de ejecutar:
+
+## 1. Mapeo de Errores Críticos (Lo que falló)
+
+1.  **Imágenes Rotas (404) y Descoordinadas:** Las IDs de Unsplash que usé han caducado o no existen, lo que provoca el feo texto `alt` roto. Además, la reutilización de IDs provocó incongruencias (ej. pizzas en hamburguesas).
+2.  **Solapamiento del Header (Z-Index y Padding):** El menú flotante superior (`fixed`) está pisando los títulos principales porque los contenedores no tienen el margen superior (`padding-top`) adecuado. Además, estéticamente se ve desconectado del resto del diseño.
+3.  **Falta de Embudos (Oferta Irresistible):** Las 3 plantillas carecen del gancho comercial inicial (ej. 2x1 en cervezas). Esto rompe la psicología de ventas B2B que queremos demostrar.
+4.  **Falta de Captación (Fidelización):** No existe el formulario de registro al final de la página para cerrar el ciclo del embudo (reclamar el premio y dejar los datos).
+
+---
+
+## 2. Plan de Solución Definitiva (Checklist a ejecutar)
+
+- [ ] **Resolución Visual: Imágenes Estables.**
+    *   Voy a purgar la base de datos `demo-data.ts`. Extraeré URLs directas y probadas de bancos de imágenes para las 84 entradas. Nunca más una imagen rota ni cruzada.
+- [ ] **Resolución UI: Integración del Header.**
+    *   Eliminaré el estado `fixed` tosco del header superior. Lo integraré orgánicamente en el flujo de la página (`sticky` o `static` con fondo adaptativo) para que no tape el contenido y respire junto con el diseño de cada local.
+- [ ] **Ingeniería Psicológica: El Gancho (Hero Promo).**
+    *   Inyectaré un componente de "Oferta Irresistible" en la cima de cada diseño.
+        *   *Sushi:* "Únete a The Club y disfruta de una Copa de Sake Premium de cortesía."
+        *   *Tapas:* "2x1 en tus primeras Cañas al registrarte."
+        *   *Burger:* "Free Fries con tu primera Smash."
+- [ ] **Ingeniería Psicológica: Captación VIP (Loyalty Form).**
+    *   Diseñaré un bloque majestuoso al final de la carta (antes del footer) llamado **"Desbloquea el Nivel Premium"**. Tendrá un input para el móvil/email y el botón para reclamar la oferta, demostrando al hostelero cómo esta herramienta le construye una base de datos de clientes.
+- [ ] **Traducción y Agente IA.**
+    *   Revisaré que el cambio de idioma actualice la oferta y que el Agente IA esté consciente de estas promociones para sugerirlas en el chat.
+
+---
+
+### 🚦 Solicitud de Luz Verde
+
+Mi objetivo es que cuando Jules vea esto, no encuentre ni un solo pixel fuera de lugar. Las imágenes cargarán perfectas, la oferta enganchará arriba y el registro cerrará abajo.
+
+Si apruebas este diagnóstico y las soluciones propuestas, dame **Luz Verde** y procedo a reescribir la capa visual y de datos.

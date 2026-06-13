@@ -1,0 +1,56 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (909,85)<button class='absolute top-8 right-8 text-sm font-bold text-gray-500 hover:text-red-500 transition-colors z-50 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200'>Cerrar Sesión Segura />
+[1] (125,459)<div class='p-6 flex flex-col gap-8 flex-1 overflow-y-auto' scrollable='true' />
+	A
+	Architect.Sys
+	SALA DE CONTROL
+	Cliente Seleccionado
+	[2] (119,270)<select class='w-full bg-black border border-zinc-800 rounded-xl text-xs font-bold text-white px-3 py-2.5 focus:outline-none focus:border-orange-600 appearance-none' />
+	Cocina:
+	Marisco de Autor y Alta Cocina
+	Target:
+	Gourmet
+	Vaults de Control
+	[3] (119,547)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-between text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30' />
+		[4] (85,547)<span >Matriz de Despliegue />
+			[5] (35,547)<span >🎯 />
+	[6] (119,614)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Motor Generativo B2B />
+		[7] (34,614)<span >⚡ />
+	[8] (119,681)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Especialidades de la Carta />
+		[9] (35,681)<span >🍽️ />
+	[10] (119,748)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Creador de Estrategias />
+		[11] (35,748)<span >🗺️ />
+	[12] (119,816)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Agente de Ejecución (Chat) />
+		[13] (35,816)<span >🤖 />
+	[14] (119,884)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 bg-zinc-900 text-white border border-zinc-800'>Dossier de Protocolos />
+		[15] (34,884)<span >📚 />
+MODO AGENCIA v2.0
+[16] (625,500)<main class='flex-1 flex flex-col min-w-0 h-screen overflow-y-auto' scrollable='true' />
+	Vault Activo
+	📚 Dossier de Operaciones Estratégicas
+	Trabajando con:
+	L'Atelier de L'Océan
+	Ver Cartas Demo
+	Dossier de Protocolos Operativos
+	Biblioteca estratégica y de procedimientos estándar de la agencia **Architect.Sys**.
+	[17] (342,371)<button class='pb-3 text-xs font-black uppercase tracking-wider border-b-2 border-orange-500 text-white'>Las 10 Leyes Operativas />
+	[18] (498,371)<button class='pb-3 text-xs font-black uppercase tracking-wider text-zinc-500 hover:text-zinc-300'>Protocolo de Captación />
+	[19] (653,371)<button class='pb-3 text-xs font-black uppercase tracking-wider text-zinc-500 hover:text-zinc-300'>Ecosistema de Eventos />
+	Leyes Operativas del Consultor Gastronómico B2B
+	Ley del Apalancamiento del Dolor:
+	Nunca vendas "más ventas". Vende detener el sangrado de las comisiones del 30% del delivery o rentabilizar mesas vacías de martes a jueves.
+	Ley del Variable sin Riesgo:
+	La entrada inicial debe ser libre de fricción, garantizando un porcentaje por afluencia (20% variable) para anular el escepticismo.
+	Ley de la Exclusividad Local:
+	No captes a dos restaurantes de la misma categoría en un radio menor a 3 km. La exclusividad multiplica la lealtad del cliente.
+	Ley del Anclaje Inesperado:
+	Utiliza fotografías gastronómicas de impacto extremo en Ads (formato 4:5 vertical) para romper el scroll del móvil.
+	Ley del Dossier Explicativo:
+	Cada evento o propuesta debe ir respaldada por un dossier financiero detallado con costos fijos y retorno neto proyectado.
+	Ley del Control de la Base de Datos:
+	El restaurante debe poseer el 100% de la propiedad de sus leads y reservas; nosotros controlamos la infraestructura que los genera.
+
+</current_dom>

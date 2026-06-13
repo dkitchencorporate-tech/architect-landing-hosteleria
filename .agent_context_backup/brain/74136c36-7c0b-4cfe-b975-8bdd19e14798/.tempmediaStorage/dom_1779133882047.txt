@@ -1,0 +1,14 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (78,68)<a href='/' />
+	[1] (78,68)<img  />
+[2] (602,68)<a href='https://restaurantepanero.com/'>Inicio />
+[3] (666,68)<a href='https://restaurantepanero.com/el-panero/'>El Pañero />
+[4] (732,68)<a href='https://restaurantepanero.com/menu/'>Menú />
+[5] (816,68)<a href='https://restaurantepanero.com/trabaja-con-nosotros/'>Únete al equipo />
+[6] (910,68)<a href='https://restaurantepanero.com/contacta/'>Contacto />
+“El rincón de Granada donde se fusionan los auténticos sabores de la tradición española”
+
+</current_dom>

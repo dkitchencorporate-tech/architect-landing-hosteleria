@@ -1,0 +1,30 @@
+# Plan Arquitectónico: Carta "Masivamente Inteligente" y Club de Fidelización
+
+*Rol Activo: Arquitecto UX/UI y Maker*
+
+Tu visión es perfecta. Un simple chat flotante es genérico; un chat que entienda exactamente qué plato estás mirando es **SaaS de alto nivel**. Y la captación de leads en la propia carta (Fidelización) es donde reside el valor real B2B.
+
+Este es el plan de choque para estas modificaciones:
+
+## 1. IA Contextualizada por Plato (El "Superpoder")
+*   **Nueva UI en las Tarjetas:** Añadiré un botón secundario elegante (🤵✨) en cada plato, justo al lado de "Añadir al pedido".
+*   **Interacción Directa:** Al pulsar el botón en el "Tartar de Atún", el chat se abrirá y el Camarero IA tomará la iniciativa diciendo: *"He visto que te interesa el Tartar de Atún Rojo. ¿Tienes dudas sobre el nivel de picante, alérgenos o te recomiendo un vino para acompañarlo?"*
+*   **Backend Mejorado:** Modificaré el endpoint `/api/demo/waiter` para que acepte un nuevo parámetro `contextDish`. Así la IA sabrá exactamente el foco de la conversación sin que el usuario tenga que escribir el nombre del plato.
+
+## 2. Motor de Captación de Leads (Club Loyalty)
+*   **Sección "Golden":** Al final del menú, justo antes del pie de página, crearé un formulario premium diseñado para convertir.
+*   **Oferta Agresiva (Gancho):** Textos claros orientados a la conversión: *"Únete al Club VIP. Llévate 2x1 en Cervezas Asahi en tu visita de hoy (Consumo mín. 10€)"*.
+*   **UX de Registro:** Un input para Nombre y WhatsApp/Email. Al darle a registrar, simularemos la creación de la cuenta y mostraremos un "Cupón Desbloqueado".
+
+## 3. Corrección de Assets
+*   He detectado que las imágenes de Unsplash del Sake y el Té Verde han caducado o bloquean la inserción. Las reemplazaré por URLs robustas para que la carta luzca impecable.
+
+## 4. Estabilización de Servidor y Túnel
+*   En cuanto aplique este código, verificaré que el proceso de Next.js (`npm run dev`) no haya colapsado por los cambios en caliente.
+*   Lanzaré el túnel directo (SSH localhost.run) y te entregaré la URL lista en mi siguiente respuesta.
+
+---
+
+### 🚦 Autorización
+
+Altera la lógica del backend y del estado global de React. ¿Tienes alguna puntualización extra sobre el formulario de fidelización, o me das **Luz Verde** para construir esto ahora mismo?

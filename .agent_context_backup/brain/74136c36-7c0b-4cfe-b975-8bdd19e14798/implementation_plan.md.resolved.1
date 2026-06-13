@@ -1,0 +1,55 @@
+# Pivotaje Estratégico: Sistema de Prospección Autónomo (Fase 2.1)
+
+## Resumen del Pivotaje
+Hemos decidido eliminar la superficie de riesgo de baneo por SPAM en WhatsApp. El Backend Worker ya no interactuará directamente con WhatsApp. En su lugar, el sistema funcionará mediante un patrón de **Comando y Control (C2) sobre Firebase Firestore**.
+El Frontend (Next.js) evolucionará hacia una **PWA Mobile-First** que actuará como centro de mando, CRM y chat directo con el Agente de IA.
+
+## User Review Required
+
+> [!WARNING]
+> **Cambio de Paradigma C2**
+> Al eliminar WhatsApp, el worker de Node.js necesita credenciales de administrador de Firebase (Service Account). Necesitarás descargar un archivo `.json` desde la consola de Firebase y agregarlo al entorno local (`GOOGLE_APPLICATION_CREDENTIALS`) para que el worker pueda escuchar la colección `commands` y escribir en `logs`/`leads`.
+> ¿Tienes ya creado el proyecto en Firebase Console para que configure el inicializador con la ruta de las credenciales?
+
+## Proposed Changes
+
+### [Backend Worker]
+
+Se refactoriza la lógica de comunicación y se amplían las capacidades de scraping e IA.
+
+#### [DELETE] `packages/backend-worker/src/whatsapp/client.ts`
+Eliminación total del módulo y desinstalación de dependencias (`whatsapp-web.js`, `qrcode-terminal`).
+
+#### [NEW] `packages/backend-worker/src/firebase/db.ts`
+Inicializador de `firebase-admin` y listeners en tiempo real.
+* **Listener:** Escucha `commands` (ej. `{ action: "PROSPECT", zone: "Madrid", status: "PENDING" }`).
+* **Writer:** Escribe el resultado y reportes en `logs` o directamente en una colección `leads`.
+
+#### [MODIFY] `packages/backend-worker/src/scrapers/browser.ts`
+* Se inyectará lógica para buscar links del tipo `mailto:` o `/contacto` en los metadatos y en el texto raspado.
+* El `ScrapedLead` ahora incluirá `email` y `contactFormUrl`.
+
+#### [MODIFY] `packages/backend-worker/src/ai/evaluator.ts`
+* El prompt se expande para generar un borrador de **Cold Email** altamente personalizado, atacando las señales de dolor detectadas (Síndrome del PDF, Obsolescencia).
+* Retornará también el `coldEmailDraft`.
+
+#### [MODIFY] `packages/backend-worker/src/index.ts`
+* En lugar de arrancar WhatsApp, iniciará la conexión a Firebase.
+* El manejador del comando leerá el documento de Firestore, ejecutará el scraper, pasará por el evaluador de IA y guardará el reporte de vuelta en Firestore, cambiando el estado del comando a `COMPLETED`.
+
+---
+
+### [Frontend PWA (Dashboard & CRM)]
+
+Plan de desarrollo para la siguiente fase del Frontend.
+
+#### Funcionalidades Clave:
+1. **Chat UI (C2):** Una interfaz de chat al estilo WhatsApp donde envías comandos (ej. botones rápidos "Prospectar Alcobendas") que escriben en la colección `commands` de Firebase.
+2. **CRM de Leads:** Vista en tarjetas o lista de los prospectos descubiertos. Mostrará el Score de IA, Señales de Dolor, Teléfono y el Borrador del Cold Email.
+3. **PWA Mobile-First:** Uso de un `manifest.json` y Service Workers para que puedas instalar la web app en el inicio de tu teléfono móvil, simulando una app nativa.
+4. **Registro de Respuestas Manuales:** Interfaz para que tú pegues la respuesta que te dio el cliente por tu WhatsApp personal, y el agente de IA te sugiera la respuesta de cierre de ventas.
+
+## Verification Plan
+
+1. **Backend:** Crearemos un script de prueba que inserte un comando falso en Firestore para ver cómo reacciona el worker, scrappea los leads, redacta el email, y guarda el resultado en DB.
+2. **Frontend:** Despliegue local y simulación en Chrome DevTools usando el modo móvil y Lighthouse PWA validation.

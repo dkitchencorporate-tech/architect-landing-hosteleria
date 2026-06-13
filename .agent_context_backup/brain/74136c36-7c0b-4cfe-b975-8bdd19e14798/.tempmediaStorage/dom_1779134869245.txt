@@ -1,0 +1,171 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DRestaurante%2BTeter%25C3%25ADa%2BAlhambra%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Restaurante+Teter%C3%ADa+Alhambra+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQ2J8OegQIChAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Teter%C3%ADa+Alhambra+Granada&sa=X&ved=2ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQtKgLegQIFBAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Teter%C3%ADa+Alhambra+Granada&sa=X&ved=2ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQs6gLegQIExAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Teter%C3%ADa+Alhambra+Granada&sa=X&ved=2ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQtKgLegQIEhAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Teter%C3%ADa+Alhambra+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQ0pQJegQIEBAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Teter%C3%ADa+Alhambra+Granada&sa=X&ved=2ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQs6gLegQIDhAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (228,321)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d10672996-Reviews-Restaurante_Teteria_Alhambra-Granada_Province_of_Granada_Andalucia.html' />
+	[48] (228,350)<h3 >RESTAURANTE TETERÍA ALHAMBRA, Granada />
+	[49] (205,296)<div  />
+		[50] (205,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (220,296)<div  />
+				[55] (220,282)<div  />
+					[56] (220,282)<span >Tripadvisor />
+				[57] (220,312)<div  />
+					[58] (220,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[59] (273,311)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[60] (355,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[61] (355,310)<span  />
+		[62] (355,312)<span  />
+La oferta de comida marroquí es amplia y variada
+y los menús a 13,5 son una pasada . Recomiendo el humus , la harira y el cuscús . No sirven alcohol pero hay ...
+4.1
+(283)
+·
+Rango de precios: €
+[63] (293,467)<div role='button' />
+[64] (187,587)<a class='zReHs' href='https://www.instagram.com/restaurante_teteria_alhambra/' />
+	[65] (173,616)<h3 >restaurante_teteria_alhambra />
+	[66] (187,562)<div  />
+		[67] (187,562)<div  />
+			[68] (81,562)<span  />
+				[69] (81,562)<div  />
+					[70] (81,562)<img  />
+			[71] (202,562)<div  />
+				[72] (202,548)<div  />
+					[73] (202,548)<span >Instagram · restaurante_teteria_alhambra />
+				[74] (202,578)<div  />
+					[75] (150,578)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 340 seguidores />
+[76] (319,576)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[77] (319,576)<span  />
+		[78] (319,578)<span  />
+Un ambiente relajado que te hará viajar a Marruecos.
+Nos encontramos en el centro de Granada
+. Gran variedad de productos, comida árabe, tés, cachimbas ; Pastela ...
+[79] (209,818)<a class='zReHs' href='https://www.facebook.com/p/Restaurante-Teter%C3%ADa-Alhambra-100071112666799/' />
+	[80] (209,847)<h3 >Restaurante Tetería Alhambra | Granada />
+	[81] (187,793)<div  />
+		[82] (187,793)<div  />
+			[83] (81,793)<span  />
+				[84] (81,793)<div  />
+					[85] (81,793)<img  />
+			[86] (202,793)<div  />
+				[87] (202,779)<div  />
+					[88] (202,779)<span >Facebook · Restaurante Tetería Alhambra />
+				[89] (202,809)<div  />
+					[90] (147,809)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 60 seguidores />
+[91] (320,807)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[92] (320,807)<span  />
+		[93] (320,809)<span  />
+. . Te esperamos en
+Al lado de Bodegas Castañeda, Placeta Sillería, Plazoleta sillería, 7, 18010 Granada
+Reserva tu mesa ya 692 02 60 60 . . #granada # ...
+4.6
+(5)
+[94] (177,964)<div role='button' />
+[95] (707,392)<button class='KJY1Gc' />
+	[96] (707,392)<div  />
+		[97] (707,392)<div  />
+			[98] (722,392)<img  />
+		[99] (745,494)<span >Ver fotos />
+[100] (835,392)<a  />
+[101] (853,458)<a href='/local/place/fid/0xd71fcbf30faaed5:0xfd64e409368aaee7/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DY92rqbQoesyqtdjHduPSqg%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D216.07161%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFlk5MnJxYlFvZXN5cXRkakhkdVBTcWc%3D&sa=X&ved=2ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQpx96BAgdEA8' />
+	[102] (853,458)<div  />
+		[103] (870,458)<img  />
+	[104] (890,495)<span >Ver por fuera />
+Restaurante Tetería Alhambra
+4.6
+[105] (754,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Teter%C3%ADa+Alhambra+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOdPDYxRswvj7gUTTuhQ7-kTstXXEM5LjVTfbRAPr0RqOG6GpjcZVceQYZ3205ttDqb89jv8%3D&uds=ALYpb_lgGSX-ncYIRc14OUZ8w0hDlECb7b5O4a6J1wmPmeqUhzADg2nreRU1lFY1qWtxgcC4z1zi4hkp0yOKlwASoUwpeMpvq9ayNsmRsK58GXaJ3iF5Dv9C6oMXiTp1ZMGfBFyNQnmAlusJDrrw_VvMDfWNSYvNfQ&sa=X&ved=2ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQ3PALegQIGhAE'>4,050 opiniones />
+[106] (805,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[107] (805,598)<span  />
+€10-20
+‧
+Restaurante marroquí
+[108] (825,604)<div class='mTpL7c' role='button' />
+	[109] (825,604)<span aria-label='Más opciones para Restaurante Tetería Alhambra' class='Zj92Hf' role='img' />
+		[110] (823,601)<span  />
+[111] (688,723)<div  />
+	[112] (656,723)<div  />
+	[113] (697,723)<span >Cómo llegar />
+[114] (787,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOdPDYxRswvj7gUTTuhQ7-kQmfWsFru93DM3AY41uY1gZErrz7AJ75EIobWNGrvH45yXRKut3thxcZByBcHRjisGJtfH2Sy7E3zpHe6RhjogbTj1rfw%3D%3D&q=Restaurante+Teter%C3%ADa+Alhambra+Opiniones&sa=X&ved=2ahUKEwjotoLu0cOUAxW4tFYBHWUbOeoQ0bkNegQILxAF' />
+	[115] (787,723)<div  />
+		[116] (759,723)<div  />
+		[117] (796,723)<span >Opiniones />
+[118] (876,723)<div  />
+	[119] (876,723)<div  />
+		[120] (876,723)<div  />
+			[121] (876,723)<span aria-label='Guardar Restaurante Tetería Alhambra en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Restaurante Tetería Alhambra en una colección' />
+				[122] (884,723)<span >Guardar />
+[123] (684,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[124] (684,799)<div  />
+		[125] (656,799)<div  />
+		[126] (692,799)<span >Compartir />
+[127] (769,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[128] (769,799)<div  />
+		[129] (750,799)<div  />
+		[130] (778,799)<span >Llamar />
+[131] (843,799)<span  />
+	[132] (843,799)<div id='sXDlyb/g/11csryvt97' role='button' />
+		[133] (843,799)<div  />
+			[134] (827,799)<div  />
+			[135] (851,799)<span >Menú />
+Opciones de servicio:
+Chimenea
+· Platos vegetarianos
+· Recomendable para mirar deportes
+
+</current_dom>

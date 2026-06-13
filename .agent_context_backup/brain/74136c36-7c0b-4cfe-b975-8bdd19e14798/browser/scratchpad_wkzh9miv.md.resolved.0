@@ -1,0 +1,19 @@
+# Browser Verification Plan - Architect.Sys Prospecting System
+
+## Tasks
+- [ ] Navigate to http://localhost:3000 and wait 4 seconds.
+- [ ] Search for "Restaurantes Barcelona".
+- [ ] Verify leads appear and ratings/stars are visible (Screenshot).
+- [ ] Select a lead with a website and click "Ver Prospecto Completo".
+- [ ] Click "Auditoría Profunda" and wait 15-20s.
+- [ ] Verify "Estrategia AI" tab content:
+    - [ ] Professional tone (expert diagnostic).
+    - [ ] Mentions Architect.Sys.
+    - [ ] No informal/unprofessional language (e.g., "I love your food").
+    - [ ] Screenshot of the tab.
+- [ ] Report findings.
+
+## Notes
+- Base URL: http://localhost:3000
+- Search Query: "Restaurantes Barcelona"
+- Audit Duration: ~20s

@@ -1,0 +1,164 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DMeson%2BEl%2BCordobes%2BDe%2BJose%2BPeregrina%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Meson+El+Cordobes+De+Jose+Peregrina+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQ2J8OegQICBAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Meson+El+Cordobes+De+Jose+Peregrina+Granada&sa=X&ved=2ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQtKgLegQIEhAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Meson+El+Cordobes+De+Jose+Peregrina+Granada&sa=X&ved=2ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQs6gLegQIERAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Meson+El+Cordobes+De+Jose+Peregrina+Granada&sa=X&ved=2ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQtKgLegQIEBAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Meson+El+Cordobes+De+Jose+Peregrina+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQ0pQJegQIDhAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Meson+El+Cordobes+De+Jose+Peregrina+Granada&sa=X&ved=2ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQs6gLegQIDBAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (261,321)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d4459838-Reviews-Meson_El_Cordobes_De_Jose_Peregrina-Granada_Province_of_Granada_Andalucia.html' />
+	[48] (261,350)<h3 >MESON EL CORDOBES DE JOSE PEREGRINA, Granada />
+	[49] (205,296)<div  />
+		[50] (205,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (220,296)<div  />
+				[55] (220,282)<div  />
+					[56] (220,282)<span >Tripadvisor />
+				[57] (220,312)<div  />
+					[58] (220,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[59] (273,311)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[60] (355,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[61] (355,310)<span  />
+		[62] (355,312)<span  />
+Visitamos el restaurante El Cordobés en Granada
+por recomendación de un amigo y previa reserva y fue toda una experiencia de lo más agradable. El trato del ...
+4.7
+(840)
+·
+Rango de precios: €€ - €€€
+[63] (327,467)<div role='button' />
+[64] (263,587)<a class='zReHs' href='https://www.instagram.com/p/DBcZ-ZUKrmb/' />
+	[65] (263,616)<h3 >Restaurante El Cordobés de José Peregrina!! Siempre ... />
+	[66] (170,562)<div  />
+		[67] (170,562)<div  />
+			[68] (81,562)<span  />
+				[69] (81,562)<div  />
+					[70] (81,562)<img  />
+			[71] (185,562)<div  />
+				[72] (185,548)<div  />
+					[73] (185,548)<span >Instagram · davidpedrazacaballero />
+				[74] (185,578)<div  />
+					[75] (174,578)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 30 "me gusta"  ·  hace 1 año />
+[76] (286,576)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[77] (286,576)<span  />
+		[78] (286,578)<span  />
+Restaurante El Cordobés de José Peregrina
+!! Siempre categoría!uno de los Restaurantes con gran Materia prima! Pescados y Mariscos y una Gran ...
+[79] (184,818)<a class='zReHs' href='https://elcordobesgranada.es/carta/' />
+	[80] (184,847)<h3 >Carta - Restaurante El Cordobés />
+	[81] (161,793)<div  />
+		[82] (161,793)<div  />
+			[83] (81,793)<span  />
+				[84] (81,793)<div  />
+					[85] (81,793)<img  />
+			[86] (176,793)<div  />
+				[87] (176,779)<div  />
+					[88] (176,779)<span >elcordobesgranada.es />
+				[89] (176,809)<div  />
+					[90] (176,809)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://elcordobesgranada.es />
+						[91] (237,808)<span class='ylgVCe ob9lvb' role='text'>› carta />
+[92] (267,807)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[93] (267,807)<span  />
+		[94] (267,809)<span  />
+Ctra. Alhama, Km 6, Las Gabias, Granada
+· +34 958 58 68 25. Nuestra Carta. Descubre los sabores que hacen especial a El Cordobés. Descargar Carta (PDF) ...
+[95] (707,392)<button class='KJY1Gc' />
+	[96] (707,392)<div  />
+		[97] (707,392)<div  />
+			[98] (722,392)<img  />
+		[99] (745,494)<span >Ver fotos />
+[100] (835,392)<a  />
+[101] (853,458)<a href='/local/place/fid/0xd71fcf3a8a5fbc1:0x2ad5f96be1343bb6/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DhY3Fkmtg1zBCTbhSrbm80w%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D78.028946%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFmhZM0ZrbXRnMXpCQ1RiaFNyYm04MHc%3D&sa=X&ved=2ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQpx96BAgcEA8' />
+	[102] (853,458)<div  />
+		[103] (870,458)<img  />
+	[104] (890,495)<span >Ver por fuera />
+Mesón el Cordobés de José Peregrina
+4.7
+[105] (754,647)<a href='/search?sca_esv=53e99bddec16fb1e&q=Meson+El+Cordobes+De+Jose+Peregrina+Granada&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xxtShe03jkTXFBlwdSzrgm-h6B7cxliRJZxo5q83w6GDLuMG9IIYCelEymb8578OsUxT9IQ%3D&uds=ALYpb_nyEaCYADf75iw0qqWiiEWFx6mJHcK0S3VyYhuWQ8NdsM6P8q2BT0pAhkCQhFWixI4KI6lHnbeqPRtFi-7Fv_uy4dFCgpmfcenE_4RSR93opbJB8a14Xltsut2FT0KVBirx5OIAtBHIPfO1SDXFbRsIttMAuw&sa=X&ved=2ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQ3PALegQIGhAE'>1,516 opiniones />
+[106] (805,642)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[107] (805,642)<span  />
+€20-60
+‧
+Bar restaurante
+[108] (825,649)<div class='mTpL7c' role='button' />
+	[109] (825,649)<span aria-label='Más opciones para Mesón el Cordobés de José Peregrina' class='Zj92Hf' role='img' />
+		[110] (823,646)<span  />
+[111] (688,767)<div  />
+	[112] (656,767)<div  />
+	[113] (697,767)<span >Cómo llegar />
+[114] (787,767)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_xxCkB61AwZhagCT7X-P3tnsEc6IDIWiw3ttPp6R2cW0thQhK-tYTBeiddCqVbvGHyLuDV6zdLCGf60zWi4QzzTA2bwra-Ylmz3R8fdIZMFu54NBkGhSCp_XmpXZ4Na4H6tV5F3I%3D&q=Mes%C3%B3n+el+Cordob%C3%A9s+de+Jos%C3%A9+Peregrina+Opiniones&sa=X&ved=2ahUKEwjHnr3H0MOUAxWfs1YBHUkcIPAQ0bkNegQILxAF' />
+	[115] (787,767)<div  />
+		[116] (759,767)<div  />
+		[117] (796,767)<span >Opiniones />
+[118] (876,767)<div  />
+	[119] (876,767)<div  />
+		[120] (876,767)<div  />
+			[121] (876,767)<span aria-label='Guardar Mesón el Cordobés de José Peregrina en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Mesón el Cordobés de José Peregrina en una colección' />
+				[122] (884,767)<span >Guardar />
+[123] (684,843)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[124] (684,843)<div  />
+		[125] (656,843)<div  />
+		[126] (692,843)<span >Compartir />
+[127] (769,843)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[128] (769,843)<div  />
+		[129] (750,843)<div  />
+		[130] (778,843)<span >Llamar />
+[131] (843,843)<span  />
+	[132] (843,843)<div id='sXDlyb/g/1tdygzy7' role='button' />
+		[133] (843,843)<div  />
+			[134] (827,843)<div  />
+			[135] (851,843)<span >Menú />
+Carnes rojas a la parrilla, asados y recetas cordobesas en mesón tradicional de ambiente familiar.
+
+</current_dom>

@@ -1,0 +1,39 @@
+# Construcción Completada: Carta Premium Interactiva
+
+*Rol Activo: Creador Principal y Arquitecto UX/UI*
+
+El arma para tu prospección física está lista. He transformado tus 5 directrices en una micro-aplicación de Nivel SaaS que funciona dentro de `/demo/carta`. 
+
+## Cambios Estructurales Implementados
+
+### 1. El Motor de Datos y Multi-Idioma (`src/lib/demo-data.ts`)
+He creado una base de datos local y reactiva que no requiere recargar la página.
+- **Traducción Real:** Todos los platos (Sushis, Gyozas, Udon, etc.) y la interfaz tienen traducciones nativas en ES, EN y FR.
+- **Alérgenos Visuales:** Se mapean automáticamente con iconos (`🐟`, `🌾`, `🥛`).
+- **Arquitectura de Precios:** Los precios están listos para ser sumados en tiempo real por el carrito.
+
+### 2. El Agente Sumiller "Arqui" (`src/app/api/demo/waiter/route.ts`)
+He separado la lógica del bot de ventas de tu landing, creando un backend totalmente nuevo.
+- **Contexto Cerrado:** El bot inyecta la carta completa en su System Prompt de forma invisible. Conoce los platos, los precios y los alérgenos exactos de tu demo.
+- **Camaleón Idiomático:** El bot detecta el idioma seleccionado en la carta (ES, EN o FR) y responde exclusivamente en ese idioma.
+- **Lógica de Asistente:** Está programado para rechazar preguntas no relacionadas con la comida y para incitar a usar el carrito de compras.
+
+### 3. La Interfaz Maestra (`src/app/demo/carta/page.tsx`)
+Aquí reside la magia visual (la "Bala de Plata"):
+- **Lector de Mesa Inteligente:** Puedes generar un código QR que apunte a `localhost:3000/demo/carta?table=Granada12` y la carta saludará directamente a la "Mesa Granada12".
+- **Toggle Claro/Oscuro Premium:** He diseñado el "Dark Mode" con cristales (Glassmorphism) y acentos naranjas, y un "Light Mode" hiper-legible sobre fondo marfil/hueso para uso de día. Se cambia con el botón (☀️/🌙) del menú superior.
+- **El Carrito Flotante (Bottom Drawer):** A medida que añades platos, una barra inferior de estilo UberEats te muestra el total. Al pulsarla, se desliza hacia arriba el resumen del pedido para enviarlo a cocina.
+- **El Widget del Camarero:** Un botón animado (🤵) que despliega el chat en tiempo real.
+
+> [!TIP]
+> **Tu Próximo Paso (Prueba de Fuego):**
+> Entra en tu navegador a `http://localhost:3000/demo/carta?table=Privada` y juega con los idiomas, el modo claro/oscuro y chatea con el camarero preguntándole qué alérgenos tienen las Gyozas.
+
+## Flujo de Demostración Recomendado para Hosteleros
+Cuando estés frente al dueño del local con el flyer:
+1. Pídele que escanee el QR.
+2. Muéstrale cómo puedes pedir en Inglés (demuestra que resuelves el problema del turista).
+3. Enséñale cómo la IA le recomienda un maridaje.
+4. Muéstrale que no necesita comprar hardware caro, todo vive en el móvil de sus clientes.
+
+Ya tienes la tecnología. ¿Puliendo detalles o pasamos a la Fábrica de Creativos?

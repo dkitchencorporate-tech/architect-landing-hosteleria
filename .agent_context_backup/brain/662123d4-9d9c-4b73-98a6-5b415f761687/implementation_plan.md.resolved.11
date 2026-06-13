@@ -1,0 +1,50 @@
+# State of the Union: Informe Diagnóstico de Ejecución
+
+*Rol Activo: Creador Principal (Maker) & UX/UI Lead*
+
+Tal como has ordenado, asumo el control operativo y visual del ecosistema. Dejo la seguridad asíncrona en manos de la unidad Jules. Este es el estado exacto del sistema en el milisegundo actual y mi hoja de ruta.
+
+---
+
+## 1. Inventario de Ejecución (Estado a este Milisegundo)
+
+*   **Mutaciones de Código:** `0 líneas modificadas`. No he alterado el código desde la recepción del contrato de seguridad. He adoptado una postura de lectura y análisis de dependencias.
+*   **Asimilación de Infraestructura:** El marco de trabajo inmutable está memorizado. No se violarán las reglas de `RLS` (Supabase), los webhooks mantendrán su tipado de extracción estricta (`email`, `phone`), la capa `Rate Limit` cubrirá todos los endpoints de IA, y los componentes visuales usarán limpiezas estrictas (`cleanup()`) para evitar fugas de memoria en las suscripciones a Realtime.
+
+## 2. Mapa de Activos y Flujos de Datos (Contexto Mapeado)
+
+*   **Vector 1 (`/creative-factory/page.tsx`):** Auditado. Actualmente es un "cascarón" de UX/UI bellamente diseñado, pero 100% estático. El motor generativo ("Dolor" y "Ángulo") no dispara peticiones, y los paneles de *Copy & Estrategia* y *Visual Asset* son `divs` hardcodeados esperando inyección de estado.
+*   **Vector 2 (`EventLibraryHook.tsx`):** Auditado. Funciona visualmente en la landing page para explicar la suscripción de 299€/mes, pero no existe un motor interactivo donde un cliente o tú podáis configurar un evento y ver su proyección matemática en vivo.
+*   **Vector 3 (`bot-logic.ts` & `api/demo/respond`):** Auditado. El bot "Arqui" opera como un cerrador High-Ticket impecable, manteniendo el historial de la sesión. Sin embargo, es ciego al comportamiento analítico del usuario (no lee su historial de clics o navegación previa).
+
+---
+
+## 3. Plan de Operaciones (Roadmap Visual/Funcional)
+
+Bajo mi nueva libertad de ejecución, este es el plan exacto. Atacaremos de forma secuencial:
+
+### ⚡ VECTOR 1: Creative Factory (Prioridad Inmediata)
+1.  **Orquestación UX:** Modificaré `page.tsx` para usar `useState` y gestionar el *payload* de entrada (Dolor, Ángulo). Añadiré animaciones de carga (spinners/skeletons) usando Tailwind para mantener la inmersión del usuario mientras la IA piensa.
+2.  **Construcción de Backend:** Crearé el endpoint `/app/api/creative-factory/generate/route.ts`. Este puente recibirá la solicitud, estará sujeto al *Rate Limiter*, y se comunicará con Gemini a través de un *System Prompt* diseñado exclusivamente para "Direct Response Marketing B2B".
+3.  **Renderizado en Vivo:** La IA devolverá un JSON estructurado (con el gancho, texto primario y un *prompt visual* hiper-detallado para Midjourney/DALL-E). Inyectaremos este JSON en las pantallas de la interfaz que actualmente dicen "Esperando generación...".
+
+### ⚡ VECTOR 2: Event Library (El Motor)
+1.  **Transformación:** Extraeremos la lógica de presentación de `EventLibraryHook.tsx` y crearemos un panel interactivo (`/event-library`). 
+2.  **Lógica Dinámica:** El usuario podrá elegir variables: "Capacidad (Mesas)", "Día Valle" y "Ticket Medio". El motor calculará dinámicamente el ROI proyectado si contrata nuestro sistema de eventos, transformando una sección informativa en una "Calculadora de Ventas".
+
+### ⚡ VECTOR 3: Sales Closer (Preparación RAG)
+1.  **Puente Seguro:** Sin alterar las políticas de Supabase, crearé un micro-servicio en el servidor `fetchClientAnalytics(phone)`.
+2.  **Inyección en Tiempo Real:** Modificaremos `bot-logic.ts`. Antes de enviar la pregunta del usuario a Gemini, inyectaremos silenciosamente en el *System Prompt* un resumen de sus datos (ej. "Nota oculta para Arqui: Este usuario ha visitado la sección de 'Dark Kitchen' 3 veces hoy. Empuja por ese ángulo.").
+
+---
+
+## 4. Solicitud de Contexto Extendido (Eliminación de Puntos Ciegos)
+
+Antes de iniciar la codificación del **Vector 1**, necesito resolver estas dudas técnicas para tener visión panorámica:
+
+1.  **Inyección de Modelos:** Para el endpoint del generador de creativos, ¿uso la función estándar `generateGeminiContent` que ya existe en `src/lib/gemini.ts`, o debo estructurar el streaming de respuesta de otra forma para la UX en tiempo real?
+2.  **Persistencia de Campañas:** ¿El resultado de la generación del Vector 1 (el Copy y el Prompt visual) debe guardarse en Supabase (ej. tabla `campaigns` o `creatives`), o de momento será un estado efímero que vive solo en la sesión del navegador del usuario hasta que haga clic en "Aprobar y Añadir a Matriz"?
+3.  **Esquema `leads_analytics`:** De cara al futuro Vector 3, ¿podrías confirmar qué columnas clave existen actualmente en la tabla `leads_analytics` (ej. `last_visited_page`, `time_on_site`, `bounce_rate`) para ir planificando el diseño de la inyección RAG?
+
+**[REPORTE FINALIZADO]** 
+Quedo a la espera de tus respuestas al "Contexto Extendido" y de tu **LUZ VERDE** explícita para comenzar a tirar líneas de código en el Vector 1.

@@ -1,0 +1,6 @@
+# Checklist de Adaptación: Creative Factory Multi-Cliente
+
+- [ ] Modificar `/api/creative-factory/generate` para adaptar los copys y prompts al perfil del cliente (`clientName`, `clientCuisine`, `clientTier`)
+- [ ] Modificar `/creative-factory` para añadir el Selector de Cliente Activo y pre-cargar clientes mock (Barrio, Gourmet, Familiar)
+- [ ] Adaptar el Asignador de Menú en `/creative-factory` para mostrar y guardar platos dinámicos del cliente
+- [ ] Validar visualmente con el navegador que los copys cambian de tono e intención según el cliente seleccionado

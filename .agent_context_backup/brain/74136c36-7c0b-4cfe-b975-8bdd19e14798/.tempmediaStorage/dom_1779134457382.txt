@@ -1,0 +1,188 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DBar%2BEl%2BAncla%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Bar+El+Ancla+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQ2J8OegQICRAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Bar+El+Ancla+Granada&sa=X&ved=2ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQtKgLegQICxAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Bar+El+Ancla+Granada&sa=X&ved=2ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQs6gLegQIDRAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Bar+El+Ancla+Granada&sa=X&ved=2ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQtKgLegQIEhAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Bar+El+Ancla+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQ0pQJegQIEBAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Bar+El+Ancla+Granada&sa=X&ved=2ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQs6gLegQIERAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (269,321)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d18848416-Reviews-Pescaito_el_Ancla-Granada_Province_of_Granada_Andalucia.html' />
+	[48] (269,350)<h3 >PESCAITO EL ANCLA, Granada - Carta, fotos y opiniones />
+	[49] (205,296)<div  />
+		[50] (205,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (220,296)<div  />
+				[55] (220,282)<div  />
+					[56] (220,282)<span >Tripadvisor />
+				[57] (220,312)<div  />
+					[58] (220,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[59] (273,311)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[60] (355,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[61] (355,310)<span  />
+		[62] (355,312)<span  />
+11 oct 2021
+—
+Situado a escasos metros del campo de fútbol de Granada
+“Nuevo Los Carmenes”, se trata de un bar donde se puede tapear y comer. Tiene terraza ...
+[63] (544,351)<a href='https://www.tripadvisor.es/Restaurant_Review-g187441-d18848416-Reviews-Pescaito_el_Ancla-Granada_Province_of_Granada_Andalucia.html' />
+	[64] (544,351)<div  />
+		[65] (544,351)<img  />
+4.2
+(21)
+·
+Rango de precios: €€ - €€€
+[66] (321,467)<div role='button' />
+[67] (222,587)<a class='zReHs' href='https://www.ubereats.com/es/store/pescaito-el-ancla/f7QylX4kW6mwFMB4yEJoAw?srsltid=AfmBOoqCQRh-OmIJ5DXaoSWbZMVLa4nZjbp-uGc8WkyjDIWTyfHPxLK3' />
+	[68] (222,616)<h3 >Pescaito el Ancla menú y precios - Granada />
+	[69] (192,562)<div  />
+		[70] (192,562)<div  />
+			[71] (81,562)<span  />
+				[72] (81,562)<div  />
+					[73] (81,562)<img  />
+			[74] (208,562)<div  />
+				[75] (208,548)<div  />
+					[76] (208,548)<span >Uber Eats />
+				[77] (208,578)<div  />
+					[78] (208,578)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.ubereats.com />
+						[79] (262,577)<span class='ylgVCe ob9lvb' role='text'>› ... › Granada › El Zaidín />
+[80] (331,576)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[81] (331,576)<span  />
+		[82] (331,578)<span  />
+Pintor Manuel Maldonado, 50,, Granada
+, EMEA 18007. Pescaito el Ancla es un restaurante de cocina mediterránea situado en el barrio de El Zaidín, en Granada.
+4.9
+(6)
+·
+Rango de precios: $$
+[83] (287,733)<div role='button' />
+[84] (274,853)<a class='zReHs' href='https://www.facebook.com/groups/129825290722912/posts/2089844558054299/' />
+	[85] (274,882)<h3 >Bar El Ancla en el Zaidín.Tapa para dos y media ración de ... />
+	[86] (171,828)<div  />
+		[87] (171,828)<div  />
+			[88] (81,828)<span  />
+				[89] (81,828)<div  />
+					[90] (81,828)<img  />
+			[91] (186,828)<div  />
+				[92] (186,814)<div  />
+					[93] (186,814)<span >Facebook · De Tapeo Por Granada />
+				[94] (186,844)<div  />
+					[95] (179,844)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 40 comentarios  ·  hace 2 años />
+[96] (287,842)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[97] (287,842)<span  />
+		[98] (287,844)<span  />
+Si quieres disfrutar de un ratito agradable delante de una ceryy un platito de pescado, no dejes de ir al
+Ancla
+|Uno de los mejores sitios ...
+[99] (544,883)<a href='https://www.facebook.com/groups/129825290722912/posts/2089844558054299/' />
+	[100] (544,883)<div  />
+		[101] (544,883)<img  />
+[102] (712,392)<button class='KJY1Gc' />
+	[103] (711,392)<div  />
+		[104] (711,392)<div  />
+			[105] (728,392)<img  />
+		[106] (755,494)<span >Ver fotos />
+[107] (841,392)<a  />
+[108] (857,458)<a href='/local/place/fid/0xd71fd3e02629309:0x79d8c0df2469446d/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DUjnO6_gELVYWG191HBV6sw%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D50.331764%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFlVqbk82X2dFTFZZV0cxOTFIQlY2c3c%3D&sa=X&ved=2ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQpx96BAgcEA8' />
+	[109] (857,458)<div  />
+		[110] (874,458)<img  />
+	[111] (890,495)<span >Ver por fuera />
+Bar El Ancla
+4.6
+[112] (749,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=Bar+El+Ancla+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcVG8nijykMbftahCfexHaumgcA4K41be0_H5zkFKdv0MFJAw9DhfS7k1MnMmtnmqNuvJzY%3D&uds=ALYpb_lLt3rF4OntvAcKw6YR8l5VgR6bbQTjbEeZzRHn6UbWxbyY9iIKKS3Z-mnbHx-jSCm7KwkCKujg8P7CVnsq0aYdlHvkXhwgvuC0OG5DZClRIhwy30sa4p0LRcVeA-ve41yxq8T-&sa=X&ved=2ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQ3PALegQIGRAE'>374 opiniones />
+[113] (796,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[114] (796,598)<span  />
+€10-20
+‧
+Bar
+[115] (816,604)<div class='mTpL7c' role='button' />
+	[116] (816,604)<span aria-label='Más opciones para Bar El Ancla' class='Zj92Hf' role='img' />
+		[117] (814,601)<span  />
+[118] (688,723)<div  />
+	[119] (656,723)<div  />
+	[120] (697,723)<span >Cómo llegar />
+[121] (787,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOcVG8nijykMbftahCfexHatUmWdtUw80cgqXXfFqulNVMQXMQzFkDvqOy7gD96skzEkkadp5XvfoqHfIJV0bBA7wiI50&q=Bar+El+Ancla+Opiniones&sa=X&ved=2ahUKEwjFxMul0MOUAxVDt1YBHVQpHvsQ0bkNegQIKBAF' />
+	[122] (787,723)<div  />
+		[123] (759,723)<div  />
+		[124] (796,723)<span >Opiniones />
+[125] (876,723)<div  />
+	[126] (876,723)<div  />
+		[127] (876,723)<div  />
+			[128] (876,723)<span aria-label='Guardar Bar El Ancla en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Bar El Ancla en una colección' />
+				[129] (884,723)<span >Guardar />
+[130] (684,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[131] (684,799)<div  />
+		[132] (656,799)<div  />
+		[133] (692,799)<span >Compartir />
+[134] (769,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[135] (769,799)<div  />
+		[136] (750,799)<div  />
+		[137] (778,799)<span >Llamar />
+[138] (843,799)<span  />
+	[139] (843,799)<div id='sXDlyb/g/11fnpzsvdl' role='button' />
+		[140] (843,799)<div  />
+			[141] (827,799)<div  />
+			[142] (851,799)<span >Menú />
+[143] (707,878)<div class='K9ZSQ' id='pYQAIb/g/11fnpzsvdl' role='button' />
+	[144] (707,878)<div  />
+		[145] (663,878)<div  />
+		[146] (715,878)<span >Pedir para llevar />
+[147] (852,878)<div class='K9ZSQ' id='pYQAIb/g/11fnpzsvdl' role='button' />
+	[148] (852,878)<div  />
+		[149] (808,878)<div  />
+		[150] (861,878)<span >Pedir a domicilio />
+Opciones de servicio:
+Asientos al aire libre
+· Comida en el bar
+
+</current_dom>

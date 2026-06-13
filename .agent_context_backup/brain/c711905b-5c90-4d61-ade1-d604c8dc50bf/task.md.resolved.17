@@ -1,0 +1,13 @@
+- [x] Refinar Paso 2 en `page.tsx` ("Cierre Automático") para no forzar la IA como servicio base.
+- [x] Enriquecer `WhatsAppHero.tsx` con el concepto de Modo Híbrido y control en tiempo real.
+- [x] Reconstruir `HighTicketEcosystem.tsx` con el precio de 450€ + 69€/mes.
+- [x] Inyectar bloque "Criterio y Filtro Avanzado de Grupo" en `WhatsAppHero.tsx`.
+- [x] Detallar la "Factura Transparente" en `HighTicketEcosystem.tsx`.
+- [x] Inyectar bloque "Matemática del Fin de Semana" (ROI).
+- [x] Refactorizar `ExitIntent.tsx` para mostrar los 4 bonos de 1.150€ del Pack de Arranque.
+- [x] Eliminar la Fase 2 (Formulario) de `ExitIntent.tsx` y establecer Fase única con CTA Dual (WhatsApp rápido y Calendly).
+- [x] Mejorar lógica de disparador móvil en `ExitIntent.tsx` (tiempo e intención de scroll) respetando si hay modales abiertos.
+- [ ] (NUEVO) Refactorizar `DarkKitchen.tsx` con el copy Enterprise (Ingeniería de Procesos).
+- [ ] (NUEVO) Añadir Fases de Admisión (Viabilidad, Estandarización, Despliegue) en `DarkKitchen.tsx` para justificar alto valor sin mostrar precio.
+- [ ] (NUEVO) Actualizar CTA en `DarkKitchen.tsx` a "Solicitar Auditoría" con filtro de exclusividad (2 proyectos/trimestre).
+- [ ] Verificar entorno.

@@ -1,0 +1,203 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (855,123)<button aria-label='Buscar en esta área' class='NlVald UUrkN cDZBKc' />
+	[6] (855,123)<div  />
+		[7] (800,123)<span > />
+		[8] (862,123)<span >Buscar en esta área />
+[9] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[10] (431,59)<button class='e2moi' />
+		[11] (431,59)<div  />
+			[12] (405,59)<span > />
+			[13] (431,59)<span >Precio />
+			[14] (457,59)<span > />
+	[15] (531,59)<button class='e2moi' />
+		[16] (531,59)<div  />
+			[17] (488,59)<span > />
+			[18] (532,59)<span >Clasificación />
+			[19] (574,59)<span > />
+	[20] (632,59)<button class='e2moi' />
+		[21] (632,59)<div  />
+			[22] (605,59)<span > />
+			[23] (633,59)<span >Cocina />
+			[24] (661,59)<span > />
+	[25] (716,59)<button class='e2moi' />
+		[26] (716,59)<div  />
+			[27] (691,59)<span > />
+			[28] (717,59)<span >Horas />
+			[29] (741,59)<span > />
+	[30] (772,59)<span > />
+	Todos los filtros
+[31] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[32] (827,59)<span > />
+[33] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[34] (28,57)<div  />
+		[35] (28,57)<span > />
+[36] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[37] (28,146)<div  />
+		[38] (28,146)<span > />
+	[39] (28,190)<div  />
+		[40] (28,190)<div >Guardado />
+[41] (28,297)<button class='wR3cXd fontLabelMedium' />
+	[42] (28,272)<div  />
+		[43] (28,272)<span > />
+	[44] (28,329)<div  />
+		[45] (28,329)<div >Recientes />
+[46] (28,488)<button class='atHn2d wR3cXd aJPqP fontBodySmall QyI6Nb' />
+	[47] (28,463)<div  />
+		[48] (28,463)<div  />
+			[49] (28,463)<div  />
+	[50] (28,520)<div  />
+		[51] (28,522)<div >Restaurante Jero />
+[52] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[53] (28,892)<div  />
+		[54] (28,892)<span > />
+	[55] (28,943)<div  />
+		[56] (28,943)<div >Obtener app />
+[57] (216,528)<div aria-label='Resultados de restaurantes Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd QjC7t' role='feed' scrollable='true' />
+	
+	Reservar mesa
+	[58] (213,220)<a aria-label='Restaurante Jerusalén' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Jerusal%C3%A9n/data=!4m7!3m6!1s0xd71fcbf611aaab1:0xb6f4a4f17ca8360f!8m2!3d37.1782897!4d-3.5978963!16s%2Fg%2F11dynvkjm0!19sChIJsaoaYb_8cQ0RDzaofPGk9LY?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Jerusalén
+	4.9
+	(3,306)
+	·
+	€1-10
+	C. Elvira, 42
+	Local de comida rápida del Mediterráneo oriental
+	Abierto
+	· Cierra a las 12 a.m.
+	"Muy buena comida y buen ambiente, el chico es un encanto y muy atento."
+	[59] (213,514)<a aria-label='Restaurante Jero' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Jero/data=!4m7!3m6!1s0xd71fdf0b7492d1f:0x9bddaad66612890f!8m2!3d37.1791731!4d-3.5985914!16s%2Fg%2F11rf6_3cdj!19sChIJHy1Jt_D9cQ0RD4kSZtaq3Zs?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Jero
+	4.8
+	(686)
+	·
+	€10-20
+	Restaurante
+	·
+	
+	·
+	C. Elvira, 70
+	Abierto
+	· Cierra a las 11 p.m.
+	"Muy buena comida, buen servicio ambiente tranquilo."
+	[60] (213,792)<a aria-label='Restaurante La Turquesa' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+La+Turquesa/data=!4m7!3m6!1s0xd71fd3144e8a083:0xd27bb1f27a4b38cc!8m2!3d37.1774544!4d-3.5991273!16s%2Fg%2F11ssrcsv7w!19sChIJg6DoRDH9cQ0RzDhLevKxe9I?authuser=0&hl=es-419&rclk=1' />
+	Restaurante La Turquesa
+	4.9
+	(1,255)
+	·
+	€20-30
+	Restaurante
+	·
+	
+	·
+	Pl. de Villamena, 2, Local 2
+	Abierto
+	· Cierra a las 11:30 p.m.
+	"Anoche fuimos a cenar a este lugar, ambiente muy agradable, buen servicio."
+	La Jefa Granada
+	4.7
+	(1,634)
+	·
+	€20-30
+[61] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[62] (80,972)<div  />
+		[63] (80,972)<span > />
+[64] (216,886)<button class='e2moi' />
+	[65] (216,886)<div >
+Volver al principio />
+		[66] (216,886)<div  />
+		
+		Volver al principio
+[67] (684,139)<button aria-label='Cerrar' class='VfPpkd-icon-LgbsSe yHy1rc eT1oJ mN1ivc VfPpkd-ksKsZd-mWPk3d VfPpkd-ksKsZd-mWPk3d-OWXEXe-ZNMTqd' />
+	[68] (684,145)<span  />
+[69] (550,532)<div class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ' scrollable='true' />
+	[70] (548,285)<button aria-label='Foto de Restaurante Jero' class='aoRNLd kn2E5e NMjTrf lvtCsd ' />
+		[71] (548,285)<img  />
+	[72] (442,422)<button class='Dx2nRe' />
+		[73] (413,422)<span  />
+		[74] (453,422)<div  />
+	Restaurante Jero
+	4.8
+	(686)
+	[75] (525,575)<button aria-label='Más información sobre la divulgación legal de las opiniones públicas en Google Maps' class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-icon-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe LQeN7 s73B3c MyHLpd wphPJc Q8G3mf' />
+		
+	·
+	€10-20
+	[76] (439,604)<button class='DkEaL '>Restaurante />
+	·
+	
+	[77] (548,665)<div class='RWPxGd' role='tablist' scrollable='true' />
+		[78] (459,665)<button aria-label='Descripción general de Restaurante Jero' class='hh2c6 G7m0Af' role='tab' />
+			Descripción general
+		[79] (564,665)<button aria-label='Menú' class='hh2c6 ' role='tab' />
+			Menú
+		[80] (641,665)<button aria-label='Revisiones para Restaurante Jero' class='hh2c6 ' role='tab' />
+			Opiniones
+		Acerca de
+	[81] (436,786)<button aria-label='Indicaciones' class='S9kvJb ' />
+		[82] (436,757)<span  />
+			[83] (436,757)<span > />
+		[84] (436,827)<div >Indicaciones />
+	[85] (492,773)<button aria-label='Guardar' class='S9kvJb ' />
+		[86] (492,757)<span  />
+			[87] (492,757)<span > />
+		[88] (492,814)<div >Guardar />
+	[89] (548,773)<button aria-label='Cerca' class='S9kvJb ' />
+		[90] (548,757)<span  />
+			[91] (548,757)<span > />
+		[92] (548,814)<div >Cerca />
+	[93] (604,786)<button aria-label='Enviar al teléfono' class='S9kvJb ' />
+		[94] (604,757)<span  />
+			[95] (604,757)<span > />
+		[96] (604,827)<div >Enviar al teléfono />
+	[97] (660,773)<button aria-label='Compartir' class='S9kvJb ' />
+		[98] (660,757)<span  />
+			[99] (660,757)<span > />
+		[100] (660,814)<div >Compartir />
+	[101] (548,923)<button class='XJ8h0e waIsr' />
+		[102] (548,923)<div  />
+		[103] (475,923)<div  />
+			[104] (475,929)<div  />
+				[105] (464,929)<div aria-label='Ofrece consumo en el lugar' class='LTs0Rc' role='group'>· />
+					·
+					[106] (414,929)<span > />
+					[107] (476,929)<div >Consumo en el lugar />
+		
+[108] (718,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[109] (718,500)<span > />
+[110] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[111] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FRestaurante%2BJero%2F%4037.1791731%2C-3.742787%2C12z%2Fdata%3D!4m11!1m3!2m2!1srestaurantes%2BGranada!6e5!3m6!1s0xd71fdf0b7492d1f%3A0x9bddaad66612890f!8m2!3d37.1791731!4d-3.5985914!15sChRyZXN0YXVyYW50ZXMgR3JhbmFkYVoWIhRyZXN0YXVyYW50ZXMgZ3JhbmFkYZIBCnJlc3RhdXJhbnSaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUndOMHBYTUdwUlJSQULgAQD6AQQIABAz!16s%252Fg%252F11rf6_3cdj%3Fved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[112] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[113] (973,799)<span > />
+[114] (973,871)<div  />
+	[115] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[116] (973,849)<div  />
+	[117] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[118] (973,893)<div  />
+	[119] (973,871)<div  />
+[120] (973,945)<div  />
+	[121] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[122] (973,945)<div  />
+[123] (917,906)<button aria-label='Street View' class='dQDAle' />
+	[124] (917,906)<div  />
+		[125] (917,906)<div  />
+			[126] (917,907)<div  />
+Datos del mapa © 2026 Inst. Geogr. Nacional
+[127] (642,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[128] (688,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[129] (739,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[130] (834,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[131] (947,989)<button class='LNGekf' />
+	[132] (919,989)<label class='U5ELMd'>2 km />
+	[133] (956,989)<div  />
+
+</current_dom>

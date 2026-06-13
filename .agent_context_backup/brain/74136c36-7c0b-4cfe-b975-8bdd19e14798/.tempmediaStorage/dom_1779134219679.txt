@@ -1,0 +1,85 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Sitios sobre lugares
+[0] (325,230)<div class='RyIFgf rAdPSe' scrollable='true' />
+	Los 10 mejores restaurantes de Zaidín - Vergeles Granada
+	Tripadvisor
+	Comida a domicilio y para llevar en El Zaidín | LOS MEJORES restaurantes en El Zaidín
+	Uber Eats
+	Restaurantes en Zaidin vergeles Granada
+	Páginas Amarillas
+	Restaurante Los Marianos Zaidín en Granada
+	Gastroranking
+	Que bares me recomendáis del Zaidín con buenas tapas???
+	Facebook
+	Los 10 mejores Restaurantes en Zaidin-Vergeles (Granada)
+	Infoisinfo
+	La Mar De Tapas Zaidin en Granada
+	Carta
+[1] (580,230)<g-right-button aria-label='Siguiente' class='wgbRNb VdehBf OZ5bRd btpNFe tHT0l' role='button' />
+	[2] (580,231)<g-fab  />
+		[3] (580,231)<span  />
+[4] (325,458)<div  />
+	[5] (325,458)<a class='jRKCUd' href='/search?q=restaurante+Zaidin+Granada&sca_esv=53e99bddec16fb1e&udm=11&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQhbILegQIRxAw' />
+		[6] (325,458)<div  />
+			[7] (317,458)<span >Más sitios />
+			[8] (354,458)<span  />
+Resultados web
+[9] (272,615)<a class='zReHs' href='https://www.tripadvisor.es/Restaurants-g187441-zfn20484347-Granada_Province_of_Granada_Andalucia.html' />
+	[10] (272,644)<h3 >Los 10 mejores restaurantes de Zaidín - Vergeles Granada />
+	[11] (205,590)<div  />
+		[12] (205,590)<div  />
+			[13] (81,590)<span  />
+				[14] (81,590)<div  />
+					[15] (81,590)<img  />
+			[16] (220,590)<div  />
+				[17] (220,575)<div  />
+					[18] (220,575)<span >Tripadvisor />
+				[19] (220,605)<div  />
+					[20] (220,605)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[21] (273,605)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[22] (355,604)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[23] (355,604)<span  />
+		[24] (355,605)<span  />
+[25] (325,860)<div class='RyIFgf rAdPSe' scrollable='true' />
+	Il Gondoliere Nuovo
+	4.3/5.0
+	(1.3 K)
+	·
+	€€ - €€€
+	Cafetería Churrería Mari Carmen
+	4.8/5.0
+	(20)
+	·
+	€
+	La Recacha Meson
+	4.4/5.0
+	(91)
+	·
+	€€ - €€€
+	Pescaito El Ancla
+	4.1/5.0
+	(21)
+	·
+	€€ - €€€
+	Las Delicias
+	4.4/5.0
+	(29)
+	·
+	€
+	Veleta
+	4.4/5.0
+	(29)
+	·
+	€
+	BURBU Sushi & Fusión (Palacio)
+	4.4/5.0
+	(85)
+	·
+	€€ - €€€
+	Cafeteria Bar El Rondel
+	4.8/5.0
+
+</current_dom>

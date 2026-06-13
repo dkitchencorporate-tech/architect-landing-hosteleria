@@ -1,0 +1,49 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (248,32)<a href='https://github.com/joshenlim' />
+	[1] (248,36)<img  />
+joshenlim
+[2] (579,156)<details  />
+	[3] (579,156)<summary role='button' />
+		[4] (284,156)<span  />
+			[5] (275,156)<span >Assets />
+			[6] (313,156)<span >17 />
+v2.95.3
+[7] (118,393)<a class='color-fg-muted wb-break-all' href='/apps/github-actions'>github-actions />
+[8] (91,442)<a class='Link Link--muted' href='/supabase/cli/tree/v2.95.3' />
+	[9] (91,442)<div  />
+		[10] (100,441)<span >v2.95.3 />
+[11] (95,489)<a class='Link Link--muted mb-2 tmp-mb-2' href='/supabase/cli/commit/80566a16728ea6593f69beb2dc4baa8705398ba9' />
+	[12] (104,491)<code >80566a1 />
+[13] (135,490)<details class='dropdown dropdown-signed-commit details-reset details-overlay js-dropdown-details d-inline-block ml-1' />
+	[14] (135,490)<summary class='color-fg-success' />
+[15] (98,542)<button class='Button--secondary Button--small Button' id='select-panel-0d9fca83-7ac2-4b51-997c-2670d8481ef7-button' />
+	[16] (98,542)<span  />
+		[17] (91,542)<span >Compare />
+[18] (276,353)<a class='Link--primary Link' href='/supabase/cli/releases/tag/v2.95.3'>v2.95.3 />
+Pre-release
+Changelog
+Bug fixes
+[19] (286,623)<a class='commit-link' href='https://github.com/supabase/cli/commit/80566a16728ea6593f69beb2dc4baa8705398ba9' />
+	[20] (286,627)<tt >80566a1 />
+: fix(start): guard db_logs vector transform against null regex capture (
+[21] (711,623)<a class='issue-link js-issue-link' href='https://github.com/supabase/cli/pull/5126'>#5126 />
+) (
+[22] (776,623)<a class='user-mention notranslate' href='https://github.com/rebasecase'>@rebasecase />
+)
+Contributors
+[23] (248,801)<a href='https://github.com/rebasecase' />
+	[24] (248,805)<img  />
+rebasecase
+[25] (579,925)<details  />
+	[26] (579,925)<summary role='button' />
+		[27] (284,925)<span  />
+			[28] (275,925)<span >Assets />
+			[29] (313,925)<span >17 />
+👍
+1
+1 person reacted
+
+</current_dom>

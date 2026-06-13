@@ -1,0 +1,13 @@
+# Task Tracker: Arqui Widget Fix & MeetArqui Section
+
+## Fase 1: Fix ChatDemoWidget Modal
+- `[x]` Refactorizar `ChatDemoWidget.tsx` para incluir estado interno `isOpen`.
+- `[x]` Añadir UI del botón flotante en `ChatDemoWidget.tsx` cuando está cerrado.
+- `[x]` Eliminar el botón flotante de `DemoLauncher.tsx` para evitar duplicidad.
+
+## Fase 2: Nueva Sección en Landing Page
+- `[x]` Crear `MeetArquiSection.tsx` con diseño atractivo.
+- `[x]` Inyectar la sección en `src/app/page.tsx` justo antes de `FounderBio.tsx` o `FAQ.tsx`.
+
+## Fase 3: Despliegue a Producción
+- `[x]` `vercel --prod` para desplegar directamente.

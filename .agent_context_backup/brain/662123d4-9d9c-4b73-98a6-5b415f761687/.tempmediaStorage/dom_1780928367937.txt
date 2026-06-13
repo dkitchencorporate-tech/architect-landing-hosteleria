@@ -1,0 +1,24 @@
+B
+Bite
+Corp
+Demo
+[0] (678,57)<button class='w-6 h-6 rounded-full text-[9px] font-black uppercase border bg-[#ff003c] text-white border-transparent'>es />
+[1] (700,57)<button class='w-6 h-6 rounded-full text-[9px] font-black uppercase border border-zinc-800 text-zinc-500'>en />
+[2] (722,57)<button class='w-6 h-6 rounded-full text-[9px] font-black uppercase border border-zinc-800 text-zinc-500'>fr />
+[3] (775,57)<button class='flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all bg-[#ff003c] text-white shadow-[0_0_10px_rgba(255,0,60,0.4)]'>Diner
+1 />
+[4] (831,57)<button class='flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all text-zinc-500'>Diner
+2 />
+[5] (887,57)<button class='flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all text-zinc-500'>Diner
+3 />
+[6] (944,57)<button class='flex-1 sm:flex-none px-4 py-2 text-[10px] font-black uppercase rounded-lg transition-all text-zinc-500'>Diner
+4 />
+Limited Time
+FREE LOADED FRIES
+Join the Crave Syndicate and get a massive portion of Bacon Fries with your first Smash.
+Entrantes & Fritos
+HYPE
+[7] (408,899)<button class='flex-1 bg-transparent text-white px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-white/10'>🎨
+Ver Otro Diseño />
+[8] (580,899)<button class='flex-1 bg-[#10b981] hover:bg-[#059669] text-black px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest'>💰
+Quiero esta Carta />

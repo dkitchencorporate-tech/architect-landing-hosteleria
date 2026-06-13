@@ -1,0 +1,48 @@
+# Arquitectura SaaS y Base de Datos Integrada
+
+Se ha completado la migración de tu ecosistema. Architect.Sys ya no es solo una "Demo" visual, sino una plataforma **SaaS Multi-Tenant** real, con seguridad de servidor y base de datos persistente.
+
+A continuación, tienes el reporte de lo construido y **los pasos exactos que debes realizar en tu panel de Supabase** para activar el sistema.
+
+---
+
+## 1. Lo que se ha programado y desplegado
+
+*   **Autenticación Real (SSR):** Hemos cambiado el rudimentario Basic Auth por el potente motor `@supabase/ssr`. Esto protege cada ruta a nivel de servidor utilizando *cookies* cifradas.
+*   **Enrutamiento Privado:**
+    *   `/auth/login`: Para que tú (Admin) o los clientes recurrentes inicien sesión.
+    *   `/auth/register`: El enlace oculto que enviarás a tus clientes por email tras realizar el pago.
+*   **Base de Datos en Supabase:** El `OnboardingWizard` ahora no guarda datos en el localStorage, sino que envía la información corporativa del cliente a la tabla `projects`. La selección de eventos se guarda en `client_events`.
+*   **Panel de Control Central (`/admin-architect/clients`):** Ahora consulta directamente la tabla de usuarios de Supabase para mostrarte qué restaurantes se han registrado, cuál es su correo, y si ya terminaron el Onboarding o no.
+
+## 2. El "Modo Demo" para Ventas (Tu Cuenta)
+
+Tal como solicitaste, he dejado un "Modo Dios" visual. 
+Si inicias sesión usando exactamente **`alex@architectsys.com`** o **`admin@architectsys.com`**, el código ignorará las comprobaciones de base de datos e **inyectará los datos de demostración espectaculares** (Gráficos llenos, eventos desbloqueados y plan Growth). Así podrás mostrar el software en tiempo real a tus clientes en llamadas sin ensuciar la base de datos real.
+
+---
+
+> [!CAUTION]
+> ## 3. PASO CRÍTICO: Configura tu Supabase
+> 
+> El código ya está subido y corriendo en Vercel, pero se conectará a tu Supabase. Tienes que crear las tablas de datos para que el sistema funcione.
+
+1. Ve a tu proyecto en [Supabase](https://supabase.com/).
+2. Entra a la sección **SQL Editor** en el menú izquierdo.
+3. Copia TODO el código SQL que te he dejado en el archivo [supabase_schema.sql](file:///c:/Users/Administrator/.gemini/antigravity/brain/662123d4-9d9c-4b73-98a6-5b415f761687/supabase_schema.sql).
+4. Pégalo en el editor y dale a **Run**.
+
+Ese código creará mágicamente:
+*   La tabla `profiles` (se llena sola cuando alguien se registra).
+*   La tabla `projects` (se llena cuando el cliente termina el Onboarding).
+*   La tabla `client_events` (se llena cuando un cliente da clic en "Lanzar Evento").
+*   Las reglas de seguridad (RLS) para que nadie pueda ver los datos de otros restaurantes, excepto tú.
+
+## 4. Cómo probarlo tú mismo ahora mismo
+
+1.  Asegúrate de haber ejecutado el SQL en Supabase.
+2.  Entra a `https://hosteleria.architectsys.com/auth/register` (este será el enlace para tus clientes nuevos).
+3.  Registra la cuenta `alex@architectsys.com` con una contraseña cualquiera.
+4.  Al registrarte, entrarás automáticamente al Dashboard y ¡Pum!, saltará el **Modo Demo** con todas las capacidades desbloqueadas, listo para presentar en Zoom.
+
+¡Tu maquinaria SaaS B2B ha sido desplegada con éxito!

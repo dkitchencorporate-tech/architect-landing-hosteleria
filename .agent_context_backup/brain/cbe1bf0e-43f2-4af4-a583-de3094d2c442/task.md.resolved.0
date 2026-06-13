@@ -1,0 +1,15 @@
+# Architect.Sys - Refactorización de Embudo de Ventas (Fase 1)
+
+## Tareas de Frontend y Arquitectura
+
+- `[/]` Crear directorio `src/components/sections` si no existe.
+- `[ ]` Crear componente `TheTrojanHorse.tsx` (Oferta 39€/mes).
+- `[ ]` Crear componente `EventLibraryHook.tsx` (Suscripción Growth 69€/mes).
+- `[ ]` Crear componente `HighTicketEcosystem.tsx` (Recepcionista 650€).
+- `[ ]` Refactorizar `src/app/page.tsx`:
+  - `[ ]` Eliminar sección antigua de Ads de 400€.
+  - `[ ]` Eliminar sección 6 antigua (Value Ladder).
+  - `[ ]` Inyectar `TheTrojanHorse` después de la sección "The Pain".
+  - `[ ]` Inyectar `EventLibraryHook` después de `TheTrojanHorse`.
+  - `[ ]` Inyectar `HighTicketEcosystem` al final del embudo.
+- `[ ]` Comprobar renderizado en local.

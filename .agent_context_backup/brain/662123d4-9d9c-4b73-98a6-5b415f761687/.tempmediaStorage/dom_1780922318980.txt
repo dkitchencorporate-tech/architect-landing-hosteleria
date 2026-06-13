@@ -1,0 +1,57 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (909,85)<button class='absolute top-8 right-8 text-sm font-bold text-gray-500 hover:text-red-500 transition-colors z-50 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200'>Cerrar Sesión Segura />
+[1] (125,459)<div class='p-6 flex flex-col gap-8 flex-1 overflow-y-auto' scrollable='true' />
+	A
+	Architect.Sys
+	SALA DE CONTROL
+	Cliente Seleccionado
+	[2] (119,270)<select class='w-full bg-black border border-zinc-800 rounded-xl text-xs font-bold text-white px-3 py-2.5 focus:outline-none focus:border-orange-600 appearance-none' />
+	Cocina:
+	Pizza y Pasta Italiana Rústica
+	Target:
+	Barrio
+	Vaults de Control
+	[3] (119,547)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-between text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30' />
+		[4] (85,547)<span >Matriz de Despliegue />
+			[5] (35,547)<span >🎯 />
+	[6] (119,614)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Motor Generativo B2B />
+		[7] (34,614)<span >⚡ />
+	[8] (119,681)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Especialidades de la Carta />
+		[9] (35,681)<span >🍽️ />
+	[10] (119,749)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 bg-zinc-900 text-white border border-zinc-800'>Creador de Estrategias />
+		[11] (35,749)<span >🗺️ />
+	[12] (119,817)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Agente de Ejecución (Chat) />
+		[13] (35,817)<span >🤖 />
+	[14] (119,884)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Auto-Promoción Agency />
+		[15] (35,884)<span >✨ />
+	📚
+	Dossier de Protocolos
+MODO AGENCIA v2.0
+[16] (625,500)<main class='flex-1 flex flex-col min-w-0 h-screen overflow-y-auto' scrollable='true' />
+	Vault Activo
+	🗺️ Hoja de Ruta Estratégica
+	Trabajando con:
+	Pizzería Don Giovanni
+	Ver Cartas Demo
+	Plan Comercial de 30 Días
+	Plan estratégico de marketing de guerrilla para **
+	Pizzería Don Giovanni
+	**.
+	Trazando Ruta...
+	PLAN DE GUERRILLA DE 30 DÍAS: PIZZERÍA DON GIOVANNI
+	Enfoque: Comunidad, Volumen Local y Rentabilidad Rápida (Categoría: Barrio)
+	Fase 1: Ingeniería de Menú y Auditoría Visual (Días 1-10)
+	Objetivo:
+	Optimizar la carta actual para guiar al cliente hacia los platos más rentables y preparar el material visual de alta conversión.
+	1. Clasificación de la Carta (Matriz BCG):
+	Estrellas (Alta popularidad / Alta rentabilidad):
+	"Pizza Don Giovanni" (con ingredientes de productores locales y masa rústica) y "Espaguetis a la Carbonara Tradicional" (sin nata, alta rentabilidad de ingredientes básicos pero de calidad).
+	Caballos de Batalla (Alta popularidad / Baja rentabilidad):
+	"Pizza Margherita clásica". (Acción: Incrementar el margen ofreciendo un extra premium opcional como "mozzarella de búfala fresca" por +2€).
+	Enigmas (Baja popularidad / Alta rentabilidad):
+	"Lasaña de la Nonna". (Acción: Cambiar el nombre a "La Famosa Lasaña Receta Secreta de la Nonna" y destacarla visualmente en la carta).
+
+</current_dom>

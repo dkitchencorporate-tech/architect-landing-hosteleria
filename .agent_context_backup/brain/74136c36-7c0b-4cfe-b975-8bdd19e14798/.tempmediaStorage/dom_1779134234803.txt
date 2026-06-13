@@ -1,0 +1,156 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8QPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DIl%2BGondoliere%2BNuovo%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Il+Gondoliere+Nuovo+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYLIlHGmtPtH366v4IZOYf0rtwJND5cyMbHrZMCwUEh1vi0J5eYGcZTbZaR7DmT0xi1VOcESDuvSZMxY7nV8nFWIaxS_NLFNFCE5_b2pdxDXxR01IBJT6n1Ulxp_dI9ymDdIsrGA&aep=1&ntc=1&sa=X&ved=2ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8Q2J8OegQICBAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYLIlHGmtPtH366v4IZOYf0rtwJND5cyMbHrZMCwUEh1vi0J5eYGcZTbZaR7DmT0xi1VOcESDuvSZMxY7nV8nFWIaxS_NLFNFCE5_b2pdxDXxR01IBJT6n1Ulxp_dI9ymDdIsrGA&q=Il+Gondoliere+Nuovo+Granada&sa=X&ved=2ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8QtKgLegQIDRAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (262,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYLIlHGmtPtH366v4IZOYf0rtwJND5cyMbHrZMCwUEh1vi0J5eYGcZTbZaR7DmT0xi1VOcESDuvSZMxY7nV8nFWIaxS_NLFNFCE5_b2pdxDXxR01IBJT6n1Ulxp_dI9ymDdIsrGA&q=Il+Gondoliere+Nuovo+Granada&sa=X&ved=2ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8QtKgLegQIFBAB' />
+	[26] (262,180)<div  />
+		[27] (262,194)<span >Videos />
+[28] (319,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Il+Gondoliere+Nuovo+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYLIlHGmtPtH366v4IZOYf0rtwJND5cyMbHrZMCwUEh1vi0J5eYGcZTbZaR7DmT0xi1VOcESDuvSZMxY7nV8nFWIaxS_NLFNFCE5_b2pdxDXxR01IBJT6n1Ulxp_dI9ymDdIsrGA&sa=X&ved=2ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8Q0pQJegQIExAB' />
+	[29] (319,180)<div  />
+		[30] (319,194)<span >Noticias />
+[31] (385,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=3&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYLIlHGmtPtH366v4IZOYf0rtwJND5cyMbHrZMCwUEh1vi0J5eYGcZTbZaR7DmT0xi1VOcESDuvSZMxY7nV8nFWIaxS_NLFNFCE5_b2pdxDXxR01IBJT6n1Ulxp_dI9ymDdIsrGA&q=Il+Gondoliere+Nuovo+Granada&sa=X&ved=2ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8Qs6gLegQIEhAB' />
+	[32] (385,180)<div  />
+		[33] (385,194)<span >Productos />
+[34] (465,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYLIlHGmtPtH366v4IZOYf0rtwJND5cyMbHrZMCwUEh1vi0J5eYGcZTbZaR7DmT0xi1VOcESDuvSZMxY7nV8nFWIaxS_NLFNFCE5_b2pdxDXxR01IBJT6n1Ulxp_dI9ymDdIsrGA&q=Il+Gondoliere+Nuovo+Granada&sa=X&ved=2ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8Qs6gLegQIDxAB' />
+	[35] (465,180)<div  />
+		[36] (465,194)<span >Videos cortos />
+[37] (537,180)<div class='mTpL7c' role='button' />
+	[38] (537,180)<div  />
+		[39] (537,194)<div  />
+			[40] (530,186)<span >Más />
+			[41] (547,186)<span  />
+[42] (615,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (615,180)<div  />
+		[44] (615,194)<div  />
+			[45] (608,186)<span >Herramientas />
+			[46] (650,186)<span  />
+Resultados de búsqueda
+Granada
+∙
+[47] (170,275)<a class='N5az4b' href='#' role='button' />
+	[48] (170,281)<span >Elegir área />
+[49] (215,281)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[50] (216,280)<span  />
+Resultado web con vínculos a sitio
+[51] (266,391)<a class='zReHs' href='https://gondoliere.com/' />
+	[52] (266,425)<h3 >Il Gondoliere: Auténtico Restaurante Italiano en Granada />
+	[53] (132,371)<div  />
+		[54] (132,371)<div  />
+			[55] (81,371)<span  />
+				[56] (81,371)<div  />
+					[57] (81,371)<img  />
+			[58] (147,371)<div  />
+				[59] (147,356)<div  />
+					[60] (147,356)<span >Il Gondoliere />
+				[61] (147,386)<div  />
+					[62] (147,386)<cite class='tjvcx GvPZzd cHaqb' role='text'>https://gondoliere.com />
+[63] (210,385)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[64] (210,385)<span  />
+		[65] (210,386)<span  />
+Descubre
+Il Gondoliere
+, el mejor restaurante italiano en
+Granada
+desde 1990. Disfruta de pizzas, pastas frescas y menús italianos auténticos en un ambiente ...
+[66] (114,592)<a class='l' href='https://gondoliere.com/reservas/'>Reservas />
+	[67] (561,607)<span  />
+		[68] (561,606)<div  />
+Il Gondoliere, el restaurante ideal para grupos en Granada ...
+[69] (141,703)<a class='l' href='https://gondoliere.com/menus-especiales/'>Menús Especiales />
+	[70] (561,718)<span  />
+		[71] (561,717)<div  />
+... IL GONDOLIERE PARÍS-NEW YORK C/HIPÓCRATES S/N ...
+[72] (108,814)<a class='l' href='https://gondoliere.com/carta-postres/'>Postres />
+	[73] (561,830)<span  />
+		[74] (561,829)<div  />
+... Il Gondoliere. Inicie la sobremesa disfrutando de ...
+[75] (140,925)<a class='l' href='https://gondoliere.com/grupos-y-eventos/'>Grupos y Eventos />
+	[76] (561,941)<span  />
+		[77] (561,940)<div  />
+Il Gondoliere, el restaurante ideal para grupos en Granada ...
+[78] (712,392)<button class='KJY1Gc' />
+	[79] (711,392)<div  />
+		[80] (711,392)<div  />
+			[81] (728,392)<img  />
+		[82] (755,494)<span >Ver fotos />
+[83] (841,392)<a  />
+[84] (857,458)<a href='/local/place/fid/0xd71fb58fb75865f:0xe6faf4ed1b1698a7/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3D4IvnphP85VwZ7i67nZqKQQ%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D249.2036%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFjRJdm5waFA4NVZ3WjdpNjduWnFLUVE%3D&sa=X&ved=2ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8Qpx96BAgdEA8' />
+	[85] (857,458)<div  />
+		[86] (874,458)<img  />
+	[87] (890,495)<span >Ver por fuera />
+Il Gondoliere Nuovo
+4.3
+[88] (754,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=Il+Gondoliere+Nuovo+Granada&si=AL3DRZFIhG6pAqfNLal55wUTwygCG0fClF3UxiOmgw9Hq7nbWRUkWIgWJWxR2jHxV-TJeEgHOD4igVf8IrK-C_OGpZ6hr5mgUp0Q5MePiXjgpG6o4YVZ5tE%3D&uds=ALYpb_l2fW9FmhMyhdOPbWGe4NHt-1Jx6I1bxaw7W_AqJpZk7SRcy3jp3XtRLITNGB-X9guqnwfS3lQUglXw9z5cTvwyIxwBNX6xWPLxvzXmIPSfCBJlbMnC0PP4BrwQjcpUJEONaISi&sa=X&ved=2ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8Q3PALegQIGhAE'>5,857 opiniones />
+[89] (805,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[90] (805,598)<span  />
+€20-30
+‧
+Restaurante italiano
+[91] (825,604)<div class='mTpL7c' role='button' />
+	[92] (825,604)<span aria-label='Más opciones para Il Gondoliere Nuovo' class='Zj92Hf' role='img' />
+		[93] (823,601)<span  />
+[94] (681,723)<a class='n1obkb mI8Pwc' href='http://www.gondoliere.com/' />
+	[95] (681,723)<div  />
+		[96] (656,723)<div  />
+		[97] (690,723)<span >Sitio web />
+[98] (777,723)<div  />
+	[99] (745,723)<div  />
+	[100] (786,723)<span >Cómo llegar />
+[101] (876,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZFIhG6pAqfNLal55wUTwygCG0fClF3UxiOmgw9Hq7nbWd3hi7smp2IgjtgBSbPXodzgWFtdJc09URHcQIEcFNRquClAjgIWUZCwyCDE2l4PaagPos125arBa8w_umtRDAhC47WwP8bO3J2AW4P2hRFzzgM6CA%3D%3D&q=Il+Gondoliere+Nuovo+Opiniones&sa=X&ved=2ahUKEwj31sS_z8OUAxUtcvUHHfOKOm8Q0bkNegQILBAH' />
+	[102] (876,723)<div  />
+		[103] (848,723)<div  />
+		[104] (884,723)<span >Opiniones />
+[105] (678,799)<div  />
+	[106] (678,799)<div  />
+		[107] (678,799)<div  />
+			[108] (678,799)<span aria-label='Guardar Il Gondoliere Nuovo en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Il Gondoliere Nuovo en una colección' />
+				[109] (687,799)<span >Guardar />
+[110] (768,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[111] (768,799)<div  />
+		[112] (740,799)<div  />
+		[113] (776,799)<span >Compartir />
+[114] (853,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[115] (853,799)<div  />
+		[116] (834,799)<div  />
+		[117] (862,799)<span >Llamar />
+[118] (672,875)<span  />
+	[119] (672,875)<div id='sXDlyb/g/1z44yr185' role='button' />
+		[120] (672,875)<div  />
+			[121] (656,875)<div  />
+			[122] (680,875)<span >Menú />
+[123] (779,954)<a class='K9ZSQ' href='https://www.google.com/maps/reserve/v/dine/c/-sILXDmI2ZY?source=pa&opi=89978449&hl=es-419&gei=GG8LavfqJK3k1e8P85Xq-QY&sourceurl=https://www.google.com/search?q%3DIl%2BGondoliere%2BNuovo%2BGranada' />
+	[124] (779,954)<div  />
+		[125] (740,954)<div  />
+		[126] (788,954)<span >Reservar mesa />
+
+</current_dom>

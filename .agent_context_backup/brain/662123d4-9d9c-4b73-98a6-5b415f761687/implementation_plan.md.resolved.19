@@ -1,0 +1,54 @@
+# Reingeniería Profunda: Generación IA y Estandarización Global
+
+Para garantizar que esta demo pase la inspección de Jules sin un solo fallo visual o lógico, abandonaremos los bancos de imágenes (Unsplash/Flickr) que causan repeticiones y enlaces rotos. Construiremos una base de datos 100% nativa con imágenes generadas por IA bajo demanda, y dotaremos a la interfaz y al backend de la inteligencia prometida.
+
+## User Review Required
+
+> [!WARNING]  
+> **Coste Computacional (Imágenes IA):** 
+> Generar 84 imágenes ultra-realistas individuales mediante nuestro motor de IA es un proceso intensivo que tomará varios minutos de ejecución en *loop*. Cada imagen será guardada físicamente en el directorio `public/images/demo/` de tu servidor Next.js para carga instantánea. ¿Autorizas el inicio de esta generación masiva en lotes?
+
+## Proposed Changes
+
+---
+
+### UI & UX (Frontend)
+
+#### [MODIFY] `src/app/demo/carta/page.tsx`
+- **Internacionalización Total:** El selector de idiomas (ES, EN, FR) que actualmente solo existe en el layout de *Sushi*, será inyectado orgánicamente en los headers de *Casa Lola (Tapas)* y *BiteCorp (Burger)*.
+- **Visualización de Alérgenos:** Añadiremos la renderización de íconos/tags de alérgenos debajo de cada producto para cumplir con normativas de hostelería reales.
+
+---
+
+### Bases de Datos (Estructura)
+
+#### [MODIFY] `src/lib/demo-data.ts`
+- **Descripciones Enriquecidas:** Cada producto recibirá descripciones detalladas con enfoque de neuromarketing (ej. en lugar de "Hamburguesa con queso", usaremos "Blend de vaca madurada 45 días con cheddar fundido").
+- **Alérgenos Precisos:** Asignación estricta de alérgenos (Gluten, Lácteos, Sulfitos, etc.) por cada plato.
+- **Rutas Nativas:** Cambio de rutas externas (`https://...`) a rutas estáticas locales (`/images/demo/s1.webp`) para garantizar tiempos de carga `<100ms` y cero fallos 404.
+
+---
+
+### Inteligencia Artificial (Backend)
+
+#### [MODIFY] `src/app/api/demo/waiter/route.ts`
+- **Entrenamiento de Contexto Fino:** El sistema no solo sabrá qué menú está activo (Sumiller, Camarero, Cajero), sino que cruzará la información con el idioma actual del usuario (`lang`) y los `allergens` de los platos, pudiendo advertir: *"Esa hamburguesa contiene lácteos, ¿desea que el chef la prepare sin cheddar?"*
+
+---
+
+### Pipeline de Generación de Activos (Ejecución en Loop)
+
+#### [NEW] `public/images/demo/*`
+1. Ejecutaré múltiples llamadas a mi herramienta de generación de imágenes `generate_image` creando **84 prompts ultra-detallados** (ej. *Fotografía culinaria macro, iluminación de estudio, fondo negro elegante, tartar de atún rojo Balfegó...*).
+2. Trasladaré automáticamente los archivos a la carpeta estática del proyecto Next.js.
+
+## Verification Plan
+
+### Automated Tests
+- Verificar la correcta compilación de Next.js tras mover los 84 assets.
+- Comprobar que los selectores de idioma cambian el estado en los 3 layouts.
+
+### Manual Verification
+- Iniciar el túnel SSH.
+- El usuario deberá navegar por las 3 cartas y comprobar visualmente que las 84 imágenes son únicas, de altísima calidad y coherentes con la descripción del producto.
+- Preguntar al asistente IA por un plato específico para verificar que reconoce los alérgenos.

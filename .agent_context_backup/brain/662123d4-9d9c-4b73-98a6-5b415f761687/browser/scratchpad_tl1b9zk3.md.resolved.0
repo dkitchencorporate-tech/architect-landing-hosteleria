@@ -1,0 +1,8 @@
+# Plan
+- [ ] Open http://localhost:3000/demo/carta (using page D956EB68B8F517AA096427A6DF746909)
+- [ ] Go to 'Bar y Tapas' tab
+- [ ] Scroll to 'Berenjenas con Miel de Caña'
+- [ ] Verify images of subsequent items (no broken links)
+- [ ] Verify interactive waiter / assistant works
+- [ ] Take screenshots of the tapas menu
+- [ ] Write report

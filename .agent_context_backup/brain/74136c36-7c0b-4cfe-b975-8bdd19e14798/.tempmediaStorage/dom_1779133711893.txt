@@ -1,0 +1,136 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (687,123)<button aria-label='Buscar en esta área' class='NlVald UUrkN cDZBKc' />
+	[6] (687,123)<div  />
+		[7] (633,123)<span > />
+		[8] (695,123)<span >Buscar en esta área />
+[9] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[10] (431,59)<button class='e2moi' />
+		[11] (431,59)<div  />
+			[12] (405,59)<span > />
+			[13] (431,59)<span >Precio />
+			[14] (457,59)<span > />
+	[15] (531,59)<button class='e2moi' />
+		[16] (531,59)<div  />
+			[17] (488,59)<span > />
+			[18] (532,59)<span >Clasificación />
+			[19] (574,59)<span > />
+	[20] (632,59)<button class='e2moi' />
+		[21] (632,59)<div  />
+			[22] (605,59)<span > />
+			[23] (633,59)<span >Cocina />
+			[24] (661,59)<span > />
+	[25] (716,59)<button class='e2moi' />
+		[26] (716,59)<div  />
+			[27] (691,59)<span > />
+			[28] (717,59)<span >Horas />
+			[29] (741,59)<span > />
+	[30] (772,59)<span > />
+	Todos los filtros
+[31] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[32] (827,59)<span > />
+[33] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[34] (28,57)<div  />
+		[35] (28,57)<span > />
+[36] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[37] (28,146)<div  />
+		[38] (28,146)<span > />
+	[39] (28,190)<div  />
+		[40] (28,190)<div >Guardado />
+[41] (28,297)<button class='wR3cXd fontLabelMedium' />
+	[42] (28,272)<div  />
+		[43] (28,272)<span > />
+	[44] (28,329)<div  />
+		[45] (28,329)<div >Recientes />
+[46] (28,463)<button class='wR3cXd aJPqP fontBodySmall QyI6Nb' />
+	[47] (28,463)<div  />
+		[48] (28,463)<div  />
+			[49] (28,463)<div  />
+[50] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[51] (28,892)<div  />
+		[52] (28,892)<span > />
+	[53] (28,943)<div  />
+		[54] (28,943)<div >Obtener app />
+[55] (216,528)<div aria-label='Resultados de Restaurantes' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd' role='feed' scrollable='true' />
+	Resultados
+	[56] (162,149)<button aria-label='Más información sobre la divulgación legal de las opiniones públicas en Google Maps' class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-icon-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe LQeN7 s73B3c MyHLpd wphPJc Q8G3mf' />
+		
+	[57] (317,152)<button aria-label='Compartir' class='M77dve ' />
+		[58] (317,152)<div  />
+			[59] (288,152)<span > />
+			[60] (324,152)<span >Compartir />
+	[61] (213,422)<a aria-label='Restaurante Carmen De Aben Humeya' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Carmen+De+Aben+Humeya/data=!4m7!3m6!1s0xd71fcc7d6684405:0xbfa3a8b82c110c78!8m2!3d37.1806799!4d-3.5917093!16s%2Fg%2F1tcy5nmn!19sChIJBURo1sf8cQ0ReAwRLLioo78?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Carmen De Aben Humeya
+	4.5
+	(1,793)
+	·
+	€40-60
+	Alta cocina
+	·
+	
+	·
+	Cta. de las Tomasas, 12
+	Elaborada cocina regional y vistas a la Alhambra
+	Cierra pronto
+	· 10:30 p.m. · Abre a la 1 p.m. del mar
+	"Ambiente fantástico, servicio increíble, y comida inmejorable."
+	[62] (213,592)<div  />
+		[63] (213,592)<div  />
+			[64] (213,592)<div  />
+				[65] (213,592)<a class='A1zNzb' href='https://www.google.com/maps/reserve/v/dine/c/1BVI6r5o6oY?source=pa&opi=79508299&hl=es-419&gei=Cm0LaoX7G56fkdUPvdvekAY&sourceurl=https://www.google.com/search?tbm%3Dmap%26hl%3Des-419%26gl%3Des%26authuser%3D0%26pb%3D!4m12!1m3!1d167417.41505384012!2d-3.5912716999999996!3d37.1809462!2m3!1f0!2f0!3f0!3m2!1i1280!2i632!4f13.1!7i20!10b1!12m25!1m5!18b1!30b1!31m1!1b1!34e1!2m4!5m1!6e2!20e3!39b1!10b1!12b1!13b1!16b1!17m1!3e1!20m3!5e2!6b1!14b1!46m1!1b0!96b1!99b1!19m4!2m3!1i360!2i120!4i8!20m65!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m16!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!22m6!1s9WwLasXgAcfl7M8P0LOvEQ:6!2s1i:0,t:11887,p:9WwLasXgAcfl7M8P0LOvEQ:6!7e81!12e3!17s9WwLasXgAcfl7M8P0LOvEQ:35!18e15!24m109!1m27!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m16!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!26m4!2m3!1i80!2i92!4i8!30m28!1m6!1m2!1i0!2i0!2m2!1i530!2i632!1m6!1m2!1i1230!2i0!2m2!1i1280!2i632!1m6!1m2!1i0!2i0!2m2!1i1280!2i20!1m6!1m2!1i0!2i612!2m2!1i1280!2i632!34m19!2b1!3b1!4b1!6b1!8m6!1b1!3b1!4b1!5b1!6b1!7b1!9b1!12b1!14b1!20b1!23b1!25b1!26b1!31b1!37m1!1e81!42b1!47m0!49m10!3b1!6m2!1b1!2b1!7m2!1e3!2b1!8b1!9b1!10e2!50m4!2e2!3m2!1b1!3b1!67m5!7b1!10b1!14b1!15m1!1b0!69i779!77b1%26q%3DRestaurantes%26oq%3DRestaurantes%26gs_l%3Dmaps.12...0.0.1.20268.0.0.....0.0..0.....0......maps..0.0.0.0..38.%26ech%3D2%26psi%3D9WwLasXgAcfl7M8P0LOvEQ.1779133685823.1' />
+					[66] (213,592)<div >Reservar mesa />
+						[67] (173,592)<span > />
+	[68] (213,873)<a aria-label='Carmen Mirador De Aixa' class='hfpxzc' href='https://www.google.com/maps/place/Carmen+Mirador+De+Aixa/data=!4m7!3m6!1s0xd71fcc879b2eae5:0xd0e80a5de9abee6c!8m2!3d37.1809879!4d-3.5912517!16s%2Fg%2F1thp9bb5!19sChIJ5eqyecj8cQ0RbO6r6V0K6NA?authuser=0&hl=es-419&rclk=1' />
+	Carmen Mirador De Aixa
+	4.4
+	(1,112)
+	·
+	€30-70
+	Restaurante
+	·
+	
+	·
+	Carril de San Agustín, 2
+	Platos de autor en Carmen granadino
+	Cierra pronto
+	· 10:30 p.m. · Abre a la 1 p.m. del mar
+	"La ensalada de tomate, con burrata... espectacular."
+[69] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[70] (80,972)<div  />
+		[71] (80,972)<span > />
+[72] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[73] (384,500)<span > />
+[74] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[75] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2FRestaurantes%2F%4037.1807746%2C-3.598902%2C16z%2Fdata%3D!3m1!4b1%3Fauthuser%3D0%26hl%3Des-419%26ved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[76] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[77] (973,799)<span > />
+[78] (973,871)<div  />
+	[79] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[80] (973,849)<div  />
+	[81] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[82] (973,893)<div  />
+	[83] (973,871)<div  />
+[84] (973,945)<div  />
+	[85] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[86] (973,945)<div  />
+
+Capas
+[87] (421,906)<button class='yHc72 qk5Wte' />
+Datos del mapa © 2026 Inst. Geogr. Nacional
+[88] (607,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[89] (653,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[90] (704,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[91] (799,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[92] (929,989)<button class='LNGekf' />
+	[93] (886,989)<label class='U5ELMd'>200 m />
+	[94] (941,989)<div  />
+
+</current_dom>

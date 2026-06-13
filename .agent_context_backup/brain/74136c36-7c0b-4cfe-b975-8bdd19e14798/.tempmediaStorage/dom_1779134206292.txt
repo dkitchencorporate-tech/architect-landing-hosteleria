@@ -1,0 +1,151 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwit99yxz8OUAxVwm68BHefdGyUQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DRestaurante%2BPilar%2Bdel%2BToro%2BGranada%2Btelefono&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Restaurante+Pilar+del+Toro+Granada+telefono&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&aep=1&ntc=1&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQ2J8OegQIBxAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&q=Restaurante+Pilar+del+Toro+Granada+telefono&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQtKgLegQIEhAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (262,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&q=Restaurante+Pilar+del+Toro+Granada+telefono&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQtKgLegQIEBAB' />
+	[26] (262,180)<div  />
+		[27] (262,194)<span >Videos />
+[28] (333,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&q=Restaurante+Pilar+del+Toro+Granada+telefono&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQs6gLegQIExAB' />
+	[29] (333,180)<div  />
+		[30] (333,194)<span >Videos cortos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Pilar+del+Toro+Granada+telefono&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQ0pQJegQIDxAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZgnwrKvYM0f5ATETxEVoMN8UUd4gxuut_6yqaZqOuCGAaN-AAMG75vI5RMVp0Fv5tPBIazrqcy-Rt8djV1AcxmoxOsClhhxh_q5q2btvzQKF0gOff&q=Restaurante+Pilar+del+Toro+Granada+telefono&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQs6gLegQIERAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+Granada
+∙
+[47] (170,275)<a class='N5az4b' href='#' role='button' />
+	[48] (170,281)<span >Elegir área />
+[49] (215,281)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[50] (216,280)<span  />
+[51] (147,414)<a href='#' />
+	[52] (147,414)<span >958 22 54 70 />
+Restaurante Pilar del Toro Granada, teléfono principal
+[53] (316,538)<div class='VUbcAb XNfAUb' id='_-24Lau2NJ_C2vr0P57vvqAI_59' scrollable='true' />
+	[54] (121,538)<a aria-label='Llamar al número de teléfono 958225470' class='JmPt0d' href='tel:958225470' role='button' />
+		[55] (121,538)<span >Llamar />
+			[56] (99,538)<span  />
+	[57] (218,538)<a class='JmPt0d' href='/maps/dir//Restaurante+Pilar+del+Toro+Granada/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0xd71fcb8ec62991f:0xa4811812a338da34?sa=X&ved=1t:97007&ictx=111' />
+		[58] (218,538)<span >Cómo llegar />
+			[59] (184,538)<span  />
+	[60] (315,538)<a aria-label='Copiar el número de teléfono 958 22 54 70' class='JmPt0d' href='#' role='button' />
+		[61] (315,538)<span >Copiar />
+			[62] (294,538)<span  />
+[63] (325,635)<a href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Pilar+del+Toro+Granada&si=AL3DRZELanY_V96Y0q8q1FLKlfOvH_NlT58VxGyuYFaMYKzFM7TLocK6nI5fbABSkkKx_bYghnJXcVCAIY9dDH5XuY5uv2oBKmnKYdz5v7ea6JmjA6MvHVi_iIuBKI81oN9E_A9QLUFSbli2FU16byHogGH8dir-Kg%3D%3D&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQ-5YCKAF6BAgiEA4' />
+	[64] (325,635)<div  />
+		[65] (325,635)<div class='w6VsEc' role='button' />
+			[66] (325,659)<div  />
+				[67] (325,646)<div  />
+					[68] (317,646)<span >Más sobre Restaurante Pilar del Toro Granada />
+					[69] (445,646)<span  />
+Resultados web
+[70] (276,825)<a class='zReHs' href='https://pilardeltoro.es/' />
+	[71] (276,859)<h3 >Pilar del Toro - Restaurante Granada | Restaurante Granada />
+	[72] (149,804)<div  />
+		[73] (149,804)<div  />
+			[74] (81,804)<span  />
+				[75] (81,804)<div  />
+					[76] (81,804)<span  />
+			[77] (164,804)<div  />
+				[78] (164,790)<div  />
+					[79] (164,790)<span >Restaurante Pilar del Toro />
+				[80] (164,820)<div  />
+					[81] (145,820)<cite class='tjvcx GvPZzd cHaqb' role='text'>https://pilardeltoro.es />
+[82] (244,818)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[83] (244,818)<span  />
+		[84] (244,820)<span  />
+Pilar del Toro - Restaurante Granada · CARTA · CONTACTO. Seleccionar página. CARTA ...
+Restaurante Pilar del Toro
+. C. Hospital de Sta. Ana, 12, 18009 Granada ...
+[85] (690,393)<button class='KJY1Gc' />
+	[86] (690,393)<div  />
+		[87] (690,393)<div  />
+			[88] (690,393)<img  />
+		[89] (710,495)<span >Ver fotos />
+[90] (835,393)<a  />
+[91] (835,459)<a href='/local/place/fid/0xd71fcb8ec62991f:0xa4811812a338da34/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DBNTEj5Wd1my8ma8_GWD2_g%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D149.59824%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFkJOVEVqNVdkMW15OG1hOF9HV0QyX2c%3D&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQpx96BAhCEA8' />
+	[92] (835,459)<div  />
+		[93] (835,459)<img  />
+	[94] (890,496)<span >Ver por fuera />
+[95] (753,591)<a class='ssJ7i' href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Pilar+del+Toro+Granada&si=AL3DRZELanY_V96Y0q8q1FLKlfOvH_NlT58VxGyuYFaMYKzFM7TLocK6nI5fbABSkkKx_bYghnJXcVCAIY9dDH5XuY5uv2oBKmnKYdz5v7ea6JmjA6MvHVi_iIuBKI81oN9E_A9QLUFSbli2FU16byHogGH8dir-Kg%3D%3D&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQ_coHegQIJhAB'>Restaurante Pilar del Toro Granada />
+4.3
+[96] (767,660)<a href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Pilar+del+Toro+Granada+telefono&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x-HfSXXh4rcWKexJJiP0TPpCWN3WpiPqefKmJyo1Cn96EMGXO7rsI27SEylf0616aPohPCI%3D&uds=ALYpb_nyEaCYADf75iw0qqWiiEWFgIYc2G3ATIcHz4NVOEY3dxVbmkBwhCOY2s0cQVIK6eN_opM8LoopwCP7wvRIvIBUpfFm6B1OM3_AdZR7eG4Q6pPVaHJ4Ewxt4k_sUWRzJkUZ1vRRmHT1T_kB-Dv4vpo20jrb9g&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQ3PALegQIJhAF'>1,303 opiniones />
+[97] (818,656)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[98] (818,656)<span  />
+€20-40
+‧
+Restaurante
+[99] (688,789)<a class='n1obkb mI8Pwc' href='http://www.pilardeltoro.es/' />
+	[100] (688,789)<div  />
+		[101] (663,789)<div  />
+		[102] (697,789)<span >Sitio web />
+[103] (784,789)<div  />
+	[104] (752,789)<div  />
+	[105] (793,789)<span >Cómo llegar />
+[106] (690,864)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x-EhjkgeBTvZm5f-hvSAPJ9p3StrPZGOQ63-SYE0rFj1fkkapdm51dFet-K3P-qd0qCWTfva7d7YHDhNh6O2o7LKfVWzoqUAnE4kzxQi7I7sjOMr2F9v4BvJtn4lgEsn-19btMA%3D&q=Restaurante+Pilar+del+Toro+Granada+Opiniones&sa=X&ved=2ahUKEwit99yxz8OUAxVwm68BHefdGyUQ0bkNegQIOBAH' />
+	[107] (690,864)<div  />
+		[108] (663,864)<div  />
+		[109] (699,864)<span >Opiniones />
+[110] (779,864)<div  />
+	[111] (779,864)<div  />
+		[112] (779,864)<div  />
+			[113] (779,864)<span aria-label='Guardar Restaurante Pilar del Toro Granada en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Restaurante Pilar del Toro Granada en una colección' />
+				[114] (788,864)<span >Guardar />
+[115] (868,864)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[116] (868,864)<div  />
+		[117] (840,864)<div  />
+		[118] (877,864)<span >Compartir />
+[119] (682,940)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[120] (682,940)<div  />
+		[121] (663,940)<div  />
+		[122] (691,940)<span >Llamar />
+[123] (756,940)<span  />
+	[124] (756,940)<div id='sXDlyb/g/1thzw40v' role='button' />
+		[125] (756,940)<div  />
+			[126] (740,940)<div  />
+			[127] (764,940)<span >Menú />
+
+</current_dom>

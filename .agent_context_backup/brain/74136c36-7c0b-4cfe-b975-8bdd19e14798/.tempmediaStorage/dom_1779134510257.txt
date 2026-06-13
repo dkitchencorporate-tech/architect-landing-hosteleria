@@ -1,0 +1,127 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwi04I280MOUAxWJsVYBHdVENfAQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Drestaurante%2BCamino%2Bde%2BRonda%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=restaurante+Camino+de+Ronda+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&aep=1&ntc=1&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQ2J8OegQIDxAD&cshid=1779134504114996' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+Camino+de+Ronda+Granada&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQtKgLegQIFRAB&cshid=1779134504114996' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+Camino+de+Ronda+Granada&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQs6gLegQIFBAB&cshid=1779134504114996' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (354,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=1&lsack=HXALavTdM4nj2roP1YnVgQ8&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+Camino+de+Ronda+Granada&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQs6gLegQIExAB&cshid=1779134504114996' />
+	[29] (354,180)<div  />
+		[30] (354,194)<span >Lugares />
+[31] (444,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=11&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+Camino+de+Ronda+Granada&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQs6gLegQIEhAB&cshid=1779134504114996' />
+	[32] (444,180)<div  />
+		[33] (444,194)<span >Sitios sobre lugares />
+[34] (531,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ryVUK7e0kvZVGNl_qzdvAB2UwoJy7s7U4tSjIF4G3lglkeYhxFKO6vQwH7XVAqX-0J5WVcrSjBFmlVzOEOkhaSVp4PyZbou4VMWBR149Y_GalS-9114Ekm4ignnP_c-CTUZ2D-IdvY_gBtQc-RyO_A0XEw9w&q=restaurante+Camino+de+Ronda+Granada&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQtKgLegQIERAB&cshid=1779134504114996' />
+	[35] (531,180)<div  />
+		[36] (531,194)<span >Videos />
+[37] (585,180)<div class='mTpL7c' role='button' />
+	[38] (585,180)<div  />
+		[39] (585,194)<div  />
+			[40] (578,186)<span >Más />
+			[41] (595,186)<span  />
+[42] (663,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (663,180)<div  />
+		[44] (663,194)<div  />
+			[45] (656,186)<span >Herramientas />
+			[46] (697,186)<span  />
+[47] (117,259)<a aria-label='Agregar Abierto ahora' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Camino+de+Ronda+Granada+abierto+ahora&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-MqDTgsF8-PzkvxWOh-0X3hcRrpsC2b7bIUBfr_wW6eHQY2s5SWnaMXquOFZhD9l_zQCdnQxsiuXc29DBqeS9kiZZPDbY71H1c84m8jjFAXgCCrLr6dixa6_hxGCixzOAWZTYrbw2xN5eas_Exit6F2SJIGwgYWpr0C3kz0bVFMH_p0TyhiJg3WRUdK49PDG97fokxA&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQxKsJKAB6BAgXEAE&ictx=0&cshid=1779134504114996' role='link' />
+	[48] (117,259)<div  />
+		[49] (117,259)<span >Abierto ahora />
+[50] (200,259)<div role='button' />
+	[51] (200,259)<div  />
+		[52] (196,259)<span >Precio />
+		[53] (219,259)<span  />
+			[54] (219,259)<span  />
+[55] (289,259)<a aria-label='Agregar Mejor valorados' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Camino+de+Ronda+Granada+mejor+valorados&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-LTQZIJpDd5qLh5nvy0BhkrwSNbMgzJCuIKkcnTF5Z1fYHujN2nA_W-QdaonPgViwF086r_pUWpj_s90IZfBCGL02e6mECJE8qU33dolUG9V9pfWQoaTXDa4UaDl5O2Gf1DrSjkyYnweodbR39WOtLkp0oZqHO9zzDWle6CnjvREb63hmCH0ZEd33p1nqm-9aki4YxHAXl43hYyywLR-Et64E8Gs&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQxKsJKAJ6BAgaEAE&ictx=0&cshid=1779134504114996' role='link' />
+	[56] (289,259)<div  />
+		[57] (289,259)<span >Mejor valorados />
+[58] (389,259)<a aria-label='Agregar Económicos' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Camino+de+Ronda+Granada+econ%C3%B3micos&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-WUhztSZdSFJsO7cOFRX3K8m9PizDsMagEu2-OwhCviZzMs0XXYQVZZY9awHkOjnKu2gvfr2Usxraf7ect_QCKTO63oQKPmUfUNpdZvcVDKcQXNJ3OHe4JKIaaE2NgDRKG1lXKWwtHzGLyhFPKULwvJ4CIDczYnDK004ULyMdv3VDVwEl4avcYEk3F4tjE1R0petK0w&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQxKsJKAN6BAgYEAE&ictx=0&cshid=1779134504114996' role='link' />
+	[59] (389,259)<div  />
+		[60] (389,259)<span >Económicos />
+[61] (474,259)<a aria-label='Agregar Exclusivos' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Camino+de+Ronda+Granada+exclusivos&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-zicBFwnMy5mp_ocYtJoMVjx5aFtYqWikAuvh9EOXmB9UUdjeVF7OtyYNmpCEN3jXR3_slUewo7B4_qS3yT6rVu6fdiGhGoYncN2v-VlbKPLT4HvcBlYj5ll0gSHp-YVEzYrNgOzEodacbhYXZujpfltv-TFsFeugFZ96zUOKVycpIJKICtvlvwlgPOPbZO1r67XnqA&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQxKsJKAR6BAgZEAE&ictx=0&cshid=1779134504114996' role='link' />
+	[62] (474,259)<div  />
+		[63] (474,259)<span >Exclusivos />
+[64] (549,259)<a aria-label='Agregar Español' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Camino+de+Ronda+Granada+espa%C3%B1ol&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-HttyYZNGFVEuMgH0tUDSW4fmSkpDSHUqegezjoGl8dXgNW9nMQ-fBDGp7rkiz1oVt4estDU69gYm14zli6s6ciM4wV39WA0lmzB_PSTBkptSZP1hmAX-wFRrI5IURgd5W4ulUYP7kuRd8OqETKWYynzVYTV3jpMvwwSJk1Z-g6JMWuUhcVXuVyPNw-TalbteGrh7svqj1efHqSlbC9EuErpnuVg&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQxKsJKAV6BAhwEAE&ictx=0' role='link' />
+	[65] (549,259)<div  />
+		[66] (549,259)<span >Español />
+[67] (630,259)<a aria-label='Agregar Bar de tapas' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Camino+de+Ronda+Granada+bar+de+tapas&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-qeuvg9PzqU-GFowozb8r4KXqGY_gjxI5z1Yeyg-vbO8S4Z_rbyBVtM-iAi16ZJX-zAij737H5bRBNuDZU1ZO7MCIkSq5Pq2QQ8OsIrTXAT0OzDplp5uz-8UPS6FbFqFhLh_ElNSuq0xKhe_uMcTRDrr1x1smb8Wb1kPQt8a4VXxn1cQKO9At4ZGtzlf-vyvbDDUjA_E8SIvAxI6Mh8YbBMtAtpA&sa=X&ved=2ahUKEwi04I280MOUAxWJsVYBHdVENfAQxKsJKAZ6BAhtEAE&ictx=0' role='link' />
+	[68] (630,259)<div  />
+		[69] (630,259)<span >Bar de tapas />
+Resultados de búsqueda
+Cam. de Ronda, Granada
+∙
+[70] (256,351)<a class='N5az4b' href='#' role='button' />
+	[71] (256,357)<span >Elegir área />
+[72] (301,357)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[73] (302,356)<span  />
+Resultados locales
+Sitios
+[74] (573,448)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[75] (573,448)<span  />
+Mapa
+[76] (561,518)<div aria-label='Expandir el mapa' class='LIvF6e zyiMDe' role='button' />
+Datos del mapa ©2026 Google, Inst. Geogr. Nacional
+[77] (549,785)<a class='Y7LMZc' href='//www.google.com/intl/es-419/help/terms_maps/'>Condiciones />
+[78] (325,907)<div id='pv-/g/1thkb2jq' role='button' />
+	[79] (325,907)<div  />
+		[80] (289,907)<div  />
+			[81] (289,907)<div  />
+				[82] (289,907)<div  />
+					[83] (289,838)<div class='dbg0pd' role='heading' />
+						[84] (149,837)<span >Restaurante Casa Ramón />
+					[85] (289,871)<div >·
+· Restaurante />
+						[86] (120,871)<span  />
+							[87] (120,871)<span aria-label='Calificación: 4.4 de 5, 614 opiniones de usuarios' class='Y0A0hc' role='img' />
+								[88] (78,871)<span >4.4 />
+								[89] (115,871)<span aria-label='Calificación: 4.4 de 5,' class='z3HNkc' role='img' />
+									[90] (115,871)<span  />
+										[91] (115,869)<span  />
+								[92] (158,871)<span >(614) />
+						[93] (197,871)<span >€20-30 />
+					[94] (289,906)<div >Cam. de Ronda, 81, BAJO />
+					[95] (289,941)<div  />
+						[96] (160,941)<span >· Abre a la 1:30 p.m. del mar />
+							[97] (90,941)<span >Cerrado />
+					[98] (289,976)<div  />
+						[99] (193,976)<div  />
+							[100] (193,976)<div  />
+								[101] (193,976)<span >Restaurante modesto con marisco, pescado y vino />
+						[102] (324,976)<span >· />
+						[103] (361,976)<a class='MRe4xd' href='https://sites.google.com/view/restaurante-casa-ramon' />
+							[104] (354,976)<span >Sitio web />
+		[105] (544,907)<a class='uQ4NLd b9tNq wzN8Ac rllt__link a-no-hover-decoration' />
+			[106] (544,894)<div  />
+				[107] (544,894)<img  />
+
+</current_dom>

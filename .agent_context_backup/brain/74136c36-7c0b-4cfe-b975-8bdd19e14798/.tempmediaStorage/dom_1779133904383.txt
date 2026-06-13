@@ -1,0 +1,244 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (431,59)<button class='e2moi' />
+		[7] (431,59)<div  />
+			[8] (405,59)<span > />
+			[9] (431,59)<span >Precio />
+			[10] (457,59)<span > />
+	[11] (531,59)<button class='e2moi' />
+		[12] (531,59)<div  />
+			[13] (488,59)<span > />
+			[14] (532,59)<span >Clasificación />
+			[15] (574,59)<span > />
+	[16] (632,59)<button class='e2moi' />
+		[17] (632,59)<div  />
+			[18] (605,59)<span > />
+			[19] (633,59)<span >Cocina />
+			[20] (661,59)<span > />
+	[21] (716,59)<button class='e2moi' />
+		[22] (716,59)<div  />
+			[23] (691,59)<span > />
+			[24] (717,59)<span >Horas />
+			[25] (741,59)<span > />
+	[26] (772,59)<span > />
+	Todos los filtros
+[27] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[28] (827,59)<span > />
+[29] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[30] (28,57)<div  />
+		[31] (28,57)<span > />
+[32] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[33] (28,146)<div  />
+		[34] (28,146)<span > />
+	[35] (28,190)<div  />
+		[36] (28,190)<div >Guardado />
+[37] (28,297)<button class='wR3cXd fontLabelMedium' />
+	[38] (28,272)<div  />
+		[39] (28,272)<span > />
+	[40] (28,329)<div  />
+		[41] (28,329)<div >Recientes />
+[42] (28,488)<button class='atHn2d wR3cXd aJPqP fontBodySmall QyI6Nb' />
+	[43] (28,463)<div  />
+		[44] (28,463)<div  />
+			[45] (28,463)<div  />
+	[46] (28,520)<div  />
+		[47] (28,522)<div >Restaurante Pañero />
+[48] (28,602)<button class='wR3cXd aJPqP fontBodySmall QyI6Nb' />
+	[49] (28,602)<div  />
+		[50] (28,602)<div  />
+			[51] (28,602)<div  />
+[52] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[53] (28,892)<div  />
+		[54] (28,892)<span > />
+	[55] (28,943)<div  />
+		[56] (28,943)<div >Obtener app />
+[57] (216,528)<div aria-label='Resultados de restaurantes Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd QjC7t' role='feed' scrollable='true' />
+	"Servicio, comida, precio y ambiente/decoración/música de diez."
+	[58] (213,342)<a aria-label='Restaurante Carmen De Aben Humeya' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Carmen+De+Aben+Humeya/data=!4m7!3m6!1s0xd71fcc7d6684405:0xbfa3a8b82c110c78!8m2!3d37.1806799!4d-3.5917093!16s%2Fg%2F1tcy5nmn!19sChIJBURo1sf8cQ0ReAwRLLioo78?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Carmen De Aben Humeya
+	4.5
+	(1,793)
+	·
+	€40-60
+	Alta cocina
+	·
+	
+	·
+	Cta. de las Tomasas, 12
+	Elaborada cocina regional y vistas a la Alhambra
+	Cierra pronto
+	· 10:30 p.m. · Abre a la 1 p.m. del mar
+	"Ambiente fantástico, servicio increíble, y comida inmejorable."
+	[59] (213,512)<div  />
+		[60] (213,512)<div  />
+			[61] (213,512)<div  />
+				[62] (213,512)<a class='A1zNzb' href='https://www.google.com/maps/reserve/v/dine/c/1BVI6r5o6oY?source=pa&opi=79508299&hl=es-419&gei=H20LaoisFqHy7M8Pp9bjqQI&sourceurl=https://www.google.com/search?tbm%3Dmap%26hl%3Des-419%26gl%3Des%26authuser%3D0%26pb%3D!4m12!1m3!1d5231.806106518772!2d-3.5989019584746416!3d37.18077458856374!2m3!1f0!2f0!3f0!3m2!1i1280!2i632!4f13.1!7i20!10b1!12m25!1m5!18b1!30b1!31m1!1b1!34e1!2m4!5m1!6e2!20e3!39b1!10b1!12b1!13b1!16b1!17m1!3e1!20m3!5e2!6b1!14b1!46m1!1b0!96b1!99b1!19m4!2m3!1i360!2i120!4i8!20m65!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m16!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!22m6!1s9WwLasXgAcfl7M8P0LOvEQ:5!2s1i:0,t:11886,p:9WwLasXgAcfl7M8P0LOvEQ:5!7e81!12e5!17s9WwLasXgAcfl7M8P0LOvEQ:87!18e15!24m109!1m27!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m16!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!26m4!2m3!1i80!2i92!4i8!30m28!1m6!1m2!1i0!2i0!2m2!1i530!2i632!1m6!1m2!1i1230!2i0!2m2!1i1280!2i632!1m6!1m2!1i0!2i0!2m2!1i1280!2i20!1m6!1m2!1i0!2i612!2m2!1i1280!2i632!34m19!2b1!3b1!4b1!6b1!8m6!1b1!3b1!4b1!5b1!6b1!7b1!9b1!12b1!14b1!20b1!23b1!25b1!26b1!31b1!37m1!1e81!42b1!47m0!49m10!3b1!6m2!1b1!2b1!7m2!1e3!2b1!8b1!9b1!10e2!50m4!2e2!3m2!1b1!3b1!67m5!7b1!10b1!14b1!15m1!1b0!69i779!77b1%26q%3Drestaurantes%2BGranada%26oq%3Drestaurantes%2BGranada%26gs_l%3Dmaps.3..38i426k1j38i72k1l3j38i377i430i444k1.16697.16867.2.20901.21.4.....212.289.1j0j1.2.....0....1..maps..19.2.307.0..38i377k1j38i39k1j38.%26ech%3D3%26psi%3D9WwLasXgAcfl7M8P0LOvEQ.1779133685823.1' />
+					[63] (213,512)<div >Reservar mesa />
+						[64] (173,512)<span > />
+	[65] (213,709)<a aria-label='Restaurante Reina Mónica' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Reina+M%C3%B3nica/data=!4m7!3m6!1s0xd71fcc63e9ca12b:0x549538523f9a95c2!8m2!3d37.1824797!4d-3.5923925!16s%2Fg%2F11bccd3nm3!19sChIJK6GcPsb8cQ0RwpWaP1I4lVQ?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Reina Mónica
+	4.6
+	(1,081)
+	·
+	€10-20
+	Halal
+	·
+	
+	·
+	C. Panaderos, 20
+	Abierto
+	· Cierra a las 12 a.m.
+	"Increíble trato, tapas abundantes y de calidad, súper aconsejable!"
+	Restaurante Las Tomasas
+	4.6
+	(2,297)
+	·
+	€30-70
+	Española
+	·
+	
+	·
+	Carril de San Agustín, 4
+	Comida andaluza y vistas a la Alhambra
+	Cerrado
+	· Abre a la 1 p.m. del mar
+[66] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[67] (80,972)<div  />
+		[68] (80,972)<span > />
+Restaurante Pañero
+[69] (684,139)<button aria-label='Cerrar' class='VfPpkd-icon-LgbsSe yHy1rc eT1oJ mN1ivc VfPpkd-ksKsZd-mWPk3d VfPpkd-ksKsZd-mWPk3d-OWXEXe-ZNMTqd' />
+	[70] (684,145)<span  />
+[71] (550,532)<div class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ' scrollable='true' />
+	Indicaciones
+	Guardar
+	Cerca
+	Enviar al teléfono
+	Compartir
+	·
+	
+	Consumo en el lugar
+	·
+	
+	Retiros en la puerta
+	·
+	
+	Entrega a domicilio
+	
+	[72] (548,288)<button aria-label='Dirección: Restaurante Pañero, C. San Buenaventura, 20, Albaicín, 18010 Granada ' class='CsEnBe' />
+		[73] (548,288)<div  />
+			
+			[74] (566,288)<div  />
+				[75] (566,288)<div >Restaurante Pañero, C. San Buenaventura, 20, Albaicín, 18010 Granada />
+	[76] (678,275)<button aria-label='Copiar la dirección' class='S9kvJb ' />
+		[77] (677,275)<span  />
+			[78] (677,275)<span  />
+	[79] (548,364)<div class='OMl5r hH0dDd jBYmhd' role='button' />
+		[80] (419,364)<span aria-label='Horario de atención' class='LT79uc google-symbols PHazN' role='img'> />
+		[81] (566,364)<div  />
+			[82] (566,364)<div  />
+				[83] (515,364)<span  />
+					[84] (515,364)<span  />
+						[85] (465,364)<span >Abierto />
+						[86] (534,364)<span >· Cierra a las 11 p.m. />
+				[87] (604,364)<span aria-label='Mostrar el horario de atención durante la semana' class='puWIL hKrmvd google-symbols OazX1c' role='img'> />
+	[88] (548,437)<div class='MNVeJb eXOdV eF9eN PnPrlf' role='button'>€10-20
+por persona />
+		€10-20
+		por persona
+		Informado por 425 personas
+	[89] (548,509)<a aria-label='Sitio web: restaurantepanero.com ' class='CsEnBe' href='http://www.restaurantepanero.com/' />
+		[90] (548,509)<div  />
+			
+			[91] (566,509)<div  />
+				[92] (566,509)<div >restaurantepanero.com />
+	[93] (655,509)<a aria-label='Abrir el sitio web' class='lcr4fd S9kvJb ' href='http://www.restaurantepanero.com/' />
+		[94] (653,509)<span  />
+			[95] (653,509)<span  />
+	[96] (678,509)<button aria-label='Copiar el sitio web' class='S9kvJb ' />
+		[97] (677,509)<span  />
+			[98] (677,509)<span  />
+	[99] (548,573)<button aria-label='Teléfono: 680 54 99 03 ' class='CsEnBe' />
+		[100] (548,573)<div  />
+			
+			[101] (566,573)<div  />
+				[102] (566,573)<div >680 54 99 03 />
+	[103] (655,573)<button aria-label='Copiar el número de teléfono' class='S9kvJb ' />
+		[104] (653,573)<span  />
+			[105] (653,573)<span  />
+	[106] (678,573)<a aria-label='Llamar al número de teléfono' class='lcr4fd S9kvJb ' href='tel:680549903' />
+		[107] (677,573)<span  />
+			[108] (677,573)<span  />
+	[109] (548,636)<button aria-label='Plus Code: 5CM5+5G Granada' class='CsEnBe' />
+		[110] (548,636)<div  />
+			
+			[111] (566,636)<div  />
+				[112] (566,636)<div >5CM5+5G Granada />
+	[113] (655,636)<button aria-label='Agrega el Plus Code' class='S9kvJb ' />
+		[114] (653,636)<span  />
+			[115] (653,636)<span  />
+	[116] (678,636)<button aria-label='Obtén más información sobre los Plus Codes' class='S9kvJb ' />
+		[117] (677,636)<span  />
+			[118] (677,636)<span  />
+	Amigable con LGBTQ+
+	[119] (548,788)<button aria-label='Sugerir una edición' class='S9kvJb ' />
+		[120] (548,788)<span  />
+			[121] (492,788)<span > />
+			[122] (556,788)<span >Sugerir una edición />
+	Actualizaciones de los clientes
+	Torrija casera muy rica
+	Hace 2 meses
+[123] (718,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[124] (718,500)<span > />
+[125] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[126] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FRestaurante%2BPa%25C3%25B1ero%2F%4037.1807744%2C-3.598902%2C16z%2Fdata%3D!3m1!5s0xd71fcc8a16d0f97%3A0x50d4136f50ee90b0!4m10!1m2!2m1!1srestaurantes%2BGranada!3m6!1s0xd71fcc8a10a4b27%3A0x2fa1b832a27d4a88!8m2!3d37.1829779!4d-3.591217!15sChRyZXN0YXVyYW50ZXMgR3JhbmFkYVoWIhRyZXN0YXVyYW50ZXMgZ3JhbmFkYZIBCnJlc3RhdXJhbnSaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMjVCTUZWcWJHWk9NV2htWVd0V2ExSklhRTVsVkZVelpGZDRkbUpWUlJBQuABAPoBBAgAED8!16s%252Fg%252F11c5gdhzsb%3Fauthuser%3D0%26hl%3Des-419%26ved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+
+Datos del mapa © 2026 Inst. Geogr. Nacional
+[127] (607,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[128] (653,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[129] (704,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[130] (799,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[131] (929,989)<button class='LNGekf' />
+	[132] (886,989)<label class='U5ELMd'>200 m />
+	[133] (941,989)<div  />
+Ayúdanos a mejorar Google Maps
+[134] (738,793)<div  />
+[135] (738,793)<button class='scSharedMaterialbuttonroot scSharedMaterialbuttontext' role='button' />
+	[136] (738,793)<span >No, gracias />
+	[137] (738,793)<div  />
+		[138] (738,793)<div  />
+		[139] (738,793)<div  />
+		[140] (738,793)<div  />
+[141] (841,793)<div  />
+[142] (841,793)<button class='scSharedMaterialbuttonroot scSharedMaterialbuttonfilled' role='button' />
+	[143] (841,793)<span >Mostrar pregunta />
+	[144] (841,793)<div  />
+		[145] (841,793)<div  />
+		[146] (841,793)<div  />
+		[147] (841,793)<div  />
+Si continúas, aceptas que Google utilice tus respuestas y la
+[148] (783,905)<a class='info-link' href='#' role='button'>información de tu cuenta y sistema />
+para mejorar los servicios, de acuerdo con nuestra
+[149] (860,930)<a aria-label='Privacidad (se abrirá en una nueva pestaña)' class='privacy-link' href='https://myaccount.google.com/privacypolicy?hl=es-419'>Política de Privacidad />
+y
+[150] (840,943)<a aria-label='Condiciones (se abrirá en una nueva pestaña)' class='terms-link' href='https://policies.google.com/terms?hl=es-419'>Condiciones del Servicio />
+.
+[151] (960,708)<div  />
+[152] (960,708)<button aria-label='Cerrar diálogo de la encuesta del usuario' class='scSharedMaterialbuttonroot scSharedMaterialbuttonnavigational scSharedMaterialbuttonicon-only' role='button' />
+	[153] (960,714)<span  />
+		[154] (960,714)<sc-shared-material-icon  />
+			[155] (960,708)<div aria-label='Cerrar diálogo de la encuesta del usuario' class='scSharedMaterialiconroot scSharedMaterialiconbaseline scSharedMaterialicontext-icon' role='img'>close />
+	[156] (960,708)<div  />
+		[157] (960,708)<div  />
+		[158] (960,708)<div  />
+		[159] (960,708)<div  />
+
+</current_dom>

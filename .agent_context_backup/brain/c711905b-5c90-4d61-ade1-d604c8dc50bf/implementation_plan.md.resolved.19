@@ -1,0 +1,39 @@
+# Diagnóstico y Reestructuración de Arqui (Agente IA)
+
+He interceptado y analizado el `system prompt` actual en `src/app/api/demo/respond/route.ts`. Tal y como sospechabas, Arqui está operando con información obsoleta y una lógica demasiado rígida. 
+
+## 🔍 Diagnóstico Actual (Por qué está fallando)
+
+1.  **Precios e Información Obsoleta:** Arqui sigue ofreciendo el "Plan Base a 49€", "Growth a 99€" y "Licencia a 450€", con los bonos antiguos de 620€. **Esto destruye la coherencia de nuestro embudo High-Ticket de 700€ / 10.000€.**
+2.  **Estructura Robótica:** Tiene un sistema de 5 fases forzadas. Obliga al cliente a dar nombre y ciudad en el turno 1 sin aportar valor, y luego hace un interrogatorio rígido que espanta a clientes de alto perfil.
+3.  **No Cualifica, solo Empuja:** Intenta captar el email y WhatsApp a la fuerza en la fase 4 antes de dar los enlaces, en lugar de pre-cualificar inteligentemente (preguntando facturación o volumen de negocio) como acabamos de implementar en la web.
+
+## 🚀 Plan de Configuración: "Arqui Enterprise"
+
+Debemos reprogramar a Arqui para que actúe como un **Socio Director de Integraciones B2B**. Que no suene a bot de atención al cliente, sino a un consultor de McKinsey especializado en hostelería.
+
+### 1. El Nuevo Flujo Dinámico (Inteligencia Situacional)
+El agente no hará un interrogatorio, sino que perfilará al usuario de forma conversacional:
+*   **Apertura de Autoridad:** "Hola. Soy Arqui, Director de Integraciones de Architect.Sys. ¿Qué cuello de botella operativo te ha traído hasta aquí?"
+*   **Perfilado Inteligente:** Arqui detectará el "dolor" (ej. "pierdo llamadas", "quiero abrir marcas virtuales", "no tengo clientes los martes").
+*   **Oferta Adaptativa (NO lanza el menú completo):**
+    *   Si el cliente es pequeño/tradicional -> Le vende la **Base Operativa (700€)**.
+    *   Si el cliente ya factura y se ahoga los fines de semana -> Le vende el **Agente IA Híbrido (450€ + 69€/mes)**.
+    *   Si el cliente habla de rentabilizar cocinas o inversores -> Lo lleva directo a **Dark Kitchen (Ingeniería de Proyectos)**.
+
+### 2. Sugerencias Inteligentes (Quick Replies)
+En lugar de forzar respuestas, programaremos al LLM para que en la etiqueta `|SUGERENCIAS|` genere opciones contextualmente perfectas.
+*Ejemplo:* Si el cliente dice "Pierdo mesas los viernes", las sugerencias que el agente generará serán: `|SUGERENCIAS|¿Cómo funciona el Agente de WhatsApp?|¿Cuánto cuesta automatizarlo?|Quiero agendar una reunión|`
+
+### 3. El Cierre (El Filtro High-Ticket)
+En lugar de forzar la petición de email en el chat, Arqui explicará que los proyectos requieren análisis de viabilidad, y enviará un único enlace (ya sea a WhatsApp o a Calendly) diciendo:
+> *"Viendo tu caso, el paso lógico es agendar una sesión de viabilidad con dirección. Haz clic en el enlace para enviar tu perfil."*
+
+---
+
+> [!IMPORTANT]
+> **Decisión Requerida**
+> 
+> Esta reconfiguración borrará el modelo "SaaS barato" del cerebro de Arqui y lo convertirá en un cerrador High-Ticket de proyectos complejos. 
+> 
+> ¿Me das luz verde para inyectar este nuevo *System Prompt* y ajustar la API de chat?

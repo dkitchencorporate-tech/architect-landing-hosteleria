@@ -1,0 +1,42 @@
+# Plan Maestro: Enciclopedia Operativa Architect.Sys
+
+Entendido. Quieres la "Biblia" de tu ecosistema. Un despliegue total y absoluto de documentación técnica, operativa y estratégica de cada rincón de Architect.Sys, estructurada para lectura online y exportación a PDF. No daré esto por terminado hasta que cada línea esté redactada y publicada.
+
+A continuación, detallo el plan maestro de los **6 nuevos manuales** que voy a redactar, maquetar e integrar al Hub.
+
+## 1. Mapa Integral de URLs y Navegación
+Ruta: `src/app/manuals/mapa-navegacion/page.tsx`
+*   **Contenido:** Un directorio completo de cada enlace que existe en la aplicación (Landing, Auth, Dashboards, APIs).
+*   **Detalle:** Explicaré exactamente qué hace cada URL, para qué sirve, y qué nivel de acceso requiere (Público, Cliente Logueado, o Administrador).
+
+## 2. Arquitectura SaaS y Seguridad (Supabase)
+Ruta: `src/app/manuals/arquitectura-saas/page.tsx`
+*   **Contenido:** Documentación profunda de la base de datos.
+*   **Detalle:** Explicación de las tablas (`profiles`, `projects`, `client_events`), cómo funciona el Trigger mágico que crea usuarios, y las reglas RLS (Row Level Security) que protegen los datos de tus clientes.
+
+## 3. Embudos de Venta y Psicología de Precios
+Ruta: `src/app/manuals/estrategia-ventas/page.tsx`
+*   **Contenido:** La lógica detrás de la Landing Page.
+*   **Detalle:** Desglose del "Pitch" B2B, justificación psicológica de los tres planes (Base, Growth, Agente IA), y cómo evitar clientes tóxicos eliminando promesas vacías.
+
+## 4. Onboarding y Panel de Clientes (Dashboard)
+Ruta: `src/app/manuals/onboarding-b2b/page.tsx`
+*   **Contenido:** La experiencia del cliente post-compra.
+*   **Detalle:** Paso a paso de lo que ve el cliente: El asistente de configuración inicial (Onboarding Wizard), la inyección de datos del restaurante, y la solicitud de campañas en la "Creative Factory".
+
+## 5. El Agente Inteligente (Arqui) e Integraciones
+Ruta: `src/app/manuals/agente-ia/page.tsx`
+*   **Contenido:** El cerebro de tu comercial virtual.
+*   **Detalle:** El "System Prompt" maestro de Arqui, sus leyes de operación inquebrantables, y cómo fluye la información entre tu plataforma, Kommo CRM y WhatsApp (Woztell).
+
+## 6. Centro de Control (Administración y Modo Demo)
+Ruta: `src/app/manuals/centro-control/page.tsx`
+*   **Contenido:** Tu vista de comandante.
+*   **Detalle:** Cómo funciona la ruta `/admin-architect`, el monitoreo de clientes reales, y la activación del "Modo Demo" especial que uso tu correo (`alex@...`) para engañar visualmente al sistema durante tus presentaciones de ventas en Zoom.
+
+## Actualización del Índice Principal
+Modificaré el archivo `src/app/manuals/page.tsx` para listar todas estas nuevas entradas con sus respectivas etiquetas, fechas y descripciones.
+
+---
+
+**¿Apruebas este Plan Maestro de Documentación?** Si me das luz verde, me encargaré de redactar con lenguaje técnico-empresarial cada uno de estos 6 documentos extensos, darles el diseño CSS Premium y subirlos a Vercel de una sola vez para entregarte el resultado al 100%.

@@ -1,0 +1,34 @@
+# Arquitectura del Sub-Agente Local (Puente de Telegram)
+
+*Rol Activo: Arquitecto de Sistemas e IA*
+
+Tienes toda la razón y asumo el error. Efectivamente, las políticas de **Auto Execution (Terminal)** y **Review Policy (Artifacts)** configuradas en `Always Proceed` existen de forma nativa en tu panel de Antigravity (tal y como muestran las capturas). Esto nos da la autonomía absoluta que necesitamos para operar sin interrupciones.
+
+He eliminado el enfoque anterior. Para cumplir tu objetivo de mantener una línea de comunicación y control constante cuando estés fuera de casa, vamos a crear el **Sub-Agente Local** en tu escritorio.
+
+## 🏗️ Fases de Implementación del Sub-Agente
+
+### Fase 1: Creación del Canal Seguro (Telegram)
+Necesitamos la credencial para que el Sub-Agente pueda enviarte mensajes.
+1. Ve a la app de Telegram y busca a **@BotFather**.
+2. Escribe el comando `/newbot` y asigna un nombre a tu sub-agente (ej. `Arqui_SubAgent_Bot`).
+3. BotFather te entregará un **Token HTTP API**. Este token lo guardaremos de forma segura en tu `.env.local`.
+
+### Fase 2: Desarrollo del Cerebro Local (`subagent.py`)
+Escribiré un script en Python directamente en la raíz de tu proyecto. Este script será tu Sub-Agente:
+- **Inteligencia:** Usará la API de Gemini (ya configurada en tu `.env`) para entender tus instrucciones con el mismo contexto de negocio que yo manejo.
+- **Comunicación:** Integrará `python-telegram-bot` para escuchar tus mensajes de texto 24/7.
+- **Acción (Tools):** Le programaremos "herramientas" internas para que, cuando le pidas algo por Telegram, pueda leer el código de tu proyecto o ejecutar comandos de PowerShell directamente en tu máquina.
+
+### Fase 3: Dependencias y Puesta en Marcha
+1. Crearé un `requirements_bot.txt` con las librerías necesarias.
+2. Ejecutaremos la instalación de dependencias en tu terminal.
+3. Dejaremos el Sub-Agente corriendo en tu máquina. Gracias a que tienes activado el modo *Always Proceed*, los procesos pueden mantenerse vivos e iterar sin que la interfaz gráfica te bloquee pidiendo permisos.
+
+---
+
+## 🚦 Siguiente Paso (Decisión)
+
+El plan está trazado. Para empezar a ejecutar la construcción del Sub-Agente:
+
+¿Quieres ir a Telegram a **generar el Token de BotFather** ahora mismo para que lo dejemos configurado en tu `.env.local`, o prefieres que yo **comience a escribir el código fuente de `subagent.py`** mientras tú haces el trámite del Token?

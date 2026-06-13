@@ -1,0 +1,174 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DRestaurante%2BPilar%2Bdel%2BToro%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Restaurante+Pilar+del+Toro+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQ2J8OegQICRAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Pilar+del+Toro+Granada&sa=X&ved=2ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQtKgLegQIExAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Pilar+del+Toro+Granada&sa=X&ved=2ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQs6gLegQIEhAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Pilar+del+Toro+Granada&sa=X&ved=2ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQtKgLegQIERAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Pilar+del+Toro+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQ0pQJegQIDxAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Restaurante+Pilar+del+Toro+Granada&sa=X&ved=2ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQs6gLegQIDRAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (276,316)<a class='zReHs' href='https://pilardeltoro.es/' />
+	[48] (276,350)<h3 >Pilar del Toro - Restaurante Granada | Restaurante Granada />
+	[49] (149,296)<div  />
+		[50] (149,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<span  />
+			[54] (164,296)<div  />
+				[55] (164,282)<div  />
+					[56] (164,282)<span >Restaurante Pilar del Toro />
+				[57] (164,312)<div  />
+					[58] (145,312)<cite class='tjvcx GvPZzd cHaqb' role='text'>https://pilardeltoro.es />
+[59] (244,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[60] (244,310)<span  />
+		[61] (244,312)<span  />
+El respeto por el producto no es un discurso — es el punto de partida. Restaurante Pilar del Toro.
+C. Hospital de Sta. Ana, 12, 18009 Granada
+| IG / FB: @ ...
+[62] (544,351)<a href='https://pilardeltoro.es/' />
+	[63] (544,351)<div  />
+		[64] (544,351)<img  />
+[65] (273,552)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d1004397-Reviews-Pilar_del_Toro-Granada_Province_of_Granada_Andalucia.html' />
+	[66] (273,581)<h3 >PILAR DEL TORO, Granada - Carta, fotos y opiniones del ... />
+	[67] (205,527)<div  />
+		[68] (205,527)<div  />
+			[69] (81,527)<span  />
+				[70] (81,527)<div  />
+					[71] (81,527)<img  />
+			[72] (220,527)<div  />
+				[73] (220,513)<div  />
+					[74] (220,513)<span >Tripadvisor />
+				[75] (220,543)<div  />
+					[76] (220,543)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[77] (273,542)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[78] (355,541)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[79] (355,541)<span  />
+		[80] (355,543)<span  />
+Este restaurante en Granada es uno de los mejores que existe
+. La comida está espectacular, desde las berenjenas, croquetas, tartar de atún, lubina, hamburguesa ...
+[81] (544,582)<a href='https://www.tripadvisor.es/Restaurant_Review-g187441-d1004397-Reviews-Pilar_del_Toro-Granada_Province_of_Granada_Andalucia.html' />
+	[82] (544,582)<div  />
+		[83] (544,582)<img  />
+4.3
+(656)
+·
+Rango de precios: €€ - €€€
+[84] (327,698)<div role='button' />
+[85] (234,818)<a class='zReHs' href='https://www.instagram.com/pilardeltorogranada/' />
+	[86] (234,847)<h3 >Pilar Del Toro (@pilardeltorogranada) · Granada />
+	[87] (162,793)<div  />
+		[88] (162,793)<div  />
+			[89] (81,793)<span  />
+				[90] (81,793)<div  />
+					[91] (81,793)<img  />
+			[92] (177,793)<div  />
+				[93] (177,779)<div  />
+					[94] (177,779)<span >Instagram · pilardeltorogranada />
+				[95] (177,809)<div  />
+					[96] (153,809)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 2.4 K seguidores />
+[97] (270,807)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[98] (270,807)<span  />
+		[99] (270,809)<span  />
+Palacete granadino XVII
+Reservas: 958 225 470 • 678 887 927 eventosygrupos@grupojavierfeixas.com 13:00 - 23:00 · Hay combinaciones que simplemente ...
+[100] (680,392)<button class='KJY1Gc' />
+	[101] (680,392)<div  />
+		[102] (680,392)<div  />
+			[103] (689,392)<img  />
+		[104] (691,494)<span >Ver fotos />
+[105] (802,392)<a  />
+[106] (826,458)<a href='/local/place/fid/0xd71fcb8ec62991f:0xa4811812a338da34/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DBNTEj5Wd1my8ma8_GWD2_g%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D149.59824%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFkJOVEVqNVdkMW15OG1hOF9HV0QyX2c%3D&sa=X&ved=2ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQpx96BAgdEA8' />
+	[107] (826,458)<div  />
+		[108] (849,458)<img  />
+	[109] (890,495)<span >Ver por fuera />
+Restaurante Pilar del Toro Granada
+4.3
+[110] (754,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+Pilar+del+Toro+Granada&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x-HfSXXh4rcWKexJJiP0TPpCWN3WpiPqefKmJyo1Cn96EMGXO7rsI27SEylf0616aPohPCI%3D&uds=ALYpb_l-s4Refar-U7vzlDkaoKaMHVp1Y-uT_l6BcRqqSZRp6Mb7hiLMwsU1Cfoum3SbbADSFFtjVRLH32pkKEDNdzVrDr2AibaduWvodnZA1pLUFUoxqJRqm-aR_uwHyKUmhpCgDDVq&sa=X&ved=2ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQ3PALegQIGhAE'>1,303 opiniones />
+[111] (805,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[112] (805,598)<span  />
+€20-40
+‧
+Restaurante
+[113] (825,604)<div class='mTpL7c' role='button' />
+	[114] (825,604)<span aria-label='Más opciones para Restaurante Pilar del Toro Granada' class='Zj92Hf' role='img' />
+		[115] (823,601)<span  />
+[116] (681,723)<a class='n1obkb mI8Pwc' href='http://www.pilardeltoro.es/' />
+	[117] (681,723)<div  />
+		[118] (656,723)<div  />
+		[119] (690,723)<span >Sitio web />
+[120] (777,723)<div  />
+	[121] (745,723)<div  />
+	[122] (786,723)<span >Cómo llegar />
+[123] (876,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x-EhjkgeBTvZm5f-hvSAPJ9p3StrPZGOQ63-SYE0rFj1fkkapdm51dFet-K3P-qd0qCWTfva7d7YHDhNh6O2o7LKfVWzoqUAnE4kzxQi7I7sjOMr2F9v4BvJtn4lgEsn-19btMA%3D&q=Restaurante+Pilar+del+Toro+Granada+Opiniones&sa=X&ved=2ahUKEwjt2qHrzsOUAxV8f_UHHfm2CIAQ0bkNegQIORAH' />
+	[124] (876,723)<div  />
+		[125] (848,723)<div  />
+		[126] (884,723)<span >Opiniones />
+[127] (678,799)<div  />
+	[128] (678,799)<div  />
+		[129] (678,799)<div  />
+			[130] (678,799)<span aria-label='Guardar Restaurante Pilar del Toro Granada en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Restaurante Pilar del Toro Granada en una colección' />
+				[131] (687,799)<span >Guardar />
+[132] (768,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[133] (768,799)<div  />
+		[134] (740,799)<div  />
+		[135] (776,799)<span >Compartir />
+[136] (853,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[137] (853,799)<div  />
+		[138] (834,799)<div  />
+		[139] (862,799)<span >Llamar />
+[140] (672,875)<span  />
+	[141] (672,875)<div id='sXDlyb/g/1thzw40v' role='button' />
+		[142] (672,875)<div  />
+			[143] (656,875)<div  />
+			[144] (680,875)<span >Menú />
+Platos de la cocina española en una casa señorial del s. XVII, que pueden degustarse en un comedor refinado o en un patio.
+
+</current_dom>

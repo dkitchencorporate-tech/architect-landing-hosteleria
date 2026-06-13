@@ -1,0 +1,36 @@
+# Rediseño del Monitor de Conversaciones (Agente IA)
+
+El dashboard actual (`LiveMonitor`) muestra las conversaciones simulando la interfaz de WhatsApp en formato de cuadrícula (grid). Para adecuarlo a nuestra nueva estrategia de Agente Consultor Web, vamos a transformarlo en un formato de lista compacta y profesional.
+
+## Cambios en Base de Datos (Supabase)
+**Respuesta rápida:** No necesitamos modificar NADA en Supabase.
+El agente web actual ya guarda las conversaciones en la tabla `chats`, usando la columna `phone` para guardar un identificador de sesión. Aprovecharemos esta misma estructura para no romper nada, solo cambiaremos la forma en que se visualiza en el front-end.
+
+## User Review Required
+> [!IMPORTANT]
+> El nuevo diseño será una lista vertical donde cada fila representará a un usuario chateando con el Agente. Al hacer clic en la fila, se abrirá el panel lateral o modal para ver la conversación profunda. ¿Estás de acuerdo con este enfoque más estilo "Bandeja de Entrada/Inbox"?
+
+## Proposed Changes
+
+### 1. `src/app/admin-architect/page.tsx`
+Actualizar los textos de la interfaz para desvincularlos de WhatsApp.
+
+#### [MODIFY] src/app/admin-architect/page.tsx
+- Cambiar el título "Live WhatsApp Stream" por "Live AI Agent Stream".
+- Ajustar la descripción para referirse a la auditoría de leads en la web.
+
+### 2. `src/components/dashboard/LiveMonitor.tsx`
+Refactorizar completamente la vista de cuadrícula a una lista compacta.
+
+#### [MODIFY] src/components/dashboard/LiveMonitor.tsx
+- Reemplazar el contenedor `<div className="grid grid-cols-2...">` por un `<div className="space-y-2">` para crear un diseño de lista vertical.
+- **Diseño de la Fila (Item de Lista):** 
+  - Mostrar el estado (Intent/Topic) como "etiquetas" (badges) en la misma línea.
+  - Mostrar una vista previa del último mensaje truncado en una línea para ahorrar espacio.
+  - Reemplazar el icono de "teléfono" por un avatar de "Sesión Web".
+- **Modal de Chat:** Limpiar el estilo visual para que parezca una consola de auditoría B2B en lugar de una pantalla de móvil.
+
+## Verification Plan
+1. Accederemos al Dashboard Localmente en `localhost:3002/admin-architect`.
+2. Validaremos que la sección izquierda muestre una lista apilada (Bandeja de entrada) limpia en lugar de tarjetas cuadradas.
+3. Simularemos una conversación en la web y comprobaremos que aparece instantáneamente en la lista superior.

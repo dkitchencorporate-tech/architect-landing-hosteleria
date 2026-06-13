@@ -1,0 +1,68 @@
+# Plan de Trabajo Maestro: Optimización Final y Lanzamiento (V4 a V5)
+
+Este plan detalla los pasos exactos para implementar las 6 directrices críticas del análisis externo, integrar el increíble ecosistema SaaS desarrollado internamente por Jules, y tener la plataforma 100% lista para el lanzamiento el próximo lunes.
+
+## ⚠️ User Review Required
+> [!IMPORTANT]
+> **No iniciaré ninguna acción sin tu "Sí" explícito.** Por favor, revisa este plan. Si estás de acuerdo con el enfoque para cada punto, confírmalo y empezaré a programar la Fase 1 inmediatamente.
+
+---
+
+## FASE 1: Ajustes de Confianza y Copy (Reporte Externo)
+*Esta fase se centra en las correcciones rápidas de conversión (Quick Wins).*
+
+1. **Apertura de FAQ por Defecto:**
+   - Modificaremos el componente `FAQ.tsx` para que, en la carga inicial, al menos la primera línea de la respuesta sea visible sin necesidad de hacer clic, reduciendo la fricción en móviles.
+2. **Ajuste de Valores de Bonos (Anti-Inflación):**
+   - Modificaremos los textos donde se ofrecen los bonos (como `HighTicketEcosystem.tsx`).
+   - El bono de *Auditoría de Google Maps* pasará de 350€ a **180€**.
+   - Se añadirá una justificación concreta: *"Análisis de 14 factores de posicionamiento en Google Maps, informe en PDF de 8 páginas con acciones priorizadas"*.
+3. **Sección Fundador (Cara Humana):**
+   - Crearemos un nuevo componente `FounderBio.tsx`.
+   - Se mostrará una foto profesional (usaremos una imagen tuya si me la provees, o un placeholder temporal estructurado) junto con el copy: *"Soy [Nombre], Partner Oficial Kommo desde 2025, y llevo X años en hostelería y tecnología. Mi número directo: [Tu Número]"*.
+   - Lo inyectaremos en la landing, probablemente justo antes de las FAQ.
+
+---
+
+## FASE 2: Exposición del "Producto Oculto" (El Core del SaaS)
+*El reporte indica que el mayor bloqueador es que el cliente no ve el panel interno. Jules ya lo programó, ahora vamos a presumir de él en la landing.*
+
+1. **Inyección de Screenshots del Dashboard (`/dashboard`):**
+   - Modificaremos la sección "Base Operativa" (componentes `TheTrojanHorse.tsx` o `DigitalPresenceValue.tsx`).
+   - Añadiremos **3 capturas de pantalla** espectaculares mostrando la interfaz de Jules:
+     1. El Pipeline en tiempo real.
+     2. El Onboarding Wizard guiado.
+     3. La Biblioteca de Eventos (mostrando el candado persuasivo).
+   - *Nota Técnica:* Generaremos imágenes de la propia interfaz que ya tenemos codificada corriendo en local.
+2. **Activación Visible de la Demo en Vivo:**
+   - Crearemos una sección dedicada (o un CTA flotante) que diga **"Escanea y prueba la experiencia de tu cliente"**.
+   - Incluirá un código QR y un botón directo a `/demo/carta` para que el hostelero pruebe el menú interactivo sin fricción en menos de 30 segundos.
+
+---
+
+## FASE 3: Activación de ARQUI como Trojan Horse de Ventas
+*Convertiremos la landing en un comercial activo.*
+
+1. **Widget de Consultoría Interactiva:**
+   - Integraremos un chatbot flotante en el footer o lateral de la landing page.
+   - Lo nombraremos "Arqui V2 - Consultor Interactivo".
+   - Lo conectaremos al prompt de las "10 Leyes del Cerrador" para cualificar leads en tráfico frío directamente desde la web.
+
+---
+
+## FASE 4: Revisión y Despliegue de los Protocolos de Jules
+*Asegurarnos de que el código de Jules es robusto antes del despliegue final.*
+
+1. Revisión de los flujos de `/dashboard` y `/admin-architect` para confirmar que las rutas no chocan.
+2. Verificación de los botones del "Marketplace Interno" para que envíen el evento o abran WhatsApp correctamente a la agencia.
+3. Validación final del túnel en móvil y escritorio.
+
+---
+
+### ¿Cómo procederemos tras tu aprobación?
+1. Empezaré con la **Fase 1** y te mostraré los cambios visuales de los bonos, FAQ y Fundador.
+2. Luego, capturaré/renderizaré la UI del dashboard de Jules para inyectarlo en la landing (**Fase 2**).
+3. Añadiremos el agente Arqui a la landing (**Fase 3**).
+4. Verificación final y luz verde para lanzar el lunes.
+
+**Espero tu confirmación ("Sí") para comenzar a ejecutar el código.**

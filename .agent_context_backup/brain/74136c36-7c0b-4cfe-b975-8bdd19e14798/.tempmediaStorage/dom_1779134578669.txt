@@ -1,0 +1,179 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DPapas%2BElvira%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Papas+Elvira+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQ2J8OegQIBxAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Papas+Elvira+Granada&sa=X&ved=2ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQtKgLegQIEBAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Papas+Elvira+Granada&sa=X&ved=2ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQs6gLegQIDBAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Papas+Elvira+Granada&sa=X&ved=2ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQtKgLegQIDhAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Papas+Elvira+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQ0pQJegQIDxAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Papas+Elvira+Granada&sa=X&ved=2ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQs6gLegQIDRAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (148,321)<a class='zReHs' href='https://www.facebook.com/papaselvira/?locale=es_ES' />
+	[48] (148,350)<h3 >Papas Elvira | Granada />
+	[49] (145,296)<div  />
+		[50] (145,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (161,296)<div  />
+				[55] (161,282)<div  />
+					[56] (161,282)<span >Facebook · Papas Elvira />
+				[57] (161,312)<div  />
+					[58] (150,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 970 seguidores />
+[59] (236,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[60] (236,310)<span  />
+		[61] (236,312)<span  />
+Prueba la mejor comida casera,
+patatas asadas, pasteles árabes y tartas caseras en Granada
+. Hallal y vegetarianos. ¡Siéntete como en casa a buen precio!
+4.8
+(47)
+[62] (183,467)<div role='button' />
+[63] (206,587)<a class='zReHs' href='https://www.instagram.com/papaselvira9/' />
+	[64] (206,616)<h3 >Papas Elvira (@papaselvira9) · Granada />
+	[65] (146,562)<div  />
+		[66] (146,562)<div  />
+			[67] (81,562)<span  />
+				[68] (81,562)<div  />
+					[69] (81,562)<img  />
+			[70] (161,562)<div  />
+				[71] (161,548)<div  />
+					[72] (161,548)<span >Instagram · papaselvira9 />
+				[73] (161,578)<div  />
+					[74] (153,578)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 1.3 K seguidores />
+[75] (238,576)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[76] (238,576)<span  />
+		[77] (238,578)<span  />
+Comida casera para el día a día con gran variedad vegana y vegetariana
+. Nos encontramos en Calle Elvira n° 9 y en C/ Horno de la Merced 115 GRANADA · Plátano, ...
+[78] (544,617)<a href='https://www.instagram.com/papaselvira9/' />
+	[79] (544,617)<div  />
+		[80] (544,617)<img  />
+[81] (264,853)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d7359770-Reviews-Papas_Elvira-Granada_Province_of_Granada_Andalucia.html' />
+	[82] (264,882)<h3 >PAPAS ELVIRA, Granada - Carta, fotos y opiniones del ... />
+	[83] (205,828)<div  />
+		[84] (205,828)<div  />
+			[85] (81,828)<span  />
+				[86] (81,828)<div  />
+					[87] (81,828)<img  />
+			[88] (220,828)<div  />
+				[89] (220,813)<div  />
+					[90] (220,813)<span >Tripadvisor />
+				[91] (220,844)<div  />
+					[92] (220,844)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[93] (273,843)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[94] (355,842)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[95] (355,842)<span  />
+		[96] (355,844)<span  />
+Papas Elvira
+, ha sido elegido como el mejor restaurante de
+Granada
+por ésta revista coreana. 238.
+[97] (544,883)<a href='https://www.tripadvisor.es/Restaurant_Review-g187441-d7359770-Reviews-Papas_Elvira-Granada_Province_of_Granada_Andalucia.html' />
+	[98] (544,883)<div  />
+		[99] (544,883)<img  />
+4.8
+(576)
+·
+Rango de precios: €
+[100] (293,999)<div role='button' />
+[101] (674,392)<button class='KJY1Gc' />
+	[102] (674,392)<div  />
+		[103] (674,392)<div  />
+			[104] (674,392)<img  />
+		[105] (680,494)<span >Ver fotos />
+[106] (787,392)<a  />
+[107] (823,458)<a href='/local/place/fid/0xd71fcbf36ece4b9:0xdb0340037f5828a/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DifrPFw730ak-1sTeFG0jgQ%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D262.51044%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFmlmclBGdzczMGFrLTFzVGVGRzBqZ1E%3D&sa=X&ved=2ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQpx96BAgcEA8' />
+	[108] (823,458)<div  />
+		[109] (860,458)<img  />
+	[110] (890,495)<span >Ver por fuera />
+Papas Elvira
+4.7
+[111] (754,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=Papas+Elvira+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUpamDjkKIYZHXRbMHPFgrCIb7pUzM342OBAWnstnmSTQWOEuNgkyFR83Zk-uBzRCrBgVtk%3D&uds=ALYpb_lLt3rF4OntvAcKw6YR8l5Vq0mmGm5R70_2eykb6lhKfSGXKJq-7WvnfJN3pvoVQWU2nkdFEj-Cp2vyBBSYTa-ZGrTVQdktj7TfJCwocoq1zGxLDoJzed_dwBBC7EZ6nJI5cTqs&sa=X&ved=2ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQ3PALegQIGhAE'>3,195 opiniones />
+[112] (805,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[113] (805,598)<span  />
+€1-10
+‧
+Restaurante de comida saludable
+[114] (853,604)<div class='mTpL7c' role='button' />
+	[115] (853,604)<span aria-label='Más opciones para Papas Elvira' class='Zj92Hf' role='img' />
+		[116] (851,601)<span  />
+[117] (681,723)<a class='n1obkb mI8Pwc' href='https://www.facebook.com/papaselvira/' />
+	[118] (681,723)<div  />
+		[119] (656,723)<div  />
+		[120] (690,723)<span >Sitio web />
+[121] (777,723)<div  />
+	[122] (745,723)<div  />
+	[123] (786,723)<span >Cómo llegar />
+[124] (876,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOUpamDjkKIYZHXRbMHPFgrACv3OoyPMvjCITYsfYJ5mSL3b7Sn7E9-nGsQOipLEDNhBZXSpv_Jy6yP43R8Qzu4V5VcGQ&q=Papas+Elvira+Opiniones&sa=X&ved=2ahUKEwi7vK3j0MOUAxXsh1YBHYpuB9IQ0bkNegQIMBAH' />
+	[125] (876,723)<div  />
+		[126] (848,723)<div  />
+		[127] (884,723)<span >Opiniones />
+[128] (678,799)<div  />
+	[129] (678,799)<div  />
+		[130] (678,799)<div  />
+			[131] (678,799)<span aria-label='Guardar Papas Elvira en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Papas Elvira en una colección' />
+				[132] (687,799)<span >Guardar />
+[133] (768,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[134] (768,799)<div  />
+		[135] (740,799)<div  />
+		[136] (776,799)<span >Compartir />
+[137] (853,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[138] (853,799)<div  />
+		[139] (834,799)<div  />
+		[140] (862,799)<span >Llamar />
+[141] (672,875)<span  />
+	[142] (672,875)<div id='sXDlyb/g/11bv3xsl0l' role='button' />
+		[143] (672,875)<div  />
+			[144] (656,875)<div  />
+			[145] (680,875)<span >Menú />
+Restaurante modesto, con servicio de barra, especializado en comida tradicional marroquí y pasteles caseros.
+
+</current_dom>

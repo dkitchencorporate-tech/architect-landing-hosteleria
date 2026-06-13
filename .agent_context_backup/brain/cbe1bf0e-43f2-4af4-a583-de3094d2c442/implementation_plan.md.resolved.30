@@ -1,0 +1,50 @@
+# Mapeo y Estrategia de Escabilidad (Objetivo: 2.000€/mes) 🦅
+
+Tienes toda la razón. Dejemos la prospección fría en la calle aparcada y concentrémonos en crear una máquina digital eficiente que, con 150€ de inversión mensual en Ads (5€/día), nos devuelva 2.000€ limpios. Nada de cuentos, solo matemáticas B2B.
+
+El servidor de desarrollo ya está levantado. Puedes verlo en vivo aquí: **http://localhost:3003**
+
+---
+
+## 1. La Matemática para llegar a 2.000€/mes (Con 150€ de Ads)
+Si inviertes 150€ en Ads, conseguirás (siendo muy conservadores en B2B) unas 3 a 5 ventas al mes. 
+Para llegar a 2.000€ con solo 3 o 4 clientes, tu **Ticket Promedio debe ser de ~600€**. 
+Vender 600€ a un negocio que está perdiendo miles en comisiones o por mesas vacías es increíblemente fácil **SI y SOLO SI** le resuelves el problema por completo ("Done for You").
+
+---
+
+## 2. Mapeo Actual de la Web (Lo que tenemos)
+He revisado el servidor local (`localhost:3003`). Esto es lo que está en producción ahora mismo:
+
+| Sección | Estado Actual | Veredicto Consultivo |
+| :--- | :--- | :--- |
+| **Hero (Inicio)** | Mensaje fuerte, CTA lleva directo a WhatsApp. | **Peligro:** Enviar tráfico frío de FB Ads a WhatsApp para venderles algo de 600€ no convierte. El lead se enfría o se asusta. |
+| **Puntos de Dolor** | Textos agresivos (Comisiones, Martes vacíos). | **Excelente:** Dejar intacto. El copy es espectacular. |
+| **Módulos de Solución** | Carta QR, Agente IA, y "Dark Kitchen / App Propia". | **Eliminar "Dark Kitchen":** Es ruido. Prometer una app propia es un suicidio técnico y distrae del producto principal (La IA y las Reservas). |
+| **Prueba Social** | Testimonios con fotos genéricas ("La Cervecería del Puerto"). | **Eliminar/Reemplazar:** El hostelero huele a kilómetros que es falso. Cambiaremos esto por una sección visual que diga "Mira la IA en acción", mostrando capturas reales de los dashboards de Architect.Sys. |
+| **Precios (Pricing)** | 49€/mes o 450€ Vitalicio. | **Suicidio Financiero:** Con esto necesitarías 40 clientes/mes para llegar a tu meta. Hay que pivotar ya. |
+
+---
+
+## 3. La Nueva Estructura (Modo "Done-for-You" B2B)
+
+Para validar la idea y facturar 2.000€ rápidos, aplicaremos estos cambios sin tocar lo que ya funciona:
+
+### A. Los Nuevos Precios (Orientados a los 2.000€)
+- **El Gancho (Opción Descartable):** 149€/mes (Pagan mes a mes, sin compromiso).
+- **El Core (El que queremos vender):** 590€ (Pago Único por el montaje completo de su IA y Carta Premium) + 49€/mes por el servidor de la IA. *Con 3 de estos al mes, tienes 1.770€ en caja directos + 150€ de MRR (Mensual).*
+- **Partner (Agencia Completa):** "Solicitar Presupuesto" (Para cadenas que quieran que les gestiones todo, Ads incluidos).
+
+### B. El Nuevo Embudo (Adiós WhatsApp Frío)
+Cuando inviertes en Ads, no quieres perder el tiempo chateando con quien no tiene dinero.
+1. Hacen clic en el Ad.
+2. Ven la Landing (con el nuevo enfoque de Consultoría Tecnológica).
+3. Hacen clic en "Solicitar Auditoría" o "Ver Demostración".
+4. **Formulario Filtro:** (Ej. *¿Cuál es tu facturación mensual aproximada? ¿Estás dispuesto a invertir para automatizar tu local?*).
+5. **Cierre:** Agendan una llamada de Google Meet contigo de 15 minutos, donde compartes pantalla, les muestras la IA y les cobras los 590€.
+
+## User Review Required
+> [!IMPORTANT]
+> Estamos en Modo Análisis. Revisa este mapeo y la fórmula matemática. Si estamos alineados en que **vender 3 "Setups" de 590€ al mes es tu camino de menor resistencia a los 2.000€**, procederé a reprogramar la Landing Page para reflejar esta estructura y limpiar la grasa.
+> 
+> ¿Validas la estructura matemática y el mapeo de cambios?

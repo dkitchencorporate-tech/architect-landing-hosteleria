@@ -1,0 +1,9 @@
+[0] (500,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	Consultor AI CRM
+	Centro de Comando de Prospección Avanzada
+	[1] (944,132)<button aria-label='Toggle Dark Mode' class='p-2 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors shadow-sm' />
+	Buscando
+	Base de Prospectos
+	Prospección Activa
+	0
+	leads

@@ -1,0 +1,227 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (431,59)<button class='e2moi' />
+		[7] (431,59)<div  />
+			[8] (405,59)<span > />
+			[9] (431,59)<span >Precio />
+			[10] (457,59)<span > />
+	[11] (531,59)<button class='e2moi' />
+		[12] (531,59)<div  />
+			[13] (488,59)<span > />
+			[14] (532,59)<span >Clasificación />
+			[15] (574,59)<span > />
+	[16] (632,59)<button class='e2moi' />
+		[17] (632,59)<div  />
+			[18] (605,59)<span > />
+			[19] (633,59)<span >Cocina />
+			[20] (661,59)<span > />
+	[21] (716,59)<button class='e2moi' />
+		[22] (716,59)<div  />
+			[23] (691,59)<span > />
+			[24] (717,59)<span >Horas />
+			[25] (741,59)<span > />
+	[26] (772,59)<span > />
+	Todos los filtros
+[27] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[28] (827,59)<span > />
+[29] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[30] (28,57)<div  />
+		[31] (28,57)<span > />
+[32] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[33] (28,146)<div  />
+		[34] (28,146)<span > />
+	[35] (28,190)<div  />
+		[36] (28,190)<div >Guardado />
+[37] (28,297)<button class='wR3cXd fontLabelMedium' />
+	[38] (28,272)<div  />
+		[39] (28,272)<span > />
+	[40] (28,329)<div  />
+		[41] (28,329)<div >Recientes />
+[42] (28,476)<button class='xkqFBc  wR3cXd aJPqP fontBodySmall flwnib' />
+	[43] (28,463)<div  />
+		[44] (25,466)<div >2 />
+	[45] (28,508)<div  />
+		[46] (28,511)<div >Granada />
+[47] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[48] (28,892)<div  />
+		[49] (28,892)<span > />
+	[50] (28,943)<div  />
+		[51] (28,943)<div >Obtener app />
+[52] (216,528)<div aria-label='Resultados de taberna Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd QjC7t' role='feed' scrollable='true' />
+	4.5
+	(955)
+	·
+	€10-20
+	Bar de tapas
+	·
+	
+	·
+	Restaurante Pañero, C. San Buenaventura, 20
+	Abierto
+	· Cierra a las 11 p.m.
+	"Estuvimos tomando unas tapas, y todo fenomenal."
+	[53] (213,401)<a aria-label='Taberna El Mentidero' class='hfpxzc' href='https://www.google.com/maps/place/Taberna+El+Mentidero/data=!4m7!3m6!1s0xd71fcbea2691b8b:0x98a387b495ed7023!8m2!3d37.1739033!4d-3.59809!16s%2Fg%2F11bwqg4th3!19sChIJixtpor78cQ0RI3DtlbSHo5g?authuser=0&hl=es-419&rclk=1' />
+	Taberna El Mentidero
+	4.6
+	(1,358)
+	·
+	€20-30
+	Taberna
+	·
+	
+	·
+	C. Piedra Santa, 15
+	Abierto
+	· Cierra a las 12 a.m.
+	"Muy buena comida, buenas tapas, buenas bebidas, y excelente atención."
+	[54] (143,512)<div  />
+		[55] (143,512)<a class='A1zNzb' href='https://www.google.com/maps/reserve/v/dine/c/FAyPU9VWhNA?source=pa&opi=79508299&hl=es-419&gei=LCgCasqfG-edkdUP0pfLoQ0&sourceurl=https://www.google.com/search?tbm%3Dmap%26authuser%3D0%26hl%3Des-419%26gl%3Des%26q%3Dtaberna%2BGranada%26pb%3D!1staberna%2BGranada!4m8!1m3!1d25431.708701495056!2d-3.5985571!3d37.1773363!3m2!1i1024!2i768!4f13.1!7i20!10b1!12m53!1m5!18b1!30b1!31m1!1b1!34e1!2m4!5m1!6e2!20e3!39b1!6m26!49b1!63m0!66b1!74i150000!85b1!91b1!114b1!149b1!206b1!209b1!212b1!216b1!222b1!223b1!232b1!234b1!235b1!239b1!244b1!246b1!250b1!253b1!260b1!266b1!272b1!273b1!10b1!12b1!13b1!14b1!16b1!17m1!3e1!20m3!5e2!6b1!14b1!46m1!1b0!96b1!99b1!19m4!2m3!1i360!2i120!4i8!20m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!22m5!1sLCgCao6pEMSmkdUP2bfdsQI!7e81!14m1!3sLCgCao6pEMSmkdUP2bfdsQI!15i9937!24m107!1m25!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m14!3b1!4b1!5b1!6b1!13b1!14b1!17b1!21b1!22b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!26m4!2m3!1i80!2i92!4i8!30m28!1m6!1m2!1i0!2i0!2m2!1i530!2i768!1m6!1m2!1i974!2i0!2m2!1i1024!2i768!1m6!1m2!1i0!2i0!2m2!1i1024!2i20!1m6!1m2!1i0!2i748!2m2!1i1024!2i768!34m19!2b1!3b1!4b1!6b1!8m6!1b1!3b1!4b1!5b1!6b1!7b1!9b1!12b1!14b1!20b1!23b1!25b1!26b1!31b1!37m1!1e81!42b1!49m10!3b1!6m2!1b1!2b1!7m2!1e3!2b1!8b1!9b1!10e2!50m3!2e2!3m1!3b1!61b1!67m5!7b1!10b1!14b1!15m1!1b0!69i778!77b1' />
+			[56] (143,512)<div >Reservar mesa />
+				[57] (102,512)<span > />
+	[58] (284,512)<div  />
+		[59] (284,512)<a class='A1zNzb' href='https://www.google.com/searchviewer/42?cvd=CLw_EicKJeICIjIgEhkiF9LX29IPEQoNL2cvMTFid3FnNHRoMxgAOgMI8A0%3D&hl=es-419&gl=es&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&utm_source=tactile&gei=LCgCasqfG-edkdUP0pfLoQ0&ei=LCgCasqfG-edkdUP0pfLoQ0&fo_s=OA,SOE&opi=79508299&ebb=1&cs=0&foub=mcpp' />
+			[60] (284,512)<div >Pedir en línea />
+				[61] (247,512)<span > />
+	[62] (213,709)<a aria-label='Taberna Bulanico' class='hfpxzc' href='https://www.google.com/maps/place/Taberna+Bulanico/data=!4m7!3m6!1s0xd71fdb155952703:0x848ebf6914e28642!8m2!3d37.1760949!4d-3.600817!16s%2Fg%2F11tj9s1bxq!19sChIJAyeVVbH9cQ0RQobiFGm_joQ?authuser=0&hl=es-419&rclk=1' />
+	Taberna Bulanico
+	4.9
+	(739)
+	·
+	€10-20
+	Taberna
+	·
+	
+	·
+	Pl. Pescadería, 15
+	Abierto
+	· Cierra a las 11:30 p.m.
+	"Un lugar con encanto para tomar unas tapas y unas buenas raciones."
+	Bodegas Castañeda
+	4.1
+	(10,889)
+	·
+	€10-20
+	Bar de tapas
+	·
+	
+	·
+	C. Almireceros, 1, 3
+	Bar antiguo y acogedor de 1927
+	Abierto
+	· Cierra a las 12:30 a.m.
+[63] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[64] (80,972)<div  />
+		[65] (80,972)<span > />
+Taberna Bulanico
+[66] (684,139)<button aria-label='Cerrar' class='VfPpkd-icon-LgbsSe yHy1rc eT1oJ mN1ivc' />
+	[67] (684,145)<span  />
+[68] (550,532)<div class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ' scrollable='true' />
+	Indicaciones
+	Guardar
+	Cerca
+	Enviar al teléfono
+	Compartir
+	·
+	
+	Consumo en el lugar
+	·
+	
+	Para llevar
+	·
+	
+	Entrega a domicilio
+	
+	[69] (548,275)<button aria-label='Dirección: Pl. Pescadería, 15, Centro, 18001 Granada ' class='CsEnBe' />
+		[70] (548,275)<div  />
+			
+			[71] (566,275)<div  />
+				[72] (566,275)<div >Pl. Pescadería, 15, Centro, 18001 Granada />
+	[73] (678,275)<button aria-label='Copiar la dirección' class='S9kvJb ' />
+		[74] (677,275)<span  />
+			[75] (677,275)<span  />
+	[76] (548,350)<div class='OMl5r hH0dDd ' role='button' />
+		[77] (419,339)<span aria-label='Horario de atención' class='LT79uc google-symbols PHazN' role='img'> />
+		[78] (566,350)<div  />
+			[79] (566,335)<div  />
+				[80] (523,335)<span  />
+					[81] (523,335)<span  />
+						[82] (465,335)<span >Abierto />
+						[83] (542,335)<span >· Cierra a las 11:30 p.m. />
+				[84] (620,335)<span aria-label='Mostrar el horario de atención durante la semana' class='puWIL hKrmvd google-symbols OazX1c' role='img'> />
+			[85] (566,367)<div >Actualizado por este negocio hace 6 semanas />
+	[86] (548,434)<div class='MNVeJb eXOdV eF9eN PnPrlf' role='button'>€10-20
+por persona />
+		€10-20
+		por persona
+		Informado por 391 personas
+	[87] (548,506)<button aria-label='Teléfono: 623 33 75 54 ' class='CsEnBe' />
+		[88] (548,506)<div  />
+			
+			[89] (566,506)<div  />
+				[90] (566,506)<div >623 33 75 54 />
+	[91] (655,506)<button aria-label='Copiar el número de teléfono' class='S9kvJb ' />
+		[92] (653,506)<span  />
+			[93] (653,506)<span  />
+	[94] (678,506)<a aria-label='Llamar al número de teléfono' class='lcr4fd S9kvJb ' href='tel:623337554' />
+		[95] (677,506)<span  />
+			[96] (677,506)<span  />
+	[97] (548,570)<button aria-label='Plus Code: 59GX+CM Granada' class='CsEnBe' />
+		[98] (548,570)<div  />
+			
+			[99] (566,570)<div  />
+				[100] (566,570)<div >59GX+CM Granada />
+	[101] (655,570)<button aria-label='Agrega el Plus Code' class='S9kvJb ' />
+		[102] (653,570)<span  />
+			[103] (653,570)<span  />
+	[104] (678,570)<button aria-label='Obtén más información sobre los Plus Codes' class='S9kvJb ' />
+		[105] (677,570)<span  />
+			[106] (677,570)<span  />
+	Amigable con LGBTQ+
+	Se identifica como mujer empresaria
+	[107] (548,785)<button aria-label='Sugerir una edición' class='S9kvJb ' />
+		[108] (548,785)<span  />
+			[109] (492,785)<span > />
+			[110] (556,785)<span >Sugerir una edición />
+	Agregar la información que falta
+	[111] (679,886)<button aria-label='Más información' class='Dx2c3c' />
+		[112] (679,884)<span > />
+	
+	Agregar sitio web
+[113] (718,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[114] (718,500)<span > />
+[115] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[116] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FTaberna%2BBulanico%2F%4037.1766351%2C-3.6319019%2C14z%2Fdata%3D!4m10!1m2!2m1!1staberna%2BGranada!3m6!1s0xd71fdb155952703%3A0x848ebf6914e28642!8m2!3d37.1760949!4d-3.600817!15sCg90YWJlcm5hIEdyYW5hZGFaESIPdGFiZXJuYSBncmFuYWRhkgEGdGF2ZXJumgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVVJFTlZCTUxUQm5SUkFC4AEA-gEECAAQQg!16s%252Fg%252F11tj9s1bxq%3Fved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[117] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[118] (973,799)<span > />
+[119] (973,871)<div  />
+	[120] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[121] (973,849)<div  />
+	[122] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[123] (973,893)<div  />
+	[124] (973,871)<div  />
+[125] (973,945)<div  />
+	[126] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[127] (973,945)<div  />
+[128] (917,906)<button aria-label='Street View' class='dQDAle' />
+	[129] (917,906)<div  />
+		[130] (917,906)<div  />
+			[131] (917,907)<div  />
+Datos del mapa © 2026 Inst. Geogr. Nacional, Google
+[132] (637,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[133] (683,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[134] (735,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[135] (829,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[136] (945,989)<button class='LNGekf' />
+	[137] (917,989)<label class='U5ELMd'>500 m />
+	[138] (956,989)<div  />
+
+</current_dom>

@@ -1,0 +1,134 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (431,59)<button class='e2moi' />
+		[7] (431,59)<div  />
+			[8] (405,59)<span > />
+			[9] (431,59)<span >Precio />
+			[10] (457,59)<span > />
+	[11] (531,59)<button class='e2moi' />
+		[12] (531,59)<div  />
+			[13] (488,59)<span > />
+			[14] (532,59)<span >Clasificación />
+			[15] (574,59)<span > />
+	[16] (632,59)<button class='e2moi' />
+		[17] (632,59)<div  />
+			[18] (605,59)<span > />
+			[19] (633,59)<span >Cocina />
+			[20] (661,59)<span > />
+	[21] (716,59)<button class='e2moi' />
+		[22] (716,59)<div  />
+			[23] (691,59)<span > />
+			[24] (717,59)<span >Horas />
+			[25] (741,59)<span > />
+	[26] (772,59)<span > />
+	Todos los filtros
+[27] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[28] (827,59)<span > />
+[29] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[30] (28,57)<div  />
+		[31] (28,57)<span > />
+[32] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[33] (28,146)<div  />
+		[34] (28,146)<span > />
+	[35] (28,190)<div  />
+		[36] (28,190)<div >Guardado />
+
+Recientes
+[37] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[38] (28,892)<div  />
+		[39] (28,892)<span > />
+	[40] (28,943)<div  />
+		[41] (28,943)<div >Obtener app />
+[42] (216,528)<div aria-label='Resultados de restaurantes Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd QjC7t' role='feed' scrollable='true' />
+	"- albóndigas de calabaza, muy bien elaboradas, delicadas y exquisitas;"
+	[43] (213,174)<a aria-label='Restaurante Aixa' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Aixa/data=!4m7!3m6!1s0xd71fcc6681feb4d:0x8c18a5452a527409!8m2!3d37.1827247!4d-3.5931643!16s%2Fg%2F1tfm7_qq!19sChIJTesfaMb8cQ0RCXRSKkWlGIw?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Aixa
+	4.4
+	(3,166)
+	·
+	€10-20
+	Restaurante
+	·
+	
+	·
+	Pl. Larga, 5
+	Cerrado
+	· Abre a las 7 a.m. del mié
+	"El pescado a la plancha estaba delicioso, se nota que es pescado fresco."
+	[44] (213,484)<a aria-label='Restaurante Vegano Hicuri' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Vegano+Hicuri/data=!4m7!3m6!1s0xd71fcb969a7633f:0xb34fe2abc4cc6cd!8m2!3d37.1742892!4d-3.5949414!16s%2Fg%2F11bbrswc0_!19sChIJP2Onabn8cQ0RzcZMvCr-NAs?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Vegano Hicuri
+	4.8
+	(3,230)
+	·
+	€10-20
+	Vegetariana estricta
+	·
+	
+	·
+	Plaza de los Girones, 4
+	Platos veganos del mundo en un restaurante retro
+	Abierto
+	· Cierra a las 11 p.m.
+	"Hamburguesa riquisima con un bacon espectacular."
+	[45] (213,834)<a aria-label='Kayù Kitchen Klab' class='hfpxzc' href='https://www.google.com/maps/place/Kay%C3%B9+Kitchen+Klab/data=!4m7!3m6!1s0xd71fd9f6652aa8f:0x4bb3acd06a07d97d!8m2!3d37.1755492!4d-3.5971396!16s%2Fg%2F11rsfc15gc!19sChIJj6pSZp_9cQ0RfdkHatCss0s?authuser=0&hl=es-419&rclk=1' />
+	Kayù Kitchen Klab
+	4.6
+	(1,738)
+	·
+	€20-40
+	Restaurante
+	·
+	
+	·
+	Pl. Isabel la Católica, 5
+	Abierto
+	· Cierra a las 12 a.m.
+	"La comida es deliciosa, con ingredientes de calidad y muy buena atención."
+	
+	Reservar mesa
+[46] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[47] (80,972)<div  />
+		[48] (80,972)<span > />
+[49] (216,886)<button class='e2moi' />
+	[50] (216,886)<div >
+Volver al principio />
+		[51] (216,886)<div  />
+		
+		Volver al principio
+[52] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[53] (384,500)<span > />
+[54] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[55] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2Frestaurantes%2BGranada%2F%4037.1773327%2C-3.5985571%2C14z%2Fdata%3D!4m2!2m1!6e5%3Fved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[56] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[57] (973,799)<span > />
+[58] (973,871)<div  />
+	[59] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[60] (973,849)<div  />
+	[61] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[62] (973,893)<div  />
+	[63] (973,871)<div  />
+[64] (973,945)<div  />
+	[65] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[66] (973,945)<div  />
+
+Capas
+[67] (421,906)<button class='yHc72 qk5Wte' />
+Datos del mapa © 2026 Inst. Geogr. Nacional, Google
+[68] (637,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[69] (683,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[70] (735,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[71] (829,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[72] (945,989)<button class='LNGekf' />
+	[73] (917,989)<label class='U5ELMd'>500 m />
+	[74] (956,989)<div  />
+
+</current_dom>

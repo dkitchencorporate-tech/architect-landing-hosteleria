@@ -1,0 +1,40 @@
+# Reestructuración de Precios: Recepcionista IA
+
+*Respuesta Estratégica a tu visión de retención de clientes*
+
+Entiendo perfectamente tu postura. Prefieres el volumen y la retención a largo plazo (MRR) de clientes felices antes que un sablazo inicial (800€) que genere fricción. Tienes razón: en la hostelería española, superar la barrera de los 500€ de golpe genera dudas. 450€ es el coste de reparar un arcón congelador; el hostelero lo asume sin problema.
+
+Me pides mi opinión técnica de por qué se podría cobrar más:
+*   *El motivo técnico:* Configurar WhatsApp Cloud API (Meta), verificar el negocio del cliente, programar el *prompt* de la IA para que no alucine (ej. que no regale cosas que no existen) y conectarlo a una base de datos, toma horas de ingeniería. 
+*   *La solución operativa:* Si tú logras estandarizar este proceso con plantillas (repos en Vercel) y lo haces en 2 horas, entonces **450€ es un margen de beneficio espectacular**.
+
+Por tanto, me parece perfecto tu enfoque de **Setup 450€ + 69€/mes**. Vamos a estructurarlo de forma "adaptativa" para premiar a los diferentes niveles:
+
+## Estructura Adaptativa del Recepcionista IA
+
+**1. Precio Base del Agente (Independiente)**
+*   Setup: 450€ (Pago Único).
+*   Licencia y Tokens: 69€ / mes.
+
+**2. Si el cliente tiene el "Plan Base" (700€ pago único)**
+*   Como ya es cliente de ecosistema propio, se le mantiene este precio (450€ + 69€/mes). Es justo, transparente y escalable. 
+
+**3. Si el cliente es "Socio Growth" (299€ / mes)**
+*   Aquí es donde aplicamos la psicología adaptativa. Le diremos: *"Como ya eres Socio Growth, el coste mensual de servidores y tokens del Agente IA (69€) está 100% cubierto por tu plan mensual. Solo asumes el Setup técnico de instalación."*
+*   **Oferta final para ellos:** Setup 450€ (pago único) + 0€ extra al mes. Siguen pagando solo sus 299€/mes, pero ahora tienen un ecosistema indestructible. 
+
+---
+
+### Cambios en Código que ejecutaré tras tu OK:
+1.  **Sección 1-2-3:** Eliminaré menciones conflictivas del "Agente" en el paso 2 para que concuerde con que es un servicio *add-on* (módulo extra).
+2.  **Sección High Ticket Ecosystem:** Cambiaré la tarjeta a:
+    *   **Precio:** 450€ Setup Técnico.
+    *   **Mantenimiento:** + 69€/mes (Mantenimiento y Tokens IA).
+    *   **Badge Psicológico:** *"Ventaja Growth: Si eres Socio Growth, el mantenimiento mensual está incluido al 100%."*
+
+> [!IMPORTANT]
+> **Aprobación de la Estructura de 450€ + 69€**
+> 
+> ¿Te parece correcta esta distribución adaptativa? (450€ y 69€, pero regalando el mantenimiento de 69€ a los que ya pagan los 299€/mes del plan Growth para fidelizarlos de por vida). 
+> 
+> Confírmame y paso a programar visualmente estas secciones.

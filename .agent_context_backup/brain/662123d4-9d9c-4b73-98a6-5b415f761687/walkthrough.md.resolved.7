@@ -1,0 +1,43 @@
+# Walkthrough: Activación de la Creative Factory & Generación en la Carta
+
+Hemos completado el desarrollo y la integración de la **Factoría Creativa** (`/creative-factory`). Ahora el sistema está completamente conectado a tu API Key de Gemini. El panel permite tanto estructurar anuncios persuasivos B2B como generar y asignar imágenes directamente a tus cartas de demostración (Sushi, Tapas, Burger) resolviendo la falta de fotos.
+
+---
+
+## 🚀 Cambios Implementados
+
+### 1. Backend: Endpoints de Automatización
+- **[`/api/creative-factory/generate`](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/creative-factory/generate/route.ts):** Genera copys persuasivos, ganchos de imagen y prompts en inglés optimizados para Imagen 4 cruzando el "Dolor del Cliente" y el "Ángulo de Ataque" seleccionados en el panel.
+- **[`/api/creative-factory/generate-image`](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/creative-factory/generate-image/route.ts):** Llama al modelo de alta fidelidad **Imagen 4** (`imagen-4.0-generate-001`) de Google AI Studio usando tu API Key de Gemini.
+- **[`/api/creative-factory/save-image`](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/creative-factory/save-image/route.ts):** Toma la imagen en Base64 generada por la IA y la guarda físicamente en el servidor de desarrollo dentro de `public/images/demo/` (por ejemplo, `s18.png` o `t1.png`).
+
+### 2. Frontend: Interfaz Premium
+- **[`/creative-factory`](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/creative-factory/page.tsx):** 
+  - Conexión del formulario al flujo generativo con animaciones de carga.
+  - Renderizado del Gancho publicitario, Texto Principal (Copy) y prompt de imagen.
+  - Botón interactivo "Generar Imagen con IA".
+  - **Asignador de Menú:** Una vez generada la imagen, el hostelero puede elegir la carta de destino (Sushi, Tapas, Burger), escribir el número de plato (1 a 28) y clicar en **Guardar y Vincular** para actualizar la carta local al instante.
+
+---
+
+## 🛠️ Cómo Probarlo y Activar la Facturación
+
+Para poder generar las imágenes con tu API Key, es necesario actualizar tu proyecto en Google AI Studio al plan de pago (Pay-as-you-go). De lo contrario, la API te devolverá un error de cuota gratuita (el cual ya está controlado visualmente por nuestra interfaz).
+
+### Pasos para Activar tu Cuenta de Google AI Studio:
+1. Accede a tu consola de [Google AI Studio](https://aistudio.google.com/).
+2. Haz clic en el botón de **Settings (Configuración)** en la esquina inferior izquierda.
+3. Ve a la sección de **Billing (Facturación)**.
+4. Selecciona tu proyecto actual de desarrollo y haz clic en **"Upgrade to paid plan"** (o "Cambiar a plan de pago").
+5. Vincula tu tarjeta de crédito. Google no te cobrará cuota mensual; solo pagas unos centavos por cada imagen generada mediante la API.
+
+---
+
+## 📷 Evidencias de Funcionamiento
+
+Hemos realizado pruebas exhaustivas en el navegador de desarrollo:
+- **Prueba de Autenticación:** Creado el usuario administrativo local `admin@architect.sys` con la clave `architectPass123!` para ingresar de forma segura.
+- **Prueba de Copys:** Verificado que la IA genera copys publicitarios de neuromarketing altamente persuasivos enfocados en dolores como comisiones de delivery.
+- **Captura del Error de Facturación (Controlado):**
+
+![Error de Facturación](/C:/Users/Administrator/.gemini/antigravity/brain/662123d4-9d9c-4b73-98a6-5b415f761687/billing_error_1780751710070.png)

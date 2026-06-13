@@ -1,0 +1,48 @@
+# Plan: Corrección de Errores y Enfoque de Ventas del Chat
+
+## Diagnóstico
+He detectado el origen de los tres problemas señalados:
+1. **Solapamiento Exit Intent vs Chat:** Actualmente no "hablan" entre ellos. Si pasa el tiempo, el Exit Intent salta aunque el usuario esté usando el chat.
+2. **Leak de Markdown (````json````):** El backend corta la respuesta de la IA al encontrar una llave `{` (donde empieza el JSON), pero deja la etiqueta markdown ````json```` que Gemini suele poner justo antes.
+3. **Flujo de Conversión (Demo vs Ventas):** El prompt actual le ordena a Arqui "construir una demo" (pedir ubicación, capacidad, etc.). El usuario quiere que Arqui actúe como un vendedor que explique los beneficios y ataque los dolores (cero comisiones, automatización).
+
+---
+
+## User Review Required
+
+> [!IMPORTANT]
+> **Nuevo Enfoque de Conversación (Prompt):**
+> Propongo cambiar la instrucción del agente para que, en cuanto sepa el nombre del dueño y del local, pase al ataque: 
+> *"Actúa como un cerrador de ventas. Una vez sepas el nombre y tipo de negocio, explícale brevemente cómo Architect.Sys le ahorra pagar el 30% a Glovo o ElTenedor automatizando pedidos por WhatsApp y con Carta Digital. Luego, pregúntale cuál es su mayor problema ahora mismo: ¿perder margen, falta de tiempo, o atraer clientes?"*
+> 
+> ¿Te parece correcto este giro hacia la venta consultiva en lugar de solo pedir datos técnicos?
+
+## Proposed Changes
+
+### 1. Sistema Anti-Colisión (Z-Index + Estado Global)
+Usaremos un sistema de eventos del navegador ultraligero para que el Chat le avise al Exit Intent cuándo ocultarse.
+
+#### [MODIFY] [ChatDemoWidget.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ChatDemoWidget.tsx)
+- Disparar el evento `chat_opened` al montar el componente, y `chat_closed` al desmontarlo o cerrarlo.
+
+#### [MODIFY] [ExitIntent.tsx](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ExitIntent.tsx)
+- Escuchar los eventos `chat_opened`/`chat_closed`.
+- Si el chat está abierto, bloquear temporalmente el renderizado del Popup de salida, incluso si salta el temporizador.
+
+### 2. Parche del Parser JSON
+Limpiar la etiqueta de markdown antes de procesar el texto visible para el usuario.
+
+#### [MODIFY] [route.ts](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/demo/respond/route.ts)
+- Aplicar una expresión regular para limpiar la cadena ````json```` del texto visible al usuario antes de enviarlo al frontend.
+
+### 3. Rediseño del Prompt de Ventas
+Modificar la estructura base de `route.ts`.
+
+#### [MODIFY] [route.ts](file:///C:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/demo/respond/route.ts)
+- Reemplazar las instrucciones del modo `CONSULTING` por un enfoque `PITCH`: explicar los beneficios (Sistemas de reservas automatizados sin comisiones) y redirigir hacia el cierre de la auditoría gratuita de 620€ en lugar de hacer una "demo interactiva" pura.
+
+## Verification Plan
+### Manual Verification
+- **Test de Colisión:** Abrir el chat en `localhost:3001` y esperar 45 segundos. Verificar que el Exit Intent no salta molestando. Cerrar el chat, mover el ratón hacia la pestaña y verificar que el Exit Intent entonces sí aparece.
+- **Test de JSON:** Hablar con el bot pasándole el nombre y negocio y verificar que ya no aparece la palabra `json` en pantalla.
+- **Test de Ventas:** Comprobar que el bot ofrece soluciones y beneficios reales en lugar de pedir la ubicación del local.

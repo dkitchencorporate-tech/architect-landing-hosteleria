@@ -1,0 +1,19 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+ROI Medible
+No somos "Community Managers" que suben fotos bonitas. Somos expertos en
+Meta Ads y Tráfico Láser
+para llenar tu local de gente con hambre.
+🎯
+Publicidad Quirúrgica:
+Campañas locales dirigidas a personas a 5km de tu negocio.
+📱
+Micro-Influencers:
+Hacemos que tu comida se vuelva viral en tu ciudad.
+Por solo 400€ / mes
+* El presupuesto para anuncios (gasto publicitario) lo decides y abonas tú directamente a la plataforma (Meta/Facebook).
+[0] (613,767)<a class='inline-flex items-center justify-center gap-3 bg-white text-gray-900 px-6 md:px-8 py-4 rounded-full font-bold shadow-[0_0_15px_rgba(255,69,0,0.4)] ring-4 ring-[#FF4500]/50 animate-pulse hover:bg-gray-200 hover:-translate-y-1 transition-all whitespace-nowrap text-center' href='https://wa.me/34611499674?text=Hola,%20quiero%20llenar%20mi%20local%20con%20campañas%20de%20Ads%20por%20400€.'>Activar mi publicidad />
+
+</current_dom>

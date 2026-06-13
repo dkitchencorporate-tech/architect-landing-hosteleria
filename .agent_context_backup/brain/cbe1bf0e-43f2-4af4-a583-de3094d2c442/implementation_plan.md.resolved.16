@@ -1,0 +1,28 @@
+# Plan: Psicología de Ventas B2B Avanzada y Scroll Definitivo
+
+## Diagnóstico y Comprensión
+He leído tu test y tienes toda la razón. Ha pasado de ser "demasiado alegre" a ser un robot corporativo frío que lanza viñetas (bullet points) como si fuera un formulario automático. Además, usar la palabra "regalamos" huele a telemarketing barato; en B2B no se regala, se **"bonifica"** o se **"incluye como inversión estratégica"**.
+
+Por otro lado, el scroll sigue rebelde porque el cálculo matemático de React se está ejecutando milisegundos antes de que el texto termine de renderizarse en pantalla.
+
+---
+
+## Cambios Propuestos
+
+### 1. Psicología B2B del Agente (route.ts)
+Voy a reescribir el "Cerebro" de Arqui basándome puramente en metodologías de ventas High Ticket (como SPIN Selling o Venta Consultiva B2B).
+*   **Prohibición de Viñetas/Listas:** Le prohibiré estrictamente vomitar 3 preguntas de golpe en formato lista. Debe hacer **SOLO UNA** pregunta a la vez, de forma conversacional ("tipo chat").
+*   **Eliminación de la Teletienda:** Prohibiré la palabra "regalo". El Pack de 620€ se presentará como: *"Si decidimos avanzar hoy, bonificamos el 100% de la Auditoría y Diseño Estratégico (valorado en 620€) para acelerar tu implantación"*.
+*   **Empatía Táctica:** Se le instruirá para que hable de tú a tú, como un socio de negocio a negocio. Debe usar las respuestas del cliente para hacer preguntas más profundas sobre sus dolores ("Si todo es por teléfono, ¿cuántas reservas calculas que perdéis los fines de semana cuando la sala está llena?").
+*   **El Enlace Markdown:** Forzaré que el agente incluya el link de WhatsApp `[Agendar Consultoría Estratégica]` en lugar de solo hacer la pregunta vacía.
+
+### 2. El Scroll Infalible (ChatDemoWidget.tsx)
+La técnica de calcular la altura (`offsetTop`) está fallando por los tiempos de renderizado de ReactMarkdown.
+*   **Solución:** Inyectaré una referencia (Ref) específica **solo al último mensaje** del array. En cuanto ese mensaje aparezca en el DOM, usaré una función nativa que anclará la parte superior (`top`) de esa burbuja exacta a la pantalla. Así es imposible que falle, independientemente de lo alto que sea el mensaje.
+
+## Solicitud de Aprobación
+
+> [!IMPORTANT]
+> **Revisión del Usuario:**
+> Esta vez voy a quitarle todas las "reglas corporativas" al prompt para que hable como un auténtico Consultor B2B (de humano a humano, haciendo preguntas dolorosas y aportando valor estratégico real sin parecer un guion). 
+> ¿Te parece correcto el enfoque de eliminar la palabra "regalo" y forzarle a que no haga listas de preguntas? Si me das luz verde, aplico esta psicología al núcleo del agente.

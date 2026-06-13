@@ -1,0 +1,44 @@
+# Plan de Implementación: Hub de Auto-Promoción B2B de Architect.Sys
+
+El objetivo es añadir una sección independiente e integrada en la Sala de Control llamada **"Promoción Architect.Sys"**. Este módulo permitirá a la propia agencia generar ganchos de venta, copys publicitarios e ideas para carruseles de Instagram/LinkedIn alimentándose directamente de toda nuestra oferta de servicios B2B (Pago Único, Socio Growth y Agente Autónomo IA).
+
+---
+
+## Proposed Changes
+
+### Backend: API de Auto-Promoción
+
+#### [NEW] [route.ts](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/api/creative-factory/architect-promo/route.ts)
+Crear un endpoint que reciba el objetivo de la campaña y el formato (Estático o Carrusel) y devuelva una respuesta estructurada generada con Gemini.
+- **Base de conocimiento integrada**: Se inyectará en el system prompt la descripción exacta de los servicios de Architect.Sys:
+  - *Infraestructura Base (Pago Único)*: Carta digital, propiedad del host, configuración base.
+  - *Socio Growth (Suscripción)*: Biblioteca de eventos de afluencia mensual, informes y consultoría senior.
+  - *Agente Autónomo IA (Arqui V2)*: WhatsApp Sales Closer integrado con memoria persistente y derivación humana.
+- **Estructura del Output**:
+  - Para Post Estático: `{ type: 'static', hook: '...', body: '...', imagePrompt: '...' }`
+  - Para Carrusel: `{ type: 'carousel', hook: '...', slides: [{ slideNumber: 1, hook: '...', description: '...', imagePrompt: '...' }] }`
+
+---
+
+### Frontend: Panel de Control
+
+#### [MODIFY] [page.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/creative-factory/page.tsx)
+- Agregar el botón de la pestaña `✨ Promoción Architect.Sys` en la barra lateral del Vault de Control.
+- Diseñar la vista de la sección:
+  - **Selector de Objetivo de Tráfico**:
+    1. *Dolor de Comisiones de Delivery (Captar hosteleros quemados)*.
+    2. *Vender el Up-sell de Eventos Físicos (Convertir plan Base a Socio Growth)*.
+    3. *Promocionar el WhatsApp Closer (Arqui V2)*.
+  - **Selector de Formato**: Estático / Carrusel de 5 diapositivas.
+  - **Visualizador de Carrusel Dinámico**: Un contenedor interactivo que permita pasar las diapositivas del carrusel generado (Diapo 1 a 5) mostrando en cada una el diseño visual recomendado, el texto corto y la posibilidad de copiar el prompt o diseñar la foto para esa slide específica.
+  - Integrar con el generador de imágenes (Imagen 4) y guardar la persistencia local de la campaña autopromocional generada.
+
+---
+
+## Verification Plan
+
+### Automated Tests
+- Ejecutar compilación limpia: `npx tsc --noEmit`.
+
+### Manual Verification
+- Utilizar el navegador automatizado para abrir la Sala de Control, ingresar a `✨ Promoción Architect.Sys`, generar un carrusel publicitario de 5 diapositivas para promocionar el "WhatsApp Closer Autónomo" y validar que se visualice correctamente de forma secuencial.

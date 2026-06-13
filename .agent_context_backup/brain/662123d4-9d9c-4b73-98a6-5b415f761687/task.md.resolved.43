@@ -1,0 +1,14 @@
+# Task Tracker: Generación de Identidad y Ajuste de Copy
+
+## Fase 1: Generación de Imágenes IA
+- `[/]` Generar avatar de Arqui: camarero humanoide, amigable, moderno y tecnológico (`arqui_humanoid_waiter`).
+- `[ ]` Generar imagen premium para el fundador Alex (`founder_premium_profile`).
+
+## Fase 2: Implementación de Código y Copy
+- `[ ]` Mover imágenes generadas a `public/images/`.
+- `[ ]` Modificar `MeetArquiSection.tsx`: Reemplazar ícono SVG por la imagen de Arqui y cambiar el copy de "High-Ticket/Ventas" a "Dolores de Hostelería".
+- `[ ]` Modificar `ChatDemoWidget.tsx`: Reemplazar ícono por la nueva miniatura de Arqui.
+- `[ ]` Modificar `FounderBio.tsx`: Reemplazar el logo 'A' genérico por la nueva imagen premium generada.
+
+## Fase 3: Despliegue
+- `[ ]` `vercel --prod` para subir a producción.

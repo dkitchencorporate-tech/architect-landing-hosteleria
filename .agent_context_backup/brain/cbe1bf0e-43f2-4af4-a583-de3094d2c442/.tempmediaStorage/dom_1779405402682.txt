@@ -1,0 +1,32 @@
+Architect
+.Sys
+Suscripciones
+Eventos
+Automatización
+Dark Kitchen
+Auditoría Gratuita
+Ver Sistema Base
+Auditoría Gratuita
++50 Hosteleros locales
+ya han bajado sus tiempos de espera.
+¿Te suena familiar esta
+pesadilla?
+📉
+El Martes Vacío
+👻
+El Teléfono Fantasma
+🛵
+El Peaje de Glovo
+[0] (878,919)<button class='pointer-events-auto relative flex items-center gap-3 rounded-full bg-[#050505] shadow-[0_0_30px_rgba(255,69,0,0.4)] hover:shadow-[0_0_50px_rgba(255,69,0,0.8)] px-5 py-3 md:px-6 md:py-4 border border-white/10 hover:bg-[#111] transition-all hover:-translate-y-2 animate-[bounce_4s_infinite]' title='Iniciar Consultoría Interactiva' />
+	[1] (799,919)<span  />
+		[2] (799,919)<span  />
+	[3] (888,919)<span >Consultoría Interactiva />
+A.
+Asistente Arqui
+Consultoría Interactiva
+[4] (766,159)<button class='w-10 h-10 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-400 hover:text-gray-900 transition-colors' />
+Hola, soy Arqui 🤖, Consultor Estratégico de Digitalización en Architect.Sys. Ayudamos a negocios de hostelería a escalar sus ventas, automatizar su operativa y ser 100% independientes de plataformas de terceros. Para poder darte una asesoría precisa, ¿qué tipo de negocio gestionas?
+[5] (286,820)<button class='bg-orange-50 hover:bg-[#FF4500] text-orange-600 hover:text-white border border-orange-200 transition-colors font-bold rounded-xl py-3 px-2 text-sm shadow-sm'>Restaurante />
+[6] (429,820)<button class='bg-orange-50 hover:bg-[#FF4500] text-orange-600 hover:text-white border border-orange-200 transition-colors font-bold rounded-xl py-3 px-2 text-sm shadow-sm'>Dark Kitchen />
+[7] (571,820)<button class='bg-orange-50 hover:bg-[#FF4500] text-orange-600 hover:text-white border border-orange-200 transition-colors font-bold rounded-xl py-3 px-2 text-sm shadow-sm'>Bar / Copas />
+[8] (714,820)<button class='bg-orange-50 hover:bg-[#FF4500] text-orange-600 hover:text-white border border-orange-200 transition-colors font-bold rounded-xl py-3 px-2 text-sm shadow-sm'>Hotel />

@@ -1,0 +1,7 @@
+# Checklist de Implementación: Creative Factory & Imagen 3
+
+- [ ] Crear API Route `/api/creative-factory/generate` para generación de copys e instrucciones de imagen
+- [ ] Crear API Route `/api/creative-factory/generate-image` para invocar Imagen 3 con la API Key del usuario
+- [ ] Crear API Route `/api/creative-factory/save-image` para persistir la imagen en `public/images/demo/`
+- [ ] Modificar `src/app/creative-factory/page.tsx` para integrar las llamadas del frontend, animaciones de carga y el selector para guardar y asignar imágenes a los platos faltantes
+- [ ] Validar flujos de generación y comprobar el guardado físico de archivos

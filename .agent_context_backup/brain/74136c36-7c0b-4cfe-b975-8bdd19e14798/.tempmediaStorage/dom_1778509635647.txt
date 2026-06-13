@@ -1,0 +1,47 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (500,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	Consultor AI CRM
+	Centro de Comando de Prospección Avanzada
+	[1] (944,132)<button aria-label='Toggle Dark Mode' class='p-2 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors shadow-sm' />
+	[2] (408,315)<input class='w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 shadow-inner rounded-lg p-3 text-lg text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100' placeholder='Buscar leads en una zona (ej: Madrid Centro)...' />
+	Prospectar
+	[3] (729,315)<button class='bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-400 dark:hover:bg-red-900/50 shadow-sm font-medium px-4 py-3 rounded-lg transition-all flex items-center justify-center ml-2 hover:scale-105' title='Vaciar Base de Datos' />
+	Base de Prospectos
+	9
+	leads
+	El Nacional Barcelona
+	3
+	/10
+	EVALUATED
+	[4] (280,730)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[5] (305,730)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	elnacionalbcn.com/
+	Sin teléfono
+	Sin email
+	Menú en PDF para cada uno de los establecimientos internos, lo que fragmenta la experiencia del usuario y ralentiza la consulta.
+	La Selva Barcelona | Còrsega
+	3
+	/10
+	EVALUATED
+	[6] (594,730)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[7] (619,730)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	laselvabarcelona.es/
+	Sin teléfono
+	hola@laselvabarcelona.es
+	Carta actual en formato PDF o imagen no optimizada para dispositivos móviles
+	La Lolita Barcelona
+	7
+	/10
+	DRAFT_READY
+	[8] (908,730)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[9] (933,730)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	lalolitarestaurante.com/
+	Sin teléfono
+	hola@lalolitarestaurante.com
+	Carta en formato PDF o imagen, dificultando la interacción y carga móvil.
+	Potencial dependencia de plataformas externas para la gestión de reservas, limitando el control directo.
+
+</current_dom>

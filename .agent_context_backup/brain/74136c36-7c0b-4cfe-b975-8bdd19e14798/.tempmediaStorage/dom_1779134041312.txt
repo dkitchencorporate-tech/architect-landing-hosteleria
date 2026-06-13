@@ -1,0 +1,167 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DLa%2BTrastienda%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=La+Trastienda+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQ2J8OegQICRAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=La+Trastienda+Granada&sa=X&ved=2ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQtKgLegQIExAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=La+Trastienda+Granada&sa=X&ved=2ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQs6gLegQIEhAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=La+Trastienda+Granada&sa=X&ved=2ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQtKgLegQIERAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=La+Trastienda+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQ0pQJegQIEBAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=La+Trastienda+Granada&sa=X&ved=2ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQs6gLegQIDxAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+Resultado web con vínculos a sitio
+[47] (145,321)<a class='zReHs' href='https://latrastienda1836.com/' />
+	[48] (134,350)<h3 >La Trastienda 1836 />
+	[49] (145,296)<div  />
+		[50] (145,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (160,296)<div  />
+				[55] (160,282)<div  />
+					[56] (160,282)<span >La Trastienda 1836 />
+				[57] (160,312)<div  />
+					[58] (160,312)<cite class='tjvcx GvPZzd cHaqb' role='text'>https://latrastienda1836.com />
+[59] (235,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[60] (235,310)<span  />
+		[61] (235,312)<span  />
+Experimenta la auténtica
+Granada
+mientras disfrutas de nuestra cocina fría, diseñada para calmar el estómago y refrescar el espíritu. Descubre la magia de ...
+[62] (114,517)<a class='l' href='https://latrastienda1836.com/producto/reservas'>Reservas />
+	[63] (561,532)<span  />
+		[64] (561,531)<div  />
+de Cuchilleros, 11, Centro, 18009 Granada. CONTACTO. Plaza de ...
+[65] (187,625)<a class='Gwptse fl' href='/search?q=La+Trastienda+Granada+site:latrastienda1836.com&sca_esv=53e99bddec16fb1e&sa=X&ved=2ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQrAN6BAg8EAE'>Más resultados de latrastienda1836.com » />
+[66] (221,747)<a class='zReHs' href='https://www.instagram.com/latrastienda1836/' />
+	[67] (221,776)<h3 >La Trastienda Gourmet (@latrastienda1836) />
+	[68] (155,722)<div  />
+		[69] (155,722)<div  />
+			[70] (81,722)<span  />
+				[71] (81,722)<div  />
+					[72] (81,722)<img  />
+			[73] (171,722)<div  />
+				[74] (171,707)<div  />
+					[75] (171,707)<span >Instagram · latrastienda1836 />
+				[76] (171,737)<div  />
+					[77] (153,737)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 4.2 K seguidores />
+[78] (256,736)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[79] (256,736)<span  />
+		[80] (256,737)<span  />
+☀️ Solete Repsol El sabor de lo tradicional no es un secreto ⌛️Desde 1836.
+Charcutería y restaurante
+· Hay días que solo necesitan una copa de vino y buena ...
+[81] (270,978)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d4830166-Reviews-La_Trastienda-Granada_Province_of_Granada_Andalucia.html'>LA TRASTIENDA, Granada - Carta, fotos y opiniones del ... />
+	LA TRASTIENDA, Granada - Carta, fotos y opiniones del ...
+	[82] (205,953)<div  />
+		[83] (205,953)<div  />
+			[84] (81,953)<span  />
+				[85] (81,953)<div  />
+					[86] (81,953)<img  />
+			[87] (220,953)<div  />
+				[88] (220,938)<div  />
+					[89] (220,938)<span >Tripadvisor />
+				[90] (220,968)<div  />
+					[91] (220,968)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[92] (273,968)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[93] (355,967)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[94] (355,967)<span  />
+		[95] (355,968)<span  />
+[96] (712,392)<button class='KJY1Gc' />
+	[97] (711,392)<div  />
+		[98] (711,392)<div  />
+			[99] (728,392)<img  />
+		[100] (755,494)<span >Ver fotos />
+[101] (841,392)<a  />
+La Trastienda
+4.5
+[102] (754,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=La+Trastienda+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOXzXEkyG7WeDeGi4cLfNvULAJCwmpcDC3ykhz_1ti85Xs2XuDQsFlHOJ0oLYG8YBhD7DIrg%3D&uds=ALYpb_lx5Hup9BUa31h6AkHudUb24UWH7C_MKbxZ0TVrJeBmwFcgXbZQovsh4WE7stLTDJ7JhAG5-alErvJNxDXKqasnvFISDJW6Ey34BSntsWWMGM2_ra-4u2pQIzk8iEkq9lADhNAU&sa=X&ved=2ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQ3PALegQIGRAE'>1,219 opiniones />
+[103] (805,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[104] (805,598)<span  />
+€10-20
+‧
+Bar de tapas
+[105] (825,604)<div class='mTpL7c' role='button' />
+	[106] (825,604)<span aria-label='Más opciones para La Trastienda' class='Zj92Hf' role='img' />
+		[107] (823,601)<span  />
+[108] (681,723)<a class='n1obkb mI8Pwc' href='http://latrastienda1836.com/' />
+	[109] (681,723)<div  />
+		[110] (656,723)<div  />
+		[111] (690,723)<span >Sitio web />
+[112] (777,723)<div  />
+	[113] (745,723)<div  />
+	[114] (786,723)<span >Cómo llegar />
+[115] (876,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOXzXEkyG7WeDeGi4cLfNvUJkJMWERBo7D7kw862gr_xR3vZuCvzNZZdcR0kEanDdTsYwNuATDAI-JxmdqZzokjFz9kCE&q=La+Trastienda+Opiniones&sa=X&ved=2ahUKEwi73uDhzsOUAxWNdvUHHZLTJxkQ0bkNegQIKRAH' />
+	[116] (876,723)<div  />
+		[117] (848,723)<div  />
+		[118] (884,723)<span >Opiniones />
+[119] (678,799)<div  />
+	[120] (678,799)<div  />
+		[121] (678,799)<div  />
+			[122] (678,799)<span aria-label='Guardar La Trastienda en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar La Trastienda en una colección' />
+				[123] (687,799)<span >Guardar />
+[124] (768,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[125] (768,799)<div  />
+		[126] (740,799)<div  />
+		[127] (776,799)<span >Compartir />
+[128] (853,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[129] (853,799)<div  />
+		[130] (834,799)<div  />
+		[131] (862,799)<span >Llamar />
+[132] (672,875)<span  />
+	[133] (672,875)<div id='sXDlyb/g/11bt_kh155' role='button' />
+		[134] (672,875)<div  />
+			[135] (656,875)<div  />
+			[136] (680,875)<span >Menú />
+[137] (779,954)<a class='K9ZSQ' href='https://www.google.com/maps/reserve/v/dine/c/y3FwNFQilaQ?source=pa&opi=89978449&hl=es-419&gei=U24LavvoOI3t1e8PkqefyQE&sourceurl=https://www.google.com/search?q%3DLa%2BTrastienda%2BGranada' />
+	[138] (779,954)<div  />
+		[139] (740,954)<div  />
+		[140] (788,954)<span >Reservar mesa />
+
+</current_dom>

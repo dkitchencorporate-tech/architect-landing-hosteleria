@@ -1,0 +1,58 @@
+# Plan de Choque Multi-Agencia V2: Rigor Fundador
+
+Tienes toda la razón. He analizado el repositorio de forma superficial en mi primera iteración y asumí errores de principiante en lugar de mirar los detalles. Pido disculpas y acepto el *feedback*. Como Senior responsable de esta operación, aquí tienes el análisis milimétrico y la estrategia sin complacencias.
+
+---
+
+## 🚨 1. Auditoría Técnica Profunda (¿Por qué las IAs no ven tu web?)
+
+Has comprado el dominio en Arsys (`hosteleria.architectsys.com`) y lo has enlazado a Vercel. El dominio funciona perfectamente (puedo leer el código fuente HTML). Sin embargo, Gemini y Claude te rebotan. ¿Por qué?
+
+1. **Ausencia de Directrices (Código 404 en robots):** No tienes un archivo `robots.txt` ni `sitemap.xml` en la raíz. Las IAs (especialmente los LLMs comerciales) tienen protocolos éticos estrictos: si van a `hosteleria.architectsys.com/robots.txt` y reciben un error 404, **abortan el scrapeo** por precaución, asumiendo que no tienen permiso.
+2. **Vercel Bot Protection (WAF):** Vercel bloquea agresivamente el tráfico de centros de datos (como los que usan las IAs para navegar) si no se declaran explícitamente como bots legítimos en un `robots.txt`.
+3. **El Archivo `AGENTS.md` lo advierte (Línea 18):** Tu propio repo dice que si "Deployment Protection" está habilitado, los agentes necesitan un *bypass secret*. Si tienes *Vercel Protection* activado en producción para bloquear crawlers que no sean Google, las IAs chocarán contra un muro.
+
+**La Solución Técnica Inmediata:**
+Voy a crear los archivos `src/app/robots.ts` y `src/app/sitemap.ts` nativos de Next.js. Esto inyectará el permiso explícito (Allow: /) para todos los *User-Agents*, obligando a cualquier IA y motor de búsqueda a indexarte.
+
+---
+
+## 🔍 2. Auditoría del Embudo (El Fallo de la Landing)
+
+Me criticaste con razón por omitir el servicio de **250€ (Carta Interactiva)**. Tienes una escalera de valor clara:
+- Nivel 1: Carta Interactiva (250€ - Baja barrera, genera confianza).
+- Nivel 2: Recepcionista IA (650€ + 49€/mes - Alto valor).
+
+**El Error de Diseño (UI Designer / UX Architect):**
+Tu Hero Section (la primera pantalla) le está vendiendo al cliente el sistema de 650€ (*"Instalamos un recepcionista virtual en tu WhatsApp"*). Estás disparando la bala más pesada al cliente más frío. El servicio de 250€ está enterrado en la "Sección 6" al final de la página. 
+El hostelero lee la primera pantalla, asume que es carísimo, y se va (por eso el `ExitIntent.tsx` intenta retenerlo con 50€).
+
+**La Solución de Producto:**
+La landing debe pivotar. El gancho de entrada debe ser el dolor inmediato (colas, camareros estresados tomando nota) y la solución de baja fricción (Carta Interactiva de 250€ o la demostración del bot). El sistema de 650€ debe ser el *Upsell* una vez que confían en ti.
+
+---
+
+## ⚔️ 3. Plan de Prospección basado en Eventos (Outbound Strategist)
+
+Mencionaste el uso de **eventos específicos antes de vender**. Esto cambia todo el juego (y es la estrategia correcta). No vamos a vender "páginas web", vamos a vender "soluciones a problemas" a través de un micro-evento.
+
+**La Estrategia del Evento:**
+1. **El Evento:** "Auditoría de Fuga de Capitales en Hostelería (Granada)". Un evento digital (un live de 20 min) o presencial hiper-reducido para 5 dueños de restaurantes.
+2. **El Gancho (Lead Magnet):** *"Te muestro exactamente dónde estás perdiendo el 15% de tu facturación cada fin de semana por culpa del papel y el teléfono, y cómo tapar ese agujero por menos de lo que cuesta el menú del día."*
+3. **El Cierre en el Evento:** Al final del evento, la venta no es el sistema de 650€. La venta es la Carta Interactiva de 250€ (tu producto de confianza).
+
+---
+
+## 🛠️ Ejecución (Lo que haré inmediatamente si apruebas)
+
+Activando la Multi-Agencia, ejecutaré esto en los próximos 10 minutos:
+
+1. **[SEO Specialist]** 
+   - [NEW] Crear `src/app/robots.ts` (Forzar rastreo de IAs y Google).
+   - [NEW] Crear `src/app/sitemap.ts` (Estructura para indexación rápida).
+2. **[Frontend Developer]** 
+   - [MODIFY] `src/app/page.tsx`: Invertir el peso del copy. Promocionar agresivamente el "Evento / Demo" en el Hero, y hacer que el servicio de 250€ sea el camino natural de entrada.
+3. **[Outbound Strategist]** 
+   - [NEW] Crear `PROSPECTING_FUNNEL.md` en el root del repo: Contendrá el guion exacto de 3 mensajes para invitar a los hosteleros al Evento sin sonar como un vendedor de humo, basándonos en tu lista de Granada.
+
+¿Apruebas este nivel de análisis y este plan de ejecución para que modifique el código fuente ahora mismo?

@@ -1,0 +1,153 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Lun a Dom: 13:30 - 16:00 / 19:30 - 23:30
+☎️ 958264576 Just Eat Glovo Uber Eats To Good to Go Menú y ofertas en Destacados   · Desde la Pizzeria Bella ...
+[0] (269,185)<a class='zReHs' href='https://www.ubereats.com/es/store/pizzeria-bella-ciao/E_bDYYXNTF-ruOwqTB1ZOA?srsltid=AfmBOooOG7j8RuU29TiDTcbdX2eVtmEcb4rd7TllmVnPxfI_avP5iy00' />
+	[1] (269,215)<h3 >Pizzería Bella Ciao menú y precios - Pide a domicilio en ... />
+	[2] (190,160)<div  />
+		[3] (190,160)<div  />
+			[4] (81,160)<span  />
+				[5] (81,160)<div  />
+					[6] (81,160)<img  />
+			[7] (206,160)<div  />
+				[8] (206,146)<div  />
+					[9] (206,146)<span >Uber Eats />
+				[10] (206,176)<div  />
+					[11] (206,176)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.ubereats.com />
+						[12] (259,175)<span class='ylgVCe ob9lvb' role='text'>› ... › Granada › Albaicín />
+[13] (327,174)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[14] (327,174)<span  />
+		[15] (327,176)<span  />
+Pizzería Bella Ciao
+es una
+pizzería
+ubicada en el pintoresco barrio granadino del Albaicín, conocida por sus especialidades en
+pizzas
+.
+4.5
+(500)
+·
+Rango de precios: $
+[16] (293,331)<div role='button' />
+[17] (271,451)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d8852755-Reviews-Pizzeria_Bella_Ciao-Granada_Province_of_Granada_Andalucia.html' />
+	[18] (271,481)<h3 >PIZZERÍA BELLA CIAO, Granada - Carta, fotos y opiniones />
+	[19] (205,426)<div  />
+		[20] (205,426)<div  />
+			[21] (81,426)<span  />
+				[22] (81,426)<div  />
+					[23] (81,426)<img  />
+			[24] (220,426)<div  />
+				[25] (220,412)<div  />
+					[26] (220,412)<span >Tripadvisor />
+				[27] (220,442)<div  />
+					[28] (220,442)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[29] (273,441)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[30] (355,440)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[31] (355,440)<span  />
+		[32] (355,442)<span  />
+Pizzeria para recoger y para llevar con reparto a domicilio
+, massa artesana y ingredientes frescos. Amplia variedad en pizza y complementos!! Pufo estilo ...
+4.8
+(243)
+·
+Rango de precios: €
+[33] (293,597)<div role='button' />
+[34] (216,713)<a class='zReHs' href='https://glovoapp.com/es/es/granada/stores/pizzeria-bella-ciao-granada' />
+	[35] (216,747)<h3 >Pizzería Bella Ciao a domicilio en Granada />
+	[36] (204,692)<div  />
+		[37] (204,692)<div  />
+			[38] (81,692)<span  />
+				[39] (81,692)<div  />
+					[40] (81,692)<img  />
+			[41] (220,692)<div  />
+				[42] (220,678)<div  />
+					[43] (220,678)<span >Glovo />
+				[44] (220,708)<div  />
+					[45] (220,708)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://glovoapp.com />
+						[46] (263,707)<span class='ylgVCe ob9lvb' role='text'>› granada › stores › pizzeria-bella-... />
+[47] (356,706)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[48] (356,706)<span  />
+		[49] (356,708)<span  />
+Necesitas pedir algo de
+Pizzería Bella Ciao
+en
+Granada
+? Utiliza Glovo y recibirás tu pedido en casa de forma fácil y rápida. Pide online con Glovo ahora.
+[50] (168,948)<a class='zReHs' href='https://www.facebook.com/pizzeriabellaciao.grx/?locale=es_ES' />
+	[51] (168,978)<h3 >Pizzeria BellaCiao | Granada />
+	[52] (159,923)<div  />
+		[53] (159,923)<div  />
+			[54] (81,923)<span  />
+				[55] (81,923)<div  />
+					[56] (81,923)<img  />
+			[57] (174,923)<div  />
+				[58] (174,909)<div  />
+					[59] (174,909)<span >Facebook · Pizzeria BellaCiao />
+				[60] (174,939)<div  />
+					[61] (153,939)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 2.1 K seguidores />
+[62] (264,937)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[63] (264,937)<span  />
+		[64] (264,939)<span  />
+€1-10
+‧
+Pizzería
+Cómo llegar
+Opiniones
+Guardar
+[65] (684,166)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[66] (684,166)<div  />
+		[67] (656,166)<div  />
+		[68] (692,166)<span >Compartir />
+[69] (769,166)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[70] (769,166)<div  />
+		[71] (750,166)<div  />
+		[72] (778,166)<span >Llamar />
+[73] (843,166)<span  />
+	[74] (843,166)<div id='sXDlyb/g/11bxfzj6ff' role='button' />
+		[75] (843,166)<div  />
+			[76] (827,166)<div  />
+			[77] (851,166)<span >Menú />
+[78] (707,245)<div class='K9ZSQ' id='pYQAIb/g/11bxfzj6ff' role='button' />
+	[79] (707,245)<div  />
+		[80] (663,245)<div  />
+		[81] (715,245)<span >Pedir para llevar />
+[82] (852,245)<div class='K9ZSQ' id='pYQAIb/g/11bxfzj6ff' role='button' />
+	[83] (852,245)<div  />
+		[84] (808,245)<div  />
+		[85] (861,245)<span >Pedir a domicilio />
+Pizzas especiales y calzones en una pizzería sencilla con una pequeña barra para sentarse.
+Opciones de servicio:
+No se aceptan reservas
+· Platos vegetarianos
+· Wi-Fi
+[86] (664,549)<a class='fl' href='/search?sca_esv=53e99bddec16fb1e&q=pizzeria+bella+ciao+direcci%C3%B3n&ludocid=10484685127868872003&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQ6BN6BAgsEAI'>Dirección />
+:
+[87] (774,566)<a href='/maps/place//data=!4m2!3m1!1s0xd71fc9698eaffbd:0x91811592d471f543?sa=X&ved=1t:8290&ictx=111' />
+	[88] (774,566)<span >C. Músico Vicente Zarzo, 1, Local 3 Local 3, Ronda, 18002 Granada />
+Teléfono
+:
+[89] (722,631)<a href='#' />
+	[90] (722,631)<span >958 26 45 76 />
+[91] (658,678)<a class='fl' href='/search?sca_esv=53e99bddec16fb1e&q=pizzeria+bella+ciao+horario&ludocid=10484685127868872003&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQ6BN6BAgoEAI'>Horario />
+:
+[92] (765,678)<div class='b2JWxc h-n' role='button' />
+	Abierto
+	· Cierra a las 11:30 p.m.
+[93] (686,733)<a href='#' role='button'>Sugerir una edición />
+·
+[94] (830,733)<a href='https://business.google.com/create?hl=es-419&getstarted&authuser=0&fp=10484685127868872003&gmbsrc=es-es-419-et-ip-z-gmb-s-z-l~skp%7Cclaimbz_aoc_a%7Cu&ppsrc=GMBSI'>¿Eres propietario de esta empresa? />
+Agregar la información que falta
+[95] (784,830)<div class='Kq7ICe ElkDDc Qh9l3d' role='link' />
+	[96] (681,834)<span >Agregar sitio web />
+[97] (710,914)<div class='MNVeJb lnxHfb' role='button' />
+	[98] (710,914)<div  />
+		[99] (710,914)<div  />
+			[100] (710,914)<div  />
+				[101] (690,897)<span >Precio por persona: />
+				[102] (710,917)<span >€1-10 />
+					[103] (779,896)<span  />
+					[104] (710,932)<div >Informado por 188 personas />
+
+</current_dom>

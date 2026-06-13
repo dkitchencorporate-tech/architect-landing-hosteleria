@@ -1,0 +1,60 @@
+# Masterplan: Operación "Andrómeda" & La Fábrica de Creativos 🏭
+
+Meta ha cambiado las reglas del juego. Con su algoritmo "Andrómeda" (Advantage+), la segmentación manual está muerta. Hoy en día, **el Creativo ES la segmentación**. El algoritmo usa los primeros 3 segundos de atención visual y el texto en la imagen para encontrar a tu cliente ideal (el dueño del restaurante). 
+
+Para dominar esto sin quemar dinero, ejecutaremos una estrategia militar dividida en dos pilares: la **Matriz de 12 Creativos (Fase 1)** y el desarrollo de nuestro propio **SaaS Generador de Campañas**.
+
+---
+
+## Pilar 1: La Matriz de 12 Creativos (Testeo Orgánico y Ads)
+
+Diseñaremos 12 publicaciones ultra-agresivas enfocadas en B2B. Estarán divididas en 3 "Ángulos de Dolor/Deseo" fundamentales, con 4 variantes cada uno para que la IA de Meta decida cuál funciona mejor.
+
+### Ángulo 1: El Sangrado Silencioso (Comisiones a Terceros)
+*Dolor: Dueños que trabajan 14 horas al día para darle el 30% de sus ganancias a Glovo/JustEat.*
+1. **Creativo:** Un ticket de caja enorme donde el 30% está manchado de rojo. **Hook:** "Estás trabajando para ellos, no para tu familia."
+2. **Creativo:** Gráfico de pastel en llamas. **Hook:** "¿Por qué el repartidor gana más margen neto que tu cocina?"
+3. **Creativo:** Pantalla de móvil con la app de Glovo borrada. **Hook:** "Cómo 3 restaurantes en [Ciudad] se independizaron de las comisiones."
+4. **Creativo:** Texto gigante negro sobre amarillo. **Hook:** "Deja de alquilar a tus clientes. Empieza a ser su dueño."
+
+### Ángulo 2: La IA B2B (Estatus y Vanguardia)
+*Deseo: Tener un restaurante "Top 1%" que funciona solo y atiende 24/7.*
+5. **Creativo:** Mockup hiperrealista de WhatsApp. **Hook:** "Este agente IA cerró 5 reservas mientras el dueño dormía."
+6. **Creativo:** Un restaurante oscuro pero con el móvil brillando. **Hook:** "Tu competencia ya no usa recepcionistas."
+7. **Creativo:** Split screen (Antes: Teléfono sonando sin parar. Después: Dashboard de Architect.Sys). **Hook:** "El fin del caos en las horas pico."
+8. **Creativo:** Texto minimalista estilo Apple. **Hook:** "No necesitas más camareros. Necesitas un ecosistema."
+
+### Ángulo 3: El Evento de Rentabilidad Extrema (ROI)
+*Prueba Innegable: El caso de éxito de los 900€ en 2 horas.*
+9. **Creativo:** Foto elegante de un plato premium y una copa de vino. **Hook:** "De una noche muerta a 900€ en 2 horas."
+10. **Creativo:** Carrusel educativo. **Hook:** "La anatomía de una Cata Premium que rompió la facturación del Jueves."
+11. **Creativo:** Contraste de calendarios. **Hook:** "Cómo transformar las horas de angustia en experiencias Ultra-Premium."
+12. **Creativo:** Texto blanco sobre fondo negro elegante. **Hook:** "El marketing de descuentos atrae ratas. El marketing de experiencias atrae reyes."
+
+---
+
+## Pilar 2: El SaaS "Creative Factory" (Tu App Interna)
+
+En lugar de que dependas de que un agente de marketing haga esto a mano cada vez, vamos a construir una **Fábrica de Creativos Interna** aprovechando el código y la estética premium que ya tenemos en Architect.Sys.
+
+### Estructura de la Aplicación
+Será un dashboard privado (ej. `/marketing-factory`) exclusivo para ti, compuesto por:
+
+#### Módulo A: "Angle & Hook Generator" (El Cerebro)
+- **Input:** Seleccionas un "Dolor" (Ej. Local vacío los martes).
+- **Output:** La app genera 5 variaciones de Hooks agresivos utilizando nuestro prompt interno optimizado para Meta Ads.
+
+#### Módulo B: "Copywriter B2B Framework" (El Texto)
+- Genera el texto del post (Primary Text) estructurado en formato PAS (Problema, Agitación, Solución) o Storytelling, listo para copiar y pegar en Facebook/LinkedIn.
+
+#### Módulo C: "Visual Prompt Engine" (El Diseño)
+- Dado que no somos una herramienta de renderizado 3D, la app te escupirá el **Prompt Exacto** y milimétrico para que lo pegues en Midjourney o DALL-E y obtengas imágenes fotorealistas y de alto contraste que detengan el scroll.
+
+#### Módulo D: "Campaign Matrix" (El Gestor)
+- Una vista en Kanban donde tendrás las 12 publicaciones organizadas por estado: *Diseñando > Testeando en Orgánico > Escalando en Ads*.
+
+## User Review Required
+> [!IMPORTANT]
+> **Decisión Crítica antes de programar:**
+> 1. ¿Estás alineado con los 3 Ángulos de Ataque para los 12 creativos?
+> 2. Respecto al SaaS: ¿Quieres que lo construya como una nueva carpeta dentro del mismo proyecto de Architect.Sys (ej. `localhost:3002/creative-factory`) para reaprovechar los componentes visuales que ya creamos, o prefieres que sea un repositorio/proyecto totalmente nuevo y separado?

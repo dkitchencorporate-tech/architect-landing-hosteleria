@@ -1,0 +1,62 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (909,85)<button class='absolute top-8 right-8 text-sm font-bold text-gray-500 hover:text-red-500 transition-colors z-50 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200'>Cerrar Sesión Segura />
+[1] (125,459)<div class='p-6 flex flex-col gap-8 flex-1 overflow-y-auto' scrollable='true' />
+	A
+	Architect.Sys
+	SALA DE CONTROL
+	Cliente Seleccionado
+	[2] (119,270)<select class='w-full bg-black border border-zinc-800 rounded-xl text-xs font-bold text-white px-3 py-2.5 focus:outline-none focus:border-orange-600 appearance-none' />
+	Cocina:
+	Marisco de Autor y Alta Cocina
+	Target:
+	Gourmet
+	Vaults de Control
+	[3] (119,547)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-between text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30' />
+		[4] (85,547)<span >Matriz de Despliegue />
+			[5] (35,547)<span >🎯 />
+	[6] (119,615)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 bg-zinc-900 text-white border border-zinc-800'>Motor Generativo B2B />
+		[7] (35,615)<span >⚡ />
+	[8] (119,683)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Especialidades de la Carta />
+		[9] (35,683)<span >🍽️ />
+	[10] (119,750)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Creador de Estrategias />
+		[11] (35,750)<span >🗺️ />
+	[12] (119,817)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Agente de Ejecución (Chat) />
+		[13] (35,817)<span >🤖 />
+	[14] (119,884)<button class='w-full text-left px-3 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/30'>Auto-Promoción Agency />
+		[15] (35,884)<span >✨ />
+	📚
+	Dossier de Protocolos
+MODO AGENCIA v2.0
+[16] (625,500)<main class='flex-1 flex flex-col min-w-0 h-screen overflow-y-auto' scrollable='true' />
+	Vault Activo
+	⚡ Motor Generativo B2B
+	Trabajando con:
+	L'Atelier de L'Océan
+	Ver Cartas Demo
+	Motor Generativo de Neuromarketing
+	Define el dolor del hostelero. La IA adaptará los textos y prompts visuales al estilo de cocina y ticket del restaurante activo.
+	[17] (381,166)<label class='block text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-2'>1. Seleccionar Dolor />
+	[18] (381,227)<select class='w-full bg-black border border-zinc-900 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-orange-500 appearance-none' />
+	[19] (381,314)<label class='block text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-2'>2. Ángulo Publicitario />
+	[20] (381,375)<select class='w-full bg-black border border-zinc-900 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-orange-500 appearance-none' />
+	📝
+	Anuncio Estructurado
+	[21] (738,217)<label class='text-[9px] text-zinc-600 font-bold uppercase block mb-1'>Gancho en Imagen (Hook) />
+	¿Regalas el 30% de tu marisco de autor?
+	[22] (738,349)<label class='text-[9px] text-zinc-600 font-bold uppercase block mb-1'>Cuerpo del Post (Primary Text) />
+	Cada bogavante seleccionado, cada emulsión texturizada y cada técnica vanguardista en la alta cocina exige una precisión quirúrgica. Sin embargo, existe una hemorragia financiera invisible en su cuenta de resultados. 🩸
+
+Cuando un comensal solicita su prestigioso marisco de autor a domicilio a través de las apps tradicionales, el 30% de su ticket se evapora antes de salir de la cocina.
+
+Hagamos números reales: con un ticket medio gourmet de 120€ y solo 150 pedidos mensuales de delivery, usted está transfiriendo 5.400€ al mes directamente a las plataformas de reparto. Eso equivale a más de 64.000€ al año de pérdida neta. Una fortuna extraída directamente del esfuerzo y la reputación de templos culinarios como "L'Atelier de L'Océan". 📉
+
+¿Por qué financiar el crecimiento de intermediarios a costa de la excelencia de su producto?
+
+Es momento de recuperar el control absoluto de sus márgenes. Diseñamos sistemas de delivery directo y canales de reserva premium optimizados para la alta gastronomía. Sin comisiones abusivas, sin intermediarios que devalúen su experiencia de marca.
+
+Conserve el valor real de su arte culinario. Solicite su auditoría de viabilidad financiera hoy mismo. 👇
+
+</current_dom>

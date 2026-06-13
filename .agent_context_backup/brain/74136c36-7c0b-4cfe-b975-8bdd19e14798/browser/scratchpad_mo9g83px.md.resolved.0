@@ -1,0 +1,13 @@
+# UI Verification Plan
+
+- [ ] Navigate to http://localhost:3000
+- [ ] Perform hard reload (Ctrl+Shift+R)
+- [ ] Wait 4 seconds for load
+- [ ] Capture screenshot and DOM
+- [ ] Analyze layout (Grid vs Split-view)
+- [ ] Report findings
+
+## Notes
+- Target layout: Grid of cards.
+- Old layout: Split-view (list on left, detail on right).
+- Check for build errors.

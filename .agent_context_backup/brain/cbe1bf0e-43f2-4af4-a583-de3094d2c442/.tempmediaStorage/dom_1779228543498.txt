@@ -1,0 +1,18 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+✦
+¿Tengo que saber de informática?
+Para nada. Nosotros nos encargamos de montarlo absolutamente todo. Tú te dedicas a tu restaurante y simplemente recibes las notificaciones de las reservas y pedidos en tu teléfono de siempre.
+✦
+¿Me obligáis a firmar permanencia?
+No creemos en atar a nadie. Sistemas como la web o la carta son tuyos desde el día 1, mediante un pago único. En cuanto a la publicidad, trabajamos mes a mes: si no estás contento, nos damos la mano y listo.
+✦
+¿Qué pasa si quiero cambiar precios o platos?
+Tendrás un panel hiper sencillo desde tu propio móvil para cambiar precios, ocultar platos que se hayan agotado o subir fotos nuevas en cuestión de segundos. Y si tienes dudas, nos escribes por WhatsApp.
+✦
+¿Cuánto tengo que invertir en publicidad?
+Nuestra tarifa cubre la estrategia y gestión técnica. El presupuesto publicitario lo decides tú y se cobra directamente en tu tarjeta. Recomendamos empezar con 5€ a 10€ al día.
+
+</current_dom>

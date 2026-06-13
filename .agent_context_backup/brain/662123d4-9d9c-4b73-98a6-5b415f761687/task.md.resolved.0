@@ -1,0 +1,4 @@
+- [/] Crear `requirements_bot.txt` con las dependencias necesarias.
+- [/] Desarrollar el script base `telegram_agent.py` integrando la API de Gemini y Python-Telegram-Bot con soporte para ejecución de comandos.
+- [ ] Guiar al usuario para obtener el Token de Telegram y configurar `.env.local`.
+- [ ] Indicar al usuario cómo arrancar el bot en segundo plano.

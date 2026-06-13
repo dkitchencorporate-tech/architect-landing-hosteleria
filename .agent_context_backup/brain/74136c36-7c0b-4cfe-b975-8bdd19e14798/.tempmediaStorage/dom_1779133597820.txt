@@ -1,0 +1,133 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,56)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (301,61)<button aria-label='Buscar' class='mL3xi' />
+	[2] (301,58)<span > />
+[3] (341,60)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,58)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (431,59)<button class='e2moi' />
+		[7] (431,59)<div  />
+			[8] (405,59)<span > />
+			[9] (431,59)<span >Precio />
+			[10] (457,59)<span > />
+	[11] (531,59)<button class='e2moi' />
+		[12] (531,59)<div  />
+			[13] (488,59)<span > />
+			[14] (532,59)<span >Clasificación />
+			[15] (574,59)<span > />
+	[16] (632,59)<button class='e2moi' />
+		[17] (632,59)<div  />
+			[18] (605,59)<span > />
+			[19] (633,59)<span >Cocina />
+			[20] (661,59)<span > />
+	[21] (716,59)<button class='e2moi' />
+		[22] (716,59)<div  />
+			[23] (691,59)<span > />
+			[24] (717,59)<span >Horas />
+			[25] (741,59)<span > />
+	[26] (772,59)<span > />
+	Todos los filtros
+[27] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[28] (827,59)<span > />
+[29] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[30] (28,57)<div  />
+		[31] (28,57)<span > />
+[32] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[33] (28,146)<div  />
+		[34] (28,146)<span > />
+	[35] (28,190)<div  />
+		[36] (28,190)<div >Guardado />
+
+Recientes
+[37] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[38] (28,892)<div  />
+		[39] (28,892)<span > />
+	[40] (28,943)<div  />
+		[41] (28,943)<div >Obtener app />
+[42] (216,528)<div aria-label='Resultados de restaurantes Granada' class='m6QErb DxyBCb kA9KIf dS8AEf XiKgde ecceSd QjC7t' role='feed' scrollable='true' />
+	"Por 16 euros el menú no creo que merezca el precio que cuesta."
+	[43] (213,239)<a aria-label='El Balcón de San Nicolás - Restaurante' class='hfpxzc' href='https://www.google.com/maps/place/El+Balc%C3%B3n+de+San+Nicol%C3%A1s+-+Restaurante/data=!4m7!3m6!1s0xd71fde3d013d4e3:0xb64b215bc2ee1f1e!8m2!3d37.1809599!4d-3.592757!16s%2Fg%2F11fqkwdp1x!19sChIJ49QT0OP9cQ0RHh_uwlshS7Y?authuser=0&hl=es-419&rclk=1' />
+	El Balcón de San Nicolás - Restaurante
+	3.1
+	(1,229)
+	·
+	€1-40
+	Restaurante
+	·
+	Cjón. Atarazana, 2
+	Cerrado
+	· Abre a las 11 a.m. del mar
+	"La comida estaba riquísima, todo muy bien presentado y con sabor casero."
+	[44] (213,517)<a aria-label='Restaurante Casa 1899 - Granada' class='hfpxzc' href='https://www.google.com/maps/place/Restaurante+Casa+1899+-+Granada/data=!4m7!3m6!1s0xd71fcc826dcdded:0x452918c10445044e!8m2!3d37.1790076!4d-3.5897441!16s%2Fg%2F11b6hrrn62!19sChIJ7d3cJsj8cQ0RTgRFBMEYKUU?authuser=0&hl=es-419&rclk=1' />
+	Restaurante Casa 1899 - Granada
+	3.0
+	(1,100)
+	·
+	€10-20
+	Parrilla
+	·
+	
+	·
+	P.º del Padre Manjón, 3
+	Abierto
+	· Cierra a las 12 a.m.
+	"
+	Restaurant
+	muy bonito, con buena música de fondo y comida riquísima."
+	[45] (213,836)<a aria-label='Pimienta rosa | Restaurante Granada' class='hfpxzc' href='https://www.google.com/maps/place/Pimienta+rosa+%7C+Restaurante+Granada/data=!4m7!3m6!1s0xd71fd59d1096d8d:0x4f848704e0b15185!8m2!3d37.175712!4d-3.600413!16s%2Fg%2F11p5gkq_18!19sChIJjW0J0Vn9cQ0RhVGx4ASHhE8?authuser=0&hl=es-419&rclk=1' />
+	Pimienta rosa | Restaurante Granada
+	4.7
+	(1,728)
+	·
+	€20-30
+	Restaurante
+	·
+	
+	·
+	Pl. Pescadería, 4
+	Abierto
+	· Cierra a las 11 p.m.
+	"Pedimos alcachofas, steak tartar y la burger, y todo espectacular."
+	
+	Reservar mesa
+[46] (202,972)<button class='D6NGZc ' role='checkbox'>Actualizar resultados cuando se mueva el mapa />
+	[47] (80,972)<div  />
+		[48] (80,972)<span > />
+[49] (216,886)<button class='e2moi' />
+	[50] (216,886)<div >
+Volver al principio />
+		[51] (216,886)<div  />
+		
+		Volver al principio
+[52] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[53] (384,500)<span > />
+[54] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[55] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fsearch%2Frestaurantes%2BGranada%2F%4037.1773327%2C-3.5985571%2C14z%2Fdata%3D!4m2!2m1!6e5%3Fved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[56] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[57] (973,799)<span > />
+[58] (973,871)<div  />
+	[59] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[60] (973,849)<div  />
+	[61] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[62] (973,893)<div  />
+	[63] (973,871)<div  />
+[64] (973,945)<div  />
+	[65] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[66] (973,945)<div  />
+
+Capas
+[67] (421,906)<button class='yHc72 qk5Wte' />
+Datos del mapa © 2026 Inst. Geogr. Nacional, Google
+[68] (637,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[69] (683,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[70] (735,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[71] (829,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[72] (945,989)<button class='LNGekf' />
+	[73] (917,989)<label class='U5ELMd'>500 m />
+	[74] (956,989)<div  />
+
+</current_dom>

@@ -1,0 +1,124 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Dbar%2Btapas%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=bar+tapas+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ocugNU4ZN9GCmSdncgKZnatanY3s-h5IE0_2BiW1htIocIH_xEu4r1ZmsePs8v4-0RIAvPBml7CBHZ-7QLk0rK4iVIPOJHRyy00OMoPQVjWdKnC91VxVJzfuF6C07mx5w2_EjuyMxUDlPNYqxiz3M3yhAAMQ&aep=1&ntc=1&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQ2J8OegQIDxAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (211,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ocugNU4ZN9GCmSdncgKZnatanY3s-h5IE0_2BiW1htIocIH_xEu4r1ZmsePs8v4-0RIAvPBml7CBHZ-7QLk0rK4iVIPOJHRyy00OMoPQVjWdKnC91VxVJzfuF6C07mx5w2_EjuyMxUDlPNYqxiz3M3yhAAMQ&q=bar+tapas+Granada&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQs6gLegQIFRAB' />
+	[23] (211,180)<div  />
+		[24] (211,194)<span >Videos cortos />
+[25] (290,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ocugNU4ZN9GCmSdncgKZnatanY3s-h5IE0_2BiW1htIocIH_xEu4r1ZmsePs8v4-0RIAvPBml7CBHZ-7QLk0rK4iVIPOJHRyy00OMoPQVjWdKnC91VxVJzfuF6C07mx5w2_EjuyMxUDlPNYqxiz3M3yhAAMQ&q=bar+tapas+Granada&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQtKgLegQIFBAB' />
+	[26] (290,180)<div  />
+		[27] (290,194)<span >Imágenes />
+[28] (354,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=1&lsack=Im4Lasv2NKKUvr0PgKP10Q0&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ocugNU4ZN9GCmSdncgKZnatanY3s-h5IE0_2BiW1htIocIH_xEu4r1ZmsePs8v4-0RIAvPBml7CBHZ-7QLk0rK4iVIPOJHRyy00OMoPQVjWdKnC91VxVJzfuF6C07mx5w2_EjuyMxUDlPNYqxiz3M3yhAAMQ&q=bar+tapas+Granada&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQs6gLegQIExAB' />
+	[29] (354,180)<div  />
+		[30] (354,194)<span >Lugares />
+[31] (444,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=11&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ocugNU4ZN9GCmSdncgKZnatanY3s-h5IE0_2BiW1htIocIH_xEu4r1ZmsePs8v4-0RIAvPBml7CBHZ-7QLk0rK4iVIPOJHRyy00OMoPQVjWdKnC91VxVJzfuF6C07mx5w2_EjuyMxUDlPNYqxiz3M3yhAAMQ&q=bar+tapas+Granada&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQs6gLegQIEhAB' />
+	[32] (444,180)<div  />
+		[33] (444,194)<span >Sitios sobre lugares />
+[34] (531,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1ocugNU4ZN9GCmSdncgKZnatanY3s-h5IE0_2BiW1htIocIH_xEu4r1ZmsePs8v4-0RIAvPBml7CBHZ-7QLk0rK4iVIPOJHRyy00OMoPQVjWdKnC91VxVJzfuF6C07mx5w2_EjuyMxUDlPNYqxiz3M3yhAAMQ&q=bar+tapas+Granada&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQtKgLegQIERAB' />
+	[35] (531,180)<div  />
+		[36] (531,194)<span >Videos />
+[37] (585,180)<div class='mTpL7c' role='button' />
+	[38] (585,180)<div  />
+		[39] (585,194)<div  />
+			[40] (578,186)<span >Más />
+			[41] (595,186)<span  />
+[42] (663,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (663,180)<div  />
+		[44] (663,194)<div  />
+			[45] (656,186)<span >Herramientas />
+			[46] (697,186)<span  />
+[47] (117,259)<a aria-label='Agregar Abierto ahora' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=bar+tapas+Granada+abierto+ahora&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-moEHUg4pDb60mNk5JOaZi0oLh4wZQc8gLahEliq2Q-4-0rwXevqaDSKZ89GRRdXE7iQ2tsmypsBs64FQctR139y-rWCKyRypKsuw067QFBnQB2KnavZq9YK62J8_FQ4xRys9DDojAtXz6iB3hfERFSRBgTBdLKYEfm_H5VKcWoNy3ZV-&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQxKsJKAB6BAgXEAE&ictx=0' role='link' />
+	[48] (117,259)<div  />
+		[49] (117,259)<span >Abierto ahora />
+[50] (200,259)<div role='button' />
+	[51] (200,259)<div  />
+		[52] (196,259)<span >Precio />
+		[53] (219,259)<span  />
+			[54] (219,259)<span  />
+[55] (266,259)<a aria-label='Agregar Centro' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=Bar+tapas+Granada+centro&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-nKY35LSivhHEWuTEAptjfMQaGbdXA17RY-PqO0ZHsIMkXZYaGarA4b2YrThLmwxv5iM2yz1F_dWmV8rOtXNDuKqDiIORzojUtq7CQpTpuqBSFKdF1o6Q4MKhXxAXf_SCGSsjNE9vl0g43XCT78_h2E31v3ciuSFE5Xf6tuje_bYgny0y020ln2DuX-WWfoQSScYXrg&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQxKsJKAJ6BAgaEAE&ictx=0' role='link' />
+	[56] (266,259)<div  />
+		[57] (266,259)<span >Centro />
+[58] (353,259)<a aria-label='Agregar Mejor valorados' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=bar+tapas+Granada+mejor+valorados&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-JonHVaxfu1K5CO3ZC2HptAdk9dlOZ-erlwWiapTIncnJi3OVHpwurKgIbktgZO__yqLzFWc9Sqc6ohJ41J5YkZQVzNzBoeSIRa3VVIcu1eIdb23AeWSXitSTvFY7kn1C8ahNxv68Sexeyhh05BO-MXLlguKvjyj-X3-Qzcav7-f_qd4U&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQxKsJKAN6BAgZEAE&ictx=0' role='link' />
+	[59] (353,259)<div  />
+		[60] (353,259)<span >Mejor valorados />
+[61] (452,259)<a aria-label='Agregar Económicos' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=bar+tapas+Granada+econ%C3%B3micos&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-n0EzfQIGOgKMD5EW5YjzzK_D_dlHDnm1nEnz9ACPThgN8FSCQfWt8cgMZmRBUFY2lzE662Kyjv9Qp783pWqNcPBUw1NQWeID19MhtU7mxnWnDLGIIf3mEik7NelitkgU6TEaCtw0JygZhBdj-7XgV83xYWnnJ2Dycqqbk2F_-Hnrce3P&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQxKsJKAR6BAgYEAE&ictx=0' role='link' />
+	[62] (452,259)<div  />
+		[63] (452,259)<span >Económicos />
+[64] (537,259)<a aria-label='Agregar Exclusivos' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=bar+tapas+Granada+exclusivos&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-i5gyXvftODCYyXjaX26s8gEplIgBQC-CwZ0Sa08-Zgds8yWI8Aiped19DR3xlZ0UqqEfe1rNInGZvbWyt8fTyokQVPg8clkoP7_rwViytF25DnO9Jd-PzWIWnldyedm2StV0rMAe9B3XUE6o5PBnNDt4tY2PX-vl4CjdBQqTQ6v62dF7&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQxKsJKAV6BAhtEAE&ictx=0' role='link' />
+	[65] (537,259)<div  />
+		[66] (537,259)<span >Exclusivos />
+[67] (609,259)<a aria-label='Agregar Barato' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=bar+tapas+granada+barato&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-nKY35LSivhHEWuTEAptjfMQaGbdXA17RY-PqO0ZHsIMWfeLWxy5Hm5bBcFiZQFIBL08Gw3Czzsjq1D2nKmfwvHgy2OfFhpEpEjeVpui6SAMWz8gx-67DVP7ADEoRtWV4FynknWd-KpSUs6AEFeXeiCULAjVoiPVYE8mlHbXXArPhWW1Pfo0ro4y0uikXrW21dL-OEw&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQxKsJKAZ6BAhsEAE&ictx=0' role='link' />
+	[68] (609,259)<div  />
+		[69] (609,259)<span >Barato />
+[70] (682,259)<a aria-label='Agregar Calle elvira' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=bar+tapas+calle+elvira+granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-f0NoD4Pz8uWT5l-EYFKNUw6WDewznHVIJ3aYU8tJkcUljmAtnJExFrj1v7G6_W7RpYSarqmrAn7tX_YQjv9xR_ENXK-xI0fcZG1nDNk_ApekHplIsimGCgICNVI-6LcYTsVEu1npjHxMs7gp-gqP3luQBGoCV_T64uA9-JZI8KMcpoiKaQSwmb5qtBdUgaMG4iCTXBi85p0wJVprYLxrjTcf8mg&sa=X&ved=2ahUKEwjLj67KzsOUAxUiiq8BHYBRPdoQxKsJKAd6BAhrEAE&ictx=0' role='link' />
+	[71] (682,259)<div  />
+		[72] (682,259)<span >Calle elvira />
+Resultados de búsqueda
+Granada
+∙
+[73] (170,351)<a class='N5az4b' href='#' role='button' />
+	[74] (170,357)<span >Elegir área />
+[75] (215,357)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[76] (216,356)<span  />
+Resultados locales
+Sitios
+[77] (573,448)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[78] (573,448)<span  />
+Mapa
+[79] (325,894)<div id='pv-/g/1tm89srs' role='button' />
+	[80] (325,894)<div  />
+		[81] (289,894)<div  />
+			[82] (289,890)<div  />
+				[83] (289,890)<div  />
+					[84] (289,838)<div class='dbg0pd' role='heading' />
+						[85] (114,837)<span >La Buena Vida />
+					[86] (289,871)<div >·
+· Bar de tapas />
+						[87] (124,871)<span  />
+							[88] (124,871)<span aria-label='Calificación: 4.4 de 5, 4.9 K opiniones de usuarios' class='Y0A0hc' role='img' />
+								[89] (78,871)<span >4.4 />
+								[90] (115,871)<span aria-label='Calificación: 4.4 de 5,' class='z3HNkc' role='img' />
+									[91] (115,871)<span  />
+										[92] (115,869)<span  />
+								[93] (161,871)<span >(4.9 K) />
+						[94] (201,871)<span >€1-10 />
+					[95] (289,906)<div >Calle almireceros 12, C. Almireceros, 7 />
+					[96] (289,941)<div  />
+						[97] (182,941)<div  />
+							[98] (182,941)<div  />
+								[99] (182,941)<span >Platos para compartir y vino en un bar sencillo />
+						[100] (303,941)<span >· />
+						[101] (339,941)<a class='MRe4xd' href='https://gmaps.top/la-buena-vida' />
+							[102] (333,941)<span >Sitio web />
+		[103] (544,894)<a class='uQ4NLd b9tNq wzN8Ac rllt__link a-no-hover-decoration' />
+			[104] (544,894)<div  />
+				[105] (544,894)<img  />
+
+</current_dom>

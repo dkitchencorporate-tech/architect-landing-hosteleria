@@ -1,0 +1,7 @@
+- [x] Refinar Paso 2 en `page.tsx` ("Cierre Automático") para no forzar la IA como servicio base.
+- [x] Enriquecer `WhatsAppHero.tsx` con el concepto de Modo Híbrido y control en tiempo real.
+- [x] Reconstruir `HighTicketEcosystem.tsx` con el precio de 450€ + 69€/mes, el badge de ventaja Growth y detalles técnicos del Pipeline CRM.
+- [x] (NUEVO) Inyectar bloque "Criterio y Filtro Avanzado de Grupo" en `WhatsAppHero.tsx` (Manejo de objeciones sobre alérgenos y reservas masivas).
+- [x] (NUEVO) Detallar la "Factura Transparente" en `HighTicketEcosystem.tsx` (Desglose de 450€ y 69€).
+- [x] (NUEVO) Inyectar bloque "Matemática del Fin de Semana" (ROI) sobre el CTA del Ecosistema.
+- [ ] Verificar entorno.

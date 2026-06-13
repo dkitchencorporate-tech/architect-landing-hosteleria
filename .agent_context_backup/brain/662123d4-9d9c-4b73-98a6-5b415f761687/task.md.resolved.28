@@ -1,0 +1,19 @@
+# Task Tracker: Restauración de Imágenes Premium
+
+- `[/]` Lote 1: Generación de Imágenes t7 a t16
+  - `[ ]` t7 - Berenjenas con Miel de Caña
+  - `[ ]` t8 - Calamares de Pota Fritos
+  - `[ ]` t9 - Tabla Jamón 100% Bellota
+  - `[ ]` t10 - Queso Oveja Viejo Curado
+  - `[ ]` t11 - Surtido Ibérico de la Dehesa
+  - `[ ]` t12 - Tosta de Cecina de León
+  - `[ ]` t13 - Carrillada Ibérica Estofada
+  - `[ ]` t14 - Callos a la Andaluza
+  - `[ ]` t15 - Albóndigas Caseras en Salsa
+  - `[ ]` t16 - Guiso de Espinacas con Garbanzos
+- `[ ]` Mover Lote 1 a public/images/demo/
+- `[ ]` Actualizar demo-data.ts con las rutas locales de las imágenes del Lote 1
+- `[ ]` Lote 2: Generación de Imágenes t17 a t26 (Sujeto a límite)
+- `[ ]` Lote 3: Generación de Imágenes t27 a t28 (Sujeto a límite)
+- `[ ]` Mover Lote 2 y 3 a public/images/demo/
+- `[ ]` Actualizar demo-data.ts con el resto de las rutas locales

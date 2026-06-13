@@ -1,0 +1,8 @@
+- [x] Refactorizar `DarkKitchen.tsx` con el copy Enterprise (Ingeniería de Procesos).
+- [x] Añadir Fases de Admisión (Viabilidad, Estandarización, Despliegue) en `DarkKitchen.tsx`.
+- [ ] Crear componente `EnterpriseModal.tsx` con formulario de 7 preguntas de cualificación.
+- [ ] Configurar envío de datos a `/api/lead` para notificación y correo de "lista de espera".
+- [ ] Integrar `EnterpriseModal.tsx` en `DarkKitchen.tsx` (botón "Solicitar Entrevista de Admisión" + arreglar errata "KDS").
+- [ ] Revisar y refactorizar sección "Cómo trabajamos" (adaptar al modelo Socio Operativo).
+- [ ] Revisar y refactorizar sección "FAQ / Preguntas Frecuentes" (eliminar info incorrecta, alinear con Base Operativa y Growth Partner).
+- [ ] Verificar entorno.

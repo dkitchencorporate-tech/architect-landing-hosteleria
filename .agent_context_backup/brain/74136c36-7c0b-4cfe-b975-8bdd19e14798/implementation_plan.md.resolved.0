@@ -1,0 +1,79 @@
+# Sistema de Prospección Autónomo - Fase 1: Arquitectura e Inicialización
+
+Como Arquitecto de Software Senior, he analizado tu propuesta. La separación de responsabilidades (Frontend para visualización/control y Backend Worker para tareas intensivas/scraping/bot) es la más adecuada para este tipo de automatizaciones. Usar una máquina virtual permanentemente encendida para el worker con PM2 te garantizará la disponibilidad continua del bot de WhatsApp.
+
+A continuación, presento el diseño del monorepo y los pasos exactos que se ejecutarán cuando me des luz verde.
+
+## A) Estructura de Carpetas Sugerida (Monorepo con pnpm workspaces)
+
+Dado que acabamos de instalar `pnpm`, la mejor forma de manejar este monorepo es utilizando `pnpm workspaces`. Esto nos permite compartir código (como tipos o configuraciones de Firebase) si fuera necesario, y gestionar las dependencias de forma muy eficiente.
+
+```text
+prospector-hosteleria/
+├── package.json                 # Configuración raíz (scripts globales)
+├── pnpm-workspace.yaml          # Define los espacios de trabajo (apps/ y packages/)
+├── .gitignore                   # Ignorar node_modules, .env, etc.
+├── README.md
+│
+├── apps/
+│   └── frontend/                # Aplicación Next.js (App Router)
+│       ├── src/
+│       │   ├── app/             # Rutas y páginas (Dashboard)
+│       │   ├── components/      # Componentes UI de React
+│       │   ├── lib/             # Integración con Firebase (Client SDK)
+│       │   └── types/           # Tipos de TypeScript (opcional pero recomendado)
+│       ├── package.json
+│       ├── next.config.mjs
+│       └── ...
+│
+└── packages/
+    └── backend-worker/          # El Agente Node.js
+        ├── src/
+        │   ├── index.js         # Punto de entrada (El que ejecutará PM2)
+        │   ├── scrapers/        # Lógica de Puppeteer/Cheerio (Maps, Webs)
+        │   ├── ai/              # Integración con Gemini/Groq
+        │   ├── whatsapp/        # Controlador de whatsapp-web.js y comandos (!pausa)
+        │   └── firebase/        # Firestore Admin SDK (lectura/escritura de Leads y Logs)
+        ├── .env                 # Variables de entorno seguras locales
+        └── package.json
+```
+
+> [!TIP]
+> **Beneficio del Monorepo:** En el futuro, si necesitas compartir definiciones de datos (ej. el esquema exacto de un `Lead`), puedes crear un paquete adicional `packages/shared/` y consumirlo tanto en el frontend como en el worker sin duplicar código.
+
+## B) Pasos Exactos de Inicialización (Fase 1)
+
+No ejecutaré ningún comando hasta que confirmes que estás de acuerdo. Una vez me des luz verde, ejecutaré exactamente esto en la terminal:
+
+1. **Creación del Directorio Raíz:**
+   * Crear la carpeta `prospector-hosteleria` en tu directorio de trabajo.
+   * Ejecutar `pnpm init` para crear el `package.json` base.
+
+2. **Configuración del Workspace:**
+   * Crear el archivo `pnpm-workspace.yaml` para enlazar `apps/*` y `packages/*`.
+
+3. **Inicialización del Frontend (Dashboard):**
+   * Usar el comando de scaffolding de Next.js sin interacciones manuales:
+     `npx -y create-next-app@latest apps/frontend --use-pnpm --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"`
+   * Esto creará un dashboard moderno y listo para desarrollar.
+
+4. **Inicialización del Backend Worker (Agente):**
+   * Crear la carpeta `packages/backend-worker` y ejecutar `pnpm init`.
+   * Instalar las dependencias críticas base:
+     `pnpm add whatsapp-web.js qrcode-terminal puppeteer firebase-admin dotenv @google/generative-ai express`
+   * *(Nota: Añado `qrcode-terminal` temporalmente para que puedas vincular tu WhatsApp fácilmente desde la terminal en el primer arranque. `express` es opcional pero útil si el worker necesita exponer algún webhook básico interno)*.
+
+5. **Configuración de PM2 (Preparación):**
+   * Crearemos un script de inicio básico `src/index.js` en el worker para validar que Node se levanta.
+   * Instalaremos PM2 globalmente (si no está instalado) o prepararemos el archivo `ecosystem.config.js` de PM2 para el futuro despliegue del worker.
+
+6. **Control de Versiones Local:**
+   * Ejecutar `git init`.
+   * Configurar un archivo `.gitignore` robusto para asegurar que ningún archivo `.env` o token de sesión de WhatsApp (`.wwebjs_auth`) se suba jamás al repositorio por accidente.
+
+## User Review Required
+
+Por favor, revisa la arquitectura y los pasos propuestos. 
+¿Deseas realizar algún cambio en la estructura? ¿Quieres que añada TypeScript también al Backend Worker o prefieres JavaScript puro para esa parte?
+
+Confírmame si estás de acuerdo para que proceda a ejecutar la inicialización (Fase 1B) en local.

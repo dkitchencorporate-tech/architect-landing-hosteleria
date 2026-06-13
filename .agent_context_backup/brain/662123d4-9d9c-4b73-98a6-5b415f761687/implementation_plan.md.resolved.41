@@ -1,0 +1,67 @@
+# Plan de Refactorización: Fast Food Layout & Corrección de Traducciones
+
+## Objetivo
+
+1.  **Traducción Integral:** Eliminar todos los textos codificados "en duro" (hardcoded) en español en las cabeceras, banners promocionales y modales globales, reemplazándolos por variables del diccionario de traducción.
+2.  **Responsividad del Modal de Cambio de Diseño:** Solucionar el problema de desbordamiento (overflow) en dispositivos móviles para que todas las opciones sean visibles y navegables mediante scroll.
+3.  **Refactorización de la "Fast Food App":** Aplicar el mismo estándar de calidad (Mobile-First, "fat finger friendly", visores HD) al diseño del Menú Burger, preparándolo para el lanzamiento.
+4.  **Generación de Activos (Batch 5):** Proveer la lista de Prompts IA para que el usuario genere las imágenes del menú Fast Food, utilizando una nomenclatura única.
+
+## User Review Required
+
+> [!IMPORTANT]
+> Revisa la lista de "Prompts para IA" en la parte inferior de este documento. Una vez que apruebes este plan, implementaré los cambios en el código de inmediato. Mientras lo hago, puedes ir generando las imágenes usando estos prompts.
+
+## Cambios Propuestos
+
+### 1. `src/lib/demo-data.ts`
+-   **[MODIFY]:** Extensión del objeto `UI_TRANSLATIONS` para incluir traducciones (`es`, `en`, `fr`) de:
+    -   Títulos y textos promocionales (Club Nobu, Taberna de Baco, Crave Syndicate).
+    -   Botones de suscripción y placeholders de los formularios.
+    -   Títulos internos de la UI global (Modal del carrito, Chatbot).
+
+### 2. `src/app/demo/carta/page.tsx`
+-   **[MODIFY]:** Inyección de la variable `t.key` en lugar de strings de texto estáticos en `EditorialSushiLayout`, `ListTapasLayout`, y `GridBurgerLayout`.
+-   **[MODIFY]:** Añadir `max-h-[90vh] overflow-y-auto scrollbar-thin` al contenedor del modal "Seleccionar Tipo de Negocio" para garantizar scroll en pantallas pequeñas.
+-   **[MODIFY]:** Refactorización de `GridBurgerLayout`:
+    -   Ajuste del tamaño de botones a `h-12` táctiles.
+    -   Estandarización del comportamiento del *Image Lightbox* en el grid de la hamburguesería.
+
+---
+
+## 🎨 Prompts para Generación de Imágenes (Batch 5 - Burger Menu)
+
+He utilizado un prefijo `b01_`, `b02_`, etc., para que los títulos sean únicos y no entren en conflicto con las descargas de Sushi y Tapas. Al descargar el ZIP, solo busca los archivos que empiecen por "b".
+
+*Instrucciones del Generador:* Usa formato 4:3 (o Cuadrado), "Fotografía Gastronómica Estilo FoodPorn, iluminación contrastada, colores vibrantes, hiperrealismo".
+
+| Identificador Recomendado | Título / Elemento a Generar | Prompt para la IA (Inglés recomendado para Midjourney/DALL-E) |
+| :--- | :--- | :--- |
+| **b01_entrantes_fries** | Loaded Bacon Cheese Fries | *Foodporn close-up photography of curly fries loaded with dripping melted yellow cheddar cheese and crispy dark bacon bits. Dark background, dramatic neon lighting, hyper-detailed, 8k.* |
+| **b02_entrantes_wings** | Spicy Buffalo Wings | *Macro food photography of crispy fried chicken wings dripping with bright red spicy buffalo sauce, served with a side of white ranch dip. Dark cinematic lighting, glossy sauce, ultra-realistic.* |
+| **b03_entrantes_tequenos** | Tequeños Venezolanos | *Close-up of golden fried puff pastry cheese sticks (tequeños). One is broken in half showing stringy, stretchy melted white cheese. Professional food styling, dark moody background.* |
+| **b04_entrantes_nachos** | Nachos Volcán Pulled Pork | *Epic mountain of yellow corn tortilla chips topped with juicy pulled pork, bright green jalapeños, and drizzles of white sour cream. High contrast, neon rim lighting, sharp focus.* |
+| **b05_smash_single** | Classic Single Smash | *Perfect single smash burger on a shiny brioche bun, ultra-crispy lacy meat crust, dripping melted yellow American cheese, pickles. Fast food editorial style, dark background, 8k resolution.* |
+| **b06_smash_double** | Bacon Double Smash | *Massive double smash burger with a crispy dark meat crust, two layers of melting American cheese, and thick cuts of smoky bacon hanging out. Dripping grease, hyper-realistic food photography.* |
+| **b07_smash_oklahoma** | Oklahoma Fried Onion | *Oklahoma style smash burger with paper-thin white onions smashed into the crispy beef patty, melted cheese, soft potato bun. Cinematic dark lighting, food magazine cover.* |
+| **b08_smash_chicken** | Crispy Chicken Sandwich | *Southern fried crispy chicken sandwich in a bun with creamy white coleslaw spilling out. Golden crunchy texture on the chicken, highly detailed, dramatic lighting.* |
+| **b09_smash_truffle** | Triple Truffle Smash Beast | *Monstrous triple smash burger with melting white havarti cheese, dark caramelized onions, and dripping black truffle mayo. Gourmet fast food, moody dark studio lighting, 8k.* |
+| **b10_smash_provolone** | La Ingobernable Provolone | *Smash burger featuring a massive deep-fried, breaded provolone cheese disc on top of the beef, with liquid cheese oozing out of the crispy breading. Hyper-detailed, mouth-watering.* |
+| **b11_smash_veggie** | Veggie Beyond Smash | *Delicious plant-based smash burger looking exactly like real beef, with melting vegan cheese and fresh green lettuce. High-end fast food photography, vibrant colors.* |
+| **b12_smash_maccheese** | Mac & Cheese Fat Burger | *Over-the-top burger topped with a huge scoop of bright yellow gooey macaroni and cheese spilling over the beef patty. Extreme foodporn, sharp focus, 8k.* |
+| **b13_pizza_bufala** | Margherita di Bufala | *Authentic Neapolitan pizza, blistered leopard-spotted crust, bright red San Marzano tomato sauce, pools of melted white bufala mozzarella, fresh green basil leaves. Overhead dark moody shot.* |
+| **b14_pizza_detroit** | Detroit Spicy Pepperoni | *Detroit style thick square pizza, crispy caramelized cheese edges, topped with small pepperoni cups holding tiny pools of bright red oil. Extreme close-up, hyper-realistic food photography.* |
+| **b15_pizza_trufa** | Pizza Bianca Trufada | *White pizza (pizza bianca) with creamy ricotta base, roasted wild mushrooms, and slices of black truffle. Elegant dark lighting, gourmet pizzeria style, highly detailed.* |
+| **b16_pizza_bbq** | Barbacoa Pulled Pork Sweet | *Pizza generously topped with shiny sticky BBQ pulled pork, melted gouda cheese, and purple red onion rings. High contrast, dripping sauce, ultra-realistic.* |
+| **b17_salsa_crave** | Tarrina Salsa Secreta | *Macro shot of a small black tub filled with orange creamy secret burger sauce with visible bits of pickle relish. Studio lighting, sharp focus.* |
+| **b18_salsa_trufa** | Extra Mayo Trufada Oscura | *Macro shot of a small tub of dense white mayonnaise mixed with specks of dark black truffle paste. Gourmet sauce photography.* |
+| **b19_salsa_cheddar** | Bañera de Cheddar Líquido | *A large cup overflowing with hot, bright yellow liquid melted cheddar cheese. Extremely glossy, foodporn style.* |
+| **b20_salsa_miel** | Sirope Miel Extra Picante | *Close-up of golden honey infused with red chili flakes pouring smoothly into a small black dish. Backlit, glowing amber color, 8k.* |
+| **b21_postre_shake** | Mega Shake Oreo Monster | *Massive milkshake in a tall glass, thick vanilla ice cream blended with black oreo cookies, topped with a mountain of whipped cream and oreo crumbles. Dark background, neon rim light.* |
+| **b22_postre_biscoff** | Tarta de Queso Lotus | *Slice of creamy cheesecake with a thick layer of melted caramel Biscoff Lotus spread dripping down the side, on a crushed cookie base. Dramatic dark food photography.* |
+| **b23_postre_brownie** | Brownie Volcánico | *Dark chocolate brownie square served in a mini black cast iron skillet, with a molten chocolate center oozing out. Steaming hot, hyper-detailed, 8k.* |
+| **b24_postre_helado** | Helado Soft Cremoso | *Perfect swirl of creamy vanilla soft-serve ice cream in a classic cup. High contrast lighting, smooth texture, professional ice cream photography.* |
+| **b25_bebida_limonada** | Limonada Rosa Artesana | *A frosty glass of pink raspberry lemonade full of ice cubes and fresh raspberries, covered in condensation. Dark background, refreshing, hyper-realistic.* |
+| **b26_bebida_cola** | Coca-Cola Zero Lata | *Ice-cold black soda can covered in freezing water droplets and frost, standing on a dark surface. Dramatic lighting, ultra-realistic.* |
+| **b27_bebida_drpepper** | Dr Pepper Importación | *Ice-cold dark red soda can covered in condensation and frost. Dark cinematic lighting, refreshing beverage photography.* |
+| **b28_bebida_perrier** | Agua con Gas Perrier | *Classic green glass bottle of sparkling water covered in icy condensation. Sophisticated dark lighting, hyper-realistic.* |

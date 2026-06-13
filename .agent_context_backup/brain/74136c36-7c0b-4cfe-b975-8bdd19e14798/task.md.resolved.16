@@ -1,0 +1,9 @@
+- `[x]` 1. Wipe old messages from Firestore
+- `[x]` 2. Add `isLoading` state to CommandPanel
+- `[x]` 3. Refactor evaluator prompt for aggressive B2B copywriting
+- `[x]` 4. Create LeadChat.tsx and LeadDetail.tsx components
+- `[x]` 5. Modify LeadsDashboard.tsx to implement Split-View layout
+- `[x]` 6. Update page.tsx to remove global SidebarChat
+- `[x]` 7. Update backend chat.ts to accept and filter by `leadId`
+- `[ ]` 8. Restart backend process
+- `[ ]` 9. Verify changes

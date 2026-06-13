@@ -1,0 +1,39 @@
+# Auditoría de Modales y Solución de Conflictos
+
+*Rol Activo: Lead Developer & Arquitecto Frontend*
+
+Has detectado un *bug* de UX interesantísimo. Efectivamente, mientras estabas rellenando el formulario de tu consultoría, moviste el ratón hacia la parte superior de la pantalla (seguramente cerca de la barra de direcciones o pestañas). El sistema detectó esto como un "intento de abandono" y disparó el modal global de emergencia, pisando el formulario que estabas llenando.
+
+Aquí tienes la auditoría completa de los modales que tienes instalados, qué hace cada uno y cómo vamos a solucionar este choque técnico:
+
+## 1. Desglose de Modales Actuales (Auditoría)
+
+Actualmente en tu aplicación pública existen **2 sistemas de modales activos** (existen otros en tu Dashboard de administrador, pero no afectan a los visitantes):
+
+1.  **`ExitIntent.tsx` (El Modal Global "Anti-Fuga"):**
+    *   *Ubicación:* Está cargado en la raíz de toda la página (`page.tsx`).
+    *   *Misión:* Si el usuario sube el ratón a menos de 5 píxeles del borde superior de la pantalla (intento de cerrar pestaña) o pasa 60 segundos inactivo en el móvil, este modal salta automáticamente ofreciendo los bonos a cambio de los datos.
+    *   *El Problema actual:* No sabe si el usuario ya tiene otro modal abierto. Dispara a ciegas.
+2.  **`ConsultingModal.tsx` (El Embudo de Consultoría):**
+    *   *Ubicación:* Incrustado dentro de la sección `TheTrojanHorse.tsx` (Base Operativa Digital).
+    *   *Misión:* Cualificar al cliente, captar sus datos y agendar cita en Google Meet. Tiene su propio "Exit-Intent" interno si el usuario le da a la 'X'.
+
+## 2. La Solución Técnica al Conflicto (Overlapping)
+
+No podemos permitir que el modal global estorbe a un usuario que ya está a punto de comprar o reservar.
+Para solucionarlo, implementaré un **Protocolo de Supresión por Eventos Globales**. 
+*   *Qué haré:* Cuando el `ConsultingModal` se abra, enviará una señal oculta al navegador (`modal_opened`). 
+*   El `ExitIntent` global estará escuchando esa señal y, si la detecta, "se dormirá" y no saltará bajo ninguna circunstancia (ni por ratón ni por inactividad) hasta que el usuario cierre el formulario voluntariamente (`modal_closed`).
+
+## 3. Aclaración Importante sobre Google Calendar (Seguridad y Accesos)
+
+Me pides que termine de configurar tu Google Calendar con el correo/clave que supuestamente tengo de pasos anteriores. 
+**Aclaración Técnica Crítica:** Como Inteligencia Artificial, por motivos estrictos de seguridad y arquitectura, **yo no tengo acceso, ni puedo navegar, ni puedo hacer login en tu cuenta privada de Google Workspace**. No guardo ni puedo ejecutar credenciales externas para entrar a servicios de terceros.
+
+*   **¿Cómo lo solucionamos de forma profesional?**
+    La integración de *Google Calendar Appointments* es nativa a través de un simple "Iframe" (un enlace). Lo único que yo necesito para que funcione es que **tú** (desde tu ordenador) entres a tu Google Calendar, actives una página de "Citas", copies el botón de "Compartir enlace" y me lo pegues aquí en el chat. En cuanto me lo des, yo inyecto ese código exactamente donde pusimos la pantalla de demostración en el `ConsultingModal.tsx` y quedará operativo y vinculado a tu correo automáticamente.
+
+> [!IMPORTANT]
+> **Aprobación Requerida**
+> 1. ¿Me das luz verde para programar la solución de supresión de eventos y evitar que el Modal Global (`ExitIntent.tsx`) se dispare cuando estés dentro del formulario?
+> 2. Por favor, **facilítame el enlace público de tu Google Calendar Appointments** para poder incrustarlo definitivamente y finalizar el embudo de agendamiento. (Si no lo tienes a mano ahora, programaré la supresión de eventos y dejaré el modal listo a la espera de tu enlace).

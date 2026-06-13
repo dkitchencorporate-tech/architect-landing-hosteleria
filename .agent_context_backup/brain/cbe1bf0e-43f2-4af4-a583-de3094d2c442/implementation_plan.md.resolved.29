@@ -1,0 +1,55 @@
+# Auditoría Estratégica de Guerrilla: Operación Bootstrapping 🦅
+
+Me has pedido que no sea complaciente y que actúe como un Consultor Senior de verdad. Tienes absolutamente toda la razón: **El papel lo aguanta todo, pero la calle no.** 
+
+Vender a 1.500€ a un hostelero ahogado por las facturas con 5€ al día en Ads es vivir en Narnia. Las agencias High-Ticket que predican eso suelen tener presupuestos de marketing de 3.000€ al mes para filtrar a los 99 que dicen "es caro" y encontrar al 1 que dice "toma mi tarjeta". Nosotros no tenemos ese lujo. Tenemos 150€/mes. 
+
+Aquí tienes el análisis brutal y el nuevo modelo híbrido ajustado a **TU realidad matemática**.
+
+---
+
+## 1. La Matemática de la Supervivencia
+Si inviertes 150€ al mes en Ads y quieres 3 clientes, tu Coste de Adquisición (CPA) debe ser de 50€. 
+En B2B, conseguir un cliente que pague 500€ por solo 50€ en Ads es difícil si el anuncio es normal. **Por eso nuestra Fábrica de Creativos (y la prospección orgánica en la calle) es de vida o muerte.** Los Ads solo serán el amplificador de tu trabajo en la calle y en los grupos de Facebook.
+
+## 2. El Modelo Híbrido (Psicología de Precios B2B)
+El hostelero promedio entiende de pagos de licencias (como el TPV) y de cuotas pequeñas. Vamos a darle a elegir su propio veneno con un "Price Anchoring" (Anclaje de precios) perfecto para llegar a tu meta de 2.000€ - 3.000€/mes.
+
+### Opción A: "El Alquiler" (Suscripción Mensual - Flujo de Caja)
+- **Precio:** 149€/mes (o 197€/mes).
+- **Psicología:** "Por lo que te cuesta un camarero un fin de semana, te monto todo el ecosistema y te lo mantengo". No hay riesgo de entrada para ellos.
+- **Tu Beneficio:** Si consigues 5 de estos al mes, en 4 meses tienes 3.000€/mes de ingresos pasivos recurrentes (MRR).
+
+### Opción B: "En Propiedad" (Setup + Mantenimiento - Inyección de Capital)
+- **Precio:** 590€ (Pago Único por Montaje) + 69€/mes (Mantenimiento Licencia, Servidor, CRM/Kommo e IA).
+- **Psicología:** El hostelero que odia las "cuotas grandes" preferirá pagar el sistema de golpe y quedarse con un mantenimiento mínimo. 
+- **Tu Beneficio:** Te da inyecciones de caja inmediatas (600€) para poder escalar los Ads más rápido, cubriendo tu mes al instante.
+
+### Opción C: "Socio Estratégico" (Custom/Growth)
+- **Precio:** A medida (Para eventos, captación de leads y % de facturación).
+- **Psicología:** Solo para el cliente que ya confía en ti y quiere llenos totales.
+
+## 3. El Embudo de "Baja Fricción pero Cualificado"
+Con 5€ al día no podemos poner un Typeform inmenso que espante al lead. 
+Nuestro embudo será: **Anuncio Brutal -> Landing Page (Oferta Híbrida Clara) -> Botón a WhatsApp.**
+Pero la magia es que en WhatsApp **los atenderá Arqui (nuestro Agente IA)**. Arqui será el encargado de hacer las 3 preguntas clave (¿Eres dueño?, ¿Cuál es tu mayor cuello de botella?, ¿Cuándo agendamos una llamada rápida?). El bot filtra por ti para que no pierdas tiempo con curiosos sin presupuesto.
+
+---
+
+## Plan de Ejecución Inmediata (Código)
+
+Si estamos alineados con esta realidad cruda, esto es lo que voy a modificar en el proyecto:
+
+1. **Reescribir la Sección de Precios (`src/app/page.tsx`):**
+   - Eliminaré los precios de 49€ y 450€ actuales.
+   - Implementaré las 3 columnas exactas del **Modelo Híbrido**: *Suscripción (149€/m)*, *Licencia (590€ + 69€/m)*, y *Growth Partner (A Medida)*.
+   - Añadiré las "letras pequeñas" clarificadoras (hosting, uso de IA, CRM incluidos).
+
+2. **Ajustar los Textos (Copy) de la Landing:**
+   - Bajaré el tono de "SaaS mágico multinacional" a un tono de "Consultoría Tecnológica Especializada y Cercana". Menos Silicon Valley, más Granada.
+
+## User Review Required
+> [!IMPORTANT]
+> Como Ingeniero de Proyecto, te digo que este modelo es 10 veces más realista y escalable para un "Solopreneur" que arranca con 150€ de Ads. 
+> 
+> ¿Confirmas estos precios (149€/mes vs 590€+69€) para que baje a las trincheras y modifique el código de la Landing Page ahora mismo?

@@ -1,0 +1,32 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (217,85)<button class='px-6 py-3 border border-white/20 text-white text-[10px] tracking-[0.2em] uppercase hover:border-amber-500 hover:text-amber-500 transition-colors'>Añadir
+(
+1
+) />
+[1] (326,85)<button class='px-4 py-3 text-gray-500 text-[10px] tracking-[0.2em] uppercase hover:text-amber-500 transition-colors'>Asistente IA />
+Volcán de Sésamo Negro
+10.00
+€
+GL
+HU
+LE
+SE
+Coulant recién horneado que derrama una lava espesa y cálida de sésamo negro tostado.
+[2] (567,604)<button class='px-6 py-3 border border-white/20 text-white text-[10px] tracking-[0.2em] uppercase hover:border-amber-500 hover:text-amber-500 transition-colors'>Añadir
+(
+1
+) />
+[3] (676,604)<button class='px-4 py-3 text-gray-500 text-[10px] tracking-[0.2em] uppercase hover:text-amber-500 transition-colors'>Asistente IA />
+Kakigori Nieve de Fresa
+6.50
+€
+Hielo purificado raspado hasta alcanzar textura de nieve, bañado en sirope natural de fresas confitadas.
+[4] (414,899)<button class='flex-1 bg-transparent text-white px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-white/10'>🎨
+Ver Otro Diseño />
+[5] (586,899)<button class='flex-1 bg-[#10b981] hover:bg-[#059669] text-black px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest'>💰
+Quiero esta Carta />
+
+</current_dom>

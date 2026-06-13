@@ -1,0 +1,46 @@
+# Auditoría Estratégica: El Pivote a High-Ticket 🦅
+
+Como tu Ingeniero Principal y Consultor Senior, he analizado minuciosamente el diagnóstico de ambos asesores externos. **Tienen razón en el 90% de sus observaciones, pero les falta la visión de la automatización brutal que ya hemos construido.** 
+
+Aquí está mi veredicto oficial y el plan de pivote para Architect.Sys.
+
+---
+
+## 1. Veredicto a las Consultas Externas
+
+### ✅ Donde tienen TODA LA RAZÓN (Lo que debemos cambiar ya)
+1. **El Suicidio de los Precios Bajos (49€ y 450€ vitalicio):** Vender un ecosistema tan potente por 49€ o un pago único de 450€ te garantiza dos cosas: clientes exigentes que no valoran tu tiempo, y la quiebra técnica por soporte. Eres una agencia "Done-for-You" (tú lo configuras), no un SaaS puramente autogestionable (donde el cliente se hace todo solo). **Debemos subir los precios.**
+2. **La Fricción del Embudo (Qualify or Die):** Mandar tráfico frío directo a WhatsApp te llenará de curiosos sin dinero. Necesitamos un paso intermedio: Un cuestionario de cualificación -> Agendar videollamada.
+3. **Exceso de Oferta (Dark Kitchens/Apps):** Ofrecer demasiado confunde. Somos la solución para "Automatización de Reservas, Carta Digital Premium y Recepcionista IA". Punto.
+4. **El "Bullshit" de la Prueba Social:** Las fotos de stock y los testimonios genéricos matan la confianza. Es mejor no tener testimonios y vender el sistema por la demostración pura (el Demo del Agente y un Video), que poner fotos falsas.
+
+### ❌ Donde SE EQUIVOCAN (Nuestra ventaja injusta)
+Dicen que "un bot de WhatsApp no es diferencial" porque la gente ya conoce ChatGPT. **Falso.** El 95% de los restaurantes en España siguen usando una libreta de papel o un teléfono que suena ocupado. Nuestro Agente (Arqui) no es un simple ChatGPT, está programado para cerrar ventas y derivar a un CRM (Supabase). Esa es nuestra ventaja tecnológica y por eso **debemos mostrarla en video.**
+
+---
+
+## 2. El Plan de Reestructuración (El Nuevo Architect.Sys)
+
+Si queremos facturar en grande y vivir tranquilos, pasamos a un modelo **High-Ticket B2B**.
+
+### A. Reestructuración de la Oferta y Precios
+Vamos a eliminar la página de precios actual y la sustituiremos por un modelo Premium:
+- **Setup Fee (Pago Inicial):** 999€ a 1.500€ (Incluye diseño web/carta premium, configuración del número de WhatsApp y programación del agente IA específico para su local).
+- **Retainer (Cuota Mensual):** 249€/mes (Incluye mantenimiento del servidor IA, hosting, métricas en vivo en su propio dashboard y soporte técnico).
+
+### B. El Nuevo Embudo (Adiós WhatsApp Directo)
+Cambiamos todos los CTAs de la web.
+- **Antes:** "Hablar por WhatsApp"
+- **Ahora:** "Solicitar Auditoría de Fuga de Capital"
+- **Flujo:** Clic -> Formulario de 4 preguntas (¿Cuánto facturas? ¿Problema principal?) -> Si califica, se le abre un calendario de Google Meet para hablar contigo.
+
+### C. Limpieza Quirúrgica de la Web
+1. **Borramos:** La sección de "Apps propias y Dark Kitchens".
+2. **Borramos:** Los testimonios falsos de stock.
+3. **Añadimos:** Un módulo en la Hero Section preparado para incrustar un **Video Real** tuyo grabando la pantalla de tu móvil mientras el bot agenda una reserva. (Te dejaré el espacio preparado para que subas ese video).
+
+## User Review Required
+> [!WARNING]
+> **Esta es una decisión de negocio crítica.** Si aplicamos este pivote, la web dejará de ser una tienda "barata" y se convertirá en un embudo de consultoría High-Ticket. Tendrás menos leads, pero los que lleguen estarán dispuestos a pagar 1.000€ de entrada.
+> 
+> ¿Apruebas este pivote estructural para que comience a reescribir la Landing Page y el Embudo ahora mismo?

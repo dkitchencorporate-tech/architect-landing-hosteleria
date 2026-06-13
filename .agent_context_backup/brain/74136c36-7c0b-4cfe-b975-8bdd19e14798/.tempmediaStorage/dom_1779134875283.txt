@@ -1,0 +1,171 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DTeter%25C3%25ADa%2BDar%2BZiryab%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Teter%C3%ADa+Dar+Ziryab+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQ2J8OegQICBAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Teter%C3%ADa+Dar+Ziryab+Granada&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQtKgLegQIEBAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Teter%C3%ADa+Dar+Ziryab+Granada&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQs6gLegQIDRAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Teter%C3%ADa+Dar+Ziryab+Granada&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQtKgLegQIDBAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Dar+Ziryab+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQ0pQJegQIDhAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Teter%C3%ADa+Dar+Ziryab+Granada&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQs6gLegQIERAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (256,321)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d10027765-Reviews-Dar_Ziryab-Granada_Province_of_Granada_Andalucia.html' />
+	[48] (256,350)<h3 >DAR ZIRYAB, Granada - Carta, fotos y opiniones del ... />
+	[49] (205,296)<div  />
+		[50] (205,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (220,296)<div  />
+				[55] (220,282)<div  />
+					[56] (220,282)<span >Tripadvisor />
+				[57] (220,312)<div  />
+					[58] (220,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[59] (273,311)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[60] (355,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[61] (355,310)<span  />
+		[62] (355,312)<span  />
+Una gran tetería, muy bien ambientada y con buenos productos
+. Desde que entras por sus puertas parece que te trasladas a otro lugar y otra época.
+3.5
+(63)
+·
+Rango de precios: €
+[63] (287,467)<div role='button' />
+[64] (281,587)<a class='zReHs' href='https://www.instagram.com/p/DEKXJlACkJe/' />
+	[65] (281,616)<h3 >Nos despedimos de Granada con unos dulces marroquies ... />
+	[66] (159,562)<div  />
+		[67] (159,562)<div  />
+			[68] (81,562)<span  />
+				[69] (81,562)<div  />
+					[70] (81,562)<img  />
+			[71] (174,562)<div  />
+				[72] (174,548)<div  />
+					[73] (174,548)<span >Instagram · cocinandojuntos />
+				[74] (174,578)<div  />
+					[75] (174,578)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 60 "me gusta"  ·  hace 1 año />
+[76] (264,576)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[77] (264,576)<span  />
+		[78] (264,578)<span  />
+Nos despedimos de Granada con unos dulces marroquies en una de las teterías del Albaicin .
+Teteria Dar Ziryab
+Una maravilla. Local con encanto
+[79] (195,818)<a class='zReHs' href='https://www.facebook.com/Sal%C3%B3n-de-t%C3%A9-Dar-Ziryab-229970800355503/' />
+	[80] (183,847)<h3 >Salón de té Dar Ziryab | Granada />
+	[81] (195,793)<div  />
+		[82] (195,793)<div  />
+			[83] (81,793)<span  />
+				[84] (81,793)<div  />
+					[85] (81,793)<img  />
+			[86] (210,793)<div  />
+				[87] (210,779)<div  />
+					[88] (210,779)<span >Facebook · Salón de té Dar Ziryab | Granada />
+				[89] (210,809)<div  />
+					[90] (150,809)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 120 seguidores />
+[91] (336,807)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[92] (336,807)<span  />
+		[93] (336,809)<span  />
+Lugar: SALÓN DE TÉ DAR ZIRYAB
+c/Calderería Nueva 11 (local), Granada
+. Entrada 10 € (incluye una consumición) Aforo limitado Venta de entradas: Salón de té Dar ...
+5.0
+(1)
+[94] (177,964)<div role='button' />
+[95] (712,392)<button class='KJY1Gc' />
+	[96] (711,392)<div  />
+		[97] (711,392)<div  />
+			[98] (728,392)<img  />
+		[99] (755,494)<span >Ver fotos />
+[100] (841,392)<a  />
+[101] (857,458)<a href='/local/place/fid/0xd71fcbf4ff4dce5:0xd109f3c23c10797/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3D7k57Jsx05fOpUg1_hkRYmQ%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D58.588825%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFjdrNTdKc3gwNWZPcFVnMV9oa1JZbVE%3D&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQpx96BAgaEA8' />
+	[102] (857,458)<div  />
+		[103] (874,458)<img  />
+	[104] (890,495)<span >Ver por fuera />
+Tetería Dar Ziryab
+4.2
+[105] (754,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Dar+Ziryab+Granada&si=AL3DRZFIhG6pAqfNLal55wUTwygCG0fClF3UxiOmgw9Hq7nbWSpFjJx2zCHX7sUkn1zhQlB61eocz9e_xMf0MjUpf74W17ivv8fB64fa_m4bY2ny2CTxZFo%3D&uds=ALYpb_l2fW9FmhMyhdOPbWGe4NHtn9R3_E5x_G0FXAsk5mEpb2_4ezOTsBzKhSBB2bBKjTTOxT1OWIwZt8_GuIcaCfYLETMQm2SIeRUAbxTq80e1-Rw531USHeW0go_O-g5JCUCA7K0A&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQ3PALegQIGRAE'>1,443 opiniones />
+[106] (805,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[107] (805,598)<span  />
+€1-10
+‧
+Cafetería
+[108] (825,604)<div class='mTpL7c' role='button' />
+	[109] (825,604)<span aria-label='Más opciones para Tetería Dar Ziryab' class='Zj92Hf' role='img' />
+		[110] (823,601)<span  />
+[111] (688,723)<div  />
+	[112] (656,723)<div  />
+	[113] (697,723)<span >Cómo llegar />
+[114] (787,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZFIhG6pAqfNLal55wUTwygCG0fClF3UxiOmgw9Hq7nbWfWZ0iw5i5EcSQ79ZK3mA7vdBSHmLQkYTlGSBHxbXH9eRzvcvSDwJs0M6gPMbrtoLCMB1Z6L9zVhMmBtSxXt63ndYyo2LRmP_vFI2X-aygNA5MW3JA%3D%3D&q=Teter%C3%ADa+Dar+Ziryab+Opiniones&sa=X&ved=2ahUKEwj52sTw0cOUAxX9h1YBHY6NDKkQ0bkNegQIKBAF' />
+	[115] (787,723)<div  />
+		[116] (759,723)<div  />
+		[117] (796,723)<span >Opiniones />
+[118] (876,723)<div  />
+	[119] (876,723)<div  />
+		[120] (876,723)<div  />
+			[121] (876,723)<span aria-label='Guardar Tetería Dar Ziryab en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Tetería Dar Ziryab en una colección' />
+				[122] (884,723)<span >Guardar />
+[123] (684,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[124] (684,799)<div  />
+		[125] (656,799)<div  />
+		[126] (692,799)<span >Compartir />
+[127] (769,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[128] (769,799)<div  />
+		[129] (750,799)<div  />
+		[130] (778,799)<span >Llamar />
+[131] (843,799)<span  />
+	[132] (843,799)<div id='sXDlyb/g/1262k3dhs' role='button' />
+		[133] (843,799)<div  />
+			[134] (827,799)<div  />
+			[135] (851,799)<span >Menú />
+Tés orientales, batidos naturales y repostería andalusí en clásico salón de té con arcos y columnas árabes.
+Dirección
+:
+C. Calderería Nueva, 11, Albaicín, 18010 Granada
+
+</current_dom>

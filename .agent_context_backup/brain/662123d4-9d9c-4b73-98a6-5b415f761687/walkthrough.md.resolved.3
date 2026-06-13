@@ -1,0 +1,27 @@
+# Walkthrough: Hub Multitemático Architect.Sys
+
+El Software TPV de demostración ahora es un **Hub Multitemático**. Ya no es una sola carta que copia a "Encapaco", sino un ecosistema que demuestra flexibilidad total.
+
+## 1. Tres Modelos de Negocio (3 en 1)
+Al pulsar el botón **"🎨 Ver Otro Diseño"** en el Dock inferior, el comercial puede saltar entre 3 estéticas completamente distintas en tiempo real:
+
+1.  **Alta Cocina (Sushi):** Tonos gris pizarra y cobre, tipografía serif elegante. Menú premium (Wagyu, Tartar, Sakes).
+2.  **Bar Granadino (Tapas):** Estética más luminosa (tonos piedra y verde oliva), ideal para bares tradicionales. Menú robusto (Croquetas, Ibéricos, Alhambra de grifo).
+3.  **Fast Food Premium (Burgers):** Estética urbana "Crave It". Fondo negro puro, acentos neón y tipografías anchas e impactantes. Menú dinámico (Smash Burgers, Pizzas de Masa Madre, Batidos).
+
+## 2. Optimización Radical (Carga Instantánea)
+El problema de latencia masiva de imágenes ha sido erradicado. 
+- He refactorizado `demo-data.ts` para crear 3 bases de datos dinámicas.
+- A todas las imágenes de Unsplash se les ha inyectado un pipeline agresivo: `&w=400&q=50&fm=webp`. Pasamos de imágenes pesadas de 3MB a miniaturas WebP de menos de 40kb que cargan instantáneamente en 4G/5G.
+
+## 3. Rediseño B2B: El Dock Flotante
+Hemos eliminado el botón gigantesco que rompía la estética. Ahora hay un **Dock de Conserjería** fijo en la parte inferior, diseñado con "Glassmorphism" oscuro. Alberga las acciones transaccionales:
+- Ver Comanda (si hay items).
+- Botón transparente de *"Ver Otro Diseño"*.
+- Botón de cierre primario en verde vibrante: *"💰 Quiero esta Carta"*.
+
+## 4. IA Dinámica (Camaleónica)
+La inteligencia artificial (`route.ts`) ahora lee en qué plantilla estás. 
+- En *Alta Cocina*, es un **Sumiller** educado.
+- En *Tapas*, actúa como el **Camarero Rústico** experto en raciones.
+- En *Burgers*, es el **Cajero de Fast-Food** ultra-eficiente.

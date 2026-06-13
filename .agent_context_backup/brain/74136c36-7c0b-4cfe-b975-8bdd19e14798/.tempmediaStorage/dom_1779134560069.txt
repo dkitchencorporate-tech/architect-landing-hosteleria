@@ -1,0 +1,166 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DOm-Kalsum%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Om-Kalsum+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZ5dxWkmp3rngK0u4SuFFllnHqZiZHI6IfCytCui8ofQLo4Sv6KX0CXSG4tJCW3LJDKWFTbzFgbWylWVsQb9_-kVEBwJ4-pwhBm-u3V0mbRTihCHJNxnQgopemPQgRwvuOOho8uA&aep=1&ntc=1&sa=X&ved=2ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQ2J8OegQIBxAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZ5dxWkmp3rngK0u4SuFFllnHqZiZHI6IfCytCui8ofQLo4Sv6KX0CXSG4tJCW3LJDKWFTbzFgbWylWVsQb9_-kVEBwJ4-pwhBm-u3V0mbRTihCHJNxnQgopemPQgRwvuOOho8uA&q=Om-Kalsum+Granada&sa=X&ved=2ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQtKgLegQIERAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (262,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZ5dxWkmp3rngK0u4SuFFllnHqZiZHI6IfCytCui8ofQLo4Sv6KX0CXSG4tJCW3LJDKWFTbzFgbWylWVsQb9_-kVEBwJ4-pwhBm-u3V0mbRTihCHJNxnQgopemPQgRwvuOOho8uA&q=Om-Kalsum+Granada&sa=X&ved=2ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQtKgLegQIDxAB' />
+	[26] (262,180)<div  />
+		[27] (262,194)<span >Videos />
+[28] (333,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZ5dxWkmp3rngK0u4SuFFllnHqZiZHI6IfCytCui8ofQLo4Sv6KX0CXSG4tJCW3LJDKWFTbzFgbWylWVsQb9_-kVEBwJ4-pwhBm-u3V0mbRTihCHJNxnQgopemPQgRwvuOOho8uA&q=Om-Kalsum+Granada&sa=X&ved=2ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQs6gLegQIDhAB' />
+	[29] (333,180)<div  />
+		[30] (333,194)<span >Videos cortos />
+[31] (414,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=3&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZ5dxWkmp3rngK0u4SuFFllnHqZiZHI6IfCytCui8ofQLo4Sv6KX0CXSG4tJCW3LJDKWFTbzFgbWylWVsQb9_-kVEBwJ4-pwhBm-u3V0mbRTihCHJNxnQgopemPQgRwvuOOho8uA&q=Om-Kalsum+Granada&sa=X&ved=2ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQs6gLegQIEBAB' />
+	[32] (414,180)<div  />
+		[33] (414,194)<span >Productos />
+[34] (480,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Om-Kalsum+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg3gf3Rx3g7wPLd9qB5u5EuZ5dxWkmp3rngK0u4SuFFllnHqZiZHI6IfCytCui8ofQLo4Sv6KX0CXSG4tJCW3LJDKWFTbzFgbWylWVsQb9_-kVEBwJ4-pwhBm-u3V0mbRTihCHJNxnQgopemPQgRwvuOOho8uA&sa=X&ved=2ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQ0pQJegQIDRAB' />
+	[35] (480,180)<div  />
+		[36] (480,194)<span >Noticias />
+[37] (537,180)<div class='mTpL7c' role='button' />
+	[38] (537,180)<div  />
+		[39] (537,194)<div  />
+			[40] (530,186)<span >Más />
+			[41] (547,186)<span  />
+[42] (615,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (615,180)<div  />
+		[44] (615,194)<div  />
+			[45] (608,186)<span >Herramientas />
+			[46] (650,186)<span  />
+Resultados de búsqueda
+[47] (262,321)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d2097099-Reviews-Om_Kalsum-Granada_Province_of_Granada_Andalucia.html' />
+	[48] (262,350)<h3 >OM-KALSUM, Granada - Carta, fotos y opiniones del ... />
+	[49] (205,296)<div  />
+		[50] (205,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (220,296)<div  />
+				[55] (220,282)<div  />
+					[56] (220,282)<span >Tripadvisor />
+				[57] (220,312)<div  />
+					[58] (220,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[59] (273,311)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[60] (355,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[61] (355,310)<span  />
+		[62] (355,312)<span  />
+Pequeño restaurante en el que disfrutar de la gastronomía marroquí a base de tapas
+. Puesto que son platos pequeños, puedes pedir varios y probar un poco de todo ...
+4.5
+(356)
+·
+Rango de precios: €
+[63] (293,467)<div role='button' />
+[64] (223,587)<a class='zReHs' href='https://www.instagram.com/om_kalsum/' />
+	[65] (223,616)<h3 >Om_kalsum Tapas (@om_kalsum) · Granada />
+	[66] (143,562)<div  />
+		[67] (143,562)<div  />
+			[68] (81,562)<span  />
+				[69] (81,562)<div  />
+					[70] (81,562)<img  />
+			[71] (158,562)<div  />
+				[72] (158,547)<div  />
+					[73] (158,547)<span >Instagram · om_kalsum />
+				[74] (158,578)<div  />
+					[75] (150,578)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 340 seguidores />
+[76] (231,576)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[77] (231,576)<span  />
+		[78] (231,578)<span  />
+Comidas y Tapas del mediterráneo
+· Visitas especiales @sergiolp__ · ✨PLATO DEGUSTACIÓN✨ · ⭐️PASTELA DE POLLO⭐️ Hojaldre relleno de pollo y almendras , con azúcar ...
+[79] (275,818)<a class='zReHs' href='https://www.tripadvisor.co/ShowUserReviews-g187441-d2097099-r944482766-Om_Kalsum-Granada_Province_of_Granada_Andalucia.html' />
+	[80] (275,847)<h3 >Tapeo con encanto en Granada - Om-Kalsum - Tripadvisor />
+	[81] (176,793)<div  />
+		[82] (176,793)<div  />
+			[83] (81,793)<span  />
+				[84] (81,793)<div  />
+					[85] (81,793)<img  />
+			[86] (191,793)<div  />
+				[87] (191,778)<div  />
+					[88] (191,778)<span >tripadvisor.co />
+				[89] (191,809)<div  />
+					[90] (191,809)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.co />
+						[91] (244,808)<span class='ylgVCe ob9lvb' role='text'>› ... › Om-Kalsum />
+[92] (297,807)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[93] (297,807)<span  />
+		[94] (297,809)<span  />
+Es un sitio único en Granada para tapear de manera distinta
+. Todos los platos están deliciosos, sobre todo el cuscús y cigarre. Pero hay que llegar con tiempo ...
+5.0
+·
+Comentario de 737sua
+[95] (278,964)<div role='button' />
+[96] (678,392)<button class='KJY1Gc' />
+	[97] (677,392)<div  />
+		[98] (677,392)<div  />
+			[99] (686,392)<img  />
+		[100] (687,494)<span >Ver fotos />
+[101] (798,392)<a  />
+[102] (823,458)<a href='/local/place/fid/0xd71fc95bffa2d47:0xcef8186bbe1eb981/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DMhM57eZwNcAjQ2WUlZEYuA%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D147.35149%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFk1oTTU3ZVp3TmNBalEyV1VsWkVZdUE%3D&sa=X&ved=2ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQpx96BAgdEA8' />
+	[103] (823,458)<div  />
+		[104] (848,458)<img  />
+	[105] (890,495)<span >Ver por fuera />
+Om Kalsum
+4.7
+[106] (754,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=Om-Kalsum+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOR10xDhEb2qRClWClc9HWbSz68hfAtBOqNDxj37ucfv_bGY_CSGNmAe9khuEUEsnOOsyFgk%3D&uds=ALYpb_lYhTQoihMExfBHVPUjHWLhug-zvajtwnfXyzBQohn1d03VYPrRFUdpgWdZN9DfvBudoX-SUGD4JfDcn7LaK_W6eGGwLWtN3Wza7Zmj-VO_cBdfXzc&sa=X&ved=2ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQ3PALegQIGhAE'>1,406 opiniones />
+[107] (805,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[108] (805,598)<span  />
+€10-20
+‧
+Bar de tapas
+[109] (825,604)<div class='mTpL7c' role='button' />
+	[110] (825,604)<span aria-label='Más opciones para Om Kalsum' class='Zj92Hf' role='img' />
+		[111] (823,601)<span  />
+[112] (688,723)<div  />
+	[113] (656,723)<div  />
+	[114] (697,723)<span >Cómo llegar />
+[115] (787,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOR10xDhEb2qRClWClc9HWbQH1qanHblJpJWhgpFlZ7ldbgdFA_V3hi2xSqrqMpd6KABJjrhIzWjm0GJBtZWW9RY4292w&q=Om+Kalsum+Opiniones&sa=X&ved=2ahUKEwjDgqba0MOUAxXxk1YBHW-DKkAQ0bkNegQIMhAF' />
+	[116] (787,723)<div  />
+		[117] (759,723)<div  />
+		[118] (796,723)<span >Opiniones />
+[119] (876,723)<div  />
+	[120] (876,723)<div  />
+		[121] (876,723)<div  />
+			[122] (876,723)<span aria-label='Guardar Om Kalsum en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Om Kalsum en una colección' />
+				[123] (884,723)<span >Guardar />
+[124] (684,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[125] (684,799)<div  />
+		[126] (656,799)<div  />
+		[127] (692,799)<span >Compartir />
+[128] (766,799)<span  />
+	[129] (766,799)<div id='sXDlyb/g/11b6m11m7h' role='button' />
+		[130] (766,799)<div  />
+			[131] (750,799)<div  />
+			[132] (774,799)<span >Menú />
+Restaurante acogedor que sirve tapas de Marruecos y Oriente Medio, y ofrece opciones vegetarianas.
+Opciones de servicio:
+Ofrece platos veganos
+
+</current_dom>

@@ -1,0 +1,24 @@
+Nobu
+Sense
+MESA
+Demo
+[0] (773,79)<button class='text-[10px] uppercase tracking-widest transition-colors text-amber-500'>es />
+[1] (797,79)<button class='text-[10px] uppercase tracking-widest transition-colors text-gray-600 hover:text-white'>en />
+[2] (822,79)<button class='text-[10px] uppercase tracking-widest transition-colors text-gray-600 hover:text-white'>fr />
+[3] (664,166)<button class='px-4 py-2 text-[10px] uppercase tracking-widest rounded-full transition-all bg-amber-600 text-white'>Comensal
+1 />
+[4] (752,166)<button class='px-4 py-2 text-[10px] uppercase tracking-widest rounded-full transition-all text-gray-500'>Comensal
+2 />
+[5] (841,166)<button class='px-4 py-2 text-[10px] uppercase tracking-widest rounded-full transition-all text-gray-500'>Comensal
+3 />
+[6] (930,166)<button class='px-4 py-2 text-[10px] uppercase tracking-widest rounded-full transition-all text-gray-500'>Comensal
+4 />
+Experiencia Omakase
+Únete a The Club y recibe un
+Sake Premium
+de cortesía.
+Descubrir Beneficios
+[7] (414,899)<button class='flex-1 bg-transparent text-white px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-white/10'>🎨
+Ver Otro Diseño />
+[8] (586,899)<button class='flex-1 bg-[#10b981] hover:bg-[#059669] text-black px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest'>💰
+Quiero esta Carta />

@@ -1,0 +1,96 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,55)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (302,60)<button aria-label='Buscar' class='mL3xi' />
+	[2] (302,57)<span > />
+[3] (341,59)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,57)<span > />
+[5] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[6] (28,57)<div  />
+		[7] (28,57)<span > />
+[8] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[9] (28,146)<div  />
+		[10] (28,146)<span > />
+	[11] (28,190)<div  />
+		[12] (28,190)<div >Guardado />
+
+Recientes
+[13] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[14] (28,892)<div  />
+		[15] (28,892)<span > />
+	[16] (28,943)<div  />
+		[17] (28,943)<div >Obtener app />
+[18] (216,500)<div class='e07Vkf kA9KIf dS8AEf' scrollable='true' />
+	[19] (216,190)<button aria-label='Foto de Restaurante Reina Mónica' class='aoRNLd kn2E5e NMjTrf lvtCsd ' />
+		[20] (216,190)<img  />
+	[21] (108,328)<button class='Dx2nRe' />
+		[22] (79,328)<span  />
+		[23] (119,328)<div  />
+	Restaurante Reina Mónica
+	4.6
+	(1,081)
+	[24] (197,480)<button aria-label='Más información sobre la divulgación legal de las opiniones públicas en Google Maps' class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-INsAgc VfPpkd-LgbsSe-OWXEXe-icon-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf Rj2Mlf OLiIxf PDpWxe LQeN7 s73B3c MyHLpd wphPJc Q8G3mf' />
+		
+	·
+	€10-20
+	[25] (118,509)<button class='DkEaL '>Restaurante halal />
+	·
+	
+	[26] (216,570)<div class='RWPxGd' role='tablist' scrollable='true' />
+		[27] (124,570)<button aria-label='Descripción general de Restaurante Reina Mónica' class='hh2c6 G7m0Af' role='tab' />
+			Descripción general
+		[28] (230,570)<button aria-label='Menú' class='hh2c6 ' role='tab' />
+			Menú
+		[29] (307,570)<button aria-label='Revisiones para Restaurante Reina Mónica' class='hh2c6 ' role='tab' />
+			Opiniones
+		Acerca de
+	[30] (102,691)<button aria-label='Indicaciones' class='S9kvJb ' />
+		[31] (102,662)<span  />
+			[32] (102,662)<span > />
+		[33] (102,732)<div >Indicaciones />
+	[34] (159,678)<button aria-label='Guardar' class='S9kvJb ' />
+		[35] (159,662)<span  />
+			[36] (159,662)<span > />
+		[37] (159,719)<div >Guardar />
+	[38] (216,678)<button aria-label='Cerca' class='S9kvJb ' />
+		[39] (216,662)<span  />
+			[40] (216,662)<span > />
+		[41] (216,719)<div >Cerca />
+	[42] (272,691)<button aria-label='Enviar al teléfono' class='S9kvJb ' />
+		[43] (272,662)<span  />
+			[44] (272,662)<span > />
+		[45] (272,732)<div >Enviar al teléfono />
+	[46] (329,678)<button aria-label='Compartir' class='S9kvJb ' />
+		[47] (329,662)<span  />
+			[48] (329,662)<span > />
+		[49] (329,719)<div >Compartir />
+	[50] (216,844)<button class='XJ8h0e waIsr' />
+		[51] (216,844)<div > />
+			[52] (206,844)<div  />
+				[53] (130,834)<div aria-label='Ofrece consumo en el lugar' class='LTs0Rc' role='group'>· />
+					·
+					[54] (79,834)<span > />
+					[55] (142,834)<div >Consumo en el lugar />
+				[56] (235,834)<div aria-label='Ofrece comida para llevar' class='LTs0Rc' role='group' />
+					[57] (198,834)<div class='EKGMvf' role='presentation'>· />
+					[58] (211,834)<span > />
+					[59] (248,834)<div >Para llevar />
+				[60] (126,866)<div aria-label='No ofrece servicio de entrega a domicilio' class='LTs0Rc' role='group'>· />
+					·
+					[61] (79,866)<span > />
+					[62] (138,866)<div >Entrega a domicilio />
+			
+	[63] (216,972)<button aria-label='Dirección: C. Panaderos, 20, Albaicín, 18010 Granada ' class='CsEnBe' />
+		[64] (216,972)<div  />
+			
+			[65] (234,972)<div  />
+				[66] (234,972)<div >C. Panaderos, 20, Albaicín, 18010 Granada />
+	[67] (348,972)<button aria-label='Copiar la dirección' class='S9kvJb ' />
+		[68] (347,972)<span  />
+			[69] (347,972)<span  />
+[70] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[71] (384,500)<span > />
+
+</current_dom>

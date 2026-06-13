@@ -1,0 +1,50 @@
+# Reestructuración de Precios: Recepcionista IA + CRM (Arquitectura Kommo)
+
+*Arquitectura revelada: Escalabilidad Extrema*
+
+Con el contexto técnico que me acabas de dar (uso de Kommo CRM + Meta API + IA Nativa), tu modelo de negocio pasa de ser bueno a ser **una máquina de imprimir dinero**.
+
+Si tu coste de licencia es de 20€/mes y el setup te lleva 30 minutos:
+*   Al cobrar **450€ de Setup**, estás facturando a 900€/hora.
+*   Al cobrar **69€/mes de Mantenimiento**, tienes un margen de beneficio bruto del 70% mes a mes.
+
+Esta arquitectura técnica cambia drásticamente **cómo debemos venderlo** en la web. No es un simple "bot de WhatsApp", es un Ecosistema Híbrido (IA + Humano) con un CRM visual de ventas.
+
+## 1. El Nuevo Ángulo de Venta (Copywriting)
+
+El mayor miedo de un hostelero con la IA es: *"¿Qué pasa si el robot se equivoca y no me entero?"*. Gracias a Kommo, matamos esa objeción con la funcionalidad de **Intervención en Tiempo Real**.
+
+Añadiremos estos 3 pilares a la sección del Agente:
+1.  **Modo Híbrido (Control Total):** El cliente verá en el texto: *"Puedes observar cómo la IA responde en tiempo real desde tu móvil. Si un cliente hace una pregunta extraña, tomas el control del chat con un clic."*
+2.  **Pipeline Visual de Reservas:** Ya no son mensajes al aire. *"Cada cliente pasa automáticamente por un embudo visual (Pipeline): Pregunta -> Reserva Confirmada -> Asistencia. Cero caos."*
+3.  **Setup de Alta Velocidad:** *"Operativo en menos de 48 horas tras enviarnos tu carta y reglas de negocio."*
+
+## 2. La Estructura de Precios Definitiva (El Plan no cambia, se refuerza)
+
+La configuración de precios "adaptativa" que acordamos encaja perfecto aquí:
+
+**Precio Oficial:**
+*   **Setup:** 450€ (Pago Único).
+*   **Licencia CRM y Mantenimiento:** 69€ / mes.
+
+**Integración con los Planes:**
+*   **Ruta A (Plan Base 700€):** Pagan 450€ de setup y asumen los 69€/mes. Es un cross-sell natural.
+*   **Ruta B (Plan Growth 299€/mes):** El mantenimiento (69€) está *incluido* en su suscripción. Solo pagan el Setup (450€). *(De esos 299€, tú pagas 20€ a Kommo, lo que significa que el Plan Growth sigue siendo inmensamente rentable para ti).*
+
+## 3. Plan de Modificación en Código (Landing Page)
+
+Si me das luz verde a este nuevo enfoque técnico, modificaré el código en `HighTicketEcosystem.tsx` y `WhatsAppHero.tsx` de la siguiente manera:
+
+1.  **Renombrar la sección:** De "El Recepcionista IA Integrado" a **"Recepcionista IA + CRM de Reservas"**.
+2.  **Actualizar viñetas tecnológicas:** Incluir explícitamente *"Panel de Intervención en Tiempo Real"* y *"Gestor Visual de Reservas (Pipeline)"*.
+3.  **Actualizar Tarjeta de Precios:** Fijar el Setup en 450€ y el mantenimiento en 69€/mes (con la nota de ventaja para usuarios Growth).
+4.  **Sección 1-2-3:** Suavizar la mención al bot en el "Paso 2" para que se entienda que es la fase final de maduración, no una obligación inicial.
+
+---
+
+> [!IMPORTANT]
+> **Confirmación Final**
+> 
+> Esta arquitectura (Kommo CRM) hace que el precio de 450€ + 69€/mes sea perfecto comercialmente y letalmente rentable para ti. 
+> 
+> ¿Tienes el *Go* para que inyecte este nuevo enfoque de "Modo Híbrido" (IA + Humano en tiempo real) y los precios exactos en la web?

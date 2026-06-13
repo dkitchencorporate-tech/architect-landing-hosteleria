@@ -1,0 +1,50 @@
+# Estrategia de Escalamiento: El Agente IA (CRM de Alta Demanda)
+
+*Rol Activo: Arquitecto de Producto y Estratega de Precios B2B*
+
+Has tocado el punto de mayor valor tecnológico de toda tu oferta: el **Recepcionista IA**. Este es el servicio "High-Ticket" definitivo porque soluciona el problema de los restaurantes que ya tienen éxito pero están *muriendo de éxito* (el teléfono no para de sonar y el equipo se quema).
+
+Aquí tienes mi análisis y la propuesta comercial para encajar este servicio de forma maestra con los otros dos planes (Base 700€ y Growth 299€), sin canibalizar las ventas.
+
+## 1. Análisis del Ecosistema de Precios
+El gran reto aquí es: *¿Cómo le cobramos el Agente IA a alguien que ya pagó 700€ (Plan Base) frente a alguien que nos paga 299€/mes (Plan Growth)?*
+
+**Mi propuesta estratégica (La regla del Up-Sell cruzado):**
+*   **Precio Oficial del Agente IA:** 800€ (Setup Técnico de Meta API + OpenAI) + 99€/mes (Mantenimiento de servidores y tokens de IA).
+*   **Para el Cliente del Plan Base (700€):** Si quiere el Agente, tiene que pagar el precio oficial (800€ Setup + 99€/mes). Es un módulo extra.
+*   **Para el Cliente del Plan Growth (299€/mes):** Aquí está la magia. Como ya confían en nosotros mes a mes, **le bonificamos el 100% del Setup (se ahorran 800€)**. Solo pagan el coste de mantenimiento (+99€/mes). 
+*   *Psicología detrás de esto:* Si un cliente del Plan Base quiere el Agente, verá que pagar 800€ de golpe duele, pero si se pasa al Plan Growth (299€), el setup le sale gratis. Es una trampa perfecta para empujarlos a la suscripción mensual de alto valor.
+
+## 2. Ajustes de Copy en las Secciones Actuales
+
+### Sección: "Así convertimos tu restaurante en una máquina bien engrasada (1-2-3)"
+El copy actual de los 3 pasos es excelente, pero el **Paso 2 (Cierre Automático)** menciona explícitamente al "Agente de IA". Para no confundir, debemos aclarar que esta es la fase final de la escalabilidad.
+*   *Ajuste:* "Fase 2: Cierre Automático. (Módulo Avanzado). Tu Agente de IA atiende el WhatsApp..."
+
+### Sección: "El Ecosistema 24/7 (High Ticket)"
+Aquí es donde presentamos el precio. Vamos a reconstruir esta tarjeta de precios para que sea un embudo de autoridad:
+*   **Nuevo Título:** "Recepcionista IA & CRM Integrado".
+*   **Copy:** "Diseñado exclusivamente para restaurantes consolidados. Si tu problema ya no es atraer clientes, sino gestionar el colapso del teléfono los fines de semana, necesitas delegar la atención."
+*   **Estructura de Precios Visible:** 
+    *   Setup Técnico: 800€ (Pago Único)
+    *   Licencia y Tokens: 99€ / mes.
+    *   *Badge destacado:* "🔥 SETUP GRATIS (Ahorra 800€) si tienes activo el Plan Growth."
+
+### Sección: "El precio de improvisar" (Transición a Dark Kitchens)
+Esta sección actúa como un puente perfecto. El copy actual es muy agresivo y correcto: *"Si tu sistema es un caos, más clientes significará tu ruina."* Lo dejaremos exactamente igual, ya que prepara psicológicamente al usuario para entender que el software y la IA no son "lujos", sino "salvavidas" antes de lanzarse a abrir líneas de delivery (Dark Kitchens).
+
+## 3. Demostración en Vivo (Demo Interactiva)
+Mencionaste crear una demo en tiempo real. 
+*   Para el **Agente IA**, el chat simulado que ya tienes diseñado (donde se ve al bot escribiendo "Hola, ¿tenéis mesa...?") es visualmente muy potente. Lo mantendremos y mejoraremos sus animaciones.
+*   Para la **Carta Interactiva en Vivo**, puedo construir un componente futuro (un "Mockup de iPhone" navegable) donde el usuario haga clic y vea cómo se despliega un menú interactivo con upsells (ej. "¿Quieres añadir extra de queso?"). Eso lo atacaremos en la siguiente fase tras aprobar estos copies.
+
+---
+
+> [!IMPORTANT]
+> **Decisiones Clave antes de programar:**
+> 
+> 1. ¿Apruebas la estrategia de precios? (800€ Setup + 99€/mes).
+> 2. ¿Estás de acuerdo con la jugada maestra de regalarle el Setup (800€) a los clientes que estén en el Plan Growth para incentivar la suscripción de 299€?
+> 3. ¿Mantenemos el requisito de "Requiere auditoría previa para su instalación" para generar exclusividad?
+> 
+> Confírmame estos 3 puntos y transformaré todas estas secciones (1-2-3, WhatsApp Hero y Ecosistema 24/7) con esta nueva lógica comercial.

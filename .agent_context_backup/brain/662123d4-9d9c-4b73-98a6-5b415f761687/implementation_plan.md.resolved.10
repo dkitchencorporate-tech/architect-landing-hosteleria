@@ -1,0 +1,37 @@
+# Plan Arquitectónico Nivel SaaS: Demo "Carta Premium"
+
+*Rol Activo: Arquitecto de Software Full-Stack*
+
+Has elevado el nivel de exigencia drásticamente. Lo que pides ya no es una simple "página de muestra" estática; es un mini-SaaS funcional de toma de pedidos en mesa con Inteligencia Artificial. Esto es exactamente lo que cierra ventas de 700€ a 3.000€. 
+
+Para lograrlo sin crear código espagueti y mantener el estándar *Ultra-Premium*, he rediseñado la arquitectura. Vamos a construir una aplicación real dentro de la ruta `/demo/carta`.
+
+## 1. Arquitectura de Datos y Estado
+*   **Identificador de Mesa:** La URL leerá parámetros como `?table=12`. Si no hay mesa, asignará "Mesa Demo" por defecto.
+*   **Motor Multi-Idioma (Real):** Crearemos una base de datos local (JSON) con los platos traducidos a ES, EN y FR. Al cambiar el idioma en el selector, *toda* la interfaz y los platos cambiarán instantáneamente.
+*   **Modo Claro/Oscuro (Theming):** Implementaremos un *toggle* de estado. 
+    *   *Modo Oscuro:* Fondos `bg-slate-950`, tarjetas con bordes tenues, texto blanco, acentos dorados.
+    *   *Modo Claro:* No será un blanco brillante molesto. Usaremos un fondo "Crema/Hueso" (ej. `bg-[#F9F9F9]`) con tarjetas blancas puras, sombras suaves y acentos en un azul marino muy elegante para mantener el nivel Premium.
+*   **El Carrito de la Mesa:** Un estado global que guardará los pedidos (ej. `[{ id: 1, qty: 2 }]`). 
+
+## 2. Los Nuevos Componentes (Protocolo Anti-Monolito)
+Desglosaremos la aplicación en piezas manejables:
+
+1.  `DemoMenuApp.tsx`: El contenedor principal que maneja el estado (idioma, tema, carrito).
+2.  `TopNavigation.tsx`: Selector de idiomas real, toggle de tema y número de mesa.
+3.  `ProductGrid.tsx` & `ProductCard.tsx`: Las tarjetas de los platos adaptadas al tema actual y al idioma.
+4.  `TableOrderCart.tsx`: Un cajón deslizante o *bottom sheet* (al estilo UberEats) donde el cliente ve "Lo que lleva pedido la mesa 12" y el total a pagar.
+
+## 3. El Agente IA "Camarero Virtual" (Nuevo Backend)
+Actualmente, tu API en `api/demo/respond` está programada para venderle tus servicios a dueños de restaurantes. No sirve para esto.
+*   **Acción:** Crearemos una *nueva* ruta en `src/app/api/demo/waiter/route.ts`.
+*   **La IA:** Le daremos al Agente el menú completo en su *System Prompt*. Le diremos: *"Eres el camarero virtual del Architect Sushi Bar. Conoces los alérgenos, puedes recomendar maridajes y guiar al usuario a pedir. El idioma del cliente es [Idioma Actual]"*.
+*   **El Widget Flotante:** Estará integrado en la carta, permitiendo chatear sobre la comida.
+
+---
+
+## 🚦 Aprobación de Arquitectura Compleja
+
+Este es un desarrollo de Nivel 3. Requiere crear la base de datos falsa, la gestión de estados múltiples y el nuevo motor de IA. 
+
+¿Estás de acuerdo con esta división de componentes y la creación del nuevo backend (`api/demo/waiter/route.ts`) para que el chatbot de la carta no se confunda con el chatbot que vende tus servicios? Si es así, **dame luz verde y empiezo a programar el núcleo.**

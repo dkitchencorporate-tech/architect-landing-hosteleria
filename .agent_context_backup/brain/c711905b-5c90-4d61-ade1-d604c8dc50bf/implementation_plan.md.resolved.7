@@ -1,0 +1,29 @@
+# Arquitectura de Cierre de Embudo (Paso 4: Consolidación Premium)
+
+*Rol Activo: Arquitecto Frontend & UX Specialist*
+
+Excelente observación. Has detectado el típico "vacío emocional" que ocurre al usar herramientas de terceros incrustadas. Cuando el usuario reserva la cita, Google Calendar le muestra su propio mensaje interno de éxito, pero nuestro Modal no se entera, y si le dan a la 'X', simplemente desaparecen hacia la página de precios como si nada hubiera pasado. Esto rompe el estatus premium.
+
+## El Problema Técnico (Cross-Origin Restrictions)
+Google Calendar (por motivos de máxima seguridad de datos en navegadores) bloquea cualquier comunicación entre el contenido de su *iframe* y nuestra página. Es decir, cuando el cliente reserva con éxito, Google **no nos avisa por código** de que ha terminado, por lo que no podemos cambiar automáticamente de pantalla.
+
+## La Solución Arquitectónica (La Fase 4 Manual)
+
+Dado que no podemos detectar automáticamente el final de la reserva, vamos a orquestar el comportamiento del usuario mediante diseño UX:
+
+1.  **Añadir Botón de Confirmación en el Paso 3:** 
+    Justo debajo del calendario (fuera del iframe de Google), pondremos un botón persistente que diga: **"✅ Ya he agendado mi cita (Siguiente Paso)"**.
+2.  **Crear el Paso 4 (Pantalla de Éxito Premium):** 
+    Al hacer clic en ese botón, el calendario desaparecerá y mostraremos una pantalla final espectacular:
+    *   *Iconografía:* Un check verde gigante o escudo de seguridad.
+    *   *Titular:* **¡Reserva Confirmada! Tu Fundación Digital está en marcha.**
+    *   *Subtítulo (Impulso Psicológico):* "Estás a un solo paso de recuperar el control de tu local y dejar de pagar comisiones abusivas. Revisa tu correo, te hemos enviado los deberes previos a nuestra reunión."
+    *   *Botón de salida elegante:* "Entendido, volver a la página". (Este botón cerrará el modal limpiamente).
+3.  **Lógica del 'X' (Cierre):** Si estando en el Paso 3 el usuario le da a la 'X' superior (en lugar de al botón), en vez de cerrar de golpe, lo enviaremos obligatoriamente a este Paso 4 de agradecimiento, asumiendo que ya hizo la reserva.
+
+Con este flujo, el ciclo psicológico se cierra de manera impecable: Dolor ➔ Captura de Datos ➔ Reserva de Cita ➔ **Refuerzo Positivo y Agradecimiento**.
+
+> [!IMPORTANT]
+> **Aprobación de la Fase 4**
+> 
+> ¿Me das luz verde para programar este nuevo botón debajo del calendario y diseñar la "Pantalla de Éxito Premium" (Paso 4) con el copy propuesto?

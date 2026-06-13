@@ -1,0 +1,33 @@
+F
+Creative Factory
+Generador AI Activo
+[0] (932,64)<a class='text-xs font-bold text-zinc-400 hover:text-white transition-colors' href='/demo/carta'>Ver Cartas Demo />
+⚡
+Generador de Campañas
+[1] (119,147)<button class='whitespace-nowrap w-full text-left px-4 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-3 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/50'>Reglas Visuales />
+	[2] (38,147)<span >📐 />
+Define el dolor del hostelero. La IA construirá el copy publicitario y la imagen ideal.
+[3] (356,149)<label class='block text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2'>1. Dolor del Cliente />
+[4] (356,213)<select class='w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors appearance-none' />
+[5] (356,305)<label class='block text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2'>2. Ángulo de Ataque />
+[6] (356,370)<select class='w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors appearance-none' />
+📝
+Copy B2B y Estrategia
+[7] (732,202)<label class='text-[10px] text-zinc-600 font-bold uppercase block mb-1'>Gancho (Texto en Imagen) />
+¿Regalas el 30% de cada plato?
+[8] (732,336)<label class='text-[10px] text-zinc-600 font-bold uppercase block mb-1'>Primary Text (Cuerpo del Post) />
+Haces números a final de mes y la cuenta no cuadra. 📉
+
+Tu cocina no para de sacar comandas y el repartidor entra y sale sin pausa... pero tu beneficio neto sigue congelado.
+
+No es tu gestión. Es matemática pura: si facturas 15.000€ al mes en delivery, las plataformas se están llevando 4.500€ directos a su bolsillo. Eso son 54.000€ al año que estás regalando a un tercero. 💸
+
+Estás asumiendo todo el riesgo, el coste de la materia prima, el alquiler y el personal... para quedarte con las migajas de tu propio esfuerzo.
+
+Es hora de detener este sangrado financiero silencioso. 🩸
+
+Diseñamos estrategias de ingeniería de menús y sistemas de venta directa que devuelven el control de los márgenes a tu restaurante. Sin comisiones abusivas. Sin intermediarios que se queden con tu mejor tajada.
+
+Recupera tu rentabilidad hoy mismo. Haz clic abajo y solicita una auditoría de márgenes gratuita para tu restaurante. 👇
+
+👉 [QUIERO RECUPERAR MI MARGEN]

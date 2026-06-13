@@ -1,0 +1,40 @@
+# Refinamiento Estratégico: Eliminación de Fricción y Embudo de Contratación
+
+*Rol Activo: Arquitecto de Producto y Copywriter B2B*
+
+El análisis de tu asesor es excepcional. Refleja exactamente la psicología de resistencia del hostelero tradicional (desconfianza sobre la caja, aversión al término "Inteligencia Artificial" y confusión entre opciones). 
+
+Aquí te presento el **Plan de Acción** estructurado para inyectar estas mejoras en la landing page y responder a tus dudas sobre el proceso de cierre:
+
+## 1. Refinamiento de Copy (Eliminación de Sesgos)
+Vamos a modificar el archivo `EventLibraryHook.tsx` para cambiar la percepción de "barato/robótico" a "tecnología de alta velocidad":
+*   **Adiós a la palabra "IA" repetitiva:** Cambiaremos *"Creatividades generadas por IA"* por *"Creatividades de Alto Impacto (optimizadas por algoritmos)"*.
+*   **Nueva Matriz de Responsabilidades:** Cambiaremos el titular *"Lo que hacemos nosotros (y la IA)"* por *"Ingeniería de Datos y Alta Velocidad"*. El subtítulo será: *"Nuestro ecosistema asume la carga administrativa para que tú te centres en la sala."*
+
+## 2. Blindaje de la Garantía del 20% (Control de Taquilla)
+Para aniquilar la duda de "¿cómo controlan mi caja registradora?", inyectaremos una breve aclaración técnica justo debajo de la caja de garantía:
+*   *Añadido propuesto:* "El control es 100% transparente: Vendemos entradas anticipadas mediante una Landing Page propia para tu evento. El cliente paga online y recibe un QR. Tú solo escaneas en puerta. Cero descontrol en tu caja física."
+
+## 3. Matriz de Decisión (Separación de Rutas)
+Para que el cliente no se confunda entre el pago único de 700€ y la suscripción de 299€, añadiremos un pequeño bloque visual antes o después de los precios llamado **"¿Cuál es tu ruta ideal?"**:
+*   **Ruta A (Independencia):** Pago único de 700€. Infraestructura tuya para siempre. Sin cuotas.
+*   **Ruta B (Crecimiento Acelerado):** 299€/mes. Nos asociamos. Nosotros operamos el marketing y los eventos por ti. Todo el software base incluido.
+
+## 4. El Proceso de Contratación (Respuesta a tu pregunta)
+Preguntas si deberíamos poner una pasarela de pago directa o llevarlos a consultoría. 
+**Mi recomendación táctica (High-Ticket B2B):**
+Vender un servicio de 2.990€/año o 299€/mes a puerta fría con un botón de "Comprar Ahora" tiene una tasa de conversión bajísima. El hostelero necesita *mirarte a los ojos* (videollamada) antes de soltar la tarjeta. 
+
+*   **Vía Principal (90%):** El botón "Activar Ecosistema" debe llevar al mismo **Calendly de 20 minutos** que ya tenemos configurado. Durante esa llamada es donde usas el *Guion de Transición* que te dio tu asesor para perfilar si le vendes los 700€ o los 299€/mes.
+*   **Vía Rápida (10%):** Podemos dejar un enlace sutil debajo del botón principal que diga: *"¿Lo tienes claro? Procesar pago directo y empezar hoy (Pasarela segura)"*. Esto satisface al comprador impulsivo.
+
+---
+
+> [!IMPORTANT]
+> **Aprobación de la Fase de Refinamiento**
+> 
+> 1. ¿Aplico los cambios de Copy sugeridos por el asesor (suavizar la IA y explicar el sistema de QR para el 20%) en la sección Growth?
+> 2. ¿Añado la pequeña "Matriz de Decisión" (Ruta A vs Ruta B) para clarificar la oferta?
+> 3. Confirmamos entonces que el CTA principal de esta sección seguirá enviando al Modal de Calendly (Consultoría) para cerrar la venta cara a cara, ¿correcto?
+> 
+> Dame luz verde y aplico el código.

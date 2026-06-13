@@ -1,0 +1,50 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Cerrar Sesión Segura
+F
+Creative Factory
+Generador AI Activo
+Cliente Activo:
+[0] (887,64)<select class='bg-black border border-zinc-800 rounded-lg text-xs font-bold text-white px-2.5 py-1 focus:outline-none' />
+[1] (119,220)<button class='whitespace-nowrap w-full text-left px-4 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-3 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/50'>Matriz de Despliegue (
+0
+) />
+	[2] (39,220)<span >🎯 />
+[3] (119,308)<button class='whitespace-nowrap w-full text-left px-4 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-3 bg-zinc-900 text-white border border-zinc-800'>Generador de Campañas />
+	[4] (39,308)<span >⚡ />
+[5] (119,396)<button class='whitespace-nowrap w-full text-left px-4 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-3 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/50'>Reglas Visuales />
+	[6] (38,396)<span >📐 />
+Datos del Cliente
+[7] (119,602)<label class='text-[10px] text-zinc-600 font-bold uppercase block'>Negocio />
+L'Atelier de L'Océan
+[8] (119,687)<label class='text-[10px] text-zinc-600 font-bold uppercase block'>Gastronomía />
+Marisco de Autor y Alta Cocina
+[9] (119,766)<label class='text-[10px] text-zinc-600 font-bold uppercase block'>Rango de Negocio />
+Gourmet
+El Motor Generativo B2B
+La IA redactará los copys del anuncio adaptándose al restaurante activo y su categoría gastronómica.
+[10] (358,399)<label class='block text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2'>1. Dolor del Cliente />
+[11] (358,463)<select class='w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors appearance-none' />
+[12] (358,555)<label class='block text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2'>2. Ángulo de Ataque />
+[13] (358,619)<select class='w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors appearance-none' />
+📝
+Copy B2B y Estrategia Adaptada
+[14] (740,451)<label class='text-[10px] text-zinc-600 font-bold uppercase block mb-1'>Gancho (Texto en Imagen) />
+¿Regalas el 30% de tu alta cocina?
+[15] (740,586)<label class='text-[10px] text-zinc-600 font-bold uppercase block mb-1'>Primary Text (Cuerpo del Post) />
+En la alta cocina, cada detalle técnico roza la perfección. Desde la textura precisa de un bogavante hasta la emulsión exacta que corona su creación. En templos gastronómicos como *L'Atelier de L'Océan*, el marisco de autor se trata como una obra de arte. 🦞✨
+
+Sin embargo, hay un ingrediente invisible que está destruyendo su rentabilidad: la comisión del 30% de las plataformas de delivery.
+
+Hagamos números con la rigurosidad que exige su negocio:
+Si su ticket medio es de 80€ y gestiona tan solo 15 pedidos diarios a domicilio, las apps se están quedando con más de 10.800€ AL MES de su facturación. Al año, son casi 130.000€ de beneficio neto que se evaporan de su cocina para financiar corporaciones externas. 
+
+El talento culinario es suyo; el margen de beneficio, también debería serlo. 📉💸
+
+En nuestra agencia de marketing gastronómico e ingeniería de menús ayudamos a restaurantes de alta cocina a digitalizar su canal de venta directa, eliminando intermediarios y fidelizando al cliente premium bajo su propia marca.
+
+Recupere el control de su margen hoy mismo. Solicite una sesión de consultoría estratégica gratuita en el enlace. 👇
+
+</current_dom>

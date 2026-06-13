@@ -1,0 +1,21 @@
+# Tareas de Ejecución: Diferenciación Absoluta y Embudos B2B
+
+- `[ ]` 1. Bases de Datos (`demo-data.ts`)
+  - Verificar y reemplazar imágenes 404 por URLs 100% funcionales y semánticamente correctas.
+- `[ ]` 2. Desacoplamiento del Header
+  - Eliminar el Header Global.
+  - Crear Header Sushi (Estilo Minimalista, no fixed).
+  - Crear Header Tapas (Estilo Pizarra/Bar, inline).
+  - Crear Header Burger (Estilo App dinámico).
+- `[ ]` 3. Inyección de Ofertas (Top Hero)
+  - Layout Sushi: Promo de copa de Sake (Estilo elegante).
+  - Layout Tapas: Promo 2x1 Cervezas (Estilo rústico).
+  - Layout Burger: Promo Free Fries (Estilo cartel neón).
+- `[ ]` 4. Inyección de Fidelización (Bottom Form)
+  - Layout Sushi: Formulario "VIP Club" sobrio.
+  - Layout Tapas: Formulario "Club del Tapeo" amigable.
+  - Layout Burger: Formulario "Crave Members" agresivo.
+- `[ ]` 5. Disclaimer B2B Ampliado
+  - Añadir botón de "Visitar Web Principal" en el footer de demostración.
+- `[ ]` 6. Revisión y Relanzamiento (Loop Test)
+  - Levantar túnel y revisar.

@@ -1,0 +1,8 @@
+# Task Checklist
+
+- [ ] Navigate to http://localhost:3002/ (Landing page) to trigger the Analytics Pixel
+- [ ] Inspect console logs on Landing page to verify pixel execution
+- [ ] Navigate to http://localhost:3002/admin-architect (Dashboard)
+- [ ] Verify 'Visitas Totales' > 0 and 'Live Traffic Monitor' shows the session
+- [ ] Capture screenshot of dashboard
+- [ ] Document dashboard findings and prepare final report

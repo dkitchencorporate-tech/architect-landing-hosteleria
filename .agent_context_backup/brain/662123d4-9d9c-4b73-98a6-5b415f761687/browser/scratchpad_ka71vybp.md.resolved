@@ -1,0 +1,13 @@
+# Auto-Promoción B2B Hub Testing Plan
+
+- [x] Navigate to http://localhost:3000/creative-factory
+- [x] Log in with admin@architect.sys / architectPass123! if required
+- [x] Click 'Auto-Promoción Agency' in sidebar
+- [x] Take screenshot `agency_autopromo_empty.png`
+- [x] Select Objetivo: 'Promocionar WhatsApp Bot Closer (Arqui V2)'
+- [x] Select Format: 'Carrusel (5 Slides)'
+- [x] Click 'Generar Campaña B2B' and wait 5 seconds
+- [x] Take screenshot `agency_autopromo_carousel_slide1.png`
+- [x] Click 'Siguiente →'
+- [x] Take screenshot `agency_autopromo_carousel_slide2.png`
+

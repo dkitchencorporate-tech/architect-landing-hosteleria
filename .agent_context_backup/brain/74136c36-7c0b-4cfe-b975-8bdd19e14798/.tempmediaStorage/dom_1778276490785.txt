@@ -1,0 +1,27 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Agente IA
+Conectado a Gemini 1.5
+[0] (125,495)<div class='flex-1 overflow-y-auto p-4 space-y-6' scrollable='true' />
+	❌ Hubo un error de conexión con mi cerebro (Gemini). Inténtalo más tarde.
+	Hola, hazme un test de conexi
+	❌ Hubo un error de conexión con mi cerebro (Gemini). Inténtalo más tarde.
+	Test de conexion sin acentos
+	❌ Hubo un error de conexión con mi cerebro (Gemini). Inténtalo más tarde.
+[1] (125,939)<input class='w-full bg-transparent pl-2 pr-10 py-1.5 text-sm text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none' placeholder='Pregunta a la IA...' />
+[2] (625,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	Consultor AI CRM
+	Centro de Comando de Prospección Avanzada
+	[3] (944,132)<button aria-label='Toggle Dark Mode' class='p-2 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors shadow-sm' />
+	[4] (533,315)<input class='w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 shadow-inner rounded-lg p-3 text-lg text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100' placeholder='Buscar leads en una zona (ej: Madrid Centro)...' />
+	Prospectar
+	[5] (854,315)<button class='bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-400 dark:hover:bg-red-900/50 shadow-sm font-medium px-4 py-3 rounded-lg transition-all flex items-center justify-center ml-2 hover:scale-105' title='Vaciar Base de Datos' />
+	Base de Prospectos
+	0
+	leads
+	No hay prospectos en el sistema
+	Utiliza el panel superior para buscar un nuevo sector.
+
+</current_dom>

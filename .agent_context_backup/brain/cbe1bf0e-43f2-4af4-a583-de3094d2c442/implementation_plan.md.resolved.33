@@ -1,0 +1,55 @@
+# Definición Estricta del Ecosistema Architect.Sys 🦅
+
+Comprendido al 100%. He cometido el error de mezclar niveles de servicio en mi análisis anterior. Tienes toda la razón: un ecosistema PWA de 7 marcas virtuales con CRM y servidores propios es ingeniería de alto nivel y su precio real está en la liga de los 3.000€ - 10.000€. Es un producto *Premium/Enterprise* que funciona como un *upsell* natural o para clientes con mucho presupuesto, no se debe eliminar, se debe **posicionar correctamente**.
+
+De igual manera, el Agente IA en WhatsApp es un "empleado virtual" que requiere entrenamiento (Setup), por lo que no puede regalarse dentro de la suscripción base.
+
+Aquí tienes el diseño milimétrico de la matriz de precios y servicios. Léela con lupa, porque si aprobamos esta lógica, es exactamente la que programaré en la web.
+
+---
+
+## 1. El Posicionamiento de "Dark Kitchen / App Propia"
+No borraremos la sección. Lo que haré (cuando me des luz verde) será **reescribir el copy** de esa sección para que deje de parecer una opción más del menú y se posicione como el *Nivel Máximo (Enterprise)*.
+- **Enfoque:** "Para hosteleros que ya dominan su sala y quieren conquistar el delivery sin pagar peajes."
+- **Descripción:** Ecosistema PWA personalizado, catálogo interactivo con carrito, capacidad de operar hasta 7 marcas virtuales simultáneas (Dark Kitchens) bajo un solo CRM centralizado con servidores dedicados.
+- **CTA:** No llevará precio. El botón dirá: *"Aplicar para Consultoría Dark Kitchen"*. Esto establece una barrera psicológica: no cualquiera puede pagarlo, hay que calificar.
+
+---
+
+## 2. La Matriz de Precios (El Cuadre Estadístico)
+
+Esta es la propuesta exacta para que las matemáticas (Suscripción vs Pago Único) tengan sentido y el cliente perciba el valor real de cada nivel:
+
+### Opción A: "Licencia en Propiedad" (El pago único)
+El cliente que quiere la plataforma, pero prefiere gestionarse sus cosas.
+- **Precio:** Setup de 590€ + Mantenimiento de 69€/mes.
+- **Total Año 1:** ~1.418€.
+- **Qué Incluye:** Diseño Web Premium, Carta Digital Interactiva (sin límites de escaneos) y Acceso al CRM (Kommo/Supabase) para ver sus datos.
+- **Qué NO Incluye:** No hay biblioteca de eventos, no hay gestión de Ads, no hay creación de contenido, no incluye el Bot en WhatsApp.
+
+### Opción B: "Suscripción Growth All-in-One" (El servicio completo)
+El cliente que te delega el crecimiento de su negocio.
+- **Precio:** 249€/mes (Sin Setup de entrada).
+- **Total Año 1:** ~2.988€.
+- **Qué Incluye:** TODO lo de la Licencia + Acceso a la Biblioteca de Eventos (Estrategias comprobadas), Gestión de Campañas de Ads (ellos pagan la inversión publicitaria), y Creación de Contenido. 
+- **Lógica:** Pagan casi el doble al año que la Licencia, pero a cambio tienen una "agencia" trabajando para llenar su restaurante.
+
+### El "Add-On" Estrella: Agente IA en WhatsApp 24/7
+Como bien dices, el bot de WhatsApp lleva un trabajo de configuración brutal (Prompts, integraciones, pruebas). Se vende como un extra a cualquiera de los dos planes anteriores.
+- **Precio:** Setup de Instalación 290€ + Coste Operativo 39€/mes (Por el uso de servidores de IA).
+- **Lógica:** En la web, aparecerá como un "Extra" que pueden marcar o solicitar por separado. "Contrata a tu recepcionista virtual perfecto por menos de lo que cuesta el seguro social de un empleado".
+
+---
+
+## 3. Lo que haré en el código (Cuando apruebes)
+
+Si la lógica matemática y estructural de arriba encaja con tu visión:
+1. **Reescribiré la sección Dark Kitchen (`DarkKitchen.tsx`):** Cambiaré el texto para posicionarlo como servicio Enterprise de alto nivel por aplicación.
+2. **Reescribiré las Tarjetas de Precio (`TheTrojanHorse.tsx`):** Las configuraré exactamente con la *Licencia (590+69)*, la *Suscripción Growth (249/m)*, y dejaré el *Agente IA WhatsApp* claramente diferenciado como un Add-on de instalación independiente.
+3. **Validación de Copy:** Ajustaré los textos para que quede clarísimo qué incluye cada cosa, justificando el valor de la suscripción anual (casi 3.000€) frente a la licencia (1.400€).
+
+## User Review Required
+> [!IMPORTANT]
+> No he tocado ni una línea de código. 
+> 
+> Analiza esta estructura de precios (Licencia 590€+69€/m VS Growth 249€/m) y el Add-On de IA. ¿Te cuadran estos números y esta separación de servicios para que sea tu modelo de negocio definitivo?

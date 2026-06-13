@@ -1,0 +1,40 @@
+# Plan de Migración a SaaS Real (Supabase Auth & Data)
+
+El objetivo es transformar el proyecto de un MVP de frontend a un **SaaS Multitenant Real**. Los clientes accederán mediante un enlace privado, crearán su cuenta y sus selecciones se guardarán en una base de datos. Tú (el Admin) tendrás un "Modo Demo" persistente para tus presentaciones.
+
+## 1. Arquitectura de Autenticación y Base de Datos
+*   **Librería:** Instalaremos `@supabase/ssr` para manejar la autenticación de forma segura a nivel de servidor (App Router de Next.js).
+*   **Base de Datos (Tablas necesarias en Supabase):**
+    1.  `profiles`: Vinculado a `auth.users` (id, email, role: 'admin' o 'client', plan, onboarding_completed).
+    2.  `projects`: Datos del restaurante recopilados en el Onboarding (nombre, facturación, problemas).
+    3.  `client_events`: Eventos seleccionados por el cliente desde la biblioteca y su estado (solicitado, activo, completado).
+    4.  `admin_messages`: Mensajes, actualizaciones de fase estratégica y notificaciones enviadas del admin al cliente.
+
+## 2. Flujo de Acceso del Cliente
+1.  El cliente paga -> Tú le envías un enlace `/auth/register?invite=true` o le creas la cuenta y le envías `/auth/login`.
+2.  Inicia sesión -> Si no ha completado el Onboarding, salta el `OnboardingWizard`. Sus respuestas **se guardan en Supabase** (ya no en localStorage).
+3.  Entra al Dashboard -> Las acciones que haga (ej: Seleccionar "Lanzar Evento") se guardan en la base de datos y notifican al Centro de Control.
+
+## 3. El "Modo Demo" (Para tus Ventas)
+*   Crearemos un usuario específico (ej: `admin@architectsys.com`).
+*   Cuando el sistema detecte que el usuario logueado es el Admin, **ignorará la base de datos vacía** e inyectará toda la data simulada actual (la que está en `demo-data.ts` y el estado del localStorage) para que todo se vea lleno de métricas, eventos y gráficas. Esto te permitirá vender el software mostrando su máximo potencial sin alterar los datos de los clientes reales.
+
+## 4. Centro de Control (Admin Dashboard)
+*   Reescribiremos las páginas en `/admin-architect` para que hagan `SELECT * FROM profiles WHERE role = 'client'`.
+*   Podrás ver la lista de tus clientes, entrar a su ficha, leer qué respondieron en el onboarding, ver qué eventos solicitaron y cambiarles de fase estratégica.
+
+## 5. Cambios Inmediatos en Código
+*   **[DELETE]** `middleware.ts` actual (Autenticación Básica) será reemplazado por un Middleware de Supabase para proteger rutas basado en la sesión real.
+*   **[NEW]** `/src/app/auth/login` y `/src/app/auth/register`.
+*   **[MODIFY]** `/src/app/dashboard/layout.tsx` y `page.tsx` para leer los datos de Supabase en lugar de `localStorage`.
+*   **[MODIFY]** `OnboardingWizard.tsx` para enviar el JSON a Supabase.
+
+---
+
+## 🚨 Requisitos Previos y Preguntas Abiertas
+
+1. **Instalación:** Necesitaré ejecutar `npm install @supabase/ssr @supabase/supabase-js` para actualizar el cliente de base de datos.
+2. **SQL de Supabase:** Te generaré un archivo `.sql` con las tablas que deberás copiar y pegar en el "SQL Editor" de tu panel de Supabase para crear la base de datos.
+3. **Credenciales Admin:** ¿Qué correo electrónico y contraseña quieres que asigne por defecto como la cuenta "Modo Demo / Admin" para que la reconozca el código? (Ej: `alex@architectsys.com`).
+
+¿Estás de acuerdo con esta arquitectura de datos y la división Cliente/Demo? Si es así, aprueba el plan, respóndeme con el correo que quieres usar para el Admin, y comienzo a programar toda la integración backend.

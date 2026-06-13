@@ -1,0 +1,42 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ibéricos y Quesos
+Tabla Jamón 100% Bellota
+26.00
+€
+⭐ RECOMENDADO
+Lonchas sudorosas y veteadas de pura bellota, cortadas a cuchillo al momento por nuestro maestro jamonero.
+[0] (202,517)<button class='bg-[#2c3e2e] text-white px-4 py-2 rounded-xl text-xs font-bold uppercase hover:bg-[#1e2a1f] transition-colors active:scale-95'>+ Añadir />
+[1] (285,517)<button class='bg-[#f4ecd8] text-[#2c3e2e] px-3 py-2 rounded-xl text-xs font-bold uppercase hover:bg-[#e8e4d9] transition-colors'>🤖 Asistente />
+Queso Oveja Viejo Curado
+16.00
+€
+LE
+FR
+GL
+Cuñas de queso potente con maduración de 12 meses, acompañado de almendras tostadas y picos camperos.
+[2] (670,517)<button class='bg-[#2c3e2e] text-white px-4 py-2 rounded-xl text-xs font-bold uppercase hover:bg-[#1e2a1f] transition-colors active:scale-95'>+ Añadir />
+[3] (753,517)<button class='bg-[#f4ecd8] text-[#2c3e2e] px-3 py-2 rounded-xl text-xs font-bold uppercase hover:bg-[#e8e4d9] transition-colors'>🤖 Asistente />
+Surtido Ibérico de la Dehesa
+20.00
+€
+LE
+Selección premium de lomo doblado, chorizo de herradura y salchichón ibérico a la pimienta.
+[4] (202,872)<button class='bg-[#2c3e2e] text-white px-4 py-2 rounded-xl text-xs font-bold uppercase hover:bg-[#1e2a1f] transition-colors active:scale-95'>+ Añadir />
+[5] (285,872)<button class='bg-[#f4ecd8] text-[#2c3e2e] px-3 py-2 rounded-xl text-xs font-bold uppercase hover:bg-[#e8e4d9] transition-colors'>🤖 Asistente />
+Tosta de Cecina de León
+8.50
+€
+GL
+LE
+Pan de cristal horneado con cecina ahumada, lascas de parmesano y un hilo de aceite de trufa.
++ Añadir
+[6] (753,872)<button class='bg-[#f4ecd8] text-[#2c3e2e] px-3 py-2 rounded-xl text-xs font-bold uppercase hover:bg-[#e8e4d9] transition-colors'>🤖 Asistente />
+[7] (414,899)<button class='flex-1 bg-transparent text-white px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-white/10'>🎨
+Ver Otro Diseño />
+[8] (586,899)<button class='flex-1 bg-[#10b981] hover:bg-[#059669] text-black px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest'>💰
+Quiero esta Carta />
+
+</current_dom>

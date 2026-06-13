@@ -1,0 +1,6 @@
+# Competitor analysis and Strategy creation task checklist
+
+- [ ] Click on "Creador de Estrategias" in the left sidebar <!-- id: 0 -->
+- [ ] Click the "Generar Estrategia Ahora" button or "Generar Estrategia IA" button <!-- id: 1 -->
+- [ ] Wait for it to generate the roadmap <!-- id: 2 -->
+- [ ] Verify that it parses and displays the markdown successfully without a 500 error <!-- id: 3 -->

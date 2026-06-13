@@ -1,0 +1,35 @@
+# Plan Arquitectónico: La Demo "Carta Premium" (Arma de Cierre)
+
+*Rol Activo: Arquitecto de Software y Lead UX/UI*
+
+Tienes toda la razón. He auditado el código base y, efectivamente, la integración de Kommo CRM y los webhooks ya están construidos y operativos en el ecosistema. Mis disculpas por el despiste, tienes el código más blindado de lo que pensaba. 
+
+Y sobre los Casos de Éxito: **Comprendido al 100%**. Tu postura ética de no exponer clientes es inquebrantable y lo respeto totalmente. Jugaremos con la autoridad pura de tu tecnología y diseño.
+
+Vamos a construir la **"Demo Real"** a la que apuntarán los Códigos QR de tus flyers. Esta no será una página más; tiene que destilar los 700€ que cobras desde el primer segundo que la abren en su móvil.
+
+## 1. Arquitectura de la Ruta
+Crearemos la ruta: `src/app/demo/carta/page.tsx`.
+Esta URL es limpia y perfecta para codificarla en un QR. Estará diseñada **estrictamente con filosofía Mobile-First** (ya que el 99% de los escaneos del flyer se harán desde un teléfono móvil).
+
+## 2. Especificaciones de UX/UI (Estética Premium)
+Para vender High-Ticket, el diseño no puede ser una plantilla de 20€. Usaremos:
+*   **Modo Oscuro Profundo (Dark Mode):** Fondos `bg-slate-950` con efectos de "Glassmorphism" (cristal esmerilado) en las tarjetas de los platos.
+*   **Tipografía y Acentos:** Fuentes limpias con acentos en dorado o azul eléctrico (el color corporativo de Architect).
+*   **Micro-animaciones:** Entradas suaves al hacer scroll (sin usar librerías externas pesadas, puro Tailwind CSS) para dar sensación de aplicación nativa.
+
+## 3. Características Core de la Demo (Lo que el hostelero va a alucinar)
+Esta demo debe simular ser la carta de un restaurante de lujo (ej. "Architect Sushi Bar" o similar), y mostrar las características que les vendes:
+
+*   **Selector de Idiomas Falso:** Un botón superior que visualmente cambie entre (ES / EN / DE) para demostrar el dolor del turista resuelto.
+*   **Tarjetas de Producto Premium:** Fotos de alta calidad (vía Unsplash), descripciones persuasivas e indicadores de alérgenos.
+*   **El "Upsell" Automatizado:** Un banner o etiqueta de "Recomendación del Chef" integrado en la navegación.
+*   **El Botón Flotante (Llamar Camarero IA):** Un FAB (Floating Action Button) persistente en la esquina inferior derecha que diga *"Hablar con IA / Pedir la Cuenta"*, simulando la integración con WhatsApp/Kommo que ofreces.
+
+## 4. El "Gancho" de Retorno (The CTA)
+Al final de la página (y discretamente en el diseño), colocaremos un *banner* fijo que recuerde que esto es una demostración técnica:
+*   *"Estás viendo una Demo Tecnológica construida por Architect.Sys. ¿Quieres esta soberanía digital para tu local?" -> Botón a la Landing Principal.*
+
+## 🚦 Aprobación para Construir
+
+El plan visual y técnico está definido. Si la estética y las funcionalidades de esta "Carta Premium" encajan con el nivel de calidad que quieres demostrar en la calle con tus flyers, **aprueba este plan** y empezaré a tirar líneas de código para construir `src/app/demo/carta/page.tsx` inmediatamente.

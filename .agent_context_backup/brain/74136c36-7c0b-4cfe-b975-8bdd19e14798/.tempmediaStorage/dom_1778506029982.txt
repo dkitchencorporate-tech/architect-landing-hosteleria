@@ -1,0 +1,58 @@
+[0] (500,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	Centro de Comando de Prospección Avanzada
+	[1] (944,2)<button aria-label='Toggle Dark Mode' class='p-2 rounded-lg bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors shadow-sm' />
+	[2] (408,186)<input class='w-full bg-white dark:bg-zinc-950 border border-zinc-300 dark:border-zinc-700 shadow-inner rounded-lg p-3 text-lg text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-900 dark:focus:ring-zinc-100' placeholder='Buscar leads en una zona (ej: Madrid Centro)...' />
+	Prospectar
+	[3] (729,186)<button class='bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 dark:bg-red-900/30 dark:border-red-800 dark:text-red-400 dark:hover:bg-red-900/50 shadow-sm font-medium px-4 py-3 rounded-lg transition-all flex items-center justify-center ml-2 hover:scale-105' title='Vaciar Base de Datos' />
+	Base de Prospectos
+	6
+	leads
+	[4] (168,706)<div class='overflow-y-auto flex-1 p-2 space-y-1' scrollable='true' />
+		[5] (162,541)<div  />
+			[6] (162,525)<div  />
+				[7] (105,525)<h4 >El Nacional Barcelona />
+				[8] (269,521)<span >0 />
+			[9] (162,560)<div  />
+				[10] (94,560)<span >elnacionalbcn.com/ />
+		[11] (162,651)<div  />
+			[12] (162,635)<div  />
+				[13] (124,635)<h4 >La Selva Barcelona | Còrsega />
+				[14] (269,631)<span >5 />
+			[15] (162,670)<div  />
+				[16] (97,670)<span >laselvabarcelona.es/ />
+		[17] (162,761)<div  />
+			[18] (162,745)<div  />
+				[19] (98,745)<h4 >La Lolita Barcelona />
+				[20] (267,741)<span >10 />
+			[21] (162,780)<div  />
+				[22] (103,780)<span >lalolitarestaurante.com/ />
+		[23] (162,870)<div  />
+			[24] (162,854)<div  />
+				[25] (114,854)<h4 >EMUNÁ Asador Argentino />
+				[26] (267,850)<span >10 />
+			[27] (162,889)<div  />
+				[28] (71,889)<span >Sin web />
+		La Criolla Asador Madrid
+		9
+		thefork.es/restaurante/la-criolla-asador-argentino-r849220
+	La Lolita Barcelona
+	Score
+	10
+	/10
+	DRAFT_READY
+	[29] (849,527)<button class='flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all shadow-sm bg-violet-600 text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-violet-600' title='Ejecutar auditoría profunda'>Auditoría Profunda />
+	[30] (928,527)<button class='p-1.5 text-zinc-400 hover:text-zinc-700 hover:bg-zinc-100 dark:hover:text-zinc-200 dark:hover:bg-zinc-800 rounded-lg transition-colors' />
+	[31] (380,621)<button class='flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/50'>Inteligencia />
+	[32] (483,621)<button class='flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 shadow-sm border border-zinc-200 dark:border-zinc-700'>Estrategia AI
+PRE />
+		PRE
+	[33] (589,621)<button class='flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800/50'>Operaciones />
+	[34] (640,800)<div class='flex-1 overflow-y-auto' scrollable='true' />
+		Email en Frío
+		[35] (909,712)<button class='flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors'>Copiar />
+		Asunto: La Lolita Barcelona: Web obsoleta
+
+Hola,
+Vuestra web es obsoleta y la carta en PDF no es funcional en móvil.
+Somos expertos en digitalización para hostelería y podemos actualizarla para convertir visitas en reservas.
+¿Podríamos hablar 5 minutos este martes para un ejemplo rápido?

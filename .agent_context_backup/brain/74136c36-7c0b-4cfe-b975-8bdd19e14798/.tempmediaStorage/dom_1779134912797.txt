@@ -1,0 +1,179 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DPizzeria%2BBella%2BCiao%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Pizzeria+Bella+Ciao+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&aep=1&ntc=1&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQ2J8OegQICBAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Pizzeria+Bella+Ciao+Granada&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQtKgLegQIFBAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Pizzeria+Bella+Ciao+Granada&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQs6gLegQIEhAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Pizzeria+Bella+Ciao+Granada&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQtKgLegQIERAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos />
+[31] (408,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=Pizzeria+Bella+Ciao+Granada&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQ0pQJegQIEBAB' />
+	[32] (408,180)<div  />
+		[33] (408,194)<span >Noticias />
+[34] (459,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTUEVLYKBrOkTsSvdYDjhWUeXIpGqCEfMfxoMLPYuwsE1w6hXfnxjZxD2Eyvu-iOut1uHFe-83OcQpeOfa2VDz9J76v775XXMBJL3_amcBYcbsk92uA5BemzzqbjqhNx9rwwc8T1oO8rzP8upRR982cs8QbsW&q=Pizzeria+Bella+Ciao+Granada&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQs6gLegQIDxAB' />
+	[35] (459,180)<div  />
+		[36] (459,194)<span >Web />
+[37] (507,180)<div class='mTpL7c' role='button' />
+	[38] (507,180)<div  />
+		[39] (507,194)<div  />
+			[40] (500,186)<span >Más />
+			[41] (517,186)<span  />
+[42] (585,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (585,180)<div  />
+		[44] (585,194)<div  />
+			[45] (578,186)<span >Herramientas />
+			[46] (620,186)<span  />
+Resultados de búsqueda
+[47] (283,321)<a class='zReHs' href='https://www.just-eat.es/restaurants-pizzeria-bella-ciao-granada/menu' />
+	[48] (283,350)<h3 >Menú de Pizzería Bella Ciao a domicilio en Granada - Just Eat />
+	[49] (148,296)<div  />
+		[50] (148,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<img  />
+			[54] (164,296)<div  />
+				[55] (164,282)<div  />
+					[56] (164,282)<span >just-eat.es />
+				[57] (164,312)<div  />
+					[58] (164,312)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.just-eat.es />
+						[59] (211,311)<span class='ylgVCe ob9lvb' role='text'>› menu />
+[60] (243,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[61] (243,310)<span  />
+		[62] (243,312)<span  />
+Pizzas Clásicas
+· Pizza Marinara. desde 6,00 €. Tomate, ajo, a · Pizza Margherita. desde 8,00 €. Tomate y mozzarella · Pizza Prosciutto. desde 9,00 €.
+4.7
+(889)
+[63] (189,467)<div role='button' />
+[64] (255,587)<a class='zReHs' href='https://www.instagram.com/pizzeriabellaciao.grx/' />
+	[65] (255,616)<h3 >Pizzeria Bella Ciao (@pizzeriabellaciao.grx) · Granada />
+	[66] (164,562)<div  />
+		[67] (164,562)<div  />
+			[68] (81,562)<span  />
+				[69] (81,562)<div  />
+					[70] (81,562)<img  />
+			[71] (180,562)<div  />
+				[72] (180,548)<div  />
+					[73] (180,548)<span >Instagram · pizzeriabellaciao.grx />
+				[74] (180,578)<div  />
+					[75] (153,578)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>Más de 1.7 K seguidores />
+[76] (275,576)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[77] (275,576)<span  />
+		[78] (275,578)<span  />
+Lun a Dom: 13:30 - 16:00 / 19:30 - 23:30
+☎️ 958264576 Just Eat Glovo Uber Eats To Good to Go Menú y ofertas en Destacados   · Desde la Pizzeria Bella ...
+[79] (269,818)<a class='zReHs' href='https://www.ubereats.com/es/store/pizzeria-bella-ciao/E_bDYYXNTF-ruOwqTB1ZOA?srsltid=AfmBOooOG7j8RuU29TiDTcbdX2eVtmEcb4rd7TllmVnPxfI_avP5iy00' />
+	[80] (269,847)<h3 >Pizzería Bella Ciao menú y precios - Pide a domicilio en ... />
+	[81] (190,793)<div  />
+		[82] (190,793)<div  />
+			[83] (81,793)<span  />
+				[84] (81,793)<div  />
+					[85] (81,793)<img  />
+			[86] (206,793)<div  />
+				[87] (206,779)<div  />
+					[88] (206,779)<span >Uber Eats />
+				[89] (206,809)<div  />
+					[90] (206,809)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.ubereats.com />
+						[91] (259,808)<span class='ylgVCe ob9lvb' role='text'>› ... › Granada › Albaicín />
+[92] (327,807)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[93] (327,807)<span  />
+		[94] (327,809)<span  />
+Pizzería Bella Ciao
+es una
+pizzería
+ubicada en el pintoresco barrio granadino del Albaicín, conocida por sus especialidades en
+pizzas
+.
+4.5
+(500)
+·
+Rango de precios: $
+[95] (293,964)<div role='button' />
+[96] (678,392)<button class='KJY1Gc' />
+	[97] (677,392)<div  />
+		[98] (677,392)<div  />
+			[99] (686,392)<img  />
+		[100] (687,494)<span >Ver fotos />
+[101] (798,392)<a  />
+[102] (823,458)<a href='/local/place/fid/0xd71fc9698eaffbd:0x91811592d471f543/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DL7ivLV-6SiDO2trSG_AWYQ%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D193.10739%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFkw3aXZMVi02U2lETzJ0clNHX0FXWVE%3D&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQpx96BAgcEA8' />
+	[103] (823,458)<div  />
+		[104] (848,458)<img  />
+	[105] (890,495)<span >Ver por fuera />
+Pizzeria Bella Ciao
+4.7
+[106] (749,602)<a href='/search?sca_esv=53e99bddec16fb1e&q=Pizzeria+Bella+Ciao+Granada&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOR0D_2AurFKVeVDAsu_p4e9rtSNUoDGgSRB1a0zRk8KZLoqxugx2Wbjsx3Qb0gmF8rJde0w%3D&uds=ALYpb_l2fW9FmhMyhdOPbWGe4NHt9_cYTX7q_YtG77Ul2VciR94obVFmWwcqEj6bYK4O5iG91rWpA1rRelh_BSA8iTyfwY5VNHuvGmZjxUc7Y1ZyuRgf6fm8UWAzYfKTyfFR-RU7q_LV&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQ3PALegQIGhAE'>802 opiniones />
+[107] (796,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[108] (796,598)<span  />
+€1-10
+‧
+Pizzería
+[109] (816,604)<div class='mTpL7c' role='button' />
+	[110] (816,604)<span aria-label='Más opciones para Pizzeria Bella Ciao' class='Zj92Hf' role='img' />
+		[111] (814,601)<span  />
+[112] (688,723)<div  />
+	[113] (656,723)<div  />
+	[114] (697,723)<span >Cómo llegar />
+[115] (787,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOR0D_2AurFKVeVDAsu_p4e-0dGhrfKLkQh_lxmJ5WaUUU-tuLs1GMA3614gzO8JzRmakaZlpjVBiXpyF-bn8kSE3P7SgoJhv7cxXpF4gqNf6kJ5NwQ%3D%3D&q=Pizzeria+Bella+Ciao+Opiniones&sa=X&ved=2ahUKEwj26vGC0sOUAxVNs1YBHUmGGJQQ0bkNegQIMBAF' />
+	[116] (787,723)<div  />
+		[117] (759,723)<div  />
+		[118] (796,723)<span >Opiniones />
+[119] (876,723)<div  />
+	[120] (876,723)<div  />
+		[121] (876,723)<div  />
+			[122] (876,723)<span aria-label='Guardar Pizzeria Bella Ciao en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Pizzeria Bella Ciao en una colección' />
+				[123] (884,723)<span >Guardar />
+[124] (684,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[125] (684,799)<div  />
+		[126] (656,799)<div  />
+		[127] (692,799)<span >Compartir />
+[128] (769,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[129] (769,799)<div  />
+		[130] (750,799)<div  />
+		[131] (778,799)<span >Llamar />
+[132] (843,799)<span  />
+	[133] (843,799)<div id='sXDlyb/g/11bxfzj6ff' role='button' />
+		[134] (843,799)<div  />
+			[135] (827,799)<div  />
+			[136] (851,799)<span >Menú />
+[137] (707,878)<div class='K9ZSQ' id='pYQAIb/g/11bxfzj6ff' role='button' />
+	[138] (707,878)<div  />
+		[139] (663,878)<div  />
+		[140] (715,878)<span >Pedir para llevar />
+[141] (852,878)<div class='K9ZSQ' id='pYQAIb/g/11bxfzj6ff' role='button' />
+	[142] (852,878)<div  />
+		[143] (808,878)<div  />
+		[144] (861,878)<span >Pedir a domicilio />
+Pizzas especiales y calzones en una pizzería sencilla con una pequeña barra para sentarse.
+
+</current_dom>

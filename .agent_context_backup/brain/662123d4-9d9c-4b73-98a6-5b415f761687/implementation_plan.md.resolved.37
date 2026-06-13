@@ -1,0 +1,34 @@
+# Plan de Optimización de UX/UI y Responsividad (Carta Digital)
+
+He analizado el código fuente de la demostración (`/demo/carta/page.tsx`). Tienes mucha razón, al colocar el Carrito de Compras y el Chat de IA dentro del mismo modal, la interfaz colapsa en dispositivos móviles y pierde la estética Premium que necesitamos para los videos de marketing. Además, algunos textos e imágenes en los diseños (especialmente la Carta 1 de Sushi) no están escalando correctamente.
+
+Para garantizar que esta demo sea la herramienta de ventas definitiva, propongo el siguiente plan de refactorización:
+
+## 1. Refactorización del "Ver Pedido" (Des-aglutinación)
+Actualmente el modal intenta mostrar la comanda y el chat de IA al mismo tiempo. Voy a dividirlos.
+*   **Modal de Comanda Puro:** Cuando el usuario pulse "Ver Pedido", verá una pantalla limpia y elegante *exclusivamente* con su cuenta.
+*   **Los 3 Botones de Acción:** En la parte inferior de este modal, en lugar de un bloque de texto, implementaré 3 botones táctiles de alto contraste:
+    1.  🟩 **Enviar Pedido a Cocina** (Botón principal).
+    2.  🛎️ **Llamar al Camarero Humano** (Botón secundario).
+    3.  🤖 **Abrir Asistente IA** (Botón de innovación).
+
+## 2. Modal Independiente para el Agente IA
+*   Si el usuario presiona el botón de IA (ya sea en el carrito o en un plato individual), se abrirá un **Modal de Chat Dedicado**.
+*   Esto le dará espacio completo a la pantalla para mostrar la conversación como si fuera WhatsApp, haciéndolo 100% amigable para grabar pantallas móviles sin que se vea amontonado.
+
+## 3. Corrección de Responsividad (Adaptive Intelligence)
+Voy a inyectar clases Tailwind de escalado inteligente (clamps y breakpoints dinámicos) en los tres diseños (Sushi, Tapas, Burger):
+*   **Carta 1 (Sushi):** Aumentaré la legibilidad en móviles (los textos de `10px` se ajustarán a `12px/14px` dinámicamente) y arreglaré el desbordamiento de las imágenes horizontales.
+*   **Carta 2 (Tapas):** Optimización del espaciado de las tarjetas en pantallas estrechas.
+*   **Carta 3 (Burger):** Ajuste de los menús superiores para evitar el scroll horizontal forzado que rompe la estética de las "Apps".
+
+## Tareas a Ejecutar
+### [MODIFY] `src/app/demo/carta/page.tsx`
+*   Separar estado `isCartOpen` e `isChatOpen` de forma excluyente (o superpuesta).
+*   Rediseñar el `Cart Modal` para incluir los 3 botones principales.
+*   Crear el `Chat Modal` aislado con UI de mensajería profesional.
+*   Reescribir las clases de márgenes, grid y tipografías (Tailwind) en las 3 funciones de Layout (`EditorialSushiLayout`, `ListTapasLayout`, `GridBurgerLayout`).
+
+---
+
+**¿Apruebas este plan de rediseño responsivo?** Una vez confirmado, reescribiré la demo para que funcione impecablemente desde un iPhone SE hasta un iPad Pro, dándote el material perfecto para grabar tus anuncios.

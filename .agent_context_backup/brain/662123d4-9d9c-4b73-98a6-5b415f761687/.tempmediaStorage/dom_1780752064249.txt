@@ -1,0 +1,45 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+F
+Creative Factory
+Generador AI Activo
+Cliente Activo:
+[0] (887,64)<select class='bg-black border border-zinc-800 rounded-lg text-xs font-bold text-white px-2.5 py-1 focus:outline-none' />
+⚡
+Generador de Campañas
+[1] (119,147)<button class='whitespace-nowrap w-full text-left px-4 py-3 rounded-xl text-sm font-bold transition-all flex items-center gap-3 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/50'>Reglas Visuales />
+	[2] (38,147)<span >📐 />
+Datos del Cliente
+[3] (119,352)<label class='text-[10px] text-zinc-600 font-bold uppercase block'>Negocio />
+Pizzería Don Giovanni
+[4] (119,437)<label class='text-[10px] text-zinc-600 font-bold uppercase block'>Gastronomía />
+Pizza y Pasta Italiana Rústica
+[5] (119,516)<label class='text-[10px] text-zinc-600 font-bold uppercase block'>Rango de Negocio />
+Barrio
+La IA redactará los copys del anuncio adaptándose al restaurante activo y su categoría gastronómica.
+[6] (358,149)<label class='block text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2'>1. Dolor del Cliente />
+[7] (358,213)<select class='w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors appearance-none' />
+[8] (358,305)<label class='block text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2'>2. Ángulo de Ataque />
+[9] (358,370)<select class='w-full bg-black border border-zinc-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors appearance-none' />
+📝
+Copy B2B y Estrategia Adaptada
+[10] (740,202)<label class='text-[10px] text-zinc-600 font-bold uppercase block mb-1'>Gancho (Texto en Imagen) />
+De cada 3 pizzas, una es para ellos.
+[11] (740,336)<label class='text-[10px] text-zinc-600 font-bold uppercase block mb-1'>Primary Text (Cuerpo del Post) />
+Vecino, hablemos claro y de tú a tú. 🍕
+
+Te dejas la espalda cada día frente al horno, estirando la masa y preparando esa salsa de tomate que huele a gloria en todo el vecindario. Pero, ¿has echado cuentas reales de lo que se te va por el desagüe?
+
+Si vendes 5.000€ al mes a domicilio, las apps de delivery se quedan con 1.500€. ¡1.500 eurazos limpios que vuelan de tu caja! 💸
+
+Es como si en un negocio de toda la vida, como la Pizzería Don Giovanni, de cada tres platos de pasta italiana rústica que salen de tu cocina con tanto cariño, uno se lo tuvieras que regalar gratis a un intermediario. No es justo para un negocio de barrio que vive de precios honestos y del sudor de su frente.
+
+Ese 30% de comisión es un sangrado silencioso que se come tu margen de beneficio. Pero hay otra forma de hacer las cosas, más nuestra, más familiar.
+
+Te ayudamos a montar tu propio sistema de pedidos online sin comisiones abusivas. Para que tus vecinos de siempre te compren directamente a ti, y el dinero de tu trabajo se quede en tu casa.
+
+👉 Haz clic abajo y recupera el control de tu negocio hoy mismo. ¡Es hora de dejar de regalar tu esfuerzo!
+
+</current_dom>

@@ -1,0 +1,51 @@
+# Walkthrough: Sala de Control Creativa de Architect.Sys
+
+Hemos transformado completamente la Factoría Creativa anterior en una **Sala de Control Creativa y Estratégica B2B** premium para **Architect.Sys**. El sistema permite a los consultores de la agencia gestionar la estrategia comercial, generar copys persuasivos y vincular visual assets directamente para sus clientes.
+
+## 🛠️ Cambios Realizados
+
+### 1. Nuevas API Routes creadas
+- **`🗺️ Creador de Estrategias`** (`/api/creative-factory/strategy`): Genera un plan de marketing de guerrilla a 30 días dividido en 3 fases tácticas (Ingeniería de Menú, Campañas Ads e Imán de Prospectos, y Ecosistema de Eventos), adaptando el tono de la IA al estilo de cocina y ticket (Gourmet, Casual, Barrio) del cliente seleccionado.
+- **`🤖 Agente de Ejecución (Chat)`** (`/api/creative-factory/agent-chat`): Endpoint de chat interactivo que actúa como copiloto del consultor. Mantiene el contexto histórico del cliente activo y responde aplicando las 10 leyes de prospección comercial de la agencia.
+
+### 2. Rediseño Premium de la Interfaz (`src/app/creative-factory/page.tsx`)
+- **Alineación Visual**: Eliminación de la cabecera flotante. Transición a un layout limpio y profesional de panel de control estructurado con una barra de navegación lateral compacta ("Vault de Control").
+- **Estética Obsidian-Glassmorphism**: Fondo oscuro profundo (`#050505`), bordes elegantes en zinc oscuro, tipografía Outfit premium, insignias HSL adaptativas según la categoría del cliente (Gourmet, Barrio, Casual) y micro-iluminaciones naranja quemado.
+- **Pestaña `Especialidades de la Carta`**: Rejilla interactiva que muestra las especialidades culinarias cargadas para el cliente activo. Permite al consultor hacer clic en "Diseñar Foto con IA" en cualquier plato para saltar al Motor Generativo con el prompt ya configurado para ese plato específico.
+- **Pestaña `Dossier de Protocolos`**: Biblioteca interna con sub-pestañas para consultar rápidamente las 10 leyes operativas del consultor gastronómico, el protocolo de captación paso a paso y el ecosistema de eventos universales.
+
+---
+
+## 🧪 Pruebas de Funcionamiento Diario Realizadas
+
+Simulamos la jornada laboral de un consultor gastronómico gestionando la cuenta gourmet **L'Atelier de L'Océan**:
+
+1. **Auditoría de la Carta**: Se ingresó a la sección de platos activos del cliente marisquería gourmet.
+2. **Generación Comercial**: Se diseñó una copia publicitaria y prompt para el plato *Tartar de Vieira con Trufa y Caviar* usando el Motor Generativo B2B adaptado al tono sofisticado del cliente.
+3. **Creador de Estrategias**: Se trazó el plan de guerrilla de 30 días personalizado enfocado en la escasez, mística y superioridad sensorial.
+4. **Chat interactivo con Arqui**: Se conversó con el copiloto IA para estructurar copys cortos para redes sociales y refinar el plan.
+5. **Consulta de Protocolos**: Se revisó el manual y las 10 leyes operativas de la agencia para asegurar que la oferta de entrada fuera libre de riesgo (20% variable).
+
+---
+
+## 📸 Evidencias Visuales
+
+A continuación se muestran capturas de pantalla de la Sala de Control en acción:
+
+### Especialidades de la Carta Gourmet
+Visualización de la rejilla interactiva de especialidades de **L'Atelier de L'Océan**:
+![Especialidades de la Carta Gourmet](/agency_test_gourmet_menu.png)
+
+### Estrategia de Guerrilla de 30 Días
+Plan comercial estructurado en Markdown y renderizado dinámicamente:
+![Estrategia a 30 días de L'Atelier](/agency_test_strategy.png)
+
+### Agente de Ejecución (Chatbot)
+Conversación de asistencia técnica y copys con el copiloto Arqui:
+![Coordinador IA de Ejecución](/agency_test_chat_response.png)
+
+---
+
+## 📹 Grabación de la Sesión Completa
+Puedes reproducir la animación/video del recorrido interactivo diario del consultor realizado por el navegador de pruebas aquí:
+![Grabación del Recorrido Diario de la Agencia](/agency_daily_operations_tests_1780755662550.webp)

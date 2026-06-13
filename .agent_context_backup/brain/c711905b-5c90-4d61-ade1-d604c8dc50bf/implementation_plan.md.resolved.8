@@ -1,0 +1,39 @@
+# Análisis de Alternativas: Sistema de Reservas (Custom vs. Calendly)
+
+*Rol Activo: Arquitecto de Software & Consultor de Negocio*
+
+Tienes muy buen ojo crítico. Poner un botón de "Ya he terminado" debajo de un calendario que no controlamos es un "parche" visual. Resta elegancia y fricciona la experiencia de un servicio premium de 700€. 
+
+Dado que exigimos la máxima excelencia, vamos a analizar las dos alternativas reales que tenemos en el mercado para solucionar esto con precisión quirúrgica:
+
+## Opción A: Sistema de Reservas 100% Propio (Desarrollo a Medida)
+Se trata de programar nosotros mismos el calendario visual en React, conectándolo por debajo con la API oficial de Google Calendar de tu cuenta.
+
+*   **Pros:** Control absoluto. El diseño será exactamente igual al de nuestra web. No hay logos de terceros. El usuario elige la hora, hace clic, guardamos en base de datos y pasamos al Paso 4 instantáneamente.
+*   **Contras (Peligro):** 
+    1.  **Complejidad Técnica Brutal:** Requiere configurar servidores backend (Node.js/Supabase) para manejar tokens de autenticación (OAuth2) de Google, calcular zonas horarias, cruzar eventos para evitar dobles reservas (Free/Busy API) y gestionar cancelaciones.
+    2.  **Tiempo y Mantenimiento:** Lo que parece un simple calendario, es en realidad un software complejo que tomaría semanas en estabilizar. Estarías inventando la rueda y asumiendo un riesgo de fallos (citas solapadas) muy alto.
+*   **Veredicto:** ❌ **Descartado.** Para validar un MVP de captación B2B, es un suicidio técnico y financiero construir un Calendly desde cero.
+
+---
+
+## Opción B: Pivotar a Calendly (o Cal.com) - *Mi Recomendación*
+Plataformas como Calendly o Cal.com (que es open-source) están diseñadas específicamente para integrarse en webs de terceros como la nuestra, solucionando todos los dolores de cabeza que nos da Google Calendar nativo.
+
+*   **Ventaja 1 (Adiós al doble registro):** Calendly permite inyectar variables en su URL. Es decir, cuando el cliente ponga su nombre (`Carlos`) y su correo (`carlos@...`) en nuestro Paso 2, se los pasaremos ocultos a Calendly. En el Paso 3, **el cliente solo tendrá que hacer clic en la hora y listo.** Nada de volver a escribir datos. Cero fricción.
+*   **Ventaja 2 (Transición Mágica al Paso 4):** A diferencia de Google, Calendly sí cuenta con una API frontend (`window.postMessage`). Podemos programar nuestro código para que escuche silenciosamente al iframe de Calendly. En el milisegundo exacto en que el cliente confirme la cita, nuestro sistema detectará el evento `calendly.event_scheduled` y, sin que el cliente toque nada, el calendario desaparecerá y **aparecerá mágicamente la Pantalla de Agradecimiento (Paso 4)**.
+*   **Contras:** Usarás una plataforma de terceros (tendrá su pequeño logo en la versión gratuita), pero la experiencia de usuario será impecable, profesional y de altísima conversión.
+
+---
+
+> [!IMPORTANT]
+> **Decisión Ejecutiva Requerida**
+> 
+> A nivel técnico y de negocio, **la Opción B (Calendly/Cal.com) es la única vía lógica para un funnel de alta conversión sin disparar los costes de desarrollo.**
+> 
+> Si estás de acuerdo, el plan de acción es:
+> 1. Creas una cuenta gratuita en Calendly y configuras un evento de 20 min.
+> 2. Me pasas el enlace público de ese evento.
+> 3. Yo programo la integración avanzada: autocompletado de datos oculto y la escucha del evento de éxito para lanzar automáticamente nuestra Pantalla de Éxito (Paso 4).
+> 
+> ¿Pivotamos hacia Calendly?

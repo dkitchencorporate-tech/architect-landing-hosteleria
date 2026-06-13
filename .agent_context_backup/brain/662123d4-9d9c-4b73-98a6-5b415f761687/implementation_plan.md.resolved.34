@@ -1,0 +1,40 @@
+# Rediseño Premium de Autenticación y Google OAuth
+
+Tienes toda la razón. Si vendemos un SaaS High-Ticket B2B, la pantalla de acceso no puede ser un formulario básico. Debe transmitir **autoridad, seguridad y diseño de vanguardia**, como Vercel, Linear o Stripe.
+
+He analizado la pantalla actual y propongo este plan para elevar el nivel visual e integrar inicio de sesión con Google.
+
+## 1. Rediseño Visual de Alto Nivel (Premium SaaS UI)
+*   **Layout:** Cambiaremos el diseño de caja simple a un formato moderno (Split Screen o Tarjeta Central con Glassmorphism profundo).
+*   **Elementos Visuales:** 
+    *   Fondo oscuro enriquecido con luces de acento sutiles (Glows en naranja/brand).
+    *   Campos de texto refinados con bordes interactivos.
+    *   Separador visual elegante ("o continuar con email").
+    *   Micro-animaciones de entrada (fade y slide-up).
+
+## 2. Integración de Google OAuth
+Añadiremos el botón oficial de **"Continuar con Google"**.
+*   **Código:** Utilizaremos la función nativa `supabase.auth.signInWithOAuth({ provider: 'google' })`.
+*   **Ruta de Retorno (Callback):** Crearemos obligatoriamente el archivo `src/app/auth/callback/route.ts`. Este archivo es vital en *Next.js App Router* para capturar el token que envía Google al volver y establecer la cookie de sesión segura.
+
+## 🚨 Lo que tú (o el Agente de Supabase) deberán hacer después
+
+Para que el botón de Google funcione en producción, hay un paso que **solo se puede hacer desde el panel de Supabase**, ya que yo desde el código no tengo acceso a tu consola de configuración:
+
+1.  Ir a **Supabase > Authentication > Providers > Google**.
+2.  Activar Google.
+3.  Ingresar el `Client ID` y el `Client Secret` (Se obtienen gratuitamente creando un proyecto en Google Cloud Console).
+4.  Poner la URL de redirección (ej. `https://hosteleria.architectsys.com/auth/callback`).
+
+## Propuesta de Cambios en Código
+### [MODIFY] `src/app/auth/login/page.tsx`
+Rediseño total de la interfaz, añadiendo el botón de Google y mejorando las alertas de error.
+
+### [MODIFY] `src/app/auth/register/page.tsx`
+Rediseño simétrico al login, enfocado en "Activación de Cuenta", también con soporte para Google.
+
+### [NEW] `src/app/auth/callback/route.ts`
+El endpoint de servidor que valida los tokens mágicos de Google y Supabase.
+
+---
+¿Apruebas este diseño y la integración de Google OAuth? Si es así, comienzo inmediatamente a programar las pantallas de alta fidelidad.

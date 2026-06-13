@@ -1,0 +1,37 @@
+# La Enciclopedia Operativa (100% Completada)
+
+He terminado de redactar, maquetar y desplegar la totalidad de los manuales y procesos (SOPs) que conforman el núcleo de Architect.Sys. 
+
+No ha quedado ninguna sección sin documentar. Todo está alojado en el entorno de producción bajo el mismo diseño Premium oscuro para web, y optimizado matemáticamente para descargarse en **PDF A4 de Alta Resolución** con un clic.
+
+## Índice General de la Plataforma
+Puedes acceder a la matriz principal en: **[hosteleria.architectsys.com/manuals](https://hosteleria.architectsys.com/manuals)**
+
+Desde allí, podrás navegar y exportar a PDF las siguientes guías que acabo de crear:
+
+### 1. El Directorio Central
+*   **[Mapa Integral de Navegación y URLs](/manuals/mapa-navegacion)**: Un desglose absoluto de todos los links, desde el frontend público, hasta las rutas de servidor secretas (Webhooks y APIs) y su nivel de acceso.
+
+### 2. Base de Datos y Back-End
+*   **[Arquitectura SaaS y Base de Datos](/manuals/arquitectura-saas)**: Explicación de los esquemas de Supabase, las tablas maestras, la seguridad RLS para evitar fugas de información entre clientes, y cómo el *Middleware* defiende las rutas.
+
+### 3. Estrategia Comercial (El Negocio)
+*   **[Embudos de Venta y Psicología B2B](/manuals/estrategia-ventas)**: La tesis del "Socio Operativo", el porqué de la estructura de la Landing Page, y cómo la fijación de precios High-Ticket funciona a nivel cognitivo.
+
+### 4. La Operación Diaria (Customer Success)
+*   **[Onboarding de Clientes B2B](/manuals/onboarding-b2b)**: Documentación de qué hace el cliente apenas paga. El *Onboarding Wizard*, el Dashboard, y cómo la *Creative Factory* inserta eventos en la base de datos para asegurar su retención.
+
+### 5. Inteligencia Artificial (El Cerrador)
+*   **[Agente de Ventas IA (Arqui)](/manuals/agente-ia)**: Las 10 Leyes Fundamentales del asistente. Cómo su personalidad técnica-comercial fluye hacia WhatsApp y Kommo sin perder el contexto.
+
+### 6. Tu Vista de Comandante (Ventas y Demo)
+*   **[Centro de Control de Administración](/manuals/centro-control)**: El protocolo de cómo monitorear clientes reales ignorando la seguridad de forma legal (God Mode) y la lógica exacta de cómo el "Modo Demo" inyecta datos falsos cuando haces presentaciones de ventas.
+
+### 7. Protocolos Especiales
+*   **[Configuración de Google OAuth](/manuals/google-oauth)**: El manual previo que resolvimos hoy.
+
+---
+> [!IMPORTANT]
+> ### Todos los manuales están vivos
+> Recuerda que estos manuales no son PDFs estáticos. Son páginas web vivas en tu dominio.
+> Para descargar cualquiera en PDF, solo entra a la ruta deseada y haz clic en el botón blanco **"Exportar PDF"** en la parte superior derecha. Verás cómo la pantalla muta de negro digital a papel corporativo.

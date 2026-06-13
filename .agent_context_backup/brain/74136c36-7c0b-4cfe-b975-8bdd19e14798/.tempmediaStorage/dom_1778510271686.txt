@@ -1,0 +1,68 @@
+[0] (500,500)<main class='flex-1 overflow-y-auto relative p-6 md:p-10 z-10 bg-zinc-50 dark:bg-zinc-950' scrollable='true' />
+	Base de Prospectos
+	Prospección Activa
+	5
+	leads
+	La Selva Barcelona | Còrsega
+	5
+	/10
+	EVALUATED
+	4.8
+	(
+	14000
+	)
+	[1] (280,257)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[2] (305,257)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	laselvabarcelona.es/
+	Sin teléfono
+	hola@laselvabarcelona.es
+	Carta en PDF dificulta la carga en dispositivos móviles
+	Dependencia de TheFork para la gestión de reservas
+	[3] (180,605)<button class='w-full flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-semibold py-2.5 rounded-xl transition-all shadow-sm hover:shadow-md group-hover:scale-[1.01]'>Ver Prospecto Completo />
+	La Lolita Barcelona
+	3
+	/10
+	EVALUATED
+	4.5
+	(
+	13000
+	)
+	[4] (594,257)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[5] (619,257)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	lalolitarestaurante.com/
+	Sin teléfono
+	hola@lalolitarestaurante.com
+	Carta en formato PDF o imagen
+	[6] (494,605)<button class='w-full flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-semibold py-2.5 rounded-xl transition-all shadow-sm hover:shadow-md group-hover:scale-[1.01]'>Ver Prospecto Completo />
+	Restaurante Bel Mondo
+	0
+	/10
+	EVALUATED
+	[7] (908,257)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[8] (933,257)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	bigmammagroup.com/es/restaurantes-italianos/bel-mondo?utm_source=google&utm_medium=organic&utm_campaign=mybusiness-website
+	Sin teléfono
+	love@bigmamma.es
+	Falta de una solución de carta interactiva QR dedicada para acceso directo en mesa
+	[9] (808,605)<button class='w-full flex items-center justify-center gap-2 bg-zinc-900 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-semibold py-2.5 rounded-xl transition-all shadow-sm hover:shadow-md group-hover:scale-[1.01]'>Ver Prospecto Completo />
+	La Taberna de Peñalver
+	3
+	/10
+	EVALUATED
+	[10] (280,743)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[11] (305,743)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	latabernadepenalver.com/
+	Sin teléfono
+	Sin email
+	Menú web actual estático, carente de interactividad y soporte visual dinámico para optimización del ticket medio.
+	El Jardín Secreto Madrid
+	3
+	/10
+	EVALUATED
+	Auditado
+	[12] (594,743)<button class='w-7 h-7 flex items-center justify-center rounded-lg transition-colors text-zinc-400 hover:text-amber-600 hover:bg-amber-50 dark:hover:bg-amber-900/20' title='Archivar' />
+	[13] (619,743)<button class='w-7 h-7 flex items-center justify-center rounded-lg text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors' title='Eliminar lead' />
+	eljardinsecretomadrid.es/
+	Sin teléfono
+	Sin email
+	Carta en formato de imágenes estáticas que dificulta la interacción y accesibilidad en dispositivos móviles.

@@ -1,0 +1,5 @@
+# Debug Log
+- Sent "Error test" twice.
+- Received generic error: "❌ Hubo un error de conexión con mi cerebro (Gemini). Inténtalo más tarde."
+- Exact error message (❌ ERROR API EXACTO:) is NOT appearing.
+- Suspicion: Backend worker is not running the updated code or is crashed.

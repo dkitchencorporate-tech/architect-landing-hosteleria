@@ -1,0 +1,30 @@
+# Walkthrough: Soluciones de Interacción y Flujo de Ventas
+
+He completado las tres optimizaciones críticas que identificamos en tu prueba de escritorio. Los cambios ya están activos y listos para ser probados en tu servidor local (`localhost:3001`).
+
+## 1. Bloqueo de Colisión (Chat vs Exit Intent)
+- **Implementación:** He añadido un sistema de comunicación interna en tiempo real usando eventos del navegador (`chat_opened` y `chat_closed`).
+- **Resultado:** Ahora, en cuanto abres el Chat de Arqui, el Exit Intent queda completamente desactivado y "mudo". Aunque estés inactivo por 45 segundos o intentes cerrar el navegador, el popup no saltará a molestarte por detrás del chat. En cuanto cierras el chat, el sistema vuelve a la normalidad.
+
+## 2. Parche Anti-Leak de JSON (Inmaculado)
+- **Implementación:** He añadido un filtro de limpieza en el backend de la API (`route.ts`) usando expresiones regulares:
+  ```typescript
+  text = text.replace(/```json/gi, '').replace(/```/g, '').trim();
+  ```
+- **Resultado:** Este parche elimina de forma agresiva cualquier bloque de formateo markdown (las comillas triples ` ``` ` o la palabra `json`) que Gemini ponga al principio de su respuesta antes del objeto JSON. El texto visible al usuario ahora es 100% natural, profesional y limpio.
+
+## 3. Re-enfoque Estratégico: De "Demo" a "Cerrador de Ventas"
+- **Implementación:** He reescrito la instrucción de sistema de la API (`route.ts`) en el modo `CONSULTING`:
+  - Se le ordena a Arqui dejar de comportarse como un formulario técnico (pedir ubicaciones, capacidad del restaurante, etc.).
+  - **Nueva Conversación:** Ahora, en cuanto sabe el nombre y tipo de negocio, Arqui lanza el pitch: explica que con Architect.Sys eliminan el 30% de comisiones abusivas de Glovo o UberEats automatizando los pedidos por WhatsApp con IA y carta digital. 
+  - Acto seguido, ataca el dolor haciéndole una pregunta de negocio directa: *"¿cuál es tu mayor problema ahora mismo: perder margen, falta de tiempo, o atraer más clientes?"*.
+
+---
+
+> [!TIP]
+> **Prueba Manual:**
+> 1. Refresca `http://localhost:3001`.
+> 2. Haz clic en "Probar demo en vivo" -> pulsa un botón (ej. **Bar / Copas**).
+> 3. Dile tu nombre y el de tu negocio (ej. *"Me llamo Alex y mi bar se llama Bazabar"*).
+> 4. Verás que Arqui te contesta inmediatamente explicándote los beneficios de ahorrar comisiones y haciéndote la pregunta sobre tus dolores de margen, sin rastro de la palabra `json`.
+> 5. Mientras chateas, quédate quieto; comprobarás que el Exit Intent ya no se solapa jamás.

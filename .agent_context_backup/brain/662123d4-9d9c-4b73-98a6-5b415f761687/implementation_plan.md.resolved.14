@@ -1,0 +1,38 @@
+# Plan de Refactorización: Estética "Encapaco" y Rediseño de Fidelización
+
+*Rol Activo: Arquitecto UX/UI y Maker*
+
+He analizado a fondo la web de Encapaco. Entiendo perfectamente a qué te refieres con eliminar el efecto "caricaturesco". La interfaz actual tiene demasiados emojis (✨, 🤵, 👑) y colores neón (naranjas y azules vibrantes) que le dan un tono de "app de comida rápida" en lugar de la experiencia premium y elegante de alta gastronomía que transmite Encapaco.
+
+Vamos a elevar el nivel visual a "Ultra-Premium" basándonos en ese estilo, y a ajustar la lógica de negocio según tus directrices.
+
+## 1. El Nuevo Lenguaje Visual (Estilo Encapaco)
+*   **Adiós a los Emojis:** Eliminaré por completo todos los emojis de la aplicación.
+*   **Paleta de Colores Editorial:**
+    *   Fondo: Blanco Perla / Hueso (`#F9F9F9` a `#FFFFFF`).
+    *   Textos Principales y Botones: Negro Carbón (`#111111`) para un contraste tajante.
+    *   Acentos: Dorado/Bronce (`#B8860B` o similar) para destacar precios y el botón del chat de IA.
+*   **Tipografía Híbrida:** 
+    *   Implementaré una fuente **Serif elegante e itálica** para los titulares principales (ej. *Nuestros Sabores*).
+    *   Mantendré una fuente geométrica **Sans-Serif** limpia y con mucho espaciado (tracking) para los botones y la navegación.
+*   **Diseño de Tarjetas:** En lugar de cajas cuadradas con bordes duros, usaremos contenedores con grandes curvas (`rounded-3xl`) y sombras fotográficas muy suaves.
+
+## 2. Rediseño Funcional del Asistente IA
+*   El botón del camarero IA pasará de ser un "muñeco saltarín" a un sobrio botón negro o dorado en cada plato que diga **"Consultar al Sumiller"** o tenga un icono de chat minimalista en SVG.
+*   La interacción seguirá siendo inteligente y contextualizada, pero presentada en un modal pulcro tipo "Conserje", sin colores azules neón.
+
+## 3. Actualización de "The Club" (Captación de Leads)
+*   **Corrección de Copy:** Adiós al spanglish. El titular será elegante, por ejemplo: *"Acceda a nuestra Reserva Exclusiva"*.
+*   **La Nueva Oferta:** La propuesta será universal: **"Regístrese y disfrute de un 2x1 en la bebida de su elección cada vez que nos visite (consumición mínima 10€)."**
+*   **Aclaratoria de Beneficios:** Añadiré el texto explicando que el registro desbloquea automáticamente su estatus de cliente VIP con acceso a catas privadas y promociones futuras.
+
+## 4. Disclaimer de Marca Blanca (Demo)
+*   Añadiremos un pie de página o *banner* fijo muy elegante que dicte claramente: *"Esta interfaz es una demostración técnica interactiva de Architect.Sys. El diseño, la estética y las funcionalidades para nuestros clientes son desarrollados de forma 100% personalizada y exclusiva para su marca."*
+
+---
+
+### 🚦 Aprobación para Construir
+
+Esta refactorización transformará la carta de una "demo funcional" a una **pieza de arte B2B** para cerrar ventas High-Ticket. 
+
+¿Estás de acuerdo con esta arquitectura visual y los textos propuestos? Dame tu **"Luz Verde"** para reescribir la interfaz y levantar el túnel nuevamente.

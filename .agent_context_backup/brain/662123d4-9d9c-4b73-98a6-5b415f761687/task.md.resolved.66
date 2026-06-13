@@ -1,0 +1,18 @@
+# Tracker: UI Adaptativa y Visor de Imágenes
+
+## 1. Lógica de Estado Global
+- `[x]` Añadir estado `selectedImageItem` en `page.tsx`
+
+## 2. Visor de Imágenes (Fullscreen Lightbox)
+- `[x]` Crear modal de pantalla completa con imagen en HD
+- `[x]` Añadir panel inferior con Título, Descripción, Precio y Botón "Añadir al Pedido"
+- `[x]` Hacer que las imágenes de Sushi, Tapas y Burger abran este modal al hacer clic
+
+## 3. Modales Camaleónicos (Cart y Chat)
+- `[x]` Refactorizar Modal de Carrito para usar colores dinámicos según `activeTemplate`
+- `[x]` Refactorizar Modal de Chat IA para usar colores dinámicos
+- `[x]` Incrementar padding y gaps para evitar aglutinamiento
+- `[x]` Añadir botón "← Seguir Pidiendo" en el chat de IA
+
+## 4. Despliegue
+- `[/]` Subir cambios a Vercel

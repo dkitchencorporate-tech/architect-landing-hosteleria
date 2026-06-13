@@ -1,0 +1,7 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary":  "Auditoría exhaustiva letra por letra de cada componente. Diseño de la nueva arquitectura comercial con servicios separados (Infraestructura, Growth, IA, Dark Kitchen) y eliminación de planes obsoletos de 99€.",
+  "updatedAt":  "2026-06-01T22:19:41.376478700Z",
+  "version":  "35",
+  "requestFeedback":  true
+}

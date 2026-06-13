@@ -1,0 +1,76 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (76,71)<a class='url fn' href='/supabase'>supabase />
+/
+[1] (128,71)<a href='/supabase/cli'>cli />
+Public
+[2] (738,69)<a aria-label='You must be signed in to change notification settings' class='btn-sm btn' href='/login?return_to=%2Fsupabase%2Fcli' id='repository-details-watch-button'>Notifications />
+[3] (835,69)<a class='btn-sm btn' href='/login?return_to=%2Fsupabase%2Fcli' id='fork-button'>Fork />
+	[4] (856,69)<span >454 />
+[5] (930,69)<a aria-label='You must be signed in to star a repository' class='tooltipped tooltipped-sw btn-sm btn' href='/login?return_to=%2Fsupabase%2Fcli' />
+	[6] (925,69)<span >Star />
+	[7] (951,69)<span >2.2k />
+[8] (53,158)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item selected' href='/supabase/cli/tree/v2.98.2' id='code-tab' />
+	[9] (63,158)<span >Code />
+[10] (133,158)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/issues' id='issues-tab' />
+	[11] (128,158)<span >Issues />
+	[12] (161,158)<span >311 />
+[13] (246,158)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/pulls' id='pull-requests-tab' />
+	[14] (241,158)<span >Pull requests />
+	[15] (290,158)<span >82 />
+[16] (347,158)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/actions' id='actions-tab' />
+	[17] (356,158)<span >Actions />
+[18] (452,158)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/security' id='security-and-quality-tab' />
+	[19] (461,158)<span >Security and quality />
+[20] (558,158)<a class='UnderlineNav-item no-wrap js-responsive-underlinenav-item js-selected-navigation-item' href='/supabase/cli/pulse' id='insights-tab' />
+	[21] (567,158)<span >Insights />
+[22] (45,250)<a class='Link' href='/supabase/cli/releases'>Releases />
+[23] (94,250)<a class='Link' href='/supabase/cli/releases/tag/v2.98.2'>v2.98.2 />
+v2.98.2
+[24] (153,390)<a class='Link v-align-text-bottom d-none d-md-inline-block' href='/supabase/cli/releases/latest' />
+	[25] (153,390)<span >Latest />
+[26] (928,367)<button class='Button--secondary Button--small Button' id='select-panel-9c0b7a55-2555-47f4-9b91-7bf059dd34ef-button' />
+	[27] (928,367)<span  />
+		[28] (920,367)<span >Compare />
+[29] (93,461)<a class='text-bold color-fg-muted' href='/apps/github-actions'>github-actions />
+released this
+·
+[30] (304,464)<a href='/supabase/cli/compare/v2.98.2...develop'>111 commits />
+to develop
+          since this release
+[31] (518,464)<a class='Link Link--muted' href='/supabase/cli/tree/v2.98.2' />
+	[32] (518,465)<span  />
+		[33] (527,464)<span >v2.98.2 />
+[34] (593,463)<a class='Link Link--muted' href='/supabase/cli/commit/e4a7ace0226dfd7ee8886ebc550a4b5c476c047e' />
+	[35] (602,465)<code >e4a7ace />
+[36] (636,464)<details class='dropdown dropdown-signed-commit details-reset details-overlay js-dropdown-details d-inline-block ml-1' />
+	[37] (636,464)<summary class='color-fg-success' />
+Changelog
+Bug fixes
+[38] (88,740)<a class='commit-link' href='https://github.com/supabase/cli/commit/e4a7ace0226dfd7ee8886ebc550a4b5c476c047e' />
+	[39] (88,743)<tt >e4a7ace />
+: fix: mailer links regression (
+[40] (284,740)<a class='issue-link js-issue-link' href='https://github.com/supabase/cli/pull/5166'>#5166 />
+) (
+[41] (334,740)<a class='user-mention notranslate' href='https://github.com/jgoux'>@jgoux />
+)
+Others
+[42] (88,881)<a class='commit-link' href='https://github.com/supabase/cli/commit/893c2840996c7ec8cfaa38a2907b973a7859957c' />
+	[43] (88,885)<tt >893c284 />
+: chore: sync API types from infrastructure (
+[44] (366,881)<a class='issue-link js-issue-link' href='https://github.com/supabase/cli/pull/5160'>#5160 />
+) (@supabase-cli-releaser[bot])
+[45] (88,926)<a class='commit-link' href='https://github.com/supabase/cli/commit/9da7facef2f648ef2a58b61731327c3ba2ce31af' />
+	[46] (88,930)<tt >9da7fac />
+: fix (
+[47] (156,926)<a class='user-mention notranslate' href='https://github.com/7ttp'>@7ttp />
+)
+[48] (88,971)<a class='commit-link' href='https://github.com/supabase/cli/commit/f6c1529132e6d3f5d397db6e2830771966133e4a' />
+	[49] (88,975)<tt >f6c1529 />
+: test (
+[50] (164,971)<a class='user-mention notranslate' href='https://github.com/7ttp'>@7ttp />
+)
+
+</current_dom>

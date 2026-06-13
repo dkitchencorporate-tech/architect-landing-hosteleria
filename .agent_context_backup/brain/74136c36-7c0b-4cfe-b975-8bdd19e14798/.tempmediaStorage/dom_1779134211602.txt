@@ -1,0 +1,130 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3Drestaurante%2BZaidin%2BGranada&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=restaurante+Zaidin+Granada&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1oUk4eepQokvM8owdVKFgz0ndLjWtqMaxjXobfI46BGhocxnYCzxVU32vHJzG4L0g2e4RLn7u6Zb4LadjVCtaqkEr57p3Qei5NV_vhAsBDezAuFWkIdxpXg717z-Y-imBogAoxJHm6OWApsUKxzhjwpSN9u-Q&aep=1&ntc=1&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQ2J8OegQIDxAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1oUk4eepQokvM8owdVKFgz0ndLjWtqMaxjXobfI46BGhocxnYCzxVU32vHJzG4L0g2e4RLn7u6Zb4LadjVCtaqkEr57p3Qei5NV_vhAsBDezAuFWkIdxpXg717z-Y-imBogAoxJHm6OWApsUKxzhjwpSN9u-Q&q=restaurante+Zaidin+Granada&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQtKgLegQIFRAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (280,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=39&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1oUk4eepQokvM8owdVKFgz0ndLjWtqMaxjXobfI46BGhocxnYCzxVU32vHJzG4L0g2e4RLn7u6Zb4LadjVCtaqkEr57p3Qei5NV_vhAsBDezAuFWkIdxpXg717z-Y-imBogAoxJHm6OWApsUKxzhjwpSN9u-Q&q=restaurante+Zaidin+Granada&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQs6gLegQIFBAB' />
+	[26] (280,180)<div  />
+		[27] (280,194)<span >Videos cortos />
+[28] (384,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=11&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1oUk4eepQokvM8owdVKFgz0ndLjWtqMaxjXobfI46BGhocxnYCzxVU32vHJzG4L0g2e4RLn7u6Zb4LadjVCtaqkEr57p3Qei5NV_vhAsBDezAuFWkIdxpXg717z-Y-imBogAoxJHm6OWApsUKxzhjwpSN9u-Q&q=restaurante+Zaidin+Granada&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQs6gLegQIExAB' />
+	[29] (384,180)<div  />
+		[30] (384,194)<span >Sitios sobre lugares />
+[31] (474,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=1&lsack=AW8LasnDGIr21e8P_uyCoQY&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1oUk4eepQokvM8owdVKFgz0ndLjWtqMaxjXobfI46BGhocxnYCzxVU32vHJzG4L0g2e4RLn7u6Zb4LadjVCtaqkEr57p3Qei5NV_vhAsBDezAuFWkIdxpXg717z-Y-imBogAoxJHm6OWApsUKxzhjwpSN9u-Q&q=restaurante+Zaidin+Granada&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQs6gLegQIERAB' />
+	[32] (474,180)<div  />
+		[33] (474,194)<span >Lugares />
+[34] (531,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-Y4dtI87_ZCls_6Bwj1ZeDfSteKVNKIwNQN6GA89JdkWqbeCxwsObMz4JuB5HgHT1oUk4eepQokvM8owdVKFgz0ndLjWtqMaxjXobfI46BGhocxnYCzxVU32vHJzG4L0g2e4RLn7u6Zb4LadjVCtaqkEr57p3Qei5NV_vhAsBDezAuFWkIdxpXg717z-Y-imBogAoxJHm6OWApsUKxzhjwpSN9u-Q&q=restaurante+Zaidin+Granada&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQtKgLegQIEhAB' />
+	[35] (531,180)<div  />
+		[36] (531,194)<span >Videos />
+[37] (585,180)<div class='mTpL7c' role='button' />
+	[38] (585,180)<div  />
+		[39] (585,194)<div  />
+			[40] (578,186)<span >Más />
+			[41] (595,186)<span  />
+[42] (663,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (663,180)<div  />
+		[44] (663,194)<div  />
+			[45] (656,186)<span >Herramientas />
+			[46] (697,186)<span  />
+[47] (117,259)<a aria-label='Agregar Abierto ahora' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Zaidin+Granada+abierto+ahora&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-WSzUguoCJ279d6ww0GTBOEo1n4CxzRvkVPnUM6uFjAY-oicDnCFRQjDrVM0dgCHrGzx-Ow0NlgN1MmygwO729xX60xdJSYBG62mt8wKXfraqrJeZU94LiHr6B3hBWE1TMTpJtxf7buhiTTsKzXTJGHZT7I49ij-RPIxT_MfKkkDtdObWuBn3wsQgDoSCikxqA5GPnA&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQxKsJKAB6BAgXEAE&ictx=0' role='link' />
+	[48] (117,259)<div  />
+		[49] (117,259)<span >Abierto ahora />
+[50] (200,259)<div role='button' />
+	[51] (200,259)<div  />
+		[52] (196,259)<span >Precio />
+		[53] (219,259)<span  />
+			[54] (219,259)<span  />
+[55] (289,259)<a aria-label='Agregar Mejor valorados' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Zaidin+Granada+mejor+valorados&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-SfZXfGntnbI0761hqmKan-LsPC5khjIctIh9w8xYiZknc9cPcK7jhDLhlH6GuVmKlzOQEWkD_MKKZmp6wrF2ed62g4s725UCJPqyPpLijO4WWU85A_XMp9zvuA-IPND9K4kyLHlznMI4jcAfLTjZs9t8KwdgfASlzlawapsWHJleD3LUsVzflY0RPclVz1VIZLC3Jw&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQxKsJKAJ6BAgaEAE&ictx=0' role='link' />
+	[56] (289,259)<div  />
+		[57] (289,259)<span >Mejor valorados />
+[58] (389,259)<a aria-label='Agregar Económicos' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Zaidin+Granada+econ%C3%B3micos&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-5QKJTXZD1g-_eyGlUI8NV5eA8jhRG9YS1qjE4pR7-WOK8DvVEFnSFDbCW-6zZBqANGH9Q4ikwYiElMH-m_51WhevyIYJcc15RHL6L2TSfkXe4K_CognqNvo34KvT7XLrRXRTWh26RP2z9W7ZE6ow0E6MvJlFhsPcLZaeH4mFtsATNeCIuzPNYoiJ-pbBOJffJrb0rA&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQxKsJKAN6BAgYEAE&ictx=0' role='link' />
+	[59] (389,259)<div  />
+		[60] (389,259)<span >Económicos />
+[61] (474,259)<a aria-label='Agregar Exclusivos' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Zaidin+Granada+exclusivos&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-xflvf2lwpG_Q1DPXMZZP3Bc3V38rxO5HPsQU1yggN4r8DBp5DquaxX-ngH27S5FU96q5yPI8e8ojyQwHJquDPvtyCZouB1IWP-DVncMwHvJ5Oog9C2tDQ0h-DhIpU6wvlWjKoAoWdNfJBsF-sgA6ML6cSVIw5MbXadOh8Pj2BVACSeqDiFI_fhb4dU2DGjRh_Lg1Lw&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQxKsJKAR6BAgZEAE&ictx=0' role='link' />
+	[62] (474,259)<div  />
+		[63] (474,259)<span >Exclusivos />
+[64] (561,259)<a aria-label='Agregar Bar de tapas' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Zaidin+Granada+bar+de+tapas&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-K37uWr_ODbjJZbb3IO68S-XdDD0i0oOQw4NkIQ6IEdz81kiC7oc1-k9lEdlhzaQJXEfBtbdH_Marhtu7qhq_g9hNQD2ceNRRxo20kC0jI-kXFOKGdwBwAKSMxWaN6ZML6FJey5mBtDHWBe04GcC5Wp3jxkgsv7WCmM44YR4JNz9xGkZIOfe0_0yIzHXDuehCPp5JGw&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQxKsJKAV6BAhxEAE&ictx=0' role='link' />
+	[65] (561,259)<div  />
+		[66] (561,259)<span >Bar de tapas />
+[67] (635,259)<a aria-label='Agregar Pizza' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+Zaidin+Granada+pizza&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-8-RZjPtuKxwBHaQJAUAEMoCiMkIeKhniRQGZCXYjDim3DNTNIxcgwa4uWm3Q5TCXG0ONDi56Yb79_YpIEJgvEhN8eK_2TVtz3mYb2EmyvB7JKMcv36Dmbq6dte61kNrbkiXsc8WmNXKYzMeGJi6E6_fHggT3IclqIfGc3OwtAhANvkL-xTDx8llBXpJt0LiQncZAGg&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQxKsJKAZ6BAhyEAE&ictx=0' role='link' />
+	[68] (635,259)<div  />
+		[69] (635,259)<span >Pizza />
+[70] (692,259)<a aria-label='Agregar Chino' class='nPDzT T3FoJb' href='/search?sca_esv=53e99bddec16fb1e&q=restaurante+chino+en+el+zaidin+granada&uds=ALYpb_ncDc7jTlmw6Mmq7NjuX5c-84tIddvvPjpR_VcR88t0cZimdQFEGsBAXfeMGdOkSxOoajBqyGRNjOCWHQO-qh0ZfqkZ5zDuV8iCzZeL9n7je8idNngvhnwNACMGxR5FlZR7J5SSxaa3VCPMnmx0FTN7ssnuEm7o_pvnT33wANiWKpOp6q9rQNm_SLG1ynrQjkLI9gMVC0RsRcJxLUD573a_5J_-BYYCiInfpKT8VfSwElClvRA&sa=X&ved=2ahUKEwiJyLy0z8OUAxUKe_UHHX62IGQQxKsJKAd6BAhwEAE&ictx=0' role='link' />
+	[71] (692,259)<div  />
+		[72] (692,259)<span >Chino />
+Resultados de búsqueda
+Zaidín, Granada
+∙
+[73] (209,351)<a class='N5az4b' href='#' role='button' />
+	[74] (209,357)<span >Elegir área />
+[75] (254,357)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[76] (255,356)<span  />
+Resultados locales
+Sitios
+[77] (573,448)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[78] (573,448)<span  />
+Mapa
+[79] (325,902)<div id='pv-/g/1thvv12v' role='button' />
+	[80] (325,902)<div  />
+		[81] (289,902)<div  />
+			[82] (289,902)<div  />
+				[83] (289,902)<div  />
+					[84] (289,838)<div class='dbg0pd' role='heading' />
+						[85] (169,837)<span >Bar restaurante Gran Kiki Tapas />
+					[86] (289,871)<div >·
+· Bar de tapas />
+						[87] (124,871)<span  />
+							[88] (124,871)<span aria-label='Calificación: 4.2 de 5, 2.9 K opiniones de usuarios' class='Y0A0hc' role='img' />
+								[89] (78,871)<span >4.2 />
+								[90] (115,871)<span aria-label='Calificación: 4.2 de 5,' class='z3HNkc' role='img' />
+									[91] (115,871)<span  />
+										[92] (115,869)<span  />
+								[93] (161,871)<span >(2.9 K) />
+						[94] (201,871)<span >€1-10 />
+					[95] (289,906)<div >C. Palencia, 25 />
+					[96] (289,953)<div  />
+						[97] (253,953)<div  />
+							[98] (253,953)<div  />
+								[99] (126,938)<span  />
+									[100] (121,937)<span >Consumo en el lugar />
+									[101] (176,937)<span >· />
+								[102] (212,938)<span  />
+									[103] (207,937)<span >Para llevar />
+									[104] (238,937)<span >· />
+								[105] (169,968)<span  />
+									[106] (169,967)<span >No ofrece servicio de entrega a domicilio />
+						[107] (443,953)<span >· />
+						Sitio web
+		[108] (544,902)<a class='uQ4NLd b9tNq wzN8Ac rllt__link a-no-hover-decoration' />
+			[109] (544,894)<div  />
+				[110] (544,894)<img  />
+
+</current_dom>

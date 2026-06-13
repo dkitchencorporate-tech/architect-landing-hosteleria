@@ -1,0 +1,27 @@
+# Walkthrough: Arquitectura Multi-Comensal y Cierre B2B
+
+La Carta Premium ha dejado de ser una simple interfaz de demostración visual para convertirse en un **Software de Sala Operativo (TPV)**, diseñado para convencer a los hosteleros más exigentes mediante el control absoluto del servicio.
+
+## Hitos Técnicos Implementados
+
+### 1. Motor Multi-Comensal (Control Total de Mesa)
+- **Selector Activo:** Se ha integrado un selector de cliente (`Comensal 1` a `Comensal 4`) en la cabecera principal.
+- **Enrutamiento de Pedidos:** Todos los clicks de "Añadir a la cuenta" (tanto manuales como por IA) se mapean estrictamente al comensal seleccionado en ese momento.
+- **Comanda Desglosada:** Al "Ver Comanda", el cajón inferior despliega la cuenta matemática separada por cada persona de la mesa, un requerimiento crítico en hostelería real para agilizar el cobro.
+
+### 2. Agente Camarero Transaccional (IA con "Manos")
+- El backend (`/api/demo/waiter`) se ha re-programado. La IA ahora no solo devuelve texto, sino que genera estructuras `JSON` complejas con acciones de ejecución.
+- Si el usuario le pide al bot: *"Quiero este plato y una cerveza"*, el backend parsea la intención, busca los IDs de catálogo y envía un `action: ADD_MULTIPLE`.
+- El cliente (React) intercepta este JSON e inyecta los productos directamente en el carrito del comensal activo de forma asíncrona.
+
+### 3. Escala y Coherencia de Catálogo
+- La base de datos (`demo-data.ts`) fue ampliada masivamente a **32 productos**.
+- Separación estricta de categorías de bebidas: Vinos/Sakes, Cócteles de Autor, Refrescos/Cervezas, e Infusiones/Cafés.
+- Reemplazo total de imágenes pesadas por referencias optimizadas desde la CDN de Unsplash para carga instantánea.
+
+### 4. El "Hachazo" Comercial (Modal de Autoridad)
+- **Botón Flotante Estratégico:** *"Quiero esta Carta para mi Restaurante"*, siempre visible pero sin interrumpir el flujo.
+- **Modal de Cierre B2B:** Despliegue de autoridad técnica invitando a agendar en Calendly, hablar por WhatsApp o visitar el ecosistema principal.
+
+## Verificación
+Todo el flujo transaccional ha sido conectado al estado principal de React sin perder la estética "Encapaco" desplegada previamente. El túnel ha sido reiniciado.

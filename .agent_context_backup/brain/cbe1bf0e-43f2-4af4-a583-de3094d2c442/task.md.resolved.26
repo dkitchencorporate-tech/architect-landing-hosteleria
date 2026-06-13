@@ -1,0 +1,19 @@
+# Construcción del SaaS: Creative Factory 🏭
+
+## Fase 1: Arquitectura Base
+- [x] Crear ruta base `src/app/creative-factory/page.tsx`.
+- [x] Implementar un sidebar o navegación interna para la fábrica.
+- [x] Construir la interfaz general (Theme oscuro/marketing).
+
+## Fase 2: Motor de Ángulos y Copy
+- [ ] Construir UI para "Angle Generator" (Dropdown de dolores B2B).
+- [ ] Implementar generador de textos (Hooks y Copy de Facebook) usando la API de IA.
+- [ ] Asegurar que el copy cumpla el formato B2B agresivo.
+
+## Fase 3: Motor de Prompts Visuales
+- [ ] Construir interfaz para "Visual Prompt Engine".
+- [ ] Aplicar "Reglas de Oro Visuales" en la lógica del prompt (Contraste, 4:5, texto).
+- [ ] Función para generar el prompt exacto para Midjourney/DALL-E.
+
+## Fase 4: La Matriz de 12 Creativos (Contenido Inicial)
+- [ ] Dejar pre-cargados los 12 creativos iniciales (3 ángulos x 4 variantes) dentro del Gestor de Campañas para que el usuario pueda usarlos hoy mismo.

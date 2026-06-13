@@ -1,0 +1,38 @@
+# Plan: Rediseño del Popup de Salida (Lead Form B2B)
+
+## Diagnóstico y Comprensión
+
+1. **El Timeout de Gemini:** El mensaje de "espera un rato" **NO es un fallo de contexto**, ¡es el escudo que le pusimos! Estás usando la versión gratuita de la API de Google, que tiene un límite estricto de peticiones por minuto. Cuando pasas ese límite, Google bloquea temporalmente la conexión (Error 429). El mensaje que ves es el sistema protegiéndose para que la app no se cuelgue. La solución técnica aquí es simplemente... esperar esos 15 segundos reales.
+2. **El Popup Invasivo:** Actualmente salta si detecta inactividad o si mueves el ratón hacia las pestañas de arriba (Exit Intent). Vamos a suavizarlo y darle un rediseño completo de embudo de ventas.
+
+---
+
+## Cambios Propuestos (ExitIntent.tsx)
+
+Voy a transformar el popup simple en un **Embudo de 3 Fases (Multi-step Form)**.
+
+### Fase 1: El Pitch B2B (Consultor de Alto Nivel)
+- Eliminaremos el término "regalamos".
+- **Nuevo Copy:** "Da el paso hacia la independencia digital. Al activar cualquiera de nuestras suscripciones, bonificamos tu inversión inicial incluyendo acceso directo a:"
+  - *Bonos Visibles:* Consultoría Estratégica 1 a 1, Diseño Premium de Carta Interactiva, y Setup de Ecosistema.
+- **Botón:** "Solicitar Consultoría y Bonos" -> (Avanza a la Fase 2)
+
+### Fase 2: Captación de Datos (Lead Form)
+- Un formulario limpio y profesional.
+- **Campos:** Nombre Completo, WhatsApp, Correo Electrónico.
+- **Legal:** Casilla de verificación (Checkbox) obligatoria: *"Acepto las políticas de privacidad y consiento ser contactado vía WhatsApp."*
+- **Botón:** "Confirmar Solicitud" -> (Avanza a la Fase 3)
+
+### Fase 3: Agradecimiento y Urgencia (Cierre en WhatsApp)
+- **Mensaje de Éxito:** "¡Solicitud registrada con éxito! Uno de nuestros consultores analizará tus datos y te contactará pronto."
+- **Gatillo de Urgencia:** "Si tu negocio necesita soluciones urgentes y no quieres esperar en la cola de asignación, habla directamente con un experto ahora:"
+- **Botón Destacado:** "Quiero comunicarme YA" -> (Redirige a WhatsApp con un mensaje pre-armado).
+
+### Ajuste de Activación (Trigger)
+Revisaré los disparadores para asegurarme de que no salte de forma histérica nada más entrar, dándole un margen de respiro al usuario.
+
+## Solicitud de Aprobación
+
+> [!IMPORTANT]
+> **Revisión del Embudo:**
+> Este es un cambio arquitectónico grande para el componente. Pasamos de un simple banner a una herramienta de captación de leads en 3 pasos, tal y como pediste, evitando mandar a WhatsApp sin haber asegurado primero el correo y el teléfono. ¿Me das luz verde para desarrollar este multi-step form?

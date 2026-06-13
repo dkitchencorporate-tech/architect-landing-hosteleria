@@ -1,0 +1,52 @@
+# Análisis Estratégico y Plan de Acción (Captura Supabase + Feedback Externo)
+
+*Rol Activo: Product Manager & Growth Lead*
+
+Has tocado tres puntos críticos para elevar la conversión de esta landing a un nivel "Clase Mundial". Vamos a analizarlos uno por uno.
+
+## 1. El Problema de UX (Doble captura de datos y riesgo de fuga)
+
+Toda la razón. Google Calendar Appointments no permite autocompletar datos mediante la URL (como sí hace Calendly), por lo que Google les pedirá nombre y correo en el Paso 3. 
+Si el cliente llega al Paso 3, ve que tiene que volver a poner su correo y por pereza abandona, **perdemos el lead**.
+
+**La Solución Arquitectónica (Captura Asíncrona):**
+Modificaré el formulario del Paso 2. Cuando el cliente le dé a "Continuar al Calendario":
+1. El botón se pondrá en estado de carga ("Asegurando tus bonos...").
+2. El sistema enviará silenciosamente los datos (Nombre, Teléfono, Email, Respuestas del Quiz) a tu **base de datos en Supabase** a través de una ruta API (`/api/leads`).
+3. Te enviará una notificación a tu correo (o registrará la alerta).
+4. Una vez guardado de forma segura en tu sistema, pasará al Paso 3 (El Calendario).
+*Resultado:* Si el cliente se asusta o le da pereza agendar la videollamada en el Paso 3, a ti te da igual: ya tienes su teléfono y correo en tu base de datos para cerrarlo por WhatsApp.
+
+## 2. Análisis de la Descripción de Google Calendar
+
+> *Tu texto propuesto:* "¡Hola! Gracias por agendar tu sesión estratégica... Para aprovechar al máximo los 4 Bonos... ten a mano el enlace a Google Maps y tu carta. ⚠️ NOTA: Asegúrate de estar en un lugar tranquilo..."
+
+**Mi Veredicto:** Es un **10/10**. 
+*   **Posicionamiento de Autoridad:** Darles "deberes" (tener a mano su carta y su mapa) cambia la dinámica de poder. Ya no eres tú persiguiéndoles para vender, son ellos preparándose para una consultoría seria.
+*   **Filtro de Calidad:** Pedir que estén en un lugar sin ruido filtra a los que se conectan mientras están cobrando en la barra (con los que es imposible cerrar una venta de 700€). 
+*   **Decisión:** Mantenla tal cual. Es excelente. Y el nuevo enlace que me has pasado (`https://calendar.app.google/6GZK6WUiyV7ww3rU7`) ya es el definitivo para incrustar.
+
+## 3. Análisis del Feedback de tu Asesor (El 8.5/10)
+
+Tu asesor tiene un nivel analítico muy alto y estoy 100% de acuerdo con sus tres apuntes. Para subir a un 10/10 debemos implementar sus mejoras:
+
+*   **A. La barrera del "No tengo tiempo" (Añadir el concepto Llave en Mano):**
+    En la tarjeta de 700€, añadiremos una etiqueta clara que diga: *Servicio 100% Llave en Mano. Nosotros diseñamos, programamos y publicamos. Tú solo atiendes mesas.*
+*   **B. Justificar los 69€/mes:**
+    En el bloque de 2 meses gratis que hicimos antes, cambiaremos el texto de "solo 69€/mes" a: *"69€/mes que cubren el alojamiento en servidores premium, soporte ante caídas y actualizaciones técnicas de seguridad. Sin permanencia."*
+*   **C. Casos de Éxito Locales:**
+    Esto es el Santo Grial en España (El Efecto Bar Manolo). Necesitaremos crear una sección nueva debajo de los Bonos que se llame `TestimonialGallery.tsx` con 2 o 3 tarjetas de "Antes y Después" (Ej: "Cómo La Tasca de Juan pasó de usar un PDF cutre a facturar un 30% más en mesas").
+
+---
+
+> [!IMPORTANT]
+> **Plan de Ejecución y Aprobación**
+> 
+> Si me das luz verde, mis próximos pasos en el código serán:
+> 1. Programar la conexión del Modal con Supabase para salvar el lead antes del calendario.
+> 2. Inyectar el nuevo enlace de Google Calendar.
+> 3. Añadir las frases "100% Llave en Mano" y justificar mejor el hosting de 69€ en el copy de la landing.
+> 
+> *(La sección de testimonios requerirá que me pases fotos e historias reales, por lo que podemos dejar esa parte estructural para después).*
+> 
+> ¿Procedo con los puntos 1, 2 y 3?

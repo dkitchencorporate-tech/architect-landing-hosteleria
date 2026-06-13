@@ -1,0 +1,7 @@
+# Tareas de Implementación
+
+- [/] Modificar `ExitIntent.tsx` para agregar la gestión de estados (paso 1, 2, 3 y datos del formulario).
+- [ ] Implementar la Fase 1: Pitch B2B y Bonos.
+- [ ] Implementar la Fase 2: Formulario de Captación (Nombre, Email, Teléfono, Consentimiento).
+- [ ] Implementar la Fase 3: Agradecimiento y CTA de urgencia hacia WhatsApp.
+- [ ] Ajustar la lógica del Trigger (retrasar activación para que no sea invasivo al entrar).

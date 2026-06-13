@@ -1,0 +1,178 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwim6fflzMOUAxURUfUHHY5_LXoQPAgK' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='fzj3ad' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='etxtjc' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DEl%2BQuinteto%2BGranada%2Btelefono&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (91,180)<a class='XVMlrc C6AK7c' href='/search?q=El+Quinteto+Granada+telefono&sca_esv=53e99bddec16fb1e&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYSYGB9lY__WuLlnj2fhLPhNNEUq9WM8MPxbr-NcJOxehvgtzCl-Agm2TTRdonyphIyvn01PTweGXLbh0n9zFcgPTzncVeUgWhrN5h-6XAF7pSW_OK&aep=1&ntc=1&sa=X&ved=2ahUKEwim6fflzMOUAxURUfUHHY5_LXoQ2J8OegQIFBAD' />
+	[17] (91,180)<div  />
+		[18] (91,194)<div  />
+			[19] (91,186)<span  />
+				[20] (91,185)<span >Modo IA />
+[21] (142,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (196,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYSYGB9lY__WuLlnj2fhLPhNNEUq9WM8MPxbr-NcJOxehvgtzCl-Agm2TTRdonyphIyvn01PTweGXLbh0n9zFcgPTzncVeUgWhrN5h-6XAF7pSW_OK&q=El+Quinteto+Granada+telefono&sa=X&ved=2ahUKEwim6fflzMOUAxURUfUHHY5_LXoQtKgLegQIKRAB' />
+	[23] (196,180)<div  />
+		[24] (196,194)<span >Imágenes />
+[25] (256,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYSYGB9lY__WuLlnj2fhLPhNNEUq9WM8MPxbr-NcJOxehvgtzCl-Agm2TTRdonyphIyvn01PTweGXLbh0n9zFcgPTzncVeUgWhrN5h-6XAF7pSW_OK&q=El+Quinteto+Granada+telefono&sa=X&ved=2ahUKEwim6fflzMOUAxURUfUHHY5_LXoQtKgLegQIKBAB' />
+	[26] (256,180)<div  />
+		[27] (256,194)<span >Videos />
+[28] (311,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=El+Quinteto+Granada+telefono&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYSYGB9lY__WuLlnj2fhLPhNNEUq9WM8MPxbr-NcJOxehvgtzCl-Agm2TTRdonyphIyvn01PTweGXLbh0n9zFcgPTzncVeUgWhrN5h-6XAF7pSW_OK&sa=X&ved=2ahUKEwim6fflzMOUAxURUfUHHY5_LXoQ0pQJegQIKhAB' />
+	[29] (311,180)<div  />
+		[30] (311,194)<span >Noticias />
+[31] (360,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&udm=web&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYSYGB9lY__WuLlnj2fhLPhNNEUq9WM8MPxbr-NcJOxehvgtzCl-Agm2TTRdonyphIyvn01PTweGXLbh0n9zFcgPTzncVeUgWhrN5h-6XAF7pSW_OK&q=El+Quinteto+Granada+telefono&sa=X&ved=2ahUKEwim6fflzMOUAxURUfUHHY5_LXoQs6gLegQIJhAB' />
+	[32] (360,180)<div  />
+		[33] (360,194)<span >Web />
+[34] (405,180)<a class='C6AK7c' href='/search?sca_esv=53e99bddec16fb1e&q=El+Quinteto+Granada+telefono&udm=36&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTaf9fS4tJ71bi2aHS-Pmeg2QNsLCUqzZKqmjKDQ4UhxYSYGB9lY__WuLlnj2fhLPhNNEUq9WM8MPxbr-NcJOxehvgtzCl-Agm2TTRdonyphIyvn01PTweGXLbh0n9zFcgPTzncVeUgWhrN5h-6XAF7pSW_OK&sa=X&ved=2ahUKEwim6fflzMOUAxURUfUHHY5_LXoQ0pQJegQIKxAB' />
+	[35] (405,180)<div  />
+		[36] (405,194)<span >Libros />
+[37] (456,180)<div class='mTpL7c' role='button' />
+	[38] (456,180)<div  />
+		[39] (456,194)<div  />
+			[40] (449,186)<span >Más />
+			[41] (466,186)<span  />
+[42] (532,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (532,180)<div  />
+		[44] (532,194)<div  />
+			[45] (525,186)<span >Herramientas />
+			[46] (564,186)<span  />
+Resultados de búsqueda
+Granada
+∙
+[47] (169,275)<a class='N5az4b' href='#' role='button' />
+	[48] (169,281)<span >Elegir área />
+[49] (214,281)<a aria-label='Cómo se utiliza la ubicación' href='#' role='button' />
+	[50] (215,279)<span  />
+Resultados web
+[51] (274,394)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187436-d6560886-Reviews-El_Quinteto_de_Nizar_y_Ana-Calahonda_Province_of_Granada_Andalucia.html' />
+	[52] (274,424)<h3 >EL QUINTETO, Calahonda - Carta, fotos y opiniones del ... />
+	[53] (205,370)<div  />
+		[54] (205,370)<div  />
+			[55] (81,370)<span  />
+				[56] (81,370)<div  />
+					[57] (81,370)<img  />
+			[58] (220,370)<div  />
+				[59] (220,355)<div  />
+					[60] (220,355)<span >Tripadvisor />
+				[61] (220,385)<div  />
+					[62] (220,385)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[63] (273,385)<span class='ylgVCe ob9lvb' role='text'>› Restaurant_Review-g18743... />
+[64] (355,384)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[65] (355,384)<span  />
+		[66] (355,385)<span  />
+Un local en el centro de
+Granada
+donde puedes difrutar comida tradicional y moderna. Una atmósfera agradable y la mejor compañia.
+4.6
+(1,837)
+·
+Rango de precios: €€ - €€€
+[67] (337,540)<div role='button' />
+[68] (217,660)<a class='zReHs' href='https://gastrohuntergranada.com/el-quinteto-solarillo-de-gracia-4-granada/' />
+	[69] (217,690)<h3 >El Quinteto - Solarillo de Gracia - Granada />
+	[70] (202,635)<div  />
+		[71] (202,635)<div  />
+			[72] (81,635)<span  />
+				[73] (81,635)<div  />
+					[74] (81,635)<img  />
+			[75] (218,635)<div  />
+				[76] (218,621)<div  />
+					[77] (218,621)<span >Gastrohunter />
+				[78] (218,651)<div  />
+					[79] (218,651)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://gastrohuntergranada.com />
+						[80] (286,651)<span class='ylgVCe ob9lvb' role='text'>› el-quinteto-solarillo-... />
+[81] (351,650)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[82] (351,650)<span  />
+		[83] (351,651)<span  />
+El Quinteto
+es fruto de la experiencia de 5 profesionales de la hostelería que aúnan fuerzas y vienen pisando con garra. Su propuesta le sorprenderá.
+[84] (226,887)<a class='zReHs' href='https://bar-el-quinteto.eatbu.com/?lang=es' />
+	[85] (226,921)<h3 >Mediterránea & Española cocina cerca de mí />
+	[86] (161,866)<div  />
+		[87] (161,866)<div  />
+			[88] (81,866)<span  />
+				[89] (81,866)<div  />
+					[90] (81,866)<img  />
+			[91] (177,866)<div  />
+				[92] (177,852)<div  />
+					[93] (177,852)<span >DISH Digital… />
+				[94] (177,882)<div  />
+					[95] (177,882)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://bar-el-quinteto.eatbu.com />
+						[96] (244,882)<span class='ylgVCe ob9lvb' role='text'>› ... />
+[97] (269,881)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[98] (269,881)<span  />
+		[99] (269,882)<span  />
+BAR EL QUINTETO. Reserva. Conózcanos. Restaurante familiar con una cocina ... Número de teléfono:
+958264815
+; Dirección de correo electrónico: hola@elquinteto ...
+[100] (712,393)<button class='KJY1Gc' />
+	[101] (712,393)<div  />
+		[102] (712,393)<div  />
+			[103] (712,393)<img  />
+		[104] (755,495)<span >Ver fotos />
+[105] (858,393)<a  />
+[106] (778,591)<a class='ssJ7i' href='/search?sca_esv=53e99bddec16fb1e&q=Restaurante+El+Quinteto+de+Nizar+y+Ana&si=AL3DRZGNtcdgKOqVhotcr-UG2kkYpwR2WO4qu3O00NmpwBmLncLD0rEZmXbnhest71mEpSVJ7Sh6ACxev1xZOm_wpsbFlM7BuiSdo1gk-MW0CcDoMDXTtmTNQfybFegrflJY-eVv5oqjAa3JlTICbPGVDghgZrU80w%3D%3D&sa=X&ved=2ahUKEwim6fflzMOUAxURUfUHHY5_LXoQ_coHegQIORAB'>Restaurante El Quinteto de Nizar y Ana />
+4.6
+[107] (762,660)<a href='/search?sca_esv=53e99bddec16fb1e&q=El+Quinteto+Granada+telefono&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qORK2mG29A7XrDKqqy20tflGS8VZ0x8BeiurFinIMyt5saTS-cq8q1McazjKQMubjgfxVxbk%3D&uds=ALYpb_l6DyU7gEufbC-T-1UgqmR0A1j2qhH6SIXaRjU4y2JCad48kaEjN60pNdV5vXcZCzOif7Xllwmw1kKWfepDdTup8FJactQOl1xXlNRBerlw3CliFyyhfHnVX8IR4K_dYi1H6gfB&sa=X&ved=2ahUKEwim6fflzMOUAxURUfUHHY5_LXoQ3PALegQIORAF'>924 opiniones />
+[108] (809,656)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[109] (809,656)<span  />
+€20-30
+‧
+Restaurante de comida para llevar
+[110] (785,752)<div class='dnXCYb' role='button' />
+	[111] (785,752)<div  />
+		[112] (785,752)<span  />
+			[113] (785,752)<div  />
+				[114] (785,752)<span  />
+					[115] (714,753)<span >Cerrado temporalmente />
+	[116] (908,756)<div  />
+		[117] (908,752)<span  />
+[118] (687,858)<a class='n1obkb mI8Pwc' href='https://www.facebook.com/elquintetogranada/' />
+	[119] (687,858)<div  />
+		[120] (663,858)<div  />
+		[121] (695,858)<span >Sitio web />
+[122] (775,858)<a class='n1obkb mI8Pwc' href='/search?sca_esv=53e99bddec16fb1e&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qORK2mG29A7XrDKqqy20tflFOa-20r-xf74fJpMZtyHYwnJfACWEStnM770p_RzSse0KKJSvaIuc_VCR8B2jukdA29tLrYKzsrKoru5i4YzhrjRLSOusw69Zh38pPHkaFxLlx5L0%3D&q=Restaurante+El+Quinteto+de+Nizar+y+Ana+Opiniones&sa=X&ved=2ahUKEwim6fflzMOUAxURUfUHHY5_LXoQ0bkNegQIPxAF' />
+	[123] (775,858)<div  />
+		[124] (749,858)<div  />
+		[125] (784,858)<span >Opiniones />
+[126] (861,858)<div  />
+	[127] (861,858)<div  />
+		[128] (861,858)<div  />
+			[129] (861,858)<span aria-label='Guardar Restaurante El Quinteto de Nizar y Ana en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Restaurante El Quinteto de Nizar y Ana en una colección' />
+				[130] (870,858)<span >Guardar />
+[131] (688,934)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[132] (688,934)<div  />
+		[133] (663,934)<div  />
+		[134] (697,934)<span >Compartir />
+[135] (771,934)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[136] (771,934)<div  />
+		[137] (752,934)<div  />
+		[138] (779,934)<span >Llamar />
+[139] (843,934)<span  />
+	[140] (843,934)<div id='sXDlyb/g/11bbrpjpns' role='button' />
+		[141] (843,934)<div  />
+			[142] (828,934)<div  />
+			[143] (851,934)<span >Menú />
+Dirección
+:
+Calle Jacinto, 2, 18730 Calahonda, Granada
+
+</current_dom>

@@ -1,0 +1,25 @@
+# Task: Clean Leads Database at http://localhost:3000
+
+## Plan
+1. [ ] Navigate to http://localhost:3000
+2. [ ] Locate and click the "Red Trash" (Nuke) button
+3. [ ] Accept the confirmation dialog: "¿Vaciar base de datos de Leads? Esto es irreversible."
+4. [ ] Accept the success alert: "✅ Base de datos limpiada con éxito..."
+5. [ ] Verify the dashboard shows 0 leads or "No hay prospectos en el sistema"
+6. [ ] Complete task
+
+## Progress
+- [x] Navigate to http://localhost:3000
+- [ ] Locate and click the "Red Trash" (Nuke) button
+- [ ] Accept the confirmation dialog: "¿Vaciar base de datos de Leads? Esto es irreversible."
+- [ ] Accept the success alert: "✅ Base de datos limpiada con éxito..."
+- [ ] Verify the dashboard shows 0 leads or "No hay prospectos en el sistema"
+- [ ] Complete task
+
+## Findings
+- Navigated to the dashboard.
+- Attempted to click the Red Trash button (index [4]) at (854, 281) and (854, 315).
+- Attempted to accept dialogs using Enter and Space, but lead count remains at 3.
+- Console logs show HMR connected but no errors or action logs.
+- Sidebar is active, which might be interfering with focus.
+- Will try clearing focus/dialogs with Escape, then a precise click and a sequence of keys (Enter, Space, Tab+Enter).

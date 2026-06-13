@@ -1,0 +1,43 @@
+# Plan Arquitectónico: Escala Total y Cierre B2B
+
+*Rol Activo: Arquitecto UX/UI y Maker*
+
+Totalmente de acuerdo. La coherencia en el catálogo es vital para que un hostelero se vea reflejado, y el control por comensales es lo que separa un simple "PDF web" de un **Software TPV de Sala**. 
+
+Para implementar todo esto sin perder rendimiento y con autoridad para vender, este es el plan de acción exacto:
+
+## 1. Escala Masiva y Coherente del Catálogo
+Voy a expandir la base de datos `demo-data.ts` para que tenga un **mínimo de 4 productos por sección**. Además, separaré las bebidas lógicamente y usaré **imágenes optimizadas de Unsplash** (para eliminar la lentitud de las imágenes 8K previas):
+*   **Entrantes** (4 items)
+*   **Sushi & Crudos** (4 items)
+*   **Principales** (4 items)
+*   **Postres** (4 items)
+*   **Bodega (Vinos y Sakes)** (4 items)
+*   **Coctelería de Autor** (4 items)
+*   **Tés, Cafés e Infusiones** (4 items)
+
+## 2. Motor Multi-Comensal (Organización de Mesa)
+*   **Selector de Comensal:** En la cabecera (junto al idioma), añadiré un selector sutil: `Comensal 1`, `Comensal 2`, `Comensal 3`, `Comensal 4`.
+*   **El Carrito:** Al pulsar "Añadir" a un plato, este se asignará al comensal activo.
+*   **La Comanda:** El modal del pedido mostrará la cuenta desglosada (Ej: *Mesa 1 - Total: 80€ | C1 debe 30€, C2 debe 50€*). Esto demuestra un control técnico brutal al cliente final.
+
+## 3. Agente Camarero Transaccional (IA que Vende)
+*   El botón en los platos cambiará a algo más operativo, como **"Pedir con Asistente"**.
+*   **La Magia:** Modificaré el endpoint de la IA (`/api/demo/waiter`) para que no solo devuelva texto, sino que sea capaz de **ejecutar acciones**. 
+*   Si el usuario abre el chat en el Udon y escribe: *"Ponme dos de estos para mí y un sake"*, el bot responderá: *"¡Marchando! He añadido 2 Udon y 1 Sake al Comensal 1"*, y el sistema actualizará el carrito **automáticamente** sin que el usuario toque más botones.
+
+## 4. El "Hachazo" Comercial (Lead Capture Modal)
+*   **Botón Fijo B2B:** En la parte inferior de la pantalla (o flotante), un botón muy elegante: **"Quiero esta Carta para mi Restaurante"**.
+*   **Modal de Autoridad:** Al hacer clic, no salimos de la experiencia, se abre un modal de contacto B2B que dirá: *"Revoluciona tu sala y fideliza a tus clientes"*.
+*   **Rutas de Acción (CTAs):**
+    1.  **Agendar Auditoría Gratuita** (Link simbólico o real a Calendly).
+    2.  **Hablar con un Socio Operativo** (Link directo a tu WhatsApp con mensaje predefinido).
+    3.  **Ver Ecosistema Completo** (Link a la página principal `/`).
+
+---
+
+### 🚦 Autorización para Despliegue
+
+Este es el salto final. Pasamos de un "demo de diseño" a un **Software SaaS operativo** listo para que se lo pongas en la cara a cualquier dueño de restaurante. 
+
+Requiere reescribir la lógica de estado de React (carrito multi-comensal) y la lógica de la IA. ¿Tienes alguna corrección, o me das **Luz Verde** para construir esta arquitectura masiva?

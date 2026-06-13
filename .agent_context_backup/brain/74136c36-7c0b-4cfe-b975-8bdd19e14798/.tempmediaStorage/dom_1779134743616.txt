@@ -1,0 +1,143 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (256,131)<h3 >Tetería Palacio Nazari Málaga (@TeteriaPalacioNazari) />
+Facebook
+https://www.facebook.com
+› mentions
+Tetería P
+alacio
+Nazari, es la nueva tetería en Malaga, situada en calle San Agustin, y calle Echeg... See more. 󱞴 Local business · $$ · 󱛪 +34 952 60 40 38.
+[1] (544,132)<a href='https://www.facebook.com/TeteriaPalacioNazari/mentions/' />
+	[2] (544,132)<div  />
+		[3] (544,132)<img  />
+4.6
+(95)
+[4] (183,247)<div role='button' />
+[5] (258,367)<a class='zReHs' href='https://www.tripadvisor.es/Restaurant_Review-g187441-d25435582-Reviews-Teteria_Palacio_Nazari-Granada_Province_of_Granada_Andalucia.html' />
+	[6] (258,397)<h3 >TETERIA PALACIO NAZARI, Granada - Carta, fotos y ... />
+	[7] (205,342)<div  />
+		[8] (205,342)<div  />
+			[9] (81,342)<span  />
+				[10] (81,342)<div  />
+					[11] (81,342)<img  />
+			[12] (220,342)<div  />
+				[13] (220,328)<div  />
+					[14] (220,328)<span >Tripadvisor />
+				[15] (220,358)<div  />
+					[16] (220,358)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.tripadvisor.es />
+						[17] (273,357)<span class='ylgVCe ob9lvb' role='text'>› ... › Restaurantes de Granada />
+[18] (355,356)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[19] (355,356)<span  />
+		[20] (355,358)<span  />
+Estuprnda teteria en calle Calderería Vieja
+, próxima a la cslle principal de las teterias. Esta calle es un poco más tranquila.... Tiene gran variedad dectes, ...
+4.0
+(2)
+[21] (177,513)<div role='button' />
+[22] (182,629)<a class='zReHs' href='https://www.salir.com/teteria-palacio-nazari-granada-neg-134220.html' />
+	[23] (182,663)<h3 >Tetería Palacio Nazarí - Granada />
+	[24] (152,608)<div  />
+		[25] (152,608)<div  />
+			[26] (81,608)<span  />
+				[27] (81,608)<div  />
+					[28] (81,608)<img  />
+			[29] (167,608)<div  />
+				[30] (167,594)<div  />
+					[31] (167,594)<span >Salir.com />
+				[32] (167,624)<div  />
+					[33] (167,624)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://www.salir.com />
+						[34] (211,623)<span class='ylgVCe ob9lvb' role='text'>› Granada />
+[35] (251,622)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[36] (251,622)<span  />
+		[37] (251,624)<span  />
+Tetería Palacio Nazarí
+es una cafetería especializada en tés árabes que se encuentra en el número 4 de la Calle Caldería Vieja, en el centro de la ciudad de ...
+[38] (177,864)<a class='zReHs' href='https://www.instagram.com/explore/locations/1622417631125303/teteria-palacio-nazari-granada/' />
+	[39] (177,894)<h3 >Teteria Palacio Nazari Granada />
+	[40] (170,839)<div  />
+		[41] (170,839)<div  />
+			[42] (81,839)<span  />
+				[43] (81,839)<div  />
+					[44] (81,839)<img  />
+			[45] (185,839)<div  />
+				[46] (185,825)<div  />
+					[47] (185,825)<span >Instagram />
+				[48] (185,855)<div  />
+					[49] (185,855)<cite class='qLRx3b tjvcx GvPZzd dTxz9 cHaqb' role='text'>https://www.instagram.com />
+						[50] (226,854)<span class='ylgVCe ob9lvb' role='text'>› tet... />
+·
+[51] (294,855)<a class='dEEN8c' href='https://www.instagram.com/explore/locations/1622417631125303/teteria-palacio-nazari-granada/' />
+	[52] (294,854)<span >Traducir esta página />
+[53] (354,853)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[54] (354,853)<span  />
+		[55] (354,855)<span  />
+Teteria Palacio Nazari Granada
+. Granada, Europe/Madrid. Tea Room•7 posts. Top · Recent · In the area · En las teterias · Sign up • Instagram.
+Compartir
+Menú
+Ubicado en:
+[56] (741,128)<a href='/searchviewer/10?sca_esv=53e99bddec16fb1e&output=search&svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdNMVgydDNPV2h5GAo&sa=X&ved=2ahUKEwiXyJaw0cOUAxVIs1YBHbqcCz4Q8G0oAHoECCQQAQ'>Mercado arabe />
+[57] (664,175)<a class='fl' href='/search?sca_esv=53e99bddec16fb1e&q=teter%C3%ADa+palacio+nazar%C3%AD+direcci%C3%B3n&ludocid=7877395386917822032&sa=X&ved=2ahUKEwiXyJaw0cOUAxVIs1YBHbqcCz4Q6BN6BAgiEAI'>Dirección />
+:
+[58] (760,193)<a href='/maps/place//data=!4m2!3m1!1s0xd71fcbf358c2c13:0x6d52215e40899e50?sa=X&ved=1t:8290&ictx=111' />
+	[59] (760,193)<span >C. Calderería Vieja, 4, Albaicín, 18010 Granada />
+[60] (658,257)<a class='fl' href='/search?sca_esv=53e99bddec16fb1e&q=teter%C3%ADa+palacio+nazar%C3%AD+horario&ludocid=7877395386917822032&sa=X&ved=2ahUKEwiXyJaw0cOUAxVIs1YBHbqcCz4Q6BN6BAgjEAI'>Horario />
+:
+[61] (755,257)<div class='b2JWxc h-n' role='button' />
+	Abierto
+	· Cierra a las 2 a.m.
+[62] (686,312)<a href='#' role='button'>Sugerir una edición />
+·
+[63] (830,312)<a href='https://business.google.com/create?hl=es-419&getstarted&authuser=0&fp=7877395386917822032&gmbsrc=es-es-419-et-ip-z-gmb-s-z-l~skp%7Cclaimbz%7Cu&ppsrc=GMBSI'>¿Eres propietario de esta empresa? />
+Agregar la información que falta
+[64] (784,409)<div class='Kq7ICe ElkDDc Qh9l3d' role='link' />
+	[65] (733,414)<span >Agrega el número de teléfono del lugar />
+[66] (784,444)<div class='Kq7ICe ElkDDc Qh9l3d' role='link' />
+	[67] (681,448)<span >Agregar sitio web />
+Opiniones
+No se verifican las opiniones
+[68] (787,578)<span aria-label='Más información' class='c5aZPb ' role='button' />
+	[69] (787,578)<div  />
+[70] (784,691)<div class='acCJ4b rAdPSe' scrollable='true' />
+	[71] (712,691)<a class='Ky0SRd' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa+Palacio+Nazar%C3%AD+Opiniones&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2tzA3N7Y0NbYwszQ0tzAyMjA22sDI-IpRKSS1JLXo8NpEhYDEnMTkzHwFv8SqRKCAgn9BZl5mfl5q8SJWIhQBANvMjUpkAAAA&rldimm=7877395386917822032&tbm=lcl&hl=es-419&sa=X&ved=2ahUKEwiXyJaw0cOUAxVIs1YBHbqcCz4Q9fQKegQIMxAG#lkt=LocalPoiReviews' />
+		[72] (712,691)<div  />
+			[73] (712,671)<div  />
+				[74] (661,658)<div  />
+					[75] (661,658)<div  />
+						[76] (661,658)<img  />
+				[77] (715,658)<span >Google />
+				[78] (764,658)<div  />
+			[79] (712,720)<div class='QTAhef' role='list' />
+				[80] (673,720)<div aria-label='4.1 de 5' class='bBvbCc fUSQwd' role='listitem'>4.1/5 />
+				[81] (737,724)<span class='Rq4Jaf GtjMxb' role='listitem'>1.1 K opiniones />
+	[82] (862,691)<a class='Ky0SRd' href='https://www.tripadvisor.com.mx/Restaurant_Review-g187441-d1978059-Reviews-Teteria_Al_Andalus-Granada_Province_of_Granada_Andalucia.html' />
+		[83] (862,691)<div  />
+			[84] (862,671)<div  />
+				[85] (811,658)<div  />
+					[86] (811,658)<div  />
+						[87] (811,658)<img  />
+				[88] (865,658)<span >Tripadvisor />
+				[89] (914,658)<div  />
+			[90] (862,720)<div class='QTAhef' role='list' />
+				[91] (822,720)<div >Ver más />
+[92] (903,691)<g-right-button aria-label='Siguientes' class='wgbRNb VdehBf OZ5bRd zfpUke tHT0l' role='button' />
+	[93] (903,693)<g-fab  />
+		[94] (903,693)<span  />
+[95] (784,819)<div role='button' />
+	[96] (784,819)<div  />
+		[97] (784,819)<div >Agregar una opinión />
+			[98] (729,819)<null  />
+				[99] (729,819)<span  />
+					[100] (729,819)<span  />
+R ML
+Opinión de
+[101] (743,927)<a class='JKPXdf' href='/search?sca_esv=53e99bddec16fb1e&q=Teter%C3%ADa%20Palacio%20Nazar%C3%AD%20Opiniones&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2tzA3N7Y0NbYwszQ0tzAyMjA22sDI-IpRKSS1JLXo8NpEhYDEnMTkzHwFv8SqRKCAgn9BZl5mfl5q8SJWIhQBANvMjUpkAAAA&rldimm=7877395386917822032&tbm=lcl&hl=es-419&sa=X&ved=0CAYQ5foLahcKEwjYm-ew0cOUAxUAAAAAHQAAAAAQBg#lkt=LocalPoiReviews&arid=Ci9DQUlRQUNvZENodHljRjlvT2tkNU4wcEhlazlOVDFoeE1sVmtWemcwWjI4eE5FRRAB'>Google />
+	[102] (727,927)<span  />
+[103] (920,913)<button aria-label='Opciones de opiniones para la opinión de R ML' class='CeiTH yHy1rc eT1oJ mN1ivc' />
+4/5
+·
+Hace 6 meses
+
+</current_dom>

@@ -1,0 +1,35 @@
+# Actualización del Dashboard: Inteligencia de Tráfico y Ventas
+
+El dashboard actual (`/admin-architect`) está 100% enfocado en monitorizar los chats del agente IA. Ahora que hemos implementado el `AnalyticsPixel` para medir el posicionamiento orgánico y el tráfico web, necesitamos adaptar este panel de control para que sea un "Centro de Comando B2B" completo.
+
+## User Review Required
+> [!IMPORTANT]
+> El dashboard mostrará tanto el tráfico web en tiempo real (visitas, orígenes) como las conversaciones. ¿Prefieres que estas métricas estén en la misma pantalla principal (para un vistazo rápido a todo) o creamos una pestaña separada para "Tráfico"? En este plan propongo unificar todo en la misma pantalla en bloques horizontales.
+
+## Proposed Changes
+
+### 1. `src/app/admin-architect/page.tsx`
+Ampliar la consulta de Supabase para traer los datos de la nueva tabla `web_analytics` y añadir un bloque de KPIs para tráfico orgánico.
+
+#### [MODIFY] `src/app/admin-architect/page.tsx`
+- **Estado (State):** Añadir un estado `trafficStats` que almacene `totalVisits`, `mobilePercentage`, `topSource` (UTMs), y `activeSessions`.
+- **useEffect:** Añadir la consulta `supabaseClient.from('web_analytics').select('*')` y calcular las métricas.
+- **Interfaz (UI):** 
+  - Crear una nueva fila de KPIs en la parte superior dedicada al "Tráfico Orgánico".
+  - Añadir tarjetas visuales para `Visitas Totales`, `Dispositivo Principal`, `Origen Principal (UTM)` y `Sesiones Activas`.
+  - Mantener la fila actual de "Rendimiento del Agente IA" justo debajo.
+
+### 2. `src/components/dashboard/TrafficMonitor.tsx` (NUEVO)
+Crear un componente ligero para ver un feed de las últimas visitas a la web (similar a como `LiveMonitor` muestra los chats).
+
+#### [NEW] `src/components/dashboard/TrafficMonitor.tsx`
+- Tabla o lista limpia que muestre en tiempo real:
+  - ID de sesión (anonimizado).
+  - Origen (Directo, Google, Facebook).
+  - Dispositivo (Móvil/PC).
+  - Tiempo de entrada.
+
+## Verification Plan
+1. Accederemos a `http://localhost:3002/admin-architect`.
+2. Verificaremos que el nuevo bloque de "Tráfico Orgánico" cargue y no interfiera con los datos de "Rendimiento de Agente IA".
+3. Simularemos visitas desde el móvil y validaremos que el dashboard refleje el cambio instantáneamente a través de Supabase.

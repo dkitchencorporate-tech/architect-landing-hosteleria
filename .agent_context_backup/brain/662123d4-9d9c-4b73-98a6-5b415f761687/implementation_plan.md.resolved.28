@@ -1,0 +1,33 @@
+# Plan: Arqui Widget Fix & Sección Invitacional
+
+## Problema Actual
+El componente `ChatDemoWidget` se está renderizando incondicionalmente al final de `page.tsx` sin pasarle una función `onClose` que lo desmonte, lo que causa que el modal quede anclado a la pantalla sin poder cerrarse. Además, falta un espacio específico en la landing para animar al usuario a probar esta IA.
+
+## Proposed Changes
+
+### [MODIFY] [ChatDemoWidget.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ChatDemoWidget.tsx)
+- Añadir estado interno `[isOpen, setIsOpen] = useState(false)`.
+- Si `isOpen === false`, renderizar un botón flotante llamativo en la esquina inferior derecha (el que actualmente estaba en `DemoLauncher.tsx` pero integrado de forma global).
+- Si `isOpen === true`, renderizar el modal actual.
+- Modificar `resetAndClose` para que haga `setIsOpen(false)` (y opcionalmente llame a `onClose` si vino por prop).
+- Esto eliminará la necesidad del portal de `DemoLauncher` para el botón flotante.
+
+### [MODIFY] [DemoLauncher.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/DemoLauncher.tsx)
+- Eliminar el botón flotante (`floatingButton`) de aquí, ya que el propio `ChatDemoWidget` será el encargado de manejar su botón flotante global.
+- Dejar únicamente el botón estático "Ver demostración en vivo" que abre el widget al hacerle clic.
+
+### [MODIFY] [page.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/page.tsx)
+- Mantener `<ChatDemoWidget />` en el Layout/Page, pero ahora se comportará como una burbuja flotante que el usuario puede abrir a voluntad.
+- Crear e inyectar un nuevo componente/sección: **`MeetArquiSection`** justo antes de `FounderBio.tsx`.
+
+### [NEW] [MeetArquiSection.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/MeetArquiSection.tsx)
+- Una sección oscura y moderna que dice "Conoce a Arqui, tu nuevo socio".
+- Explicará que la burbuja de la derecha no es un bot tonto, sino un Cerrador High-Ticket.
+- Incluirá un botón que, al ser clickeado, dispare un evento personalizado o interactúe para abrir el widget.
+
+## Verification Plan
+1. Recargar la página y verificar que Arqui **no** se abre solo.
+2. Confirmar que aparece el botón flotante en la esquina inferior derecha.
+3. Hacer clic en el botón flotante, verificar que se abre y que al darle a la 'X' **se cierra**.
+4. Desplazarse hasta la nueva sección y verificar que el diseño invita a interactuar con el bot.
+5. Hacer el despliegue automático a Vercel con la CLI.

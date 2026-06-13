@@ -1,0 +1,10 @@
+# Tareas de Reestructuración Comercial
+
+- [x] Crear Botón de Pánico (Backup de Git Branch `panic-button-backup`).
+- [ ] Construir Componente: `ServiceBase.tsx` (Infraestructura 700€).
+- [ ] Construir Componente: `ServiceGrowth.tsx` (Growth Partner 249€, absorbe Event Library, borra los 99€).
+- [ ] Construir Componente: `ServiceAIAgent.tsx` (Recepcionista 290€ + 39€/mo).
+- [ ] Corregir `DarkKitchen.tsx` (Copy técnico y enlaces).
+- [ ] Refactorizar `page.tsx` (Actualizar H1 de AggressiveHero, corregir copys con promesas de "llenar restaurante", importar los nuevos componentes).
+- [ ] Eliminar componentes antiguos (`TheTrojanHorse`, `EventLibraryHook`, `HighTicketEcosystem`).
+- [ ] Testear y levantar el servidor localmente.

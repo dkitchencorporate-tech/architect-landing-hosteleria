@@ -1,0 +1,29 @@
+# Plan: Interfaz de Siguiente Nivel (Respuestas Sugeridas + Multilínea)
+
+## Diagnóstico y Comprensión
+¡Culpable! 
+1. **Scroll**: Tienes razón, el comportamiento estándar de WhatsApp (bajar hasta el fondo) no te sirve aquí porque las respuestas de Arqui son estructuradas y largas; necesitas leerlas desde la primera línea hacia abajo.
+2. **Text Input**: Tienes un `<input type="text">`. Ese elemento en HTML está diseñado para una sola línea (por eso se desplaza hacia la derecha y no permite saltos de carro). Necesitamos un `<textarea>` inteligente.
+3. **Respuestas Sugeridas**: Una idea brutal para reducir la fricción del lead. Agilizará muchísimo la captación de datos.
+
+---
+
+## Cambios Propuestos
+
+### 1. Scroll Infalible (Top-Focus Absoluto)
+Abandonaremos las matemáticas relativas. Le pondré un "rastreador" (`id="msg-3"`, `id="msg-4"`) a cada burbuja de chat generada. Cuando Arqui termine de responder, le daré la orden directa al navegador: *"Haz scroll suave y ancla la parte superior de la pantalla exactamente en el borde superior de la burbuja que acaba de nacer"*. Esto garantizará que siempre leas desde el principio.
+
+### 2. Input Multilínea Auto-ajustable
+- Cambiaremos la etiqueta `<input>` por un `<textarea>`.
+- Le aplicaré un motor de auto-escalado: empezará con el tamaño de una píldora (1 línea), pero a medida que escribas o hagas saltos de línea (con `Shift+Enter`), la caja crecerá hacia arriba de forma elegante (hasta un límite para no ocupar toda la pantalla).
+- Si pulsas `Enter` solo, enviará el mensaje (como en WhatsApp Web).
+
+### 3. Respuestas Rápidas (Quick Replies) Dinámicas
+- **El Cerebro (route.ts):** Le enseñaré a Arqui un truco oculto. Al final de cada una de sus respuestas de diagnóstico, deberá generar opciones invisibles usando un formato especial, por ejemplo: `|SUGERENCIAS|Solo por teléfono|Usamos ElTenedor|Tenemos web propia|`
+- **El Frontend (ChatDemoWidget):** Tu interfaz "leerá" y ocultará esa última línea. Extraerá las opciones y las convertirá en hermosos "botones píldora" justo encima de la caja de texto. Si el usuario pulsa una píldora, la respuesta se enviará automáticamente. Esto dará una experiencia SaaS hiper-fluida.
+
+## Solicitud de Aprobación
+
+> [!IMPORTANT]
+> **Revisión del Plan:**
+> La idea de las respuestas sugeridas es un gran salto de calidad. Requiere que modifique tanto el "Cerebro" de la IA (para que las invente en cada paso) como la Interfaz Gráfica (para renderizar los botones y el nuevo cajón de texto). ¿Tienes luz verde para ejecutar esta transformación integral?

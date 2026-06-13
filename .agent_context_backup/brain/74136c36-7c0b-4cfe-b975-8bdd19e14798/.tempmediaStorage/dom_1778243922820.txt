@@ -1,0 +1,45 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+fix(docker)
+: bump the docker-minor group across 1 directory with 6 updates
+[0] (290,39)<a href='https://github.com/supabase/cli/pull/5113'>fix(docker) />
+: bump the docker-minor group in /pkg/config/templates with 6 updates
+[1] (295,84)<a href='https://github.com/supabase/cli/pull/5082'>fix(pg-delta) />
+: declarative apply error results
+[2] (295,128)<a href='https://github.com/supabase/cli/pull/5078'>fix(pg-delta) />
+: declarative-sync-no-declarative-dir-set
+[3] (283,172)<a href='https://github.com/supabase/cli/pull/5126'>fix(start) />
+: guard db_logs vector transform against null regex capture
+[4] (267,216)<a href='https://github.com/supabase/cli/pull/5090'>fix />
+: adds etl to managed schema
+[5] (267,261)<a href='https://github.com/supabase/cli/pull/5064'>fix />
+: atomic parser
+[6] (267,305)<a href='https://github.com/supabase/cli/pull/5096'>fix />
+: functions download
+[7] (267,349)<a href='https://github.com/supabase/cli/pull/5120'>fix />
+: improve error handling and output formatting in pg-delta apply process
+[8] (267,394)<a href='https://github.com/supabase/cli/pull/5118'>fix />
+: remove version comparison check for storage image updates
+Others
+[9] (308,534)<a href='https://github.com/supabase/cli/pull/5111'>chore(workflows) />
+: enable install scripts for supabase package in Yarn
+[10] (276,579)<a href='https://github.com/supabase/cli/pull/5123'>chore />
+: resync develop with main
+[11] (276,623)<a href='https://github.com/supabase/cli/pull/5093'>chore />
+: sync API types from infrastructure
+[12] (276,667)<a href='https://github.com/supabase/cli/pull/5119'>chore />
+: upgrade pg-delta to alpha.20 in multiple templates
+Update Dockerfile for Studio image 2026-04-27 by
+[13] (576,712)<a class='user-mention notranslate' href='https://github.com/joshenlim'>@joshenlim />
+in
+[14] (644,712)<a class='issue-link js-issue-link' href='https://github.com/supabase/cli/pull/5130'>#5130 />
+Contributors
+[15] (248,889)<a href='https://github.com/joshenlim' />
+	[16] (248,893)<img  />
+joshenlim
+Assets
+17
+
+</current_dom>

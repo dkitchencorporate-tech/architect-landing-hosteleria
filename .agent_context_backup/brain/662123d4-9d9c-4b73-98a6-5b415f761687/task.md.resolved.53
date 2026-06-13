@@ -1,0 +1,11 @@
+# Task Tracker: Hub de Manuales Operativos
+
+## Fase 1: Arquitectura Base
+- `[/]` Crear `src/app/manuals/layout.tsx` con estilos dinámicos (pantalla oscuro, impresión blanco).
+- `[ ]` Crear la página índice `src/app/manuals/page.tsx`.
+
+## Fase 2: Documentación de Procedimientos
+- `[ ]` Crear y redactar el reporte de Google OAuth en `src/app/manuals/google-oauth/page.tsx`.
+
+## Fase 3: Despliegue
+- `[ ]` Subir y compilar en Vercel.

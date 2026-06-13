@@ -1,0 +1,9 @@
+- [x] Crear componente `EnterpriseModal.tsx` con formulario de 7 preguntas de cualificación.
+- [x] Integrar `EnterpriseModal.tsx` en `DarkKitchen.tsx`.
+- [x] Revisar y refactorizar sección "Cómo trabajamos" (adaptar al modelo Socio Operativo).
+- [x] Revisar y refactorizar sección "FAQ / Preguntas Frecuentes".
+- [ ] Refactorizar el *System Prompt* de Arqui en `src/app/api/demo/respond/route.ts` para que actúe como Consultor Enterprise.
+- [ ] Implementar perfilado dinámico en Arqui (Base Operativa vs Agente IA vs Dark Kitchen).
+- [ ] Implementar generación dinámica de `|SUGERENCIAS|` basadas en el contexto en Arqui.
+- [ ] Enlazar Arqui al flujo de WhatsApp o Admisión en lugar de forzar recolección de email.
+- [ ] Verificar entorno.

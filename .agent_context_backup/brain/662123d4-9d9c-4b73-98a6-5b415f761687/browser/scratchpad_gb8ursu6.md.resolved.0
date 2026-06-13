@@ -1,0 +1,9 @@
+# Scratchpad - Strategy Generator Testing
+
+## Plan
+- [ ] Navigate to http://localhost:3002/creative-factory
+- [ ] Switch to "Creador de Estrategias" vault
+- [ ] Click "Generar Estrategia Ahora" or "Generar Estrategia IA"
+- [ ] Wait for strategy generation (up to 30 seconds)
+- [ ] Verify rendering and check for error messages
+- [ ] Document findings and return status report

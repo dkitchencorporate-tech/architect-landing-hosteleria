@@ -1,0 +1,16 @@
+# Task: Verify Phase 1 Redesign of LeadDetail
+
+## Checklist
+- [ ] Navigate to http://localhost:3000
+- [ ] Perform a search for "Asadores tradicionales Madrid"
+- [ ] Click "Prospectar" and wait for results
+- [ ] Select the first lead
+- [ ] Verify detail panel layout (Tabs: Inteligencia, Estrategia AI, Operaciones)
+- [ ] Verify "Auditoría Profunda" button presence
+- [ ] Test tab switching to "Estrategia AI"
+- [ ] Report findings
+
+## Observations
+- Encountered a build error on http://localhost:3000: "Export Instagram doesn't exist in target module" in `LeadDetail.tsx`.
+- Next.js Turbopack shows the error overlay.
+- Cannot proceed with visual verification until the build error is fixed.

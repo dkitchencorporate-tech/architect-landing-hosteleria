@@ -1,0 +1,66 @@
+# Auditoría Estructural y Comercial de la Landing Page 🦅
+
+Tienes toda la razón. Me he enfocado tanto en el código visual que he pasado por alto el **riesgo legal y comercial** de ciertas frases que te comprometen a resultados incontrolables. "Llenarte el restaurante" es una promesa tóxica.
+
+He analizado **todas y cada una de las 17 secciones** que componen la Landing Page actualmente en tu archivo `page.tsx` y en los componentes. Aquí está el mapeo completo, los errores graves que he detectado y mis propuestas de solución para que tú las valides.
+
+---
+
+## Mapeo Completo de Secciones (De arriba a abajo)
+
+### 1. Cabecera (Navbar & AggressiveHero)
+- **Enfoque:** Capturar la atención inmediata y generar autoridad SEO.
+- **Errores:** Visualmente está bien, pero en el `AggressiveHero` dice "Atrae más clientes...".
+- **Solución:** Cambiar a un enfoque de infraestructura. *Ej: "Prepara tu negocio para captar y retener más clientes..."*
+
+### 2. El Dolor (The Pain)
+- **Enfoque:** Empatizar con el hostelero (Martes Vacío, Teléfono Fantasma, Peaje de Glovo).
+- **Errores:** Ninguno grave. El copy es muy sólido y B2B.
+
+### 3. DigitalPresenceValue & TheTrojanHorse (Precios y Promesa)
+- **Enfoque:** Vender el sistema core (Carta + Web) y mostrar los planes.
+- **ERROR GRAVE 1 (Responsabilidad Legal):** En la Suscripción Growth dice *"Nosotros nos encargamos de llenarte el restaurante"*. Esto es un suicidio comercial. Si Meta Ads va mal un mes, te pedirán la devolución del dinero.
+- **ERROR GRAVE 2 (Posicionamiento IA):** El Agente de IA está relegado a una tarjetita secundaria debajo de los precios. Parece un extra barato en lugar del producto tecnológico más revolucionario que ofreces.
+- **Solución:** 
+  - *Cambio de Copy (Growth):* "Construimos y gestionamos tu motor de captación digital. Tú pon la comida, nosotros te traemos las oportunidades de venta."
+  - *Elevación de la IA:* Sacar el Agente IA de la sección de precios y crearle una **sección propia e imponente** antes de los precios, vendiéndolo como "Tu Recepcionista Virtual 24/7". Luego, en los precios, solo se menciona como "Setup de Instalación de IA".
+
+### 4. EventLibraryHook & Caso de Éxito (Taberna Los Arcos)
+- **Enfoque:** Vender el concepto de la "Biblioteca de Eventos" mediante una historia.
+- **Errores:** Ninguno. Es un buen gatillo mental.
+
+### 5. Step-by-Step System (Nuestro Socio Comercial)
+- **Enfoque:** Explicar cómo funciona el ecosistema en 3 pasos.
+- **ERROR GRAVE 3:** El paso 1 dice *"Atracción Incesante: Te inyectamos tráfico real"*. Falsa promesa incontrolable.
+- **Solución:** Cambiar a *"Infraestructura de Captación: Desplegamos campañas optimizadas para que tu local sea visible cuando tus clientes buscan dónde comer"*.
+
+### 6. WhatsAppHero & HighTicketEcosystem
+- **Enfoque:** Transición visual hacia el sistema de automatización y el alto valor.
+- **Errores:** Exceso de secciones transicionales que pueden marear al usuario antes de llegar a la parte final.
+- **Solución:** Fusionar o simplificar estas transiciones para que el scroll sea más directo.
+
+### 7. Transición Dark Kitchen & DarkKitchen
+- **Enfoque:** El servicio Enterprise (PWA, 7 marcas virtuales).
+- **Errores:** Ya corregimos el copy técnico, pero el enlace sigue yendo a WhatsApp general.
+- **Solución:** Crear un mensaje de WhatsApp específico (Ej: "Hola, quiero aplicar a la auditoría para Dark Kitchen").
+
+### 8. Nuestro Proceso (4 Pasos rápidos)
+- **Enfoque:** Explicar el onboarding del cliente.
+- **ERROR GRAVE 4:** El paso 3 dice *"Iniciamos las estrategias de atracción para llenar tu restaurante"*.
+- **Solución:** Cambiar a *"Activamos tu motor de visibilidad (Plan Growth) para escalar tus reservas sin depender del azar"*.
+
+### 9. Trust Banner, FAQ y Footer
+- **Enfoque:** Cierre, resolución de dudas y confianza técnica (Logos de WhatsApp, Meta, Google).
+- **Errores:** Ninguno.
+
+---
+
+## User Review Required
+> [!CAUTION]
+> **Riesgo Legal y Posicionamiento:** Tienes toda la razón en que prometer "llenar el local" es un error de novato. Además, esconder la Inteligencia Artificial al final de la página le resta valor a nuestra ventaja competitiva principal.
+> 
+> **Plan de Acción Propuesto:**
+> 1. Voy a **purgar la palabra "llenar el restaurante"** y "inyectar tráfico" de toda la web, cambiándolo por "infraestructura de captación", "motor de visibilidad" y "oportunidades de reserva".
+> 2. Voy a **extraer el Agente IA de los precios** y le crearé un componente/sección propio de alto impacto (antes del Dark Kitchen) para que se entienda que es un servicio Premium de automatización.
+> 
+> ¿Apruebas este análisis y las soluciones para empezar a reescribir y reestructurar estas secciones?

@@ -1,0 +1,16 @@
+# Tareas: Reingeniería Arquitectónica Total (3 UIs)
+
+- `[ ]` 1. Reescritura de Base de Datos (`demo-data.ts`)
+  - Generar 3 Menús de 28 items (84 totales).
+  - 7 categorías exactas por menú.
+  - 4 items exactos por categoría.
+  - Coherencia absoluta en imágenes (Unsplash WebP).
+- `[ ]` 2. Reescritura Estructural (`page.tsx`)
+  - Componente `<EditorialSushiLayout />`: 1 columna asimétrica, mucho Negative Space, tipografía fina.
+  - Componente `<ListTapasLayout />`: Listado denso, imágenes pequeñas a la izquierda, líneas punteadas, rústico.
+  - Componente `<GridBurgerLayout />`: Grid tipo App, masonry, tarjetas cerradas, bordes neón, oscuro.
+  - Switcher global y Dock flotante B2B integrados.
+- `[ ]` 3. Adaptación del IA (`route.ts`)
+  - Asegurar que el System Prompt digiere correctamente los 28 items activos según el template.
+- `[ ]` 4. Auditoría y Relanzamiento
+  - Revisar coherencia, CSS responsivo y relanzar túnel.

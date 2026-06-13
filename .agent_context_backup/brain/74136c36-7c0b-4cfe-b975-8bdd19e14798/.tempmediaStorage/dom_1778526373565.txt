@@ -1,0 +1,184 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+Ir al contenido principal
+Ayuda sobre la accesibilidad
+Comentarios sobre la accesibilidad
+[0] (106,83)<a aria-label='Ir a la Página principal de Google' href='https://www.google.com/webhp?hl=es-419&sa=X&ved=0ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQPAgJ' id='logo' title='Ir a la Página principal de Google' />
+[1] (397,82)<textarea aria-label='Buscar' class='gLFyf' id='APjFqb' role='combobox' />
+[2] (622,82)<div  />
+	[3] (620,82)<div aria-label='Borrar' class='vOY7J M2vV3' role='button' />
+		[4] (620,82)<span  />
+	[5] (639,82)<span  />
+[6] (658,82)<div aria-label='Búsqueda por voz' class='XDyW0e' role='button' />
+[7] (689,82)<div aria-label='Búsqueda por imagen' class='nDcEnd' role='button' />
+[8] (725,82)<button aria-label='Buscar' class='HZVG1b Tg7LZd' />
+	[9] (720,82)<div  />
+		[10] (720,82)<span  />
+[11] (860,82)<div aria-label='Configuración' class='fLciMb' id='og-te' role='button' />
+	[12] (860,85)<div  />
+		[13] (860,82)<span  />
+[14] (896,82)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=wh' role='button' />
+[15] (951,82)<a aria-label='Acceder' class='gb_A' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https://www.google.com/search%3Fq%3DTaberna%2BMalvasia%2BGranada%2Bweb&ec=futura_srp_og_si_72236_p'>Acceder />
+	Acceder
+[16] (92,180)<a class='XVMlrc C6AK7c' href='/search?q=Taberna+Malvasia+Granada+web&sca_esv=43a6c5a008a39361&udm=50&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTQJsEgZIYkjbgWUViY9fymBcFucg_RQ5knOvk98ddJ3sQoJwOZzlznY56foJpBC2qmQxKwJ3Rc1NLiw9wuTTmR0v8OwZ3TkPvy0zzQIvRcHQuEfCwUimuL9uh_i51Xh7-L0Uemy8Y6LU8CreSYhfjbAZ8hjtXM4dlGBYkBVGRqIJJlFV1g&aep=1&ntc=1&sa=X&ved=2ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQ2J8OegQICxAD' />
+	[17] (92,180)<div  />
+		[18] (92,194)<div  />
+			[19] (92,186)<span  />
+				[20] (92,186)<span >Modo IA />
+[21] (144,180)<a class='C6AK7c' role='link' />
+	Todo
+[22] (201,180)<a class='C6AK7c' href='/search?sca_esv=43a6c5a008a39361&udm=2&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTQJsEgZIYkjbgWUViY9fymBcFucg_RQ5knOvk98ddJ3sQoJwOZzlznY56foJpBC2qmQxKwJ3Rc1NLiw9wuTTmR0v8OwZ3TkPvy0zzQIvRcHQuEfCwUimuL9uh_i51Xh7-L0Uemy8Y6LU8CreSYhfjbAZ8hjtXM4dlGBYkBVGRqIJJlFV1g&q=Taberna+Malvasia+Granada+web&sa=X&ved=2ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQtKgLegQIERAB' />
+	[23] (201,180)<div  />
+		[24] (201,194)<span >Imágenes />
+[25] (271,180)<a class='C6AK7c' href='/search?sca_esv=43a6c5a008a39361&udm=3&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTQJsEgZIYkjbgWUViY9fymBcFucg_RQ5knOvk98ddJ3sQoJwOZzlznY56foJpBC2qmQxKwJ3Rc1NLiw9wuTTmR0v8OwZ3TkPvy0zzQIvRcHQuEfCwUimuL9uh_i51Xh7-L0Uemy8Y6LU8CreSYhfjbAZ8hjtXM4dlGBYkBVGRqIJJlFV1g&q=Taberna+Malvasia+Granada+web&sa=X&ved=2ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQs6gLegQIFBAB' />
+	[26] (271,180)<div  />
+		[27] (271,194)<span >Productos />
+[28] (351,180)<a class='C6AK7c' href='/search?sca_esv=43a6c5a008a39361&udm=39&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTQJsEgZIYkjbgWUViY9fymBcFucg_RQ5knOvk98ddJ3sQoJwOZzlznY56foJpBC2qmQxKwJ3Rc1NLiw9wuTTmR0v8OwZ3TkPvy0zzQIvRcHQuEfCwUimuL9uh_i51Xh7-L0Uemy8Y6LU8CreSYhfjbAZ8hjtXM4dlGBYkBVGRqIJJlFV1g&q=Taberna+Malvasia+Granada+web&sa=X&ved=2ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQs6gLegQIExAB' />
+	[29] (351,180)<div  />
+		[30] (351,194)<span >Videos cortos />
+[31] (423,180)<a class='C6AK7c' href='/search?sca_esv=43a6c5a008a39361&udm=7&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTQJsEgZIYkjbgWUViY9fymBcFucg_RQ5knOvk98ddJ3sQoJwOZzlznY56foJpBC2qmQxKwJ3Rc1NLiw9wuTTmR0v8OwZ3TkPvy0zzQIvRcHQuEfCwUimuL9uh_i51Xh7-L0Uemy8Y6LU8CreSYhfjbAZ8hjtXM4dlGBYkBVGRqIJJlFV1g&q=Taberna+Malvasia+Granada+web&sa=X&ved=2ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQtKgLegQIFRAB' />
+	[32] (423,180)<div  />
+		[33] (423,194)<span >Videos />
+[34] (480,180)<a class='C6AK7c' href='/search?sca_esv=43a6c5a008a39361&q=Taberna+Malvasia+Granada+web&tbm=nws&source=lnms&fbs=ADc_l-bpk8W4E-qsVlOvbGJcDwpn60DczFdcvPnuv8WQohHLTQJsEgZIYkjbgWUViY9fymBcFucg_RQ5knOvk98ddJ3sQoJwOZzlznY56foJpBC2qmQxKwJ3Rc1NLiw9wuTTmR0v8OwZ3TkPvy0zzQIvRcHQuEfCwUimuL9uh_i51Xh7-L0Uemy8Y6LU8CreSYhfjbAZ8hjtXM4dlGBYkBVGRqIJJlFV1g&sa=X&ved=2ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQ0pQJegQIEBAB' />
+	[35] (480,180)<div  />
+		[36] (480,194)<span >Noticias />
+[37] (537,180)<div class='mTpL7c' role='button' />
+	[38] (537,180)<div  />
+		[39] (537,194)<div  />
+			[40] (530,186)<span >Más />
+			[41] (547,186)<span  />
+[42] (615,180)<div class='mOKdDc' id='hdtb-tls' role='button' />
+	[43] (615,180)<div  />
+		[44] (615,194)<div  />
+			[45] (608,186)<span >Herramientas />
+			[46] (650,186)<span  />
+Resultados de búsqueda
+[47] (152,316)<a class='zReHs' href='https://www.tabernamalvasia.es/' />
+	[48] (130,350)<h3 >taberna malvasia />
+	[49] (152,296)<div  />
+		[50] (152,296)<div  />
+			[51] (81,296)<span  />
+				[52] (81,296)<div  />
+					[53] (81,296)<span  />
+			[54] (167,296)<div  />
+				[55] (167,282)<div  />
+					[56] (167,282)<span >tabernamalvasia.es />
+				[57] (167,312)<div  />
+					[58] (167,312)<cite class='tjvcx GvPZzd cHaqb' role='text'>https://www.tabernamalvasia.es />
+[59] (250,310)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[60] (250,310)<span  />
+		[61] (250,312)<span  />
+Taberna · vinos y especialidades · Mapa.
+C/ CALLE DEL ROSARIO 10, 18009 - GRANADA
+TELÉFONO : 685 611 887.
+[62] (544,351)<a href='https://www.tabernamalvasia.es/' />
+	[63] (544,351)<div  />
+		[64] (544,351)<img  />
+[65] (181,547)<a class='zReHs' href='https://taberna-malvasia.eatbu.com/' />
+	[66] (181,581)<h3 >Taberna Malvasía - Bar Granada />
+	[67] (159,527)<div  />
+		[68] (159,527)<div  />
+			[69] (81,527)<span  />
+				[70] (81,527)<div  />
+					[71] (81,527)<img  />
+			[72] (174,527)<div  />
+				[73] (174,513)<div  />
+					[74] (174,513)<span >DISH Digital… />
+				[75] (174,543)<div  />
+					[76] (174,543)<cite class='tjvcx GvPZzd cHaqb' role='text'>https://taberna-malvasia.eatbu.com />
+[77] (265,541)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[78] (265,541)<span  />
+		[79] (265,543)<span  />
+At our restaurant you can enjoy our
+popular cheese platters and tapas menus
+with a fine glass of wine – we'll help you choose the best combination. Whenever you ...
+[80] (544,582)<a href='https://taberna-malvasia.eatbu.com/' />
+	[81] (544,582)<div  />
+		[82] (544,582)<img  />
+[83] (275,778)<a class='zReHs' href='https://taberna-malvasia.eatbu.com/?lang=es' />
+	[84] (275,813)<h3 >Bar Granada | Mediterránea & Española cocina cerca de mí />
+	[85] (167,758)<div  />
+		[86] (167,758)<div  />
+			[87] (81,758)<span  />
+				[88] (81,758)<div  />
+					[89] (81,758)<img  />
+			[90] (182,758)<div  />
+				[91] (182,744)<div  />
+					[92] (182,744)<span >DISH Digital… />
+				[93] (182,774)<div  />
+					[94] (182,774)<cite class='qLRx3b tjvcx GvPZzd cHaqb' role='text'>https://taberna-malvasia.eatbu.com />
+						[95] (256,773)<span class='ylgVCe ob9lvb' role='text'>› ... />
+[96] (281,772)<div aria-label='Acerca de este resultado' class='MJ8UF iTPLzd rNSxBe eY4mx lUn2nc' role='button' />
+	[97] (281,772)<span  />
+		[98] (281,774)<span  />
+Entonces el «
+Taberna Malvasía
+» es lo que necesitas. Nuestro animado bar te convencerá con su buena música, sus sabrosas bebidas y un ambiente muy acogedor. nn ...
+[99] (165,1009)<a class='zReHs' href='http://www.tabernamalvasia.es/mapa.html' />
+	[100] (165,989)<div  />
+		[101] (165,989)<div  />
+			[102] (81,989)<span  />
+				[103] (81,989)<div  />
+					[104] (81,989)<span  />
+			[105] (181,989)<div  />
+				[106] (181,975)<div  />
+					[107] (181,975)<span >tabernamalvasia.es />
+				http://www.tabernamalvasia.es
+				› mapa
+[108] (678,392)<button class='KJY1Gc' />
+	[109] (677,392)<div  />
+		[110] (677,392)<div  />
+			[111] (686,392)<img  />
+		[112] (687,494)<span >Ver fotos />
+[113] (798,392)<a  />
+[114] (823,458)<a href='/local/place/fid/0xd71fcbbfa3d2c4b:0xc4fb8e3eb7ec115c/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DX4wsd85sRLvWVcEEqBPgyQ%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D232.70267%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFlg0d3NkODVzUkx2V1ZjRUVxQlBneVE%3D&sa=X&ved=2ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQpx96BAgbEA8' />
+	[115] (823,458)<div  />
+		[116] (848,458)<img  />
+	[117] (890,495)<span >Ver por fuera />
+Taberna Malvasía
+4.6
+[118] (749,602)<a href='/search?sca_esv=43a6c5a008a39361&q=Taberna+Malvasia+Granada+web&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOdDFxvCN7Lv4cpzcfpd8yrhv9xl2Qic9I3lg31VnXwn6XgDu7Ub7Ca_CFovCqUAklLCgdf4%3D&uds=ALYpb_l6DyU7gEufbC-T-1UgqmR0l7FH3GpwWPgHfg0sfxnPDTKcJZNgv9iRXKo2h55COnpEx7bdUpc8CaFvqCinLm-zZ2_YnpLj8SeucBNPbL2Z3S2xD3-s5_xVMghdfFNueON_bAxG&sa=X&ved=2ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQ3PALegQIGRAE'>857 opiniones />
+[119] (796,598)<div aria-label='Más información' class='FdI3bf VPT9jc' role='button' />
+	[120] (796,598)<span  />
+€10-20
+‧
+Taberna
+[121] (816,604)<div class='mTpL7c' role='button' />
+	[122] (816,604)<span aria-label='Más opciones para Taberna Malvasía' class='Zj92Hf' role='img' />
+		[123] (814,601)<span  />
+[124] (681,723)<a class='n1obkb mI8Pwc' href='http://www.tabernamalvasia.es/' />
+	[125] (681,723)<div  />
+		[126] (656,723)<div  />
+		[127] (690,723)<span >Sitio web />
+[128] (777,723)<div  />
+	[129] (745,723)<div  />
+	[130] (786,723)<span >Cómo llegar />
+[131] (876,723)<a class='n1obkb mI8Pwc' href='/search?sca_esv=43a6c5a008a39361&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOdDFxvCN7Lv4cpzcfpd8yrhmmvtknreLcHAvTKBBuUxO8HKOzvkgzgGjubo0PFRlaEO7SglOYgEyvQ4FRrdzRg3S5zvw2kFQcSTkhcxoEggGqyHLoA%3D%3D&q=Taberna+Malvas%C3%ADa+Opiniones&sa=X&ved=2ahUKEwiKpOOE97GUAxXzT-sIHaJkKeQQ0bkNegQIKhAH' />
+	[132] (876,723)<div  />
+		[133] (848,723)<div  />
+		[134] (884,723)<span >Opiniones />
+[135] (678,799)<div  />
+	[136] (678,799)<div  />
+		[137] (678,799)<div  />
+			[138] (678,799)<span aria-label='Guardar Taberna Malvasía en una colección' class='InPmOc CCWeQ vwakYd' role='button' title='Guardar Taberna Malvasía en una colección' />
+				[139] (687,799)<span >Guardar />
+[140] (768,799)<span aria-label='Compartir' class='n1obkb mI8Pwc' role='button' />
+	[141] (768,799)<div  />
+		[142] (740,799)<div  />
+		[143] (776,799)<span >Compartir />
+[144] (853,799)<a aria-label='Llamar' class='Od1FEc n1obkb' href='#' role='button' />
+	[145] (853,799)<div  />
+		[146] (834,799)<div  />
+		[147] (862,799)<span >Llamar />
+[148] (672,875)<span  />
+	[149] (672,875)<div id='sXDlyb/g/11bwyxgn1v' role='button' />
+		[150] (672,875)<div  />
+			[151] (656,875)<div  />
+			[152] (680,875)<span >Menú />
+Opciones de servicio:
+Asientos al aire libre
+· Wi-Fi
+
+</current_dom>

@@ -1,0 +1,7 @@
+# Tareas de Implementación
+
+- [/] Modificar `ChatDemoWidget.tsx` para incluir `<textarea>` auto-escalable.
+- [ ] Modificar `ChatDemoWidget.tsx` para extraer y mostrar `|SUGERENCIAS|`.
+- [ ] Modificar `ChatDemoWidget.tsx` para anclar el scroll por ID (`block: 'start'`).
+- [ ] Modificar `route.ts` para que el agente genere las píldoras de respuestas sugeridas.
+- [ ] Verificar la experiencia en local.

@@ -1,0 +1,60 @@
+# Mapeo Exacto de la Base de Código y Plan de Modificación 🦅
+
+Asumo mi error. He hablado de teorías sin auditar el código línea por línea en este instante. Me he metido en los archivos de la web (`src/app/page.tsx` y `src/components/sections/TheTrojanHorse.tsx`) y he mapeado **exactamente** lo que tenemos construido, componente a componente, y cómo responde esto a las críticas de los asesores bajo tu directiva estricta.
+
+Aquí tienes la auditoría real y el plan exacto de código:
+
+---
+
+## 1. Auditoría del Código Actual (Lo que realmente hay en producción)
+
+### A. Botones y Embudo (El conflicto de WhatsApp)
+- **Estado Actual:** Todos los botones principales (`<nav>`, `AggressiveHero`, y las tarjetas de precios en `TheTrojanHorse`) tienen enlaces tipo `href="https://wa.me/34611499674?text=..."`. 
+- **Veredicto:** Los asesores decían que esto generaría curiosos y pedían un formulario. Tú me has dejado claro que **tú quieres gestionar el WhatsApp manualmente** hasta validar con 12 clientes. Además, me recordaste que el `ExitIntent` (Modal) y el Agente del Widget ya hacen un filtro inteligente.
+- **Acción:** Los enlaces a WhatsApp **SE QUEDAN**. Tu teléfono será el centro de cierre. El embudo no se toca.
+
+### B. Imágenes y Prueba Social
+- **Estado Actual:** Las imágenes que acompañan los testimonios y los dolores fueron generadas por IA de forma hiperrealista.
+- **Veredicto:** El Asesor 1 dijo que eran de stock. Se equivocó por la altísima calidad que logramos, pero no son de stock.
+- **Acción:** Las imágenes y testimonios **SE QUEDAN**.
+
+### C. El Ruido (Dark Kitchens / Ecosistema Masivo)
+- **Estado Actual:** En `page.tsx`, línea 140 a 165, tenemos toda una sección y transición dedicada a "App Propia" y `<DarkKitchen />`.
+- **Veredicto:** El Asesor 1 tiene razón aquí. Para un cliente de 150€ de Ads, ofrecerle montarle un "Dark Kitchen" o una App de Delivery propia (que cuesta miles de euros) por 49€ genera una disonancia brutal y rompe la credibilidad.
+- **Acción:** **ELIMINAR** el componente `<DarkKitchen />` y la sección que lo precede en `page.tsx`. Menos es más.
+
+### D. Los Precios (`TheTrojanHorse.tsx`)
+- **Estado Actual:** Líneas 128 y 186. Tienes "Suscripción Base a 49€/mes" y "Licencia Completa a 450€" (Pago único sin cuotas).
+- **Veredicto:** Ambos asesores y yo coincidimos. A 49€ vas a quebrar por soporte. El de 450€ "sin cuotas" te canibaliza el negocio porque vas a seguir pagando el servidor de Supabase y Vercel sin cobrarles.
+- **Acción:** **PIVOTE TOTAL DE PRECIOS**. Implementaremos el Modelo Híbrido Realista en código.
+
+---
+
+## 2. El Código a Modificar (Plan de Ejecución)
+
+Si apruebas este mapeo, entraré a los archivos y haré exactamente esto:
+
+### Modificación 1: Limpieza en `src/app/page.tsx`
+- Eliminaré la importación de `DarkKitchen`.
+- Borraré las líneas 140 a 165 (La sección visual de "Si tu sistema es un caos... Dark Kitchen"). Esto acortará la página y la hará 100% enfocada en **Menú QR + Agente IA**.
+
+### Modificación 2: Nuevos Precios en `TheTrojanHorse.tsx`
+Sustituiré las dos tarjetas actuales por TRES tarjetas lógicas para facturar 2.000€/mes con 3 a 5 clientes:
+
+1. **Suscripción Growth:**
+   - **Precio:** 149€/mes.
+   - **Copy:** "Nosotros te lo montamos todo. Pago mensual, sin ataduras. (Incluye IA y Hosting)".
+
+2. **Licencia Híbrida (El objetivo principal):**
+   - **Precio:** 590€ (Setup) + 69€/mes.
+   - **Copy:** "Pago único por el desarrollo de la carta y la IA. La pequeña cuota mantiene vivo el servidor de IA 24/7. Tu web es tuya."
+
+3. **High-Ticket Custom (Oculto/Filtrado):**
+   - **Precio:** A Medida.
+   - **Copy:** "Para cadenas que quieren que les gestionemos los Ads y Eventos completos".
+
+## User Review Required
+> [!IMPORTANT]
+> Este mapeo es exacto al código que tienes ahora mismo en tu ordenador. He respetado tu deseo de mantener el cierre manual en WhatsApp y las imágenes.
+> 
+> ¿Me das luz verde para entrar a `page.tsx` y `TheTrojanHorse.tsx` a hacer estas cirugías?

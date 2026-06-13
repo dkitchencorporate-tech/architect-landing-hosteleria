@@ -1,0 +1,30 @@
+# Plan de Correcciones Finales y Seguridad
+
+## Análisis de Problemas
+1. **QR Roto:** La imagen en `LiveDemoCTA` apunta a `architect-sys.com/demo/carta` (dominio viejo) en lugar de `hosteleria.architectsys.com/demo/carta`. 
+2. **Navbar Móvil Solapado:** En pantallas móviles, el menú superior usa `flex-wrap` lo que hace que los botones (Suscripciones, Eventos, etc.) caigan a una segunda línea, haciendo el menú gigante y tapando contenido.
+3. **Disparador ExitIntent (Móvil):** El scroll rápido hacia arriba no siempre es detectado por el navegador móvil de forma fiable.
+4. **Seguridad (Rutas Internas Libres):** Las páginas `/dashboard`, `/creative-factory` y `/admin-architect` son públicas. Necesitamos protegerlas para que no cualquiera pueda entrar.
+
+## Cambios Propuestos
+
+### [MODIFY] [LiveDemoCTA.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/sections/LiveDemoCTA.tsx)
+- Actualizar el generador de URL de la API de QR (`qrserver.com`) para que apunte exactamente al subdominio correcto: `https://hosteleria.architectsys.com/demo/carta`.
+
+### [MODIFY] [page.tsx (Navbar)](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/app/page.tsx)
+- Eliminar `flex-wrap` del contenedor de los enlaces del menú y aplicar `overflow-x-auto whitespace-nowrap` con ocultamiento de la barra de scroll. Así, los usuarios podrán deslizar lateralmente los botones en móviles sin que el menú se expanda hacia abajo y tape el contenido (como la burbuja de Arqui).
+- Ajustar el `z-index` de la burbuja de Arqui y del Navbar para asegurar jerarquía perfecta.
+
+### [MODIFY] [ExitIntent.tsx](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/components/ExitIntent.tsx)
+- **Mejora del disparador móvil:** Además de hacer el *scroll-up* más sensible (bajar el umbral de 600px a 200px), añadiré un detector de **cambio de pestaña/pérdida de foco** (`visibilitychange`). Si el usuario intenta cambiar de aplicación o cerrar la pestaña en su móvil, el modal se disparará inmediatamente como medida de contención definitiva.
+
+### [NEW] [middleware.ts](file:///c:/Users/Administrator/.gemini/antigravity/scratch/architect-landing-hosteleria/src/middleware.ts)
+- Crearé un **Middleware nativo de Next.js** para añadir protección HTTP Basic Auth (Protección con Usuario y Contraseña directamente a nivel de servidor).
+- Bloqueará el acceso a `/dashboard`, `/creative-factory` y `/admin-architect`.
+- Al intentar entrar, el navegador pedirá credenciales. (Sugeriré `admin` y una contraseña fuerte, ej: `architect2026`, modificable luego por variables de entorno).
+
+## Plan de Verificación
+1. Validar lectura del QR mediante captura de pantalla de la URL generada.
+2. Comprobar que el navbar scrollea horizontalmente en móvil (Chrome DevTools).
+3. Testear la protección de Basic Auth accediendo a `/dashboard`.
+4. Desplegar en Vercel.

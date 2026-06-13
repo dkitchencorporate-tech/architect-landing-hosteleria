@@ -1,0 +1,32 @@
+# Motor de Analíticas Avanzadas 2.0
+
+El objetivo es convertir el simple contador de visitas en un verdadero sistema de inteligencia B2B. Para ello, necesitamos filtrar el "ruido" (visitas tuyas al panel admin) y enriquecer la "señal" (datos reales de los leads).
+
+## User Review Required
+> [!IMPORTANT]
+> Para la **Geolocalización**, usaré un servicio gratuito llamado `ipapi.co` que funciona desde el navegador del cliente. Es excelente para arrancar, pero tiene un límite de peticiones diario. ¿Estás de acuerdo en usar esto por ahora para enriquecer el panel sin coste?
+
+## Proposed Changes
+
+### 1. Limpieza de Datos (Base de Datos)
+- Ejecutaremos un script por última vez para borrar las visitas fantasmas y dejar el contador pulcro en `0`.
+
+### 2. `src/components/AnalyticsPixel.tsx`
+Convertiremos el píxel en un rastreador inteligente.
+#### [MODIFY] src/components/AnalyticsPixel.tsx
+- **Filtro de Admin:** Si `pathname.startsWith('/admin-architect')`, el píxel se detendrá y no enviará datos a Supabase.
+- **Geolocalización:** Al cargar, haremos un fetch a la IP del usuario para sacar su País y Ciudad.
+- **Scroll Tracking:** Añadiremos un listener que detecte si el usuario hace scroll más del 50% o 90% de la página, y lo guardaremos en `metadata`.
+- **Interacciones:** Si el usuario abre el chat, se enviará un evento adicional de "Interacción" al píxel.
+
+### 3. `src/components/dashboard/TrafficMonitor.tsx`
+El visor de tráfico se rediseñará para mostrar estos nuevos datos de inteligencia.
+#### [MODIFY] src/components/dashboard/TrafficMonitor.tsx
+- Añadiremos una pequeña bandera/texto con la ciudad/país del visitante.
+- Mostraremos la profundidad de scroll alcanzada.
+- Añadiremos indicadores de "Tiempo en página" (calculado desde el `created_at` del evento hasta el momento actual).
+
+## Verification Plan
+1. Correré el script de limpieza.
+2. Navegaré al Admin y verificaré que NO se cuente como visita.
+3. Navegaré a la Landing Page, haré scroll, y revisaremos el panel admin para ver la ubicación geográfica (ej: Madrid, ES) y los datos de interacción en el `TrafficMonitor`.

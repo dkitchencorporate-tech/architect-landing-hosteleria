@@ -1,0 +1,385 @@
+# Lead Generation Plan: Granada Restaurants
+
+## Criteria
+- Location: Granada, Spain
+- Rating: > 4.0 stars
+- Review Count: 100 - 2000
+- Pain Points: PDF menu, no booking system, old website.
+
+## Progress
+- [x] Search Google Maps for restaurants in Granada
+- [x] Collect 30 leads meeting the criteria
+- [x] Extract Name, Phone, Address, Website, Pain Point for each
+- [x] Format final list as JSON
+
+## Leads Collected (30/30)
+1. **Restaurante Jero**
+   - Phone: 631 77 42 21
+   - Address: C. Elvira, 70, 18010 Granada
+   - Website: None (Facebook only)
+   - Pain Point: No official website, no online booking system.
+2. **La Gran Taberna**
+   - Phone: 958 22 84 46
+   - Address: Pl. Nueva, 12, Centro, 18009 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+3. **Taberna Bulanico**
+   - Phone: 623 33 75 54
+   - Address: Pl. Pescadería, 15, Centro, 18001 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+4. **Taberna Malvasia**
+   - Phone: 685 611 887
+   - Address: C. Rosario, 10, 18009 Granada
+   - Website: tabernamalvasia.es
+   - Pain Point: Extremely outdated website (Adobe Muse), no online booking system.
+5. **Taberna de Tio Miguel**
+   - Phone: 958 22 17 06
+   - Address: C. de San Juan de los Reyes, 1, 18010 Granada
+   - Website: None
+   - Pain Point: No website, no online booking system.
+6. **Restaurante El Ladrillo II**
+   - Phone: 958 27 67 02
+   - Address: C. Panaderos, 35, 18010 Granada
+   - Website: None
+   - Pain Point: No website, no online booking system.
+7. **Restaurante Hicuri Art Food**
+   - Phone: 858 98 74 73
+   - Address: C. Santa Escolástica, 4, 18009 Granada
+   - Website: restaurantehicuriartvegan.com
+   - Pain Point: Very basic website, no online booking system.
+8. **Restaurante Arrayanes**
+   - Phone: 958 22 84 01
+   - Address: C. Cuesta de Marañas, 4, 18010 Granada
+   - Website: restaurante-arrayanes.com (BROKEN/DOWN)
+   - Pain Point: Website is currently down, no online booking.
+9. **Restaurante Paprika**
+   - Phone: 958 27 17 47
+   - Address: Cuesta de Abarqueros, 3, 18010 Granada
+   - Website: restaurantepaprika.com (BROKEN/DOWN)
+   - Pain Point: Website is down, no online booking.
+10. **Restaurante San Remo**
+   - Phone: 958 22 55 93
+   - Address: C. Puente de Castañeda, 4, 18009 Granada
+   - Website: restaurantesanremo.com (BROKEN/DOWN)
+   - Pain Point: Website is down, no online booking.
+11. **Restaurante El Quinteto**
+   - Phone: 958 26 48 15
+   - Address: C. Solarillo de Gracia, 4, 18002 Granada
+   - Website: elquinteto.com (BROKEN/DOWN - HTTP 500)
+   - Pain Point: Website is down with HTTP 500 error, no online booking.
+12. **El Higo**
+   - Phone: 858 98 41 02
+   - Address: C. Horno del Hoyo, 17, Albaicín, 18010 Granada
+   - Website: None (Facebook only)
+   - Pain Point: No official website, no online booking system.
+13. **Restaurante Pañero**
+   - Phone: 680 54 99 03
+   - Address: C. San Buenaventura, 20, Albaicín, 18010 Granada
+   - Website: restaurantepanero.com
+   - Pain Point: Has website but no real-time booking engine (only contact form/phone).
+14. **Restaurante Reina Mónica**
+   - Phone: 677 27 54 74
+   - Address: C. Panaderos, 20, Albaicín, 18010 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+15. **La Bodega De Vinny**
+   - Phone: 651 18 39 90
+   - Address: Calle Sol, 3, Ronda, 18002 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+16. **Restaurante Pilar del Toro**
+   - Phone: 958 22 54 70
+   - Address: C. Hospital de Sta. Ana, 12, 18009 Granada
+   - Website: pilardeltoro.es
+   - Pain Point: Website is under construction, PDF menu only, no online booking.
+17. **La Recacha Mesón**
+   - Phone: 958 13 91 52
+   - Address: Calle Palencia 17, 18007, Granada
+   - Website: facebook.com/larecacha/
+   - Pain Point: No official website, no online booking system.
+18. **Restaurante Los Marines**
+   - Phone: 958 28 61 01
+   - Address: Avda. De Andalucía, 95 bajo, 18015 Granada
+   - Website: restaurantelosmarines.com
+   - Pain Point: QR menu, no booking system.
+19. **El Jardín de las Brasas**
+   - Phone: 647 86 56 66
+   - Address: Calle Dorada, 25, Chana, 18015 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+20. **Bar El Ancla**
+   - Phone: 858 83 54 62
+   - Address: Calle Pintor Manuel Maldonado, 50, 18007 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+21. **Restaurante Casa Ramón**
+   - Phone: 958 25 18 97
+   - Address: Camino de Ronda 81 bajo, Granada
+   - Website: sites.google.com/view/restaurante-casa-ramon
+   - Pain Point: Very basic Google Sites website, no online booking.
+22. **Taberna La Zarzamora**
+   - Phone: 633 52 36 46
+   - Address: Glorieta de Arabial, 4, 18003 Granada
+   - Website: facebook.com/lazarzamoragranada/
+   - Pain Point: No official website, no online booking system.
+23. **Om Kalsum**
+   - Phone: 605 52 09 38
+   - Address: Calle Jardines, 17, 18002 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+24. **Teteria Baghdad**
+   - Phone: 652 62 21 30
+   - Address: C. Elvira, 12, Albaicín, 18010 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+25. **Tetería-Restaurante Kasbah**
+   - Phone: 958 227 936
+   - Address: Calle Calderería Nueva, 4, 18010 Granada
+   - Website: kasbahgranada.com
+   - Pain Point: No real-time booking (contact form only), older website.
+26. **Tetería Palacio Nazarí**
+   - Phone: None listed
+   - Address: Calle Calderería Vieja, 4, Albaicín, 18010 Granada
+   - Website: None
+   - Pain Point: No phone or website listed on Google, no online booking system.
+27. **Tetería El Bañuelo**
+   - Phone: 666 02 63 78
+   - Address: C. Bañuelo, 5, Local, Albaicín, 18010 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+28. **Tetería Dar Ziryab**
+   - Phone: 655 44 67 75
+   - Address: C. Calderería Nueva, 11, Albaicín, 18010 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+29. **Pizzería Bella Ciao**
+   - Phone: 958 26 45 76
+   - Address: C. Músico Vicente Zarzo, 1, Local 3 Local 3, Ronda, 18002 Granada
+   - Website: None
+   - Pain Point: No official website, no online booking system.
+    - Phone: 958 26 45 76
+    - Address: C. Músico Vicente Zarzo, 1, Local 3 Local 3, Ronda, 18002 Granada
+    - Website: None
+    - Pain Point: No official website, no online booking system.
+30. **Pizzería Tradizione Italiana**
+    - Phone: 858 830 220
+    - Address: Calle Real de los Neveros, 2, 18008 Granada
+    - Website: pizzeriatradizioneitaliana.com (BROKEN/DOWN)
+    - Pain Point: Website is currently down, no online booking.
+
+## Final JSON
+```json
+[
+  {
+    "name": "Restaurante Jero",
+    "phone": "631 77 42 21",
+    "address": "C. Elvira, 70, 18010 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "La Gran Taberna",
+    "phone": "958 22 84 46",
+    "address": "Pl. Nueva, 12, Centro, 18009 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Taberna Bulanico",
+    "phone": "623 33 75 54",
+    "address": "Pl. Pescadería, 15, Centro, 18001 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Taberna Malvasia",
+    "phone": "685 611 887",
+    "address": "C. Rosario, 10, 18009 Granada",
+    "website": "tabernamalvasia.es",
+    "pain_point": "Extremely outdated website (Adobe Muse), no online booking system."
+  },
+  {
+    "name": "Taberna de Tio Miguel",
+    "phone": "958 22 17 06",
+    "address": "C. de San Juan de los Reyes, 1, 18010 Granada",
+    "website": "",
+    "pain_point": "No website, no online booking system."
+  },
+  {
+    "name": "Restaurante El Ladrillo II",
+    "phone": "958 27 67 02",
+    "address": "C. Panaderos, 35, 18010 Granada",
+    "website": "",
+    "pain_point": "No website, no online booking system."
+  },
+  {
+    "name": "Restaurante Hicuri Art Food",
+    "phone": "858 98 74 73",
+    "address": "C. Santa Escolástica, 4, 18009 Granada",
+    "website": "restaurantehicuriartvegan.com",
+    "pain_point": "Very basic website, no online booking system."
+  },
+  {
+    "name": "Restaurante Arrayanes",
+    "phone": "958 22 84 01",
+    "address": "C. Cuesta de Marañas, 4, 18010 Granada",
+    "website": "restaurante-arrayanes.com",
+    "pain_point": "Website is currently down, no online booking."
+  },
+  {
+    "name": "Restaurante Paprika",
+    "phone": "958 27 17 47",
+    "address": "Cuesta de Abarqueros, 3, 18010 Granada",
+    "website": "restaurantepaprika.com",
+    "pain_point": "Website is down, no online booking."
+  },
+  {
+    "name": "Restaurante San Remo",
+    "phone": "958 22 55 93",
+    "address": "C. Puente de Castañeda, 4, 18009 Granada",
+    "website": "restaurantesanremo.com",
+    "pain_point": "Website is down, no online booking."
+  },
+  {
+    "name": "Restaurante El Quinteto",
+    "phone": "958 26 48 15",
+    "address": "C. Solarillo de Gracia, 4, 18002 Granada",
+    "website": "elquinteto.com",
+    "pain_point": "Website is down with HTTP 500 error, no online booking."
+  },
+  {
+    "name": "El Higo",
+    "phone": "858 98 41 02",
+    "address": "C. Horno del Hoyo, 17, Albaicín, 18010 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Restaurante Pañero",
+    "phone": "680 54 99 03",
+    "address": "C. San Buenaventura, 20, Albaicín, 18010 Granada",
+    "website": "restaurantepanero.com",
+    "pain_point": "Has website but no real-time booking engine (only contact form/phone)."
+  },
+  {
+    "name": "Restaurante Reina Mónica",
+    "phone": "677 27 54 74",
+    "address": "C. Panaderos, 20, Albaicín, 18010 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "La Bodega De Vinny",
+    "phone": "651 18 39 90",
+    "address": "Calle Sol, 3, Ronda, 18002 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Restaurante Pilar del Toro",
+    "phone": "958 22 54 70",
+    "address": "C. Hospital de Sta. Ana, 12, 18009 Granada",
+    "website": "pilardeltoro.es",
+    "pain_point": "Website is under construction, PDF menu only, no online booking."
+  },
+  {
+    "name": "La Recacha Mesón",
+    "phone": "958 13 91 52",
+    "address": "Calle Palencia 17, 18007, Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Restaurante Los Marines",
+    "phone": "958 28 61 01",
+    "address": "Avda. De Andalucía, 95 bajo, 18015 Granada",
+    "website": "restaurantelosmarines.com",
+    "pain_point": "QR menu, no booking system."
+  },
+  {
+    "name": "El Jardín de las Brasas",
+    "phone": "647 86 56 66",
+    "address": "Calle Dorada, 25, Chana, 18015 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Bar El Ancla",
+    "phone": "858 83 54 62",
+    "address": "Calle Pintor Manuel Maldonado, 50, 18007 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Restaurante Casa Ramón",
+    "phone": "958 25 18 97",
+    "address": "Camino de Ronda 81 bajo, Granada",
+    "website": "sites.google.com/view/restaurante-casa-ramon",
+    "pain_point": "Very basic Google Sites website, no online booking."
+  },
+  {
+    "name": "Taberna La Zarzamora",
+    "phone": "633 52 36 46",
+    "address": "Glorieta de Arabial, 4, 18003 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Om Kalsum",
+    "phone": "605 52 09 38",
+    "address": "Calle Jardines, 17, 18002 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Teteria Baghdad",
+    "phone": "652 62 21 30",
+    "address": "C. Elvira, 12, Albaicín, 18010 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Tetería-Restaurante Kasbah",
+    "phone": "958 227 936",
+    "address": "Calle Calderería Nueva, 4, 18010 Granada",
+    "website": "kasbahgranada.com",
+    "pain_point": "No real-time booking (contact form only), older website."
+  },
+  {
+    "name": "Tetería Palacio Nazarí",
+    "phone": "",
+    "address": "Calle Calderería Vieja, 4, Albaicín, 18010 Granada",
+    "website": "",
+    "pain_point": "No phone or website listed on Google, no online booking system."
+  },
+  {
+    "name": "Tetería El Bañuelo",
+    "phone": "666 02 63 78",
+    "address": "C. Bañuelo, 5, Local, Albaicín, 18010 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Tetería Dar Ziryab",
+    "phone": "655 44 67 75",
+    "address": "C. Calderería Nueva, 11, Albaicín, 18010 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Pizzería Bella Ciao",
+    "phone": "958 26 45 76",
+    "address": "C. Músico Vicente Zarzo, 1, Local 3 Local 3, Ronda, 18002 Granada",
+    "website": "",
+    "pain_point": "No official website, no online booking system."
+  },
+  {
+    "name": "Pizzería Tradizione Italiana",
+    "phone": "858 830 220",
+    "address": "Calle Real de los Neveros, 2, 18008 Granada",
+    "website": "pizzeriatradizioneitaliana.com",
+    "pain_point": "Website is currently down, no online booking."
+  }
+]
+```

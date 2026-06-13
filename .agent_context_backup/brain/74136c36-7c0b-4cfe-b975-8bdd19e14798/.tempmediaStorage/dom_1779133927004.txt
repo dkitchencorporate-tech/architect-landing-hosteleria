@@ -1,0 +1,169 @@
+<current_dom_explanation>
+This is a temporary snapshot of the current page's DOM structure. The DOM will change if you navigate to or interact with another page. Use a tool like browser_get_dom to capture and preserve the DOM in your trajectory if needed for later reference.
+</current_dom_explanation>
+<current_dom>
+[0] (184,55)<input class='UGojuc fontBodyMedium EmSKud lpggsf ' role='combobox' />
+[1] (302,60)<button aria-label='Buscar' class='mL3xi' />
+	[2] (302,57)<span > />
+[3] (341,59)<button aria-label='Cerrar' class='yAuNSb vF7Cdb' />
+	[4] (341,57)<span > />
+[5] (609,59)<div class='rHNip cRLbXd' scrollable='true' />
+	[6] (468,59)<button class='e2moi' />
+		[7] (468,59)<div >
+Restaurantes cercanos />
+			[8] (468,59)<div  />
+			
+			Restaurantes cercanos
+	[9] (585,59)<button class='e2moi' />
+		[10] (585,59)<div >
+Hoteles />
+			[11] (585,59)<div  />
+			
+			Hoteles
+	[12] (686,59)<button class='e2moi' />
+		[13] (686,59)<div >
+Cosas que hacer />
+			[14] (686,59)<div  />
+			
+			Cosas que hacer
+	[15] (782,59)<button class='e2moi' />
+		[16] (782,59)<div >
+Bares />
+			[17] (782,59)<div  />
+			
+			Bares
+	
+	Cafés
+	
+	Para llevar
+	
+[18] (827,59)<button aria-label='Página siguiente' class='XMkGfe cPtXLb c8iYDd ' />
+	[19] (827,59)<span > />
+[20] (28,54)<button aria-label='Menú' class='wR3cXd' />
+	[21] (28,57)<div  />
+		[22] (28,57)<span > />
+[23] (28,158)<button class='wR3cXd fontLabelMedium' />
+	[24] (28,146)<div  />
+		[25] (28,146)<span > />
+	[26] (28,190)<div  />
+		[27] (28,190)<div >Guardado />
+[28] (28,297)<button class='wR3cXd fontLabelMedium' />
+	[29] (28,272)<div  />
+		[30] (28,272)<span > />
+	[31] (28,329)<div  />
+		[32] (28,329)<div >Recientes />
+[33] (28,488)<button class='atHn2d wR3cXd aJPqP fontBodySmall QyI6Nb' />
+	[34] (28,463)<div  />
+		[35] (28,463)<div  />
+			[36] (28,463)<div  />
+	[37] (28,520)<div  />
+		[38] (28,522)<div >Restaurante Reina Mónica />
+[39] (28,918)<button class='wR3cXd Ijds6e fontLabelMedium' />
+	[40] (28,892)<div  />
+		[41] (28,892)<span > />
+	[42] (28,943)<div  />
+		[43] (28,943)<div >Obtener app />
+[44] (216,500)<div class='e07Vkf kA9KIf dS8AEf' scrollable='true' />
+	·
+	
+	Consumo en el lugar
+	·
+	
+	Para llevar
+	·
+	
+	Entrega a domicilio
+	
+	[45] (216,180)<button aria-label='Dirección: C. Panaderos, 20, Albaicín, 18010 Granada ' class='CsEnBe' />
+		[46] (216,180)<div  />
+			
+			[47] (234,180)<div  />
+				[48] (234,180)<div >C. Panaderos, 20, Albaicín, 18010 Granada />
+	[49] (348,180)<button aria-label='Copiar la dirección' class='S9kvJb ' />
+		[50] (347,180)<span  />
+			[51] (347,180)<span  />
+	[52] (216,255)<div class='OMl5r hH0dDd ' role='button' />
+		[53] (84,244)<span aria-label='Horario de atención' class='LT79uc google-symbols PHazN' role='img'> />
+		[54] (234,255)<div  />
+			[55] (234,241)<div  />
+				[56] (181,241)<span  />
+					[57] (181,241)<span  />
+						[58] (131,241)<span >Abierto />
+						[59] (200,241)<span >· Cierra a las 12 a.m. />
+				[60] (271,241)<span aria-label='Mostrar el horario de atención durante la semana' class='puWIL hKrmvd google-symbols OazX1c' role='img'> />
+			[61] (234,272)<div >Confirmado por este negocio hace 9 semanas />
+	[62] (216,339)<div class='MNVeJb eXOdV eF9eN PnPrlf' role='button'>€10-20
+por persona />
+		€10-20
+		por persona
+		Informado por 370 personas
+	[63] (216,411)<button aria-label='Teléfono: 677 27 54 74 ' class='CsEnBe' />
+		[64] (216,411)<div  />
+			
+			[65] (234,411)<div  />
+				[66] (234,411)<div >677 27 54 74 />
+	[67] (325,411)<button aria-label='Copiar el número de teléfono' class='S9kvJb ' />
+		[68] (323,411)<span  />
+			[69] (323,411)<span  />
+	[70] (348,411)<a aria-label='Llamar al número de teléfono' class='lcr4fd S9kvJb ' href='tel:677275474' />
+		[71] (347,411)<span  />
+			[72] (347,411)<span  />
+	[73] (216,475)<button aria-label='Plus Code: 5CJ5+X2 Granada' class='CsEnBe' />
+		[74] (216,475)<div  />
+			
+			[75] (234,475)<div  />
+				[76] (234,475)<div >5CJ5+X2 Granada />
+	[77] (325,475)<button aria-label='Agrega el Plus Code' class='S9kvJb ' />
+		[78] (323,475)<span  />
+			[79] (323,475)<span  />
+	[80] (348,475)<button aria-label='Obtén más información sobre los Plus Codes' class='S9kvJb ' />
+		[81] (347,475)<span  />
+			[82] (347,475)<span  />
+	[83] (216,563)<button aria-label='Sugerir una edición' class='S9kvJb ' />
+		[84] (216,563)<span  />
+			[85] (160,563)<span > />
+			[86] (224,563)<span >Sugerir una edición />
+	Agregar la información que falta
+	[87] (349,664)<button aria-label='Más información' class='Dx2c3c' />
+		[88] (349,662)<span > />
+	[89] (216,735)<div class='Y4SsEe ' role='button' />
+		
+		Agregar sitio web
+	Actualizaciones de los clientes
+	[90] (216,966)<button class='wjCxie waIsr' />
+		[91] (148,966)<div  />
+			[92] (148,926)<div >Un sitio amplio luminoso en el antiguo barrio />
+			[93] (148,969)<div >Hace un año />
+[94] (384,500)<button aria-label='Contraer panel lateral' class='yra0jd Hk4XGb' />
+	[95] (384,500)<span > />
+[96] (885,52)<a aria-label='Apps de Google' class='gb_C' href='https://www.google.es/intl/es-419/about/products?tab=lh' role='button' />
+[97] (945,51)<a aria-label='Acceder' class='gb_0a gb_2d gb_Td gb_Kd' href='https://accounts.google.com/ServiceLogin?hl=es-419&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2Fplace%2FRestaurante%2BReina%2BM%25C3%25B3nica%2F%4037.1824797%2C-3.5923925%2C17z%2Fdata%3D!3m1!4b1!4m6!3m5!1s0xd71fcc63e9ca12b%3A0x549538523f9a95c2!8m2!3d37.1824797!4d-3.5923925!16s%252Fg%252F11bccd3nm3%3Fauthuser%3D0%26hl%3Des-419%26ved%3D1t%253A314688&service=local&ec=GAZAcQ'>Acceder />
+	Acceder
+[98] (973,798)<button aria-label='Mostrar tu ubicación' class='Zf54rc waIsr' />
+	[99] (973,799)<span > />
+[100] (973,871)<div  />
+	[101] (973,849)<button aria-label='Acercar' class='rM8v5b FpkVFf ' />
+		[102] (973,849)<div  />
+	[103] (973,893)<button aria-label='Alejar' class='TlWmQ FpkVFf ' />
+		[104] (973,893)<div  />
+	[105] (973,871)<div  />
+[106] (973,945)<div  />
+	[107] (973,945)<button aria-label='Explorar imágenes de Street View' class='sHj5c a8QCmb' />
+		[108] (973,945)<div  />
+[109] (917,906)<button aria-label='Street View' class='dQDAle' />
+	[110] (917,906)<div  />
+		[111] (917,906)<div  />
+			[112] (917,907)<div  />
+
+Capas
+[113] (421,906)<button class='yHc72 qk5Wte' />
+Datos del mapa © 2026 Google, Inst. Geogr. Nacional
+[114] (607,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>España />
+[115] (653,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Condiciones />
+[116] (704,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd'>Privacidad />
+[117] (799,990)<button class='ZiKfbc tUdUte Hk4XGb ZqLNQd UjoA5b'>Enviar comentarios sobre el producto />
+[118] (929,989)<button class='LNGekf' />
+	[119] (886,989)<label class='U5ELMd'>100 m />
+	[120] (941,989)<div  />
+
+</current_dom>
