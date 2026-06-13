@@ -105,39 +105,43 @@ export default function EventsLibrary({ isGrowthPlan }: EventsLibraryProps) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-3">KPIs Esperados</h3>
-                    <ul className="space-y-2">
-                      {selectedEvent.kpis.map((kpi, idx) => (
-                        <li key={idx} className="flex items-start text-sm text-dash-text-secondary">
-                          <span className="text-dash-accent mr-2 mt-0.5">•</span> {kpi}
+                    <h3 className="text-lg font-semibold text-white mb-3">Tu Rol (El Restaurante)</h3>
+                    <ul className="space-y-3">
+                      {selectedEvent.clientRole.map((item, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-dash-text-secondary bg-dash-surface p-3 rounded border border-dash-border">
+                          <span className="text-brand mr-2 font-bold">{idx + 1}.</span> {item}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-3">Público Objetivo</h3>
-                    <p className="text-sm text-dash-text-secondary">{selectedEvent.targetAudience}</p>
-                    <h3 className="text-lg font-semibold text-white mb-2 mt-4">Tiempo de Preparación</h3>
-                    <p className="text-sm text-dash-text-secondary">{selectedEvent.preparationTime}</p>
+                    <h3 className="text-lg font-semibold text-white mb-3">Nuestro Rol (Architect.Sys)</h3>
+                    <ul className="space-y-3">
+                      {selectedEvent.agencyRole.map((item, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-dash-text-secondary bg-brand/5 p-3 rounded border border-brand/20">
+                          <span className="text-brand mr-2 font-bold">✓</span> {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-3 border-b border-dash-border pb-2">Logística y Operaciones</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {selectedEvent.logistics.map((item, idx) => (
-                      <li key={idx} className="flex items-start bg-dash-surface p-3 rounded border border-dash-border text-sm text-dash-text-secondary">
-                        <span className="w-5 h-5 rounded-full bg-dash-bg border border-dash-border flex items-center justify-center text-[10px] mr-3 mt-0.5 shrink-0">{idx + 1}</span>
-                        {item}
-                      </li>
+                  <h3 className="text-lg font-semibold text-white mb-3 border-b border-dash-border pb-2">Entregables del Protocolo</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {selectedEvent.deliverables.map((item, idx) => (
+                      <div key={idx} className="bg-dash-surface p-4 rounded-lg border border-dash-border text-center flex flex-col items-center justify-center">
+                        <svg className="w-6 h-6 text-brand mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                        <span className="text-sm font-medium text-white">{item}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold text-white mb-3 border-b border-dash-border pb-2">Estrategia de Ads / Promoción</h3>
-                  <div className="bg-dash-surface p-4 rounded-lg border border-dash-border border-l-4 border-l-brand">
-                    <p className="text-sm text-dash-text-secondary leading-relaxed">{selectedEvent.adsStrategy}</p>
+                  <h3 className="text-lg font-semibold text-white mb-3 border-b border-dash-border pb-2">Reunión Previa (Kick-off)</h3>
+                  <div className="bg-dash-surface p-4 rounded-lg border border-dash-border border-l-4 border-l-trust">
+                    <p className="text-sm text-dash-text-secondary leading-relaxed">{selectedEvent.preEventProtocol}</p>
                   </div>
                 </div>
               </div>

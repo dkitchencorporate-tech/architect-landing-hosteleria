@@ -6,38 +6,38 @@ export default function Pipeline() {
   const pipelineSteps = [
     {
       id: 1,
-      title: "Onboarding & Traspaso de Datos",
+      title: "1. Onboarding Operativo y Kickoff",
       status: "completed",
       date: "Completado",
-      description: "Recopilación de carta, datos operativos y preferencias visuales a través del Asistente IA."
+      description: "Recopilación de carta, KPIs actuales y fijación de objetivos comerciales en reunión de Kickoff."
     },
     {
       id: 2,
-      title: "Diseño UI/UX y Estructura Base",
+      title: "2. Diseño de Ecosistema y Carta Demo",
       status: "active",
       date: "En Progreso (Est. 3-5 días)",
-      description: "Nuestros arquitectos están diseñando la experiencia de usuario y el look & feel premium de tu ecosistema."
+      description: "Desarrollo de tu ecosistema de captación HORECA y diseño de la carta digital optimizada para upselling."
     },
     {
       id: 3,
-      title: "Desarrollo del Agente IA y Reservas",
+      title: "3. Setup de IA Autónoma y Nurturing",
       status: "pending",
       date: "Pendiente",
-      description: "Integración del bot de WhatsApp para gestión automática de reservas y atención al cliente."
+      description: "Entrenamiento del agente de IA con tu oferta gastronómica para cualificación de leads y agendamiento automático."
     },
     {
       id: 4,
-      title: "Revisión y Ajustes (Feedback Loop)",
+      title: "4. Simulacro y Validación Operativa",
       status: "pending",
       date: "Pendiente",
-      description: "Presentación de la V1 para tus comentarios y refinamiento final."
+      description: "Pruebas de estrés del embudo en entorno cerrado y refinamiento del copy con tu equipo."
     },
     {
       id: 5,
-      title: "Lanzamiento y Desbloqueo del Dashboard",
+      title: "5. Lanzamiento y Activación Comercial",
       status: "pending",
       date: "Pendiente",
-      description: "Despliegue en producción y activación de las funciones de Autogestión."
+      description: "Despliegue a producción, conexión con Ads y entrega de llaves del panel de control de crecimiento."
     }
   ];
 
