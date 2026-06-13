@@ -23,7 +23,7 @@ export default function DashboardPage() {
       if (!session) return;
       
       const email = session.user.email;
-      const isAdmin = email === 'alex@architectsys.com' || email === 'admin@architectsys.com';
+      const isAdmin = email === 'klarx94@gmail.com';
       setIsAdminDemo(isAdmin);
 
       if (isAdmin) {

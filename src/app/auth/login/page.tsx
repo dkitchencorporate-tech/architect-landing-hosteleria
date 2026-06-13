@@ -125,7 +125,7 @@ function LoginForm() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3.5 text-white placeholder-zinc-600 focus:outline-none focus:border-[#FF4500] focus:bg-white/10 transition-all font-medium"
-                placeholder="admin@architectsys.com"
+                placeholder="klarx94@gmail.com"
               />
             </div>
           </div>

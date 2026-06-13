@@ -151,7 +151,7 @@ export default function EventsLibrary({ isGrowthPlan }: EventsLibraryProps) {
                       const { data: { session } } = await supabase.auth.getSession();
                       
                       const email = session?.user?.email || '';
-                      const isAdmin = email === 'alex@architectsys.com' || email === 'admin@architectsys.com';
+                      const isAdmin = email === 'klarx94@gmail.com';
 
                       if (isAdmin) {
                         alert("Modo Demo: Evento simulado activado.");

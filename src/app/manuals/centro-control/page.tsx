@@ -53,8 +53,7 @@ export default function CentroControlManual() {
           El sistema lee el correo con el que se ha iniciado sesión. Si el correo coincide exactamente con:
         </p>
         <ul>
-          <li><code>alex@architectsys.com</code></li>
-          <li><code>admin@architectsys.com</code></li>
+          <li><code>klarx94@gmail.com</code></li>
         </ul>
         <p>
           El Dashboard y la Creative Factory ignoran la base de datos real y cargan <strong>Data Ficticia Hardcodeada</strong> (Mock Data). 
