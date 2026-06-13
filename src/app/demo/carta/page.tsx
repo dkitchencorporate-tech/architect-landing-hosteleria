@@ -701,13 +701,6 @@ function CartaContent() {
 
   return (
     <div className={`relative transition-colors duration-500 bg-black`}>
-      
-      {/* GLOBAL BACK BUTTON */}
-      <div className="fixed top-4 left-4 z-50 animate-fade-in-down">
-        <a href="/" className="bg-black/80 backdrop-blur-md text-white border border-white/20 px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-2xl hover:bg-white hover:text-black transition-colors flex items-center gap-2">
-          <span>🔙</span> Volver a Architect.Sys
-        </a>
-      </div>
 
       {/* RENDER ACTIVE LAYOUT (HEADERS ARE INSIDE THEM NOW) */}
       {activeTemplate === 'sushi' && <EditorialSushiLayout menu={currentMenu} categories={currentCategories} lang={lang} t={t} activeDiner={activeDiner} setActiveDiner={setActiveDiner} tableParam={tableParam} setLang={setLang} onAdd={addToCart} onAsk={openContextualChat} onImageClick={setSelectedImageItem} />}
@@ -734,6 +727,13 @@ function CartaContent() {
             <button onClick={() => setIsSalesModalOpen(true)} className="flex-1 bg-[#10b981] hover:bg-[#059669] text-black px-4 py-3.5 rounded-xl text-[10px] font-bold uppercase tracking-widest">
               💰 {t.sales_cta_2}
             </button>
+          </div>
+
+          {/* GLOBAL BACK BUTTON (MOVED HERE) */}
+          <div className="flex justify-center mt-2 pointer-events-auto">
+            <a href="/" className="text-white/70 hover:text-white text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 transition-colors py-2 px-4 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60">
+              <span>←</span> Volver a Architect.Sys
+            </a>
           </div>
         </div>
       </div>
@@ -1012,10 +1012,9 @@ function CartaContent() {
             <button onClick={() => setSelectedImageItem(null)} className="absolute top-4 right-4 z-20 bg-black/40 backdrop-blur-md hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors border border-white/20">✕</button>
             <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] bg-black">
               <Image src={selectedImageItem.image} alt={selectedImageItem.name[lang]} fill className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
             </div>
-            <div className="p-6 sm:p-10 flex flex-col gap-4 relative z-10 -mt-10 sm:-mt-16 bg-gradient-to-b from-transparent to-black">
-               <div className="flex justify-between items-end gap-4 mt-8 sm:mt-12">
+            <div className={`p-6 sm:p-10 flex flex-col gap-4 relative z-10`}>
+               <div className="flex justify-between items-end gap-4">
                  <div>
                    <h3 className={`text-2xl sm:text-3xl font-black ${theme.text} mb-2`}>{selectedImageItem.name[lang]}</h3>
                    {selectedImageItem.allergens.length > 0 && (
@@ -1028,10 +1027,10 @@ function CartaContent() {
                  </div>
                  <span className={`text-2xl sm:text-3xl ${theme.textPrimary} font-black shrink-0`}>{selectedImageItem.price.toFixed(2)}€</span>
                </div>
-               <p className={`text-sm sm:text-base ${theme.textSec} leading-relaxed mt-4 font-medium`}>{selectedImageItem.description[lang]}</p>
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+               <p className={`text-sm sm:text-base ${theme.textSec} leading-relaxed mt-2 font-medium`}>{selectedImageItem.description[lang]}</p>
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                  <button onClick={() => { openContextualChat(selectedImageItem.name[lang]); setSelectedImageItem(null); }} className={`py-4 rounded-2xl font-bold uppercase tracking-widest text-xs sm:text-sm ${theme.secondaryBtn} transition-colors flex items-center justify-center gap-2`}>
-                   🤖 Consultar a la IA
+                   🤵 Camarero Inteligente
                  </button>
                  <button onClick={() => { addToCart(selectedImageItem); setSelectedImageItem(null); setIsCartOpen(true); }} className={`py-4 rounded-2xl font-black uppercase tracking-widest text-xs sm:text-sm ${theme.primary} ${theme.btnText} ${theme.primaryHover} shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2`}>
                    ➕ Añadir al Pedido
