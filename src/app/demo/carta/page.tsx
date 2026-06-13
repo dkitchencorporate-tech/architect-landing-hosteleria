@@ -229,39 +229,44 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {items.map((item: any) => (
-                  <div key={item.id} className="bg-[#fefdfa] border border-[#e6dfcf] rounded-2xl p-4 md:p-5 flex gap-4 md:gap-6 items-center hover:shadow-md hover:border-[#cc5203] transition-all duration-300 group relative">
-                    <div onClick={() => onImageClick(item)} className="relative w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-2xl overflow-hidden shadow-sm border border-[#e8e4d9] bg-[#f4ecd8] cursor-pointer group/img">
+                  <div key={item.id} className="bg-[#fefdfa] border border-[#e6dfcf] rounded-3xl p-4 flex flex-col sm:flex-row gap-4 sm:gap-6 items-stretch sm:items-center hover:shadow-lg hover:border-[#cc5203] transition-all duration-300 group relative">
+                    <div onClick={() => onImageClick(item)} className="relative w-full sm:w-32 aspect-[4/3] sm:aspect-square shrink-0 rounded-2xl overflow-hidden shadow-sm border border-[#e8e4d9] bg-[#f4ecd8] cursor-pointer group/img">
                       <ImageWithFallback src={item.image} alt={item.name[lang]} className="group-hover/img:scale-110 transition-transform duration-500" />
-                      <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 flex items-center justify-center transition-all opacity-0 group-hover/img:opacity-100"><span className="bg-white/90 text-[#2c3e2e] text-[10px] px-2 py-1 rounded-full font-bold shadow-md">🔍 Ver</span></div>
+                      <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 flex items-center justify-center transition-all opacity-0 group-hover/img:opacity-100">
+                        <span className="bg-white/95 text-[#2c3e2e] text-xs px-3 py-1.5 rounded-full font-bold shadow-lg flex items-center gap-1">
+                          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                          Ampliar
+                        </span>
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0 flex flex-col h-full justify-between">
+                    <div className="flex-1 min-w-0 flex flex-col justify-between h-full">
                       <div>
-                        <div className="flex justify-between items-baseline mb-1">
-                          <h4 className="text-base md:text-lg font-bold text-[#2c3e2e] truncate pr-2">{item.name[lang]}</h4>
-                          <span className="text-base md:text-lg font-black text-[#e85d04]">{item.price.toFixed(2)}€</span>
+                        <div className="flex justify-between items-start gap-2 mb-1">
+                          <h4 className="text-lg md:text-xl font-bold text-[#2c3e2e] leading-tight pr-2">{item.name[lang]}</h4>
+                          <span className="text-lg font-black text-[#e85d04] bg-[#e85d04]/10 px-2.5 py-1 rounded-xl shrink-0">{item.price.toFixed(2)}€</span>
                         </div>
                         {item.isChefRecommendation && (
-                          <span className="inline-block text-[8px] font-bold tracking-widest bg-[#e85d04]/10 text-[#e85d04] px-2 py-0.5 rounded-full mb-1">
-                            ⭐ RECOMENDADO
+                          <span className="inline-block text-[9px] font-black tracking-widest bg-[#e85d04]/10 text-[#e85d04] px-2 py-0.5 rounded-full mb-2 uppercase">
+                            ⭐ Especialidad
                           </span>
                         )}
                         {item.allergens.length > 0 && (
-                          <div className="flex gap-1 mb-2">
+                          <div className="flex flex-wrap gap-1 mb-2">
                             {item.allergens.map((a: string) => (
-                              <span key={a} title={ALLERGEN_ICONS[a]} className="text-[8px] bg-[#f4ecd8] text-[#2c3e2e] px-1.5 py-0.5 rounded-sm font-bold uppercase">{a}</span>
+                              <span key={a} title={ALLERGEN_ICONS[a]} className="text-[10px] bg-[#f4ecd8] text-[#2c3e2e] px-1.5 py-0.5 rounded font-bold uppercase">{a}</span>
                             ))}
                           </div>
                         )}
-                        <p className="text-[#6b7264] text-xs leading-relaxed mb-3 line-clamp-2">
+                        <p className="text-[#6b7264] text-sm leading-relaxed mb-4 line-clamp-3">
                           {item.description[lang]}
                         </p>
                       </div>
-                      <div className="flex gap-2">
-                        <button onClick={() => onAdd(item)} className="bg-[#2c3e2e] text-white px-4 py-2 rounded-xl text-xs font-bold uppercase hover:bg-[#1e2a1f] transition-colors active:scale-95">
-                          + Añadir
+                      <div className="flex gap-2 mt-auto">
+                        <button onClick={() => onAdd(item)} className="flex-1 h-12 bg-[#2c3e2e] text-white px-4 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#1e2a1f] transition-colors active:scale-95 flex items-center justify-center gap-1.5">
+                          <span className="text-lg leading-none">+</span> Añadir
                         </button>
-                        <button onClick={() => onAsk(item.name[lang])} className="bg-[#f4ecd8] text-[#2c3e2e] px-3 py-2 rounded-xl text-xs font-bold uppercase hover:bg-[#e8e4d9] transition-colors">
-                          🤖 Asistente
+                        <button onClick={() => onAsk(item.name[lang])} className="w-12 h-12 shrink-0 bg-[#f4ecd8] text-[#2c3e2e] rounded-xl text-xl font-bold hover:bg-[#e8e4d9] transition-colors flex items-center justify-center" title="Consultar a la IA">
+                          🤖
                         </button>
                       </div>
                     </div>
