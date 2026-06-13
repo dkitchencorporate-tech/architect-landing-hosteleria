@@ -66,12 +66,12 @@ function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiv
       <div className="relative py-20 sm:py-32 px-4 sm:px-6 flex items-center justify-center border-b border-white/5 overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=1200&q=30')] bg-cover bg-center mix-blend-luminosity"></div>
         <div className="relative z-10 text-center max-w-2xl">
-          <span className="text-amber-500 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-4 block">Experiencia Omakase</span>
+          <span className="text-amber-500 text-[10px] sm:text-xs tracking-[0.3em] uppercase mb-4 block">{t.sushi_promo_tag}</span>
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-light leading-tight mb-6 sm:mb-8">
-            Únete a The Club y recibe un <span className="italic text-amber-500">Sake Premium</span> de cortesía.
+            {t.sushi_promo_title}
           </h2>
           <button className="px-6 sm:px-8 py-3 border border-amber-500 text-amber-500 text-[10px] sm:text-xs uppercase tracking-widest hover:bg-amber-500 hover:text-black transition-colors">
-            Descubrir Beneficios
+            {t.sushi_promo_btn}
           </button>
         </div>
       </div>
@@ -95,7 +95,7 @@ function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiv
                     <div className="w-full md:w-1/2">
                       <div onClick={() => onImageClick(item)} className="aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-white/5 relative rounded-sm sm:rounded-none cursor-pointer group">
                         <ImageWithFallback src={item.image} alt={item.name[lang]} className="grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 flex items-center justify-center transition-all duration-500 opacity-0 group-hover:opacity-100"><span className="bg-black/80 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full uppercase tracking-widest border border-white/20 shadow-xl">Ampliar Plato</span></div>
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 flex items-center justify-center transition-all duration-500 opacity-0 group-hover:opacity-100"><span className="bg-black/80 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full uppercase tracking-widest border border-white/20 shadow-xl">{t.zoom_dish}</span></div>
                       </div>
                     </div>
                     <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
@@ -133,12 +133,12 @@ function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiv
 
       {/* 4. Unique Loyalty Form */}
       <div className="max-w-2xl mx-auto px-4 sm:px-6 py-16 sm:py-24 text-center border-t border-white/10 mt-8 sm:mt-16">
-        <h3 className="text-2xl sm:text-3xl font-light mb-4">Membresía <span className="text-amber-500 italic">Exclusiva</span></h3>
-        <p className="text-xs sm:text-sm text-gray-400 mb-8 font-sans font-light">Déjenos su email para acceder a mesas ocultas, eventos de cata privados y reclamar su Sake de bienvenida.</p>
+        <h3 className="text-2xl sm:text-3xl font-light mb-4">{t.sushi_loyalty_title}</h3>
+        <p className="text-xs sm:text-sm text-gray-400 mb-8 font-sans font-light">{t.sushi_loyalty_desc}</p>
         <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-          <input type="email" placeholder="Su correo electrónico..." className="flex-1 bg-transparent border-b border-white/30 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors font-sans text-center sm:text-left" />
+          <input type="email" placeholder={t.email_placeholder} className="flex-1 bg-transparent border-b border-white/30 px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors font-sans text-center sm:text-left" />
           <button className="px-6 py-3 sm:py-0 bg-amber-600 text-white text-[10px] uppercase tracking-widest hover:bg-amber-500 transition-colors shrink-0">
-            Solicitar Acceso
+            {t.loyalty_submit}
           </button>
         </div>
       </div>
@@ -180,10 +180,10 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
             <h1 className="text-4xl font-serif font-bold italic tracking-tight">
-              La Taberna de Baco
+              {t.tapas_brand}
             </h1>
             <div className="text-xs uppercase tracking-widest mt-1 opacity-80 border-t border-[#f4ecd8]/20 pt-1 inline-block">
-              Gastrobar, Tapas & Solera Granadina • {t.table_prefix} {tableParam}
+              {t.tapas_subtitle} • {t.table_prefix} {tableParam}
             </div>
           </div>
           <div className="flex flex-col items-center gap-3">
@@ -235,7 +235,7 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
                       <div className="absolute inset-0 bg-black/0 group-hover/img:bg-black/20 flex items-center justify-center transition-all opacity-0 group-hover/img:opacity-100">
                         <span className="bg-white/95 text-[#2c3e2e] text-xs px-3 py-1.5 rounded-full font-bold shadow-lg flex items-center gap-1">
                           <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                          Ampliar
+                          {t.zoom_dish}
                         </span>
                       </div>
                     </div>
@@ -247,7 +247,7 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
                         </div>
                         {item.isChefRecommendation && (
                           <span className="inline-block text-[9px] font-black tracking-widest bg-[#e85d04]/10 text-[#e85d04] px-2 py-0.5 rounded-full mb-2 uppercase">
-                            ⭐ Especialidad
+                            ⭐ {t.chef_rec}
                           </span>
                         )}
                         {item.allergens.length > 0 && (
@@ -263,9 +263,9 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
                       </div>
                       <div className="flex gap-2 mt-auto">
                         <button onClick={() => onAdd(item)} className="flex-1 h-12 bg-[#2c3e2e] text-white px-4 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#1e2a1f] transition-colors active:scale-95 flex items-center justify-center gap-1.5">
-                          <span className="text-lg leading-none">+</span> Añadir
+                          <span className="text-lg leading-none">+</span> {t.add_to_order}
                         </button>
-                        <button onClick={() => onAsk(item.name[lang])} className="w-12 h-12 shrink-0 bg-[#f4ecd8] text-[#2c3e2e] rounded-xl text-xl font-bold hover:bg-[#e8e4d9] transition-colors flex items-center justify-center" title="Consultar a la IA">
+                        <button onClick={() => onAsk(item.name[lang])} className="w-12 h-12 shrink-0 bg-[#f4ecd8] text-[#2c3e2e] rounded-xl text-xl font-bold hover:bg-[#e8e4d9] transition-colors flex items-center justify-center" title={t.ask_ai}>
                           🤖
                         </button>
                       </div>
@@ -285,9 +285,9 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
           
           <div className="relative z-10">
             <div className="text-center max-w-xl mx-auto mb-8">
-              <span className="text-[#e85d04] text-xs font-bold tracking-[0.3em] uppercase block mb-2">Club del Tapeo VIP</span>
+              <span className="text-[#e85d04] text-xs font-bold tracking-[0.3em] uppercase block mb-2">{t.tapas_loyalty_title}</span>
               <h3 className="text-3xl font-serif font-bold mb-3">Programa de Recompensas</h3>
-              <p className="text-sm text-white/70">Regístrate en 30 segundos, llévate un regalo de bienvenida directo en tu mesa y acumula sellos digitales.</p>
+              <p className="text-sm text-white/70">{t.tapas_loyalty_desc}</p>
             </div>
 
             {loyaltyStep === 1 && (
@@ -472,7 +472,7 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
               B
             </div>
             <div>
-              <h1 className="text-xl font-black italic uppercase tracking-tighter leading-none">Bite<span className="text-[#ff003c]">Corp</span></h1>
+              <h1 className="text-xl font-black italic uppercase tracking-tighter leading-none">{t.burger_brand}</h1>
               <span className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">{tableParam}</span>
             </div>
           </div>
@@ -500,11 +500,11 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
       <div className="px-4 py-6 max-w-7xl mx-auto">
         <div className="bg-gradient-to-r from-[#ff003c] to-[#ff7b00] rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-[0_20px_50px_rgba(255,0,60,0.2)]">
           <div className="relative z-10">
-            <div className="bg-black text-white text-[10px] font-black px-3 py-1 inline-block uppercase tracking-widest rounded-full mb-4">Limited Time</div>
+            <div className="bg-black text-white text-[10px] font-black px-3 py-1 inline-block uppercase tracking-widest rounded-full mb-4">{t.burger_promo_tag}</div>
             <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-4 text-white drop-shadow-lg">
-              FREE LOADED FRIES
+              {t.burger_promo_title}
             </h2>
-            <p className="text-lg font-bold opacity-90 mb-6 max-w-md">Join the Crave Syndicate and get a massive portion of Bacon Fries with your first Smash.</p>
+            <p className="text-lg font-bold opacity-90 mb-6 max-w-md">{t.burger_promo_desc}</p>
           </div>
           <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-[url('https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=800&q=80')] bg-cover rounded-full border-8 border-[#ff003c] shadow-2xl transform -rotate-12 hidden md:block"></div>
         </div>
@@ -532,7 +532,7 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
                       <ImageWithFallback src={item.image} alt={item.name[lang]} className="group-hover/img:scale-110 transition-transform duration-500 opacity-90 group-hover/img:opacity-100" />
                       {item.isChefRecommendation && (
                         <div className="absolute top-3 left-3 z-10 bg-[#ff003c] text-white text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-lg">
-                          HYPE
+                          {t.chef_rec}
                         </div>
                       )}
                       <div className="absolute bottom-3 right-3 z-10 bg-black/80 backdrop-blur-md text-white px-3 py-1.5 rounded-xl font-black text-lg border border-white/10">
@@ -554,11 +554,11 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
                       </p>
                       
                       <div className="grid grid-cols-4 gap-2">
-                        <button onClick={() => onAsk(item.name[lang])} className="col-span-1 h-12 flex items-center justify-center rounded-2xl bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors">
+                        <button onClick={() => onAsk(item.name[lang])} className="col-span-1 h-12 flex items-center justify-center rounded-2xl bg-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors" title={t.ask_ai}>
                           🤖
                         </button>
                         <button onClick={() => onAdd(item)} className="col-span-3 h-12 flex items-center justify-center rounded-2xl bg-[#ff003c] text-white font-black uppercase tracking-widest text-xs hover:bg-[#ff3366] transition-colors active:scale-95">
-                          ADD TO TRAY
+                          {t.add_to_order}
                         </button>
                       </div>
                     </div>
@@ -575,13 +575,13 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
         <div className="max-w-4xl mx-auto bg-zinc-900 border border-zinc-800 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 shadow-2xl relative overflow-hidden">
           <div className="absolute -left-20 -bottom-20 text-[200px] opacity-5">💀</div>
           <div className="flex-1 relative z-10 text-center md:text-left">
-            <h3 className="text-3xl font-black uppercase italic tracking-tighter mb-2 text-white">Join the Syndicate</h3>
-            <p className="text-zinc-400 text-sm mb-0">Drop your email to claim your Free Fries and unlock underground secret menu drops.</p>
+            <h3 className="text-3xl font-black uppercase italic tracking-tighter mb-2 text-white">{t.burger_loyalty_title}</h3>
+            <p className="text-zinc-400 text-sm mb-0">{t.burger_loyalty_desc}</p>
           </div>
           <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3 relative z-10">
-            <input type="email" placeholder="YOUR@EMAIL.COM" className="w-full sm:w-64 px-5 py-4 rounded-2xl bg-black text-white border border-zinc-700 focus:outline-none focus:border-[#ff003c] font-black uppercase text-sm" />
+            <input type="email" placeholder={t.burger_email_placeholder} className="w-full sm:w-64 px-5 py-4 rounded-2xl bg-black text-white border border-zinc-700 focus:outline-none focus:border-[#ff003c] font-black uppercase text-sm" />
             <button className="px-8 py-4 bg-white text-black font-black rounded-2xl uppercase tracking-widest hover:bg-gray-200 transition-colors">
-              JOIN NOW
+              {t.burger_loyalty_submit}
             </button>
           </div>
         </div>
@@ -732,7 +732,7 @@ function CartaContent() {
           {/* GLOBAL BACK BUTTON (MOVED HERE) */}
           <div className="flex justify-center mt-2 pointer-events-auto">
             <a href="/" className="text-white/70 hover:text-white text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 transition-colors py-2 px-4 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60">
-              <span>←</span> Volver a Architect.Sys
+              {t.back_to_architect}
             </a>
           </div>
         </div>
@@ -742,7 +742,7 @@ function CartaContent() {
       {isSwitcherModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
           <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setIsSwitcherModalOpen(false)}></div>
-          <div className="relative w-full max-w-4xl bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl animate-fade-in">
+          <div className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto scrollbar-thin bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl animate-fade-in">
             <h3 className="font-serif text-3xl text-white mb-8 text-center">{t.select_design}</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <button onClick={() => { setActiveTemplate('sushi'); setIsSwitcherModalOpen(false); }} className={`p-8 rounded-2xl border transition-all ${activeTemplate === 'sushi' ? 'bg-amber-500/10 border-amber-500' : 'bg-black border-white/10 hover:border-white/30'}`}>
@@ -755,7 +755,7 @@ function CartaContent() {
                 <div className="text-5xl mb-6">🍔</div><div className="font-sans font-black uppercase text-white text-xl mb-2">Fast Food App</div><div className="text-sm text-gray-500">Diseño Grid/Neon. Compra Impulsiva.</div>
               </button>
             </div>
-            <button onClick={() => setIsSwitcherModalOpen(false)} className="mt-10 w-full text-xs uppercase tracking-[0.2em] text-gray-500 hover:text-white">Cerrar Panel</button>
+            <button onClick={() => setIsSwitcherModalOpen(false)} className="mt-10 w-full text-xs uppercase tracking-[0.2em] text-gray-500 hover:text-white">{t.close}</button>
           </div>
         </div>
       )}
@@ -764,23 +764,23 @@ function CartaContent() {
       {isSalesModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
           <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={() => setIsSalesModalOpen(false)}></div>
-          <div className="relative w-full max-w-md bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 shadow-2xl text-center animate-fade-in">
-            <h3 className="font-serif text-3xl text-white mb-4">Transforma tu Sala</h3>
+          <div className="relative w-full max-w-md max-h-[90vh] overflow-y-auto bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 shadow-2xl text-center animate-fade-in">
+            <h3 className="font-serif text-3xl text-white mb-4">{t.sales_title}</h3>
             <p className="text-gray-400 text-sm font-light leading-relaxed mb-8">
-              Esta es solo 1 de las 10 tecnologías que componen nuestro ecosistema B2B. Aumenta el ticket medio, fideliza clientes y domina tu sector.
+              {t.sales_desc}
             </p>
             <div className="space-y-4">
               <a href="/" className="block w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest bg-white text-black hover:bg-gray-200">
-                Ver Ecosistema Web Completo
+                {t.sales_btn_web}
               </a>
               <a href="#" onClick={() => alert('Abriendo Calendly...')} className="block w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest bg-[#10b981] text-black hover:bg-[#059669]">
-                Agendar Auditoría Gratuita
+                {t.sales_btn_calendly}
               </a>
               <a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer" className="block w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest border border-[#10b981] text-[#10b981] hover:bg-[#10b981]/10">
-                Hablar por WhatsApp
+                {t.sales_btn_whatsapp}
               </a>
             </div>
-            <button onClick={() => setIsSalesModalOpen(false)} className="mt-6 text-xs uppercase tracking-[0.2em] text-gray-600 hover:text-white">Cerrar Panel</button>
+            <button onClick={() => setIsSalesModalOpen(false)} className="mt-6 text-xs uppercase tracking-[0.2em] text-gray-600 hover:text-white">{t.close}</button>
           </div>
         </div>
       )}
@@ -796,8 +796,8 @@ function CartaContent() {
             {/* Header Comanda */}
             <div className={`flex justify-between items-center mb-6 pb-4 shrink-0 border-b ${theme.border}`}>
               <h2 className={`font-serif text-2xl sm:text-3xl ${theme.text} flex items-center gap-3`}>
-                <span>Tu Comanda</span>
-                <span className={`text-[10px] sm:text-xs uppercase tracking-widest ${theme.primary} ${theme.btnText} px-3 py-1 rounded-full font-sans font-bold`}>Mesa {tableParam}</span>
+                <span>{t.cart_title}</span>
+                <span className={`text-[10px] sm:text-xs uppercase tracking-widest ${theme.primary} ${theme.btnText} px-3 py-1 rounded-full font-sans font-bold`}>{t.table_prefix} {tableParam}</span>
               </h2>
               <button onClick={() => setIsCartOpen(false)} className={`${theme.text} bg-black/5 hover:bg-black/10 dark:bg-white/10 dark:hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center transition-colors`}>✕</button>
             </div>
@@ -810,7 +810,7 @@ function CartaContent() {
                 return (
                   <div key={d} className={`${theme.card} border ${theme.border} rounded-2xl p-4 sm:p-6 shadow-sm`}>
                     <div className={`flex justify-between items-center mb-4 border-b ${theme.border} pb-3`}>
-                      <h3 className={`text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] ${theme.textSec}`}>Comensal {d}</h3>
+                      <h3 className={`text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] ${theme.textSec}`}>{t.diner_prefix} {d}</h3>
                       <span className={`font-serif text-base sm:text-lg ${theme.textPrimary}`}>{getDinerTotal(d).toFixed(2)}€</span>
                     </div>
                     <div className="space-y-4">
@@ -833,7 +833,7 @@ function CartaContent() {
                                 return prev;
                               });
                             }} className={`text-[10px] sm:text-xs text-red-500 hover:text-red-400 bg-red-500/10 px-2 sm:px-3 py-1.5 rounded transition-colors uppercase font-bold tracking-wider`}>
-                              Eliminar
+                              {t.remove}
                             </button>
                           </div>
                         </div>
@@ -846,8 +846,8 @@ function CartaContent() {
               {cart.length === 0 && (
                 <div className={`h-full flex flex-col items-center justify-center text-center py-12 ${theme.textSec}`}>
                   <span className="text-5xl mb-4 grayscale opacity-50">🛒</span>
-                  <p className={`text-sm sm:text-base font-bold ${theme.text}`}>Tu bandeja está vacía.</p>
-                  <p className="text-xs mt-2 max-w-[200px] mx-auto">Selecciona productos de la carta para comenzar tu pedido.</p>
+                  <p className={`text-sm sm:text-base font-bold ${theme.text}`}>{t.empty_cart}</p>
+                  <p className="text-xs mt-2 max-w-[200px] mx-auto">{t.empty_cart_desc}</p>
                 </div>
               )}
             </div>
@@ -856,7 +856,7 @@ function CartaContent() {
             <div className={`shrink-0 border-t ${theme.border} pt-6 ${theme.bg}`}>
               {cartTotal > 0 && (
                 <div className="flex justify-between items-end mb-6">
-                  <span className={`text-xs sm:text-sm uppercase tracking-[0.2em] font-bold ${theme.textSec}`}>Total a Pagar</span>
+                  <span className={`text-xs sm:text-sm uppercase tracking-[0.2em] font-bold ${theme.textSec}`}>{t.total_pay}</span>
                   <span className={`font-serif text-3xl sm:text-4xl ${theme.text}`}>{cartTotal.toFixed(2)}€</span>
                 </div>
               )}
@@ -865,10 +865,10 @@ function CartaContent() {
                 {/* Botón Principal: Enviar Comanda */}
                 {cartTotal > 0 && (
                   <button 
-                    onClick={() => { alert('Pedido Enviado a Cocina exitosamente.'); setCart([]); setIsCartOpen(false); }} 
+                    onClick={() => { alert(t.order_sent); setCart([]); setIsCartOpen(false); }} 
                     className={`col-span-2 py-4 sm:py-5 rounded-2xl text-xs sm:text-sm font-black uppercase tracking-widest ${theme.sendBtn} transition-transform active:scale-[0.98] shadow-lg`}
                   >
-                    🚀 Enviar Pedido a Cocina
+                    {t.send_to_kitchen}
                   </button>
                 )}
 
@@ -877,7 +877,7 @@ function CartaContent() {
                   onClick={() => { setIsCartOpen(false); setIsChatOpen(true); }}
                   className={`py-4 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-widest ${theme.primary} ${theme.primaryHover} ${theme.btnText} transition-colors flex items-center justify-center gap-2 shadow-sm ${cartTotal === 0 ? 'col-span-2' : 'col-span-1'}`}
                 >
-                  <span className="text-base sm:text-lg">🤖</span> Abrir Asistente IA
+                  {t.open_ai}
                 </button>
 
                 {/* Botón Terciario: Llamar Camarero Humano */}
@@ -885,7 +885,7 @@ function CartaContent() {
                   onClick={() => alert('El camarero ha sido notificado y se dirige a su mesa.')}
                   className={`py-4 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-widest ${theme.secondaryBtn} transition-colors flex items-center justify-center gap-2 ${cartTotal === 0 ? 'col-span-2' : 'col-span-1'}`}
                 >
-                  <span className="text-base sm:text-lg">🛎️</span> Llamar Camarero
+                  {t.call_waiter}
                 </button>
               </div>
             </div>
@@ -910,13 +910,13 @@ function CartaContent() {
                   <div className={`absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 ${theme.card} animate-pulse`}></div>
                 </div>
                 <div>
-                  <div className={`text-base font-bold ${theme.text} tracking-wider`}>Asistente IA</div>
-                  <div className={`text-[10px] ${theme.textPrimary} font-black uppercase tracking-widest`}>En línea - Mesa {tableParam}</div>
+                  <div className={`text-base font-bold ${theme.text} tracking-wider`}>{t.ai_assistant_title}</div>
+                  <div className={`text-[10px] ${theme.textPrimary} font-black uppercase tracking-widest`}>{t.online} {tableParam}</div>
                 </div>
               </div>
               <div className="flex gap-2">
                 <button onClick={() => setIsChatOpen(false)} className={`${theme.secondaryBtn} px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest hidden sm:flex items-center gap-2`}>
-                  ← Seguir Pidiendo
+                  {t.continue_ordering}
                 </button>
                 <button onClick={() => setIsChatOpen(false)} className={`text-gray-400 bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 hover:${theme.text} w-10 h-10 rounded-full flex items-center justify-center transition-colors`}>✕</button>
               </div>
@@ -978,7 +978,7 @@ function CartaContent() {
             {/* Input de Texto */}
             <div className={`p-6 ${theme.bg} border-t ${theme.border} flex flex-col sm:flex-row gap-4 shrink-0 sm:rounded-b-3xl`}>
               <button onClick={() => setIsChatOpen(false)} className={`sm:hidden w-full ${theme.secondaryBtn} py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest flex items-center justify-center gap-2 mb-2`}>
-                ← Seguir Pidiendo
+                {t.continue_ordering}
               </button>
               <div className="flex gap-3 w-full">
                 <input
@@ -986,7 +986,7 @@ function CartaContent() {
                   value={chatInput}
                   onChange={e => setChatInput(e.target.value)}
                   onKeyDown={e => e.key === 'Enter' && handleSendMessage()}
-                  placeholder="Pregúntale al camarero IA..."
+                  placeholder={t.ai_placeholder}
                   className={`flex-1 rounded-2xl px-6 py-4 ${theme.card} ${theme.text} border ${theme.border} focus:outline-none focus:border-opacity-100 font-medium text-sm transition-colors shadow-inner`}
                 />
                 <button 
@@ -1030,10 +1030,10 @@ function CartaContent() {
                <p className={`text-sm sm:text-base ${theme.textSec} leading-relaxed mt-2 font-medium`}>{selectedImageItem.description[lang]}</p>
                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                  <button onClick={() => { openContextualChat(selectedImageItem.name[lang]); setSelectedImageItem(null); }} className={`py-4 rounded-2xl font-bold uppercase tracking-widest text-xs sm:text-sm ${theme.secondaryBtn} transition-colors flex items-center justify-center gap-2`}>
-                   🤵 Camarero Inteligente
+                   {t.smart_waiter}
                  </button>
                  <button onClick={() => { addToCart(selectedImageItem); setSelectedImageItem(null); setIsCartOpen(true); }} className={`py-4 rounded-2xl font-black uppercase tracking-widest text-xs sm:text-sm ${theme.primary} ${theme.btnText} ${theme.primaryHover} shadow-lg transition-transform active:scale-95 flex items-center justify-center gap-2`}>
-                   ➕ Añadir al Pedido
+                   {t.add_to_order_modal}
                  </button>
                </div>
             </div>
