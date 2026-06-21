@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { CalendarDays, LayoutDashboard, ShoppingBag, BarChart3, Settings, Menu, LogOut, ShieldAlert, Zap } from 'lucide-react';
-import { supabaseClient } from '@/lib/supabase-client';
+import { createClient } from '@/lib/supabase-browser';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [isGrowthPlan, setIsGrowthPlan] = useState(false);
@@ -12,6 +12,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [isDesktopExpanded, setIsDesktopExpanded] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const pathname = usePathname();
+  const supabase = createClient();
 
   useEffect(() => {
     const plan = localStorage.getItem("saas_plan");
@@ -24,8 +25,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         return;
       }
       
-      if (!supabaseClient) return;
-      const { data } = await supabaseClient.auth.getUser();
+      if (!supabase) return;
+      const { data } = await supabase.auth.getUser();
       if (data?.user?.email?.includes('klar')) {
         setIsAdmin(true);
       }

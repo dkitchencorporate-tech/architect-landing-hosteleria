@@ -2,68 +2,59 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { ArrowLeft, BookOpen, Database, Target, Users, Bot, LayoutDashboard, ShieldCheck } from 'lucide-react';
 
-export default function EstrategiaVentasManual() {
+export default function ManualPage() {
+  const IconMap = {
+    BookOpen: BookOpen,
+    Database: Database,
+    Target: Target,
+    Users: Users,
+    Bot: Bot,
+    LayoutDashboard: LayoutDashboard,
+    ShieldCheck: ShieldCheck
+  };
+  
+  const Icon = IconMap['Target'] || BookOpen;
+
   return (
-    <div className="print:block">
-      <div className="flex justify-between items-center mb-8 print:hidden border-b border-white/10 pb-6">
-        <Link href="/manuals" className="text-sm font-bold text-zinc-400 hover:text-white transition-colors">
-          &larr; Volver al Índice
-        </Link>
-        <button 
-          onClick={() => window.print()}
-          className="bg-white text-black text-xs font-black uppercase tracking-widest px-4 py-2 rounded-lg hover:bg-zinc-200 transition-colors flex items-center gap-2"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg>
-          Exportar PDF
-        </button>
-      </div>
+    <div className="max-w-4xl mx-auto pb-20 print:pb-0">
+      <Link href="/manuals" className="inline-flex items-center gap-2 text-sm font-bold text-zinc-500 hover:text-white transition-colors mb-8 print:hidden bg-white/5 px-4 py-2 rounded-lg border border-white/5 hover:border-white/20">
+        <ArrowLeft size={16} /> Volver al Índice
+      </Link>
 
-      <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
-        <h1>3. Embudos de Venta y Psicología B2B</h1>
-        <p className="lead">
-          Protocolo de persuasión comercial de Architect.Sys. Análisis de la propuesta de valor, estructura de la Landing Page y posicionamiento de marca (Socio Operativo vs. Agencia).
-        </p>
+      <div className="relative bg-zinc-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 overflow-hidden shadow-2xl">
+        {/* Glow de fondo */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl -z-10" />
+        
+        <header className="border-b border-white/10 pb-8 mb-8">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-16 h-16 rounded-2xl bg-zinc-800/80 border border-white/10 flex items-center justify-center shadow-inner text-orange-500">
+              <Icon size={32} />
+            </div>
+            <div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-orange-500/80 bg-orange-500/10 px-3 py-1 rounded-md mb-2 inline-block">
+                Ventas
+              </span>
+              <h1 className="text-3xl md:text-4xl font-black text-white tracking-tighter">
+                Embudos de Venta y Estrategia B2B
+              </h1>
+            </div>
+          </div>
+          <p className="text-zinc-500 text-sm font-bold flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            Estado: ACTIVO &nbsp;|&nbsp; Rol Requerido: ADMIN
+          </p>
+        </header>
 
-        <h2>Posicionamiento de Marca</h2>
-        <p>
-          Architect.Sys rompe intencionalmente con la semántica tradicional del marketing para hostelería. 
-        </p>
-        <ul>
-          <li><strong>NO somos:</strong> "Una agencia de marketing", "Creadores de posts", "Prometedores de locales llenos".</li>
-          <li><strong>SÍ somos:</strong> "Un ecosistema SaaS", "Tu socio operativo", "Ingenieros de automatización", "Rentabilidad medible".</li>
-        </ul>
-        <p>
-          Este encuadre filtra automáticamente a los dueños de locales que buscan "likes" y atrae a empresarios (restauradores serios, cadenas, dark kitchens) que buscan optimización de costos y control operativo.
-        </p>
-
-        <h2>Estructura de la Landing Page (Funnel B2B)</h2>
-        <p>La página principal está diseñada bajo un embudo de dolor y resolución:</p>
-
-        <h3>1. Hero Section (El Gancho)</h3>
-        <p><strong>Titular:</strong> "Ecosistema de Crecimiento para Hostelería Profesional." <br/>Diseñado para denotar autoridad. El fondo dinámico y oscuro (Glassmorphism) crea un efecto "Premium/High-Ticket" inmediato, similar al que usan marcas como Apple o Stripe.</p>
-
-        <h3>2. Sección de Dolor (Agitación)</h3>
-        <p>Menciona directamente los problemas reales: Comisiones abusivas de Uber Eats, camareros estresados, descontrol de pedidos. Demuestra empatía profunda con el sector.</p>
-
-        <h3>3. El Agente de Ventas Autónomo (Arqui)</h3>
-        <p>Se presenta no como un "bot de chat", sino como un "Empleado Virtual" que no duerme. La interfaz muestra demostraciones prácticas de cómo Arqui responde al público.</p>
-
-        <h3>4. Matriz de Precios (Anclaje Psicológico)</h3>
-        <p>Se utiliza la estrategia de tres pilares:</p>
-        <ol>
-          <li><strong>Base Infraestructura (90€):</strong> El ancla inferior. Resuelve lo básico (cartas digitales), pero deja claro que la optimización mayor requiere más.</li>
-          <li><strong>Growth Partner All-in-One (499€):</strong> El producto estrella "Decoy". Posicionado centralmente.</li>
-          <li><strong>AI Autónomo (600€+):</strong> El ancla superior. Hace que el plan de 499€ parezca una inversión razonable en contraste con contratar un empleado humano.</li>
-        </ol>
-
-        <h2>Eliminación de Falsas Promesas</h2>
-        <p>
-          En mayo de 2026, el ecosistema pasó por un refactor completo de copy. Se eliminaron frases como "Te llenamos el local", que legalmente y estratégicamente generan fricción en ventas de High-Ticket.
-        </p>
-        <p>
-          En su lugar, el funnel garantiza <strong>Trazabilidad, Retención, Base de Datos Propia y Experiencia Premium</strong>. Al vender infraestructura operativa, el valor del producto es intrínseco e innegable desde el primer mes, asegurando una retención a largo plazo.
-        </p>
+        <div className="prose prose-invert prose-orange max-w-none 
+          prose-headings:text-white prose-headings:font-bold prose-headings:tracking-tight 
+          prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:border-b prose-h2:border-white/10 prose-h2:pb-2
+          prose-p:text-zinc-400 prose-p:leading-relaxed prose-p:text-base
+          prose-li:text-zinc-400 prose-li:marker:text-orange-500
+          prose-strong:text-zinc-200
+          print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black" dangerouslySetInnerHTML={{ __html: "\n      <h2>1. Posicionamiento del Producto</h2>\n      <p>Architect.Sys no vende \"marketing\", vende <strong>Sistemas Operativos de Crecimiento</strong>. El enfoque es puramente transaccional y de retorno de inversión (ROI).</p>\n\n      <h2>2. Justificación de los Planes (High-Ticket)</h2>\n      <p>Se ofrecen dos verticales principales de ingreso mensual recurrente (MRR):</p>\n      <ul>\n        <li><strong>Base Plan (997€/mes):</strong> Orientado a locales que necesitan flujo constante (ads) y eventos estándar (como catas o música en vivo). El cliente autogestiona usando la IA.</li>\n        <li><strong>Growth Partner (2,497€/mes):</strong> Para restaurantes de alto volumen. Incluye automatizaciones avanzadas, setup de CRM (Kommo) y seguimiento directo por parte de la agencia.</li>\n      </ul>\n\n      <h2>3. Gatillos Psicológicos Usados</h2>\n      <p>La Landing Page emplea técnicas avanzadas de neuroventas:</p>\n      <ul>\n        <li><strong>Exclusividad Invertida:</strong> \"No trabajamos con cualquiera, postula para ver si calificas\".</li>\n        <li><strong>Prueba Social Técnica:</strong> Mostrar flujos complejos de IA y Node.js en vez de simples métricas de Likes.</li>\n        <li><strong>Anclaje de Precio:</strong> El coste del plan es minúsculo comparado con \"tener el local vacío un sábado\".</li>\n      </ul>\n    " }}>
+        </div>
       </div>
     </div>
   );

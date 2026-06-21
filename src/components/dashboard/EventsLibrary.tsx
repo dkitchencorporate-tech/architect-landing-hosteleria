@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { EventDossier } from "@/lib/events-data";
-import { supabaseClient } from "@/lib/supabase-client";
+import { createClient } from "@/lib/supabase-browser";
 
 interface EventsLibraryProps {
   isGrowthPlan: boolean;
@@ -15,19 +15,20 @@ export default function EventsLibrary({ isGrowthPlan }: EventsLibraryProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
+  const supabase = createClient();
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        if (!supabaseClient) throw new Error("Supabase no inicializado");
+        if (!supabase) throw new Error("Supabase no inicializado");
         
         // Obtener usuario actual
-        const { data: authData } = await supabaseClient.auth.getUser();
+        const { data: authData } = await supabase.auth.getUser();
         const currentUserId = authData?.user?.id;
         if (currentUserId) setUserId(currentUserId);
 
         // Fetch master events
-        const { data: masterData, error: masterError } = await supabaseClient
+        const { data: masterData, error: masterError } = await supabase
           .from('master_events')
           .select('*')
           .order('created_at', { ascending: true });
@@ -55,7 +56,7 @@ export default function EventsLibrary({ isGrowthPlan }: EventsLibraryProps) {
 
         // Fetch user's requested events if logged in
         if (currentUserId) {
-          const { data: clientEvents } = await supabaseClient
+          const { data: clientEvents } = await supabase
             .from('client_events')
             .select('event_id')
             .eq('profile_id', currentUserId);
@@ -89,7 +90,7 @@ export default function EventsLibrary({ isGrowthPlan }: EventsLibraryProps) {
     if (!selectedEvent || !userId) return;
     
     try {
-      const { error } = await supabaseClient.from('client_events').insert([{
+      const { error } = await supabase.from('client_events').insert([{
         profile_id: userId,
         event_id: selectedEvent.id,
         status: 'requested'

@@ -1,11 +1,41 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { createClient } from '@/lib/supabase-browser';
 
 export default function ManualsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const router = useRouter();
+  const supabase = createClient();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      // Permitir bypass en localhost para desarrollo
+      if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+        setIsAuthorized(true);
+        return;
+      }
+
+      const { data } = await supabase.auth.getUser();
+      if (!data?.user?.email?.includes('klar')) {
+        router.push('/dashboard');
+      } else {
+        setIsAuthorized(true);
+      }
+    };
+    checkAuth();
+  }, [router, supabase.auth]);
+
+  if (!isAuthorized) {
+    return <div className="min-h-screen bg-zinc-950 flex items-center justify-center text-white">Verificando credenciales de seguridad...</div>;
+  }
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-300 font-sans print:bg-white print:text-black selection:bg-orange-500/30">
       {/* Dynamic Background Glow */}
