@@ -35,10 +35,14 @@ export const metadata = {
   }
 };
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className="bg-background text-foreground antialiased">
+      <body className={`${inter.className} bg-background text-foreground antialiased`}>
         <AnalyticsPixel />
         {children}
         <CookieConsent />

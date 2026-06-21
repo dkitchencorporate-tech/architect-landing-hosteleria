@@ -1,45 +1,88 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { supabaseClient } from "@/lib/supabase-client";
 
 export default function Pipeline() {
+  const [status, setStatus] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchStatus = async () => {
+      try {
+        if (!supabaseClient) return;
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (session?.user) {
+          const { data } = await supabaseClient
+            .from('profiles')
+            .select('status')
+            .eq('id', session.user.id)
+            .single();
+          if (data) setStatus(data.status);
+        }
+      } catch (err) {
+        console.error("Error fetching pipeline status", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchStatus();
+  }, []);
+
+  const isDevelopment = status === 'development';
+  const isDelivered = status === 'delivered';
+  // If not development and not delivered, we assume it's in onboarding
+
   const pipelineSteps = [
     {
       id: 1,
       title: "1. Onboarding Operativo y Kickoff",
-      status: "completed",
-      date: "Completado",
-      description: "Recopilación de carta, KPIs actuales y fijación de objetivos comerciales en reunión de Kickoff."
+      status: isDelivered || isDevelopment ? "completed" : "active",
+      date: isDelivered || isDevelopment ? "Completado" : "En Progreso",
+      description: "Recopilación de carta, KPIs actuales y fijación de objetivos comerciales en reunión de Kickoff.",
+      progress: 50
     },
     {
       id: 2,
       title: "2. Diseño de Ecosistema y Carta Demo",
-      status: "active",
-      date: "En Progreso (Est. 3-5 días)",
-      description: "Desarrollo de tu ecosistema de captación HORECA y diseño de la carta digital optimizada para upselling."
+      status: isDelivered ? "completed" : isDevelopment ? "active" : "pending",
+      date: isDelivered ? "Completado" : isDevelopment ? "En Progreso (Est. 3 días)" : "Pendiente",
+      description: "Desarrollo de tu ecosistema de captación HORECA y diseño de la carta digital optimizada para upselling.",
+      progress: 75
     },
     {
       id: 3,
       title: "3. Setup de IA Autónoma y Nurturing",
-      status: "pending",
-      date: "Pendiente",
-      description: "Entrenamiento del agente de IA con tu oferta gastronómica para cualificación de leads y agendamiento automático."
+      status: isDelivered ? "completed" : isDevelopment ? "active" : "pending",
+      date: isDelivered ? "Completado" : isDevelopment ? "En Progreso (Est. 5 días)" : "Pendiente",
+      description: "Entrenamiento del agente de IA con tu oferta gastronómica para cualificación de leads y agendamiento automático.",
+      progress: 40
     },
     {
       id: 4,
       title: "4. Simulacro y Validación Operativa",
-      status: "pending",
-      date: "Pendiente",
-      description: "Pruebas de estrés del embudo en entorno cerrado y refinamiento del copy con tu equipo."
+      status: isDelivered ? "completed" : "pending",
+      date: isDelivered ? "Completado" : "Pendiente",
+      description: "Pruebas de estrés del embudo en entorno cerrado y refinamiento del copy con tu equipo.",
+      progress: 0
     },
     {
       id: 5,
       title: "5. Lanzamiento y Activación Comercial",
-      status: "pending",
-      date: "Pendiente",
-      description: "Despliegue a producción, conexión con Ads y entrega de llaves del panel de control de crecimiento."
+      status: isDelivered ? "completed" : "pending",
+      date: isDelivered ? "¡Lanzado!" : "Pendiente",
+      description: "Despliegue a producción, conexión con Ads y entrega de llaves del panel de control de crecimiento.",
+      progress: 0
     }
   ];
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <div className="w-8 h-8 border-4 border-brand border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -56,7 +99,7 @@ export default function Pipeline() {
           <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-dash-border"></div>
 
           <div className="space-y-10">
-            {pipelineSteps.map((step, idx) => (
+            {pipelineSteps.map((step) => (
               <div key={step.id} className="relative flex items-start">
 
                 {/* Status Indicator */}
@@ -92,14 +135,14 @@ export default function Pipeline() {
                     {step.description}
                   </p>
 
-                  {step.status === 'active' && (
+                  {step.status === 'active' && step.progress > 0 && (
                     <div className="mt-4 bg-dash-bg border border-dash-border p-4 rounded-lg">
                       <div className="flex items-center justify-between text-xs mb-2">
                         <span className="text-white font-medium">Progreso Actual</span>
-                        <span className="text-brand font-bold">45%</span>
+                        <span className="text-brand font-bold">{step.progress}%</span>
                       </div>
                       <div className="w-full bg-dash-surface h-1.5 rounded-full overflow-hidden">
-                        <div className="bg-brand h-full rounded-full w-[45%]"></div>
+                        <div className="bg-brand h-full rounded-full" style={{ width: `${step.progress}%` }}></div>
                       </div>
                     </div>
                   )}

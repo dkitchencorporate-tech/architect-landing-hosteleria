@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import LiveMonitor from '@/components/dashboard/LiveMonitor';
 import TrafficMonitor from '@/components/dashboard/TrafficMonitor';
 import Link from 'next/link';
+import { Download, Activity, Globe, MessageSquare, HeartHandshake, Zap, Target, Laptop } from 'lucide-react';
 import { supabaseClient } from '@/lib/supabase-client';
 
 
@@ -110,80 +111,89 @@ export default function AdminDashboard() {
 
   return (
 
-      <div className="min-h-screen bg-[#FDFCF8] text-zinc-900 font-sans selection:bg-orange-500/30">
-        <header className="border-b border-zinc-100 bg-white/70 backdrop-blur-md sticky top-0 z-50">
-          <div className="max-w-[1600px] mx-auto px-6 py-4 flex justify-between items-center">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-orange-500 rounded-xl flex items-center justify-center font-black text-white shadow-lg shadow-orange-500/20">
-                A
+      <div className="min-h-screen bg-[#050505] text-zinc-100 selection:bg-orange-500/30">
+        <header className="border-b border-white/5 bg-[#0A0A0A]/50 backdrop-blur-md sticky top-0 z-40">
+          <div className="max-w-[1600px] mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+            <div className="flex items-center gap-3">
+              <div className="hidden md:flex w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg items-center justify-center font-black text-white text-xs shadow-[0_0_15px_rgba(249,115,22,0.3)]">
+                A.
               </div>
               <div>
-                <h1 className="text-xl font-bold tracking-tight text-zinc-900">Architect.Sys Console</h1>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-[10px] uppercase tracking-widest text-zinc-400 font-bold">Node Live - Production</span>
+                <h1 className="text-lg md:text-xl font-black tracking-tighter text-white leading-none">Console</h1>
+                <div className="flex items-center gap-1.5 mt-1">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-[9px] uppercase tracking-widest text-zinc-500 font-black">Node Live</span>
                 </div>
               </div>
             </div>
 
             <nav className="flex items-center gap-4">
-              <Link href="/" target="_blank" className="text-xs font-bold text-zinc-500 hover:text-orange-600 transition-colors">
-                Ir a la Landing
+              <Link href="/" className="text-[10px] md:text-xs font-bold text-zinc-500 hover:text-white transition-colors flex items-center gap-1">
+                <Globe size={12} /> Landing
               </Link>
-              <div className="h-4 w-px bg-zinc-200 mx-2"></div>
-              <button className="bg-zinc-900 text-white text-[10px] font-black uppercase px-4 py-2 rounded-lg hover:bg-zinc-800 transition-all">
-                Export Audit
+              <div className="h-3 w-px bg-white/10 hidden md:block"></div>
+              <button className="hidden md:flex bg-white/5 border border-white/10 text-white text-[9px] font-black uppercase px-4 py-2 rounded-lg hover:bg-white/10 transition-all items-center gap-1.5">
+                <Download size={12} /> Export
               </button>
             </nav>
           </div>
         </header>
 
-        <main className="max-w-[1600px] mx-auto p-6 space-y-8">
+        <main className="max-w-[1600px] mx-auto p-4 md:p-6 lg:p-8 space-y-8">
           {/* GRID DE KPIs DE ALTA DENSIDAD (Conversaciones) */}
           <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { label: 'Conversaciones', value: stats.conversations, color: 'text-orange-600', trend: 'Live' },
-              { label: 'IA Sentiment', value: stats.sentiment, color: 'text-green-600', trend: 'Análisis' },
-              { label: 'Tasa de Cierre', value: `${stats.closingRate}%`, color: 'text-zinc-600', trend: 'ROI' },
-              { label: 'Visitas Totales', value: trafficStats.totalVisits, color: 'text-blue-500', trend: 'Orgánico' },
-              { label: 'Dispositivo', value: trafficStats.mobilePercentage > 50 ? 'Móvil' : 'Desktop', color: 'text-purple-500', trend: `${trafficStats.mobilePercentage}% Móvil` },
-              { label: 'Top Origen', value: trafficStats.topSource, color: 'text-orange-600', trend: 'UTM' },
-            ].map((m, i) => (
-              <div key={i} className="bg-white border border-zinc-100 p-4 rounded-3xl shadow-sm transition-all hover:shadow-xl hover:shadow-zinc-200/50">
-                <div className="flex justify-between items-start mb-2">
-                  <p className="text-[9px] uppercase tracking-widest text-zinc-300 font-black">{m.label}</p>
-                  <span className="text-[8px] px-1.5 py-0.5 bg-zinc-50 text-zinc-400 rounded-md font-bold">{m.trend}</span>
+              { label: 'Conversaciones', value: stats.conversations, color: 'text-orange-400', trend: 'Live', icon: MessageSquare },
+              { label: 'IA Sentiment', value: stats.sentiment, color: 'text-green-400', trend: 'Análisis', icon: HeartHandshake },
+              { label: 'Tasa de Cierre', value: `${stats.closingRate}%`, color: 'text-zinc-200', trend: 'ROI', icon: Target },
+              { label: 'Visitas Totales', value: trafficStats.totalVisits, color: 'text-blue-400', trend: 'Orgánico', icon: Zap },
+              { label: 'Dispositivo', value: trafficStats.mobilePercentage > 50 ? 'Móvil' : 'Desktop', color: 'text-purple-400', trend: `${trafficStats.mobilePercentage}% Móvil`, icon: Laptop },
+              { label: 'Top Origen', value: trafficStats.topSource, color: 'text-orange-400', trend: 'UTM', icon: Globe },
+            ].map((m, i) => {
+              const Icon = m.icon;
+              return (
+                <div key={i} className="bg-zinc-950/40 border border-white/5 backdrop-blur-md p-5 rounded-3xl transition-all hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)] hover:border-white/10 group relative overflow-hidden flex flex-col justify-between">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full blur-3xl -mr-8 -mt-8 group-hover:bg-white/10 transition-colors pointer-events-none"></div>
+                  <div className="flex justify-between items-start mb-4 relative z-10 gap-2">
+                    <div className="flex items-center gap-1.5 text-zinc-500">
+                      <Icon size={12} className="opacity-70 shrink-0" />
+                      <p className="text-[9px] md:text-[10px] uppercase tracking-widest font-black truncate">{m.label}</p>
+                    </div>
+                    <span className="text-[8px] px-1.5 py-0.5 md:px-2 md:py-1 bg-black/40 border border-white/10 text-zinc-400 rounded-md font-black tracking-widest shrink-0">{m.trend}</span>
+                  </div>
+                  <p className={`text-2xl md:text-3xl font-black tracking-tighter relative z-10 drop-shadow-md truncate ${m.color}`} title={String(m.value)}>{m.value}</p>
                 </div>
-                <p className={`text-xl font-black tracking-tighter ${m.color}`}>{m.value}</p>
-              </div>
-            ))}
+              );
+            })}
           </section>
 
           <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Column: WhatsApp / IA */}
             <div>
-              <div className="mb-6 flex justify-between items-end">
+              <div className="mb-4 flex justify-between items-end px-1">
                 <div>
-                  <h2 className="text-2xl font-black tracking-tighter text-zinc-900">Live AI Agent Stream</h2>
-                  <p className="text-zinc-400 text-sm">Auditoría en tiempo real de leads web.</p>
+                  <h2 className="text-xl md:text-2xl font-black tracking-tighter text-white flex items-center gap-2">
+                    <Activity className="text-orange-500" size={20} /> Live AI Agent Stream
+                  </h2>
                 </div>
               </div>
 
-              <div className="bg-white border border-zinc-100 p-1 rounded-[2.5rem] shadow-xl shadow-zinc-200/20">
+              <div className="bg-zinc-950/50 border border-white/5 p-2 rounded-[2.5rem] shadow-[0_15px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl">
                 <LiveMonitor />
               </div>
             </div>
 
             {/* Right Column: Traffic Analytics */}
             <div>
-              <div className="mb-6 flex justify-between items-end">
+              <div className="mb-4 flex justify-between items-end px-1 mt-8 lg:mt-0">
                 <div>
-                  <h2 className="text-2xl font-black tracking-tighter text-zinc-900">Live Traffic Monitor</h2>
-                  <p className="text-zinc-400 text-sm">Métricas de entrada web y origen de leads.</p>
+                  <h2 className="text-xl md:text-2xl font-black tracking-tighter text-white flex items-center gap-2">
+                    <Globe className="text-blue-500" size={20} /> Live Traffic Monitor
+                  </h2>
                 </div>
               </div>
 
-              <div className="bg-white border border-zinc-100 p-6 rounded-[2.5rem] shadow-xl shadow-zinc-200/20 h-full">
+              <div className="bg-zinc-950/50 border border-white/5 p-3 md:p-4 rounded-[2.5rem] shadow-[0_15px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl h-[500px]">
                 <TrafficMonitor />
               </div>
             </div>

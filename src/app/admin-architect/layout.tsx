@@ -14,7 +14,7 @@ export default function AdminLayout({
 }) {
   return (
     <>
-      <div className="flex min-h-screen bg-[#FDFCF8]">
+      <div className="flex min-h-screen bg-[#050505] selection:bg-orange-500/30">
         {/* Navigation Sidebar */}
         <AdminSidebar />
 

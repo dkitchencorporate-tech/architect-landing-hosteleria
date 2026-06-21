@@ -7,23 +7,29 @@ export default function ManualsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-[#020202] text-zinc-300 font-sans print:bg-white print:text-black">
-      {/* Navbar Solo en Pantalla */}
-      <header className="border-b border-white/5 bg-white/[0.02] backdrop-blur-md sticky top-0 z-50 print:hidden">
+    <div className="min-h-screen bg-zinc-950 text-zinc-300 font-sans print:bg-white print:text-black selection:bg-orange-500/30">
+      {/* Dynamic Background Glow */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-white/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+      {/* Navbar Solo en Pantalla (Silver Premium) */}
+      <header className="border-b border-white/10 bg-zinc-900/50 backdrop-blur-xl sticky top-0 z-50 print:hidden">
         <div className="max-w-[1000px] mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/manuals" className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-br from-white to-zinc-400 text-black font-black text-lg flex items-center justify-center rounded-lg shadow-lg">
               A
             </div>
             <div>
-              <h1 className="text-lg font-bold tracking-tight text-white">Architect.Sys Hub</h1>
-              <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-bold block leading-none">Manuales y SOPs</span>
+              <h1 className="text-lg font-black tracking-tight text-white">Architect.Sys Hub</h1>
+              <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-black block leading-none mt-1">Manuales y SOPs</span>
             </div>
           </Link>
 
           <nav className="flex items-center gap-4">
+            <Link href="/admin-architect/overview" className="text-xs font-bold text-zinc-400 hover:text-white transition-colors flex items-center gap-2 bg-zinc-800/50 px-3 py-1.5 rounded-lg border border-white/5 hover:border-white/20">
+              <span className="text-orange-500">←</span> Volver a Master Console
+            </Link>
             <Link href="/dashboard" className="text-xs font-bold text-zinc-500 hover:text-white transition-colors">
-              Ir al Dashboard
+              Ir al Dashboard Cliente
             </Link>
           </nav>
         </div>

@@ -1,7 +1,13 @@
+import { verifyAdmin } from '@/lib/auth-helpers';
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
+    const auth = await verifyAdmin();
+    if (auth.error) {
+      return NextResponse.json({ status: 'error', message: auth.error }, { status: auth.status });
+    }
+
     const body = await req.json();
     const { prompt } = body || {};
 

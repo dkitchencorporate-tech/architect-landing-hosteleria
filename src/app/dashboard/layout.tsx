@@ -1,86 +1,161 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from "react";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { CalendarDays, LayoutDashboard, ShoppingBag, BarChart3, Settings, Menu, LogOut, ShieldAlert, Zap } from 'lucide-react';
+import { supabaseClient } from '@/lib/supabase-client';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [isGrowthPlan, setIsGrowthPlan] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isDesktopExpanded, setIsDesktopExpanded] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const pathname = usePathname();
 
-  // Sync plan choice with local storage for demo purposes
   useEffect(() => {
     const plan = localStorage.getItem("saas_plan");
     if (plan === "growth") setIsGrowthPlan(true);
+
+    const checkAdmin = async () => {
+      // Forzar botón activo en modo local para evitar bloqueos en la presentación
+      if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+        setIsAdmin(true);
+        return;
+      }
+      
+      if (!supabaseClient) return;
+      const { data } = await supabaseClient.auth.getUser();
+      if (data?.user?.email?.includes('klar')) {
+        setIsAdmin(true);
+      }
+    };
+    checkAdmin();
   }, []);
 
   const togglePlan = () => {
     const newPlan = !isGrowthPlan;
     setIsGrowthPlan(newPlan);
     localStorage.setItem("saas_plan", newPlan ? "growth" : "base");
-    // Dispatch an event so the page can react to plan changes immediately
     window.dispatchEvent(new Event('storage'));
   };
 
-  return (
-    <div className="min-h-screen bg-[#020202] text-dash-text-primary font-sans flex flex-col md:flex-row overflow-hidden">
+  const navItems = [
+    { name: 'Eventos', href: '#events', icon: CalendarDays },
+    { name: 'Autogestión', href: '#autogestion', icon: LayoutDashboard },
+    { name: 'Up-sells', href: '#marketplace', icon: ShoppingBag },
+    { name: 'Pipeline', href: '#pipeline', icon: BarChart3 },
+  ];
 
-      {/* Mobile Header (Hamburger + Plan Toggle) */}
-      <div className="md:hidden flex items-center justify-between p-4 bg-dash-bg border-b border-dash-border z-20">
+  return (
+    <div className="min-h-screen bg-zinc-950 text-zinc-300 font-sans flex flex-col md:flex-row overflow-hidden selection:bg-orange-500/30">
+      {/* Dynamic Background Glow */}
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-white/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
+
+      {/* Mobile Header */}
+      <div className="md:hidden flex items-center justify-between p-4 bg-zinc-900/50 backdrop-blur-md border-b border-white/10 z-20">
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="text-white p-2">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
+          <Menu size={24} />
         </button>
         <div className="flex items-center space-x-2">
-          <span className="text-xs text-dash-text-secondary">Base</span>
-          <button onClick={togglePlan} className={`w-10 h-5 rounded-full relative transition-colors ${isGrowthPlan ? 'bg-brand' : 'bg-dash-surface-hover'}`}>
+          <span className="text-xs font-bold text-zinc-400">BASE</span>
+          <button onClick={togglePlan} className={`w-10 h-5 rounded-full relative transition-colors ${isGrowthPlan ? 'bg-orange-500' : 'bg-zinc-700'}`}>
             <div className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${isGrowthPlan ? 'translate-x-5' : 'translate-x-0'}`}></div>
           </button>
-          <span className="text-xs font-bold text-dash-accent">Growth</span>
+          <span className="text-xs font-black text-white">GROWTH</span>
         </div>
       </div>
 
-      {/* Sidebar */}
-      <aside className={`absolute md:relative z-10 w-64 h-full bg-dash-bg border-r border-dash-border transform transition-transform duration-300 ease-in-out flex flex-col ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
-        <div className="p-6 border-b border-dash-border hidden md:block">
-          <h1 className="text-xl font-bold tracking-wider text-white">ARCHITECT<span className="text-brand">.</span></h1>
-          <p className="text-xs text-dash-text-secondary mt-1">SaaS Operations Protocol</p>
-        </div>
+      {/* Sidebar V3 */}
+      <aside 
+        className={`absolute md:relative z-40 h-full bg-zinc-900/50 backdrop-blur-2xl border-r border-white/10 transform transition-all duration-300 ease-in-out flex flex-col
+          ${isSidebarOpen ? 'translate-x-0 w-64' : '-translate-x-full md:translate-x-0'}
+          ${isDesktopExpanded ? 'md:w-64' : 'md:w-[80px]'}
+        `}
+      >
+        {/* Toggle Button for Desktop */}
+        <button 
+          onClick={() => setIsDesktopExpanded(!isDesktopExpanded)}
+          className="hidden md:flex absolute -right-3 top-6 bg-zinc-800 border border-white/10 text-zinc-400 hover:text-white w-6 h-6 rounded-full items-center justify-center z-50 transition-colors"
+        >
+          <Menu size={12} />
+        </button>
 
-        <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
-          <p className="text-xs uppercase tracking-wider text-dash-text-secondary mb-4 mt-2">Navegación</p>
-          <a href="#events" className="block px-4 py-3 rounded text-sm text-white bg-dash-surface hover:bg-dash-surface-hover transition-colors flex items-center border border-dash-border">
-            <span className="w-2 h-2 rounded-full bg-brand mr-3"></span> Eventos
-          </a>
-          <a href="#autogestion" className="block px-4 py-3 rounded text-sm text-dash-text-secondary hover:text-white hover:bg-dash-surface transition-colors flex items-center">
-            <span className="w-2 h-2 rounded-full bg-dash-text-secondary mr-3"></span> Autogestión
-          </a>
-          <a href="#marketplace" className="block px-4 py-3 rounded text-sm text-dash-text-secondary hover:text-white hover:bg-dash-surface transition-colors flex items-center">
-            <span className="w-2 h-2 rounded-full bg-dash-accent mr-3"></span> Up-sells
-          </a>
-          <a href="#pipeline" className="block px-4 py-3 rounded text-sm text-dash-text-secondary hover:text-white hover:bg-dash-surface transition-colors flex items-center">
-            <span className="w-2 h-2 rounded-full bg-trust mr-3"></span> Pipeline
-          </a>
-        </nav>
-
-        <div className="p-4 border-t border-dash-border">
-          <div className="bg-dash-surface rounded p-4 border border-dash-border">
-            <p className="text-xs text-dash-text-secondary mb-2">Plan Actual</p>
-            <p className="text-sm font-bold text-white mb-3">{isGrowthPlan ? 'Socio Growth (Sub)' : 'Base (Pago Único)'}</p>
-
-            <div className="flex items-center space-x-2">
-              <span className="text-xs text-dash-text-secondary">Base</span>
-              <button onClick={togglePlan} className={`w-10 h-5 rounded-full relative transition-colors ${isGrowthPlan ? 'bg-brand' : 'bg-dash-surface-hover border border-dash-border'}`}>
-                <div className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${isGrowthPlan ? 'translate-x-5' : 'translate-x-0'}`}></div>
-              </button>
-              <span className="text-xs font-bold text-dash-accent">Growth</span>
+        <div className={`p-6 border-b border-white/10 hidden md:block transition-all duration-300`}>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 min-w-[32px] bg-gradient-to-br from-white to-zinc-400 text-black font-black text-lg flex items-center justify-center rounded-lg shadow-lg">
+              C
+            </div>
+            <div className={`overflow-hidden whitespace-nowrap transition-all duration-300 ${isDesktopExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0'}`}>
+              <h1 className="text-lg font-black tracking-tight text-white leading-none">CLIENT ZONE</h1>
+              <span className="text-[9px] uppercase tracking-widest text-zinc-500 font-bold block mt-1">Operations</span>
             </div>
           </div>
+        </div>
+
+        <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto custom-scrollbar">
+          {isDesktopExpanded && <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-black mb-4 px-2 md:block hidden">Navegación</p>}
+          
+          {navItems.map((item) => (
+            <a 
+              key={item.name}
+              href={item.href} 
+              className={`flex items-center rounded-xl transition-all duration-200 group relative
+                ${isDesktopExpanded ? 'px-4 py-3' : 'p-3 justify-center'}
+                ${item.name === 'Eventos' 
+                  ? 'bg-zinc-800/80 text-white border border-white/10 shadow-lg' 
+                  : 'text-zinc-400 hover:bg-zinc-800/50 hover:text-white hover:border-white/5 border border-transparent'}
+              `}
+              title={!isDesktopExpanded ? item.name : undefined}
+            >
+              <item.icon size={isDesktopExpanded ? 18 : 22} className={`${item.name === 'Eventos' ? 'text-orange-500' : 'group-hover:text-white'}`} />
+              
+              <span className={`font-bold text-sm whitespace-nowrap transition-all duration-300 
+                ${isDesktopExpanded ? 'ml-3 opacity-100 w-auto' : 'opacity-0 w-0 md:hidden'}`}
+              >
+                {item.name}
+              </span>
+            </a>
+          ))}
+        </nav>
+
+        <div className="p-4 border-t border-white/10">
+          {isAdmin && (
+            <Link href="/admin-architect/overview" className={`flex items-center gap-2 mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 hover:bg-red-500/20 hover:text-red-400 transition-colors group ${!isDesktopExpanded ? 'justify-center' : ''}`} title={!isDesktopExpanded ? "Volver a Admin" : undefined}>
+              <ShieldAlert size={isDesktopExpanded ? 18 : 22} />
+              <span className={`font-bold text-sm whitespace-nowrap transition-all duration-300 ${isDesktopExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0 md:hidden'}`}>
+                Admin Console
+              </span>
+            </Link>
+          )}
+
+          <div className={`bg-zinc-900/80 rounded-xl p-4 border border-white/5 ${!isDesktopExpanded ? 'hidden md:hidden' : 'block'}`}>
+            <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-black mb-2">Plan Actual</p>
+            <p className="text-sm font-black text-white mb-3 flex items-center gap-2">
+              {isGrowthPlan ? <><Zap size={14} className="text-orange-500"/> Growth (Sub)</> : <><Settings size={14} className="text-zinc-400"/> Base (Pago Único)</>}
+            </p>
+
+            <div className="flex items-center space-x-2 bg-zinc-950 p-2 rounded-lg border border-white/5">
+              <span className="text-xs font-bold text-zinc-400">Base</span>
+              <button onClick={togglePlan} className={`w-10 h-5 rounded-full relative transition-colors ${isGrowthPlan ? 'bg-orange-500' : 'bg-zinc-700'}`}>
+                <div className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${isGrowthPlan ? 'translate-x-5' : 'translate-x-0'}`}></div>
+              </button>
+              <span className="text-xs font-black text-white">Growth</span>
+            </div>
+          </div>
+
+          <button className={`mt-2 flex items-center text-zinc-500 hover:text-white transition-colors w-full rounded-xl hover:bg-zinc-800/50 ${isDesktopExpanded ? 'px-4 py-3' : 'p-3 justify-center'}`} title={!isDesktopExpanded ? "Cerrar Sesión" : undefined}>
+            <LogOut size={isDesktopExpanded ? 18 : 22} />
+            <span className={`font-bold text-sm whitespace-nowrap transition-all duration-300 ${isDesktopExpanded ? 'ml-3 opacity-100 w-auto' : 'opacity-0 w-0 hidden md:hidden'}`}>
+              Cerrar Sesión
+            </span>
+          </button>
         </div>
       </aside>
 
       {/* Main Content Area */}
-      <main className="flex-1 h-full overflow-y-auto bg-[#020202]">
-        <div className="p-4 md:p-8 max-w-7xl mx-auto">
-          {children}
-        </div>
+      <main className="flex-1 h-full overflow-y-auto relative z-10 custom-scrollbar p-4 md:p-8 max-w-7xl mx-auto">
+        {children}
       </main>
 
     </div>

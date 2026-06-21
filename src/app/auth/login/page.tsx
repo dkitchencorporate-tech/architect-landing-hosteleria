@@ -47,10 +47,16 @@ function LoginForm() {
     setGoogleLoading(true);
     setError('');
     
+    const next = searchParams.get('next');
+    const redirectUrl = new URL(`${window.location.origin}/auth/callback`);
+    if (next) {
+      redirectUrl.searchParams.set('next', next);
+    }
+    
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: redirectUrl.toString(),
       }
     });
 

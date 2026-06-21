@@ -20,9 +20,16 @@ export default function DashboardPage() {
   useEffect(() => {
     const checkState = async () => {
       const { data: { session } } = await supabase.auth.getSession();
-      if (!session) return;
       
-      const email = session.user.email;
+      let email = session?.user?.email;
+      
+      // BYPASS LOCAL para no bloquear renderizado en localhost sin sesión
+      if (!session && process.env.NODE_ENV === 'development') {
+        email = 'klarx94@gmail.com';
+      }
+
+      if (!email) return;
+      
       const isAdmin = email === 'klarx94@gmail.com';
       setIsAdminDemo(isAdmin);
 
@@ -32,16 +39,20 @@ export default function DashboardPage() {
         setIsGrowthPlan(true);
       } else {
         // Cliente Real: Leer de Base de Datos
-        const { data: profile } = await supabase
-          .from('profiles')
-          .select('*')
-          .eq('id', session.user.id)
-          .single();
+        if (session && session.user) {
+          const { data: profile } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('id', session.user.id)
+            .single();
           
-        if (profile) {
-          setUserProfile(profile);
-          setHasCompletedOnboarding(profile.onboarding_completed);
-          setIsGrowthPlan(profile.plan === 'growth');
+          if (profile) {
+            setUserProfile(profile);
+            setHasCompletedOnboarding(profile.onboarding_completed);
+            setIsGrowthPlan(profile.plan === 'growth');
+          } else {
+            setHasCompletedOnboarding(false);
+          }
         } else {
           setHasCompletedOnboarding(false);
         }
