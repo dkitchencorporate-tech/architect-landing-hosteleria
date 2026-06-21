@@ -24,7 +24,7 @@ CREATE POLICY "Clients can view master events"
   USING (true);
 
 -- Admins can manage events (Placeholder, ideally auth check)
-CREATE POLICY "Admins can insert master events" ON public.master_events FOR INSERT TO authenticated USING (auth.jwt()->>'email' = 'klarx94@gmail.com');
+CREATE POLICY "Admins can insert master events" ON public.master_events FOR INSERT TO authenticated WITH CHECK (auth.jwt()->>'email' = 'klarx94@gmail.com');
 CREATE POLICY "Admins can update master events" ON public.master_events FOR UPDATE TO authenticated USING (auth.jwt()->>'email' = 'klarx94@gmail.com');
 
 CREATE TABLE IF NOT EXISTS public.client_events (

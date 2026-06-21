@@ -113,6 +113,56 @@ export default function CreativeFactoryPage() {
     fetchAllClients();
   }, []);
 
+  // Fetch client campaigns and chat history from Supabase when selectedClient changes
+  useEffect(() => {
+    const fetchClientData = async () => {
+      if (!selectedClient) return;
+      try {
+        const { supabaseClient } = await import('@/lib/supabase-client');
+        if (!supabaseClient) return;
+
+        // Fetch campaigns
+        const { data: campaigns } = await supabaseClient
+          .from('creative_campaigns')
+          .select('*')
+          .eq('profile_id', selectedClient.id)
+          .order('created_at', { ascending: false });
+
+        if (campaigns) {
+          setApprovedCreatives(campaigns.map((c: any) => ({
+            id: c.id,
+            clientName: selectedClient.name,
+            pain: c.pain_point,
+            angle: c.angle,
+            hook: c.hook,
+            primaryText: c.primary_text,
+            image: c.image_url
+          })));
+        } else {
+          setApprovedCreatives([]);
+        }
+
+        // Fetch chats
+        const { data: chatData } = await supabaseClient
+          .from('creative_chats')
+          .select('messages')
+          .eq('profile_id', selectedClient.id)
+          .single();
+
+        if (chatData && chatData.messages && chatData.messages.length > 0) {
+          setChatHistories(prev => ({
+            ...prev,
+            [selectedClient.id]: chatData.messages
+          }));
+        }
+      } catch (err) {
+        console.error("Error cargando datos del cliente:", err);
+      }
+    };
+
+    fetchClientData();
+  }, [selectedClient]);
+
   // Auto-scroll chat
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -317,10 +367,38 @@ export default function CreativeFactoryPage() {
       const data = await res.json();
       if (data.status === 'ok') {
         const agentMessage = { role: 'assistant', content: data.reply };
+        const finalHistory = [...updatedHistory, agentMessage];
         setChatHistories({
           ...chatHistories,
-          [selectedClient.id]: [...updatedHistory, agentMessage]
+          [selectedClient.id]: finalHistory
         });
+        
+        // Persist to Supabase
+        try {
+          const { supabaseClient } = await import('@/lib/supabase-client');
+          if (supabaseClient) {
+            // Check if row exists first for upsert behavior logic
+            const { data: existingChat } = await supabaseClient
+              .from('creative_chats')
+              .select('id')
+              .eq('profile_id', selectedClient.id)
+              .single();
+              
+            if (existingChat) {
+              await supabaseClient
+                .from('creative_chats')
+                .update({ messages: finalHistory, updated_at: new Date().toISOString() })
+                .eq('profile_id', selectedClient.id);
+            } else {
+              await supabaseClient
+                .from('creative_chats')
+                .insert({ profile_id: selectedClient.id, messages: finalHistory });
+            }
+          }
+        } catch (dbErr) {
+          console.error("Error saving chat to Supabase", dbErr);
+        }
+        
       } else {
         setChatHistories({
           ...chatHistories,
@@ -403,7 +481,7 @@ export default function CreativeFactoryPage() {
     try {
       const { supabaseClient } = await import('@/lib/supabase-client');
       if (supabaseClient) {
-        await supabaseClient.from('creative_campaigns').insert({
+        const { data: newCampaign, error } = await supabaseClient.from('creative_campaigns').insert({
            profile_id: selectedClient.id,
            dish_id: targetDishId.startsWith('mock') ? null : targetDishId,
            pain_point: selectedPain,
@@ -412,25 +490,32 @@ export default function CreativeFactoryPage() {
            primary_text: copyData.primaryText,
            visual_prompt: customVisualPrompt || copyData.visualPrompt,
            image_url: generatedImage
-        });
+        }).select().single();
+
+        if (error) {
+          console.error("Error inserting campaign:", error);
+          alert('Error al guardar la campaña en base de datos.');
+          return;
+        }
+
+        const newCreative = {
+          id: newCampaign.id,
+          clientName: selectedClient.name,
+          pain: newCampaign.pain_point,
+          angle: newCampaign.angle,
+          hook: newCampaign.hook,
+          primaryText: newCampaign.primary_text,
+          image: newCampaign.image_url
+        };
+        
+        setApprovedCreatives([newCreative, ...approvedCreatives]);
+        setActiveTab('matrix');
+        alert(`¡Creativo de anuncio añadido a la Matriz de Despliegue para ${selectedClient.name} y guardado en la base de datos!`);
       }
     } catch (err) {
       console.error("Error guardando campaña en base de datos:", err);
+      alert('Hubo un error de conexión al guardar.');
     }
-
-    const newCreative = {
-      id: Date.now(),
-      clientName: selectedClient.name,
-      pain: selectedPain,
-      angle: selectedAngle,
-      hook: copyData.hook,
-      primaryText: copyData.primaryText,
-      image: generatedImage
-    };
-    
-    setApprovedCreatives([newCreative, ...approvedCreatives]);
-    setActiveTab('matrix');
-    alert(`¡Creativo de anuncio añadido a la Matriz de Despliegue para ${selectedClient.name} y guardado en la base de datos!`);
   };
 
   const currentChat = selectedClient ? (chatHistories[selectedClient.id] || [
