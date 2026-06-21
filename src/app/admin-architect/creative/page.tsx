@@ -447,7 +447,7 @@ export default function CreativeFactoryPage() {
         {/* Header Superior Limpio (Silver Premium) */}
         <header className="border-b border-white/10 bg-zinc-900/50 backdrop-blur-xl sticky top-0 z-30 px-6 py-4 flex flex-col md:flex-row gap-4 md:items-center justify-between">
           <div>
-            <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Vault Activo</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-zinc-400">Vault Activo <span className="ml-2 text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full border border-emerald-400/20">Vercel Auto-Deploy Activo 🚀</span></span>
             <h2 className="text-xl font-black text-white tracking-tight flex items-center gap-2 mt-1">
               {activeTab === 'matrix' && <><Target size={20} className="text-zinc-300"/> Matriz de Despliegue</>}
               {activeTab === 'generator' && <><Zap size={20} className="text-zinc-300"/> Motor Generativo B2B</>}
