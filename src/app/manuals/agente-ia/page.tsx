@@ -55,7 +55,7 @@ export default function ManualPage() {
               Documento Activo
             </p>
             <p className="text-zinc-500 text-xs font-mono bg-black/30 px-3 py-2 rounded-lg border border-white/5">
-              ID: ARCH-AJCVF3
+              ID: ARCH-L69Z5Z
             </p>
           </div>
         </header>

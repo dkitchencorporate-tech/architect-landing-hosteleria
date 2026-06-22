@@ -97,32 +97,35 @@ const contentMap = {
     icon: 'Target',
     content: `
       <h2>1. Executive Summary</h2>
-      <p>Este documento es la columna vertebral comercial del proyecto corporativo. Architect.Sys no vende "software", vende "infraestructura de facturación" a dueños de restaurantes. Todo el código fuente de <code>src/app/page.tsx</code> y sus componentes está matemáticamente orquestado para calificar la psicología del comprador, minimizar la objeción de precio y anclar contratos High-Ticket de 997€ a 2,497€ recurrentes mensuales (MRR).</p>
+      <p>Este documento es la columna vertebral comercial del proyecto corporativo. Architect.Sys no vende "software", vende "infraestructura de facturación" a dueños de restaurantes. Todo el código fuente de <code>src/app/page.tsx</code> y sus componentes está matemáticamente orquestado para calificar la psicología del comprador, minimizar la objeción de precio y anclar contratos de <strong>Infraestructura Base (700€)</strong> y suscripciones recurrentes <strong>Growth Partner (299€/mes)</strong> con <strong>Soporte Premium IA (69€/mes)</strong>.</p>
 
       <h2>2. Ingeniería Psicométrica del Embudo (Code-To-Sale)</h2>
       <p>La Landing Page implementa una estructura clásica de *Consultative Selling* empaquetada en un flujo digital:</p>
       
       <h3>2.1. Diagnosis y Dolor (Pain Points)</h3>
-      <p>Implementado en <code>src/components/PainPoints.tsx</code>. Este componente no es estético, es táctico. Rompe las tres falsas creencias del restaurador (Dependencia de *Glovo/Uber Eats*, Guerra de Precios en menús diarios, y Compra de Reseñas Falsas en TripAdvisor). El objetivo de esta sección de código es crear una "disruptura cognitiva".</p>
+      <p>Implementado en <code>src/components/sections/TheTrojanHorse.tsx</code>. Rompe la mentalidad de gasto mensual en plataformas extractivas comparando el desperdicio con la inversión de construir activos propios. El objetivo de esta sección de código es crear una "disruptura cognitiva" que prepare al usuario para el ancla principal.</p>
 
-      <h3>2.2. Autoridad Tecnológica Irrefutable (Creative Showcase)</h3>
-      <p>Implementado en <code>src/components/CreativeShowcase.tsx</code>. Es un simulador inmersivo donde el usuario ve cómo la IA crea la segmentación, los copies para Facebook Ads y las campañas de cata. El usuario piensa: "Si hacen esto gratis aquí, la herramienta real es invencible".</p>
+      <h3>2.2. Valor Irresistible y Urgencia (Bonos)</h3>
+      <p>Implementado en <code>src/components/sections/ConsultingModal.tsx</code>. El flujo no permite "Comprar ahora" de forma genérica; en su lugar, exige dejar los datos para asegurar <strong>Bonos Estratégicos valorados en 980€</strong> y elegir la hora de una consultoría gratuita, implementando un sesgo de exclusividad y urgencia.</p>
 
       <h3>2.3. Economía del Precio Ancla (Pricing Strategy)</h3>
-      <p>Implementado en <code>src/components/Pricing.tsx</code>. <br/>
-      El plan <strong>Growth Partner (2,497€)</strong> actúa como un "Decoy" o ancla psicológica superior. Hace que el plan <strong>Base (997€)</strong> parezca altamente accesible (una fracción de lo que cobraría una agencia tradicional por mes). El flujo no permite "Comprar ahora", sino "Aplicar", implementando un sesgo de exclusividad que detona FOMO (Fear Of Missing Out) en el empresario B2B.</p>
+      <p>Implementado en <code>src/components/sections/EventLibraryHook.tsx</code> y <code>HighTicketEcosystem.tsx</code>. <br/>
+      Se establece una estructura de capas:<br/>
+      - <strong>Base Operativa (700€, fraccionable en 2 cuotas de 350€):</strong> Elimina la barrera de entrada al negocio.<br/>
+      - <strong>Soporte Premium IA (69€/mes):</strong> Coste mínimo que el cliente percibe como ridículo en comparación a su valor (ahorro de recepcionistas/camareros).<br/>
+      - <strong>Socio Growth (299€/mes):</strong> El plan premium que perdona la cuota de mantenimiento de 69€, anclando psicológicamente el valor del sistema completo frente a las agencias tradicionales.</p>
 
       <h2>3. Instrucciones Operativas (SOP) para Analistas y A/B Testing</h2>
       <div class="bg-blue-500/10 border border-blue-500/20 p-6 rounded-xl mt-6">
         <h4 class="text-blue-500 font-bold mb-2">Manipulación de Variables de Conversión</h4>
         <ul class="text-zinc-300 text-sm list-disc pl-4 space-y-2">
-          <li><strong>Regla 3.1:</strong> Las modificaciones a copys (textos) dentro de la Landing solo deben hacerse previo Test A/B estadísticamente significativo. Un Agente IA nunca debe alterar la oferta monetaria (Precios de suscripción) sin autorización administrativa explícita del K-Admin.</li>
+          <li><strong>Regla 3.1:</strong> Las modificaciones a copys (textos) dentro de la Landing solo deben hacerse previo Test A/B estadísticamente significativo. Un Agente IA nunca debe alterar la oferta monetaria (Ej. bajar el Base de 700€ o el Growth de 299€) sin autorización administrativa explícita del K-Admin.</li>
           <li><strong>Regla 3.2:</strong> Las integraciones futuras con pasarelas (Stripe) requerirán validar la sesión previa de Supabase para enlazar el <code>stripe_customer_id</code> al <code>profile_id</code> de la tabla <code>profiles</code>.</li>
         </ul>
       </div>
 
       <h2>4. Expansión Comercial (Conclusión)</h2>
-      <p>El diseño del embudo sostiene un CAC (Customer Acquisition Cost) proyectado de hasta 300€ en Meta Ads. Dado que el LTV (Life Time Value) de un contrato de 997€/mes proyectado a 6 meses roza los 6,000€, el ROAS corporativo es superior a 20X. La modificación del código en esta área no es un tema estético, es un impacto directo en el P&L (Profit & Loss) de la compañía.</p>
+      <p>El diseño del embudo sostiene un CAC (Customer Acquisition Cost) proyectado altamente rentable. Salvando <strong>solo 1 mesa de 4 personas al mes</strong>, el sistema de 69€/mes se paga solo. El resto es beneficio limpio a la caja del restaurante. La modificación del código en esta área no es un tema estético, es un impacto directo en el P&L (Profit & Loss) de la compañía.</p>
     `
   },
   'onboarding-b2b': {
