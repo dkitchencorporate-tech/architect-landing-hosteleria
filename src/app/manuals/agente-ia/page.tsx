@@ -20,49 +20,57 @@ export default function ManualPage() {
   return (
     <div className="max-w-5xl mx-auto pb-20 print:pb-0">
       <Link href="/manuals" className="inline-flex items-center gap-2 text-sm font-bold text-zinc-500 hover:text-white transition-colors mb-8 print:hidden bg-white/5 px-4 py-2 rounded-lg border border-white/5 hover:border-white/20">
-        <ArrowLeft size={16} /> Volver al Índice
+        <ArrowLeft size={16} /> Volver a los SOPs Maestros
       </Link>
 
-      <div className="relative bg-zinc-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-14 overflow-hidden shadow-2xl">
-        {/* Glow de fondo */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[120px] -z-10 pointer-events-none" />
+      <div className="relative bg-zinc-900/60 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 md:p-14 overflow-hidden shadow-[0_0_80px_rgba(0,0,0,0.8)]">
+        {/* Glow Corporativo */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[150px] -z-10 pointer-events-none" />
         
         <header className="border-b border-white/10 pb-10 mb-10">
-          <div className="flex items-start gap-6 mb-6">
-            <div className="w-20 h-20 rounded-2xl bg-zinc-800/80 border border-white/10 flex items-center justify-center shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] text-orange-500 flex-shrink-0 mt-2">
-              <Icon size={40} />
+          <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
+            <div className="w-24 h-24 rounded-2xl bg-zinc-950 border border-white/10 flex items-center justify-center shadow-[inset_0_0_30px_rgba(255,165,0,0.05)] text-orange-500 flex-shrink-0 mt-2">
+              <Icon size={48} strokeWidth={1.5} />
             </div>
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-[11px] font-black uppercase tracking-widest text-orange-500/90 bg-orange-500/10 px-3 py-1.5 rounded-md inline-block border border-orange-500/20">
-                  Inteligencia Artificial
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-400 bg-orange-500/10 px-3 py-1.5 rounded-md border border-orange-500/20">
+                  Ingeniería AI
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 bg-zinc-800/50 px-2 py-1 rounded-md border border-white/5">
-                  SOP Master Plan
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 bg-zinc-800/50 px-3 py-1.5 rounded-md border border-white/10 shadow-inner">
+                  Enterprise-Grade SOP
+                </span>
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 bg-blue-500/10 px-3 py-1.5 rounded-md border border-blue-500/20 shadow-inner">
+                  Strict Confidential
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-tight">
-                Agente de Ventas IA (Arqui)
+              <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.1]">
+                Motores de Inferencia y Agentes IA (Master Plan)
               </h1>
             </div>
           </div>
-          <p className="text-zinc-400 text-sm font-bold flex items-center gap-3 bg-black/30 w-fit px-4 py-2 rounded-lg border border-white/5">
-            <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.6)]"></span>
-            Estado del Protocolo: ACTIVO &nbsp;<span className="text-zinc-600">|</span>&nbsp; Acceso: K-ADMIN LEVEL
-          </p>
+          <div className="flex items-center gap-4 mt-6">
+            <p className="text-zinc-400 text-xs font-bold uppercase tracking-widest flex items-center gap-3 bg-black/50 px-4 py-2.5 rounded-lg border border-white/5">
+              <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_12px_rgba(34,197,94,0.8)]"></span>
+              Documento Activo
+            </p>
+            <p className="text-zinc-500 text-xs font-mono bg-black/30 px-3 py-2 rounded-lg border border-white/5">
+              ID: ARCH-AJCVF3
+            </p>
+          </div>
         </header>
 
-        <div className="prose prose-invert prose-orange max-w-none 
+        <article className="prose prose-invert prose-orange max-w-none 
           prose-headings:text-white prose-headings:font-black prose-headings:tracking-tight 
-          prose-h2:text-3xl prose-h2:mt-14 prose-h2:mb-6 prose-h2:border-b prose-h2:border-white/10 prose-h2:pb-4 prose-h2:text-zinc-100
-          prose-h3:text-xl prose-h3:text-orange-500/90 prose-h3:mt-8 prose-h3:mb-4
-          prose-p:text-zinc-300 prose-p:leading-relaxed prose-p:text-lg
-          prose-li:text-zinc-300 prose-li:text-lg prose-li:marker:text-orange-500
-          prose-strong:text-white prose-strong:font-bold
-          prose-code:text-orange-400 prose-code:bg-orange-400/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+          prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-6 prose-h2:border-b prose-h2:border-white/10 prose-h2:pb-4 prose-h2:text-zinc-100
+          prose-h3:text-2xl prose-h3:text-zinc-300 prose-h3:mt-10 prose-h3:mb-5 prose-h3:font-bold
+          prose-p:text-zinc-400 prose-p:leading-relaxed prose-p:text-lg
+          prose-li:text-zinc-400 prose-li:text-lg prose-li:marker:text-orange-500
+          prose-strong:text-zinc-200 prose-strong:font-bold
+          prose-code:text-orange-300 prose-code:bg-orange-900/20 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-code:border prose-code:border-orange-500/20
           print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black" 
-          dangerouslySetInnerHTML={{ __html: "\n      <h2>1. Lógica del Chat (`/api/creative-factory/agent-chat`)</h2>\n      <p>El componente `AgentChat.tsx` interactúa con un Endpoint de API en Next.js. El Agente (Arqui) cuenta con un System Prompt robusto que lo instruye para comportarse como Director Estratégico, no como un bot de servicio al cliente genérico.</p>\n\n      <h2>2. El Ciclo de Persistencia (Tabla `creative_chats`)</h2>\n      <p>El flujo exacto de almacenamiento de memoria es el siguiente:</p>\n      <ul>\n        <li>El usuario (o el administrador en modo lectura) abre la ventana de chat.</li>\n        <li>El sistema lanza un `SELECT conversation_history FROM creative_chats WHERE profile_id = userId`.</li>\n        <li>Si existe historial, se hidrata el estado de React y la conversación se reanuda de forma fluida.</li>\n        <li>Al enviar un nuevo mensaje, se hace la petición a la IA, se recibe la respuesta, y ambos mensajes se empaquetan en el array JSONB.</li>\n        <li>Finalmente se ejecuta un `UPSERT` en la base de datos para sobrescribir la columna `conversation_history` garantizando la memoria persistente.</li>\n      </ul>\n\n      <h2>3. Integración con \"Matrices\" (Creative Campaigns)</h2>\n      <p>Cuando la IA decide generar un \"Copy\" o campaña publicitaria estructurada (a partir de una petición del usuario, por ejemplo, \"Hazme un copy para Facebook sobre mi evento de Catas\"), el sistema captura este output y lo graba simultáneamente en la tabla `creative_campaigns`. Así, el Administrador (Klarx94) puede visualizar, exportar y montar la campaña en Meta Ads.</p>\n    " }}>
-        </div>
+          dangerouslySetInnerHTML={{ __html: "\n      <h2>1. Executive Summary</h2>\n      <p>El Agente de IA \"Arqui\" no es un chatbot de Q&A genérico. Es un Motor de Inferencia Estratégico (Strategic Reasoning Engine) embebido en la plataforma. Actúa como el Consultor de Marketing B2B del cliente, reduciendo el coste de operaciones (OPEX) de la agencia al automatizar el 80% de la planificación estratégica publicitaria que un Account Manager tradicional haría manualmente.</p>\n\n      <h2>2. Arquitectura de LLM y Flujo de Inferencia</h2>\n      <h3>2.1. El Endpoint API (<code>/api/creative-factory/agent-chat</code>)</h3>\n      <p>Esta ruta Serverless maneja la comunicación segura entre el cliente de React (<code>AgentChat.tsx</code>) y el proveedor LLM. La arquitectura exige:</p>\n      <ul>\n        <li><strong>Inyección de Contexto Maestro (System Prompt):</strong> Define el comportamiento absoluto del agente, sus metodologías de cierre de ventas, y sus matrices restrictivas (qué responder y qué evadir).</li>\n        <li><strong>Evaluación de Memoria Semántica:</strong> Al arrancar, el endpoint o el frontend recupera el historial de la tabla <code>public.creative_chats</code> (tipo JSONB) para dotar al agente de estado temporal continuo.</li>\n      </ul>\n\n      <h3>2.2. Side-Effects de Alta Complejidad (Creative Campaigns)</h3>\n      <p>El Agente tiene la directriz de detectar intenciones (\"Quiero hacer una campaña para San Valentín\"). Al generar la salida, no solo responde en texto plano, sino que el sistema Backend parsea parámetros clave y crea un registro paralelo y atómico en la tabla <code>public.creative_campaigns</code> (Ángulo, Texto generado, Audiencia objetivo). Esto materializa la \"Charla\" en \"Entregables B2B Reales\".</p>\n\n      <h2>3. Instrucciones Operativas (SOP) para IAs de Mantenimiento</h2>\n      <div class=\"bg-blue-500/10 border border-blue-500/20 p-6 rounded-xl mt-6\">\n        <h4 class=\"text-blue-500 font-bold mb-2\">Protocolos de Actualización de Modelos</h4>\n        <ul class=\"text-zinc-300 text-sm list-disc pl-4 space-y-2\">\n          <li><strong>Regla 3.1: Temperaturas de Inferencia.</strong> La IA debe mantener una temperatura media-baja (0.4 - 0.7) para evitar \"alucinaciones\" al entregar estrategias presupuestarias a clientes reales. Los datos financieros deben ser deterministas.</li>\n          <li><strong>Regla 3.2: Límite de Tasas (Rate Limiting).</strong> Cualquier nuevo desarrollo en el frontend del chat debe implementar debounce y bloqueos visuales mientras se espera el stream o respuesta, evitando que clientes malintencionados agoten las cuotas de API del LLM.</li>\n          <li><strong>Regla 3.3: Mutación de JSONB.</strong> La actualización de la tabla <code>creative_chats</code> exige conservar todo el historial previo. Si se hace un UPDATE directo y se pisa la cadena JSON, se pierde permanentemente la memoria de ese cliente (Data Loss Crítico).</li>\n        </ul>\n      </div>\n\n      <h2>4. Escalabilidad Cognitiva (Conclusión)</h2>\n      <p>A futuro, \"Arqui\" integrará una arquitectura RAG (Retrieval-Augmented Generation), cruzando métricas de rendimiento en tiempo real (datos de impresiones de Meta Ads del cliente) extraídos vía APIs de terceros, volviendo sus decisiones y estrategias cuantitativamente infalibles.</p>\n    " }}>
+        </article>
       </div>
     </div>
   );
