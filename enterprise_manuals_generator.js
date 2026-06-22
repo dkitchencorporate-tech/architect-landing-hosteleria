@@ -64,8 +64,8 @@ const contentMap = {
       <h3>2.1. Tablas Core:</h3>
       <dl class="space-y-4">
         <div>
-          <dt class="font-bold text-white bg-zinc-800 px-3 py-1 rounded inline-block">1. auth.users & public.profiles</dt>
-          <dd class="mt-2 pl-4 border-l-2 border-orange-500/50">La tabla <code>profiles</code> hereda el UUID de la tabla de identidades de Supabase mediante un trigger atómico (<code>handle_new_user</code>). Contiene los atributos de negocio: <code>restaurant_type</code>, <code>monthly_revenue</code>, <code>seating_capacity</code> y el <code>saas_plan</code>. Es el cimiento para calcular la Economía Unitaria de cada cuenta.</dd>
+          <dt class="font-bold text-white bg-zinc-800 px-3 py-1 rounded inline-block">1. auth.users & public.profiles & public.business_profiles</dt>
+          <dd class="mt-2 pl-4 border-l-2 border-orange-500/50">La tabla <code>profiles</code> hereda el UUID de la tabla de identidades mediante un trigger atómico (<code>handle_new_user</code>) y almacena el <code>status</code> ('pending_approval' o 'active'). Posteriormente, <code>business_profiles</code> expande la identidad con atributos de negocio: <code>cuisine_type</code>, <code>capacity</code>, <code>average_ticket</code>. Es el cimiento para calcular la Economía Unitaria de cada cuenta.</dd>
         </div>
         <div>
           <dt class="font-bold text-white bg-zinc-800 px-3 py-1 rounded inline-block">2. public.master_events & public.client_events</dt>
@@ -73,7 +73,7 @@ const contentMap = {
         </div>
         <div>
           <dt class="font-bold text-white bg-zinc-800 px-3 py-1 rounded inline-block">3. public.creative_chats</dt>
-          <dd class="mt-2 pl-4 border-l-2 border-orange-500/50">Persistencia del motor de IA. Emplea la columna <code>conversation_history</code> de tipo <strong>JSONB</strong>. Esta elección arquitectónica es vital: permite la inserción O(1) y la actualización parcial (JSON_APPEND) sin la sobrecarga de consultas JOIN complejas, garantizando inferencias sub-segundo incluso en historiales de chat kilométricos.</dd>
+          <dd class="mt-2 pl-4 border-l-2 border-orange-500/50">Persistencia del motor de IA. Emplea la columna <code>messages</code> de tipo <strong>JSONB</strong>. Esta elección arquitectónica es vital: permite la inserción O(1) y la actualización sin la sobrecarga de consultas JOIN complejas, garantizando inferencias sub-segundo incluso en historiales de chat kilométricos.</dd>
         </div>
       </dl>
 
@@ -134,26 +134,26 @@ const contentMap = {
     icon: 'Users',
     content: `
       <h2>1. Executive Summary</h2>
-      <p>El Onboarding es la frontera de mayor vulnerabilidad en un SaaS B2B. Si un cliente paga un High-Ticket y la curva de aprendizaje inicial (Time-to-Value) es tediosa, la probabilidad de cancelación en el mes 1 (Churn) se dispara al 60%. El flujo codificado en <code>src/app/onboarding/page.tsx</code> está diseñado para reducir la fricción a cero, capturar datos demográficos críticos e inyectar al cliente en su Dashboard personalizado en menos de 90 segundos.</p>
+      <p>El Onboarding es la frontera de mayor vulnerabilidad en un SaaS B2B. Si un cliente paga un High-Ticket y la curva de aprendizaje inicial (Time-to-Value) es tediosa, la probabilidad de cancelación en el mes 1 (Churn) se dispara. El flujo codificado en <code>src/app/onboarding/page.tsx</code> está diseñado para reducir la fricción a cero, empleando un sistema de invitaciones con tokens únicos y contraseñas autogestionadas.</p>
 
       <h2>2. Flujo de Datos y Activación Atómica</h2>
       <h3>2.1. Pipeline de Captura Front-End</h3>
-      <p>El componente React es un Multi-Step Form con control de estados (<code>useState</code>) que evita recargas de página. Captura tres variables críticas del negocio:</p>
+      <p>El componente lee el <code>token</code> por URL (search params) y valida su legitimidad contra la tabla <code>invitations</code>. El formulario minimiza la carga cognitiva exigiendo solo datos esenciales:</p>
       <ul>
-        <li><strong>Categoría (Restaurant Type):</strong> Fina gastronomía, cadena, bar, club.</li>
-        <li><strong>Capacidad (Seating Capacity):</strong> Vital para calcular márgenes de rentabilidad del cliente.</li>
-        <li><strong>Facturación Mensual (Monthly Revenue):</strong> Métrica crítica para calificar si el cliente tiene capital para absorber el coste de Meta Ads mensual independiente de la cuota SaaS.</li>
+        <li><strong>Nombre Comercial (Business Name):</strong> Para la tabla <code>profiles</code>.</li>
+        <li><strong>Email y Password:</strong> Creación atómica de identidad en Supabase Auth.</li>
+        <li>El sistema hereda el plan desde la invitación (ej. <code>base_pago_unico</code>) y asume un rol precargado de cliente.</li>
       </ul>
 
       <h3>2.2. Mutación de Base de Datos (Backend-Side)</h3>
-      <p>El botón "Completar Onboarding" dispara una función Server-Accurate. Utiliza el cliente de Supabase para ejecutar un <code>UPSERT</code> en la tabla <code>public.profiles</code> vinculando el registro al <code>user.id</code> de la sesión validada. Finalmente, setea el booleano <code>is_onboarded = true</code>.</p>
+      <p>El registro dispara una transacción múltiple en Supabase: (1) <code>auth.signUp</code> crea el Identity. (2) Se actualiza <code>profiles</code> poniendo <code>status: 'active'</code>. (3) Se crea un <code>business_profiles</code> base para el motor IA (cuisine_type, address). (4) El token de invitación se quema (<code>used: true</code>). Todo en menos de un segundo.</p>
 
       <h2>3. Instrucciones Operativas (SOP) para Agentes y DevOps</h2>
       <div class="bg-blue-500/10 border border-blue-500/20 p-6 rounded-xl mt-6">
         <h4 class="text-blue-500 font-bold mb-2">Protocolos de Estabilidad del Onboarding</h4>
         <ul class="text-zinc-300 text-sm list-disc pl-4 space-y-2">
           <li><strong>Regla 3.1: Validación Frontera.</strong> Nunca guardar en DB sin parsear y tipar los datos recibidos (usando TypeScript Interfaces o validadores como Zod).</li>
-          <li><strong>Regla 3.2: Redirección Condicional.</strong> El middleware o el Layout de Capa 1 (Dashboard) debe verificar el estado <code>is_onboarded</code>. Si es <code>false</code>, el usuario no debe poder ver el dashboard y debe ser devuelto a la ruta <code>/onboarding</code> de forma irrefutable.</li>
+          <li><strong>Regla 3.2: Redirección Condicional.</strong> El middleware o los layouts deben verificar el estado de sesión (token JWT) para garantizar que usuarios no registrados nunca consuman las rutas de dashboard (Capa 1).</li>
         </ul>
       </div>
 
@@ -170,8 +170,8 @@ const contentMap = {
       <p>El Agente de IA "Arqui" no es un chatbot de Q&A genérico. Es un Motor de Inferencia Estratégico (Strategic Reasoning Engine) embebido en la plataforma. Actúa como el Consultor de Marketing B2B del cliente, reduciendo el coste de operaciones (OPEX) de la agencia al automatizar el 80% de la planificación estratégica publicitaria que un Account Manager tradicional haría manualmente.</p>
 
       <h2>2. Arquitectura de LLM y Flujo de Inferencia</h2>
-      <h3>2.1. El Endpoint API (<code>/api/creative-factory/agent-chat</code>)</h3>
-      <p>Esta ruta Serverless maneja la comunicación segura entre el cliente de React (<code>AgentChat.tsx</code>) y el proveedor LLM. La arquitectura exige:</p>
+      <h3>2.1. El Componente Frontend (<code>ChatTab.tsx</code>)</h3>
+      <p>Esta pestaña maneja la comunicación interactiva entre el cliente React y el backend. La arquitectura exige:</p>
       <ul>
         <li><strong>Inyección de Contexto Maestro (System Prompt):</strong> Define el comportamiento absoluto del agente, sus metodologías de cierre de ventas, y sus matrices restrictivas (qué responder y qué evadir).</li>
         <li><strong>Evaluación de Memoria Semántica:</strong> Al arrancar, el endpoint o el frontend recupera el historial de la tabla <code>public.creative_chats</code> (tipo JSONB) para dotar al agente de estado temporal continuo.</li>
