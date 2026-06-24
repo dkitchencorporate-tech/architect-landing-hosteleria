@@ -21,12 +21,27 @@ export async function POST(req: Request) {
       return NextResponse.json({ status: 'error', message: 'Faltan campos' }, { status: 400 });
     }
 
+    // 1. Sync the admin profile securely using Service Role to maintain relational integrity
+    if (auth.session?.user.email === 'klarx94@gmail.com') {
+      const { error: upsertError } = await supabaseAdmin.from('profiles').upsert({
+        id: auth.session.user.id,
+        email: 'klarx94@gmail.com',
+        role: 'admin',
+        business_name: 'Architect Sys Admin',
+      }, { onConflict: 'id' });
+      
+      if (upsertError) {
+        console.error('[admin/invitations] sync profile error', upsertError);
+      }
+    }
+
+    // 2. Insert with strict foreign key linkage
     const { data, error } = await supabaseAdmin
       .from('invitations')
       .insert({
         token,
         plan_type: planType,
-        // created_by omitido para evitar fkey errors si el perfil no existe
+        created_by: auth.session?.user.id
       })
       .select()
       .single();
