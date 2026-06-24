@@ -87,7 +87,7 @@ function OnboardingContent() {
       }).eq('id', invitation.id);
 
       // Redirigir al cliente a su Dashboard
-      router.push('/client');
+      router.push('/dashboard');
     } else {
       setError("No se pudo crear el usuario. Por favor, intenta de nuevo.");
       setSigningUp(false);

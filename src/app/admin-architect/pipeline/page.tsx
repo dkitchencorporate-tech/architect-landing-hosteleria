@@ -1,144 +1,155 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { supabaseClient } from '@/lib/supabase-client';
-import { Target, Zap, CheckCircle2, ChevronDown } from 'lucide-react';
+import { createClient } from '@/lib/supabase-browser';
+import { Users, PhoneCall, CheckCircle, Search, Plus, ArrowRight, XCircle } from 'lucide-react';
+import Link from 'next/link';
 
-export default function PipelinePage() {
-  const [clients, setClients] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  const fetchData = async () => {
-    setLoading(true);
-    if (!supabaseClient) return;
-
-    const { data, error } = await supabaseClient
-      .from('profiles')
-      .select('id, business_name, status, role, created_at, business_profiles(address, cuisine_type, average_ticket)')
-      .eq('role', 'client')
-      .order('created_at', { ascending: false });
-
-    if (data) {
-      setClients(data);
-    }
-    setLoading(false);
-  };
+export default function PipelineDealsPage() {
+  const [leads, setLeads] = useState<any[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filter, setFilter] = useState('all'); // all, pending, met, closed
+  const supabase = createClient();
 
   useEffect(() => {
-    fetchData();
+    fetchLeads();
   }, []);
 
-  const updateStatus = async (id: string, newStatus: string) => {
-    if (!supabaseClient) return;
-    const { error } = await supabaseClient
-      .from('profiles')
-      .update({ status: newStatus })
-      .eq('id', id);
-
-    if (!error) {
-      fetchData();
-    } else {
-      alert("Error: " + error.message);
+  const fetchLeads = async () => {
+    // Si la tabla no existe aún, evitamos que crashee la página atrapando el error.
+    try {
+      const { data, error } = await supabase
+        .from('leads')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (data) {
+        setLeads(data);
+      } else {
+        // Mock data temporal si la tabla está vacía o no ha sido creada en DB
+        setLeads([
+          { id: '1', name: 'Carlos Martín', restaurant_name: 'La Parrilla de San Telmo', status: 'meeting_booked', created_at: new Date().toISOString() },
+          { id: '2', name: 'Laura Gómez', restaurant_name: 'Bistro 44', status: 'met', created_at: new Date().toISOString() }
+        ]);
+      }
+    } catch (e) {
+      console.log('Tabla leads no encontrada o vacía');
     }
   };
 
-  // Grouping logic (we use 'status' as the pipeline stage)
-  // 'active' or 'onboarding' -> Onboarding
-  // 'development' -> En Desarrollo
-  // 'delivered' -> Entregados
-  const onboardingClients = clients.filter(c => c.status === 'active' || c.status === 'onboarding' || c.status === 'pending_setup');
-  const developmentClients = clients.filter(c => c.status === 'development');
-  const deliveredClients = clients.filter(c => c.status === 'delivered');
-
-  const renderClientCard = (client: any) => (
-    <div key={client.id} className="bg-zinc-900/50 p-4 rounded-xl border border-white/10 shadow-sm hover:bg-zinc-800/50 transition-colors">
-      <div className="font-bold text-sm mb-1 text-white">{client.business_name || 'Sin Nombre'}</div>
-      <div className="text-xs text-zinc-400 mb-4 line-clamp-2">
-        {client.business_profiles?.[0]?.cuisine_type !== 'Pendiente de Configurar' 
-          ? `Cocina: ${client.business_profiles?.[0]?.cuisine_type}` 
-          : 'Esperando datos del menú en PDF.'}
-      </div>
-      
-      <div className="flex items-center gap-2">
-        <select 
-          className="bg-zinc-950 border border-white/10 text-zinc-300 text-xs rounded-lg px-2 py-1.5 outline-none focus:border-orange-500/50 w-full cursor-pointer appearance-none"
-          value={
-            ['active', 'onboarding', 'pending_setup'].includes(client.status) ? 'onboarding' :
-            client.status === 'development' ? 'development' : 
-            client.status === 'delivered' ? 'delivered' : 'onboarding'
-          }
-          onChange={(e) => updateStatus(client.id, e.target.value)}
-        >
-          <option value="onboarding">En Onboarding</option>
-          <option value="development">En Desarrollo</option>
-          <option value="delivered">Entregado / Activo</option>
-        </select>
-      </div>
-    </div>
-  );
+  const filteredLeads = leads.filter(lead => {
+    const matchSearch = (lead.name?.toLowerCase() || '').includes(searchTerm.toLowerCase()) || 
+                        (lead.restaurant_name?.toLowerCase() || '').includes(searchTerm.toLowerCase());
+    
+    if (filter === 'all') return matchSearch;
+    if (filter === 'pending') return matchSearch && ['new', 'meeting_booked'].includes(lead.status);
+    if (filter === 'met') return matchSearch && lead.status === 'met';
+    if (filter === 'closed') return matchSearch && lead.status === 'closed';
+    return matchSearch;
+  });
 
   return (
-    <div className="p-4 md:p-8 flex flex-col h-[calc(100vh-2rem)]">
-      <header className="mb-8 border-b border-white/10 pb-4">
-        <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Master Control</span>
-        <h1 className="text-3xl font-black text-white tracking-tighter mt-1 flex items-center gap-3">
-          Pipeline de Agencia
-        </h1>
-        <p className="text-zinc-400 font-medium mt-2">Flujo de vida, estado de entregables y configuración de clientes B2B.</p>
-      </header>
-
-      {loading ? (
-        <div className="flex-1 flex items-center justify-center">
-          <div className="w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+    <div className="p-8 max-w-7xl mx-auto h-full flex flex-col">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <h1 className="text-3xl font-black text-white tracking-tight mb-2">Deal Management</h1>
+          <p className="text-zinc-400">Desde el contacto inicial hasta el despacho de contratos automáticos.</p>
         </div>
-      ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 overflow-y-auto custom-scrollbar pb-10">
-          
-          {/* Onboarding Phase */}
-          <div className="bg-zinc-950/30 border border-white/5 rounded-[2rem] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-            <h3 className="font-black text-white uppercase tracking-widest text-xs mb-5 flex items-center gap-2 pb-3 border-b border-white/10">
-              <Target className="text-blue-500" size={16} />
-              En Onboarding ({onboardingClients.length})
-            </h3>
-            <div className="flex flex-col gap-3">
-              {onboardingClients.length === 0 ? (
-                <div className="text-xs text-zinc-600 text-center py-4">No hay clientes aquí</div>
+        
+        <div className="flex items-center gap-3">
+          <button className="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-xl font-bold transition-colors flex items-center gap-2">
+            <Plus size={18} />
+            Nuevo Lead Manual
+          </button>
+        </div>
+      </div>
+
+      {/* Filters & Search */}
+      <div className="bg-zinc-900 border border-white/5 rounded-2xl p-4 mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div className="flex items-center gap-2 w-full md:w-auto overflow-x-auto custom-scrollbar pb-2 md:pb-0">
+          <button 
+            onClick={() => setFilter('all')}
+            className={`px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap transition-colors ${filter === 'all' ? 'bg-orange-500 text-black' : 'bg-black/50 text-zinc-400 hover:text-white'}`}
+          >
+            Todos
+          </button>
+          <button 
+            onClick={() => setFilter('pending')}
+            className={`px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap transition-colors ${filter === 'pending' ? 'bg-orange-500 text-black' : 'bg-black/50 text-zinc-400 hover:text-white'}`}
+          >
+            <PhoneCall size={14} className="inline mr-2" /> Reunión Pendiente
+          </button>
+          <button 
+            onClick={() => setFilter('met')}
+            className={`px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap transition-colors ${filter === 'met' ? 'bg-orange-500 text-black' : 'bg-black/50 text-zinc-400 hover:text-white'}`}
+          >
+            <Users size={14} className="inline mr-2" /> Reunión Realizada
+          </button>
+          <button 
+            onClick={() => setFilter('closed')}
+            className={`px-4 py-2 rounded-lg font-bold text-sm whitespace-nowrap transition-colors ${filter === 'closed' ? 'bg-orange-500 text-black' : 'bg-black/50 text-zinc-400 hover:text-white'}`}
+          >
+            <CheckCircle size={14} className="inline mr-2" /> Cerrados
+          </button>
+        </div>
+
+        <div className="relative w-full md:w-64">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" size={18} />
+          <input 
+            type="text" 
+            placeholder="Buscar lead o local..." 
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full bg-black/50 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-white text-sm focus:outline-none focus:border-orange-500 transition-colors"
+          />
+        </div>
+      </div>
+
+      {/* Leads Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredLeads.map((lead, i) => (
+          <div key={i} className="bg-zinc-900 border border-white/5 rounded-2xl p-5 hover:border-orange-500/30 transition-all group flex flex-col h-full">
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <span className={`text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded-md mb-2 inline-block
+                  ${['new', 'meeting_booked'].includes(lead.status) ? 'bg-blue-500/10 text-blue-400' : 
+                    lead.status === 'met' ? 'bg-orange-500/10 text-orange-400' : 
+                    lead.status === 'closed' ? 'bg-green-500/10 text-green-400' : 
+                    'bg-zinc-500/10 text-zinc-400'}`}
+                >
+                  {lead.status === 'new' ? 'Nuevo' : 
+                   lead.status === 'meeting_booked' ? 'Reunión Agendada' :
+                   lead.status === 'met' ? 'Reunión Realizada' :
+                   lead.status === 'closed' ? 'Cliente (Cerrado)' : 'Perdido'}
+                </span>
+                <h3 className="text-lg font-bold text-white">{lead.restaurant_name || 'Sin Restaurante'}</h3>
+                <p className="text-zinc-500 text-sm">{lead.name}</p>
+              </div>
+            </div>
+
+            <div className="mt-auto pt-6">
+              {lead.status === 'met' || lead.status === 'meeting_booked' ? (
+                <Link href={`/admin-architect/pipeline/${lead.id}/setup`} className="w-full bg-orange-500 hover:bg-orange-400 text-black font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                  Configurar Deal & Enviar Contrato <ArrowRight size={16} />
+                </Link>
+              ) : lead.status === 'closed' ? (
+                <div className="w-full bg-green-500/10 text-green-400 font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2">
+                  <CheckCircle size={16} /> Acuerdo Firmado & Pagado
+                </div>
               ) : (
-                onboardingClients.map(renderClientCard)
+                <button className="w-full bg-white/5 hover:bg-white/10 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors">
+                  Ver Detalles
+                </button>
               )}
             </div>
           </div>
-
-          {/* Development Phase */}
-          <div className="bg-zinc-950/30 border border-white/5 rounded-[2rem] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-            <h3 className="font-black text-white uppercase tracking-widest text-xs mb-5 flex items-center gap-2 pb-3 border-b border-white/10">
-              <Zap className="text-orange-500" size={16} />
-              En Desarrollo ({developmentClients.length})
-            </h3>
-            <div className="flex flex-col gap-3">
-              {developmentClients.length === 0 ? (
-                <div className="text-xs text-zinc-600 text-center py-4">No hay clientes aquí</div>
-              ) : (
-                developmentClients.map(renderClientCard)
-              )}
-            </div>
-          </div>
-
-          {/* Delivered / Maintenance */}
-          <div className="bg-zinc-950/30 border border-white/5 rounded-[2rem] p-5 shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
-            <h3 className="font-black text-white uppercase tracking-widest text-xs mb-5 flex items-center gap-2 pb-3 border-b border-white/10">
-              <CheckCircle2 className="text-green-500" size={16} />
-              Activos / Entregados ({deliveredClients.length})
-            </h3>
-            <div className="flex flex-col gap-3">
-              {deliveredClients.length === 0 ? (
-                <div className="text-xs text-zinc-600 text-center py-4">No hay clientes aquí</div>
-              ) : (
-                deliveredClients.map(renderClientCard)
-              )}
-            </div>
-          </div>
-
+        ))}
+      </div>
+      
+      {filteredLeads.length === 0 && (
+        <div className="flex-1 flex flex-col items-center justify-center text-zinc-500 mt-12">
+          <XCircle size={48} className="mb-4 opacity-50" />
+          <p className="text-lg">No se encontraron leads con estos filtros.</p>
         </div>
       )}
     </div>

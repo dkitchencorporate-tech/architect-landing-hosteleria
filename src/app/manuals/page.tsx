@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { BookOpen, Database, Target, Users, Bot, LayoutDashboard, ShieldCheck } from 'lucide-react';
+import { BookOpen, Database, Target, Users, Bot, LayoutDashboard, ShieldCheck, Palette, Rocket } from 'lucide-react';
 
 export default function ManualsIndex() {
   const manuals = [
@@ -61,6 +61,22 @@ export default function ManualsIndex() {
       date: 'Actualizado Hoy',
       tag: 'Seguridad',
       icon: ShieldCheck
+    },
+    {
+      title: '8. Escalabilidad: Creative Factory',
+      description: 'Roadmap estratégico para escalar la prospección. Generación de imágenes, copies y videos en piloto automático.',
+      href: '/manuals/escalabilidad-creative-factory',
+      date: 'Actualizado Hoy',
+      tag: 'Standby / Vision',
+      icon: Palette
+    },
+    {
+      title: '9. Escalado y Ecosistema Whop (V2)',
+      description: 'Estrategia para evolucionar de ventas High-Ticket a ingresos recurrentes, red de afiliados y venta de Micro-SaaS B2B.',
+      href: '/manuals/escalado-whop',
+      date: 'Actualizado Hoy',
+      tag: 'Crecimiento',
+      icon: Rocket
     }
   ];
 

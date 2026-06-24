@@ -145,7 +145,20 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </div>
           </div>
 
-          <button className={`mt-2 flex items-center text-zinc-500 hover:text-white transition-colors w-full rounded-xl hover:bg-zinc-800/50 ${isDesktopExpanded ? 'px-4 py-3' : 'p-3 justify-center'}`} title={!isDesktopExpanded ? "Cerrar Sesión" : undefined}>
+          <Link href="/dashboard/settings" className={`mt-2 flex items-center text-zinc-400 hover:text-white transition-colors w-full rounded-xl hover:bg-zinc-800/50 ${isDesktopExpanded ? 'px-4 py-3' : 'p-3 justify-center'}`} title={!isDesktopExpanded ? "Configuración" : undefined}>
+            <Settings size={isDesktopExpanded ? 18 : 22} />
+            <span className={`font-bold text-sm whitespace-nowrap transition-all duration-300 ${isDesktopExpanded ? 'ml-3 opacity-100 w-auto' : 'opacity-0 w-0 hidden md:hidden'}`}>
+              Configuración
+            </span>
+          </Link>
+
+          <button 
+            onClick={async () => {
+              await supabase.auth.signOut();
+              window.location.href = '/';
+            }}
+            className={`mt-2 flex items-center text-zinc-500 hover:text-red-400 hover:bg-red-500/10 transition-colors w-full rounded-xl ${isDesktopExpanded ? 'px-4 py-3' : 'p-3 justify-center'}`} title={!isDesktopExpanded ? "Cerrar Sesión" : undefined}
+          >
             <LogOut size={isDesktopExpanded ? 18 : 22} />
             <span className={`font-bold text-sm whitespace-nowrap transition-all duration-300 ${isDesktopExpanded ? 'ml-3 opacity-100 w-auto' : 'opacity-0 w-0 hidden md:hidden'}`}>
               Cerrar Sesión

@@ -1,0 +1,84 @@
+import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+// Solo funcionará en producción con una API key real. Para dev usaremos console.log si no hay key.
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy');
+
+export async function POST(req: Request) {
+  try {
+    const { deal, lead } = await req.json();
+
+    if (!deal || !lead) {
+      return NextResponse.json({ error: 'Datos insuficientes' }, { status: 400 });
+    }
+
+    const checkoutUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/deal/${deal.magic_token}`;
+
+    const htmlContent = `
+      <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-w-xl; margin: 0 auto; color: #111;">
+        <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #111;">
+          <h1 style="margin: 0; font-size: 24px; font-weight: 900; letter-spacing: 1px;">ARCHITECT<span style="color: #B8862A;">.SYS</span></h1>
+          <p style="margin: 5px 0 0; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #888;">Digital Solutions</p>
+        </div>
+        
+        <div style="padding: 40px 20px;">
+          <h2 style="font-size: 20px; font-weight: bold; margin-bottom: 20px;">Hola, ${lead.name}</h2>
+          <p style="font-size: 14px; line-height: 1.6; color: #444;">
+            Ha sido un placer reunirnos contigo. Como conversamos, hemos preparado todo el plan de acción para llevar la presencia digital de <strong>${lead.restaurant_name}</strong> al siguiente nivel.
+          </p>
+          <p style="font-size: 14px; line-height: 1.6; color: #444;">
+            En el siguiente enlace privado encontrarás tu <strong>Propuesta Formal</strong>, el <strong>Contrato de Nivel de Servicio (SLA)</strong> y el <strong>Dossier de Onboarding</strong> de los primeros 30 días.
+          </p>
+          
+          <div style="text-align: center; margin: 40px 0;">
+            <a href="${checkoutUrl}" style="background-color: #B8862A; color: white; padding: 16px 32px; text-decoration: none; font-weight: bold; font-size: 16px; border-radius: 8px; display: inline-block;">
+              Acceder a la Sala de Cierre
+            </a>
+          </div>
+
+          <p style="font-size: 14px; line-height: 1.6; color: #444;">
+            El enlace es único, privado y tiene una validez de 7 días. Desde allí podrás revisar todos los acuerdos y proceder con la formalización para que nuestro equipo comience a trabajar de inmediato.
+          </p>
+          
+          <p style="font-size: 14px; line-height: 1.6; color: #444; margin-top: 40px;">
+            Atentamente,<br>
+            <strong>El equipo de Architect.Sys</strong>
+          </p>
+        </div>
+        
+        <div style="background-color: #FAFAFA; padding: 20px; text-align: center; font-size: 11px; color: #888; border-top: 1px solid #E0E0E0;">
+          © ${new Date().getFullYear()} Architect.Sys. Todos los derechos reservados.<br>
+          Este correo contiene información confidencial.
+        </div>
+      </div>
+    `;
+
+    // Si no hay API key de Resend en el .env, simulamos el envío (Modo Dev)
+    if (!process.env.RESEND_API_KEY) {
+      console.log('--- SIMULANDO ENVÍO DE EMAIL ---');
+      console.log('To:', lead.email);
+      console.log('Subject:', `Tu propuesta de Architect.Sys: ${lead.restaurant_name}`);
+      console.log('Link:', checkoutUrl);
+      console.log('--------------------------------');
+      return NextResponse.json({ success: true, simulated: true, url: checkoutUrl });
+    }
+
+    const { data, error } = await resend.emails.send({
+      from: 'Architect.Sys <cerrador@hosteleria.architectsys.com>', // Cambiar por tu dominio verificado en Resend
+      to: [lead.email],
+      subject: `Acuerdo Formal & Propuesta: ${lead.restaurant_name}`,
+      html: htmlContent,
+    });
+
+    if (error) {
+      console.error('Error Resend:', error);
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true, data });
+
+  } catch (error: any) {
+    console.error('API Error:', error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
