@@ -65,24 +65,12 @@ export default function ProtocolsPage() {
               <p className="text-sm text-zinc-500 mb-6 font-mono">{deal.plan_type === 'suscripcion' ? 'Plan Suscripción' : 'Plan Base (Pago Único)'}</p>
               
               <div className="space-y-3 mt-auto">
-                <button className="w-full flex items-center justify-between p-3 bg-black/40 rounded-xl hover:bg-white/5 transition-colors border border-white/5 group/btn">
+                <Link href={`/admin-architect/protocols/signed/${deal.id}`} className="w-full flex items-center justify-between p-3 bg-black/40 rounded-xl hover:bg-white/5 transition-colors border border-white/5 group/btn">
                   <div className="flex items-center gap-3 text-sm font-bold text-zinc-300 group-hover/btn:text-white">
-                    <FileSignature size={16} className="text-orange-400" /> SLA & Contrato
+                    <FileSignature size={16} className="text-orange-400" /> SLA & Contrato Firmado
                   </div>
                   <Download size={14} className="text-zinc-500" />
-                </button>
-                <button className="w-full flex items-center justify-between p-3 bg-black/40 rounded-xl hover:bg-white/5 transition-colors border border-white/5 group/btn">
-                  <div className="flex items-center gap-3 text-sm font-bold text-zinc-300 group-hover/btn:text-white">
-                    <FileText size={16} className="text-emerald-400" /> Dossier de Arranque
-                  </div>
-                  <Download size={14} className="text-zinc-500" />
-                </button>
-                <button className="w-full flex items-center justify-between p-3 bg-black/40 rounded-xl hover:bg-white/5 transition-colors border border-white/5 group/btn">
-                  <div className="flex items-center gap-3 text-sm font-bold text-zinc-300 group-hover/btn:text-white">
-                    <Presentation size={16} className="text-blue-400" /> Propuesta Aprobada
-                  </div>
-                  <Download size={14} className="text-zinc-500" />
-                </button>
+                </Link>
               </div>
             </div>
           ))}

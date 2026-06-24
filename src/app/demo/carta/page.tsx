@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef, Suspense } from 'react';
+import { useAlert } from '@/components/ui/AlertProvider';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { 
@@ -149,8 +150,6 @@ function EditorialSushiLayout({ menu, categories, lang, t, activeDiner, setActiv
 // ==========================================
 // 2. LAYOUT: BAR GRANADINO (LISTA DENSA)
 // ==========================================
-// ==========================================
-// 2. LAYOUT: BAR GRANADINO (LISTA DENSA)
 // ==========================================
 function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDiner, tableParam, setLang, onAdd, onAsk, onImageClick }: any) {
   const [loyaltyStep, setLoyaltyStep] = useState(1);
@@ -605,6 +604,7 @@ function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDin
 // MAIN CONTROLLER (STATE & GLOBAL COMPONENTS)
 // ==========================================
 function CartaContent() {
+  const { showAlert } = useAlert();
   const searchParams = useSearchParams();
   const tableParam = searchParams.get('table') || 'Demo';
 
