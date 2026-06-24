@@ -140,7 +140,11 @@ export default function AdminClientsPage() {
         
         const emailJson = await emailRes.json();
         if (emailRes.ok) {
-           showAlert("Acuerdo Creado y Protocolo de Cierre despachado al cliente.");
+           if (emailJson.simulated) {
+             showAlert(`[Simulado] Faltan credenciales SMTP. Correo no enviado. Copie este link: ${emailJson.url}`);
+           } else {
+             showAlert("Acuerdo Creado y Protocolo de Cierre despachado al cliente.");
+           }
         } else {
            showAlert("Acuerdo creado, pero hubo un error al enviar el correo: " + emailJson.error);
         }
