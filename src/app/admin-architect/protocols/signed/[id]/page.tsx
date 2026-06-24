@@ -22,24 +22,26 @@ export default function SignedAgreementVault({ params }: { params: { id: string 
         if (data) {
           // Intentar obtener la invitación asociada a este email para leer el payload exacto
           if (data.profiles?.email) {
-            const { data: invData } = await supabase
+            const { data: invsData } = await supabase
               .from('invitations')
               .select('token, plan_type')
-              .eq('email', data.profiles.email)
               .eq('used', true)
-              .order('created_at', { ascending: false })
-              .limit(1)
-              .single();
+              .order('created_at', { ascending: false });
 
-            if (invData && invData.token) {
-              try {
-                const parts = decodeURIComponent(invData.token).split('::');
-                if (parts.length > 1) {
-                  const payload = JSON.parse(decodeURIComponent(atob(parts[1])));
-                  data.payload_data = payload;
+            if (invsData && invsData.length > 0) {
+              for (const inv of invsData) {
+                try {
+                  const parts = decodeURIComponent(inv.token).split('::');
+                  if (parts.length > 1) {
+                    const payload = JSON.parse(decodeURIComponent(atob(parts[1])));
+                    if (payload.email === data.profiles.email) {
+                      data.payload_data = payload;
+                      break; // Token encontrado
+                    }
+                  }
+                } catch (e) {
+                  console.error('Error decoding token in vault', e);
                 }
-              } catch (e) {
-                console.error('Error decoding token in vault', e);
               }
             }
           }

@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ status: 'error', message: auth.error }, { status: auth.status });
     }
 
-    const { token, planType, email } = await req.json();
+    const { token, planType } = await req.json();
 
     if (!token || !planType) {
       return NextResponse.json({ status: 'error', message: 'Faltan campos' }, { status: 400 });
@@ -41,7 +41,6 @@ export async function POST(req: Request) {
       .insert({
         token,
         plan_type: planType,
-        email: email || null,
         created_by: auth.session?.user.id
       })
       .select()
