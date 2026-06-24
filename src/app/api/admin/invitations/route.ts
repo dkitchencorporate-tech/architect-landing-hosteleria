@@ -26,7 +26,7 @@ export async function POST(req: Request) {
       .insert({
         token,
         plan_type: planType,
-        created_by: auth.session?.user.id
+        // created_by omitido para evitar fkey errors si el perfil no existe
       })
       .select()
       .single();

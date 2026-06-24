@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { supabaseClient } from '@/lib/supabase-client';
 import { v4 as uuidv4 } from 'uuid';
 import { Plus, X, Copy, CheckCircle2, Server, Zap, Users, Trash2 } from 'lucide-react';
+import { useAlert } from '@/components/ui/AlertProvider';
 
 export default function AdminClientsPage() {
   const [clients, setClients] = useState<any[]>([]);
@@ -12,6 +13,7 @@ export default function AdminClientsPage() {
   const [generating, setGenerating] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const { showAlert, showConfirm } = useAlert();
 
   const fetchData = async () => {
     setLoading(true);
@@ -49,7 +51,7 @@ export default function AdminClientsPage() {
     if (!error) {
       fetchData();
     } else {
-      alert("Error: " + error.message);
+      showAlert("Error: " + error.message);
     }
   };
 
@@ -68,29 +70,30 @@ export default function AdminClientsPage() {
       if (json.status === 'ok') {
         fetchData();
       } else {
-        alert("Error al generar: " + json.message);
+        showAlert("Error al generar: " + json.message);
       }
     } catch (err: any) {
-      alert("Error: " + err.message);
+      showAlert("Error: " + err.message);
     }
     setGenerating(false);
   };
 
-  const handleDeleteToken = async (id: string) => {
-    if (!confirm("¿Seguro que quieres eliminar este token?")) return;
-    try {
-      const res = await fetch(`/api/admin/invitations/${id}`, {
-        method: 'DELETE'
-      });
-      const json = await res.json();
-      if (json.status === 'ok') {
-        fetchData();
-      } else {
-        alert("Error al eliminar: " + json.message);
+  const handleDeleteToken = (id: string) => {
+    showConfirm("¿Seguro que quieres eliminar este token criptográfico?", async () => {
+      try {
+        const res = await fetch(`/api/admin/invitations/${id}`, {
+          method: 'DELETE'
+        });
+        const json = await res.json();
+        if (json.status === 'ok') {
+          fetchData();
+        } else {
+          showAlert("Error al eliminar: " + json.message);
+        }
+      } catch (err: any) {
+        showAlert("Error: " + err.message);
       }
-    } catch (err: any) {
-      alert("Error: " + err.message);
-    }
+    });
   };
 
   const copyToClipboard = (token: string, id: string) => {

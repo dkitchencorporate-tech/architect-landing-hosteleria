@@ -2,9 +2,11 @@
 
 import React, { useState } from "react";
 import { marketplaceServices, MarketplaceService } from "@/lib/marketplace-data";
+import { useAlert } from "@/components/ui/AlertProvider";
 
 export default function Marketplace() {
   const [requestSent, setRequestSent] = useState<string | null>(null);
+  const { showAlert } = useAlert();
 
   const handleRequestInfo = async (id: string) => {
     setRequestSent(id);
@@ -15,12 +17,12 @@ export default function Marketplace() {
         body: JSON.stringify({ serviceId: id })
       });
       if (res.ok) {
-        alert("¡Solicitud enviada con éxito! Tu consultor senior se pondrá en contacto contigo vía WhatsApp en breves minutos.");
+        showAlert("¡Solicitud enviada con éxito! Tu consultor senior se pondrá en contacto contigo vía WhatsApp en breves minutos.");
       } else {
-        alert("Ocurrió un error al enviar la solicitud.");
+        showAlert("Ocurrió un error al enviar la solicitud.");
       }
     } catch (error) {
-      alert("Error de conexión al enviar la solicitud.");
+      showAlert("Error de conexión al enviar la solicitud.");
     } finally {
       setRequestSent(null);
     }

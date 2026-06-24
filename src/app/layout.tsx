@@ -2,6 +2,7 @@ import React from "react";
 import "./globals.css";
 import AnalyticsPixel from "@/components/AnalyticsPixel";
 import CookieConsent from "@/components/CookieConsent";
+import { AlertProvider } from "@/components/ui/AlertProvider";
 
 export const metadata = {
   title: "Architect.Sys | Agencias de Crecimiento para Hostelería",
@@ -43,9 +44,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body className={`${inter.className} bg-background text-foreground antialiased`}>
-        <AnalyticsPixel />
-        {children}
-        <CookieConsent />
+        <AlertProvider>
+          <AnalyticsPixel />
+          {children}
+          <CookieConsent />
+        </AlertProvider>
       </body>
     </html>
   );

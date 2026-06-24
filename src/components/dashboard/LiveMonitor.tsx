@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { createBrowserClient } from '@supabase/ssr';
+import { useAlert } from '@/components/ui/AlertProvider';
 import { 
   User, 
   BrainCircuit, 
@@ -20,6 +21,7 @@ export default function LiveMonitor() {
   const [selectedChat, setSelectedChat] = useState<string | null>(null);
   const [botSettings, setBotSettings] = useState<any>({});
   const [confirmDelete, setConfirmDelete] = useState<{ show: boolean, phone: string | null } | null>(null);
+  const { showAlert } = useAlert();
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -74,8 +76,7 @@ export default function LiveMonitor() {
   };
 
   const archiveChat = async (phone: string) => {
-    // Simulamos archivado
-    alert(`Chat ${phone} archivado con éxito.`);
+    showAlert(`Chat ${phone} archivado con éxito.`);
     setConfirmDelete(null);
   };
 

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { EventDossier } from "@/lib/events-data";
 import { createClient } from "@/lib/supabase-browser";
+import { useAlert } from "@/components/ui/AlertProvider";
 
 interface EventsLibraryProps {
   isGrowthPlan: boolean;
@@ -12,6 +13,7 @@ export default function EventsLibrary({ isGrowthPlan }: EventsLibraryProps) {
   const [selectedEvent, setSelectedEvent] = useState<EventDossier | null>(null);
   const [eventsList, setEventsList] = useState<EventDossier[]>([]);
   const [requestedEventIds, setRequestedEventIds] = useState<Set<string>>(new Set());
+  const { showAlert } = useAlert();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [userId, setUserId] = useState<string | null>(null);
@@ -98,12 +100,12 @@ export default function EventsLibrary({ isGrowthPlan }: EventsLibraryProps) {
       
       if (error) throw error;
       
-      alert("Protocolo Iniciado. El equipo técnico ha recibido tu solicitud y se pondrá en contacto pronto.");
+      showAlert("Protocolo Iniciado. El equipo técnico ha recibido tu solicitud y se pondrá en contacto pronto.");
       setRequestedEventIds(prev => new Set(prev).add(selectedEvent.id));
       setSelectedEvent(null);
     } catch (err: any) {
       console.error("Error requesting event:", err);
-      alert("Hubo un error al iniciar el protocolo. Intenta de nuevo.");
+      showAlert("Hubo un error al iniciar el protocolo. Intenta de nuevo.");
     }
   };
 
