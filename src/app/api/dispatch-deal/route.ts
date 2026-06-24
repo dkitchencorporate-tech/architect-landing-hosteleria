@@ -82,14 +82,9 @@ export async function POST(req: Request) {
       </div>
     `;
 
-    // Si no hay API key de Gmail en el .env, simulamos el envío (Modo Dev local sin claves)
+    // Remover la simulación: Si no hay credenciales, arrojar error real
     if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
-      console.log('--- SIMULANDO ENVÍO DE EMAIL (Faltan credenciales SMTP) ---');
-      console.log('To:', clientEmail);
-      console.log('Subject:', `Tu propuesta de Architect.Sys: ${restaurantName}`);
-      console.log('Link:', checkoutUrl);
-      console.log('--------------------------------');
-      return NextResponse.json({ success: true, simulated: true, url: checkoutUrl });
+      return NextResponse.json({ error: 'Faltan credenciales SMTP (SMTP_EMAIL, SMTP_PASSWORD) en el servidor. Imposible despachar el correo formal.' }, { status: 500 });
     }
 
     const transporter = nodemailer.createTransport({
@@ -101,17 +96,17 @@ export async function POST(req: Request) {
     });
 
     const mailOptions = {
-      from: `"Architect Sys" <${process.env.SMTP_EMAIL}>`,
+      from: `"Architect.Sys" <${process.env.SMTP_EMAIL}>`,
       to: clientEmail,
-      subject: `Acuerdo Formal & Propuesta: ${restaurantName}`,
+      subject: `Acuerdo Comercial de Architect.Sys: ${restaurantName}`,
       html: htmlContent,
     };
 
-    const data = await transporter.sendMail(mailOptions);
-    return NextResponse.json({ success: true, data });
+    await transporter.sendMail(mailOptions);
 
+    return NextResponse.json({ success: true, url: checkoutUrl });
   } catch (error: any) {
-    console.error('API Error:', error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.error('Error enviando protocolo:', error);
+    return NextResponse.json({ error: error.message || 'Error procesando la solicitud de correo' }, { status: 500 });
   }
 }
