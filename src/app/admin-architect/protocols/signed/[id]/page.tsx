@@ -20,6 +20,29 @@ export default function SignedAgreementVault({ params }: { params: { id: string 
           .single();
 
         if (data) {
+          // Intentar obtener la invitación asociada a este email para leer el payload exacto
+          if (data.profiles?.email) {
+            const { data: invData } = await supabase
+              .from('invitations')
+              .select('token, plan_type')
+              .eq('email', data.profiles.email)
+              .eq('used', true)
+              .order('created_at', { ascending: false })
+              .limit(1)
+              .single();
+
+            if (invData && invData.token) {
+              try {
+                const parts = decodeURIComponent(invData.token).split('::');
+                if (parts.length > 1) {
+                  const payload = JSON.parse(decodeURIComponent(atob(parts[1])));
+                  data.payload_data = payload;
+                }
+              } catch (e) {
+                console.error('Error decoding token in vault', e);
+              }
+            }
+          }
           setDeal(data);
         }
       } catch (err) {
@@ -50,7 +73,20 @@ export default function SignedAgreementVault({ params }: { params: { id: string 
     );
   }
 
-  const finalPrice = deal.base_price + deal.setup_fee;
+  const payload = deal.payload_data || {};
+  const basePrice = Number(payload.price) || deal.base_price || 0;
+  const setupFee = Number(payload.setup) || deal.setup_fee || 0;
+  const paymentTerms = payload.paymentTerms || '1_pago';
+  const discounts = payload.discountAmount > 0 ? [{ name: payload.discountName || 'Descuento', amount: Number(payload.discountAmount), type: payload.discountType }] : [];
+  const totalDiscounts = discounts.reduce((sum: number, d: any) => sum + d.amount, 0);
+  let totalContractPrice = basePrice + setupFee - totalDiscounts;
+
+  let initialCheckoutPrice = totalContractPrice;
+  if (paymentTerms === '2_pagos') {
+    initialCheckoutPrice = (basePrice / 2) + setupFee - totalDiscounts;
+  }
+  const finalPrice = Math.max(initialCheckoutPrice, 0);
+  
   const isMonthly = deal.plan_type === 'suscripcion';
   const signingDate = new Date(deal.updated_at || deal.created_at);
 
@@ -114,16 +150,25 @@ export default function SignedAgreementVault({ params }: { params: { id: string 
               <h3 className="text-xs font-black uppercase tracking-widest text-zinc-400 mb-4 border-b border-zinc-200 pb-2">Datos de la Transacción</h3>
               <p className="text-sm mb-2 flex justify-between"><span className="text-zinc-500">Fecha de Cierre:</span> <strong className="font-mono">{signingDate.toLocaleDateString('es-ES')} {signingDate.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })}</strong></p>
               <p className="text-sm mb-2 flex justify-between"><span className="text-zinc-500">Tipo de Plan:</span> <strong>{isMonthly ? 'Growth Partner (Mensual)' : 'Plan Base (Setup Único)'}</strong></p>
-              <p className="text-sm flex justify-between"><span className="text-zinc-500">Importe Abonado:</span> <strong className="text-lg text-green-600 font-black">{finalPrice} €</strong></p>
+              <p className="text-sm flex justify-between"><span className="text-zinc-500">Valor Total Contrato:</span> <strong className="text-lg text-black font-black">{totalContractPrice} €</strong></p>
+              <p className="text-sm flex justify-between"><span className="text-zinc-500">Importe Abonado Inicial:</span> <strong className="text-lg text-green-600 font-black">{finalPrice} €</strong></p>
+              {paymentTerms === '2_pagos' && (
+                <p className="text-xs text-orange-600 font-bold text-right mt-1">* 2º Pago pendiente a la entrega.</p>
+              )}
             </div>
           </div>
 
           {/* Cláusulas del Acuerdo */}
           <div className="space-y-8 text-sm leading-relaxed text-zinc-800 text-justify">
             <div>
-              <h4 className="font-black uppercase tracking-widest text-xs text-black mb-3">1. Objeto de Ejecución Inmediata</h4>
+              <h4 className="font-black uppercase tracking-widest text-xs text-black mb-3">1. Objeto de Ejecución Inmediata y Pagos</h4>
               <p>
-                El presente documento acredita la ejecución comercial y tecnológica entre <strong>Architect.Sys</strong> (El Prestador) y <strong>{deal.profiles?.business_name}</strong> (El Cliente). El Cliente ha realizado el abono correspondiente para la activación de la infraestructura de reservas, embudos automáticos y activos digitales designados bajo el plan contratado. El inicio de las labores de ingeniería se activa de manera inmediata tras la emisión de este comprobante.
+                El presente documento acredita la ejecución comercial y tecnológica entre <strong>Architect.Sys</strong> (El Prestador) y <strong>{deal.profiles?.business_name}</strong> (El Cliente). El Cliente ha realizado el abono inicial correspondiente para la activación de la infraestructura de reservas, embudos automáticos y activos digitales designados bajo el plan contratado. El inicio de las labores de ingeniería se activa de manera inmediata tras la emisión de este comprobante.
+              </p>
+              <p className="mt-2 font-bold text-xs bg-zinc-100 p-2 rounded">
+                Condiciones Especiales de Pago: El contrato está valorado en {totalContractPrice}€. 
+                {paymentTerms === '2_pagos' ? ' El Cliente ha abonado un 50% inicial en concepto de señal. El 50% restante deberá abonarse de manera obligatoria al finalizar y entregar la aplicación web (PWA) en producción.' : ' El Cliente ha seleccionado un pago único liquidando el total de la infraestructura.'}
+                {discounts.length > 0 && discounts.some((d: any) => d.type === '2_meses_free') && ' El cliente cuenta con un descuento especial de 2 meses de mantenimiento gratuito. El fee aplicable cubrirá el mantenimiento, servidores y 1 consultoría mensual, abonando el cliente el importe proporcional correspondiente (10 mensualidades sobre 12).'}
               </p>
             </div>
 

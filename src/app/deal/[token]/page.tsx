@@ -63,11 +63,25 @@ export default async function DealRoomPage({ params }: { params: { token: string
     setup_fee: Number(payload.setup) || 0,
     plan_type: invitation?.plan_type || 'base',
     deal_notes: payload.notes || '',
-    discounts: [],
+    paymentTerms: payload.paymentTerms || '1_pago',
+    discounts: payload.discountAmount > 0 ? [{ name: payload.discountName || 'Descuento', amount: Number(payload.discountAmount), type: payload.discountType }] : [],
     bonuses: []
   };
 
-  const finalPrice = deal.base_price + deal.setup_fee;
+  const totalDiscounts = deal.discounts.reduce((sum: number, d: any) => sum + d.amount, 0);
+  let totalContractPrice = deal.base_price + deal.setup_fee - totalDiscounts;
+  
+  // Si son 2 pagos y no es personalizado, el checkout es la mitad del precio base + setup fee total.
+  // Pero el usuario dijo: "2 pagos de 350", es decir, pagan 350 ahora.
+  // Vamos a asumir que pagan la mitad del precio base total, más el setup completo, menos descuentos.
+  let initialCheckoutPrice = totalContractPrice;
+  if (deal.paymentTerms === '2_pagos') {
+    initialCheckoutPrice = (deal.base_price / 2) + deal.setup_fee - totalDiscounts;
+  }
+
+  // Prevención de precios negativos
+  const finalPrice = Math.max(initialCheckoutPrice, 0);
+
   let serviceTitle = deal.plan_type === 'suscripcion' ? 'Plan Suscripción Pro' : 'Plan Base (Pago Único)';
   let isUpsell = false;
   let upsellData: any = null;
@@ -126,8 +140,20 @@ export default async function DealRoomPage({ params }: { params: { token: string
                   ))}
                 </div>
 
+                  {deal.paymentTerms === '2_pagos' && (
+                    <div className="flex justify-between items-center text-[#B8862A] font-bold mt-2">
+                      <span>Facilidad de Pago (2 Plazos)</span>
+                      <span>Sólo pagas el 50% del servicio hoy</span>
+                    </div>
+                  )}
+
                 <div className="border-t-2 border-[#111111] pt-4 flex justify-between items-end">
-                  <span className="text-[#888888] font-bold uppercase tracking-wider text-sm">Total a pagar ahora</span>
+                  <div className="flex flex-col">
+                    <span className="text-[#888888] font-bold uppercase tracking-wider text-sm">Total a pagar ahora</span>
+                    {deal.paymentTerms === '2_pagos' && (
+                      <span className="text-[10px] text-[#888888]">Segundo pago al finalizar y entregar PWA.</span>
+                    )}
+                  </div>
                   <div className="text-4xl font-black">{finalPrice} <span className="text-xl">€</span></div>
                 </div>
               </div>
@@ -226,8 +252,13 @@ export default async function DealRoomPage({ params }: { params: { token: string
                 </h3>
                 <div className="space-y-6 text-justify">
                   <div>
-                    <strong className="block text-[#111111] mb-1">1. Objeto del Contrato</strong>
-                    <p className="text-xs">{baseOperativaContract.legal.clause1_object}</p>
+                    <strong className="block text-[#111111] mb-1">1. Objeto del Contrato y Términos de Pago</strong>
+                    <p className="text-xs">
+                      {baseOperativaContract.legal.clause1_object} 
+                      El presente acuerdo contempla un valor total de los servicios de {totalContractPrice}€. 
+                      {deal.paymentTerms === '2_pagos' ? ' El Cliente abona un pago inicial en concepto de señal de ejecución. Un segundo y último pago se realizará exclusivamente contra entrega e implementación final en el entorno de producción.' : ' El Cliente ha seleccionado un pago único por el desarrollo de la infraestructura base.'}
+                      {deal.discounts.length > 0 && deal.discounts.some((d: any) => d.type === '2_meses_free') && ' El cliente cuenta con un descuento especial de 2 meses de mantenimiento gratuito. El fee aplicable cubrirá el mantenimiento, servidores y 1 consultoría mensual, abonando el cliente el importe proporcional correspondiente (10 mensualidades sobre 12).'}
+                    </p>
                   </div>
                   <div>
                     <strong className="block text-[#111111] mb-1">2. Política de Reembolso Condicionado</strong>

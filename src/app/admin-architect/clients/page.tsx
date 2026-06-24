@@ -16,7 +16,16 @@ export default function AdminClientsPage() {
   
   // Nuevos estados para el flujo CRM Stateful Payload
   const [selectedPlan, setSelectedPlan] = useState<'base_pago_unico' | 'suscripcion' | null>(null);
-  const [formData, setFormData] = useState({ name: '', email: '', price: 0, setup: 0, notes: '' });
+  const [formData, setFormData] = useState({ 
+    name: '', email: '', notes: '',
+    paymentTerms: '1_pago',
+    customPrice: 0,
+    setupFeeType: '0',
+    customSetup: 0,
+    discountType: 'none',
+    customDiscount: 0,
+    customDiscountName: ''
+  });
   
   const { showAlert, showConfirm } = useAlert();
 
@@ -69,16 +78,48 @@ export default function AdminClientsPage() {
       showAlert("Error: " + error.message);
     }
   };
-
   const handleGenerate = async (planType: 'base_pago_unico' | 'suscripcion' | null) => {
-    if (!planType || !formData.name || !formData.email || !formData.price) {
+    if (!planType || !formData.name || !formData.email) {
       showAlert("Por favor, completa todos los campos obligatorios.");
       return;
     }
     setGenerating(true);
     
-    // Stateful Payload Encoding
-    const payload = btoa(encodeURIComponent(JSON.stringify(formData)));
+    let basePrice = 0;
+    if (formData.paymentTerms === '1_pago') basePrice = 700;
+    else if (formData.paymentTerms === '2_pagos') basePrice = 700;
+    else basePrice = formData.customPrice;
+
+    let setupFee = 0;
+    if (formData.setupFeeType === 'estandar') setupFee = 300;
+    else if (formData.setupFeeType === 'custom') setupFee = formData.customSetup;
+
+    let discountAmount = 0;
+    let discountName = '';
+    if (formData.discountType === '2_meses_free') {
+       discountAmount = basePrice * 2; // O lo que corresponda según la lógica mensual
+       discountName = '2 Meses Gratis de Mantenimiento';
+    } else if (formData.discountType === 'lanzamiento') {
+       discountAmount = 100;
+       discountName = 'Oferta Especial Lanzamiento';
+    } else if (formData.discountType === 'custom') {
+       discountAmount = formData.customDiscount;
+       discountName = formData.customDiscountName || 'Descuento Personalizado';
+    }
+
+    const payloadData = {
+      name: formData.name,
+      email: formData.email,
+      price: basePrice,
+      setup: setupFee,
+      notes: formData.notes,
+      paymentTerms: formData.paymentTerms,
+      discountType: formData.discountType,
+      discountName,
+      discountAmount
+    };
+
+    const payload = btoa(encodeURIComponent(JSON.stringify(payloadData)));
     const token = `${uuidv4()}::${payload}`;
     
     try {
@@ -105,7 +146,7 @@ export default function AdminClientsPage() {
         }
 
         setSelectedPlan(null);
-        setFormData({ name: '', email: '', price: 0, setup: 0, notes: '' });
+        setFormData({ name: '', email: '', notes: '', paymentTerms: '1_pago', customPrice: 0, setupFeeType: '0', customSetup: 0, discountType: 'none', customDiscount: 0, customDiscountName: '' });
         fetchData();
       } else {
         showAlert("Error al generar acuerdo: " + json.message);
@@ -165,7 +206,7 @@ export default function AdminClientsPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-2xl p-4">
           <div className="bg-[#050505] border border-white/10 rounded-[2.5rem] w-full max-w-5xl max-h-[90vh] overflow-y-auto relative shadow-[0_20px_60px_rgba(0,0,0,0.6)] animate-in fade-in zoom-in duration-300">
             <button 
-              onClick={() => { setIsModalOpen(false); setSelectedPlan(null); setFormData({name:'', email:'', price:0, setup:0, notes:''}); }}
+              onClick={() => { setIsModalOpen(false); setSelectedPlan(null); setFormData({name:'', email:'', notes:'', paymentTerms:'1_pago', customPrice:0, setupFeeType:'0', customSetup:0, discountType:'none', customDiscount:0, customDiscountName:''}); }}
               className="absolute top-8 right-8 w-12 h-12 bg-white/5 hover:bg-white/10 border border-white/5 rounded-full flex items-center justify-center text-zinc-400 hover:text-white transition-all z-20"
             >
               <X size={24} />
@@ -242,25 +283,46 @@ export default function AdminClientsPage() {
                         placeholder="ejemplo@correo.com"
                       />
                     </div>
-                    <div>
-                      <label className="block text-xs font-black uppercase tracking-widest text-zinc-500 mb-2">Precio {selectedPlan === 'suscripcion' ? 'Mensual' : 'Base'} (€)</label>
-                      <input 
-                        type="number" 
-                        value={formData.price || ''}
-                        onChange={e => setFormData({...formData, price: Number(e.target.value)})}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
-                        placeholder="0"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-black uppercase tracking-widest text-zinc-500 mb-2">Setup Fee Único (€)</label>
-                      <input 
-                        type="number" 
-                        value={formData.setup || ''}
-                        onChange={e => setFormData({...formData, setup: Number(e.target.value)})}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors"
-                        placeholder="0"
-                      />
+                    <div className="col-span-1 md:col-span-2 space-y-6 border-t border-white/5 pt-6 mt-2">
+                      <div>
+                        <label className="block text-xs font-black uppercase tracking-widest text-zinc-500 mb-3">Términos de Pago (Precio Base)</label>
+                        <div className="flex flex-wrap gap-2 mb-3">
+                          <button onClick={() => setFormData({...formData, paymentTerms: '1_pago'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.paymentTerms === '1_pago' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>1 Pago de 700€</button>
+                          <button onClick={() => setFormData({...formData, paymentTerms: '2_pagos'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.paymentTerms === '2_pagos' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>2 Pagos de 350€</button>
+                          <button onClick={() => setFormData({...formData, paymentTerms: 'personalizado'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.paymentTerms === 'personalizado' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>Personalizado</button>
+                        </div>
+                        {formData.paymentTerms === 'personalizado' && (
+                          <input type="number" value={formData.customPrice || ''} onChange={e => setFormData({...formData, customPrice: Number(e.target.value)})} className="w-full md:w-1/2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors" placeholder="Precio Base Total (€)" />
+                        )}
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-black uppercase tracking-widest text-zinc-500 mb-3">Setup Fee Único</label>
+                        <div className="flex flex-wrap gap-2 mb-3">
+                          <button onClick={() => setFormData({...formData, setupFeeType: '0'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.setupFeeType === '0' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>Sin Setup (0€)</button>
+                          <button onClick={() => setFormData({...formData, setupFeeType: 'estandar'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.setupFeeType === 'estandar' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>Setup Estándar (300€)</button>
+                          <button onClick={() => setFormData({...formData, setupFeeType: 'custom'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.setupFeeType === 'custom' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>Personalizado</button>
+                        </div>
+                        {formData.setupFeeType === 'custom' && (
+                          <input type="number" value={formData.customSetup || ''} onChange={e => setFormData({...formData, customSetup: Number(e.target.value)})} className="w-full md:w-1/2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors" placeholder="Setup Fee (€)" />
+                        )}
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-black uppercase tracking-widest text-zinc-500 mb-3">Ofertas / Descuentos / Promociones</label>
+                        <div className="flex flex-wrap gap-2 mb-3">
+                          <button onClick={() => setFormData({...formData, discountType: 'none'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.discountType === 'none' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>Ninguna</button>
+                          <button onClick={() => setFormData({...formData, discountType: '2_meses_free'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.discountType === '2_meses_free' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>2 Meses Fee Gratis</button>
+                          <button onClick={() => setFormData({...formData, discountType: 'lanzamiento'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.discountType === 'lanzamiento' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>Desc. Especial 100€</button>
+                          <button onClick={() => setFormData({...formData, discountType: 'custom'})} className={`px-4 py-2 text-xs font-bold rounded-lg border transition-colors ${formData.discountType === 'custom' ? 'bg-orange-500/20 border-orange-500 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}`}>Personalizado</button>
+                        </div>
+                        {formData.discountType === 'custom' && (
+                          <div className="flex gap-4">
+                            <input type="text" value={formData.customDiscountName} onChange={e => setFormData({...formData, customDiscountName: e.target.value})} className="w-1/2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors" placeholder="Concepto (Ej: Promo Black Friday)" />
+                            <input type="number" value={formData.customDiscount || ''} onChange={e => setFormData({...formData, customDiscount: Number(e.target.value)})} className="w-1/2 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors" placeholder="Cantidad Descuento (€)" />
+                          </div>
+                        )}
+                      </div>
                     </div>
                     <div className="col-span-1 md:col-span-2">
                       <label className="block text-xs font-black uppercase tracking-widest text-zinc-500 mb-2">Cláusulas / Notas Adicionales (Opcional)</label>
@@ -275,7 +337,7 @@ export default function AdminClientsPage() {
 
                   <button 
                     onClick={() => handleGenerate(selectedPlan)}
-                    disabled={generating || !formData.name || !formData.email || !formData.price}
+                    disabled={generating || !formData.name || !formData.email}
                     className="w-full bg-orange-600 hover:bg-orange-500 disabled:opacity-50 disabled:hover:bg-orange-600 text-white font-black py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(234,88,12,0.3)] flex justify-center items-center gap-2"
                   >
                     {generating ? 'Codificando Token y Despachando Email...' : 'Generar Protocolo y Despachar Contrato'}
