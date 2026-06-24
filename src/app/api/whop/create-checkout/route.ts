@@ -4,7 +4,7 @@ import { createClient } from '@supabase/supabase-js';
 // Inicializar Supabase Admin
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://dummy.supabase.co',
-  process.env.SUPABASE_SERVICE_ROLE_KEY || 'dummy_key'
+  process.env.SUPABASE_SERVICE_KEY || 'dummy_key'
 );
 
 export async function POST(req: Request) {
@@ -46,8 +46,9 @@ export async function POST(req: Request) {
       });
     }
 
-    // AQUI IRA LA LLAMADA REAL A WHOP CUANDO TENGAMOS LA KEY
-    /*
+    const isRecurring = ['growth', 'ads-management', 'content-creation'].includes(deal.plan_type);
+
+    // LLAMADA REAL A WHOP
     const response = await fetch('https://api.whop.com/v1/checkout_configurations', {
       method: 'POST',
       headers: {
@@ -55,26 +56,39 @@ export async function POST(req: Request) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        company_id: whopCompanyId,
-        currency: 'eur',
         plan: {
           initial_price: finalPrice,
-          plan_type: "one_time", // o "renewal" si implementas suscripción
+          currency: 'eur',
+          plan_type: isRecurring ? 'recurring' : 'one_time',
+          ...(isRecurring ? {
+            renewal_price: finalPrice,
+            billing_period: 1
+          } : {}),
           company_id: whopCompanyId,
         },
         metadata: {
           deal_id: deal.id,
-          lead_id: deal.leads.id
+          lead_id: deal.leads?.id
         }
       })
     });
 
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Whop API Error:', errorText);
+      return NextResponse.json({ error: 'Fallo al conectar con Whop' }, { status: response.status });
+    }
+
     const data = await response.json();
-    const checkoutLink = \`https://whop.com/checkout/\${data.plan.id}\`;
-    return NextResponse.json({ url: checkoutLink });
-    */
+    const checkoutLink = `https://whop.com/checkout/${data.plan?.id || data.id}`;
     
-    return NextResponse.json({ error: 'API Whop Endpoint Pendiente de Confirmación' }, { status: 501 });
+    // Guardamos la URL en la BD para este deal
+    await supabaseAdmin
+      .from('deals')
+      .update({ whop_payment_url: checkoutLink })
+      .eq('id', deal.id);
+
+    return NextResponse.json({ url: checkoutLink });
 
   } catch (error: any) {
     console.error('Create Checkout Error:', error);

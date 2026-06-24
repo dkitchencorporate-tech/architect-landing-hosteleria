@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabaseClient } from '@/lib/supabase-client';
 import { v4 as uuidv4 } from 'uuid';
-import { Plus, X, Copy, CheckCircle2, Server, Zap, Users } from 'lucide-react';
+import { Plus, X, Copy, CheckCircle2, Server, Zap, Users, Trash2 } from 'lucide-react';
 
 export default function AdminClientsPage() {
   const [clients, setClients] = useState<any[]>([]);
@@ -54,26 +54,43 @@ export default function AdminClientsPage() {
   };
 
   const handleGenerate = async (planType: 'base_pago_unico' | 'suscripcion') => {
-    if (!supabaseClient) return;
     setGenerating(true);
-
     const token = uuidv4();
-    const { data: { session } } = await supabaseClient.auth.getSession();
-
-    const { error } = await supabaseClient
-      .from('invitations')
-      .insert({
-        token,
-        plan_type: planType,
-        created_by: session?.user?.id
+    
+    try {
+      const res = await fetch('/api/admin/invitations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, planType })
       });
-
-    if (!error) {
-      fetchData();
-    } else {
-      alert("Error al generar: " + error.message);
+      const json = await res.json();
+      
+      if (json.status === 'ok') {
+        fetchData();
+      } else {
+        alert("Error al generar: " + json.message);
+      }
+    } catch (err: any) {
+      alert("Error: " + err.message);
     }
     setGenerating(false);
+  };
+
+  const handleDeleteToken = async (id: string) => {
+    if (!confirm("¿Seguro que quieres eliminar este token?")) return;
+    try {
+      const res = await fetch(`/api/admin/invitations/${id}`, {
+        method: 'DELETE'
+      });
+      const json = await res.json();
+      if (json.status === 'ok') {
+        fetchData();
+      } else {
+        alert("Error al eliminar: " + json.message);
+      }
+    } catch (err: any) {
+      alert("Error: " + err.message);
+    }
   };
 
   const copyToClipboard = (token: string, id: string) => {
@@ -169,12 +186,21 @@ export default function AdminClientsPage() {
                           </span>
                           <span className="text-xs text-zinc-600 font-mono font-medium">...{inv.token.slice(-8)}</span>
                         </div>
-                        <button 
-                          onClick={() => copyToClipboard(inv.token, inv.id)}
-                          className={`w-full text-center text-xs font-black py-3 rounded-xl transition-all border flex items-center justify-center gap-2 ${copiedId === inv.id ? 'bg-green-500/20 text-green-400 border-green-500/30' : 'bg-white/5 text-white border-white/5 hover:bg-white/10'}`}
-                        >
-                          {copiedId === inv.id ? <><CheckCircle2 size={14}/> Copiado</> : <><Copy size={14}/> Copiar Link</>}
-                        </button>
+                        <div className="flex gap-2">
+                          <button 
+                            onClick={() => copyToClipboard(inv.token, inv.id)}
+                            className={`flex-1 text-center text-xs font-black py-3 rounded-xl transition-all border flex items-center justify-center gap-2 ${copiedId === inv.id ? 'bg-green-500/20 text-green-400 border-green-500/30' : 'bg-white/5 text-white border-white/5 hover:bg-white/10'}`}
+                          >
+                            {copiedId === inv.id ? <><CheckCircle2 size={14}/> Copiado</> : <><Copy size={14}/> Copiar Link</>}
+                          </button>
+                          <button 
+                            onClick={() => handleDeleteToken(inv.id)}
+                            className="bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 hover:border-red-500/40 px-4 rounded-xl transition-colors flex items-center justify-center"
+                            title="Eliminar Token"
+                          >
+                            <Trash2 size={16} />
+                          </button>
+                        </div>
                       </div>
                     ))}
                     {invitations.filter(i => !i.used).length === 0 && (

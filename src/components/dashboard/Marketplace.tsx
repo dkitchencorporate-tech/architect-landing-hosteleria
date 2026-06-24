@@ -6,13 +6,24 @@ import { marketplaceServices, MarketplaceService } from "@/lib/marketplace-data"
 export default function Marketplace() {
   const [requestSent, setRequestSent] = useState<string | null>(null);
 
-  const handleRequestInfo = (id: string) => {
-    // Simulate API call / WhatsApp notification to consultant
+  const handleRequestInfo = async (id: string) => {
     setRequestSent(id);
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/client/requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ serviceId: id })
+      });
+      if (res.ok) {
+        alert("¡Solicitud enviada con éxito! Tu consultor senior se pondrá en contacto contigo vía WhatsApp en breves minutos.");
+      } else {
+        alert("Ocurrió un error al enviar la solicitud.");
+      }
+    } catch (error) {
+      alert("Error de conexión al enviar la solicitud.");
+    } finally {
       setRequestSent(null);
-      alert("¡Solicitud enviada! Tu consultor senior se pondrá en contacto contigo vía WhatsApp en breves minutos.");
-    }, 1500);
+    }
   };
 
   const getIcon = (type: string) => {
@@ -65,7 +76,7 @@ export default function Marketplace() {
               </ul>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 pt-4 border-t border-dash-border">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 pt-4 border-t border-dash-border">
               <div>
                 <p className="text-xs text-dash-text-secondary">Inversión Estimada</p>
                 <p className="text-white font-bold">{service.priceEst}</p>
@@ -75,6 +86,26 @@ export default function Marketplace() {
                 <p className="text-dash-accent font-medium text-sm">{service.roiEst}</p>
               </div>
             </div>
+
+            {service.deliverables && (
+              <div className="bg-[#0f0f0f] rounded p-4 border border-dash-border mb-6">
+                <h4 className="text-[10px] font-black text-white uppercase tracking-wider mb-2">Protocolo de Entrega</h4>
+                <div className="space-y-2 text-xs">
+                  <p className="flex flex-col">
+                    <span className="text-brand font-bold">Contrato SLA:</span>
+                    <span className="text-zinc-400">{service.deliverables.contract}</span>
+                  </p>
+                  <p className="flex flex-col">
+                    <span className="text-brand font-bold">Propuesta:</span>
+                    <span className="text-zinc-400">{service.deliverables.proposal}</span>
+                  </p>
+                  <p className="flex flex-col">
+                    <span className="text-brand font-bold">Setup y Dossier:</span>
+                    <span className="text-zinc-400">{service.deliverables.dossier}</span>
+                  </p>
+                </div>
+              </div>
+            )}
 
             <button
               onClick={() => handleRequestInfo(service.id)}

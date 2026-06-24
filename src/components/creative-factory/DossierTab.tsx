@@ -29,6 +29,18 @@ export default function DossierTab() {
         >
           Ecosistema de Eventos
         </button>
+        <button 
+          onClick={() => setDossierSubTab('core_protocols')}
+          className={`pb-3 text-xs font-black uppercase tracking-wider ${dossierSubTab === 'core_protocols' ? 'border-b-2 border-orange-500 text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
+        >
+          Protocolos Core
+        </button>
+        <button 
+          onClick={() => setDossierSubTab('deliverables')}
+          className={`pb-3 text-xs font-black uppercase tracking-wider ${dossierSubTab === 'deliverables' ? 'border-b-2 border-orange-500 text-white' : 'text-zinc-500 hover:text-zinc-300'}`}
+        >
+          Protocolos Upsell
+        </button>
       </div>
 
       <div className="bg-zinc-950 border border-zinc-900 p-8 rounded-3xl space-y-6 leading-relaxed text-sm text-zinc-300 font-mono">
@@ -88,6 +100,77 @@ export default function DossierTab() {
               <div className="p-4 bg-black rounded-xl border border-zinc-900">
                 <strong className="text-orange-500 block mb-1">Citas Rápidas y Trivias (Barrio)</strong>
                 Juegos de preguntas por equipos o speed dating enfocados en jóvenes adultos locales. Garantiza afluencia masiva recurrente.
+              </div>
+            </div>
+          </div>
+        )}
+
+        {dossierSubTab === 'core_protocols' && (
+          <div className="space-y-4 text-xs">
+            <h4 className="text-sm font-black text-white uppercase tracking-wider border-b border-zinc-900 pb-2">Protocolos de Entrega: Servicios Core (Captación Inicial)</h4>
+            <p>Estructura de entregables para los 3 pilares principales de la Landing Page (Evitar el "Scope Creep"):</p>
+            <div className="space-y-3 pt-2">
+              <div className="p-4 bg-black rounded-xl border border-zinc-900">
+                <strong className="text-orange-500 block mb-1">Fundación Digital (700€ / Fraccionado 2x350€)</strong>
+                <ul className="list-disc pl-4 mt-2 space-y-1 text-zinc-400">
+                  <li><span className="text-white font-bold">Contrato SLA:</span> Propiedad 100% para el cliente. Entrega en 14 días laborables. 2 meses de mantenimiento incluidos (luego 69€/mes).</li>
+                  <li><span className="text-white font-bold">Derecho a Eventos:</span> Acceso limitado a <strong>1 Evento</strong> de la Biblioteca para activar su caja.</li>
+                  <li><span className="text-white font-bold">Propuesta Visual (Bonos Influidos):</span> Wireframe web, mockup de neuromarketing de carta física, reporte de 8 páginas de auditoría en Maps y táctica de días valle.</li>
+                  <li><span className="text-white font-bold">Dossier de Setup:</span> Recolección de carta, fotos del local, despliegue de PWA, Base de Datos Propia, motor de reservas directo, y Kit de 12 posts para redes (IA).</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-black rounded-xl border border-zinc-900">
+                <strong className="text-orange-500 block mb-1">Recepcionista IA / Ecosistema 24/7 (450€ + 69€/m)</strong>
+                <ul className="list-disc pl-4 mt-2 space-y-1 text-zinc-400">
+                  <li><span className="text-white font-bold">Contrato SLA:</span> Límite mensual de 1.500 chats. Resolución de caídas en menos de 12h. Licencia de Kommo incluida.</li>
+                  <li><span className="text-white font-bold">Dossier de Setup:</span> Conexión de Meta API, diseño de Pipeline Visual y entrenamiento del Prompt de la marca.</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-black rounded-xl border border-zinc-900">
+                <strong className="text-orange-500 block mb-1">Socio Growth (299€/mes) - El Salto Estratégico</strong>
+                <ul className="list-disc pl-4 mt-2 space-y-1 text-zinc-400">
+                  <li><span className="text-white font-bold">Derecho a Eventos:</span> Acceso a <strong>más de 1 evento al mes</strong> con planificación profunda de alto impacto.</li>
+                  <li><span className="text-white font-bold">Contrato SLA (Garantía de Éxito):</span> Cobramos un <strong>20% de la taquilla generada</strong> en el evento, PERO <em>solo</em> si cumplimos el objetivo de afluencia pactado.</li>
+                  <li><span className="text-white font-bold">Beneficio Cruzado:</span> Cuota de mantenimiento de IA (69€) bonificada a 0€.</li>
+                  <li><span className="text-white font-bold">Dossier de Setup:</span> Gestión integral de Meta Ads y despliegue del ecosistema de eventos con pasarela propia de taquilla.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {dossierSubTab === 'deliverables' && (
+          <div className="space-y-4 text-xs">
+            <h4 className="text-sm font-black text-white uppercase tracking-wider border-b border-zinc-900 pb-2">Estructura de Servicios Upsell y Entregables</h4>
+            <p>Define exactamente la responsabilidad contractual para evitar el "scope creep" tras el cobro del servicio:</p>
+            <div className="space-y-3 pt-2">
+              <div className="p-4 bg-black rounded-xl border border-zinc-900">
+                <strong className="text-orange-500 block mb-1">Gestión Avanzada de Meta Ads - Desde 299€/mes</strong>
+                <ul className="list-disc pl-4 mt-2 space-y-1 text-zinc-400">
+                  <li><span className="text-white font-bold">Contrato SLA:</span> Gestión de campaña en ecosistema Meta (Instagram/Facebook).</li>
+                  <li><span className="text-white font-bold">Entregable:</span> Diseño de 3 ángulos creativos, segmentación de alcance y dashboards en tiempo real.</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-black rounded-xl border border-zinc-900">
+                <strong className="text-orange-500 block mb-1">Community Manager & Creador UGC - Desde 350€/mes</strong>
+                <ul className="list-disc pl-4 mt-2 space-y-1 text-zinc-400">
+                  <li><span className="text-white font-bold">Contrato SLA:</span> 1 Grabación mensual y entrega de 12 Reels.</li>
+                  <li><span className="text-white font-bold">Entregable:</span> Estrategia de ganchos visuales, guiones TikTok y gestión de comunidad.</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-black rounded-xl border border-zinc-900">
+                <strong className="text-orange-500 block mb-1">Auditoría Operativa y de Rentabilidad - Pago único</strong>
+                <ul className="list-disc pl-4 mt-2 space-y-1 text-zinc-400">
+                  <li><span className="text-white font-bold">Contrato SLA:</span> NDA de confidencialidad y revisión in-situ de procesos operativos.</li>
+                  <li><span className="text-white font-bold">Entregable:</span> Reporte PDF con plan de optimización de costes y turnos.</li>
+                </ul>
+              </div>
+              <div className="p-4 bg-black rounded-xl border border-zinc-900">
+                <strong className="text-orange-500 block mb-1">Ingeniería de Menú y Escandallos - Pago único</strong>
+                <ul className="list-disc pl-4 mt-2 space-y-1 text-zinc-400">
+                  <li><span className="text-white font-bold">Contrato SLA:</span> Revisión exhaustiva de platos y costes de proveedores.</li>
+                  <li><span className="text-white font-bold">Entregable:</span> Nuevas fichas técnicas y reestructuración de la carta.</li>
+                </ul>
               </div>
             </div>
           </div>

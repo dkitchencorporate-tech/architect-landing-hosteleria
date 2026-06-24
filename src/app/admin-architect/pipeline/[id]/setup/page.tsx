@@ -4,9 +4,11 @@ import React, { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase-browser';
 import { ArrowLeft, Rocket, Plus, Trash2, Send } from 'lucide-react';
 import Link from 'next/link';
+import { marketplaceServices } from '@/lib/marketplace-data';
 
 export default function DealSetupPage({ params }: { params: { id: string } }) {
   const [lead, setLead] = useState<any>(null);
+  const [setupMode, setSetupMode] = useState<'core' | 'upsell'>('core');
   const [planType, setPlanType] = useState('growth');
   const [basePrice, setBasePrice] = useState(299);
   const [setupFee, setSetupFee] = useState(0);
@@ -33,14 +35,27 @@ export default function DealSetupPage({ params }: { params: { id: string } }) {
   }, [params.id]);
 
   useEffect(() => {
-    if (planType === 'growth') {
-      setBasePrice(299);
-      setSetupFee(0);
-    } else if (planType === 'base') {
-      setBasePrice(700);
-      setSetupFee(0);
+    if (setupMode === 'core') {
+      if (planType === 'growth') {
+        setBasePrice(299);
+        setSetupFee(0);
+      } else if (planType === 'base') {
+        setBasePrice(700);
+        setSetupFee(0);
+      } else {
+        setPlanType('growth');
+      }
+    } else {
+      const upsell = marketplaceServices.find(s => s.id === planType);
+      if (upsell) {
+        const num = upsell.priceEst.match(/\d+/);
+        setBasePrice(num ? parseInt(num[0]) : 0);
+        setSetupFee(0);
+      } else {
+        setPlanType(marketplaceServices[0].id);
+      }
     }
-  }, [planType]);
+  }, [planType, setupMode]);
 
   const addDiscount = () => {
     if (newDiscountName && newDiscountAmount) {
@@ -113,30 +128,66 @@ export default function DealSetupPage({ params }: { params: { id: string } }) {
           <h1 className="text-3xl font-black text-white tracking-tight mb-2">Configurar Deal</h1>
           <p className="text-zinc-400">Preparando propuesta para <strong className="text-white">{lead.restaurant_name}</strong> ({lead.name})</p>
         </div>
-        <div className="bg-orange-500/10 text-orange-400 px-4 py-2 rounded-xl font-bold uppercase tracking-widest text-xs">
-          Modo Cierre
+        <div className="bg-orange-500/10 text-orange-400 px-4 py-2 rounded-xl font-bold uppercase tracking-widest text-xs flex gap-4">
+          <button onClick={() => setSetupMode('core')} className={`transition-colors ${setupMode === 'core' ? 'text-orange-500' : 'text-orange-500/50 hover:text-orange-400'}`}>MODO CORE</button>
+          <span className="text-orange-500/30">|</span>
+          <button onClick={() => setSetupMode('upsell')} className={`transition-colors ${setupMode === 'upsell' ? 'text-orange-500' : 'text-orange-500/50 hover:text-orange-400'}`}>MODO UPSELL</button>
         </div>
       </div>
 
       <div className="bg-zinc-900 border border-white/5 rounded-2xl p-6 mb-6">
-        <h2 className="text-lg font-bold text-white mb-4">1. Selección de Arquitectura</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <label className={`cursor-pointer p-4 rounded-xl border-2 transition-all ${planType === 'growth' ? 'border-orange-500 bg-orange-500/5' : 'border-white/5 bg-black/50 hover:border-white/20'}`}>
-            <input type="radio" className="hidden" name="plan" value="growth" checked={planType === 'growth'} onChange={() => setPlanType('growth')} />
-            <div className="flex justify-between items-center mb-2">
-              <span className="font-bold text-white">Growth Partner</span>
-              <span className="text-orange-500 font-black">299€/mes</span>
-            </div>
-            <p className="text-xs text-zinc-500">SaaS completo + Mantenimiento + IA</p>
-          </label>
-          <label className={`cursor-pointer p-4 rounded-xl border-2 transition-all ${planType === 'base' ? 'border-orange-500 bg-orange-500/5' : 'border-white/5 bg-black/50 hover:border-white/20'}`}>
-            <input type="radio" className="hidden" name="plan" value="base" checked={planType === 'base'} onChange={() => setPlanType('base')} />
-            <div className="flex justify-between items-center mb-2">
-              <span className="font-bold text-white">Plan Base</span>
-              <span className="text-white font-black">700€ Único</span>
-            </div>
-            <p className="text-xs text-zinc-500">Solo infraestructura. Sin mantenimiento.</p>
-          </label>
+        <h2 className="text-lg font-bold text-white mb-4">1. Selección de {setupMode === 'core' ? 'Arquitectura' : 'Servicio Upsell'}</h2>
+        
+        {setupMode === 'core' ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label className={`cursor-pointer p-4 rounded-xl border-2 transition-all ${planType === 'growth' ? 'border-orange-500 bg-orange-500/5' : 'border-white/5 bg-black/50 hover:border-white/20'}`}>
+              <input type="radio" className="hidden" name="plan" value="growth" checked={planType === 'growth'} onChange={() => setPlanType('growth')} />
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-white">Growth Partner</span>
+                <span className="text-orange-500 font-black">299€/mes</span>
+              </div>
+              <p className="text-xs text-zinc-500">SaaS completo + Mantenimiento + IA</p>
+            </label>
+            <label className={`cursor-pointer p-4 rounded-xl border-2 transition-all ${planType === 'base' ? 'border-orange-500 bg-orange-500/5' : 'border-white/5 bg-black/50 hover:border-white/20'}`}>
+              <input type="radio" className="hidden" name="plan" value="base" checked={planType === 'base'} onChange={() => setPlanType('base')} />
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-bold text-white">Plan Base</span>
+                <span className="text-white font-black">700€ Único</span>
+              </div>
+              <p className="text-xs text-zinc-500">Solo infraestructura. Sin mantenimiento.</p>
+            </label>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {marketplaceServices.map((service) => (
+              <label key={service.id} className={`cursor-pointer p-4 rounded-xl border-2 transition-all ${planType === service.id ? 'border-orange-500 bg-orange-500/5' : 'border-white/5 bg-black/50 hover:border-white/20'}`}>
+                <input type="radio" className="hidden" name="plan" value={service.id} checked={planType === service.id} onChange={() => setPlanType(service.id)} />
+                <div className="flex justify-between items-center mb-2">
+                  <span className="font-bold text-white">{service.title}</span>
+                </div>
+                <p className="text-xs text-zinc-500 mb-2">{service.shortDescription}</p>
+                <div className="flex justify-between items-center mt-4">
+                  <span className="text-orange-500 font-black text-sm">{service.priceEst}</span>
+                </div>
+              </label>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="bg-zinc-900 border border-white/5 rounded-2xl p-6 mb-6 flex flex-col md:flex-row justify-between items-center">
+        <div>
+          <h2 className="text-lg font-bold text-white mb-1">Precio Base Configurado</h2>
+          <p className="text-xs text-zinc-500">Ajusta el precio manualmente para contratos personalizados.</p>
+        </div>
+        <div className="flex items-center gap-2 mt-4 md:mt-0">
+          <input 
+            type="number" 
+            value={basePrice} 
+            onChange={(e) => setBasePrice(Number(e.target.value))} 
+            className="bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white font-bold text-xl w-32 text-right focus:border-orange-500 outline-none"
+          />
+          <span className="text-xl font-bold text-zinc-400">€</span>
         </div>
       </div>
 

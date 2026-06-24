@@ -16,24 +16,25 @@ export default function PipelineDealsPage() {
   }, []);
 
   const fetchLeads = async () => {
-    // Si la tabla no existe aún, evitamos que crashee la página atrapando el error.
     try {
-      const { data, error } = await supabase
-        .from('leads')
-        .select('*')
-        .order('created_at', { ascending: false });
+      const res = await fetch('/api/admin/pipeline');
+      const json = await res.json();
       
-      if (data) {
-        setLeads(data);
+      if (res.ok && json.data) {
+        const formattedData = json.data.map((deal: any) => ({
+          id: deal.id,
+          name: deal.title || 'Deal',
+          restaurant_name: deal.profiles?.business_name || 'Restaurante Sin Nombre',
+          status: deal.status,
+          created_at: deal.created_at
+        }));
+        setLeads(formattedData);
       } else {
-        // Mock data temporal si la tabla está vacía o no ha sido creada en DB
-        setLeads([
-          { id: '1', name: 'Carlos Martín', restaurant_name: 'La Parrilla de San Telmo', status: 'meeting_booked', created_at: new Date().toISOString() },
-          { id: '2', name: 'Laura Gómez', restaurant_name: 'Bistro 44', status: 'met', created_at: new Date().toISOString() }
-        ]);
+        setLeads([]);
       }
     } catch (e) {
-      console.log('Tabla leads no encontrada o vacía');
+      console.error('Error fetching pipeline deals:', e);
+      setLeads([]);
     }
   };
 

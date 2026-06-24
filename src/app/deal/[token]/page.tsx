@@ -2,8 +2,10 @@ import React from 'react';
 import { cookies } from 'next/headers';
 import { createServerClient } from '@supabase/ssr';
 import { notFound } from 'next/navigation';
-import { CheckCircle, ShieldCheck, ArrowRight, Lock } from 'lucide-react';
-import WhopCheckoutButton from '@/components/checkout/WhopCheckoutButton';
+import { CheckCircle, ShieldCheck, ArrowRight, Lock, Calendar, FileText, AlertTriangle } from 'lucide-react';
+import DealAcceptance from '@/components/checkout/DealAcceptance';
+import { marketplaceServices } from '@/lib/marketplace-data';
+import { baseOperativaContract } from '@/lib/contracts/base-operativa';
 export const metadata = {
   title: 'Sala de Cierre | Architect.Sys',
 };
@@ -39,6 +41,16 @@ export default async function DealRoomPage({ params }: { params: { token: string
   // Calculos
   const totalDiscount = (deal.discounts || []).reduce((acc: number, curr: any) => acc + curr.amount, 0);
   const finalPrice = deal.base_price + deal.setup_fee - totalDiscount;
+
+  let serviceTitle = deal.plan_type === 'growth' ? 'Growth Partner' : 'Plan Base';
+  let isUpsell = false;
+  let upsellData = null;
+  
+  if (deal.plan_type !== 'growth' && deal.plan_type !== 'base') {
+    isUpsell = true;
+    upsellData = marketplaceServices.find(s => s.id === deal.plan_type) || null;
+    if (upsellData) serviceTitle = upsellData.title;
+  }
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#111111] font-sans selection:bg-[#B8862A] selection:text-white pb-24">
@@ -77,7 +89,7 @@ export default async function DealRoomPage({ params }: { params: { token: string
                 
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center">
-                    <span className="text-[#444444]">Servicio Contratado ({deal.plan_type === 'growth' ? 'Growth Partner' : 'Plan Base'})</span>
+                    <span className="text-[#444444]">Servicio Contratado ({serviceTitle})</span>
                     <span className="font-bold">{deal.base_price} €</span>
                   </div>
                   {deal.setup_fee > 0 && (
@@ -124,30 +136,107 @@ export default async function DealRoomPage({ params }: { params: { token: string
               </div>
             </div>
 
-            {/* Action CTA */}
-            <div className="mt-8 text-center pt-8 border-t border-[#E0E0E0]">
-              <p className="text-xs text-[#888888] mb-4 flex items-center justify-center gap-2">
-                <ShieldCheck size={14} /> Al proceder al pago, aceptas los términos del Contrato de Servicios listado a continuación.
-              </p>
-              
-              {/* Botón de Checkout de Whop */}
-              <WhopCheckoutButton dealId={deal.id} finalPrice={finalPrice} />
-            </div>
+            {/* Action CTA con Checkbox */}
+            <DealAcceptance dealId={deal.id} finalPrice={finalPrice} />
           </div>
         )}
 
         {/* El Contrato Incrustado (Visual) */}
-        <div className="bg-white p-8 md:p-12 shadow-sm border border-[#E0E0E0] rounded-sm">
-          <div className="border-b-2 border-[#111111] pb-6 mb-8 flex justify-between items-end">
-             <div>
-               <div className="font-serif text-2xl font-black">ARCHITECT<span className="text-[#B8862A]">.SYS</span></div>
-               <div className="text-[10px] tracking-widest uppercase text-[#888888] font-bold mt-1">Condiciones Generales del Servicio</div>
-             </div>
-             <div className="text-right">
-               <div className="text-[10px] tracking-widest uppercase text-[#B8862A] font-bold mb-1">Contrato Legal Vinculante</div>
-               <div className="font-bold text-[#111111]">REF: AS-{deal.id.split('-')[0].toUpperCase()}</div>
-             </div>
+        {deal.plan_type === 'base' ? (
+          <div className="space-y-8">
+            <div className="bg-white p-8 md:p-12 shadow-sm border border-[#E0E0E0] rounded-sm">
+              <div className="border-b-2 border-[#111111] pb-6 mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                 <div>
+                   <div className="font-serif text-3xl font-black">ARCHITECT<span className="text-[#B8862A]">.SYS</span></div>
+                   <div className="text-xs tracking-widest uppercase text-[#888888] font-bold mt-2">Dossier y Acuerdo de Servicios</div>
+                 </div>
+                 <div className="text-left md:text-right">
+                   <div className="text-[10px] tracking-widest uppercase text-[#B8862A] font-bold mb-1">Contrato Legal Vinculante</div>
+                   <div className="font-bold text-[#111111] bg-[#FAFAFA] px-3 py-1 rounded border border-[#E0E0E0]">REF: AS-{deal.id.split('-')[0].toUpperCase()}</div>
+                 </div>
+              </div>
+
+              <div className="prose prose-sm max-w-none text-[#444444]">
+                <p className="text-base mb-8">
+                  De una parte, <strong>Architect.Sys</strong>, como proveedor de servicios digitales independiente.<br/>
+                  De otra parte, <strong>{lead.name}</strong> en representación de <strong>{lead.restaurant_name}</strong> (en adelante, el Cliente).
+                </p>
+
+                {/* BLOQUE A: Propuesta */}
+                <h3 className="text-[#111111] text-lg font-black border-l-4 border-[#B8862A] pl-3 mb-4 flex items-center gap-2">
+                  <FileText size={20} className="text-[#B8862A]" /> SECCIÓN I: Propuesta y Entregables
+                </h3>
+                <div className="bg-[#FAFAFA] p-6 rounded-lg border border-[#E0E0E0] mb-8 space-y-4">
+                  <p><strong>Infraestructura:</strong> {baseOperativaContract.proposal.infrastructure}</p>
+                  <p><strong>Módulos Activos:</strong> {baseOperativaContract.proposal.modules}</p>
+                  <p><strong>Política de Revisiones:</strong> {baseOperativaContract.proposal.revisions}</p>
+                  <div className="bg-[#111111] text-white p-4 rounded-md mt-4">
+                    <strong className="text-[#B8862A] uppercase text-xs tracking-widest block mb-1">Timeline de Ejecución (SLA)</strong>
+                    {baseOperativaContract.proposal.slaTimeline}
+                  </div>
+                </div>
+
+                {/* BLOQUE B: Dossier */}
+                <h3 className="text-[#111111] text-lg font-black border-l-4 border-[#B8862A] pl-3 mb-4 flex items-center gap-2">
+                  <Calendar size={20} className="text-[#B8862A]" /> SECCIÓN II: Dossier de Onboarding
+                </h3>
+                <div className="mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    {baseOperativaContract.dossier.phases.map((phase, i) => (
+                      <div key={i} className="border border-[#E0E0E0] p-4 rounded-lg bg-white relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-[#111111]"></div>
+                        <span className="text-[#B8862A] font-bold text-xs uppercase tracking-widest">{phase.day}</span>
+                        <h4 className="font-bold text-[#111111] mt-2 mb-2">{phase.title}</h4>
+                        <p className="text-xs text-[#888888]">{phase.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="bg-red-50 border border-red-100 p-5 rounded-lg flex gap-4 items-start">
+                    <AlertTriangle size={24} className="text-red-500 shrink-0" />
+                    <div>
+                      <strong className="text-red-800 block mb-1">Cláusula Estricta de Abandono (Ghosting)</strong>
+                      <p className="text-xs text-red-700 leading-relaxed">{baseOperativaContract.dossier.ghostingClause}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* BLOQUE C: Legal */}
+                <h3 className="text-[#111111] text-lg font-black border-l-4 border-[#B8862A] pl-3 mb-4 flex items-center gap-2">
+                  <ShieldCheck size={20} className="text-[#B8862A]" /> SECCIÓN III: Contrato SLA
+                </h3>
+                <div className="space-y-6 text-justify">
+                  <div>
+                    <strong className="block text-[#111111] mb-1">1. Objeto del Contrato</strong>
+                    <p className="text-xs">{baseOperativaContract.legal.clause1_object}</p>
+                  </div>
+                  <div>
+                    <strong className="block text-[#111111] mb-1">2. Política de Reembolso Condicionado</strong>
+                    <p className="text-xs">{baseOperativaContract.legal.clause2_refunds}</p>
+                  </div>
+                  <div>
+                    <strong className="block text-[#111111] mb-1">3. Exención de Responsabilidad Tecnológica</strong>
+                    <p className="text-xs">{baseOperativaContract.legal.clause3_technology}</p>
+                  </div>
+                  <div>
+                    <strong className="block text-[#111111] mb-1">4. Propiedad Intelectual y Licenciamiento</strong>
+                    <p className="text-xs">{baseOperativaContract.legal.clause4_property}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        ) : (
+          <div className="bg-white p-8 md:p-12 shadow-sm border border-[#E0E0E0] rounded-sm">
+            <div className="border-b-2 border-[#111111] pb-6 mb-8 flex justify-between items-end">
+               <div>
+                 <div className="font-serif text-2xl font-black">ARCHITECT<span className="text-[#B8862A]">.SYS</span></div>
+                 <div className="text-[10px] tracking-widest uppercase text-[#888888] font-bold mt-1">Condiciones Generales del Servicio</div>
+               </div>
+               <div className="text-right">
+                 <div className="text-[10px] tracking-widest uppercase text-[#B8862A] font-bold mb-1">Contrato Legal Vinculante</div>
+                 <div className="font-bold text-[#111111]">REF: AS-{deal.id.split('-')[0].toUpperCase()}</div>
+               </div>
+            </div>
 
           <div className="prose prose-sm max-w-none text-[#444444] prose-headings:font-serif prose-headings:text-[#111111] prose-strong:text-[#111111]">
             <p><strong>REUNIDOS</strong></p>
@@ -155,15 +244,30 @@ export default async function DealRoomPage({ params }: { params: { token: string
             <p>De otra parte, <strong>{lead.name}</strong> en representación de <strong>{lead.restaurant_name}</strong> (en adelante, el Cliente).</p>
             
             <h3 className="text-[#B8862A] text-xs tracking-widest uppercase font-bold mt-8 border-b border-[#E0E0E0] pb-2">Cláusula 1 - Objeto</h3>
-            <p>El presente contrato rige la prestación del servicio <strong>{deal.plan_type === 'growth' ? 'Growth Partner' : 'Plan Base'}</strong> para el desarrollo y optimización digital del restaurante del Cliente.</p>
+            <p>El presente contrato rige la prestación del servicio <strong>{serviceTitle}</strong>.</p>
+            {isUpsell && upsellData?.deliverables && (
+              <div className="mt-4 p-4 bg-[#FAFAFA] border border-[#E0E0E0] rounded-sm">
+                <p className="mb-2"><strong>SLA Contractual:</strong> {upsellData.deliverables.contract}</p>
+                <p><strong>Entregables:</strong> {upsellData.deliverables.proposal}</p>
+              </div>
+            )}
             
             <h3 className="text-[#B8862A] text-xs tracking-widest uppercase font-bold mt-8 border-b border-[#E0E0E0] pb-2">Cláusula 2 - Políticas de Cancelación</h3>
-            <p>Debido a la naturaleza digital e inmediata de la infraestructura desplegada, <strong>el importe inicial de configuración no es reembolsable</strong> una vez la sala de producción ha sido activada (Ley General para la Defensa de los Consumidores, excepciones al derecho de desistimiento en contenido digital).</p>
+            {isUpsell ? (
+              <p>El importe abonado compromete el tiempo y recursos del equipo de especialistas de Architect.Sys, por lo que <strong>no es reembolsable</strong> una vez iniciado el servicio o la auditoría acordada.</p>
+            ) : (
+              <p>Debido a la naturaleza digital e inmediata de la infraestructura desplegada, <strong>el importe inicial de configuración no es reembolsable</strong> una vez la sala de producción ha sido activada (Ley General para la Defensa de los Consumidores, excepciones al derecho de desistimiento en contenido digital).</p>
+            )}
 
             <h3 className="text-[#B8862A] text-xs tracking-widest uppercase font-bold mt-8 border-b border-[#E0E0E0] pb-2">Cláusula 3 - Propiedad de los Activos</h3>
-            <p>Todos los activos generados (código, diseño, carta digital) permanecen bajo la licencia de uso de Architect.Sys hasta la finalización de los pagos acordados. Una vez liquidados, el dominio y los activos operativos pasan a ser propiedad intelectual del Cliente.</p>
+            {isUpsell ? (
+              <p>Los entregables, reportes, creatividades o planes de optimización generados como parte de este servicio Upsell pasan a ser propiedad del Cliente una vez liquidados los honorarios correspondientes.</p>
+            ) : (
+              <p>Todos los activos generados (código, diseño, carta digital) permanecen bajo la licencia de uso de Architect.Sys hasta la finalización de los pagos acordados. Una vez liquidados, el dominio y los activos operativos pasan a ser propiedad intelectual del Cliente.</p>
+            )}
           </div>
         </div>
+        )}
       </div>
     </div>
   );

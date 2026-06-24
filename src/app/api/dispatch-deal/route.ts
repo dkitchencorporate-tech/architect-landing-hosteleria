@@ -1,8 +1,5 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
-
-// Solo funcionará en producción con una API key real. Para dev usaremos console.log si no hay key.
-const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy');
+import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   try {
@@ -53,9 +50,9 @@ export async function POST(req: Request) {
       </div>
     `;
 
-    // Si no hay API key de Resend en el .env, simulamos el envío (Modo Dev)
-    if (!process.env.RESEND_API_KEY) {
-      console.log('--- SIMULANDO ENVÍO DE EMAIL ---');
+    // Si no hay API key de Gmail en el .env, simulamos el envío (Modo Dev local sin claves)
+    if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
+      console.log('--- SIMULANDO ENVÍO DE EMAIL (Faltan credenciales SMTP) ---');
       console.log('To:', lead.email);
       console.log('Subject:', `Tu propuesta de Architect.Sys: ${lead.restaurant_name}`);
       console.log('Link:', checkoutUrl);
@@ -63,18 +60,22 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true, simulated: true, url: checkoutUrl });
     }
 
-    const { data, error } = await resend.emails.send({
-      from: 'Architect.Sys <cerrador@hosteleria.architectsys.com>', // Cambiar por tu dominio verificado en Resend
-      to: [lead.email],
-      subject: `Acuerdo Formal & Propuesta: ${lead.restaurant_name}`,
-      html: htmlContent,
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.SMTP_EMAIL,
+        pass: process.env.SMTP_PASSWORD?.replace(/\s/g, ''),
+      },
     });
 
-    if (error) {
-      console.error('Error Resend:', error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
-    }
+    const mailOptions = {
+      from: `"Architect Sys" <${process.env.SMTP_EMAIL}>`,
+      to: lead.email,
+      subject: `Acuerdo Formal & Propuesta: ${lead.restaurant_name}`,
+      html: htmlContent,
+    };
 
+    const data = await transporter.sendMail(mailOptions);
     return NextResponse.json({ success: true, data });
 
   } catch (error: any) {

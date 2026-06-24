@@ -31,28 +31,7 @@ export default function Autogestion({ isGrowthPlan }: AutogestionProps) {
         ))}
       </div>
 
-      {/* Lock Overlay for Base Plan (or simulated development phase) */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#020202]/80 backdrop-blur-sm rounded-xl border border-dash-border/50 p-6 text-center mt-20">
-        <div className="w-16 h-16 bg-dash-surface rounded-full flex items-center justify-center mb-4 border border-dash-border">
-          <svg className="w-8 h-8 text-brand" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-        </div>
-        <h3 className="text-2xl font-bold text-white mb-2">Sección en Fase de Desarrollo / Entrega</h3>
-        <p className="text-dash-text-secondary max-w-md mb-6">
-          Actualmente estamos construyendo y afinando tu ecosistema base. Esta sección de autogestión se desbloqueará dinámicamente cuando tu web y sistemas estén 100% entregados y aprobados.
-        </p>
-
-        {!isGrowthPlan && (
-          <div className="mt-4 bg-brand/10 border border-brand/30 rounded-lg p-6 max-w-lg shadow-premium">
-            <h4 className="text-brand font-bold mb-2 uppercase tracking-wide text-sm">Aviso Importante</h4>
-            <p className="text-white text-sm mb-4">
-              Como usuario de <strong>Plan Base (Pago Único)</strong>, tendrás acceso a funciones limitadas aquí. Desbloquea el Agente de WhatsApp Autónomo, 6 Eventos premium y analíticas avanzadas actualizando a Socio Growth.
-            </p>
-            <button className="bg-brand text-white px-6 py-2 rounded text-sm font-bold hover:bg-brandHover transition-colors w-full">
-              Ver Ventajas del Plan Growth (299€/mes)
-            </button>
-          </div>
-        )}
-      </div>
+      {/* Lock Overlay Eliminado en Fase 2 */}
     </div>
   );
 }

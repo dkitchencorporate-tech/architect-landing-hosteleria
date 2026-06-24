@@ -6,12 +6,13 @@ import EventsLibrary from "@/components/dashboard/EventsLibrary";
 import Autogestion from "@/components/dashboard/Autogestion";
 import Marketplace from "@/components/dashboard/Marketplace";
 import Pipeline from "@/components/dashboard/Pipeline";
+import CreativeFactoryClient from "@/components/dashboard/CreativeFactoryClient";
 import { createClient } from "@/lib/supabase-browser";
 
 export default function DashboardPage() {
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState<boolean | null>(null);
   const [isGrowthPlan, setIsGrowthPlan] = useState(false);
-  const [activeTab, setActiveTab] = useState("events");
+  const [activeTab, setActiveTab] = useState("creative");
   const [isAdminDemo, setIsAdminDemo] = useState(false);
   const [userProfile, setUserProfile] = useState<any>(null);
   
@@ -64,7 +65,7 @@ export default function DashboardPage() {
     // Listen to hash changes for navigation
     const handleHashChange = () => {
       const hash = window.location.hash.replace("#", "");
-      if (["events", "autogestion", "marketplace", "pipeline"].includes(hash)) {
+      if (["creative", "events", "autogestion", "marketplace", "pipeline"].includes(hash)) {
         setActiveTab(hash);
       }
     };
@@ -88,6 +89,8 @@ export default function DashboardPage() {
   // Render the appropriate view based on active tab
   const renderView = () => {
     switch (activeTab) {
+      case "creative":
+        return <CreativeFactoryClient userProfile={userProfile} />;
       case "events":
         return <EventsLibrary isGrowthPlan={isGrowthPlan} />;
       case "autogestion":
@@ -97,7 +100,7 @@ export default function DashboardPage() {
       case "pipeline":
         return <Pipeline />;
       default:
-        return <EventsLibrary isGrowthPlan={isGrowthPlan} />;
+        return <CreativeFactoryClient userProfile={userProfile} />;
     }
   };
 

@@ -42,6 +42,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   };
 
   const navItems = [
+    { name: 'Creative Factory', href: '#creative', icon: Zap },
     { name: 'Eventos', href: '#events', icon: CalendarDays },
     { name: 'Autogestión', href: '#autogestion', icon: LayoutDashboard },
     { name: 'Up-sells', href: '#marketplace', icon: ShoppingBag },
