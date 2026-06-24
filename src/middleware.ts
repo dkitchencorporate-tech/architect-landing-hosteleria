@@ -64,7 +64,7 @@ export async function middleware(request: NextRequest) {
   }
 
   if (isAdminRoute && user) {
-    const isAdmin = true; // TEMPORAL PARA TEST: Permitir acceso a cualquier usuario logueado
+    const isAdmin = user.email === 'klarx94@gmail.com';
     if (!isAdmin) {
       // Si está logueado pero no es admin, enviarlo a su dashboard
       url.pathname = '/dashboard';
@@ -74,7 +74,7 @@ export async function middleware(request: NextRequest) {
 
   // Si intenta ir a /auth y ya está logueado, llevarlo a su zona correspondiente
   if (url.pathname.startsWith('/auth') && user) {
-    const isAdmin = true; // TEMPORAL PARA TEST
+    const isAdmin = user.email === 'klarx94@gmail.com';
     url.pathname = isAdmin ? '/admin-architect/pipeline' : '/dashboard';
     return NextResponse.redirect(url);
   }
