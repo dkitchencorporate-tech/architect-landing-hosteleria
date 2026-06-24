@@ -102,8 +102,8 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: `"Architect Sys" <${process.env.SMTP_EMAIL}>`,
-      to: lead.email,
-      subject: `Acuerdo Formal & Propuesta: ${lead.restaurant_name}`,
+      to: clientEmail,
+      subject: `Acuerdo Formal & Propuesta: ${restaurantName}`,
       html: htmlContent,
     };
 

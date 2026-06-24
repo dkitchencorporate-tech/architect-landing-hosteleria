@@ -126,7 +126,7 @@ export default function AdminClientsPage() {
       const res = await fetch('/api/admin/invitations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token, planType })
+        body: JSON.stringify({ token, planType, email: formData.email, name: formData.name })
       });
       const json = await res.json();
       
@@ -347,40 +347,43 @@ export default function AdminClientsPage() {
 
               {!selectedPlan && invitations.length > 0 && (
                 <div className="bg-black/40 border border-white/5 rounded-[2rem] p-6 md:p-8">
-                  <h4 className="text-xs font-black text-zinc-500 uppercase tracking-widest mb-6">Tokens Criptográficos / Acuerdos Recientes</h4>
+                  <h4 className="text-xs font-black text-zinc-500 uppercase tracking-widest mb-6">Registro Criptográfico (Working Zone de Tokens)</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {invitations.filter(i => !i.used).map(inv => {
+                    {invitations.map(inv => {
                       const payload = decodeTokenPayload(inv.token);
                       return (
                       <div key={inv.id} className="bg-zinc-900/50 backdrop-blur-md border border-white/5 hover:border-white/10 transition-colors rounded-2xl p-5 flex flex-col justify-between group">
                         <div className="flex justify-between items-start mb-6">
-                          <span className={`text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg border ${inv.plan_type === 'suscripcion' ? 'bg-orange-500/10 border-orange-500/20 text-orange-400' : 'bg-white/5 border-white/10 text-zinc-300'}`}>
-                            {inv.plan_type === 'suscripcion' ? 'Suscripción' : 'Base'}
+                          <span className={`text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg border ${inv.used ? 'bg-green-500/10 border-green-500/20 text-green-400' : 'bg-orange-500/10 border-orange-500/20 text-orange-400'}`}>
+                            {inv.used ? 'Pagado & Cerrado' : 'Pendiente de Pago'}
                           </span>
                           <span className="text-xs text-zinc-600 font-mono font-medium">...{inv.token.slice(-8)}</span>
                         </div>
                         <div className="mb-4">
-                          <h4 className="text-white font-black text-lg">{payload.name || 'Anónimo'}</h4>
+                          <h4 className="text-white font-black text-lg">{payload.name || inv.email || 'Anónimo'}</h4>
                           <p className="text-xs text-zinc-500">{payload.email || 'Sin correo'}</p>
+                          <p className="text-[10px] text-zinc-600 font-mono mt-1">{new Date(inv.created_at).toLocaleDateString()}</p>
                         </div>
                         <div className="flex gap-2">
-                          <button 
-                            onClick={() => copyToClipboard(inv.token, inv.id)}
-                            className={`flex-1 text-center text-xs font-black py-3 rounded-xl transition-all border flex items-center justify-center gap-2 ${copiedId === inv.id ? 'bg-green-500/20 text-green-400 border-green-500/30' : 'bg-white/5 text-white border-white/5 hover:bg-white/10'}`}
-                          >
-                            {copiedId === inv.id ? <><CheckCircle2 size={14}/> Link</> : <><Copy size={14}/> Sala Cierre</>}
-                          </button>
+                          {!inv.used && (
+                            <button 
+                              onClick={() => copyToClipboard(inv.token, inv.id)}
+                              className={`flex-1 text-center text-xs font-black py-3 rounded-xl transition-all border flex items-center justify-center gap-2 ${copiedId === inv.id ? 'bg-green-500/20 text-green-400 border-green-500/30' : 'bg-white/5 text-white border-white/5 hover:bg-white/10'}`}
+                            >
+                              {copiedId === inv.id ? <><CheckCircle2 size={14}/> Link</> : <><Copy size={14}/> Sala Cierre</>}
+                            </button>
+                          )}
                           <button 
                             onClick={() => handleDeleteToken(inv.id)}
-                            className="bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 hover:border-red-500/40 px-4 rounded-xl transition-colors flex items-center justify-center"
+                            className="bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 hover:border-red-500/40 px-4 py-3 rounded-xl transition-colors flex items-center justify-center flex-1"
                             title="Anular Propuesta/Token"
                           >
-                            <Trash2 size={16} />
+                            <Trash2 size={16} /> Anular
                           </button>
                         </div>
                       </div>
                     )})}
-                    {invitations.filter(i => !i.used).length === 0 && (
+                    {invitations.length === 0 && (
                       <p className="text-sm text-zinc-600 p-2 col-span-full">No hay tokens/acuerdos activos pendientes de uso.</p>
                     )}
                   </div>
