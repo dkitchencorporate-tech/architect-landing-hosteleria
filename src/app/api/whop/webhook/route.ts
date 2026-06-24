@@ -15,34 +15,28 @@ export async function POST(req: Request) {
     const action = body.action || body.type || 'unknown_event';
     console.log(`[WHOP WEBHOOK] Recibido evento: ${action}`);
 
-    // 2. Extraer metadatos (donde pasamos el deal_id al crear el checkout)
+    // 2. Extraer metadatos (donde pasamos el fullToken al crear el checkout)
     const metadata = body.data?.metadata || {};
-    const dealId = metadata.deal_id;
+    const fullToken = metadata.fullToken;
 
     if (action === 'payment.succeeded' || action === 'invoice_created') {
-      console.log(`[WHOP WEBHOOK] ¡Pago exitoso detectado! Deal ID: ${dealId}`);
+      console.log(`[WHOP WEBHOOK] ¡Pago exitoso detectado! Token: ${fullToken ? 'Recibido' : 'No recibido'}`);
       
-      if (dealId) {
-        // 1. Obtener el Deal para saber a qué lead pertenece
-        const { data: deal } = await supabaseAdmin.from('deals').select('lead_id, plan_type').eq('id', dealId).single();
+      if (fullToken) {
+        const decodedTokenStr = decodeURIComponent(fullToken);
         
-        if (deal) {
-          // 2. Actualizar Deal a PAGADO
-          await supabaseAdmin.from('deals').update({ status: 'paid' }).eq('id', dealId);
-          
-          // 3. Actualizar Lead a CERRADO
-          await supabaseAdmin.from('leads').update({ status: 'closed' }).eq('id', deal.lead_id);
-          
-          // 4. Disparar Correo de Onboarding (Dashboard Credentials)
-          const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-          fetch(`${baseUrl}/api/dispatch-onboarding`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ dealId })
-          }).catch(err => console.error('[WHOP WEBHOOK] Error disparando onboarding:', err));
-        }
+        // 1. Actualizar Token a USADO (Pagado)
+        await supabaseAdmin.from('invitations').update({ used: true }).eq('token', decodedTokenStr);
+        
+        // 2. Disparar Correo de Onboarding (Dashboard Credentials)
+        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+        fetch(`${baseUrl}/api/dispatch-onboarding`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fullToken })
+        }).catch(err => console.error('[WHOP WEBHOOK] Error disparando onboarding:', err));
       } else {
-        console.warn(`[WHOP WEBHOOK] Pago recibido pero no se encontró deal_id en los metadatos.`);
+        console.warn(`[WHOP WEBHOOK] Pago recibido pero no se encontró fullToken en los metadatos.`);
       }
     }
 

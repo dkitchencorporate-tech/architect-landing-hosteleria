@@ -1,15 +1,47 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+const decodeTokenPayload = (fullToken: string) => {
+  try {
+    const parts = fullToken.split('::');
+    if (parts.length > 1) {
+      return JSON.parse(decodeURIComponent(atob(parts[1])));
+    }
+  } catch(e) {
+    console.error('Error decoding token payload:', e);
+  }
+  return null;
+};
+
 export async function POST(req: Request) {
   try {
-    const { deal, lead } = await req.json();
+    // Aceptamos el formato antiguo (deal, lead) para no romper CRM anterior,
+    // y el formato nuevo (token, payload)
+    const { token, payload: rawPayload, deal, lead } = await req.json();
 
-    if (!deal || !lead) {
-      return NextResponse.json({ error: 'Datos insuficientes' }, { status: 400 });
+    let clientName = lead?.name || 'Cliente';
+    let clientEmail = lead?.email;
+    let restaurantName = lead?.restaurant_name || 'tu negocio';
+    let checkoutUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/deal`;
+
+    if (token) {
+      const payload = decodeTokenPayload(token) || rawPayload;
+      if (!payload) {
+         return NextResponse.json({ error: 'Token inválido o sin payload' }, { status: 400 });
+      }
+      clientName = payload.name;
+      clientEmail = payload.email;
+      restaurantName = payload.name; // En la versión rápida, usamos el mismo nombre
+      checkoutUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/deal?token=${token}`;
+    } else if (deal && lead) {
+      checkoutUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/deal?token=${deal.magic_token}`;
+    } else {
+      return NextResponse.json({ error: 'Datos insuficientes. Se requiere token o deal+lead' }, { status: 400 });
     }
 
-    const checkoutUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/deal/${deal.magic_token}`;
+    if (!clientEmail) {
+      return NextResponse.json({ error: 'Email destino es requerido' }, { status: 400 });
+    }
 
     const htmlContent = `
       <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-w-xl; margin: 0 auto; color: #111;">
@@ -19,9 +51,9 @@ export async function POST(req: Request) {
         </div>
         
         <div style="padding: 40px 20px;">
-          <h2 style="font-size: 20px; font-weight: bold; margin-bottom: 20px;">Hola, ${lead.name}</h2>
+          <h2 style="font-size: 20px; font-weight: bold; margin-bottom: 20px;">Hola, ${clientName}</h2>
           <p style="font-size: 14px; line-height: 1.6; color: #444;">
-            Ha sido un placer reunirnos contigo. Como conversamos, hemos preparado todo el plan de acción para llevar la presencia digital de <strong>${lead.restaurant_name}</strong> al siguiente nivel.
+            Ha sido un placer reunirnos contigo. Como conversamos, hemos preparado todo el plan de acción para llevar la presencia digital de <strong>${restaurantName}</strong> al siguiente nivel.
           </p>
           <p style="font-size: 14px; line-height: 1.6; color: #444;">
             En el siguiente enlace privado encontrarás tu <strong>Propuesta Formal</strong>, el <strong>Contrato de Nivel de Servicio (SLA)</strong> y el <strong>Dossier de Onboarding</strong> de los primeros 30 días.
@@ -53,8 +85,8 @@ export async function POST(req: Request) {
     // Si no hay API key de Gmail en el .env, simulamos el envío (Modo Dev local sin claves)
     if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
       console.log('--- SIMULANDO ENVÍO DE EMAIL (Faltan credenciales SMTP) ---');
-      console.log('To:', lead.email);
-      console.log('Subject:', `Tu propuesta de Architect.Sys: ${lead.restaurant_name}`);
+      console.log('To:', clientEmail);
+      console.log('Subject:', `Tu propuesta de Architect.Sys: ${restaurantName}`);
       console.log('Link:', checkoutUrl);
       console.log('--------------------------------');
       return NextResponse.json({ success: true, simulated: true, url: checkoutUrl });

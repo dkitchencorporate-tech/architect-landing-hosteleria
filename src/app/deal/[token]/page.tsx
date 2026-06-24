@@ -10,6 +10,19 @@ export const metadata = {
   title: 'Sala de Cierre | Architect.Sys',
 };
 
+const decodeTokenPayload = (fullToken: string) => {
+  try {
+    const decodedToken = decodeURIComponent(fullToken);
+    const parts = decodedToken.split('::');
+    if (parts.length > 1) {
+      return JSON.parse(decodeURIComponent(atob(parts[1])));
+    }
+  } catch(e) {
+    console.error('Error decoding token payload:', e);
+  }
+  return null;
+};
+
 export default async function DealRoomPage({ params }: { params: { token: string } }) {
   const cookieStore = cookies();
   const supabase = createServerClient(
@@ -22,35 +35,41 @@ export default async function DealRoomPage({ params }: { params: { token: string
     }
   );
 
-  // Fetch Deal & Lead
-  const { data: deal, error: dealError } = await supabase
-    .from('deals')
-    .select('*, leads(*)')
-    .eq('magic_token', params.token)
-    .single();
+  const decodedTokenStr = decodeURIComponent(params.token);
+  const payload = decodeTokenPayload(decodedTokenStr);
 
-  if (dealError || !deal) {
-    console.error(dealError);
+  if (!payload) {
     return notFound();
   }
 
-  const lead = deal.leads;
-  const isPaid = deal.status === 'paid';
-  const isSigned = deal.status === 'signed';
+  // Fetch Invitation Status (to see if it's already paid/used)
+  const { data: invitation, error: invError } = await supabase
+    .from('invitations')
+    .select('*')
+    .eq('token', decodedTokenStr)
+    .single();
 
-  // Calculos
-  const totalDiscount = (deal.discounts || []).reduce((acc: number, curr: any) => acc + curr.amount, 0);
-  const finalPrice = deal.base_price + deal.setup_fee - totalDiscount;
+  const isPaid = invitation?.used === true;
 
-  let serviceTitle = deal.plan_type === 'growth' ? 'Growth Partner' : 'Plan Base';
-  let isUpsell = false;
-  let upsellData = null;
+  // Extraer datos del payload
+  const lead = {
+    name: payload.name || 'Cliente',
+    restaurant_name: payload.name || 'Tu Negocio'
+  };
   
-  if (deal.plan_type !== 'growth' && deal.plan_type !== 'base') {
-    isUpsell = true;
-    upsellData = marketplaceServices.find(s => s.id === deal.plan_type) || null;
-    if (upsellData) serviceTitle = upsellData.title;
-  }
+  const deal = {
+    id: invitation?.id || 'TEMP-ID',
+    base_price: Number(payload.price) || 0,
+    setup_fee: Number(payload.setup) || 0,
+    plan_type: invitation?.plan_type || 'base',
+    deal_notes: payload.notes || '',
+    discounts: [],
+    bonuses: []
+  };
+
+  const finalPrice = deal.base_price + deal.setup_fee;
+  let serviceTitle = deal.plan_type === 'suscripcion' ? 'Plan Suscripción Pro' : 'Plan Base (Pago Único)';
+  let isUpsell = false;
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#111111] font-sans selection:bg-[#B8862A] selection:text-white pb-24">
@@ -136,8 +155,8 @@ export default async function DealRoomPage({ params }: { params: { token: string
               </div>
             </div>
 
-            {/* Action CTA con Checkbox */}
-            <DealAcceptance dealId={deal.id} finalPrice={finalPrice} />
+            {/* Action CTA con Checkbox (Envíamos el token, no el dealId) */}
+            <DealAcceptance dealId={decodedTokenStr} finalPrice={finalPrice} />
           </div>
         )}
 

@@ -1,34 +1,38 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { createClient } from '@supabase/supabase-js';
 
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://dummy.supabase.co',
-  process.env.SUPABASE_SERVICE_KEY || 'dummy_key'
-);
+const decodeTokenPayload = (fullToken: string) => {
+  try {
+    const decodedToken = decodeURIComponent(fullToken);
+    const parts = decodedToken.split('::');
+    if (parts.length > 1) {
+      return JSON.parse(decodeURIComponent(atob(parts[1])));
+    }
+  } catch(e) {
+    console.error('Error decoding token payload:', e);
+  }
+  return null;
+};
 
 export async function POST(req: Request) {
   try {
-    const { dealId } = await req.json();
+    const { fullToken, dealId } = await req.json();
 
-    if (!dealId) {
-      return NextResponse.json({ error: 'Deal ID is required' }, { status: 400 });
+    const tokenToUse = fullToken || dealId; // fallback for old calls
+    
+    if (!tokenToUse) {
+      return NextResponse.json({ error: 'Token is required' }, { status: 400 });
     }
 
-    const { data: deal } = await supabaseAdmin
-      .from('deals')
-      .select('*, leads(*)')
-      .eq('id', dealId)
-      .single();
-
-    if (!deal || !deal.leads) {
-      return NextResponse.json({ error: 'Deal or Lead not found' }, { status: 404 });
+    const payload = decodeTokenPayload(tokenToUse);
+    if (!payload || !payload.email) {
+       return NextResponse.json({ error: 'Invalid token payload or missing email' }, { status: 400 });
     }
 
-    const lead = deal.leads;
-    const dashboardUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/portal`;
-    // For MVP, just a magic link or generic instruction
-    const magicToken = deal.magic_token; 
+    const clientName = payload.name || 'Cliente';
+    const clientEmail = payload.email;
+    const dashboardUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/onboarding`;
+    const finalUrl = `${dashboardUrl}?token=${tokenToUse}`;
 
     const htmlContent = `
       <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-w-xl; margin: 0 auto; color: #111;">
@@ -38,7 +42,7 @@ export async function POST(req: Request) {
         </div>
         
         <div style="padding: 40px 20px;">
-          <h2 style="font-size: 20px; font-weight: bold; margin-bottom: 20px;">¡Bienvenido a bordo, ${lead.name}!</h2>
+          <h2 style="font-size: 20px; font-weight: bold; margin-bottom: 20px;">¡Bienvenido a bordo, ${clientName}!</h2>
           <p style="font-size: 14px; line-height: 1.6; color: #444;">
             Hemos recibido confirmación de tu pago y el contrato ha sido archivado legalmente. El equipo de Architect.Sys ha comenzado la asignación de recursos para tu proyecto.
           </p>
@@ -50,7 +54,7 @@ export async function POST(req: Request) {
           </div>
           
           <div style="text-align: center; margin: 40px 0;">
-            <a href="${dashboardUrl}?token=${magicToken}" style="background-color: #111111; color: white; padding: 16px 32px; text-decoration: none; font-weight: bold; font-size: 16px; border-radius: 8px; display: inline-block;">
+            <a href="${finalUrl}" style="background-color: #111111; color: white; padding: 16px 32px; text-decoration: none; font-weight: bold; font-size: 16px; border-radius: 8px; display: inline-block;">
               Entrar al Portal de Autogestión
             </a>
           </div>
@@ -74,8 +78,8 @@ export async function POST(req: Request) {
 
     if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {
       console.log('--- SIMULANDO CORREO DE ONBOARDING ---');
-      console.log('To:', lead.email);
-      console.log('Link:', dashboardUrl);
+      console.log('To:', clientEmail);
+      console.log('Link:', finalUrl);
       return NextResponse.json({ success: true, simulated: true });
     }
 
@@ -89,8 +93,8 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: `"Architect Sys Operaciones" <${process.env.SMTP_EMAIL}>`,
-      to: lead.email,
-      subject: `Accesos y Arranque de Proyecto: ${lead.restaurant_name}`,
+      to: clientEmail,
+      subject: `Accesos y Arranque de Proyecto: ${clientName}`,
       html: htmlContent,
     };
 

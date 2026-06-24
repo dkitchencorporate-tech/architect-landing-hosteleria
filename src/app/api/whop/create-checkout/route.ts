@@ -1,33 +1,35 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 
-// Inicializar Supabase Admin
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://dummy.supabase.co',
-  process.env.SUPABASE_SERVICE_KEY || 'dummy_key'
-);
+const decodeTokenPayload = (fullToken: string) => {
+  try {
+    const decodedToken = decodeURIComponent(fullToken);
+    const parts = decodedToken.split('::');
+    if (parts.length > 1) {
+      return JSON.parse(decodeURIComponent(atob(parts[1])));
+    }
+  } catch(e) {
+    console.error('Error decoding token payload:', e);
+  }
+  return null;
+};
 
 export async function POST(req: Request) {
   try {
+    // Frontend sends token string as dealId
     const { dealId } = await req.json();
 
     if (!dealId) {
-      return NextResponse.json({ error: 'Deal ID is required' }, { status: 400 });
+      return NextResponse.json({ error: 'Token is required' }, { status: 400 });
     }
 
-    // 1. Buscar el Deal para obtener el precio real
-    const { data: deal, error: dealError } = await supabaseAdmin
-      .from('deals')
-      .select('*, leads(*)')
-      .eq('id', dealId)
-      .single();
-
-    if (dealError || !deal) {
-      return NextResponse.json({ error: 'Deal no encontrado' }, { status: 404 });
+    const payload = decodeTokenPayload(dealId);
+    if (!payload) {
+      return NextResponse.json({ error: 'Token inválido' }, { status: 400 });
     }
 
-    const totalDiscount = (deal.discounts || []).reduce((acc: number, curr: any) => acc + curr.amount, 0);
-    const finalPrice = deal.base_price + deal.setup_fee - totalDiscount;
+    const basePrice = Number(payload.price) || 0;
+    const setupFee = Number(payload.setup) || 0;
+    const finalPrice = basePrice + setupFee;
 
     // 2. Comunicarse con la API de Whop para generar un Checkout dinámico
     const whopApiKey = process.env.WHOP_API_KEY;
@@ -37,16 +39,30 @@ export async function POST(req: Request) {
       // MODO DESARROLLO / DEMO (Faltan variables de Whop)
       console.warn(' Faltan credenciales de Whop. Simulando checkout exitoso.');
       
-      // Simularemos un webhok llamando directamente a nuestra propia ruta
+      // En entorno local redirigimos a una ruta que simule el éxito, enviando metadata a un "fake webhook"
       const fakeWebhookUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/whop/webhook`;
       
+      // Disparar Webhook falso en el fondo
+      fetch(fakeWebhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'payment.succeeded',
+          data: {
+            metadata: {
+               fullToken: dealId
+            }
+          }
+        })
+      }).catch(console.error);
+
       return NextResponse.json({ 
-        url: `/deal/success?deal_id=${dealId}`, // Redirigir a success (Simulación)
+        url: `/deal/success`, // Redirigir a success (Simulación)
         simulated: true 
       });
     }
 
-    const isRecurring = ['growth', 'ads-management', 'content-creation'].includes(deal.plan_type);
+    const isRecurring = payload.plan === 'suscripcion'; // We don't have exact plan type in payload but we can default to one_time for simplicity, or we can check the plan_type in db or we can check if basePrice > 0. Actually base is one_time, pro is recurring. We assume one_time by default unless we know. Let's assume one_time since we only passed 'price' and 'setup'
 
     // LLAMADA REAL A WHOP
     const response = await fetch('https://api.whop.com/v1/checkout_configurations', {
@@ -59,16 +75,11 @@ export async function POST(req: Request) {
         plan: {
           initial_price: finalPrice,
           currency: 'eur',
-          plan_type: isRecurring ? 'recurring' : 'one_time',
-          ...(isRecurring ? {
-            renewal_price: finalPrice,
-            billing_period: 1
-          } : {}),
+          plan_type: 'one_time',
           company_id: whopCompanyId,
         },
         metadata: {
-          deal_id: deal.id,
-          lead_id: deal.leads?.id
+          fullToken: dealId,
         }
       })
     });
@@ -82,12 +93,6 @@ export async function POST(req: Request) {
     const data = await response.json();
     const checkoutLink = `https://whop.com/checkout/${data.plan?.id || data.id}`;
     
-    // Guardamos la URL en la BD para este deal
-    await supabaseAdmin
-      .from('deals')
-      .update({ whop_payment_url: checkoutLink })
-      .eq('id', deal.id);
-
     return NextResponse.json({ url: checkoutLink });
 
   } catch (error: any) {
