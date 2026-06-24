@@ -12,7 +12,7 @@ import { createClient } from "@/lib/supabase-browser";
 export default function DashboardPage() {
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState<boolean | null>(null);
   const [isGrowthPlan, setIsGrowthPlan] = useState(false);
-  const [activeTab, setActiveTab] = useState("creative");
+  const [activeTab, setActiveTab] = useState<string | null>(null);
   const [isAdminDemo, setIsAdminDemo] = useState(false);
   const [userProfile, setUserProfile] = useState<any>(null);
   
@@ -38,6 +38,7 @@ export default function DashboardPage() {
         // Modo Demo para presentaciones
         setHasCompletedOnboarding(true);
         setIsGrowthPlan(true);
+        if (!window.location.hash) setActiveTab('creative');
       } else {
         // Cliente Real: Leer de Base de Datos
         if (session && session.user) {
@@ -50,7 +51,9 @@ export default function DashboardPage() {
           if (profile) {
             setUserProfile(profile);
             setHasCompletedOnboarding(profile.onboarding_completed);
-            setIsGrowthPlan(profile.plan === 'growth');
+            const isGrowth = profile.plan === 'growth';
+            setIsGrowthPlan(isGrowth);
+            if (!window.location.hash) setActiveTab(isGrowth ? 'creative' : 'autogestion');
           } else {
             setHasCompletedOnboarding(false);
           }
@@ -88,7 +91,8 @@ export default function DashboardPage() {
 
   // Render the appropriate view based on active tab
   const renderView = () => {
-    switch (activeTab) {
+    const currentTab = activeTab || (isGrowthPlan ? "creative" : "autogestion");
+    switch (currentTab) {
       case "creative":
         return <CreativeFactoryClient userProfile={userProfile} />;
       case "events":
@@ -100,7 +104,7 @@ export default function DashboardPage() {
       case "pipeline":
         return <Pipeline />;
       default:
-        return <CreativeFactoryClient userProfile={userProfile} />;
+        return isGrowthPlan ? <CreativeFactoryClient userProfile={userProfile} /> : <Autogestion isGrowthPlan={isGrowthPlan} />;
     }
   };
 

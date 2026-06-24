@@ -41,12 +41,16 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     window.dispatchEvent(new Event('storage'));
   };
 
-  const navItems = [
+  const navItems = isGrowthPlan ? [
     { name: 'Creative Factory', href: '#creative', icon: Zap },
     { name: 'Eventos', href: '#events', icon: CalendarDays },
     { name: 'Autogestión', href: '#autogestion', icon: LayoutDashboard },
-    { name: 'Up-sells', href: '#marketplace', icon: ShoppingBag },
     { name: 'Pipeline', href: '#pipeline', icon: BarChart3 },
+    { name: 'Up-sells', href: '#marketplace', icon: ShoppingBag },
+  ] : [
+    { name: 'Autogestión', href: '#autogestion', icon: LayoutDashboard },
+    { name: 'Eventos', href: '#events', icon: CalendarDays },
+    { name: 'Up-sells', href: '#marketplace', icon: ShoppingBag },
   ];
 
   return (
