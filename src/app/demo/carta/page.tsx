@@ -889,7 +889,7 @@ function CartaContent() {
                 {/* Botón Principal: Enviar Comanda */}
                 {cartTotal > 0 && (
                   <button 
-                    onClick={() => { alert(t.order_sent); setCart([]); setIsCartOpen(false); }} 
+                    onClick={() => { showAlert(t.order_sent); setCart([]); setIsCartOpen(false); }} 
                     className={`col-span-2 py-4 sm:py-5 rounded-2xl text-xs sm:text-sm font-black uppercase tracking-widest ${theme.sendBtn} transition-transform active:scale-[0.98] shadow-lg`}
                   >
                     {t.send_to_kitchen}
@@ -906,7 +906,7 @@ function CartaContent() {
 
                 {/* Botón Terciario: Llamar Camarero Humano */}
                 <button 
-                  onClick={() => alert('El camarero ha sido notificado y se dirige a su mesa.')}
+                  onClick={() => showAlert('El camarero ha sido notificado y se dirige a su mesa.')}
                   className={`py-4 rounded-xl text-[10px] sm:text-xs font-bold uppercase tracking-widest ${theme.secondaryBtn} transition-colors flex items-center justify-center gap-2 ${cartTotal === 0 ? 'col-span-2' : 'col-span-1'}`}
                 >
                   {t.call_waiter}

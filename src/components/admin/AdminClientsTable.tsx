@@ -2,10 +2,12 @@
 
 import React, { useState } from 'react';
 import { createClient } from '@/lib/supabase-browser';
+import { useAlert } from '@/components/ui/AlertProvider';
 
 export default function AdminClientsTable({ initialProfiles }: { initialProfiles: any[] }) {
   const [profiles, setProfiles] = useState(initialProfiles);
   const [loadingId, setLoadingId] = useState<string | null>(null);
+  const { showAlert } = useAlert();
   const supabase = createClient();
 
   const handleTogglePlan = async (id: string, currentPlan: string) => {
@@ -20,7 +22,7 @@ export default function AdminClientsTable({ initialProfiles }: { initialProfiles
     if (!error) {
       setProfiles(prev => prev.map(p => p.id === id ? { ...p, plan: newPlan } : p));
     } else {
-      alert("Error al actualizar el plan: " + error.message);
+      showAlert("Error al actualizar el plan: " + error.message);
     }
     setLoadingId(null);
   };

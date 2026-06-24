@@ -70,6 +70,7 @@ export default async function DealRoomPage({ params }: { params: { token: string
   const finalPrice = deal.base_price + deal.setup_fee;
   let serviceTitle = deal.plan_type === 'suscripcion' ? 'Plan Suscripción Pro' : 'Plan Base (Pago Único)';
   let isUpsell = false;
+  let upsellData: any = null;
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] text-[#111111] font-sans selection:bg-[#B8862A] selection:text-white pb-24">

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, FormEvent } from 'react';
 import Link from 'next/link';
 import { Target, Zap, Utensils, Map, Bot, Sparkles, BookOpen } from 'lucide-react';
+import { useAlert } from '@/components/ui/AlertProvider';
 
 import MatrixTab from '@/components/creative-factory/MatrixTab';
 import GeneratorTab from '@/components/creative-factory/GeneratorTab';
@@ -15,6 +16,7 @@ import DossierTab from '@/components/creative-factory/DossierTab';
 // No mock clients - Data fetched entirely from Supabase
 
 export default function CreativeFactoryPage() {
+  const { showAlert } = useAlert();
   const [activeTab, setActiveTab] = useState('matrix');
 
   // Client States
@@ -186,7 +188,7 @@ export default function CreativeFactoryPage() {
   // 1. Generar Copy B2B y Prompt de Imagen adaptado al Cliente
   const handleGenerateCopy = async () => {
     if (!selectedPain || !selectedAngle || !selectedClient) {
-      alert('Por favor selecciona un dolor y un ángulo de ataque.');
+      showAlert('Por favor selecciona un dolor y un ángulo de ataque.');
       return;
     }
 
@@ -277,11 +279,11 @@ export default function CreativeFactoryPage() {
       if (data.status === 'ok') {
         setSaveMessage(`¡Excelente! Imagen guardada físicamente y vinculada al plato "${selectedDish?.name}" de la carta del cliente "${selectedClient.name}".`);
       } else {
-        alert(data.message || 'Error al guardar la imagen.');
+        showAlert(data.message || 'Error al guardar la imagen.');
       }
     } catch (err) {
       console.error(err);
-      alert('Error de conexión al intentar guardar.');
+      showAlert('Error de conexión al intentar guardar.');
     } finally {
       setIsSavingImage(false);
     }
@@ -465,11 +467,11 @@ export default function CreativeFactoryPage() {
       } else if (data.status === 'billing_required') {
         setBillingError(data.message);
       } else {
-        alert(data.message || 'Error al pintar la diapositiva.');
+        showAlert(data.message || 'Error al pintar la diapositiva.');
       }
     } catch (err) {
       console.error(err);
-      alert('Error de conexión.');
+      showAlert('Error de conexión.');
     } finally {
       setIsGeneratingPromoImage(false);
     }
@@ -494,7 +496,7 @@ export default function CreativeFactoryPage() {
 
         if (error) {
           console.error("Error inserting campaign:", error);
-          alert('Error al guardar la campaña en base de datos.');
+          showAlert('Error al guardar la campaña en base de datos.');
           return;
         }
 
@@ -510,11 +512,11 @@ export default function CreativeFactoryPage() {
         
         setApprovedCreatives([newCreative, ...approvedCreatives]);
         setActiveTab('matrix');
-        alert(`¡Creativo de anuncio añadido a la Matriz de Despliegue para ${selectedClient.name} y guardado en la base de datos!`);
+        showAlert(`¡Creativo de anuncio añadido a la Matriz de Despliegue para ${selectedClient.name} y guardado en la base de datos!`);
       }
     } catch (err) {
       console.error("Error guardando campaña en base de datos:", err);
-      alert('Hubo un error de conexión al guardar.');
+      showAlert('Hubo un error de conexión al guardar.');
     }
   };
 

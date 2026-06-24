@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from "react";
 import { supabaseClient } from "@/lib/supabase-client";
 import { Plus, Edit2, CheckCircle, Clock, Search, AlertCircle, RefreshCw } from "lucide-react";
+import { useAlert } from "@/components/ui/AlertProvider";
 
 export default function EventsMasterPage() {
   const [activeTab, setActiveTab] = useState<'catalog' | 'requests'>('catalog');
   const [events, setEvents] = useState<any[]>([]);
   const [requests, setRequests] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const { showAlert } = useAlert();
 
   useEffect(() => {
     fetchData();
@@ -46,7 +48,7 @@ export default function EventsMasterPage() {
       fetchData();
     } catch (err) {
       console.error(err);
-      alert("Error al actualizar estado");
+      showAlert("Error al actualizar estado");
     }
   };
 

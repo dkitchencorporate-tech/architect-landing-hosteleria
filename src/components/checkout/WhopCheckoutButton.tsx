@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ArrowRight, Loader2 } from 'lucide-react';
+import { useAlert } from '@/components/ui/AlertProvider';
 
 interface WhopCheckoutButtonProps {
   dealId: string;
@@ -10,6 +11,7 @@ interface WhopCheckoutButtonProps {
 
 export default function WhopCheckoutButton({ dealId, finalPrice }: WhopCheckoutButtonProps) {
   const [loading, setLoading] = useState(false);
+  const { showAlert } = useAlert();
 
   const handleCheckout = async () => {
     setLoading(true);
@@ -25,11 +27,11 @@ export default function WhopCheckoutButton({ dealId, finalPrice }: WhopCheckoutB
       if (data.url) {
         window.location.href = data.url; // Redirigir al enlace de pago dinámico o simulador
       } else {
-        alert('Error generando el enlace de pago: ' + (data.error || 'Desconocido'));
+        showAlert('Error generando el enlace de pago: ' + (data.error || 'Desconocido'));
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Error de conexión');
+      showAlert('Error de conexión al intentar procesar el pago.');
     } finally {
       setLoading(false);
     }
