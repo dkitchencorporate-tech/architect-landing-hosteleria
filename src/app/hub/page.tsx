@@ -40,7 +40,7 @@ export default function HubVIPPage() {
       metric: "0% COMISIONES",
       title: "Recepción de Pedidos & Precisión en Cocina",
       description: "El chef emplata con máxima precisión mientras el sistema KDS agiliza la sincronización entre sala y cocina, reduciendo tiempos de espera y errores en un 65%.",
-      videoSrc: "/videos/spot1.mp4",
+      videoSrc: "/videos/spot2.mp4",
       overlayBadge: "🔥 PEDIDO #809 EN PREPARACIÓN // 34s",
       overlaySub: "Sincronización KDS Directa • Emplatado Gourmet"
     },
@@ -50,7 +50,7 @@ export default function HubVIPPage() {
       metric: "+140% AFLUENCIA",
       title: "Sala Llena & Experiencia Gastronómica VIP",
       description: "Los comensales disfrutan en mesa de una experiencia perfecta. Algoritmo inteligente de captación continua que garantiza ocupación máxima con clientes de alto ticket.",
-      videoSrc: "/videos/spot2.mp4",
+      videoSrc: "/videos/spot1.mp4",
       overlayBadge: "🍾 MESA #04 VIP SERVIDA // +280€",
       overlaySub: "Maridaje Degustación 7 Tiempos • Ocupación 98%"
     }
