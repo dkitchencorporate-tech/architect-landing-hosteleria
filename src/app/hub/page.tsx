@@ -6,13 +6,12 @@ import Link from 'next/link';
 export default function HubVIPPage() {
   const [activeReelIndex, setActiveReelIndex] = useState(0);
 
-  // Sketches publicitarios con imágenes 4K animadas (efecto vídeo Ken Burns) y vídeo nativo de alta estabilidad
+  // Sketches publicitarios con imágenes 4K animadas (efecto vídeo Ken Burns continuo y real)
   const sketches = [
     {
       title: "Servicio de Sala 5 Estrellas",
       subtitle: "Sincronización perfecta y atención milimétrica",
       image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=85",
-      video: "https://res.cloudinary.com/demo/video/upload/q_auto,f_auto/food.mp4",
       tag: "SPOT VIP #01 // SALA",
       metric: "+45% ROTACIÓN DE MESAS"
     },
@@ -20,7 +19,6 @@ export default function HubVIPPage() {
       title: "Alta Cocina & Emplatado IA",
       subtitle: "El estándar gastronómico de máxima rentabilidad",
       image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85",
-      video: "https://res.cloudinary.com/demo/video/upload/q_auto,f_auto/wine_pour.mp4",
       tag: "SPOT VIP #02 // COCINA",
       metric: "0% COMISIONES RESERVA"
     },
@@ -28,7 +26,6 @@ export default function HubVIPPage() {
       title: "Maridaje & Experiencia Premium",
       subtitle: "Fidelización automática de comensales de alto ticket",
       image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=85",
-      video: "",
       tag: "SPOT VIP #03 // NEGOCIO",
       metric: "+38% TICKET MEDIO"
     }
@@ -37,13 +34,25 @@ export default function HubVIPPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveReelIndex((prev) => (prev + 1) % sketches.length);
-    }, 6000);
+    }, 5500);
     return () => clearInterval(interval);
   }, [sketches.length]);
 
   return (
     <div className="min-h-screen bg-[#FDFCF8] text-[#0A0A0A] font-sans selection:bg-[#FF4500] selection:text-white relative overflow-hidden flex flex-col justify-between">
       
+      {/* Estilo CSS en vivo para garantizar movimiento real, continuo y dramático (Ken Burns Video Effect) */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes kenburnsLive {
+          0% { transform: scale(1) translate(0, 0); }
+          50% { transform: scale(1.16) translate(-2%, -2%); }
+          100% { transform: scale(1.04) translate(1.5%, 1.5%); }
+        }
+        .animate-live-motion {
+          animation: kenburnsLive 12s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+        }
+      `}} />
+
       {/* Background Architectural Grid */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.035] z-0" 
@@ -87,37 +96,23 @@ export default function HubVIPPage() {
           </div>
         </div>
 
-        {/* WOW Effect: Reel Móvil Vertical (en móvil) & Widescreen Spot (en PC) */}
+        {/* WOW Effect: Reel Móvil Vertical Animado con Movimiento Real */}
         <div className="mb-9 w-full">
           <div className="mx-auto max-w-[290px] sm:max-w-full rounded-3xl overflow-hidden border-2 border-[#0A0A0A] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.2)] relative group aspect-[9/13] sm:aspect-[21/9] transition-all duration-500">
             
             {sketches.map((sketch, idx) => (
               <div
                 key={sketch.title}
-                className={`absolute inset-0 w-full h-full transition-all duration-1000 transform ${
-                  idx === activeReelIndex ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-108 z-0 pointer-events-none'
+                className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+                  idx === activeReelIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
                 }`}
               >
-                {/* Imagen 4K con animación cinemática Ken Burns continua */}
+                {/* Imagen 4K con animación cinemática Ken Burns en vivo garantizada */}
                 <img
                   src={sketch.image}
                   alt={sketch.title}
-                  className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-out ${
-                    idx === activeReelIndex ? 'scale-110' : 'scale-100'
-                  }`}
+                  className="w-full h-full object-cover animate-live-motion"
                 />
-
-                {/* Si tiene vídeo CDN, lo superponemos discretamente */}
-                {sketch.video && (
-                  <video
-                    src={sketch.video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-screen"
-                  />
-                )}
 
                 {/* Oscurecimiento degradado de lujo para perfecta legibilidad */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
@@ -168,7 +163,7 @@ export default function HubVIPPage() {
           </div>
         </div>
 
-        {/* Action Buttons Hub (EXACTAMENTE LOS SOLICITADOS) */}
+        {/* Action Buttons Hub */}
         <div className="space-y-3.5 sm:space-y-4 w-full">
           
           {/* Card 1: WhatsApp Alex Directo */}
