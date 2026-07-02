@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function HubVIPPage() {
   const [activeReelIndex, setActiveReelIndex] = useState(0);
-  const [mediaPhase, setMediaPhase] = useState<'video' | 'image'>('video');
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Estado para el Formulario Guiado de Acceso VIP
   const [showVipForm, setShowVipForm] = useState(false);
@@ -25,21 +25,21 @@ export default function HubVIPPage() {
   const spots = [
     {
       id: 1,
-      tag: "SPOT VIP #01 // SALA EN VIVO & AMBIENTE 5 ESTRELLAS",
-      metric: "+140% AFLUENCIA",
-      title: "Sala Llena & Experiencia Gastronómica VIP",
-      description: "Algoritmo inteligente de captación continua de comensales de alto ticket, garantizando ocupación máxima con clientes cualificados sin pagar comisiones por reserva.",
-      imageSrc: "/images/reels/spot1.png",
-      videoSrc: "/videos/spot1.mp4",
-      overlayBadge: "🍾 MESA #04 VIP RESERVADA // +280€",
-      overlaySub: "Maridaje Degustación 7 Tiempos • Ocupación 98%"
+      tag: "SPOT VIP #01 // DEMO INTERACCIÓN MÓVIL & PEDIDO IA",
+      metric: "+38% RENTABILIDAD",
+      title: "Interacción Digital Inteligente en Mesa",
+      description: "Simulación donde el cliente interactúa con el sistema de pedido y carta inteligente IA en su móvil, sugiriendo maridajes y upsells personalizados en el momento exacto.",
+      imageSrc: "/images/reels/spot3.png",
+      videoSrc: "/videos/spot3.mp4",
+      overlayBadge: "⭐ RECOMENDACIÓN IA // +38% TICKET",
+      overlaySub: "Algoritmo Predictivo de Venta Cruzada • Pedido Directo"
     },
     {
       id: 2,
-      tag: "SPOT VIP #02 // COCINA EN ACCIÓN & KDS LIVE",
+      tag: "SPOT VIP #02 // COCINA EN ACCIÓN & EMPLATADO KDS",
       metric: "0% COMISIONES",
       title: "Recepción de Pedidos & Precisión en Cocina",
-      description: "Agiliza la sincronización entre barra y pase eliminando cuellos de botella y reduciendo los tiempos de espera y error en cocina en un 65%.",
+      description: "El chef emplata con máxima precisión mientras el sistema KDS agiliza la sincronización entre sala y cocina, reduciendo tiempos de espera y errores en un 65%.",
       imageSrc: "/images/reels/spot2.png",
       videoSrc: "/videos/spot2.mp4",
       overlayBadge: "🔥 PEDIDO #809 EN PREPARACIÓN // 34s",
@@ -47,33 +47,33 @@ export default function HubVIPPage() {
     },
     {
       id: 3,
-      tag: "SPOT VIP #03 // DEMO EN VIVO INTERACCIÓN MÓVIL",
-      metric: "+38% RENTABILIDAD",
-      title: "Interacción Digital Inteligente en Mesa",
-      description: "Simulación donde la carta inteligente IA sugiere maridajes y upsells personalizados en el momento exacto de la decisión del cliente.",
-      imageSrc: "/images/reels/spot3.png",
-      videoSrc: "/videos/spot3.mp4",
-      overlayBadge: "⭐ RECOMENDACIÓN IA // +38% TICKET",
-      overlaySub: "Algoritmo Predictivo de Venta Cruzada • Upsell Activo"
+      tag: "SPOT VIP #03 // SALA EN VIVO & COMENSALES 5 ESTRELLAS",
+      metric: "+140% AFLUENCIA",
+      title: "Sala Llena & Experiencia Gastronómica VIP",
+      description: "Los comensales disfrutan en mesa de una experiencia perfecta. Algoritmo inteligente de captación continua que garantiza ocupación máxima con clientes de alto ticket.",
+      imageSrc: "/images/reels/spot1.png",
+      videoSrc: "/videos/spot1.mp4",
+      overlayBadge: "🍾 MESA #04 VIP SERVIDA // +280€",
+      overlaySub: "Maridaje Degustación 7 Tiempos • Ocupación 98%"
     }
   ];
 
+  const triggerNextReel = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setActiveReelIndex((prev) => (prev + 1) % spots.length);
+      setIsTransitioning(false);
+    }, 450);
+  };
+
   useEffect(() => {
-    let timer: NodeJS.Timeout;
-    if (mediaPhase === 'video') {
-      // Seguridad: Si por alguna razón el vídeo no dispara onEnded, a los 7.8s pasa a imagen
-      timer = setTimeout(() => {
-        setMediaPhase('image');
-      }, 7800);
-    } else {
-      // Retención ultrarrápida (1.8s en la imagen maestra) para mantener dinamismo del flyer
-      timer = setTimeout(() => {
-        setActiveReelIndex((prev) => (prev + 1) % spots.length);
-        setMediaPhase('video');
-      }, 1800);
-    }
+    // Seguridad: Si por alguna razón un vídeo no dispara onEnded, avanzamos con transición suave a los 8.5s
+    const timer = setTimeout(() => {
+      triggerNextReel();
+    }, 8500);
     return () => clearTimeout(timer);
-  }, [mediaPhase, activeReelIndex, spots.length]);
+  }, [activeReelIndex]);
 
   const activeSpot = spots[activeReelIndex];
 
@@ -175,29 +175,22 @@ export default function HubVIPPage() {
             </span>
           </div>
 
-          {/* Marco Vertical del Reel - Único elemento activo para garantizar autoplay inmediato en iOS/Chrome */}
+          {/* Marco Vertical del Reel - Vídeo 100% continuo y elegante con transiciones suaves */}
           <div className="w-full aspect-[9/15] sm:aspect-[9/14] rounded-[32px] overflow-hidden border-4 border-[#0A0A0A] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.25)] relative group">
-            <div className="w-full h-full relative bg-black">
-              {mediaPhase === 'video' ? (
-                <video
-                  key={`video-${activeSpot.id}-${activeReelIndex}`}
-                  src={activeSpot.videoSrc}
-                  autoPlay
-                  loop={false}
-                  muted
-                  playsInline
-                  poster={activeSpot.imageSrc}
-                  onEnded={() => setMediaPhase('image')}
-                  className="w-full h-full object-cover brightness-100 contrast-105 animate-fadeIn"
-                />
-              ) : (
-                <img
-                  key={`image-${activeSpot.id}-${activeReelIndex}`}
-                  src={activeSpot.imageSrc}
-                  alt={activeSpot.title}
-                  className="w-full h-full object-cover brightness-100 contrast-105 animate-fadeIn"
-                />
-              )}
+            <div className={`w-full h-full relative bg-black transition-all duration-500 ease-in-out ${
+              isTransitioning ? 'opacity-0 scale-95 blur-sm' : 'opacity-100 scale-100 blur-0'
+            }`}>
+              <video
+                key={`live-video-${activeSpot.id}-${activeReelIndex}`}
+                src={activeSpot.videoSrc}
+                autoPlay
+                loop={false}
+                muted
+                playsInline
+                poster={activeSpot.imageSrc}
+                onEnded={triggerNextReel}
+                className="w-full h-full object-cover brightness-100 contrast-105"
+              />
             </div>
 
             {/* Etiqueta superior flotante */}
@@ -238,8 +231,12 @@ export default function HubVIPPage() {
                   <button
                     key={i}
                     onClick={() => {
-                      setActiveReelIndex(i);
-                      setMediaPhase('video');
+                      if (i === activeReelIndex) return;
+                      setIsTransitioning(true);
+                      setTimeout(() => {
+                        setActiveReelIndex(i);
+                        setIsTransitioning(false);
+                      }, 400);
                     }}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       i === activeReelIndex ? 'w-6 bg-[#FF4500]' : 'w-2 bg-black/20 hover:bg-black/50'
