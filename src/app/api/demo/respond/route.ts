@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { messages } = body || {};
 
-    const WHATSAPP_LINK = "https://wa.me/34611499674?text=Hola,%20he%20hablado%20con%20Arqui%20y%20quiero%20conocer%20la%20viabilidad%20de%20mi%20proyecto.";
+    const WHATSAPP_LINK = "https://wa.me/34622652659?text=Hola,%20he%20hablado%20con%20Arqui%20y%20quiero%20conocer%20la%20viabilidad%20de%20mi%20proyecto.";
 
     const systemInstruction = `
 [IDENTIDAD Y ROL]

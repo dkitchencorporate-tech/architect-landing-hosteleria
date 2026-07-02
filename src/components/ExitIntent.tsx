@@ -201,7 +201,7 @@ export default function ExitIntent() {
           <div className="flex-shrink-0 w-full mt-auto space-y-3 pt-2 bg-[#FDFCF8]">
             {/* CTA Primario: WhatsApp (Mínima Fricción) */}
             <a 
-              href="https://wa.me/34611499674?text=Hola,%20iba%20a%20salir%20de%20la%20web%20pero%20vi%20el%20Pack%20de%20Arranque%20de%20980€.%20Me%20interesa%20reclamarlo."
+              href="https://wa.me/34622652659?text=Hola,%20iba%20a%20salir%20de%20la%20web%20pero%20vi%20el%20Pack%20de%20Arranque%20de%20980€.%20Me%20interesa%20reclamarlo."
               target="_blank"
               rel="noopener noreferrer"
               className="flex w-full bg-[#25D366] text-white py-3 sm:py-4 px-4 rounded-xl font-black text-lg shadow-[0_10px_20px_rgba(37,211,102,0.2)] hover:bg-[#1ebd5a] hover:-translate-y-1 transition-all duration-300 justify-center items-center gap-2"

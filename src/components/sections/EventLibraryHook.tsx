@@ -152,7 +152,7 @@ export default function EventLibraryHook() {
                 El precio fijo para mantener a todo un departamento tecnológico y estratégico funcionando a máxima potencia.
               </p>
               
-              <a href={`https://wa.me/34611499674?text=Hola,%20quiero%20empezar%20con%20el%20Plan%20Growth%20${isAnnual ? 'Anual (2990€)' : 'Mensual (299€)'}`} className="inline-block w-full bg-[#FF4500] text-white text-center py-4 px-6 rounded-xl font-black text-lg hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1">
+              <a href={`https://wa.me/34622652659?text=Hola,%20quiero%20empezar%20con%20el%20Plan%20Growth%20${isAnnual ? 'Anual (2990€)' : 'Mensual (299€)'}`} className="inline-block w-full bg-[#FF4500] text-white text-center py-4 px-6 rounded-xl font-black text-lg hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1">
                 Activar Ecosistema
               </a>
             </div>
@@ -282,7 +282,7 @@ export default function EventLibraryHook() {
                  <div className="text-orange-400 font-black text-sm mb-2 tracking-widest">RUTA B: CRECIMIENTO</div>
                  <h4 className="text-xl font-bold text-white mb-3">Socio Growth (299€/mes)</h4>
                  <p className="text-sm text-gray-400 leading-relaxed mb-6">Para el hostelero que quiere delegar el marketing y llenar el local cada mes con eventos de alto impacto. Todo el software base está incluido gratis.</p>
-                 <a href="https://wa.me/34611499674?text=Hola,%20quiero%20agendar%20una%20Consultoría%20sobre%20el%20Socio%20Growth" className="inline-block bg-[#FF4500] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-orange-600 transition-colors">Agendar Consultoría</a>
+                 <a href="https://wa.me/34622652659?text=Hola,%20quiero%20agendar%20una%20Consultoría%20sobre%20el%20Socio%20Growth" className="inline-block bg-[#FF4500] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-orange-600 transition-colors">Agendar Consultoría</a>
                </div>
             </div>
           </div>

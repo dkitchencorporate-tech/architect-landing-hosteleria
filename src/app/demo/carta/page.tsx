@@ -785,7 +785,7 @@ function CartaContent() {
               <a href="https://calendly.com/dkitchencorporate/30min" target="_blank" rel="noopener noreferrer" className="block w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest bg-[#10b981] text-black hover:bg-[#059669]">
                 {t.sales_btn_calendly}
               </a>
-              <a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer" className="block w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest border border-[#10b981] text-[#10b981] hover:bg-[#10b981]/10">
+              <a href="https://wa.me/34622652659" target="_blank" rel="noopener noreferrer" className="block w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest border border-[#10b981] text-[#10b981] hover:bg-[#10b981]/10">
                 {t.sales_btn_whatsapp}
               </a>
             </div>

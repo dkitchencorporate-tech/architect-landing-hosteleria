@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dosier de Toma de Datos e Instrucciones Operativas - Architect.Sys</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #FDFCF8;
+            --bg-paper: #FFFFFF;
+            --text-main: #111111;
+            --text-secondary: #444444;
+            --border-warm: #EADEC9;
+            --brand-orange: #FF4500;
+            --brand-hover: #CC3700;
+            --brand-gold: #B8862A;
+            --surface-light: #FAFAFA;
+            --surface-guide: #FFFDF5;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm 15mm;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.65;
+            padding: 40px 20px;
+        }
+
+        .document-container {
+            max-width: 920px;
+            margin: 0 auto;
+            background-color: var(--bg-paper);
+            border: 1px solid var(--border-warm);
+            border-radius: 12px;
+            padding: 60px 55px;
+            box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            border-bottom: 2px solid var(--brand-gold);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .brand-logo {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.03em;
+        }
+
+        .brand-logo span {
+            color: var(--brand-orange);
+        }
+
+        .brand-subtitle {
+            font-size: 0.9rem;
+            color: var(--brand-gold);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .doc-meta {
+            text-align: right;
+            font-size: 0.86rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        /* CUADRO DE GUÍA FÁCIL PARA USUARIOS NO TÉCNICOS */
+        .guide-box {
+            background-color: var(--surface-guide);
+            border: 1px solid var(--brand-gold);
+            border-left: 5px solid var(--brand-orange);
+            border-radius: 8px;
+            padding: 22px;
+            margin-bottom: 35px;
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+        }
+
+        .guide-box h3 {
+            color: var(--text-main);
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .guide-box ul {
+            margin: 10px 0 0 20px;
+        }
+
+        .guide-box li {
+            margin-bottom: 8px;
+            line-height: 1.55;
+        }
+
+        .guide-box strong {
+            color: var(--text-main);
+        }
+
+        .section-box {
+            border: 1px solid var(--border-warm);
+            border-radius: 10px;
+            padding: 28px;
+            margin-bottom: 30px;
+            background-color: #FFFFFF;
+        }
+
+        .section-box h2 {
+            font-size: 1.08rem;
+            color: var(--text-main);
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            border-bottom: 1px solid var(--border-warm);
+            padding-bottom: 10px;
+            border-left: 3px solid var(--brand-orange);
+            padding-left: 12px;
+        }
+
+        .sub-heading {
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: var(--brand-gold);
+            margin: 24px 0 12px 0;
+            border-bottom: 1px dashed var(--border-warm);
+            padding-bottom: 6px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 14px;
+        }
+
+        label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .field-hint {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 7px;
+            line-height: 1.45;
+        }
+
+        input[type="text"], textarea {
+            background-color: var(--surface-light);
+            border: 1px solid var(--border-warm);
+            border-radius: 6px;
+            padding: 10px 14px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: var(--brand-gold);
+            background-color: #ffffff;
+        }
+
+        textarea {
+            min-height: 75px;
+            resize: vertical;
+        }
+
+        /* CUADROS DE ACLARACIÓN Y OPCIONES DE ENVÍO POR SECCIÓN */
+        .section-footer-options {
+            background-color: var(--surface-light);
+            border: 1px solid var(--border-warm);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 18px;
+        }
+
+        .section-footer-options strong {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 10px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            background: #ffffff;
+        }
+
+        .option-label:hover {
+            border-color: var(--border-warm);
+        }
+
+        .option-label input[type="radio"], .option-label input[type="checkbox"] {
+            accent-color: var(--brand-orange);
+        }
+
+        .signature-section {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 2px solid var(--brand-gold);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .sig-card {
+            border: 1px solid var(--border-warm);
+            border-radius: 10px;
+            padding: 20px;
+            background-color: var(--surface-light);
+        }
+
+        .sig-card h3 {
+            font-size: 0.98rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .injected-sig {
+            font-family: monospace;
+            font-size: 0.82rem;
+            color: var(--brand-gold);
+            background: #fff;
+            border: 1px dashed var(--border-warm);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .sig-space {
+            height: 50px;
+            border-bottom: 2px solid var(--brand-gold);
+            margin: 14px 0 10px 0;
+            background: #ffffff;
+            border-radius: 4px;
+        }
+
+        .print-btn {
+            display: block;
+            width: 100%;
+            max-width: 380px;
+            margin: 35px auto 0 auto;
+            background-color: var(--brand-orange);
+            color: #ffffff;
+            text-align: center;
+            font-weight: 600;
+            padding: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            font-size: 0.96rem;
+            transition: background-color 0.2s;
+        }
+
+        .print-btn:hover {
+            background-color: var(--brand-hover);
+        }
+
+        /* PAGINACIÓN ESTRUCTURAL LÓGICA EXCLUSIVA PARA PDF (@media print) */
+        @media print {
+            body {
+                background-color: #ffffff !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                font-size: 9pt !important;
+                color: #000000 !important;
+            }
+            .document-container {
+                box-shadow: none !important;
+                border: none !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            header {
+                padding-bottom: 10px !important;
+                margin-bottom: 14px !important;
+            }
+            .section-box {
+                margin-bottom: 16px !important;
+                padding: 14px !important;
+            }
+            .print-btn {
+                display: none !important;
+            }
+            
+            /* SALTO LÓGICO DE PÁGINA PARA QUE CADA SECCIÓN O BLOQUE INICIE LIMPIO */
+            .logical-cut {
+                page-break-before: always !important;
+                break-before: page !important;
+                padding-top: 2px !important;
+            }
+
+            input[type="text"], textarea {
+                border: 1px solid #B8862A !important;
+                background-color: #ffffff !important;
+            }
+            .section-footer-options {
+                padding: 10px !important;
+                margin-top: 10px !important;
+            }
+            .signature-section {
+                margin-top: 16px !important;
+                padding-top: 12px !important;
+            }
+        }
+
+        /* ARQUITECTURA RESPONSIVA INTELIGENTE PARA DISPOSITIVOS MÓVILES Y TABLETS */
+        @media screen and (max-width: 768px) {
+            .document-container {
+                padding: 26px 18px !important;
+                border-radius: 0 !important;
+                border-left: none !important;
+                border-right: none !important;
+            }
+            header {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 12px !important;
+            }
+            .doc-meta {
+                text-align: left !important;
+                width: 100% !important;
+                border-top: 1px solid var(--border-warm);
+                padding-top: 10px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr !important;
+                gap: 14px !important;
+            }
+            .full-width {
+                grid-column: span 1 !important;
+            }
+            .signature-section {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .options-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .print-btn {
+                max-width: 100% !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 0 !important;
+            }
+            .document-container {
+                padding: 18px 12px !important;
+            }
+            h1 {
+                font-size: 1.15rem !important;
+            }
+            .guide-box, .section-box {
+                padding: 18px 14px !important;
+            }
+            .brand-logo {
+                font-size: 1.6rem !important;
+            }
+            #sendModal > div, #validationModal > div {
+                width: 95% !important;
+                padding: 22px 16px !important;
+            }
+            #signatureCanvas {
+                max-width: 100% !important;
+                height: 90px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-container">
+    <!-- PÁGINA 1: CABECERA, GUÍA FÁCIL Y SECCIÓN 1 (FACTURACIÓN) -->
+    <header>
+        <div>
+            <div class="brand-logo">ARCHITECT<span>.SYS</span></div>
+            <div class="brand-subtitle">División de Arquitectura e Ingeniería Digital PWA</div>
+        </div>
+        <div class="doc-meta">
+            <strong>Instrucciones Operativas y Toma de Datos</strong><br>
+            <strong>Ref:</strong> AS-2026-OPS-VEG<br>
+            <strong>Cliente:</strong> Venta El Gallo
+        </div>
+    </header>
+
+    <h1>DOSIER OPERATIVO DE IMPLEMENTACIÓN Y TOMA DE DATOS</h1>
+
+    <div class="guide-box">
+        <h3>📌 Protocolo Ejecutivo de Cumplimentación de Especificaciones</h3>
+        <p>Este documento ha sido estructurado bajo un formato de ingeniería guiada para integrar de forma fluida y sistemática los requerimientos operativos de su dirección ejecutiva:</p>
+        <ul>
+            <li><strong>Ejemplos Propuestos:</strong> En cada campo observará un texto de referencia en gris claro. Puede sobrescribir los datos con sus especificaciones exactas o validar la propuesta de nuestro equipo de arquitectura.</li>
+            <li><strong>Cuadros Expansivos de Observaciones:</strong> Cada sección dispone de un espacio libre de especificaciones para detallar requerimientos especiales, notas operativas o directrices adicionales.</li>
+            <li><strong>Gestión de Canales de Entrega:</strong> Si dispone de menús digitalizados en PDF, carpetas de recursos fotográficos en Drive o prefiere una revisión guiada, indique su canal de preferencia al pie de cada sección.</li>
+            <li><strong>Conservación y Envío Digital:</strong> Al finalizar las secciones, pulse el botón inferior. El sistema estructurará sus respuestas y le presentará las opciones de remisión inmediata por WhatsApp, correo electrónico o descarga en formato PDF.</li>
+        </ul>
+    </div>
+
+    <!-- SECCIÓN 1 -->
+    <div class="section-box">
+        <h2>Sección 1: Datos Fiscales para Emisión de Factura Post-Pago</h2>
+        <div class="form-grid">
+            <div class="field-group full-width">
+                <label>Razón Social / Denominación de la Sociedad Mercantil:</label>
+                <input type="text" placeholder="Ej. Venta El Gallo S.L. / Tablao Flamenco Sacromonte S.L.">
+            </div>
+            <div class="field-group">
+                <label>CIF / NIF:</label>
+                <input type="text" placeholder="Ej. B18293847">
+            </div>
+            <div class="field-group">
+                <label>Correo Electrónico de Facturación:</label>
+                <input type="text" placeholder="Ej. administracion@ventaelgallo.com">
+            </div>
+            <div class="field-group full-width">
+                <label>Domicilio Fiscal Completo:</label>
+                <input type="text" placeholder="Ej. Barranco de los Negros n.º 5, Cuevas del Sacromonte, 18010 Granada">
+            </div>
+            <div class="field-group full-width">
+                <label>Persona de Contacto Administrativo y Teléfono:</label>
+                <input type="text" placeholder="Ej. Juan García (Director Gerente) · Móvil: +34 600 000 000">
+            </div>
+        </div>
+
+        <div class="section-footer-options">
+            <strong>¿Cómo prefiere gestionar o remitir cualquier detalle fiscal adicional?</strong>
+            <div class="options-grid">
+                <label class="option-label"><input type="radio" name="s1_delivery" checked> Rellenado en este formulario</label>
+                <label class="option-label"><input type="radio" name="s1_delivery"> Adjunto por Email / WhatsApp</label>
+                <label class="option-label"><input type="radio" name="s1_delivery"> Tratar en Reunión / Videollamada</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: SECCIÓN 2 (IONOS) & SECCIÓN 3 (IDENTIDAD VISUAL) -->
+    <div class="section-box logical-cut">
+        <h2>Sección 2: Acceso e Infraestructura de Despliegue (Servidor IONOS)</h2>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 14px;"><em>Nota para el cliente: Si no conoce sus claves técnicas FTP o SSH, basta con facilitarnos el usuario y contraseña general con el que accede a su panel de IONOS (ionos.es), o bien podemos conectarlo juntos en una sesión guiada de 5 minutos por videollamada sin que tenga que enviarnos sus claves por escrito.</em></p>
+        
+        <div class="form-grid">
+            <div class="field-group full-width">
+                <label>Dominio Oficial en Producción:</label>
+                <input type="text" placeholder="Ej. https://www.ventaelgallo.com">
+            </div>
+            <div class="field-group">
+                <label>Usuario / Email del Panel de IONOS o FTP:</label>
+                <input type="text" placeholder="Ej. cliente@ventaelgallo.com / u12345678">
+            </div>
+            <div class="field-group">
+                <label>Contraseña de Acceso (IONOS / FTP):</label>
+                <input type="text" placeholder="Ej. ************ (O dejar en blanco si prefiere videollamada)">
+            </div>
+            <div class="field-group full-width">
+                <label>Observaciones o aclaraciones sobre su alojamiento web actual:</label>
+                <textarea placeholder="Ej. Actualmente tenemos la web antigua online en IONOS. Queremos coordinar el cambio de web para un martes por la mañana para no afectar a las reservas del fin de semana..."></textarea>
+            </div>
+        </div>
+
+        <div class="section-footer-options">
+            <strong>Seleccione su método preferido para la puesta en marcha en el servidor:</strong>
+            <div class="options-grid">
+                <label class="option-label"><input type="radio" name="s2_delivery" checked> Credenciales escritas arriba</label>
+                <label class="option-label"><input type="radio" name="s2_delivery"> Enviar por WhatsApp Cifrado</label>
+                <label class="option-label" style="background: #FFFDF0; border-color: var(--brand-gold); font-weight: 600;"><input type="radio" name="s2_delivery"> 🤝 Prefiero conectarlo guiado en Videollamada (Recomendado)</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>Sección 3: Identidad Visual, Logotipo y Estilo de Marca</h2>
+        <div class="form-grid">
+            <div class="field-group full-width">
+                <label>Entrega de Logotipo Oficial:</label>
+                <span class="field-hint">Indique si remitirá el logotipo original en formato vectorial (AI, EPS, SVG) o PNG transparente en alta resolución.</span>
+                <input type="text" placeholder="Ej. Logotipo adjuntado en carpeta compartida de Google Drive / Enviado por email">
+            </div>
+            <div class="field-group full-width">
+                <label>Preferencia de Estilo Estético y Paleta de Colores:</label>
+                <span class="field-hint">Nuestra propuesta de ingeniería contempla un diseño elegante, limpio y de alto prestigio cromático (Fondo crema/blanco cálido, tipografías nítidas, contrastes en negro carbón y toques de dorado/rojo flamenco tradicional).</span>
+                <textarea placeholder="Ej. Confirmamos el estilo limpio y elegante propuesto. Queremos que transmita prestigio, tradición flamenca auténtica y alta gastronomía, evitando páginas oscuras o sobrecargadas..."></textarea>
+            </div>
+        </div>
+
+        <div class="section-footer-options">
+            <strong>¿Por qué vía nos facilitará el logotipo y manual de marca (si dispone de él)?</strong>
+            <div class="options-grid">
+                <label class="option-label"><input type="radio" name="s3_delivery" checked> Envío por Email / WeTransfer</label>
+                <label class="option-label"><input type="radio" name="s3_delivery"> Enlace a Google Drive / Dropbox</label>
+                <label class="option-label"><input type="radio" name="s3_delivery"> WhatsApp al +34 611 499 674</label>
+                <label class="option-label"><input type="radio" name="s3_delivery"> Tratar en Reunión Personal</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 3: SECCIÓN 4 (MOTOR RESERVAS) & SECCIÓN 5.1/5.2 -->
+    <div class="section-box logical-cut">
+        <h2>Sección 4: Integración del Motor de Reservas</h2>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 12px;"><em>Explicación sencilla: Para que sus clientes reserven mesa o pase flamenco, vincularemos su sistema actual (CoverManager, TheFork, widget propio o formulario telefónico/WhatsApp). Si tiene un código o enlace de reserva, indíquelo abajo.</em></p>
+        
+        <div class="field-group">
+            <label>Enlace de Reservas o Código Script del Motor:</label>
+            <textarea placeholder="Ej. https://www.covermanager.com/reservation/module_ventaelgallo / O pegar aquí el bloque de código HTML proporcionado por su software de reservas..." style="min-height: 85px; font-family: monospace; font-size: 0.86rem;"></textarea>
+        </div>
+        <div class="field-group" style="margin-top: 10px;">
+            <label>Instrucciones y Comportamiento del Botón "Reservar Ahora":</label>
+            <input type="text" placeholder="Ej. Queremos que el botón flotante abra la ventana de reservas instantáneamente sin salir de la web">
+        </div>
+
+        <div class="section-footer-options">
+            <strong>¿Cómo desea gestionar la configuración técnica del motor de reservas?</strong>
+            <div class="options-grid">
+                <label class="option-label"><input type="radio" name="s4_delivery" checked> Código/Enlace indicado arriba</label>
+                <label class="option-label"><input type="radio" name="s4_delivery"> Enviar datos por Email</label>
+                <label class="option-label" style="font-weight: 600;"><input type="radio" name="s4_delivery"> 🤝 Configurar con ingeniero en Videollamada</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>Sección 5: Desglose Operativo Página por Página</h2>
+        
+        <div class="sub-heading" style="margin-top: 0;">5.1 Cabecera Principal de Impacto (Hero Section)</div>
+        <div class="form-grid">
+            <div class="field-group full-width">
+                <label>Titular o Eslogan de Bienvenida (Hero Title):</label>
+                <input type="text" placeholder="Ej. Venta El Gallo: El Arte Flamenco y la Gastronomía en el Corazón del Sacromonte">
+            </div>
+            <div class="field-group full-width">
+                <label>Material Visual para Portada Inmersiva:</label>
+                <input type="text" placeholder="Ej. Recomendamos vídeo corto en bucle del cuadro flamenco bailando en la cueva o fotografía panorámica de alta definición">
+            </div>
+        </div>
+
+        <div class="sub-heading">5.2 Sección Tablao & Espectáculos Flamencos</div>
+        <div class="form-grid">
+            <div class="field-group">
+                <label>Horarios Exactos de Pases Diarios:</label>
+                <input type="text" placeholder="Ej. 1er Pase: 19:30h (Cena) · 21:00h (Show) / 2º Pase: 21:30h">
+            </div>
+            <div class="field-group">
+                <label>Tarifa Pase Solo Espectáculo (con consumición):</label>
+                <input type="text" placeholder="Ej. 35,00 € (Incluye 1 copa o bebida)">
+            </div>
+            <div class="field-group full-width">
+                <label>Descripción Artística e Información Adicional del Espectáculo:</label>
+                <textarea placeholder="Ej. Cuadro flamenco de prestigio con 8 artistas en escena (cante, guitarra, baile masculino y femenino). Duración aproximada: 60 minutos. Ambiente íntimo en cueva gitana del siglo XVI..."></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 4: SECCIÓN 5 (CONTINUACIÓN GASTRONOMÍA, HISTORIA Y GALERÍA) -->
+    <div class="section-box logical-cut">
+        <div class="sub-heading" style="margin-top: 0;">5.3 Sección Gastronomía & Cartas de Menús</div>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 12px;">Podemos integrar sus cartas en pestañas interactivas rápidas (Tapas, Carta General, Menús de Grupo y Selección de Vinos).</p>
+        <div class="form-grid">
+            <div class="field-group">
+                <label>Precio Pase Espectáculo + Menú Tapas:</label>
+                <input type="text" placeholder="Ej. 65,00 € por persona">
+            </div>
+            <div class="field-group">
+                <label>Precio Pase Espectáculo + Menú Degustación:</label>
+                <input type="text" placeholder="Ej. 80,00 € por persona">
+            </div>
+            <div class="field-group full-width">
+                <label>Aclaraciones gastronómicas, menús infantiles, opciones celíacos o alérgenos:</label>
+                <textarea placeholder="Ej. Disponemos de opciones veganas, vegetarianas y sin gluten previa indicación en la reserva. Adjuntamos PDF con la carta completa actualizada para la temporada 2026..."></textarea>
+            </div>
+        </div>
+
+        <div class="sub-heading">5.4 Sección Historia & Patrimonio (Cuevas del Sacromonte)</div>
+        <div class="field-group">
+            <label>Relato Patrimonial y Tradición Familiar:</label>
+            <textarea placeholder="Ej. Fundada en los años 50 en el mítico Barranco de los Negros, Venta El Gallo ha sido testigo de las visitas de leyendas del flamenco y mandatarios internacionales, conservando la arquitectura rupestre original y la acústica natural de la cal..."></textarea>
+        </div>
+
+        <div class="sub-heading">5.5 Sección Galería Fotográfica Profesional</div>
+        <div class="field-group">
+            <label>Selección de Fotografías (Sala, Platos, Cuevas, Artistas y Vistas al Alhambra):</label>
+            <input type="text" placeholder="Ej. Remitimos enlace de carpeta en Google Drive con 18 fotografías seleccionadas en alta resolución">
+        </div>
+
+        <div class="section-footer-options">
+            <strong>¿Por qué vía prefiere remitir los archivos de cartas gastronómicas y fotografías de la galería?</strong>
+            <div class="options-grid">
+                <label class="option-label"><input type="radio" name="s5_delivery" checked> Rellenado en este formulario</label>
+                <label class="option-label"><input type="radio" name="s5_delivery"> Enlace a Google Drive / Dropbox</label>
+                <label class="option-label"><input type="radio" name="s5_delivery"> Envío por WeTransfer / Email</label>
+                <label class="option-label"><input type="radio" name="s5_delivery"> Envío por WhatsApp</label>
+                <label class="option-label" style="font-weight: 600;"><input type="radio" name="s5_delivery"> 🤝 Tratar en Reunión Personal</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 5: SECCIÓN 6 (LEGAL), SECCIÓN 7 (LIBRE) Y FIRMAS -->
+    <div class="section-box logical-cut">
+        <h2>Sección 6: Textos Legales, Contacto y Redes Sociales (RGPD)</h2>
+        <div class="form-grid">
+            <div class="field-group full-width">
+                <label>Titular Legal para Aviso Legal y Política de Privacidad:</label>
+                <input type="text" placeholder="Ej. Venta El Gallo S.L. · CIF: B18293847">
+            </div>
+            <div class="field-group">
+                <label>Teléfono Oficial de Reservas y Atención:</label>
+                <input type="text" placeholder="Ej. +34 958 22 07 91 / +34 600 000 000">
+            </div>
+            <div class="field-group">
+                <label>Número de WhatsApp para Atención al Cliente:</label>
+                <input type="text" placeholder="Ej. +34 600 000 000">
+            </div>
+            <div class="field-group">
+                <label>URL o Usuario de Instagram:</label>
+                <input type="text" placeholder="Ej. @ventaelgallogranada / instagram.com/ventaelgallo">
+            </div>
+            <div class="field-group">
+                <label>Enlace a Perfil de TripAdvisor o Google Reviews:</label>
+                <input type="text" placeholder="Ej. tripadvisor.es/Restaurant_Review-g187441...">
+            </div>
+        </div>
+
+        <div class="section-footer-options">
+            <strong>¿Cómo facilitará los datos legales y redes sociales?</strong>
+            <div class="options-grid">
+                <label class="option-label"><input type="radio" name="s6_delivery" checked> Rellenado en este formulario</label>
+                <label class="option-label"><input type="radio" name="s6_delivery"> Envío por Email / WhatsApp</label>
+                <label class="option-label" style="font-weight: 600;"><input type="radio" name="s6_delivery"> 🤝 Tratar en Reunión Personal</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-box">
+        <h2>Sección 7: Casilla de Datos Amplios e Información Libre</h2>
+        <p style="font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 10px;">Utilice este cuadro expansivo para escribir cualquier instrucción adicional, preferencias operativas no mencionadas antes o notas que desee transmitir directamente a nuestro equipo de desarrollo:</p>
+        <div class="field-group">
+            <textarea placeholder="Ej. Queremos destacar de forma muy visible en la cabecera que ofrecemos servicio de transporte / recogida en microbús desde el centro de Granada hasta el Sacromonte para grupos. Además, nos gustaría coordinar una videollamada este jueves para repasar la carta de vinos..." style="min-height: 130px; font-size: 0.93rem;"></textarea>
+        </div>
+
+        <div class="section-footer-options">
+            <strong>¿Prefiere coordinar una reunión ejecutiva para revisar este dosier y resolver dudas en directo?</strong>
+            <div class="options-grid">
+                <label class="option-label" style="background: #FFFDF0; border-color: var(--brand-gold); font-weight: 600; grid-column: span 2;"><input type="checkbox" id="reqMeeting"> Sí, deseamos agendar una Reunión / Videollamada con el equipo técnico de Architect.Sys</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIRMAS -->
+    <div class="signature-section logical-cut">
+        <div class="sig-card">
+            <h3>Por Architect.Sys</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Dirección de Arquitectura e Ingeniería PWA</p>
+            <div class="injected-sig">
+                [FIRMA ELECTRÓNICA INYECTADA]<br>
+                Certificado Técnico: AS-AUTH-2026<br>
+                Estado: AUTORIZADO Y PRE-FIRMADO
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 10px; line-height: 1.5;">Este documento cuenta con validación técnica y aprobación formal por parte de nuestro departamento de desarrollo.</p>
+        </div>
+
+        <div class="sig-card">
+            <h3>Por Venta El Gallo (Cliente Contratante)</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Conformidad con las instrucciones operativas</p>
+            
+            <!-- PANEL DE FIRMA MANUSCRITA O DIGITAL -->
+            <div style="margin: 12px 0; border: 1.5px dashed var(--brand-gold); border-radius: 6px; background-color: #FFFEFA; padding: 8px; text-align: center; position: relative;">
+                <p style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 4px;">✍️ <strong>Recuadro interactivo:</strong> Dibuje su firma a mano (táctil o ratón)</p>
+                <canvas id="signatureCanvas" width="340" height="100" style="background: #FFFFFF; border: 1px solid #EAEAEA; border-radius: 4px; cursor: crosshair; touch-action: none; width: 100%; max-width: 340px;"></canvas>
+                <div style="margin-top: 6px;" class="no-print">
+                    <button type="button" onclick="clearSignature()" style="font-size: 0.72rem; padding: 3px 10px; background: #F5F5F5; border: 1px solid #CCC; border-radius: 4px; cursor: pointer; color: #444;">🧹 Limpiar recuadro</button>
+                </div>
+            </div>
+
+            <div style="text-align: left; margin-top: 10px;">
+                <label style="font-size: 0.82rem; color: var(--text-main); font-weight: 600; display: block; margin-bottom: 3px;">Nombre y Cargo del Firmante:</label>
+                <input type="text" id="signerNameInput" placeholder="Ej. Juan García - Director Gerente" style="width: 100%; padding: 7px 10px; border: 1px solid #CCCCCC; border-radius: 4px; font-size: 0.86rem; font-weight: 600; font-family: inherit;">
+            </div>
+
+            <div style="text-align: left; margin-top: 10px;">
+                <label style="font-size: 0.82rem; color: var(--text-secondary); display: block; margin-bottom: 3px;">Fecha de Firma:</label>
+                <input type="text" id="signerDateInput" style="width: 100%; padding: 6px 10px; border: 1px solid #CCCCCC; border-radius: 4px; font-size: 0.84rem; color: var(--text-secondary); font-family: inherit;">
+            </div>
+
+            <p style="font-size: 0.74rem; color: var(--brand-gold); margin-top: 10px;"><em>* Documento vinculado al abono de servicios e inicio oficial del despliegue en Architect.Sys.</em></p>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="openSendModal()">✅ Finalizar y Enviar Dosier Operativo</button>
+</div>
+
+<!-- VENTANA MODAL EMERGENTE (POPUP DE ENVÍO DIRECTO) -->
+<div id="sendModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.65); align-items: center; justify-content: center;">
+    <div style="background-color: #FFFFFF; max-width: 520px; width: 90%; border-radius: 14px; padding: 35px; text-align: center; border: 2px solid #B8862A; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.35); position: relative;">
+        <span onclick="closeSendModal()" style="position: absolute; right: 20px; top: 15px; font-size: 1.6rem; cursor: pointer; color: #888;">&times;</span>
+        <h3 style="color: #111111; font-size: 1.3rem; margin-bottom: 10px; text-transform: uppercase;">¡Dosier Completado con Éxito!</h3>
+        <p style="color: #444444; font-size: 0.92rem; margin-bottom: 25px; line-height: 1.6;">Seleccione cómo desea remitir este documento cumplimentado al equipo de ingeniería de <strong>Architect.Sys</strong>:</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+            <a href="javascript:void(0)" onclick="sendViaWhatsApp()" style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #25D366; color: #FFFFFF; padding: 14px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.98rem; box-shadow: 0 4px 12px rgba(37,211,102,0.3);">
+                📲 Enviar Sincronizado por WhatsApp
+            </a>
+            <a href="javascript:void(0)" onclick="sendViaEmail()" style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #111111; color: #FFFFFF; padding: 14px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.98rem;">
+                ✉️ Enviar por Correo Electrónico
+            </a>
+            <a href="javascript:void(0)" onclick="downloadOnlyPDF()" style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #FAFAFA; border: 1px solid #B8862A; color: #B8862A; padding: 14px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.95rem;">
+                📄 Guardar / Descargar Copia en PDF
+            </a>
+        </div>
+        <p style="font-size: 0.78rem; color: #888888; margin-top: 20px;"><em>* Al pulsar cualquiera de las opciones, el sistema fijará sus respuestas para conservación digital.</em></p>
+    </div>
+</div>
+
+<!-- ALERTA DE VALIDACIÓN INTELIGENTE (SECCIÓN INCOMPLETA) -->
+<div id="validationModal" style="display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.75); align-items: center; justify-content: center;">
+    <div style="background-color: #FFFFFF; max-width: 480px; width: 90%; border-radius: 12px; padding: 30px; text-align: center; border-left: 6px solid #FF4500; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+        <h3 style="color: #FF4500; font-size: 1.25rem; margin-bottom: 12px;">⚠️ Sección Incompleta Detectada</h3>
+        <p id="validationMsg" style="color: #333333; font-size: 0.94rem; line-height: 1.6; margin-bottom: 24px;"></p>
+        <button onclick="closeValidationModal()" style="background-color: #111111; color: #FFFFFF; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 0.95rem;">Entendido, voy a completarlo</button>
+    </div>
+</div>
+
+<script>
+    function syncFields() {
+        const inputs = document.querySelectorAll('input[type="text"]');
+        inputs.forEach(input => {
+            input.setAttribute('value', input.value);
+        });
+        const textareas = document.querySelectorAll('textarea');
+        textareas.forEach(textarea => {
+            textarea.innerHTML = textarea.value;
+        });
+        const checks = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
+        checks.forEach(check => {
+            if (check.checked) {
+                check.setAttribute('checked', 'checked');
+            } else {
+                check.removeAttribute('checked');
+            }
+        });
+    }
+
+    function openSendModal() {
+        // VALIDACIÓN INTELIGENTE DE OBLIGATORIEDAD POR SECCIÓN
+        const sections = document.querySelectorAll('.section-box');
+        for (let i = 0; i < Math.min(sections.length, 6); i++) {
+            const sec = sections[i];
+            const secTitle = sec.querySelector('h2') ? sec.querySelector('h2').innerText : ('Sección ' + (i+1));
+            
+            // Verificar inputs de texto en la sección
+            const textInputs = sec.querySelectorAll('input[type="text"], textarea');
+            let hasText = false;
+            textInputs.forEach(inp => {
+                if (inp.value && inp.value.trim().length > 0) hasText = true;
+            });
+
+            // Verificar si seleccionaron una opción externa (Reunión, WhatsApp, Email, Drive)
+            const radios = sec.querySelectorAll('input[type="radio"]:checked');
+            let isExternalDelivery = false;
+            radios.forEach(r => {
+                const labelText = r.parentElement ? r.parentElement.innerText.toLowerCase() : '';
+                if (labelText.includes('reunión') || labelText.includes('videollamada') || labelText.includes('whatsapp') || labelText.includes('email') || labelText.includes('drive')) {
+                    isExternalDelivery = true;
+                }
+            });
+
+            // Si no escribió texto Y TAMPOCO marcó entrega externa / videollamada -> Alerta de obligatoriedad
+            if (!hasText && !isExternalDelivery) {
+                document.getElementById('validationMsg').innerHTML = 
+                    "Ha seleccionado rellenar los datos en la <strong>" + secTitle + "</strong> pero las casillas están vacías.<br><br>" +
+                    "Por favor, <strong>escriba la información</strong> correspondiente o marque al pie de la sección la opción <em>'Tratar en Reunión / Videollamada'</em> o <em>'Envío por WhatsApp/Email'</em>.";
+                document.getElementById('validationModal').style.display = 'flex';
+                sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+        }
+
+        syncFields();
+        document.getElementById('sendModal').style.display = 'flex';
+    }
+
+    function closeValidationModal() {
+        document.getElementById('validationModal').style.display = 'none';
+    }
+
+    function closeSendModal() {
+        document.getElementById('sendModal').style.display = 'none';
+    }
+
+    function sendViaWhatsApp() {
+        syncFields();
+        const msg = encodeURIComponent("Hola equipo de Architect.Sys, adjunto remitimos la información / confirmación del Dosier Operativo de Venta El Gallo completado.");
+        window.open("https://wa.me/34611499674?text=" + msg, "_blank");
+        setTimeout(() => { window.print(); }, 800);
+    }
+
+    function sendViaEmail() {
+        syncFields();
+        const subject = encodeURIComponent("Dosier Operativo Completado - Venta El Gallo");
+        const body = encodeURIComponent("Estimado equipo de Architect.Sys,\n\nRemitimos la información y confirmación de las secciones del dosier operativo de Venta El Gallo para el inicio de la personalización de la plataforma PWA.\n\nAtentamente,\nDirección Venta El Gallo");
+        window.location.href = "mailto:hosteleria@architectsys.com?subject=" + subject + "&body=" + body;
+        setTimeout(() => { window.print(); }, 800);
+    }
+
+    function downloadOnlyPDF() {
+        closeSendModal();
+        window.print();
+    }
+
+    window.addEventListener('beforeprint', syncFields);
+
+    // INICIALIZACIÓN DE FECHA Y FIRMA INTERACTIVA
+    window.addEventListener('DOMContentLoaded', () => {
+        const dateInput = document.getElementById('signerDateInput');
+        if (dateInput && !dateInput.value) {
+            const today = new Date();
+            const dd = String(today.getDate()).padStart(2, '0');
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const yyyy = today.getFullYear();
+            dateInput.value = `${dd} / ${mm} / ${yyyy}`;
+        }
+
+        const canvas = document.getElementById('signatureCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let drawing = false;
+
+            function getPos(e) {
+                const rect = canvas.getBoundingClientRect();
+                const scaleX = canvas.width / rect.width;
+                const scaleY = canvas.height / rect.height;
+                if (e.touches && e.touches.length > 0) {
+                    return {
+                        x: (e.touches[0].clientX - rect.left) * scaleX,
+                        y: (e.touches[0].clientY - rect.top) * scaleY
+                    };
+                }
+                return {
+                    x: (e.clientX - rect.left) * scaleX,
+                    y: (e.clientY - rect.top) * scaleY
+                };
+            }
+
+            function startDraw(e) {
+                drawing = true;
+                const pos = getPos(e);
+                ctx.beginPath();
+                ctx.moveTo(pos.x, pos.y);
+                e.preventDefault();
+            }
+
+            function draw(e) {
+                if (!drawing) return;
+                const pos = getPos(e);
+                ctx.lineWidth = 2.4;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = '#000080'; // Azul tinta corporativo
+                ctx.lineTo(pos.x, pos.y);
+                ctx.stroke();
+                e.preventDefault();
+            }
+
+            function stopDraw() {
+                drawing = false;
+            }
+
+            canvas.addEventListener('mousedown', startDraw);
+            canvas.addEventListener('mousemove', draw);
+            window.addEventListener('mouseup', stopDraw);
+
+            canvas.addEventListener('touchstart', startDraw, { passive: false });
+            canvas.addEventListener('touchmove', draw, { passive: false });
+            window.addEventListener('touchend', stopDraw);
+        }
+    });
+
+    function clearSignature() {
+        const canvas = document.getElementById('signatureCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+</script>
+
+</body>
+</html>

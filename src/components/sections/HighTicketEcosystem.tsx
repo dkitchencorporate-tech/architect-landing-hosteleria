@@ -71,7 +71,7 @@ export default function HighTicketEcosystem() {
                 </p>
               </div>
               
-              <a href="https://wa.me/34611499674?text=Hola,%20quiero%20instalar%20el%20Recepcionista%20IA%20y%20el%20CRM." className="w-full bg-white text-gray-900 px-6 py-4 rounded-full font-black text-lg hover:bg-gray-200 transition-colors shadow-xl">
+              <a href="https://wa.me/34622652659?text=Hola,%20quiero%20instalar%20el%20Recepcionista%20IA%20y%20el%20CRM." className="w-full bg-white text-gray-900 px-6 py-4 rounded-full font-black text-lg hover:bg-gray-200 transition-colors shadow-xl">
                 Solicitar Instalación
               </a>
               <p className="text-[10px] text-gray-500 mt-4">*Requiere infraestructura digital previa o validación de volumen de negocio.</p>

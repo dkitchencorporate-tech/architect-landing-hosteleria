@@ -36,7 +36,7 @@ export default function AggressiveHero() {
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
           </a>
           
-          <a href="https://wa.me/34611499674?text=Hola,%20quiero%20una%20auditoría%20gratuita%20de%20mis%20tiempos%20de%20mesa." className="flex-1 bg-white/10 text-white border border-white/20 px-8 py-5 rounded-full font-bold text-xl hover:bg-white/20 transition-all backdrop-blur-sm flex items-center justify-center gap-2">
+          <a href="https://wa.me/34622652659?text=Hola,%20quiero%20una%20auditoría%20gratuita%20de%20mis%20tiempos%20de%20mesa." className="flex-1 bg-white/10 text-white border border-white/20 px-8 py-5 rounded-full font-bold text-xl hover:bg-white/20 transition-all backdrop-blur-sm flex items-center justify-center gap-2">
             Auditoría Gratuita
           </a>
         </div>
