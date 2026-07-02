@@ -134,11 +134,23 @@ export default function HubVIPPage() {
                 >
                   {/* Reproductor Limpio al 100% de Brillo y Nitidez (Sin degradados negros que tapen la imagen/vídeo) */}
                   <div className="w-full h-full relative bg-black">
-                    <img
-                      src={spot.imageSrc}
-                      alt={spot.title}
-                      className="w-full h-full object-cover brightness-100 contrast-105"
-                    />
+                    {spot.id === 1 ? (
+                      <video
+                        src={spot.videoSrc}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        poster={spot.imageSrc}
+                        className="w-full h-full object-cover brightness-100 contrast-105"
+                      />
+                    ) : (
+                      <img
+                        src={spot.imageSrc}
+                        alt={spot.title}
+                        className="w-full h-full object-cover brightness-100 contrast-105"
+                      />
+                    )}
                   </div>
 
                   {/* Etiqueta superior flotante */}
