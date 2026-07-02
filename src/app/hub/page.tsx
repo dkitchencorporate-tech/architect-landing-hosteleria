@@ -2,9 +2,19 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function HubVIPPage() {
   const [activeReelIndex, setActiveReelIndex] = useState(0);
+  const [scanPosition, setScanPosition] = useState(0);
+
+  // Animación del escáner y contadores vivos
+  useEffect(() => {
+    const scanInterval = setInterval(() => {
+      setScanPosition((prev) => (prev + 1) % 100);
+    }, 50);
+    return () => clearInterval(scanInterval);
+  }, []);
 
   const spots = [
     {
@@ -12,40 +22,40 @@ export default function HubVIPPage() {
       tag: "SPOT VIP #01 // SALA EN VIVO & AMBIENTE 5 ESTRELLAS",
       metric: "+140% AFLUENCIA",
       title: "Sala Llena & Experiencia Gastronómica VIP",
-      description: "Vídeo real de sala en máxima ocupación. Nuestro algoritmo inteligente segmenta y atrae comensales de alto ticket continuamente, garantizando mesas llenas con clientes cualificados sin pagar comisiones por reserva.",
-      videoSrc: "/videos/spot1.webm",
-      fallbackMp4: "https://archive.org/download/coglaz-Polo_s_Italian_Cuisine/coglaz-Polo_s_Italian_Cuisine.mp4",
+      description: "Generado y animado de forma coherente: nuestro algoritmo inteligente segmenta y atrae comensales de alto ticket continuamente, garantizando mesas llenas con clientes cualificados sin pagar comisiones por reserva.",
+      imageSrc: "/images/reels/spot1.png",
       overlayBadge: "🍾 MESA #04 VIP RESERVADA // +280€",
-      overlaySub: "Maridaje Degustación 7 Tiempos"
+      overlaySub: "Maridaje Degustación 7 Tiempos • Ocupación 98%",
+      motionEffect: "scale-110 translate-y-[-2%] transition-transform duration-[10000ms] ease-in-out"
     },
     {
       id: 2,
       tag: "SPOT VIP #02 // COCINA EN ACCIÓN & KDS LIVE",
       metric: "0% COMISIONES",
       title: "Recepción de Pedidos & Precisión en Cocina",
-      description: "Vídeo real de cocina profesional y emplatado gourmet. Agiliza la sincronización entre barra y pase eliminando cuellos de botella y reduciendo los tiempos de espera y error en un 65%.",
-      videoSrc: "/videos/spot2.webm",
-      fallbackMp4: "https://archive.org/download/ecatma-Cooking_with_Rosa_pt._1/ecatma-Cooking_with_Rosa_pt._1.mp4",
+      description: "Generado y animado de forma coherente: agiliza la sincronización entre barra y pase eliminando cuellos de botella y reduciendo los tiempos de espera y error en un 65%.",
+      imageSrc: "/images/reels/spot2.png",
       overlayBadge: "🔥 PEDIDO #809 EN PREPARACIÓN // 34s",
-      overlaySub: "Sincronización KDS Directa sin Intermediarios"
+      overlaySub: "Sincronización KDS Directa • Emplatado Gourmet en Curso",
+      motionEffect: "scale-115 translate-x-[-3%] transition-transform duration-[10000ms] ease-in-out"
     },
     {
       id: 3,
       tag: "SPOT VIP #03 // DEMO EN VIVO INTERACCIÓN MÓVIL",
       metric: "+38% RENTABILIDAD",
       title: "Interacción Digital Inteligente en Mesa",
-      description: "Vídeo real de interacción con smartphone en mano. Simulación en vivo donde la carta inteligente IA sugiere maridajes y upsells personalizados en el momento exacto de la decisión del cliente.",
-      videoSrc: "/videos/spot3.webm",
-      fallbackMp4: "https://archive.org/download/youtube-xdQK83lmblE/youtube-xdQK83lmblE.mp4",
+      description: "Generado y animado de forma coherente: simulación en vivo donde la carta inteligente IA sugiere maridajes y upsells personalizados en el momento exacto de la decisión del cliente.",
+      imageSrc: "/images/reels/spot3.png",
       overlayBadge: "⭐ RECOMENDACIÓN IA // +38% TICKET",
-      overlaySub: "Algoritmo Predictivo de Venta Cruzada Activo"
+      overlaySub: "Algoritmo Predictivo de Venta Cruzada • Upsell Activo",
+      motionEffect: "scale-110 translate-y-[2%] transition-transform duration-[10000ms] ease-in-out"
     }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveReelIndex((prev) => (prev + 1) % spots.length);
-    }, 8500); // 8.5 segundos por vídeo para apreciar el realismo
+    }, 8500);
     return () => clearInterval(interval);
   }, [spots.length]);
 
@@ -108,13 +118,13 @@ export default function HubVIPPage() {
           </div>
         </section>
 
-        {/* SECCIÓN REEL VERTICAL CON VÍDEOS REALES ULTRA-REALISTAS (ALOJADOS EN EL SERVIDOR LOCAL VERCEL EDGE) */}
+        {/* SECCIÓN REEL VERTICAL CON VÍDEOS GENERADOS E INTELIGENTEMENTE ANIMADOS */}
         <section className="w-full max-w-md mx-auto space-y-4">
           
           <div className="flex items-center justify-between px-1">
             <span className="font-mono text-[10px] sm:text-xs font-black text-[#0A0A0A] uppercase tracking-wider flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-[#FF4500] animate-pulse" />
-              SPOT CINEMÁTICO REAL EN VIVO (8K UHD)
+              SPOT IA ANIMADO (KEN BURNS + VFX LIVE)
             </span>
             <span className="bg-[#0A0A0A] text-white font-mono text-[8px] sm:text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase">
               REEL {activeReelIndex + 1} / {spots.length}
@@ -123,44 +133,52 @@ export default function HubVIPPage() {
 
           {/* Marco Vertical del Reel */}
           <div className="w-full aspect-[9/15] sm:aspect-[9/14] rounded-[32px] overflow-hidden border-4 border-[#0A0A0A] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.25)] relative group">
-            {spots.map((spot, idx) => (
-              <div
-                key={spot.id}
-                className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
-                  idx === activeReelIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-                }`}
-              >
-                {/* Vídeo Real Nativo (Almacenado localmente en public/videos para cero errores CORS y máxima velocidad) */}
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="w-full h-full object-cover transform scale-105"
+            {spots.map((spot, idx) => {
+              const isActive = idx === activeReelIndex;
+              return (
+                <div
+                  key={spot.id}
+                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
+                    isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  }`}
                 >
-                  <source src={spot.videoSrc} type="video/webm" />
-                  <source src={spot.fallbackMp4} type="video/mp4" />
-                </video>
+                  {/* Imagen 8K Generada Específicamente con Animación Cinemática Ken Burns */}
+                  <div className="w-full h-full overflow-hidden relative">
+                    <img
+                      src={spot.imageSrc}
+                      alt={spot.title}
+                      className={`w-full h-full object-cover transform ${
+                        isActive ? 'animate-[pulse_10s_ease-in-out_infinite] scale-110' : 'scale-100'
+                      } transition-all duration-1000`}
+                    />
+                  </div>
 
-                {/* Gradiente cinemático para legibilidad de los widgets */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/60 pointer-events-none" />
+                  {/* CAPAS DE ANIMACIÓN INTELIGENTE (VFX COHERENTES SEGÚN EL SPOT) */}
+                  {/* Escáner Láser Dinámico Inteligente */}
+                  <div 
+                    className="absolute left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#FF4500] to-transparent pointer-events-none shadow-[0_0_15px_#FF4500] opacity-80"
+                    style={{ top: `${scanPosition}%` }}
+                  />
 
-                {/* Overlay Inteligente en tiempo real flotando sobre el vídeo real */}
-                <div className="absolute bottom-5 left-4 right-4 z-20 pointer-events-none animate-[fadeIn_0.5s_ease-out]">
-                  <div className="bg-black/75 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 shadow-2xl space-y-1">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-[10px] font-black text-[#10B981] flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping" />
-                        {spot.overlayBadge}
-                      </span>
-                      <span className="font-mono text-[8px] font-bold text-white/70 bg-white/10 px-1.5 py-0.5 rounded">REAL TIME</span>
+                  {/* Partículas y destellos holográficos flotantes */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/60 pointer-events-none" />
+
+                  {/* Overlay de Datos en Tiempo Real Flotante */}
+                  <div className="absolute bottom-5 left-4 right-4 z-20 pointer-events-none animate-[fadeIn_0.5s_ease-out]">
+                    <div className="bg-black/80 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 shadow-2xl space-y-1.5">
+                      <div className="flex items-center justify-between">
+                        <span className="font-mono text-[10px] font-black text-[#10B981] flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping" />
+                          {spot.overlayBadge}
+                        </span>
+                        <span className="font-mono text-[8px] font-bold text-white/80 bg-[#FF4500]/30 border border-[#FF4500]/50 px-1.5 py-0.5 rounded">IA ANIMATION</span>
+                      </div>
+                      <p className="text-xs font-bold text-white leading-snug">{spot.overlaySub}</p>
                     </div>
-                    <p className="text-xs font-bold text-white leading-snug">{spot.overlaySub}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
 
             {/* Etiqueta superior limpia */}
             <div className="absolute top-3 left-4 right-4 z-30 flex items-center justify-between pointer-events-none">
@@ -205,7 +223,7 @@ export default function HubVIPPage() {
         <section className="space-y-3.5 w-full pt-2">
           
           <a 
-            href="https://wa.me/34622652659?text=Hola%20Alex%2C%20he%20visto%20los%20spots%20reales%20en%20el%20Hub%20VIP%20y%20quiero%20activar%20el%20Plan%20Growth%20360%C2%BA%20en%20mi%20restaurante." 
+            href="https://wa.me/34622652659?text=Hola%20Alex%2C%20he%20visto%20los%20spots%20IA%20animados%20en%20el%20Hub%20VIP%20y%20quiero%20activar%20el%20Plan%20Growth%20360%C2%BA%20en%20mi%20restaurante." 
             target="_blank"
             rel="noopener noreferrer"
             className="group block w-full bg-[#0A0A0A] hover:bg-[#10B981] text-white p-5 sm:p-6 rounded-3xl border-2 border-[#0A0A0A] shadow-xl hover:shadow-[0_20px_45px_rgba(16,185,129,0.3)] transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden"
