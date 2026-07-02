@@ -6,6 +6,7 @@ import Link from 'next/link';
 export default function HubVIPPage() {
   const [activeReelIndex, setActiveReelIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const videoRefs = React.useRef<(HTMLVideoElement | null)[]>([]);
 
   // Estado para el Formulario Guiado de Acceso VIP
   const [showVipForm, setShowVipForm] = useState(false);
@@ -29,7 +30,6 @@ export default function HubVIPPage() {
       metric: "+38% RENTABILIDAD",
       title: "Interacción Digital Inteligente en Mesa",
       description: "Simulación donde el cliente interactúa con el sistema de pedido y carta inteligente IA en su móvil, sugiriendo maridajes y upsells personalizados en el momento exacto.",
-      imageSrc: "/images/reels/spot3.png",
       videoSrc: "/videos/spot3.mp4",
       overlayBadge: "⭐ RECOMENDACIÓN IA // +38% TICKET",
       overlaySub: "Algoritmo Predictivo de Venta Cruzada • Pedido Directo"
@@ -40,8 +40,7 @@ export default function HubVIPPage() {
       metric: "0% COMISIONES",
       title: "Recepción de Pedidos & Precisión en Cocina",
       description: "El chef emplata con máxima precisión mientras el sistema KDS agiliza la sincronización entre sala y cocina, reduciendo tiempos de espera y errores en un 65%.",
-      imageSrc: "/images/reels/spot2.png",
-      videoSrc: "/videos/spot2.mp4",
+      videoSrc: "/videos/spot1.mp4",
       overlayBadge: "🔥 PEDIDO #809 EN PREPARACIÓN // 34s",
       overlaySub: "Sincronización KDS Directa • Emplatado Gourmet"
     },
@@ -51,29 +50,39 @@ export default function HubVIPPage() {
       metric: "+140% AFLUENCIA",
       title: "Sala Llena & Experiencia Gastronómica VIP",
       description: "Los comensales disfrutan en mesa de una experiencia perfecta. Algoritmo inteligente de captación continua que garantiza ocupación máxima con clientes de alto ticket.",
-      imageSrc: "/images/reels/spot1.png",
-      videoSrc: "/videos/spot1.mp4",
+      videoSrc: "/videos/spot2.mp4",
       overlayBadge: "🍾 MESA #04 VIP SERVIDA // +280€",
       overlaySub: "Maridaje Degustación 7 Tiempos • Ocupación 98%"
     }
   ];
 
-  const triggerNextReel = () => {
+  const triggerNextReel = React.useCallback(() => {
     if (isTransitioning) return;
     setIsTransitioning(true);
     setTimeout(() => {
       setActiveReelIndex((prev) => (prev + 1) % spots.length);
       setIsTransitioning(false);
     }, 450);
-  };
+  }, [isTransitioning, spots.length]);
 
   useEffect(() => {
-    // Seguridad: Si por alguna razón un vídeo no dispara onEnded, avanzamos con transición suave a los 8.5s
+    // Al cambiar el índice activo, reproducir inmediatamente el vídeo correspondiente y pausar los demás
+    videoRefs.current.forEach((videoEl, idx) => {
+      if (!videoEl) return;
+      if (idx === activeReelIndex) {
+        videoEl.currentTime = 0;
+        videoEl.play().catch((e) => console.log('Autoplay error:', e));
+      } else {
+        videoEl.pause();
+      }
+    });
+
+    // Timeout de seguridad ultralargo (20s) sólo por si un vídeo pierde el evento onEnded
     const timer = setTimeout(() => {
       triggerNextReel();
-    }, 8500);
+    }, 20000);
     return () => clearTimeout(timer);
-  }, [activeReelIndex]);
+  }, [activeReelIndex, triggerNextReel]);
 
   const activeSpot = spots[activeReelIndex];
 
@@ -175,22 +184,29 @@ export default function HubVIPPage() {
             </span>
           </div>
 
-          {/* Marco Vertical del Reel - Vídeo 100% continuo y elegante con transiciones suaves */}
+          {/* Marco Vertical del Reel - Vídeo 100% continuo sin imágenes ni pósters */}
           <div className="w-full aspect-[9/15] sm:aspect-[9/14] rounded-[32px] overflow-hidden border-4 border-[#0A0A0A] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.25)] relative group">
             <div className={`w-full h-full relative bg-black transition-all duration-500 ease-in-out ${
               isTransitioning ? 'opacity-0 scale-95 blur-sm' : 'opacity-100 scale-100 blur-0'
             }`}>
-              <video
-                key={`live-video-${activeSpot.id}-${activeReelIndex}`}
-                src={activeSpot.videoSrc}
-                autoPlay
-                loop={false}
-                muted
-                playsInline
-                poster={activeSpot.imageSrc}
-                onEnded={triggerNextReel}
-                className="w-full h-full object-cover brightness-100 contrast-105"
-              />
+              {spots.map((spot, idx) => (
+                <video
+                  key={spot.id}
+                  ref={(el) => { videoRefs.current[idx] = el; }}
+                  src={spot.videoSrc}
+                  preload="auto"
+                  playsInline
+                  muted
+                  onEnded={() => {
+                    if (idx === activeReelIndex) {
+                      triggerNextReel();
+                    }
+                  }}
+                  className={`absolute inset-0 w-full h-full object-cover brightness-100 contrast-105 transition-opacity duration-700 ease-in-out ${
+                    idx === activeReelIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  }`}
+                />
+              ))}
             </div>
 
             {/* Etiqueta superior flotante */}
