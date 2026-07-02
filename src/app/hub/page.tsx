@@ -5,46 +5,72 @@ import Link from 'next/link';
 
 export default function HubVIPPage() {
   const [activeReelIndex, setActiveReelIndex] = useState(0);
+  const [videoLoaded, setVideoLoaded] = useState<{ [key: number]: boolean }>({});
 
-  // Vídeos MP4 reales de alta velocidad (Coverr & Cloudinary CDN) para rotación cada 8 segundos
+  // Spots publicitarios con vídeos MP4 directos (Mixkit High-Speed CDN) y Pósters 4K Animados al instante (Cero pantalla negra)
   const spots = [
     {
-      tag: "SPOT VIP #01 // SALA EN PLENO RENDIMIENTO",
-      metric: "+140% AFLUENCIA Y ROTACIÓN",
-      videoUrl: "https://cdn.coverr.co/videos/coverr-cheers-with-wine-glasses-in-a-restaurant-5244/1080p.mp4",
-      backupUrl: "https://cdn.coverr.co/videos/coverr-people-dining-at-a-restaurant-5248/1080p.mp4",
+      tag: "SPOT VIP #01 // SALA LLENA 5 ESTRELLAS",
+      metric: "+140% AFLUENCIA EN SALA",
+      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-people-having-dinner-in-a-restaurant-43527-large.mp4",
+      backupUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      poster: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
       title: "Sala Llena & Experiencia 5 Estrellas",
       description: "Demostración en vivo de un restaurante operando a máxima capacidad en días flojos. Nuestro sistema de captación segmenta comensales VIP locales para asegurar mesas reservadas los 7 días de la semana."
     },
     {
       tag: "SPOT VIP #02 // BAR & COCINA AGILIZADOS",
       metric: "0% COMISIONES DE RESERVA",
-      videoUrl: "https://cdn.coverr.co/videos/coverr-bartender-making-a-cocktail-4389/1080p.mp4",
-      backupUrl: "https://cdn.coverr.co/videos/coverr-chef-preparing-a-dish-in-a-restaurant-kitchen-5231/1080p.mp4",
+      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-chef-preparing-a-dish-43522-large.mp4",
+      backupUrl: "https://assets.mixkit.co/videos/preview/mixkit-bartender-serving-a-cocktail-43524-large.mp4",
+      poster: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80",
       title: "Recepción de Pedidos & Precisión Operativa",
       description: "Agiliza la comanda en barra y cocina eliminando cuellos de botella. El personal reduce el tiempo de toma de pedidos en un 60%, concentrándose en el maridaje y en elevar el ticket medio por comensal."
     },
     {
-      tag: "SPOT VIP #03 // SCROLL EN CARTA DIGITAL IA",
+      tag: "SPOT VIP #03 // CARTA DIGITAL & SCROLL IA",
       metric: "+38% INCREMENTO DE TICKET",
-      videoUrl: "https://cdn.coverr.co/videos/coverr-using-a-smartphone-in-a-coffee-shop-4348/1080p.mp4",
-      backupUrl: "https://cdn.coverr.co/videos/coverr-holding-a-smartphone-with-green-screen-in-a-cafe-9346/1080p.mp4",
-      title: "Interacción Digital Inteligente en Mesa",
-      description: "Experiencia de navegación hiper-rápida y sugerencias algorítmicas al estilo de las grandes cadenas mundiales, diseñada para aumentar la rentabilidad neta de cada servicio en tu local."
+      videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-woman-using-her-smartphone-in-a-cafe-43530-large.mp4",
+      backupUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      poster: "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80",
+      title: "Interacción Digital Hiper-Velocidad en Mesa",
+      description: "Experiencia de navegación instantánea y sugerencias algorítmicas al estilo de las grandes cadenas mundiales, diseñada para aumentar la rentabilidad neta de cada servicio en tu local."
     }
   ];
 
+  // Script de ultra-velocidad: Precarga instantánea en memoria de pósters y videos para cero retraso
   useEffect(() => {
+    spots.forEach((spot) => {
+      const img = new Image();
+      img.src = spot.poster;
+      const vid = document.createElement('video');
+      vid.src = spot.videoUrl;
+      vid.preload = 'auto';
+    });
+
     const interval = setInterval(() => {
       setActiveReelIndex((prev) => (prev + 1) % spots.length);
-    }, 8000); // 8 segundos exactos por vídeo
+    }, 8500);
     return () => clearInterval(interval);
   }, [spots.length]);
 
   return (
     <div className="min-h-screen bg-[#FDFCF8] text-[#0A0A0A] font-sans selection:bg-[#FF4500] selection:text-white relative overflow-hidden flex flex-col justify-between">
       
-      {/* Grid de fondo arquitectónico */}
+      {/* Script de Aceleración por Hardware GPU y Movimiento Cinemático Inmediato */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes kenburnsLive {
+          0% { transform: scale(1) translate(0, 0); }
+          50% { transform: scale(1.15) translate(-1.5%, -1.5%); }
+          100% { transform: scale(1.05) translate(1%, 1%); }
+        }
+        .animate-live-motion {
+          animation: kenburnsLive 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+          will-change: transform;
+        }
+      `}} />
+
+      {/* Background Architectural Grid */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.035] z-0" 
         style={{
@@ -64,7 +90,7 @@ export default function HubVIPPage() {
       {/* Contenedor Principal Adaptado y 100% Responsivo */}
       <main className="max-w-4xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-10 relative z-10 flex-1 flex flex-col justify-center space-y-8">
         
-        {/* TARJETA VIP DE BIENVENIDA (Totalmente adaptada a móviles sin desbordes) */}
+        {/* TARJETA VIP DE BIENVENIDA */}
         <section className="bg-gradient-to-br from-[#0A0A0A] via-[#141414] to-[#1E1E1E] text-white rounded-3xl p-5 sm:p-8 shadow-2xl border border-white/15 relative overflow-hidden">
           <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-white/15 pb-5 mb-5">
             <div className="flex items-center gap-3.5 sm:gap-4">
@@ -100,7 +126,7 @@ export default function HubVIPPage() {
           </div>
         </section>
 
-        {/* SECCIÓN REEL VERTICAL EN VIVO (100% Despejado, Formato Vertical Puro y Leyenda Abajo) */}
+        {/* SECCIÓN REEL VERTICAL EN VIVO (Formato móvil 9:16 con CERO Pantalla Negra) */}
         <section className="w-full max-w-md mx-auto space-y-4">
           
           <div className="flex items-center justify-between px-1">
@@ -113,7 +139,7 @@ export default function HubVIPPage() {
             </span>
           </div>
 
-          {/* Marco Vertical del Reel (Formato móvil 9:16 sin elementos que tapen el video) */}
+          {/* Marco Vertical del Reel */}
           <div className="w-full aspect-[9/15] sm:aspect-[9/14] rounded-[32px] overflow-hidden border-4 border-[#0A0A0A] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.25)] relative">
             {spots.map((spot, idx) => (
               <div
@@ -122,22 +148,34 @@ export default function HubVIPPage() {
                   idx === activeReelIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
                 }`}
               >
-                {/* Vídeo MP4 real en reproducción continua */}
+                {/* Capa 1: Póster 4K en movimiento continuo instantáneo (Garantiza que NUNCA se vea negro al cargar o en móviles con restricción de datos) */}
+                <img
+                  src={spot.poster}
+                  alt={spot.title}
+                  className={`absolute inset-0 w-full h-full object-cover animate-live-motion transition-opacity duration-700 ${
+                    videoLoaded[idx] ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+
+                {/* Capa 2: Vídeo MP4 real de ultra-alta velocidad */}
                 <video
+                  key={spot.videoUrl}
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  preload="auto"
+                  poster={spot.poster}
+                  onCanPlay={() => setVideoLoaded((prev) => ({ ...prev, [idx]: true }))}
+                  className="w-full h-full object-cover relative z-10"
                 >
                   <source src={spot.videoUrl} type="video/mp4" />
                   <source src={spot.backupUrl} type="video/mp4" />
-                  Su navegador no soporta reproducción de vídeo MP4.
                 </video>
               </div>
             ))}
 
-            {/* Etiqueta superior limpia y discreta que NO tapa la escena principal */}
+            {/* Etiqueta superior limpia */}
             <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
               <span className="bg-black/80 backdrop-blur-md text-white font-mono text-[8px] sm:text-[9px] font-black px-3 py-1 rounded-full border border-white/20 tracking-wider uppercase shadow-lg truncate max-w-[65%]">
                 {spots[activeReelIndex].tag}
@@ -148,14 +186,14 @@ export default function HubVIPPage() {
             </div>
           </div>
 
-          {/* LEYENDA Y EXPLICACIÓN DEBAJO DEL VÍDEO (Sin solaparse ni tapar la imagen) */}
+          {/* LEYENDA Y EXPLICACIÓN DEBAJO DEL VÍDEO */}
           <div className="bg-white rounded-2xl p-5 border-2 border-[#0A0A0A] shadow-lg space-y-3 transition-all duration-500">
             <div className="flex items-center justify-between gap-2 border-b border-black/10 pb-2">
               <h3 className="font-display font-black text-base sm:text-lg text-[#0A0A0A] leading-tight">
                 {spots[activeReelIndex].title}
               </h3>
 
-              {/* Puntos selectores interactivos */}
+              {/* Puntos selectores */}
               <div className="flex gap-1.5 shrink-0">
                 {spots.map((_, i) => (
                   <button
@@ -176,10 +214,9 @@ export default function HubVIPPage() {
 
         </section>
 
-        {/* BOTONES EJECUTIVOS DE ACCIÓN INMEDIATA (Cierre de venta al 75%) */}
+        {/* BOTONES EJECUTIVOS DE ACCIÓN INMEDIATA */}
         <section className="space-y-3.5 w-full pt-2">
           
-          {/* Opción 1: WhatsApp Directo con Alex */}
           <a 
             href="https://wa.me/34622652659?text=Hola%20Alex%2C%20he%20visto%20los%20spots%20en%20el%20Hub%20VIP%20y%20quiero%20activar%20el%20Plan%20Growth%20360%C2%BA%20en%20mi%20restaurante." 
             target="_blank"
@@ -211,7 +248,6 @@ export default function HubVIPPage() {
             </div>
           </a>
 
-          {/* Opción 2: Calendly Oficial */}
           <a 
             href="https://calendly.com/dkitchencorporate/pase-vip" 
             target="_blank"
@@ -243,7 +279,6 @@ export default function HubVIPPage() {
             </div>
           </a>
 
-          {/* Opción 3: Web Oficial Corporativa */}
           <Link 
             href="/" 
             className="group block w-full bg-white/80 hover:bg-white text-[#0A0A0A] p-4 sm:p-5 rounded-2xl border border-black/15 hover:border-[#0A0A0A] transition-all duration-300 shadow-sm"
