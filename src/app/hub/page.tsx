@@ -4,35 +4,42 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function HubVIPPage() {
-  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+  const [activeReelIndex, setActiveReelIndex] = useState(0);
 
-  const videoSketches = [
+  // Sketches publicitarios con imágenes 4K animadas (efecto vídeo Ken Burns) y vídeo nativo de alta estabilidad
+  const sketches = [
     {
-      title: "Alta Gastronomía & Servicio de Sala",
-      subtitle: "Precisión milimétrica en cada entrega",
-      url: "https://assets.mixkit.co/videos/preview/mixkit-serving-dinner-in-a-luxury-restaurant-42860-large.mp4",
-      tag: "EXPERIENCIA 5 ESTRELLAS"
+      title: "Servicio de Sala 5 Estrellas",
+      subtitle: "Sincronización perfecta y atención milimétrica",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=85",
+      video: "https://res.cloudinary.com/demo/video/upload/q_auto,f_auto/food.mp4",
+      tag: "SPOT VIP #01 // SALA",
+      metric: "+45% ROTACIÓN DE MESAS"
     },
     {
-      title: "Arquitectura Operativa & Control",
-      subtitle: "Sistemas IA de rotación al 0% comisiones",
-      url: "https://assets.mixkit.co/videos/preview/mixkit-chef-plating-a-dish-in-a-professional-kitchen-42861-large.mp4",
-      tag: "INGENIERÍA GASTRONÓMICA"
+      title: "Alta Cocina & Emplatado IA",
+      subtitle: "El estándar gastronómico de máxima rentabilidad",
+      image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85",
+      video: "https://res.cloudinary.com/demo/video/upload/q_auto,f_auto/wine_pour.mp4",
+      tag: "SPOT VIP #02 // COCINA",
+      metric: "0% COMISIONES RESERVA"
     },
     {
-      title: "Maridaje & Rentabilidad VIP",
-      subtitle: "Fidelización de comensales de alto ticket",
-      url: "https://assets.mixkit.co/videos/preview/mixkit-pouring-wine-into-a-glass-in-a-restaurant-42858-large.mp4",
-      tag: "TICKET MEDIO +40%"
+      title: "Maridaje & Experiencia Premium",
+      subtitle: "Fidelización automática de comensales de alto ticket",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=85",
+      video: "",
+      tag: "SPOT VIP #03 // NEGOCIO",
+      metric: "+38% TICKET MEDIO"
     }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveVideoIndex((prev) => (prev + 1) % videoSketches.length);
-    }, 7000);
+      setActiveReelIndex((prev) => (prev + 1) % sketches.length);
+    }, 6000);
     return () => clearInterval(interval);
-  }, [videoSketches.length]);
+  }, [sketches.length]);
 
   return (
     <div className="min-h-screen bg-[#FDFCF8] text-[#0A0A0A] font-sans selection:bg-[#FF4500] selection:text-white relative overflow-hidden flex flex-col justify-between">
@@ -47,19 +54,19 @@ export default function HubVIPPage() {
       />
 
       {/* Top Executive Ribbon */}
-      <div className="w-full bg-[#0A0A0A] text-white py-3 px-4 text-center border-b border-black/10 relative z-20 shadow-lg flex items-center justify-center gap-3">
-        <span className="w-2 h-2 rounded-full bg-[#FF4500] animate-ping" />
-        <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.28em] font-black text-white">
-          LÍNEA DIRECTA EJECUTIVA // ARCHITECT.SYS GROWTH DIVISION
+      <div className="w-full bg-[#0A0A0A] text-white py-3 px-4 text-center border-b border-black/10 relative z-20 shadow-lg flex items-center justify-center gap-2.5 sm:gap-3">
+        <span className="w-2 h-2 rounded-full bg-[#FF4500] animate-ping shrink-0" />
+        <span className="font-mono text-[9px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.28em] font-black text-white truncate">
+          LÍNEA DIRECTA EJECUTIVA // ARCHITECT.SYS GROWTH
         </span>
       </div>
 
       {/* Main Container */}
-      <main className="max-w-3xl w-full mx-auto px-5 py-10 sm:py-14 relative z-10 flex-1 flex flex-col justify-center">
+      <main className="max-w-3xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-14 relative z-10 flex-1 flex flex-col justify-center">
         
         {/* Header Section */}
-        <div className="text-center space-y-4 mb-8">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-3xl bg-[#0A0A0A] text-white mx-auto flex items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.2)] border border-white/20 transition-transform duration-500 hover:scale-105">
+        <div className="text-center space-y-3.5 mb-7 sm:mb-9">
+          <div className="w-18 h-18 sm:w-22 sm:h-22 rounded-3xl bg-[#0A0A0A] text-white mx-auto flex items-center justify-center shadow-[0_15px_40px_rgba(0,0,0,0.18)] border border-white/20 transition-transform duration-500 hover:scale-105 p-4">
             <span className="font-display font-black text-3xl sm:text-4xl tracking-tighter">
               A<span className="text-[#FF4500]">.</span>
             </span>
@@ -67,98 +74,130 @@ export default function HubVIPPage() {
 
           <div>
             <div className="inline-block bg-[#0A0A0A] text-white px-3.5 py-1 rounded-full shadow-md mb-2">
-              <span className="font-mono text-[10px] font-extrabold text-[#FF4500] uppercase tracking-widest">
+              <span className="font-mono text-[9px] sm:text-[10px] font-extrabold text-[#FF4500] uppercase tracking-widest">
                 ACCESO CONFIDENCIAL PASE VIP
               </span>
             </div>
-            <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-[#0A0A0A] tracking-tight leading-none">
+            <h1 className="font-display font-black text-2xl sm:text-4xl md:text-5xl text-[#0A0A0A] tracking-tight leading-none">
               HUB EJECUTIVO <span className="text-[#FF4500]">GROWTH</span>
             </h1>
-            <p className="text-xs sm:text-sm font-medium text-[#0A0A0A]/75 max-w-lg mx-auto mt-2.5 leading-relaxed">
-              Bienvenido a la consola privada de ARCHITECT.SYS. Conecta sin intermediarios con Alex o reserva tu sesión estratégica de escalado.
+            <p className="text-xs sm:text-sm font-medium text-[#0A0A0A]/75 max-w-md mx-auto mt-2 leading-relaxed">
+              Consola privada de ARCHITECT.SYS. Conecta sin intermediarios con Alex o reserva tu sesión estratégica de escalado.
             </p>
           </div>
         </div>
 
-        {/* WOW Effect: Cinematic TV Commercial Sketch Reel */}
-        <div className="mb-10 w-full rounded-3xl overflow-hidden border-2 border-[#0A0A0A] bg-black shadow-[0_25px_60px_rgba(0,0,0,0.18)] relative group">
-          <div className="relative aspect-[16/8] sm:aspect-[21/9] w-full overflow-hidden">
-            {videoSketches.map((vid, idx) => (
-              <video
-                key={vid.url}
-                src={vid.url}
-                autoPlay
-                muted
-                loop
-                playsInline
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                  idx === activeVideoIndex ? 'opacity-90 scale-100' : 'opacity-0 scale-105 pointer-events-none'
-                } duration-1000 transform`}
-              />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-80" />
+        {/* WOW Effect: Reel Móvil Vertical (en móvil) & Widescreen Spot (en PC) */}
+        <div className="mb-9 w-full">
+          <div className="mx-auto max-w-[290px] sm:max-w-full rounded-3xl overflow-hidden border-2 border-[#0A0A0A] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.2)] relative group aspect-[9/13] sm:aspect-[21/9] transition-all duration-500">
             
-            {/* Overlay Info */}
-            <div className="absolute bottom-4 left-5 right-5 flex items-end justify-between text-white z-10">
-              <div>
-                <span className="bg-[#FF4500] text-white font-mono text-[8px] sm:text-[9px] font-black px-2 py-0.5 rounded uppercase tracking-widest block w-fit mb-1">
-                  {videoSketches[activeVideoIndex].tag}
-                </span>
-                <h3 className="font-display font-black text-base sm:text-xl text-white tracking-tight leading-tight">
-                  {videoSketches[activeVideoIndex].title}
+            {sketches.map((sketch, idx) => (
+              <div
+                key={sketch.title}
+                className={`absolute inset-0 w-full h-full transition-all duration-1000 transform ${
+                  idx === activeReelIndex ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-108 z-0 pointer-events-none'
+                }`}
+              >
+                {/* Imagen 4K con animación cinemática Ken Burns continua */}
+                <img
+                  src={sketch.image}
+                  alt={sketch.title}
+                  className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-out ${
+                    idx === activeReelIndex ? 'scale-110' : 'scale-100'
+                  }`}
+                />
+
+                {/* Si tiene vídeo CDN, lo superponemos discretamente */}
+                {sketch.video && (
+                  <video
+                    src={sketch.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-screen"
+                  />
+                )}
+
+                {/* Oscurecimiento degradado de lujo para perfecta legibilidad */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+              </div>
+            ))}
+
+            {/* Reel Header Badge */}
+            <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20 pointer-events-none">
+              <span className="bg-black/80 backdrop-blur-md text-white font-mono text-[8px] sm:text-[9px] font-black px-2.5 py-1 rounded-full border border-white/20 tracking-widest uppercase flex items-center gap-1.5 shadow-lg">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                {sketches[activeReelIndex].tag}
+              </span>
+              <span className="bg-[#FF4500] text-white font-mono text-[8px] sm:text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                REEL EN VIVO
+              </span>
+            </div>
+            
+            {/* Reel Bottom Text & Metric */}
+            <div className="absolute bottom-4 left-4 right-4 z-20 text-white">
+              <div className="bg-[#0A0A0A]/90 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/15 shadow-xl">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <span className="font-mono text-[9px] font-black text-[#FF4500] uppercase tracking-wider">
+                    {sketches[activeReelIndex].metric}
+                  </span>
+                  
+                  {/* Dots Indicator */}
+                  <div className="flex gap-1">
+                    {sketches.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActiveReelIndex(i)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          i === activeReelIndex ? 'w-5 bg-[#FF4500]' : 'w-1.5 bg-white/30 hover:bg-white'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+                <h3 className="font-display font-black text-sm sm:text-lg text-white tracking-tight leading-tight">
+                  {sketches[activeReelIndex].title}
                 </h3>
-                <p className="text-[11px] text-white/80 font-sans mt-0.5">
-                  {videoSketches[activeVideoIndex].subtitle}
+                <p className="text-[10px] sm:text-xs text-white/80 font-sans mt-0.5 leading-snug">
+                  {sketches[activeReelIndex].subtitle}
                 </p>
               </div>
-
-              {/* Selector Dots */}
-              <div className="flex gap-1.5">
-                {videoSketches.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveVideoIndex(i)}
-                    className={`h-1.5 rounded-full transition-all duration-500 ${
-                      i === activeVideoIndex ? 'w-6 bg-[#FF4500]' : 'w-1.5 bg-white/40 hover:bg-white'
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
+
           </div>
         </div>
 
         {/* Action Buttons Hub (EXACTAMENTE LOS SOLICITADOS) */}
-        <div className="space-y-4 w-full">
+        <div className="space-y-3.5 sm:space-y-4 w-full">
           
           {/* Card 1: WhatsApp Alex Directo */}
           <a 
             href="https://wa.me/34622652659?text=Hola%20Alex%2C%20he%20escaneado%20el%20Pase%20VIP%20en%20mi%20restaurante%20y%20quiero%20conocer%20el%20Plan%20Growth%20360%C2%BA." 
             target="_blank"
             rel="noopener noreferrer"
-            className="group block w-full bg-[#0A0A0A] hover:bg-[#10B981] text-white p-6 sm:p-7 rounded-2xl border-2 border-[#0A0A0A] shadow-[0_15px_35px_rgba(0,0,0,0.15)] hover:shadow-[0_25px_50px_rgba(16,185,129,0.3)] transition-all duration-300 transform hover:-translate-y-1.5 relative overflow-hidden"
+            className="group block w-full bg-[#0A0A0A] hover:bg-[#10B981] text-white p-5 sm:p-6 rounded-2xl border-2 border-[#0A0A0A] shadow-[0_12px_30px_rgba(0,0,0,0.12)] hover:shadow-[0_20px_45px_rgba(16,185,129,0.28)] transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-10 -mt-10 pointer-events-none group-hover:scale-150 transition-transform duration-500" />
-            <div className="flex items-center justify-between gap-4 relative z-10">
-              <div className="flex items-center gap-4 sm:gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-[#10B981] group-hover:bg-white text-white group-hover:text-[#10B981] flex items-center justify-center shrink-0 transition-colors shadow-lg font-mono font-black text-lg">
+            <div className="flex items-center justify-between gap-3 sm:gap-4 relative z-10">
+              <div className="flex items-center gap-3.5 sm:gap-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#10B981] group-hover:bg-white text-white group-hover:text-[#10B981] flex items-center justify-center shrink-0 transition-colors shadow-lg font-mono font-black text-base sm:text-lg">
                   WA
                 </div>
                 <div>
-                  <div className="flex items-center gap-2.5 flex-wrap">
-                    <span className="font-display font-black text-lg sm:text-xl tracking-tight text-white">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="font-display font-black text-base sm:text-xl tracking-tight text-white">
                       Hablar por WhatsApp con Alex
                     </span>
-                    <span className="bg-[#10B981] group-hover:bg-white group-hover:text-[#10B981] text-white font-mono text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider transition-colors">
+                    <span className="bg-[#10B981] group-hover:bg-white group-hover:text-[#10B981] text-white font-mono text-[8px] sm:text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider transition-colors">
                       ATENCIÓN DIRECTA
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-white/75 group-hover:text-white font-normal mt-1 leading-relaxed">
+                  <p className="text-[11px] sm:text-xs text-white/80 group-hover:text-white font-normal mt-1 leading-relaxed">
                     Conexión prioritaria al <strong className="text-white font-mono">+34 622 652 659</strong>. Sin secretarias ni filtros.
                   </p>
                 </div>
               </div>
-              <div className="w-10 h-10 rounded-full bg-white/10 group-hover:bg-white group-hover:text-[#10B981] flex items-center justify-center shrink-0 transition-all font-mono font-bold text-lg">
+              <div className="w-9 h-9 rounded-full bg-white/10 group-hover:bg-white group-hover:text-[#10B981] flex items-center justify-center shrink-0 transition-all font-mono font-bold text-base sm:text-lg">
                 →
               </div>
             </div>
@@ -169,28 +208,28 @@ export default function HubVIPPage() {
             href="https://calendly.com/dkitchencorporate/pase-vip" 
             target="_blank"
             rel="noopener noreferrer"
-            className="group block w-full bg-white hover:bg-[#0A0A0A] text-[#0A0A0A] hover:text-white p-6 sm:p-7 rounded-2xl border-2 border-[#0A0A0A] shadow-[0_10px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.25)] transition-all duration-300 transform hover:-translate-y-1.5"
+            className="group block w-full bg-white hover:bg-[#0A0A0A] text-[#0A0A0A] hover:text-white p-5 sm:p-6 rounded-2xl border-2 border-[#0A0A0A] shadow-[0_8px_25px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_45px_rgba(0,0,0,0.22)] transition-all duration-300 transform hover:-translate-y-1"
           >
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-4 sm:gap-5">
-                <div className="w-14 h-14 rounded-2xl bg-[#C98A00]/10 group-hover:bg-white/15 text-[#C98A00] group-hover:text-[#FBA919] flex items-center justify-center shrink-0 transition-colors font-mono font-black text-lg">
+            <div className="flex items-center justify-between gap-3 sm:gap-4">
+              <div className="flex items-center gap-3.5 sm:gap-4">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#C98A00]/10 group-hover:bg-white/15 text-[#C98A00] group-hover:text-[#FBA919] flex items-center justify-center shrink-0 transition-colors font-mono font-black text-base sm:text-lg">
                   VIP
                 </div>
                 <div>
-                  <div className="flex items-center gap-2.5 flex-wrap">
-                    <span className="font-display font-black text-lg sm:text-xl tracking-tight">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="font-display font-black text-base sm:text-xl tracking-tight">
                       Agendar Sesión Privada 360º
                     </span>
-                    <span className="bg-[#C98A00]/15 group-hover:bg-[#FBA919] group-hover:text-[#0A0A0A] text-[#C98A00] font-mono text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider transition-colors">
+                    <span className="bg-[#C98A00]/15 group-hover:bg-[#FBA919] group-hover:text-[#0A0A0A] text-[#C98A00] font-mono text-[8px] sm:text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider transition-colors">
                       CALENDLY OFICIAL
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-[#0A0A0A]/70 group-hover:text-white/85 font-normal mt-1 leading-relaxed">
+                  <p className="text-[11px] sm:text-xs text-[#0A0A0A]/70 group-hover:text-white/85 font-normal mt-1 leading-relaxed">
                     Reserva en 1 clic tu auditoría milimétrica de rotación y rentabilidad de sala con el equipo directivo.
                   </p>
                 </div>
               </div>
-              <div className="w-10 h-10 rounded-full border border-black/20 group-hover:border-white/40 flex items-center justify-center shrink-0 group-hover:bg-[#C98A00] group-hover:border-transparent transition-all font-mono font-bold text-lg">
+              <div className="w-9 h-9 rounded-full border border-black/20 group-hover:border-white/40 flex items-center justify-center shrink-0 group-hover:bg-[#C98A00] group-hover:border-transparent transition-all font-mono font-bold text-base sm:text-lg">
                 →
               </div>
             </div>
@@ -199,23 +238,23 @@ export default function HubVIPPage() {
           {/* Card 3: Web Oficial Corporativa */}
           <Link 
             href="/" 
-            className="group block w-full bg-white/80 hover:bg-white text-[#0A0A0A] p-5 sm:p-6 rounded-2xl border border-black/15 hover:border-[#0A0A0A] transition-all duration-300 shadow-sm"
+            className="group block w-full bg-white/80 hover:bg-white text-[#0A0A0A] p-4 sm:p-5 rounded-2xl border border-black/15 hover:border-[#0A0A0A] transition-all duration-300 shadow-sm"
           >
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-black/5 group-hover:bg-[#0A0A0A] group-hover:text-white flex items-center justify-center shrink-0 transition-colors font-mono font-bold text-xs">
+            <div className="flex items-center justify-between gap-3 sm:gap-4">
+              <div className="flex items-center gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-black/5 group-hover:bg-[#0A0A0A] group-hover:text-white flex items-center justify-center shrink-0 transition-colors font-mono font-bold text-xs">
                   HQ
                 </div>
                 <div>
-                  <span className="font-display font-black text-base tracking-tight block group-hover:text-[#FF4500] transition-colors">
+                  <span className="font-display font-black text-sm sm:text-base tracking-tight block group-hover:text-[#FF4500] transition-colors">
                     Portal Oficial ARCHITECT.SYS
                   </span>
-                  <span className="text-xs text-[#0A0A0A]/60 font-normal block mt-0.5">
+                  <span className="text-[11px] sm:text-xs text-[#0A0A0A]/60 font-normal block mt-0.5">
                     Descubre nuestra ingeniería digital gastronómica, casos de éxito y ecosistema de software.
                   </span>
                 </div>
               </div>
-              <span className="font-mono text-sm font-bold text-[#0A0A0A]/30 group-hover:text-[#0A0A0A]">↗</span>
+              <span className="font-mono text-xs sm:text-sm font-bold text-[#0A0A0A]/30 group-hover:text-[#0A0A0A]">↗</span>
             </div>
           </Link>
 
@@ -224,13 +263,13 @@ export default function HubVIPPage() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full border-t border-black/10 py-7 px-5 text-center bg-white/70 backdrop-blur-md relative z-20">
+      <footer className="w-full border-t border-black/10 py-6 px-5 text-center bg-white/80 backdrop-blur-md relative z-20 mt-6">
         <div className="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-mono text-[10px] font-extrabold text-[#0A0A0A]/70 uppercase tracking-widest">
+          <p className="font-mono text-[9px] sm:text-[10px] font-extrabold text-[#0A0A0A]/70 uppercase tracking-widest">
             © {new Date().getFullYear()} ARCHITECT.SYS // HIGH PERFORMANCE GASTRONOMY
           </p>
           <div className="flex items-center gap-3">
-            <span className="text-[9px] font-mono text-[#FF4500] uppercase font-black tracking-wider bg-[#FF4500]/10 px-2 py-0.5 rounded">
+            <span className="text-[9px] font-mono text-[#FF4500] uppercase font-black tracking-wider bg-[#FF4500]/10 px-2.5 py-1 rounded-full">
               +34 622 652 659
             </span>
           </div>
