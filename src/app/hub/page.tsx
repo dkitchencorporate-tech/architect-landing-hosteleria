@@ -7,6 +7,21 @@ export default function HubVIPPage() {
   const [activeReelIndex, setActiveReelIndex] = useState(0);
   const [mediaPhase, setMediaPhase] = useState<'video' | 'image'>('video');
 
+  // Estado para el Formulario Guiado de Acceso VIP
+  const [showVipForm, setShowVipForm] = useState(false);
+  const [step, setStep] = useState(1);
+  const [formData, setFormData] = useState({
+    restaurantName: '',
+    ownerName: '',
+    city: '',
+    businessType: 'Alta Cocina / Restaurante Gourmet',
+    volume: '1.000 - 3.000 comensales / mes',
+    digitalizationLevel: 'Intermedio (TPV + Reservas Web básicas)',
+    mainChallenge: 'Eliminar comisiones por reserva y automatizar sala con IA',
+    phone: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const spots = [
     {
       id: 1,
@@ -15,7 +30,7 @@ export default function HubVIPPage() {
       title: "Sala Llena & Experiencia Gastronómica VIP",
       description: "Algoritmo inteligente de captación continua de comensales de alto ticket, garantizando ocupación máxima con clientes cualificados sin pagar comisiones por reserva.",
       imageSrc: "/images/reels/spot1.png",
-      videoSrc: "/videos/spot1.mp4", // Listo para reproducir el vídeo real .mp4 tan pronto se coloque
+      videoSrc: "/videos/spot1.mp4",
       overlayBadge: "🍾 MESA #04 VIP RESERVADA // +280€",
       overlaySub: "Maridaje Degustación 7 Tiempos • Ocupación 98%"
     },
@@ -46,19 +61,47 @@ export default function HubVIPPage() {
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (mediaPhase === 'video') {
-      // El vídeo reproduce su tiempo normal (máx 8.5s como seguridad si onEnded no dispara)
+      // Seguridad: Si por alguna razón el vídeo no dispara onEnded, a los 7.8s pasa a imagen
       timer = setTimeout(() => {
         setMediaPhase('image');
-      }, 8500);
+      }, 7800);
     } else {
-      // Muestra la imagen 8K maestra durante 3.2 segundos y avanza al siguiente spot
+      // Retención ultrarrápida (1.8s en la imagen maestra) para mantener dinamismo del flyer
       timer = setTimeout(() => {
         setActiveReelIndex((prev) => (prev + 1) % spots.length);
         setMediaPhase('video');
-      }, 3200);
+      }, 1800);
     }
     return () => clearTimeout(timer);
   }, [mediaPhase, activeReelIndex, spots.length]);
+
+  const activeSpot = spots[activeReelIndex];
+
+  const handleVipSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.restaurantName || !formData.phone) {
+      alert("Por favor, ingresa al menos el Nombre del Restaurante y tu WhatsApp.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      // Enviar expediente invisible al servidor de Architect.Sys / correo de Alex
+      await fetch('/api/vip-intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+    } catch (err) {
+      console.error("Error enviando expediente VIP:", err);
+    }
+
+    // Redirección inmediata al WhatsApp VIP de Alex con el mensaje de alta autoridad
+    const textMsg = `Hola Alex, he completado el Protocolo de Registro VIP para *${formData.restaurantName}* (${formData.city || 'España'}).\n\n🎯 *Reto principal:* ${formData.mainChallenge}\n⚡ *Digitalización:* ${formData.digitalizationLevel}\n\nQuiero activar mi Consultoría Exclusiva 1-a-1 y desbloquear los Bonos de Digitalización IA.`;
+    const whatsappUrl = `https://wa.me/34622652659?text=${encodeURIComponent(textMsg)}`;
+    
+    window.location.href = whatsappUrl;
+  };
 
   return (
     <div className="min-h-screen bg-[#FDFCF8] text-[#0A0A0A] font-sans selection:bg-[#FF4500] selection:text-white relative overflow-hidden flex flex-col justify-between">
@@ -119,7 +162,7 @@ export default function HubVIPPage() {
           </div>
         </section>
 
-        {/* SECCIÓN REEL VERTICAL SIN SOMBRAS NI OSCURECIMIENTO (100% BRILLO Y NITIDEZ) */}
+        {/* SECCIÓN REEL VERTICAL DINÁMICO (RETENCIÓN INMEDIATA SIN CORTES) */}
         <section className="w-full max-w-md mx-auto space-y-4">
           
           <div className="flex items-center justify-between px-1">
@@ -132,76 +175,61 @@ export default function HubVIPPage() {
             </span>
           </div>
 
-          {/* Marco Vertical del Reel - Limpio, Sin Sombras Oscuras */}
+          {/* Marco Vertical del Reel - Único elemento activo para garantizar autoplay inmediato en iOS/Chrome */}
           <div className="w-full aspect-[9/15] sm:aspect-[9/14] rounded-[32px] overflow-hidden border-4 border-[#0A0A0A] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.25)] relative group">
-            {spots.map((spot, idx) => {
-              const isActive = idx === activeReelIndex;
-              return (
-                <div
-                  key={spot.id}
-                  className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
-                    isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-                  }`}
-                >
-                  {/* Reproductor Limpio y Sincronizado: Vídeo en vivo + Transición Elegante a Imagen Maestra 8K */}
-                  <div className="w-full h-full relative bg-black">
-                    <video
-                      key={`${spot.id}-vid`}
-                      src={spot.videoSrc}
-                      autoPlay={isActive && mediaPhase === 'video'}
-                      loop={false}
-                      muted
-                      playsInline
-                      poster={spot.imageSrc}
-                      onEnded={() => {
-                        if (isActive) setMediaPhase('image');
-                      }}
-                      className={`absolute inset-0 w-full h-full object-cover brightness-100 contrast-105 transition-opacity duration-700 ${
-                        mediaPhase === 'video' ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-                      }`}
-                    />
-                    <img
-                      src={spot.imageSrc}
-                      alt={spot.title}
-                      className={`absolute inset-0 w-full h-full object-cover brightness-100 contrast-105 transition-opacity duration-700 ${
-                        mediaPhase === 'image' ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-                      }`}
-                    />
-                  </div>
+            <div className="w-full h-full relative bg-black">
+              {mediaPhase === 'video' ? (
+                <video
+                  key={`video-${activeSpot.id}-${activeReelIndex}`}
+                  src={activeSpot.videoSrc}
+                  autoPlay
+                  loop={false}
+                  muted
+                  playsInline
+                  poster={activeSpot.imageSrc}
+                  onEnded={() => setMediaPhase('image')}
+                  className="w-full h-full object-cover brightness-100 contrast-105 animate-fadeIn"
+                />
+              ) : (
+                <img
+                  key={`image-${activeSpot.id}-${activeReelIndex}`}
+                  src={activeSpot.imageSrc}
+                  alt={activeSpot.title}
+                  className="w-full h-full object-cover brightness-100 contrast-105 animate-fadeIn"
+                />
+              )}
+            </div>
 
-                  {/* Etiqueta superior flotante */}
-                  <div className="absolute top-3 left-4 right-4 z-30 flex items-center justify-between pointer-events-none">
-                    <span className="bg-black/85 backdrop-blur-md text-white font-mono text-[8px] sm:text-[9px] font-black px-3 py-1 rounded-full border border-white/20 tracking-wider uppercase shadow-lg truncate max-w-[65%]">
-                      {spot.tag}
-                    </span>
-                    <span className="bg-[#FF4500] text-white font-mono text-[8px] sm:text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-tight shadow-lg shrink-0">
-                      {spot.metric}
-                    </span>
-                  </div>
+            {/* Etiqueta superior flotante */}
+            <div className="absolute top-3 left-4 right-4 z-30 flex items-center justify-between pointer-events-none">
+              <span className="bg-black/85 backdrop-blur-md text-white font-mono text-[8px] sm:text-[9px] font-black px-3 py-1 rounded-full border border-white/20 tracking-wider uppercase shadow-lg truncate max-w-[65%]">
+                {activeSpot.tag}
+              </span>
+              <span className="bg-[#FF4500] text-white font-mono text-[8px] sm:text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-tight shadow-lg shrink-0">
+                {activeSpot.metric}
+              </span>
+            </div>
 
-                  {/* Overlay inferior elegante y ultra legible sin tapar la escena */}
-                  <div className="absolute bottom-4 left-4 right-4 z-20 pointer-events-none">
-                    <div className="bg-black/85 backdrop-blur-md p-3 rounded-2xl border border-white/25 shadow-2xl space-y-1">
-                      <div className="flex items-center justify-between">
-                        <span className="font-mono text-[10px] font-black text-[#10B981] flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping" />
-                          {spot.overlayBadge}
-                        </span>
-                        <span className="font-mono text-[8px] font-bold text-white/80 bg-[#FF4500]/30 border border-[#FF4500]/50 px-1.5 py-0.5 rounded">8K MASTER</span>
-                      </div>
-                      <p className="text-xs font-bold text-white leading-snug">{spot.overlaySub}</p>
-                    </div>
-                  </div>
+            {/* Overlay inferior elegante */}
+            <div className="absolute bottom-4 left-4 right-4 z-20 pointer-events-none">
+              <div className="bg-black/85 backdrop-blur-md p-3 rounded-2xl border border-white/25 shadow-2xl space-y-1">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[10px] font-black text-[#10B981] flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping" />
+                    {activeSpot.overlayBadge}
+                  </span>
+                  <span className="font-mono text-[8px] font-bold text-white/80 bg-[#FF4500]/30 border border-[#FF4500]/50 px-1.5 py-0.5 rounded">8K MASTER</span>
                 </div>
-              );
-            })}
+                <p className="text-xs font-bold text-white leading-snug">{activeSpot.overlaySub}</p>
+              </div>
+            </div>
           </div>
 
           {/* LEYENDA Y EXPLICACIÓN DEBAJO DEL REEL */}
           <div className="bg-white rounded-2xl p-5 border-2 border-[#0A0A0A] shadow-lg space-y-3 transition-all duration-500">
             <div className="flex items-center justify-between gap-2 border-b border-black/10 pb-2">
               <h3 className="font-display font-black text-base sm:text-lg text-[#0A0A0A] leading-tight">
-                {spots[activeReelIndex].title}
+                {activeSpot.title}
               </h3>
 
               {/* Puntos selectores */}
@@ -222,72 +250,306 @@ export default function HubVIPPage() {
             </div>
 
             <p className="text-xs sm:text-sm text-[#0A0A0A]/80 font-normal leading-relaxed">
-              {spots[activeReelIndex].description}
+              {activeSpot.description}
             </p>
           </div>
 
         </section>
 
-        {/* BOTONES EJECUTIVOS DE ACCIÓN INMEDIATA */}
+        {/* =========================================================================
+            PROTOCOLO GUIADO DE ACCESO VIP // CAPTACIÓN DE ALTO NIVEL
+           ========================================================================= */}
+        <section className="bg-white rounded-3xl p-6 sm:p-8 border-4 border-[#0A0A0A] shadow-2xl relative overflow-hidden">
+          
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b-2 border-black/10 pb-6 mb-6">
+            <div>
+              <span className="bg-[#10B981] text-white font-mono text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-widest inline-block mb-2">
+                🌟 ACCESO EXCLUSIVO INVITADOS FLYER
+              </span>
+              <h2 className="font-display font-black text-xl sm:text-2xl md:text-3xl text-[#0A0A0A] tracking-tight">
+                Protocolo de Auditoría & Desbloqueo de Bonos
+              </h2>
+              <p className="text-xs sm:text-sm text-[#0A0A0A]/70 mt-1">
+                Completa esta radiografía ejecutiva en 45 segundos para que Alex prepare tu estrategia antes de la sesión.
+              </p>
+            </div>
+          </div>
+
+          {!showVipForm ? (
+            <div className="text-center space-y-6 py-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+                <div className="bg-[#FDFCF8] p-4 rounded-2xl border border-black/10">
+                  <span className="font-mono text-xs font-black text-[#FF4500]">PASO 01 // AUDITORÍA</span>
+                  <h4 className="font-bold text-sm text-[#0A0A0A] mt-1">Diagnóstico Operativo</h4>
+                  <p className="text-xs text-gray-600 mt-1">Evaluamos tus cuellos de botella en sala y cocina en tiempo real.</p>
+                </div>
+                <div className="bg-[#FDFCF8] p-4 rounded-2xl border border-black/10">
+                  <span className="font-mono text-xs font-black text-[#10B981]">PASO 02 // BONOS VIP</span>
+                  <h4 className="font-bold text-sm text-[#0A0A0A] mt-1">Pack Digital 360º</h4>
+                  <p className="text-xs text-gray-600 mt-1">Desbloqueo automático de menús IA, KDS y cero comisiones.</p>
+                </div>
+                <div className="bg-[#FDFCF8] p-4 rounded-2xl border border-black/10">
+                  <span className="font-mono text-xs font-black text-[#FBA919]">PASO 03 // SESIÓN 1-A-1</span>
+                  <h4 className="font-bold text-sm text-[#0A0A0A] mt-1">Reunión Privada con Alex</h4>
+                  <p className="text-xs text-gray-600 mt-1">Hoja de ruta personalizada y demo técnica sobre tu restaurante.</p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setShowVipForm(true)}
+                className="w-full bg-gradient-to-r from-[#FF4500] to-[#D93800] hover:from-[#E03C00] hover:to-[#B82E00] text-white font-display font-black text-base sm:text-xl p-5 sm:p-6 rounded-2xl shadow-xl hover:shadow-[0_15px_35px_rgba(255,69,0,0.4)] transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 border-2 border-[#0A0A0A]"
+              >
+                <span>👑 INICIAR PROTOCOLO DE AUDITORÍA VIP</span>
+                <span className="text-2xl">→</span>
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleVipSubmit} className="space-y-6">
+              
+              {/* Indicador de Progreso */}
+              <div className="flex items-center justify-between border-b border-black/10 pb-4">
+                <div className="flex items-center gap-2">
+                  {[1, 2, 3].map((s) => (
+                    <span
+                      key={s}
+                      className={`w-8 h-8 rounded-full font-mono font-black text-xs flex items-center justify-center transition-all ${
+                        step === s ? 'bg-[#FF4500] text-white scale-110 shadow-md' : step > s ? 'bg-[#10B981] text-white' : 'bg-gray-200 text-gray-500'
+                      }`}
+                    >
+                      {step > s ? '✓' : s}
+                    </span>
+                  ))}
+                  <span className="font-mono font-bold text-xs ml-2 text-gray-700">
+                    {step === 1 && "Fase 1: Identidad & Restaurante"}
+                    {step === 2 && "Fase 2: Radiografía Operativa"}
+                    {step === 3 && "Fase 3: Cuello de Botella & WhatsApp"}
+                  </span>
+                </div>
+                <span className="font-mono text-xs font-black text-gray-400">PASO {step} DE 3</span>
+              </div>
+
+              {/* PASO 1 */}
+              {step === 1 && (
+                <div className="space-y-4 animate-fadeIn">
+                  <div>
+                    <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
+                      Nombre del Restaurante o Grupo Gastronómico *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.restaurantName}
+                      onChange={(e) => setFormData({ ...formData, restaurantName: e.target.value })}
+                      placeholder="Ej: Restaurante El Cenador VIP / Grupo DKitchen"
+                      className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
+                    />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
+                        Tu Nombre y Cargo (Decisor)
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.ownerName}
+                        onChange={(e) => setFormData({ ...formData, ownerName: e.target.value })}
+                        placeholder="Ej: Carlos Gómez (Propietario)"
+                        className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
+                        Ciudad / Ubicación
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.city}
+                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                        placeholder="Ej: Madrid / Barcelona / Marbella"
+                        className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end pt-2">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (!formData.restaurantName) alert("Por favor, ingresa el Nombre del Restaurante.");
+                        else setStep(2);
+                      }}
+                      className="bg-[#0A0A0A] hover:bg-[#FF4500] text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md flex items-center gap-2"
+                    >
+                      <span>Siguiente: Radiografía Operativa</span>
+                      <span>→</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* PASO 2 */}
+              {step === 2 && (
+                <div className="space-y-4 animate-fadeIn">
+                  <div>
+                    <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
+                      Modelo de Establecimiento
+                    </label>
+                    <select
+                      value={formData.businessType}
+                      onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
+                      className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
+                    >
+                      <option value="Alta Cocina / Restaurante Gourmet">Alta Cocina / Restaurante Gourmet</option>
+                      <option value="Grupo de Restaurantes / Multi-local">Grupo de Restaurantes / Multi-local</option>
+                      <option value="Coctelería VIP / Lounge Bar">Coctelería VIP / Lounge Bar</option>
+                      <option value="Casual Dining / Fusión Premium">Casual Dining / Fusión Premium</option>
+                    </select>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
+                        Afluencia Mensual Estimada
+                      </label>
+                      <select
+                        value={formData.volume}
+                        onChange={(e) => setFormData({ ...formData, volume: e.target.value })}
+                        className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
+                      >
+                        <option value="Menos de 1.000 comensales / mes">Menos de 1.000 comensales / mes</option>
+                        <option value="1.000 - 3.000 comensales / mes">1.000 - 3.000 comensales / mes</option>
+                        <option value="Más de 3.000 comensales / mes">Más de 3.000 comensales / mes</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
+                        Nivel de Digitalización Actual
+                      </label>
+                      <select
+                        value={formData.digitalizationLevel}
+                        onChange={(e) => setFormData({ ...formData, digitalizationLevel: e.target.value })}
+                        className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
+                      >
+                        <option value="Básico (TPV tradicional + Carta papel)">Básico (TPV tradicional + Carta papel)</option>
+                        <option value="Intermedio (TPV + Reservas Web básicas)">Intermedio (TPV + Reservas Web básicas)</option>
+                        <option value="Avanzado (Buscando IA y automatización total)">Avanzado (Buscando IA y automatización total)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-between pt-2">
+                    <button
+                      type="button"
+                      onClick={() => setStep(1)}
+                      className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-5 py-3.5 rounded-xl transition-all"
+                    >
+                      ← Atrás
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setStep(3)}
+                      className="bg-[#0A0A0A] hover:bg-[#FF4500] text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md flex items-center gap-2"
+                    >
+                      <span>Siguiente: Desbloquear Bonos</span>
+                      <span>→</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* PASO 3 */}
+              {step === 3 && (
+                <div className="space-y-4 animate-fadeIn">
+                  <div>
+                    <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
+                      ¿Qué cuello de botella te gustaría eliminar prioritariamente con Architect.Sys?
+                    </label>
+                    <select
+                      value={formData.mainChallenge}
+                      onChange={(e) => setFormData({ ...formData, mainChallenge: e.target.value })}
+                      className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
+                    >
+                      <option value="Eliminar comisiones por reserva (El Tenedor, etc.) y crear canal directo">Eliminar comisiones por reserva (El Tenedor, etc.) y crear canal directo</option>
+                      <option value="Sincronización en cocina KDS para eliminar errores en picos de trabajo">Sincronización en cocina KDS para eliminar errores en picos de trabajo</option>
+                      <option value="Aumentar el ticket medio (+30%) con cartas inteligentes IA de venta cruzada">Aumentar el ticket medio (+30%) con cartas inteligentes IA de venta cruzada</option>
+                      <option value="Automatización total de reservas por WhatsApp 24/7 con IA">Automatización total de reservas por WhatsApp 24/7 con IA</option>
+                    </select>
+                  </div>
+
+                  <div className="bg-[#10B981]/10 p-4 rounded-2xl border-2 border-[#10B981]/30">
+                    <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
+                      Tu Teléfono / WhatsApp Directo (Para vincular tu Expediente VIP) *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      placeholder="Ej: +34 600 000 000"
+                      className="w-full p-4 rounded-xl border-2 border-[#10B981] focus:ring-4 ring-[#10B981]/20 outline-none font-bold text-lg bg-white"
+                    />
+                    <p className="text-[11px] text-gray-600 mt-1">
+                      ⚡ Al confirmar, tu expediente se guardará de forma cifrada y se abrirá WhatsApp con Alex para fijar hora en Calendly.
+                    </p>
+                  </div>
+
+                  <div className="flex justify-between pt-2">
+                    <button
+                      type="button"
+                      onClick={() => setStep(2)}
+                      className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold px-5 py-3.5 rounded-xl transition-all"
+                    >
+                      ← Atrás
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white font-display font-black text-base sm:text-lg px-8 py-4 rounded-xl shadow-xl hover:shadow-[0_10px_25px_rgba(16,185,129,0.4)] transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-3 border-2 border-[#0A0A0A] w-full sm:w-auto"
+                    >
+                      {isSubmitting ? (
+                        <span>⏳ ENVIANDO EXPEDIENTE...</span>
+                      ) : (
+                        <span>🚀 CONFIRMAR REGISTRO & ABRIR WHATSAPP CON ALEX</span>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              )}
+
+            </form>
+          )}
+
+        </section>
+
+        {/* BOTONES DIRECTOS CLÁSICOS DE ACCIÓN RÁPIDA */}
         <section className="space-y-3.5 w-full pt-2">
           
-          <a 
-            href="https://wa.me/34622652659?text=Hola%20Alex%2C%20he%20visto%20los%20spots%20en%20el%20Hub%20VIP%20y%20quiero%20activar%20el%20Plan%20Growth%20360%C2%BA%20en%20mi%20restaurante." 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block w-full bg-[#0A0A0A] hover:bg-[#10B981] text-white p-5 sm:p-6 rounded-3xl border-2 border-[#0A0A0A] shadow-xl hover:shadow-[0_20px_45px_rgba(16,185,129,0.3)] transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden"
-          >
-            <div className="flex items-center justify-between gap-3 relative z-10">
-              <div className="flex items-center gap-3.5 sm:gap-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#10B981] group-hover:bg-white text-white group-hover:text-[#10B981] flex items-center justify-center shrink-0 transition-colors shadow-md font-mono font-black text-base sm:text-lg">
-                  WA
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="font-display font-black text-base sm:text-xl tracking-tight text-white">
-                      Hablar por WhatsApp con Alex
-                    </span>
-                    <span className="bg-[#10B981] group-hover:bg-white group-hover:text-[#10B981] text-white font-mono text-[8px] sm:text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider transition-colors">
-                      ATENCIÓN DIRECTA
-                    </span>
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-white/85 group-hover:text-white font-normal mt-1 leading-relaxed">
-                    Línea prioritaria al <strong className="text-white font-mono underline">+34 622 652 659</strong>. Resuelvo dudas y preparamos el despliegue.
-                  </p>
-                </div>
-              </div>
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 group-hover:bg-white group-hover:text-[#10B981] flex items-center justify-center shrink-0 transition-all font-mono font-bold text-base sm:text-lg">
-                →
-              </div>
-            </div>
-          </a>
-
           <a 
             href="https://calendly.com/dkitchencorporate/pase-vip" 
             target="_blank"
             rel="noopener noreferrer"
-            className="group block w-full bg-white hover:bg-[#0A0A0A] text-[#0A0A0A] hover:text-white p-5 sm:p-6 rounded-3xl border-2 border-[#0A0A0A] shadow-md hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+            className="group block w-full bg-[#0A0A0A] hover:bg-[#FF4500] text-white p-5 sm:p-6 rounded-3xl border-2 border-[#0A0A0A] shadow-xl hover:shadow-[0_20px_45px_rgba(255,69,0,0.3)] transition-all duration-300 transform hover:-translate-y-1"
           >
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3.5 sm:gap-4">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#C98A00]/10 group-hover:bg-white/15 text-[#C98A00] group-hover:text-[#FBA919] flex items-center justify-center shrink-0 transition-colors font-mono font-black text-base sm:text-lg">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/10 group-hover:bg-white text-white group-hover:text-[#FF4500] flex items-center justify-center shrink-0 transition-colors font-mono font-black text-base sm:text-lg">
                   VIP
                 </div>
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="font-display font-black text-base sm:text-xl tracking-tight">
-                      Agendar Sesión de Estrategia 360º
+                      Agendar Sesión Directa en Calendly
                     </span>
-                    <span className="bg-[#C98A00]/15 group-hover:bg-[#FBA919] group-hover:text-[#0A0A0A] text-[#C98A00] font-mono text-[8px] sm:text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider transition-colors">
-                      CALENDLY OFICIAL
+                    <span className="bg-white/20 group-hover:bg-white group-hover:text-[#0A0A0A] text-white font-mono text-[8px] sm:text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider transition-colors">
+                      ACCESO RÁPIDO
                     </span>
                   </div>
-                  <p className="text-[11px] sm:text-xs text-[#0A0A0A]/75 group-hover:text-white/85 font-normal mt-1 leading-relaxed">
-                    Reserva tu cita en 1 clic para auditar la rotación y rentabilidad de tu sala antes de nuestra reunión.
+                  <p className="text-[11px] sm:text-xs text-white/80 group-hover:text-white font-normal mt-1 leading-relaxed">
+                    Si ya tienes claro tu objetivo, elige tu franja horaria de 30 minutos en el calendario oficial.
                   </p>
                 </div>
               </div>
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-black/20 group-hover:border-white/40 flex items-center justify-center shrink-0 group-hover:bg-[#C98A00] group-hover:border-transparent transition-all font-mono font-bold text-base sm:text-lg">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/20 group-hover:bg-white group-hover:text-[#0A0A0A] flex items-center justify-center shrink-0 transition-all font-mono font-bold text-base sm:text-lg">
                 →
               </div>
             </div>
