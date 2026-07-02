@@ -5,6 +5,7 @@ import Link from 'next/link';
 
 export default function HubVIPPage() {
   const [activeReelIndex, setActiveReelIndex] = useState(0);
+  const [mediaPhase, setMediaPhase] = useState<'video' | 'image'>('video');
 
   const spots = [
     {
@@ -43,11 +44,21 @@ export default function HubVIPPage() {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveReelIndex((prev) => (prev + 1) % spots.length);
-    }, 8500);
-    return () => clearInterval(interval);
-  }, [spots.length]);
+    let timer: NodeJS.Timeout;
+    if (mediaPhase === 'video') {
+      // El vídeo reproduce su tiempo normal (máx 8.5s como seguridad si onEnded no dispara)
+      timer = setTimeout(() => {
+        setMediaPhase('image');
+      }, 8500);
+    } else {
+      // Muestra la imagen 8K maestra durante 3.2 segundos y avanza al siguiente spot
+      timer = setTimeout(() => {
+        setActiveReelIndex((prev) => (prev + 1) % spots.length);
+        setMediaPhase('video');
+      }, 3200);
+    }
+    return () => clearTimeout(timer);
+  }, [mediaPhase, activeReelIndex, spots.length]);
 
   return (
     <div className="min-h-screen bg-[#FDFCF8] text-[#0A0A0A] font-sans selection:bg-[#FF4500] selection:text-white relative overflow-hidden flex flex-col justify-between">
@@ -132,25 +143,30 @@ export default function HubVIPPage() {
                     isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
                   }`}
                 >
-                  {/* Reproductor Limpio al 100% de Brillo y Nitidez (Sin degradados negros que tapen la imagen/vídeo) */}
+                  {/* Reproductor Limpio y Sincronizado: Vídeo en vivo + Transición Elegante a Imagen Maestra 8K */}
                   <div className="w-full h-full relative bg-black">
-                    {spot.id === 1 ? (
-                      <video
-                        src={spot.videoSrc}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        poster={spot.imageSrc}
-                        className="w-full h-full object-cover brightness-100 contrast-105"
-                      />
-                    ) : (
-                      <img
-                        src={spot.imageSrc}
-                        alt={spot.title}
-                        className="w-full h-full object-cover brightness-100 contrast-105"
-                      />
-                    )}
+                    <video
+                      key={`${spot.id}-vid`}
+                      src={spot.videoSrc}
+                      autoPlay={isActive && mediaPhase === 'video'}
+                      loop={false}
+                      muted
+                      playsInline
+                      poster={spot.imageSrc}
+                      onEnded={() => {
+                        if (isActive) setMediaPhase('image');
+                      }}
+                      className={`absolute inset-0 w-full h-full object-cover brightness-100 contrast-105 transition-opacity duration-700 ${
+                        mediaPhase === 'video' ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                      }`}
+                    />
+                    <img
+                      src={spot.imageSrc}
+                      alt={spot.title}
+                      className={`absolute inset-0 w-full h-full object-cover brightness-100 contrast-105 transition-opacity duration-700 ${
+                        mediaPhase === 'image' ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                      }`}
+                    />
                   </div>
 
                   {/* Etiqueta superior flotante */}
@@ -193,7 +209,10 @@ export default function HubVIPPage() {
                 {spots.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setActiveReelIndex(i)}
+                    onClick={() => {
+                      setActiveReelIndex(i);
+                      setMediaPhase('video');
+                    }}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       i === activeReelIndex ? 'w-6 bg-[#FF4500]' : 'w-2 bg-black/20 hover:bg-black/50'
                     }`}
