@@ -53,7 +53,7 @@ export async function POST(request: Request) {
           <div style="background-color: #FFFFFF; padding: 20px; border-radius: 12px; border: 1px solid #E5E7EB; margin: 20px 0;">
             <h3 style="color: #0A0A0A; margin-top: 0; border-bottom: 2px solid #0A0A0A; padding-bottom: 8px;">RADIOGRAFÍA OPERATIVA</h3>
             <p style="margin: 8px 0;"><strong>🍽️ Tipo de Negocio:</strong> ${businessType || 'No especificado'}</p>
-            <p style="margin: 8px 0;"><strong>📈 Afluencia Estimada:</strong> ${volume || 'No especificado'}</p>
+            <p style="margin: 8px 0;"><strong>💰 Facturación Estimada:</strong> ${volume || 'No especificado'}</p>
             <p style="margin: 8px 0;"><strong>⚡ Nivel de Digitalización:</strong> ${digitalizationLevel || 'No especificado'}</p>
             <p style="margin: 8px 0;"><strong>🎯 Principal Reto / Cuello de Botella:</strong> <span style="background-color: #FEF3C7; padding: 2px 6px; border-radius: 4px; font-weight: bold; color: #92400E;">${mainChallenge || 'No especificado'}</span></p>
           </div>

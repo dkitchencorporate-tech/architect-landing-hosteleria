@@ -16,9 +16,10 @@ export default function HubVIPPage() {
     ownerName: '',
     city: '',
     businessType: 'Alta Cocina / Restaurante Gourmet',
-    volume: '1.000 - 3.000 comensales / mes',
-    digitalizationLevel: 'Intermedio (TPV + Reservas Web básicas)',
-    mainChallenge: 'Eliminar comisiones por reserva y automatizar sala con IA',
+    volume: 'De 20.000 € a 50.000 € / mes',
+    digitalizationLevel: 'Intermedio (TPV + Reservas online básicas tipo El Tenedor / Google)',
+    mainChallenge: 'Eliminar altas comisiones por reserva (El Tenedor, etc.) y crear canal directo propio',
+    customChallenge: '',
     phone: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -94,19 +95,28 @@ export default function HubVIPPage() {
     }
 
     setIsSubmitting(true);
+    const finalChallenge = formData.mainChallenge.includes("Otro reto")
+      ? `Otro reto específico: ${formData.customChallenge || 'No especificado'}`
+      : formData.mainChallenge;
+
+    const payload = {
+      ...formData,
+      mainChallenge: finalChallenge
+    };
+
     try {
       // Enviar expediente invisible al servidor de Architect.Sys / correo de Alex
       await fetch('/api/vip-intake', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
     } catch (err) {
       console.error("Error enviando expediente VIP:", err);
     }
 
     // Redirección inmediata al WhatsApp VIP de Alex con el mensaje de alta autoridad
-    const textMsg = `Hola Alex, he completado el Protocolo de Registro VIP para *${formData.restaurantName}* (${formData.city || 'España'}).\n\n🎯 *Reto principal:* ${formData.mainChallenge}\n⚡ *Digitalización:* ${formData.digitalizationLevel}\n\nQuiero activar mi Consultoría Exclusiva 1-a-1 y desbloquear los Bonos de Digitalización IA.`;
+    const textMsg = `Hola Alex, he completado el Protocolo de Registro VIP para *${formData.restaurantName}* (${formData.city || 'España'}).\n\n🎯 *Reto principal:* ${finalChallenge}\n💰 *Facturación estimada:* ${formData.volume}\n⚡ *Digitalización:* ${formData.digitalizationLevel}\n\nQuiero activar mi Consultoría Exclusiva 1-a-1 y desbloquear los Bonos de Digitalización IA.`;
     const whatsappUrl = `https://wa.me/34622652659?text=${encodeURIComponent(textMsg)}`;
     
     window.location.href = whatsappUrl;
@@ -413,25 +423,32 @@ export default function HubVIPPage() {
                       className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
                     >
                       <option value="Alta Cocina / Restaurante Gourmet">Alta Cocina / Restaurante Gourmet</option>
-                      <option value="Grupo de Restaurantes / Multi-local">Grupo de Restaurantes / Multi-local</option>
-                      <option value="Coctelería VIP / Lounge Bar">Coctelería VIP / Lounge Bar</option>
-                      <option value="Casual Dining / Fusión Premium">Casual Dining / Fusión Premium</option>
+                      <option value="Restaurante Tradicional / Carta y Menú del Día">Restaurante Tradicional / Carta y Menú del Día</option>
+                      <option value="Bar de Tapas / Cervecería / Gastrobar">Bar de Tapas / Cervecería / Gastrobar</option>
+                      <option value="Comida rápida / Burger / Pizzería (Alto Volumen)">Comida rápida / Burger / Pizzería (Alto Volumen)</option>
+                      <option value="A domicilio (Delivery & Takeaway / Dark Kitchen)">A domicilio (Delivery & Takeaway / Dark Kitchen)</option>
+                      <option value="Tienda Comestibles / Abacería / Gourmet Deli">Tienda Comestibles / Abacería / Gourmet Deli</option>
+                      <option value="Coctelería VIP / Lounge Bar / Club">Coctelería VIP / Lounge Bar / Club</option>
+                      <option value="Grupo de Restaurantes / Franquicias multi-local">Grupo de Restaurantes / Franquicias multi-local</option>
+                      <option value="Otro modelo de negocio hostelero o alimentación">Otro modelo de negocio hostelero o alimentación</option>
                     </select>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
-                        Afluencia Mensual Estimada
+                        Facturación Mensual Estimada
                       </label>
                       <select
                         value={formData.volume}
                         onChange={(e) => setFormData({ ...formData, volume: e.target.value })}
                         className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
                       >
-                        <option value="Menos de 1.000 comensales / mes">Menos de 1.000 comensales / mes</option>
-                        <option value="1.000 - 3.000 comensales / mes">1.000 - 3.000 comensales / mes</option>
-                        <option value="Más de 3.000 comensales / mes">Más de 3.000 comensales / mes</option>
+                        <option value="Menos de 20.000 € / mes">Menos de 20.000 € / mes</option>
+                        <option value="De 20.000 € a 50.000 € / mes">De 20.000 € a 50.000 € / mes</option>
+                        <option value="De 50.000 € a 100.000 € / mes">De 50.000 € a 100.000 € / mes</option>
+                        <option value="De 100.000 € a 250.000 € / mes">De 100.000 € a 250.000 € / mes</option>
+                        <option value="Más de 250.000 € / mes (Gran volumen)">Más de 250.000 € / mes (Gran volumen)</option>
                       </select>
                     </div>
                     <div>
@@ -443,9 +460,11 @@ export default function HubVIPPage() {
                         onChange={(e) => setFormData({ ...formData, digitalizationLevel: e.target.value })}
                         className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
                       >
-                        <option value="Básico (TPV tradicional + Carta papel)">Básico (TPV tradicional + Carta papel)</option>
-                        <option value="Intermedio (TPV + Reservas Web básicas)">Intermedio (TPV + Reservas Web básicas)</option>
-                        <option value="Avanzado (Buscando IA y automatización total)">Avanzado (Buscando IA y automatización total)</option>
+                        <option value="0% Digital (Comandas a mano y cobro en efectivo / TPV antiguo)">0% Digital (Comandas a mano y cobro en efectivo / TPV antiguo)</option>
+                        <option value="Básico (TPV convencional + Carta estática en papel o QR básico)">Básico (TPV convencional + Carta estática en papel o QR básico)</option>
+                        <option value="Intermedio (TPV + Reservas online básicas tipo El Tenedor / Google)">Intermedio (TPV + Reservas online básicas tipo El Tenedor / Google)</option>
+                        <option value="Avanzado (Gestión centralizada, reservas web propias y KDS en cocina)">Avanzado (Gestión centralizada, reservas web propias y KDS en cocina)</option>
+                        <option value="Muy Avanzado (Buscando automatización total e IA aplicada al negocio)">Muy Avanzado (Buscando automatización total e IA aplicada al negocio)</option>
                       </select>
                     </div>
                   </div>
@@ -482,12 +501,31 @@ export default function HubVIPPage() {
                       onChange={(e) => setFormData({ ...formData, mainChallenge: e.target.value })}
                       className="w-full p-4 rounded-xl border-2 border-black/20 focus:border-[#FF4500] outline-none font-medium bg-[#FDFCF8]"
                     >
-                      <option value="Eliminar comisiones por reserva (El Tenedor, etc.) y crear canal directo">Eliminar comisiones por reserva (El Tenedor, etc.) y crear canal directo</option>
+                      <option value="Eliminar altas comisiones por reserva (El Tenedor, etc.) y crear canal directo propio">Eliminar altas comisiones por reserva (El Tenedor, etc.) y crear canal directo propio</option>
                       <option value="Sincronización en cocina KDS para eliminar errores en picos de trabajo">Sincronización en cocina KDS para eliminar errores en picos de trabajo</option>
                       <option value="Aumentar el ticket medio (+30%) con cartas inteligentes IA de venta cruzada">Aumentar el ticket medio (+30%) con cartas inteligentes IA de venta cruzada</option>
-                      <option value="Automatización total de reservas por WhatsApp 24/7 con IA">Automatización total de reservas por WhatsApp 24/7 con IA</option>
+                      <option value="Automatización total de reservas y atención al cliente por WhatsApp 24/7 con IA">Automatización total de reservas y atención al cliente por WhatsApp 24/7 con IA</option>
+                      <option value="Control de costes, escandallos en tiempo real y reducción de mermas de inventario">Control de costes, escandallos en tiempo real y reducción de mermas de inventario</option>
+                      <option value="Fidelización de clientes recurrentes y llenar el local en días flojos entre semana">Fidelización de clientes recurrentes y llenar el local en días flojos entre semana</option>
+                      <option value="Otro reto específico (Especificar a continuación para análisis de Alex)">Otro reto específico (Especificar a continuación para análisis de Alex)</option>
                     </select>
                   </div>
+
+                  {formData.mainChallenge.includes("Otro reto") && (
+                    <div className="animate-fadeIn">
+                      <label className="block text-xs font-bold text-[#FF4500] uppercase tracking-wider mb-1">
+                        ✍️ Explícanos libremente tu situación o reto específico:
+                      </label>
+                      <textarea
+                        rows={3}
+                        required
+                        value={formData.customChallenge}
+                        onChange={(e) => setFormData({ ...formData, customChallenge: e.target.value })}
+                        placeholder="Escribe aquí con todo detalle lo que ocurre o lo que te gustaría mejorar. Toda la información será revisada confidencialmente por Alex..."
+                        className="w-full p-3 rounded-xl border-2 border-[#FF4500] focus:ring-4 ring-[#FF4500]/20 outline-none font-medium bg-[#FDFCF8] text-sm"
+                      />
+                    </div>
+                  )}
 
                   <div className="bg-[#10B981]/10 p-4 rounded-2xl border-2 border-[#10B981]/30">
                     <label className="block text-xs font-bold text-[#0A0A0A] uppercase tracking-wider mb-1">
