@@ -3,264 +3,49 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-// --- SPOT #1: VÍDEO ANIMADO DE SALA LLENA & RADAR VIP ---
-function AnimatedVideoSpot1() {
-  return (
-    <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#070B12] via-[#0D1523] to-[#0A0E17] text-white flex flex-col justify-between p-5 overflow-hidden select-none">
-      {/* Luces y escáner radar de fondo en movimiento continuo */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-20 -left-20 w-80 h-80 bg-[#FF4500]/20 rounded-full blur-[80px] animate-pulse" />
-        <div className="absolute top-1/2 -right-20 w-80 h-80 bg-[#10B981]/20 rounded-full blur-[80px] animate-pulse" style={{ animationDelay: '1.5s' }} />
-        
-        {/* Radar óptico giratorio */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 border border-white/10 rounded-full flex items-center justify-center">
-          <div className="w-56 h-56 border border-white/10 rounded-full animate-ping" style={{ animationDuration: '4s' }} />
-          <div className="w-40 h-40 border border-[#10B981]/30 rounded-full flex items-center justify-center">
-            <div className="w-24 h-24 border border-[#FF4500]/40 rounded-full animate-spin" style={{ animationDuration: '12s' }} />
-          </div>
-          {/* Haz de barrido */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-[#10B981]/15 to-transparent animate-spin" style={{ animationDuration: '6s' }} />
-        </div>
-      </div>
-
-      {/* Cabecera del Vídeo */}
-      <div className="relative z-10 flex items-center justify-between pt-8">
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-ping" />
-          <span className="font-mono text-[9px] font-black uppercase tracking-widest text-[#10B981] bg-[#10B981]/10 px-2 py-0.5 rounded border border-[#10B981]/30">
-            RADAR IA // SALA EN VIVO
-          </span>
-        </div>
-        <span className="font-mono text-xs font-bold text-white/60">60 FPS</span>
-      </div>
-
-      {/* Escena Central Animada: Mesas reservadas e ingresos en tiempo real */}
-      <div className="relative z-10 my-auto space-y-4">
-        <div className="text-center space-y-1">
-          <div className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/15 backdrop-blur-md mb-2 animate-bounce" style={{ animationDuration: '3s' }}>
-            <span className="font-mono text-[10px] text-[#FBA919] font-black tracking-wider uppercase">✨ +140% RESERVAS CONFIRMADAS</span>
-          </div>
-          <h4 className="font-display font-black text-2xl sm:text-3xl tracking-tight text-white leading-tight">
-            Sala 100% Ocupada
-          </h4>
-          <p className="font-mono text-xs text-white/70">Segmentación Algorítmica de Alto Ticket</p>
-        </div>
-
-        {/* Notificaciones flotantes en movimiento ascendente */}
-        <div className="space-y-2.5 max-w-xs mx-auto">
-          <div className="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20 flex items-center justify-between shadow-lg transform translate-y-0 transition-transform duration-500 animate-[pulse_2s_ease-in-out_infinite]">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-[#10B981] flex items-center justify-center font-bold text-xs">🍾</div>
-              <div>
-                <span className="block text-[11px] font-bold text-white">Mesa VIP #04 Reservada</span>
-                <span className="block text-[9px] font-mono text-white/60">Maridaje Degustación 7 Tiempos</span>
-              </div>
-            </div>
-            <span className="font-mono text-xs font-black text-[#10B981]">+280€</span>
-          </div>
-
-          <div className="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20 flex items-center justify-between shadow-lg animate-[pulse_3s_ease-in-out_infinite]" style={{ animationDelay: '0.7s' }}>
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-[#FF4500] flex items-center justify-center font-bold text-xs">🍷</div>
-              <div>
-                <span className="block text-[11px] font-bold text-white">Reserva Corporativa #12</span>
-                <span className="block text-[9px] font-mono text-white/60">Confirmación Automática sin Comisión</span>
-              </div>
-            </div>
-            <span className="font-mono text-xs font-black text-[#FF4500]">+640€</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Barra de estado inferior */}
-      <div className="relative z-10 bg-black/60 backdrop-blur-md p-3 rounded-2xl border border-white/10 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-[#10B981]" />
-          <span className="font-mono text-[10px] font-bold text-white/90 uppercase">ESTADO DE SALA: LLENO TOTAL</span>
-        </div>
-        <span className="font-mono text-[10px] font-black text-[#10B981]">100% ROTACIÓN</span>
-      </div>
-    </div>
-  );
-}
-
-// --- SPOT #2: VÍDEO ANIMADO DE AGILIDAD EN BARRA Y COCINA ---
-function AnimatedVideoSpot2() {
-  return (
-    <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#120804] via-[#1A0E0A] to-[#0A0503] text-white flex flex-col justify-between p-5 overflow-hidden select-none">
-      {/* Ondas y láseres de cocina en movimiento */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-[#FF4500]/25 rounded-full blur-[90px] animate-pulse" />
-        <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#FBA919]/20 rounded-full blur-[90px] animate-pulse" style={{ animationDelay: '1s' }} />
-      </div>
-
-      {/* Cabecera */}
-      <div className="relative z-10 flex items-center justify-between pt-8">
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#FF4500] animate-ping" />
-          <span className="font-mono text-[9px] font-black uppercase tracking-widest text-[#FF4500] bg-[#FF4500]/10 px-2 py-0.5 rounded border border-[#FF4500]/30">
-            KDS LIVE // COCINA & BAR
-          </span>
-        </div>
-        <span className="font-mono text-xs font-bold text-[#FBA919]">TIEMPO REAL</span>
-      </div>
-
-      {/* Escena Central: Flujo vertiginoso de comandas agilizadas */}
-      <div className="relative z-10 my-auto space-y-4">
-        <div className="text-center space-y-1">
-          <h4 className="font-display font-black text-2xl sm:text-3xl tracking-tight text-white leading-tight">
-            Comanda Instantánea
-          </h4>
-          <p className="font-mono text-xs text-[#FBA919]">Sincronización Directa sin Esperas</p>
-        </div>
-
-        {/* Línea de pedidos con barras de progreso animadas en tiempo real */}
-        <div className="space-y-3 max-w-xs mx-auto">
-          <div className="bg-black/70 backdrop-blur-md p-3.5 rounded-2xl border border-[#FF4500]/40 shadow-xl space-y-2 transform hover:scale-105 transition-all">
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-[10px] font-black text-[#FF4500] uppercase">PEDIDO #809 // MESA 02</span>
-              <span className="bg-[#10B981]/20 text-[#10B981] font-mono text-[9px] font-black px-1.5 py-0.5 rounded">EN 34 SEGUNDOS</span>
-            </div>
-            <p className="text-xs font-bold text-white">2x Cóctel Smoked Old Fashioned</p>
-            {/* Barra de progreso animada continuamente */}
-            <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-[#FF4500] to-[#FBA919] rounded-full animate-[pulse_1.5s_ease-in-out_infinite] w-[85%]" />
-            </div>
-          </div>
-
-          <div className="bg-black/70 backdrop-blur-md p-3.5 rounded-2xl border border-white/15 shadow-xl space-y-2">
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-[10px] font-black text-white/70 uppercase">PEDIDO #810 // SALA VIP</span>
-              <span className="bg-[#FBA919]/20 text-[#FBA919] font-mono text-[9px] font-black px-1.5 py-0.5 rounded">EN PREPARACIÓN</span>
-            </div>
-            <p className="text-xs font-bold text-white">1x Chuletón Madurado 60 Días + Maridaje</p>
-            <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
-              <div className="h-full bg-[#10B981] rounded-full animate-[pulse_2s_ease-in-out_infinite] w-[60%]" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Indicador inferior */}
-      <div className="relative z-10 bg-black/60 backdrop-blur-md p-3 rounded-2xl border border-white/10 flex items-center justify-between">
-        <span className="font-mono text-[10px] font-bold text-white/80">REDUCCIÓN DE ERROR OPERATIVO:</span>
-        <span className="font-mono text-[11px] font-black text-[#10B981] bg-[#10B981]/15 px-2 py-0.5 rounded">-65% TIEMPO</span>
-      </div>
-    </div>
-  );
-}
-
-// --- SPOT #3: VÍDEO ANIMADO DE SCROLL EN CARTA DIGITAL IA ---
-function AnimatedVideoSpot3() {
-  const [scrollStep, setScrollStep] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setScrollStep((prev) => (prev + 1) % 3);
-    }, 2500);
-    return () => clearInterval(timer);
-  }, []);
-
-  const menuItems = [
-    { title: "Caviar Oscietra Imperial & Blinis", price: "120€", badge: "⭐ RECOMENDACIÓN IA", match: "99% MATCH VIP" },
-    { title: "Rodaballo Salvaje a la Brasa de Encina", price: "78€", badge: "🔥 TOP VENTAS", match: "96% MATCH" },
-    { title: "Sinfonía Trufada & Chocolate Valrhona", price: "24€", badge: "🍷 SUGERENCIA MARIDAJE", match: "98% MATCH" }
-  ];
-
-  return (
-    <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-[#06101E] via-[#0A182D] to-[#050C17] text-white flex flex-col justify-between p-5 overflow-hidden select-none">
-      {/* Efectos de neón */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-10 w-72 h-72 bg-[#3B82F6]/20 rounded-full blur-[80px] animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-72 h-72 bg-[#10B981]/20 rounded-full blur-[80px] animate-pulse" style={{ animationDelay: '1.2s' }} />
-      </div>
-
-      {/* Cabecera */}
-      <div className="relative z-10 flex items-center justify-between pt-8">
-        <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#3B82F6] animate-ping" />
-          <span className="font-mono text-[9px] font-black uppercase tracking-widest text-[#60A5FA] bg-[#3B82F6]/15 px-2 py-0.5 rounded border border-[#3B82F6]/30">
-            AUTO-SCROLL // CARTA INTELIGENTE
-          </span>
-        </div>
-        <span className="font-mono text-xs font-bold text-[#10B981]">+38% TICKET</span>
-      </div>
-
-      {/* Simulación de Smartphone haciendo Scroll Automático en Vivo */}
-      <div className="relative z-10 my-auto space-y-3">
-        <div className="text-center space-y-1 mb-2">
-          <h4 className="font-display font-black text-2xl sm:text-3xl tracking-tight text-white leading-tight">
-            Venta Cruzada IA
-          </h4>
-          <p className="font-mono text-xs text-[#60A5FA]">Algoritmo Predictivo en Mesa</p>
-        </div>
-
-        {/* Contenedor con efecto scroll dinámico */}
-        <div className="space-y-2.5 max-w-xs mx-auto transition-all duration-700">
-          {menuItems.map((item, idx) => (
-            <div
-              key={item.title}
-              className={`p-3.5 rounded-2xl border transition-all duration-500 transform ${
-                idx === scrollStep
-                  ? 'bg-white/15 border-[#60A5FA] scale-105 shadow-[0_10px_25px_rgba(59,130,246,0.3)]'
-                  : 'bg-white/5 border-white/10 opacity-75 scale-95'
-              }`}
-            >
-              <div className="flex items-center justify-between mb-1">
-                <span className="font-mono text-[9px] font-black px-2 py-0.5 rounded-full bg-[#3B82F6] text-white uppercase">
-                  {item.badge}
-                </span>
-                <span className="font-mono text-[10px] font-bold text-[#10B981]">{item.match}</span>
-              </div>
-              <div className="flex items-center justify-between gap-2 mt-1.5">
-                <span className="text-xs font-bold text-white leading-snug">{item.title}</span>
-                <span className="font-mono text-sm font-black text-[#FBA919] shrink-0">{item.price}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Indicador inferior */}
-      <div className="relative z-10 bg-black/60 backdrop-blur-md p-3 rounded-2xl border border-white/10 flex items-center justify-between">
-        <span className="font-mono text-[10px] font-bold text-white/80">SUGERENCIA ALGORÍTMICA:</span>
-        <span className="font-mono text-[10px] font-black text-[#60A5FA] animate-pulse">ACTIVA EN 100% MESAS</span>
-      </div>
-    </div>
-  );
-}
-
 export default function HubVIPPage() {
   const [activeReelIndex, setActiveReelIndex] = useState(0);
 
   const spots = [
     {
-      tag: "SPOT VIP #01 // RADAR DE SALA EN VIVO",
+      id: 1,
+      tag: "SPOT VIP #01 // SALA EN VIVO & AMBIENTE 5 ESTRELLAS",
       metric: "+140% AFLUENCIA",
-      title: "Sala Llena & Experiencia 5 Estrellas",
-      description: "Demostración animada en tiempo real de cómo nuestro radar inteligente llena la sala con comensales VIP de alto ticket, asegurando rotación continua y reservas confirmadas sin comisiones de intermediarios.",
-      component: <AnimatedVideoSpot1 />
+      title: "Sala Llena & Experiencia Gastronómica VIP",
+      description: "Vídeo real de sala en máxima ocupación. Nuestro algoritmo inteligente segmenta y atrae comensales de alto ticket continuamente, garantizando mesas llenas con clientes cualificados sin pagar comisiones por reserva.",
+      videoSrc: "/videos/spot1.webm",
+      fallbackMp4: "https://archive.org/download/coglaz-Polo_s_Italian_Cuisine/coglaz-Polo_s_Italian_Cuisine.mp4",
+      overlayBadge: "🍾 MESA #04 VIP RESERVADA // +280€",
+      overlaySub: "Maridaje Degustación 7 Tiempos"
     },
     {
-      tag: "SPOT VIP #02 // KDS & COMANDAS AGILIZADAS",
+      id: 2,
+      tag: "SPOT VIP #02 // COCINA EN ACCIÓN & KDS LIVE",
       metric: "0% COMISIONES",
-      title: "Recepción de Pedidos & Precisión Operativa",
-      description: "Flujo animado de sincronización entre sala y cocina. Reduce los tiempos de espera y errores en un 65%, permitiendo al personal centrarse en la excelencia del servicio y el maridaje.",
-      component: <AnimatedVideoSpot2 />
+      title: "Recepción de Pedidos & Precisión en Cocina",
+      description: "Vídeo real de cocina profesional y emplatado gourmet. Agiliza la sincronización entre barra y pase eliminando cuellos de botella y reduciendo los tiempos de espera y error en un 65%.",
+      videoSrc: "/videos/spot2.webm",
+      fallbackMp4: "https://archive.org/download/ecatma-Cooking_with_Rosa_pt._1/ecatma-Cooking_with_Rosa_pt._1.mp4",
+      overlayBadge: "🔥 PEDIDO #809 EN PREPARACIÓN // 34s",
+      overlaySub: "Sincronización KDS Directa sin Intermediarios"
     },
     {
-      tag: "SPOT VIP #03 // SCROLL EN CARTA DIGITAL IA",
+      id: 3,
+      tag: "SPOT VIP #03 // DEMO EN VIVO INTERACCIÓN MÓVIL",
       metric: "+38% RENTABILIDAD",
-      title: "Interacción Digital Hiper-Velocidad en Mesa",
-      description: "Simulación de scroll automático donde el algoritmo IA sugiere maridajes premium y platos estrella al comensal en el momento exacto de su decisión, incrementando drásticamente el ticket medio.",
-      component: <AnimatedVideoSpot3 />
+      title: "Interacción Digital Inteligente en Mesa",
+      description: "Vídeo real de interacción con smartphone en mano. Simulación en vivo donde la carta inteligente IA sugiere maridajes y upsells personalizados en el momento exacto de la decisión del cliente.",
+      videoSrc: "/videos/spot3.webm",
+      fallbackMp4: "https://archive.org/download/youtube-xdQK83lmblE/youtube-xdQK83lmblE.mp4",
+      overlayBadge: "⭐ RECOMENDACIÓN IA // +38% TICKET",
+      overlaySub: "Algoritmo Predictivo de Venta Cruzada Activo"
     }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveReelIndex((prev) => (prev + 1) % spots.length);
-    }, 7500); // 7.5 segundos por vídeo animado
+    }, 8500); // 8.5 segundos por vídeo para apreciar el realismo
     return () => clearInterval(interval);
   }, [spots.length]);
 
@@ -323,13 +108,13 @@ export default function HubVIPPage() {
           </div>
         </section>
 
-        {/* SECCIÓN REEL VERTICAL ANIMADO (100% Código Nativo de Vídeo-Sketch Animado, Cero pantalla negra, Cero lentitud) */}
+        {/* SECCIÓN REEL VERTICAL CON VÍDEOS REALES ULTRA-REALISTAS (ALOJADOS EN EL SERVIDOR LOCAL VERCEL EDGE) */}
         <section className="w-full max-w-md mx-auto space-y-4">
           
           <div className="flex items-center justify-between px-1">
             <span className="font-mono text-[10px] sm:text-xs font-black text-[#0A0A0A] uppercase tracking-wider flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-[#FF4500] animate-pulse" />
-              SPOT COMERCIAL ANIMADO EN VIVO
+              SPOT CINEMÁTICO REAL EN VIVO (8K UHD)
             </span>
             <span className="bg-[#0A0A0A] text-white font-mono text-[8px] sm:text-[9px] font-black px-2.5 py-0.5 rounded-full uppercase">
               REEL {activeReelIndex + 1} / {spots.length}
@@ -337,20 +122,48 @@ export default function HubVIPPage() {
           </div>
 
           {/* Marco Vertical del Reel */}
-          <div className="w-full aspect-[9/15] sm:aspect-[9/14] rounded-[32px] overflow-hidden border-4 border-[#0A0A0A] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.25)] relative">
+          <div className="w-full aspect-[9/15] sm:aspect-[9/14] rounded-[32px] overflow-hidden border-4 border-[#0A0A0A] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.25)] relative group">
             {spots.map((spot, idx) => (
               <div
-                key={spot.title}
+                key={spot.id}
                 className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
                   idx === activeReelIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
                 }`}
               >
-                {spot.component}
+                {/* Vídeo Real Nativo (Almacenado localmente en public/videos para cero errores CORS y máxima velocidad) */}
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover transform scale-105"
+                >
+                  <source src={spot.videoSrc} type="video/webm" />
+                  <source src={spot.fallbackMp4} type="video/mp4" />
+                </video>
+
+                {/* Gradiente cinemático para legibilidad de los widgets */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/60 pointer-events-none" />
+
+                {/* Overlay Inteligente en tiempo real flotando sobre el vídeo real */}
+                <div className="absolute bottom-5 left-4 right-4 z-20 pointer-events-none animate-[fadeIn_0.5s_ease-out]">
+                  <div className="bg-black/75 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 shadow-2xl space-y-1">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-[10px] font-black text-[#10B981] flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-ping" />
+                        {spot.overlayBadge}
+                      </span>
+                      <span className="font-mono text-[8px] font-bold text-white/70 bg-white/10 px-1.5 py-0.5 rounded">REAL TIME</span>
+                    </div>
+                    <p className="text-xs font-bold text-white leading-snug">{spot.overlaySub}</p>
+                  </div>
+                </div>
               </div>
             ))}
 
             {/* Etiqueta superior limpia */}
-            <div className="absolute top-3 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
+            <div className="absolute top-3 left-4 right-4 z-30 flex items-center justify-between pointer-events-none">
               <span className="bg-black/90 backdrop-blur-md text-white font-mono text-[8px] sm:text-[9px] font-black px-3 py-1 rounded-full border border-white/20 tracking-wider uppercase shadow-lg truncate max-w-[65%]">
                 {spots[activeReelIndex].tag}
               </span>
@@ -392,7 +205,7 @@ export default function HubVIPPage() {
         <section className="space-y-3.5 w-full pt-2">
           
           <a 
-            href="https://wa.me/34622652659?text=Hola%20Alex%2C%20he%20visto%20los%20spots%20en%20el%20Hub%20VIP%20y%20quiero%20activar%20el%20Plan%20Growth%20360%C2%BA%20en%20mi%20restaurante." 
+            href="https://wa.me/34622652659?text=Hola%20Alex%2C%20he%20visto%20los%20spots%20reales%20en%20el%20Hub%20VIP%20y%20quiero%20activar%20el%20Plan%20Growth%20360%C2%BA%20en%20mi%20restaurante." 
             target="_blank"
             rel="noopener noreferrer"
             className="group block w-full bg-[#0A0A0A] hover:bg-[#10B981] text-white p-5 sm:p-6 rounded-3xl border-2 border-[#0A0A0A] shadow-xl hover:shadow-[0_20px_45px_rgba(16,185,129,0.3)] transition-all duration-300 transform hover:-translate-y-1 relative overflow-hidden"
