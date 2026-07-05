@@ -3,14 +3,9 @@ import { SYSTEM_PROMPT_COPYWRITER } from '../knowledge-base';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 /**
- * PREDATOR COPY AGENT (El Cerrador High-Ticket con Gemini 3 Pro & Flash)
- * Generates humanized, consultative sales hooks (WhatsApp, IG, Email) for each lead.
- * Uses Gemini 3 API by default, with automatic retry and an elite consultative fallback.
- * 
- * PSICOLOGÍA DE VENTAS APLICADA (Sandler / Chris Voss / Josh Braun):
- * - CERO alarmismo financiero ("perdiendo 300.000€").
- * - CERO adulación extrema ("enhorabuena por vuestro 4.6⭐").
- * - Gatekeeper bypass: pedir dirección hacia el responsable con humildad y naturalidad.
+ * PREDATOR COPY AGENT (El Cerrador Comercial Directo con Gemini 3 Pro & Flash)
+ * Genera mensajes de venta 100% humanos, realistas, directos y enfocados en venta real.
+ * CERO falsa empatía, CERO tecnicismos académicos, CERO adulación ni alarmismo.
  */
 
 export class PredatorCopyAgent {
@@ -19,7 +14,7 @@ export class PredatorCopyAgent {
 
   constructor() {
     const apiKey = process.env.GEMINI_API_KEY;
-    this.modelName = process.env.GEMINI_MODEL || 'gemini-3.0-pro'; // Uso prioritario de Gemini 3.0 Pro
+    this.modelName = process.env.GEMINI_MODEL || 'gemini-3.0-pro';
     if (apiKey) {
       this.genAI = new GoogleGenerativeAI(apiKey);
     }
@@ -34,19 +29,20 @@ export class PredatorCopyAgent {
         const model = this.genAI.getGenerativeModel({ model: this.modelName });
 
         const prompt = `
-        Analiza los datos de este local y genera los 3 ganchos de prospección hiper-humanizada:
+        Genera los 3 mensajes de prospección comercial directa y realista para este restaurante:
         - Nombre: ${lead.restaurantName}
         - Ciudad: ${lead.city}
         - Modelo de Negocio: ${lead.businessModel}
-        - Calificación Google: ${lead.googleRating}⭐ (${lead.reviewCount} reseñas)
         - ¿Tiene carta PDF?: ${lead.hasPdfMenu ? 'SÍ' : 'NO'}
         - ¿Usa El Tenedor?: ${lead.usesElTenedor ? 'SÍ' : 'NO'}
 
-        REGLAS DE ORO INQUEBRANTABLES:
-        1. NO pongas ninguna cifra de dinero o pérdida financiera en los mensajes.
-        2. NO pongas halagos exagerados ni "enhorabuena por vuestra nota".
-        3. Aplica el bypass del recepcionista: haz una pregunta sencilla de compañerismo pidiendo dirección hacia el responsable de sala o carta digital.
-        4. En WhatsApp y DM de Instagram: ESTRICTAMENTE 0 ENLACES.
+        REGLAS ESTRICTAS DE VENTAS (REALISTA, DIRECTO, HUMANO):
+        1. SÉ DIRECTO Y COMERCIAL: Cero falsa empatía ("qué tal por el local", "seguimos vuestro recorrido"). Cero tecnicismos ("auditoría operativa", "flujo de sala", "ingeniería gastronómica").
+        2. NADA DE ADULACIÓN NI ALARMISMO: No digas "enhorabuena por vuestra nota" ni inventes cifras de pérdidas.
+        3. ESTRUCTURA DIRECTA (WhatsApp e IG DM - Máx 50 palabras, 0 enlaces):
+           - Di qué has visto (carta PDF o reservas por El Tenedor).
+           - Di qué hacemos (cartas interactivas móviles sin PDF o motor de reservas propio sin comisiones).
+           - Pregunta con quién hablar para enseñar un ejemplo rápido en el móvil.
         `;
 
         const result = await model.generateContent([
@@ -69,67 +65,71 @@ export class PredatorCopyAgent {
           return lead;
         }
       } catch (error) {
-        console.warn(`[PredatorCopyAgent] Advertencia en Gemini 3 API para ${lead.restaurantName}, activando fallback consultivo:`, error);
+        console.warn(`[PredatorCopyAgent] Advertencia en Gemini 3 API para ${lead.restaurantName}, activando fallback comercial:`, error);
       }
     }
 
-    // FALLBACK CONSULTIVO DE ELITE (Humanizado, sin fricción, sin alarmismo ni adulación)
+    // FALLBACK COMERCIAL DE VENTAS REAL (Humano, directo, sin falsa empatía ni tecnicismos)
     let whatsappHook = '';
     let instagramHook = '';
     let emailSubject = '';
     let emailBody = '';
 
-    // Segmentación por nivel/estilo de negocio (Tiering)
-    if (lead.businessModel === 'Alta Cocina / Gourmet' || lead.businessModel === 'Grupo Hostélero / Multi-local') {
-      // Tier 1: Alta Gastronomía / Grupos (Enfoque en experiencia de sala, maridaje y elegancia visual)
-      whatsappHook = `Hola equipo de ${lead.restaurantName}, buenas tardes. Os escribo una consulta rápida de operativa y sala. Al revisar vuestra carta en web tenía una pregunta técnica sobre la presentación visual de maridajes y sugerencias fuera de carta en mesa. ¿Quién suele llevar la gestión del menú digital en el restaurante?`;
+    // Segmentación directa por necesidad real detectada
+    if (lead.usesElTenedor) {
+      // Caso 1: Usa El Tenedor / Reservas externas -> Venta de motor de reservas propio sin comisiones
+      whatsappHook = `Hola, buenas. He visto en vuestra web que cogéis reservas por El Tenedor. Te escribo porque montamos sistemas de reserva propios para restaurantes que eliminan las comisiones por cubierto y se integran directo en la web y el móvil. ¿Quién lleva este tema en el local para enseñarle un ejemplo rápido?`;
       
-      instagramHook = `Hola equipo, buenas tardes. Una duda rápida de sala: al revisar el menú en web teníamos una consulta técnica sobre la presentación de maridajes y carta en mesa. ¿Con quién podríamos comentarlo 1 minuto?`;
+      instagramHook = `Hola, buenas. He visto que cogéis reservas por El Tenedor. Te escribo porque montamos sistemas de reserva propios para restaurantes que eliminan las comisiones por cubierto. ¿Con quién puedo hablar para enviaros un ejemplo rápido de cómo queda en el móvil?`;
       
-      emailSubject = `Consulta operativa de sala en ${lead.restaurantName}`;
+      emailSubject = `Sistema de reservas propio sin comisiones para ${lead.restaurantName}`;
       emailBody = `Hola equipo de ${lead.restaurantName},\n\n` +
-        `Seguimos con atención vuestro recorrido gastronómico en ${lead.city}. Les escribo brevemente desde el área de ingeniería operativa de Architect.Sys.\n\n` +
-        `Al revisar la estructura visual de su carta y la gestión del flujo en sala, nos ha surgido una consulta técnica respecto a cómo están abordando la presentación multi-idioma y la sugerencia de maridajes en mesa para evitar la fricción del formato PDF tradicional.\n\n` +
-        `Hemos desarrollado una breve comparativa técnica visual sobre cómo las salas de alta gastronomía están agilizando el pedido sin alterar la atención del personal en nuestro espacio de diagnóstico:\n` +
+        `He estado revisando vuestra página web y he visto que canalizáis las reservas a través de plataformas de terceros como El Tenedor.\n\n` +
+        `Os escribo directamente porque desarrollamos motores de reserva propios para restaurantes. Al instalar un sistema de reservas directo en vuestra web y redes sociales, elimináis las comisiones por cubierto de las plataformas externas, especialmente con vuestros clientes habituales y recurrentes.\n\n` +
+        `Podéis ver una demostración rápida de 45 segundos de cómo funciona en el móvil y en web aquí:\n` +
         `👉 https://hosteleria.architectsys.com/hub\n\n` +
-        `¿Quién es la persona responsable de la dirección de sala o innovación para comentarle un detalle en una llamada breve de 5 minutos?\n\n` +
-        `Un cordial saludo,\n` +
-        `Alex - Consultoría Operativa\n` +
+        `¿Con quién podría agendar una llamada rápida de 5 minutos esta semana para comentarlo?\n\n` +
+        `Un saludo,\n` +
+        `Alex\n` +
         `Architect.Sys Hospitality`;
 
-    } else if (lead.usesElTenedor) {
-      // Tier 2: Restaurante Tradicional / Medio estanding con El Tenedor (Enfoque en fidelización directa)
-      whatsappHook = `Hola buenas, qué tal por ${lead.restaurantName}. Os escribo una duda rápida de operativa. He visto vuestro sistema de reservas online y tenía una consulta técnica sobre cómo gestionáis las mesas de clientes habituales sin intermediarios. ¿Con quién podría comentarlo un momento?`;
+    } else if (lead.hasPdfMenu || lead.businessModel === 'Bar / Tapas / Gastrobar') {
+      // Caso 2: Carta PDF o Bar/Gastrobar -> Venta de carta digital interactiva PWA
+      whatsappHook = `Hola, buenas. He entrado en la web desde el móvil para ver la carta y he visto el formato PDF. Te escribo porque montamos cartas digitales interactivas que cargan al instante y suben el ticket medio con fotos reales y sugerencias de maridaje. ¿Con quién puedo hablar para enseñaros un ejemplo rápido?`;
       
-      instagramHook = `Hola equipo, qué tal. Una consulta rápida de operativa: viendo vuestro sistema de reservas en web tenía una duda sobre la gestión de mesas habituales en directo. ¿Quién suele llevar ese tema en el local?`;
+      instagramHook = `Hola, buenas. He visto vuestra carta en el móvil y os escribo porque montamos cartas digitales interactivas que cargan al instante y suben el ticket medio mostrando fotos reales de los platos. ¿Quién lleva este tema en el local para enseñarle un ejemplo rápido?`;
       
-      emailSubject = `Consulta sobre gestión de reservas en ${lead.restaurantName}`;
+      emailSubject = `Carta digital interactiva para el móvil en ${lead.restaurantName}`;
       emailBody = `Hola equipo de ${lead.restaurantName},\n\n` +
-        `Les escribo una breve consulta técnica de operativa y sala. Seguimos la actividad gastronómica en ${lead.city} y nos ha parecido muy interesante su propuesta.\n\n` +
-        `Al revisar sus canales de entrada, notamos el uso intensivo de plataformas de reserva externas. Queríamos consultarles si actualmente disponen de un ecosistema nativo para canalizar a los comensales habituales de forma directa, optimizando la rotación sin coste por cubierto.\n\n` +
-        `Hemos preparado un breve diagnóstico interactivo sobre la autonomía en gestión de mesas en nuestro portal técnico:\n` +
+        `He estado revisando vuestra web desde el teléfono móvil para ver la carta y he visto el formato actual en PDF.\n\n` +
+        `Os escribo directamente porque desarrollamos cartas digitales interactivas (PWA) para hostelería que resuelven varios problemas diarios:\n` +
+        `1. Cargan al instante (0.2 segundos) sin obligar al cliente a descargar archivos pesados en su móvil.\n` +
+        `2. Aumentan hasta un 25% el ticket medio por mesa al mostrar fotografías reales de los platos y sugerencias automáticas de vinos, postres o guarniciones.\n` +
+        `3. Permiten cambiar precios, modificar platos o marcar productos agotados en 1 segundo desde el móvil, sin tener que reimprimir papel ni códigos QR.\n\n` +
+        `Podéis ver un ejemplo rápido de 45 segundos de cómo queda en el móvil aquí:\n` +
         `👉 https://hosteleria.architectsys.com/hub\n\n` +
-        `¿Con qué responsable o encargado de sala podríamos cruzar dos ideas en una llamada de 5 minutos esta semana?\n\n` +
-        `Un saludo cordialmente,\n` +
-        `Alex - Consultoría Operativa\n` +
+        `¿Con quién podría agendar una llamada rápida de 5 minutos esta semana para enseñaros una demo?\n\n` +
+        `Un saludo,\n` +
+        `Alex\n` +
         `Architect.Sys Hospitality`;
 
     } else {
-      // Tier 3: Bar / Gastrobar / Digitalmente Pobre o PDF (Enfoque en agilidad y carta móvil)
-      whatsappHook = `Hola equipo de ${lead.restaurantName}, qué tal. Os escribo una consulta rápida de sala. Al entrar desde el móvil a ver la carta vi el formato actual en PDF y tenía una pregunta técnica sobre cómo gestionáis los cambios diarios de platos y precios en mesa. ¿Quién suele llevar ese tema en el local?`;
+      // Caso 3: Alta Cocina / Gourmet o General -> Venta de ecosistema completo (Reservas + Carta interactiva multi-idioma)
+      whatsappHook = `Hola, buenas. Estaba revisando vuestra web y la carta en el móvil. Os escribo porque desarrollamos cartas digitales interactivas y sistemas de reserva propios para restaurantes gourmet (con maridajes de vino y carta en varios idiomas sin formato PDF). ¿Con quién podría hablar un momento para enseñaros un demo rápido en el móvil?`;
       
-      instagramHook = `Hola equipo, qué tal por el local. Una pregunta rápida de sala: al abrir la carta en el móvil vimos el formato actual y teníamos una duda técnica sobre la actualización de platos del día en mesa. ¿Quién lleva ese tema?`;
+      instagramHook = `Hola, buenas. Estaba viendo vuestra web y la carta en el móvil. Os escribo porque desarrollamos cartas digitales interactivas multi-idioma y sistemas de reserva propios sin comisiones para restaurantes. ¿Con quién puedo hablar para enviaros un ejemplo rápido?`;
       
-      emailSubject = `Consulta técnica sobre menú digital en ${lead.restaurantName}`;
+      emailSubject = `Carta interactiva y sistema de reservas para ${lead.restaurantName}`;
       emailBody = `Hola equipo de ${lead.restaurantName},\n\n` +
-        `Les escribo una breve nota entre profesionales del sector en ${lead.city}. Al consultar su carta desde el teléfono móvil, notamos el uso del formato PDF tradicional.\n\n` +
-        `Como saben, en el servicio diario de sala, tener que recargar documentos pesados o reimprimir códigos QR cuando cambia un precio o se agota un plato suele generar tiempos muertos para el camarero y el cliente.\n\n` +
-        `En Architect.Sys implementamos interfaces visuales instantáneas que permiten al equipo de cocina ocultar un plato agotado en 1 segundo y mostrar fotografía real de cada recomendación en el móvil del cliente sin comisiones.\n\n` +
-        `Pueden ver una muestra de cómo funciona esta agilidad en sala en nuestro espacio interactivo:\n` +
+        `He estado revisando vuestra página web y la presentación de la carta desde el teléfono móvil.\n\n` +
+        `Os escribo directamente porque desarrollamos ecosistemas digitales nativos para restaurantes que mejoran la experiencia del comensal y optimizan la rentabilidad del local:\n` +
+        `1. Instalamos un motor de reservas propio sin comisiones por cubierto, integrado directamente en vuestra web y redes sociales.\n` +
+        `2. Sustituimos el formato PDF por una carta digital interactiva multi-idioma que carga al instante, con fotografías de alta definición y sugerencias automáticas de maridaje de vinos y sugerencias del chef.\n\n` +
+        `Podéis ver una demostración rápida de 45 segundos de cómo funciona en el móvil aquí:\n` +
         `👉 https://hosteleria.architectsys.com/hub\n\n` +
-        `¿Quién es el encargado de sala o gerente con el que podríamos comentarlo brevemente?\n\n` +
-        `Saludos cordiales,\n` +
-        `Alex - Consultoría Operativa\n` +
+        `¿Con quién podría agendar una llamada rápida de 5 minutos esta semana para comentarlo?\n\n` +
+        `Un saludo,\n` +
+        `Alex\n` +
         `Architect.Sys Hospitality`;
     }
 
