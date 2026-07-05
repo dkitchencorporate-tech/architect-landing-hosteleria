@@ -29,6 +29,12 @@ export const metadata = {
     type: "website",
   },
   icons: { icon: "/icon.svg", apple: "/icon.svg" },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Scout PWA",
+  },
   twitter: {
     card: "summary_large_image",
     title: "Architect.Sys | Hostelería Inteligente",

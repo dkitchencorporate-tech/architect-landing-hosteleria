@@ -1,57 +1,97 @@
-# Contexto de Negocio: Architect.Sys (High-Ticket B2B para Hostelería)
+# 🛡️ AGENTIC MASTER GUIDE & SUPREME SOP (ARCHITECT.SYS HOSPITALITY)
+**Consulta Obligatoria para Todo Agente IA (Antigravity, Gemini, Claude, Cursor, Copilot, etc.)**
 
-Este documento es la **fuente de la verdad** para cualquier Agente de IA que opere o modifique este repositorio. Ningún agente debe modificar el modelo de negocio, alterar precios o sugerir arquitecturas que contradigan estas leyes operativas.
-
-## 1. El Embudo de Captación (Servicios Principales / Core)
-
-La agencia opera bajo un modelo de suscripción y *Setup Fees* altamente calificados. Todos los servicios de esta sección son **Servicios Core (Principales)** y se exponen públicamente en la Landing Page.
-
-Nadie compra con un clic. El flujo de ventas exige:
-1. Agendar reunión por Calendly o contactar por WhatsApp.
-2. Reunión de cualificación (Cierre Humano).
-3. El K-Admin (dueño de la agencia) usa el **Modal de Propuestas** del panel de control para enviar el enlace de pago de Whop.
-
-### 1.1. Plan Base: "Fundación Digital / Base Operativa" (El Caballo de Troya)
-* **Precio:** 700€ (Pago único, fraccionable 2x350€).
-* **Entregables de Software (Infraestructura):** Web Profesional (PWA), Carta Digital Interactiva con Neuromarketing, Motor de Reservas Directo, Base de Datos Propia, SEO B2B para Maps.
-* **El "Pack de Arranque" (Bonos Estratégicos valorados en 980€):** El ancla de valor que justifica los 700€. Incluye:
-  1. Auditoría de Fuga de Clientes en Google Maps (180€).
-  2. Ingeniería de Carta Física / Neuromarketing (250€).
-  3. Estrategia de Inyección de Tráfico para Días Valle (300€).
-  4. Kit de Anuncios y Lanzamiento en Redes (250€).
-* **Derecho a Eventos:** Otorga acceso a **1 Evento** de la biblioteca de eventos.
-* **Mantenimiento Mensual:** 2 meses gratuitos de servidor. A partir del mes 3, se cobra el *Soporte Premium (69€/mes)* por alojamiento, anti-caídas y soporte técnico.
-
-### 1.2. Ecosistema 24/7 (Recepcionista IA + CRM)
-* **Precio:** Setup 450€ (Pago Único) + Mantenimiento 69€/mes.
-* **Entregables:** Conexión Meta API, Pipeline Visual en Kommo CRM, Entrenamiento del Prompt con la marca del cliente. Licencia de Kommo incluida y hasta 1.500 chats/mes.
-
-### 1.3. Socio Growth (Plan Growth)
-* **Naturaleza:** Es un **Servicio Principal (Core)** expuesto en la Landing Page, NO es un upsell del Marketplace oculto.
-* **Precio:** 299€/mes (Suscripción).
-* **Derecho a Eventos:** Otorga acceso a **más de 1 evento al mes**.
-* **Garantía de Éxito (Variable del 20%):** En los eventos planificados, la agencia asume la gestión de las campañas Ads y cobra un 20% de la taquilla generada, PERO solo si se cumple el objetivo de afluencia pactado.
-* **Beneficio Cruzado:** Al contratar este plan, la cuota de mantenimiento de la IA (69€/mes) queda bonificada a 0€.
+> [!CAUTION]
+> **REGLA CERO - PROHIBICIÓN ABSOLUTA DE ALUCINAR:**
+> Tienes estrictamente prohibido inventar precios, modificar cuotas, alucinar características, o promover servicios fuera de nuestro catálogo (ej. Dark Kitchens o proyectos personalizados millonarios están CONGELADOS). Si tienes dudas sobre alguna tarifa o funcionalidad, consulta este documento o pregunta directamente al K-Admin (Alex).
 
 ---
 
-## 2. Los Upsells (El Marketplace Interno)
-
-Los Upsells son servicios adicionales que solo se ofrecen a **clientes ya captados** (dentro de la Zona Privada `/dashboard` del cliente). 
-Al igual que los servicios Core, el cliente solo puede hacer clic en "Solicitar Información". La venta final la ejecuta el K-Admin enviando la propuesta oficial.
-
-* **Ejemplo 1: Creador UGC & Community Manager (350€/mes).** Grabación física y edición de 8-12 videos virales (Reels/TikTok).
-* **Ejemplo 2: Auditoría Financiera / Ingeniería de Menú (Pago único a consultar).** Detección de fugas de capital y P&L.
-* **Importante:** La "Creative Factory" (Generador de imágenes y copy con IA) está actualmente en fase *Standby* y NO se ofrece en los paquetes actuales. Solo se utiliza de forma interna por la agencia para prospectar.
+## 1. ADN Y MODELO DE NEGOCIO (Consultative Selling B2B)
+* **Misión:** Rescatar al hostelero de las comisiones abusivas (El Tenedor / UberEats cobran 20-30%) y evitar pérdidas por cartas PDF estáticas o llamadas no atendidas en horas punta.
+* **Visión:** Convertir a Architect.Sys en el estándar de ingeniería gastronómica de alto standing, instalando un **Ecosistema 24/7** en cada restaurante.
+* **Modelo:** Venta Consultiva B2B de infraestructura de facturación (PWA nativa, KDS, Carta Visual HD, CRM y Recepcionista IA). No vendemos "webs genéricas", vendemos activos que generan retorno EBITDA inmediato.
 
 ---
 
-## 3. Topología Técnica del Flujo de Cierre
+## 2. CATÁLOGO DE PRECIOS EXACTO E INNEGOCIABLE
+1. **Nivel 1: Fundación Digital / Base Operativa (700 € pago único)**
+   * Fraccionable en **2 cuotas de 350 €**.
+   * Incluye PWA de pedidos/reservas (0% comisiones), Carta Visual HD y Bonos Estratégicos (Valor: 980€).
+   * **Mantenimiento y Servidor:** 2 primeros meses GRATIS. A partir del 3er mes: **69 €/mes** (sin permanencia).
+2. **Nivel 2: Recepcionista IA + CRM Reservas (450 € setup express + 69 €/mes)**
+   * Agente autónomo en WhatsApp (Meta API + Kommo CRM), calificación de comensales y fianza anti No-Shows.
+   * Incluye consumo de tokens IA hasta 1.500 chats/mes y soporte técnico.
+   * 🌟 **Ventaja Socio Growth:** Si el cliente está en el Plan Growth, los 69 €/mes de mantenimiento quedan bonificados a **0 €/mes para siempre**.
+3. **Nivel 3: Plan Growth Partner (299 €/mes o 2.990 €/año)**
+   * Para inyectar tráfico y llenar días valle. Incluye biblioteca completa de eventos (7+ eventos), campañas publicitarias, 1 actualización mensual y **mantenimiento IA bonificado a 0 €/mes**.
+4. **Upsells de Agencia:** Meta Ads Avanzado (desde 299 €/mes) | Community Manager & UGC (desde 350 €/mes).
+5. **Dark Kitchens / Enterprise:** *ESTRICTAMENTE DESCARTADO Y CONGELADO HASTA NUEVA ORDEN.*
 
-Cualquier agente que modifique o cree funcionalidades relacionadas con "Creación de Clientes" o "Envío de Propuestas" debe ceñirse a este flujo arquitectónico:
-1. K-Admin entra a `/admin-architect/pipeline`.
-2. Selecciona un Cliente y el Servicio Acordado (Sea Core o Upsell).
-3. El sistema dispara un correo electrónico con el **Contrato, el Dossier de Entregables, y el Botón de Pagar**.
-4. El cliente hace clic en el enlace del correo.
-5. Llega a una landing donde ve el contrato, hace clic en una casilla de verificación (Firma Digital / Aceptación).
-6. Es redirigido a Whop o Stripe para ejecutar el pago.
+---
+
+## 3. MAPA INTEGRAL DE RUTAS Y URLS DEL PROYECTO
+Cualquier agente que retome el trabajo debe conocer la ubicación exacta de cada módulo:
+
+### 🌐 A. Área Pública y Marketing (100% Funcional)
+* `/`: Landing page principal (Venta consultiva, calculadora de pérdida EBITDA y cierre dual).
+* `/hub`: Hub VIP con carruseles de vídeo nativos pre-cargados en DOM y formulario de diagnóstico en 3 pasos.
+* `/demo/carta`: Demostración interactiva de carta visual HD para hostelería.
+* `/onboarding`: Asistente de toma de datos para nuevos restaurantes (`OnboardingWizard.tsx`).
+* `/deal/[token]`: Visor dinámico de propuestas y contratos (ej. Venta El Gallo).
+* `/terms`, `/privacy`, `/data-deletion`: Páginas legales y cumplimiento normativo.
+
+### 📚 B. Área de Manuales y Guías Operativas (SOPs)
+* `/manuals`: Índice Operativo Global (ahora con Banner Gigante hacia el Master Doc).
+* `/manuals/master-doc`: **MASTER DOC / SOP SUPREMO (Este mismo documento en versión web interactiva).**
+* `/manuals/mapa-navegacion`: Directorio detallado de enlaces por nivel de acceso.
+* `/manuals/arquitectura-saas`: Estructura en Supabase, RLS y Vercel CLI.
+* `/manuals/estrategia-ventas`: Ingeniería del embudo y justificación de precios High-Ticket.
+* `/manuals/onboarding-b2b`: Flujo de integración de clientes y persistencia en CRM.
+* `/manuals/agente-ia`: Leyes conversacionales de Arqui y conexión con Kommo CRM.
+* `/manuals/centro-control`: Operativa del panel administrativo y Matriz Generativa.
+* `/manuals/google-oauth`: Protocolos de seguridad, roles en Supabase y SSR Cookies.
+* `/manuals/escalabilidad-creative-factory`: Roadmap de automatización de contenidos.
+* `/manuals/escalado-whop`: Estrategia de ingresos recurrentes y afiliación (V2).
+
+### 🕵️‍♂️ C. Prospección Agéntica y Scout Command Center (100% Funcional en Local)
+* `/admin/scout`: **Scout Command Center PWA** (Dashboard instalable en móvil con vistas Kanban y Tabla estilo Clay.com).
+* `src/prospecting-engine/orchestrator.ts`: Cerebro orquestador del enjambre.
+* `src/prospecting-engine/agents/*`:
+  * `ScoutAgent.ts`: Búsqueda en Google Maps/Tripadvisor y protección anti-duplicados.
+  * `DiagnosticAgent.ts`: Cálculo de pérdida EBITDA y puntuación ICP.
+  * `PredatorCopyAgent.ts`: Redacción consultiva con Gemini 3.0 Pro (con fallback anti-alucinaciones).
+  * `ChannelOperatorAgent.ts`: Mapeo de ganchos para WhatsApp (sin enlaces), Instagram y Email.
+  * `TelegramSyncerAgent.ts`: Sincronización en vivo de alertas con el móvil de Alex.
+* `/api/prospecting/leads` & `/api/prospecting/run`: Endpoints CRUD y disparadores del ciclo.
+
+### 🏛️ D. Centro de Control Admin B2B (`/admin-architect/*`)
+* `/admin-architect/pipeline`: Gestión de oportunidades y embudo de ventas B2B.
+* `/admin-architect/pipeline/[id]/setup`: Configuración técnica de propuestas.
+* `/admin-architect/clients`: Gestión de cartera de clientes activos y cobros (1x700€ o 2x350€).
+* `/admin-architect/protocols`: Generador universal de contratos y firma electrónica eSignature.
+* `/admin-architect/events-master`: Repositorio maestro de plantillas de promoción.
+* `/admin-architect/creative`: Panel administrativo de la Creative Factory.
+
+### 📱 E. Área de Cliente B2B (`/dashboard/*`)
+* `/dashboard`: Panel de control principal del propietario del restaurante.
+* `LiveMonitor.tsx`: Supervisión en vivo de conversaciones IA en WhatsApp/Kommo.
+* `TrafficMonitor.tsx`: Métricas de visitas y conversión de la PWA.
+* `CreativeFactoryClient.tsx` & `EventsLibrary.tsx`: Generador de creatividades y activación de eventos.
+
+### 🔌 F. APIs Backend y Webhooks (`/api/*`)
+* `/api/webhooks/kommo` & `/woztell`: Conexión bidireccional CRM y mensajería WhatsApp.
+* `/api/whop/*` & `/api/stripe/*`: Pasarelas de pago y aprovisionamiento automático.
+* `/api/demo/respond` & `/waiter`: Motores IA conversacionales para las demos en vivo.
+
+---
+
+## 4. ESTADO DE ENTORNOS Y POLÍTICA DE GITHUB
+* **Local:** Contiene el 100% de la ingeniería actualizada (incluyendo el Scout Command Center y el motor de prospección).
+* **GitHub (`origin/main`) & Vercel:** Para mantener el código respaldado en la nube sin alterar la producción pública en Vercel, todos los commits de respaldo administrativo deben llevar la etiqueta **`[skip ci]`** en el mensaje de commit.
+
+## 5. INSTRUCCIONES PARA RETOMAR EL TRABAJO
+Si eres un nuevo agente entrando a este proyecto:
+1. Lee este archivo `.agents/AGENTS.md` y `src/app/manuals/master-doc/page.tsx`.
+2. Verifica que el build compile perfectamente con `npm run build`.
+3. El foco actual del proyecto está en **operar el Enjambre de Prospección Agéntica** (`/admin/scout` y `src/prospecting-engine/`) para generar los primeros 100 leads diarios cualificados sin alucinaciones.

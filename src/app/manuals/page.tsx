@@ -82,6 +82,36 @@ export default function ManualsIndex() {
 
   return (
     <div className="space-y-12 print:block relative z-10">
+      {/* BANNER GIGANTE: MASTER DOC / SUPREME SOP */}
+      <div className="relative bg-gradient-to-r from-red-600/30 via-orange-600/30 to-zinc-900 border-2 border-red-500 rounded-3xl p-6 md:p-10 shadow-[0_0_60px_rgba(239,68,68,0.25)] overflow-hidden animate-fade-in mb-12">
+        <div className="absolute top-0 right-0 w-80 h-80 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+          <div className="space-y-3 max-w-3xl">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="px-3 py-1 bg-red-600 text-white text-[10px] font-black tracking-widest uppercase rounded-full shadow-md animate-pulse">
+                ⚡ MASTER DOC / SOP SUPREMO
+              </span>
+              <span className="px-3 py-1 bg-black/50 border border-white/10 text-orange-400 text-[10px] font-bold tracking-widest uppercase rounded-full">
+                Consulta Obligatoria Agentes IA
+              </span>
+            </div>
+            <h3 className="text-2xl md:text-4xl font-black text-white tracking-tight leading-tight">
+              Sincronización Absoluta y Estado Maestro del Proyecto
+            </h3>
+            <p className="text-sm md:text-base text-zinc-300 font-medium leading-relaxed">
+              ¿Notas desalineación, alucinaciones o pérdida de contexto en un Agente IA? Pulsa aquí para reconfigurar la memoria operativa, acceder a los precios exactos (700€ / 450€ / 299€) y verificar el mapa integral de las 5 áreas operativas.
+            </p>
+          </div>
+          <Link 
+            href="/manuals/master-doc" 
+            className="w-full md:w-auto bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white px-8 py-5 rounded-2xl font-black text-center text-lg shadow-[0_0_30px_rgba(239,68,68,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3 flex-shrink-0 border border-white/20"
+          >
+            <span>🛡️ Abrir Master Doc</span>
+            <span className="text-xl">→</span>
+          </Link>
+        </div>
+      </div>
+
       <div className="flex flex-col items-start justify-between border-b border-white/10 pb-8 mb-8">
         <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500 tracking-tighter mb-4">
           Índice Operativo Global
