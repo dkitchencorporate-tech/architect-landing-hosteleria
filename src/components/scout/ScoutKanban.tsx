@@ -63,13 +63,13 @@ const COLUMNS: KanbanColumn[] = [
 
 export const ScoutKanban: React.FC<ScoutKanbanProps> = ({ leads, onSelectLead, onApproveLead }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 overflow-x-auto pb-6">
+    <div className="flex gap-5 overflow-x-auto pb-8 pt-2 custom-scrollbar">
       {COLUMNS.map(col => {
         const colLeads = leads.filter(l => col.statuses.includes(l.status));
         const colValue = colLeads.reduce((acc, l) => acc + (l.estimatedLostMarginMonthly || 0), 0);
 
         return (
-          <div key={col.id} className={`flex flex-col bg-zinc-950 border rounded-xl p-3 min-w-[260px] ${col.color}`}>
+          <div key={col.id} className={`flex flex-col bg-zinc-950/90 border rounded-2xl p-4 w-[340px] shrink-0 shadow-xl ${col.color}`}>
             {/* Cabecera de Columna */}
             <div className="flex items-center justify-between pb-3 border-b border-zinc-800/80 mb-3">
               <div className="flex items-center gap-2">

@@ -17,8 +17,63 @@ export const LeadDetailModal: React.FC<LeadDetailModalProps> = ({
   onStatusChange
 }) => {
   const [copiedChannel, setCopiedChannel] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<'whatsapp' | 'instagram' | 'email' | 'diagnostic'>('whatsapp');
+  const [activeTab, setActiveTab] = useState<'whatsapp' | 'instagram' | 'email' | 'ai_chat'>('whatsapp');
   const [actionNotes, setActionNotes] = useState('');
+  const [chatMessages, setChatMessages] = useState<{ id: string; sender: 'alex' | 'agent'; text: string; time: string }[]>([]);
+  const [chatInput, setChatInput] = useState('');
+  const [isChatTyping, setIsChatTyping] = useState(false);
+
+  React.useEffect(() => {
+    if (lead) {
+      setChatMessages([
+        {
+          id: 'init-' + lead.id,
+          sender: 'agent',
+          text: `🤖 🍽️ ¡Hola Alex! Soy el Agente Consultor asignado a **${lead.restaurantName}** (${lead.city}).\n\nHe calculado una pérdida silenciosa de **~${lead.estimatedLostMarginMonthly.toLocaleString('es-ES')} €/mes** principalmente por ${lead.usesElTenedor ? 'comisiones excesivas de El Tenedor' : ''} ${lead.usesElTenedor && lead.hasPdfMenu ? 'y' : ''} ${lead.hasPdfMenu ? 'carta PDF estática sin ventas visuales' : ''}.\n\n¿Quieres que reescriba el gancho, te dé un consejo para visita en calle o prepare un seguimiento?`,
+          time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+        }
+      ]);
+      setActiveTab('whatsapp');
+    }
+  }, [lead]);
+
+  const handleSendChat = (customText?: string) => {
+    const textToSend = customText || chatInput;
+    if (!textToSend.trim() || !lead) return;
+
+    const userMsg = {
+      id: Date.now().toString(),
+      sender: 'alex' as const,
+      text: textToSend,
+      time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+    };
+
+    setChatMessages(prev => [...prev, userMsg]);
+    if (!customText) setChatInput('');
+    setIsChatTyping(true);
+
+    setTimeout(() => {
+      let reply = '';
+      const lower = textToSend.toLowerCase();
+      if (lower.includes('agresiv') || lower.includes('tenedor') || lower.includes('comisi')) {
+        reply = `🔥 **NUEVO HOOK WHATSAPP AGRESIVO PARA ${lead.restaurantName.toUpperCase()}:**\n\n"Hola equipo de ${lead.restaurantName}, qué tal. Viendo vuestro éxito en ${lead.city}, hemos auditado vuestra operativa y calculamos que estáis perdiendo **~${lead.estimatedLostMarginMonthly.toLocaleString('es-ES')}€ al mes** al regalar un 15% de cada mesa a El Tenedor y tener una carta PDF que no hace upselling visual. ¿Tenéis 1 minuto esta tarde para enseñaros el sistema de Carta HD sin comisiones de Architect.Sys?"`;
+      } else if (lower.includes('calle') || lower.includes('visita') || lower.includes('presencial')) {
+        reply = `📍 **ESTRATEGIA PARA VISITA EN CALLE (TERRENO):**\n\n1. Entra con el iPad/Móvil con la demo de Carta HD cargada.\n2. Pide hablar con el dueño/encargado felicitándole por sus ${lead.googleRating}⭐ en Google.\n3. Enséñale la calculadora y dile: *"Con el tráfico que tenéis, estáis dejando de ingresar unos ${Math.round(lead.estimatedLostMarginMonthly/30)}€ al día"*\n4. Cierra el acuerdo de Venta El Gallo (700€ o 2x350€) in situ.`;
+      } else if (lower.includes('email') || lower.includes('seguimiento') || lower.includes('segundo')) {
+        reply = `✉️ **SEGUNDO EMAIL DE SEGUIMIENTO CORTANTE:**\n\n**Asunto:** Re: Fuga de margen en ${lead.restaurantName}\n\n**Cuerpo:** "Hola de nuevo. Solo quería asegurarme de que visteis el cálculo de los ~${lead.estimatedLostMarginMonthly}€/mes que se están evaporando en comisiones y menús estáticos. Nuestro sistema de Carta Visual HD se implementa en 48h y sube un 25% el ticket por mesa desde el día 1. ¿Os va bien una llamada de 5 min mañana?"`;
+      } else {
+        reply = `🤖 Analizando tu orden sobre **${lead.restaurantName}**...\n\nHe actualizado la estrategia en memoria. El argumento principal se mantiene enfocado en recuperar los ~${lead.estimatedLostMarginMonthly.toLocaleString('es-ES')}€/mes mediante el ecosistema Architect.Sys (Cuota 700€ / 450€ / 299€). ¿Deseas copiar alguno de los ganchos reescritos?`;
+      }
+
+      setChatMessages(prev => [...prev, {
+        id: (Date.now() + 1).toString(),
+        sender: 'agent' as const,
+        text: reply,
+        time: new Date().toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' })
+      }]);
+      setIsChatTyping(false);
+    }, 1000);
+  };
 
   if (!lead) return null;
 
@@ -181,10 +236,20 @@ export const LeadDetailModal: React.FC<LeadDetailModalProps> = ({
                 <Mail className="w-4 h-4" />
                 Email Executive VIP
               </button>
+              <button
+                onClick={() => setActiveTab('ai_chat')}
+                className={`flex-1 py-3 px-4 text-xs font-bold flex items-center justify-center gap-2 border-b-2 transition ${
+                  activeTab === 'ai_chat' 
+                    ? 'border-orange-500 text-orange-400 bg-orange-500/10' 
+                    : 'border-transparent text-zinc-400 hover:text-white'
+                }`}>
+                <Award className="w-4 h-4 text-orange-400 animate-pulse" />
+                💬 Agente Visual
+              </button>
             </div>
 
             {/* Contenido de la Pestaña */}
-            <div className="p-6 flex-1 flex flex-col justify-between">
+            <div className="p-6 flex-1 flex flex-col justify-between overflow-y-auto max-h-[500px]">
               {activeTab === 'whatsapp' && (
                 <div className="space-y-4">
                   <div className="bg-emerald-950/30 border border-emerald-500/30 rounded-xl p-4">
@@ -263,6 +328,64 @@ export const LeadDetailModal: React.FC<LeadDetailModalProps> = ({
                       onClick={() => handleMarkSent('email')}
                       className="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-semibold py-3 px-4 rounded-xl text-xs transition">
                       Marcar Enviado
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'ai_chat' && (
+                <div className="flex flex-col h-[380px] space-y-3">
+                  <div className="flex gap-2 flex-wrap pb-2 border-b border-zinc-800/80">
+                    <button
+                      onClick={() => handleSendChat("🔥 Regenera el WhatsApp siendo más agresivo con El Tenedor")}
+                      className="text-[11px] bg-orange-500/10 hover:bg-orange-500/20 text-orange-300 border border-orange-500/30 px-2.5 py-1 rounded-lg transition font-medium">
+                      🔥 Aumentar Agresividad (El Tenedor)
+                    </button>
+                    <button
+                      onClick={() => handleSendChat("📍 Dame la estrategia exacta para cerrar en calle")}
+                      className="text-[11px] bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 border border-blue-500/30 px-2.5 py-1 rounded-lg transition font-medium">
+                      📍 Guión Visita en Calle
+                    </button>
+                    <button
+                      onClick={() => handleSendChat("✉️ Redacta un segundo email de seguimiento corto")}
+                      className="text-[11px] bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2.5 py-1 rounded-lg transition font-medium">
+                      ✉️ Email Seguimiento #2
+                    </button>
+                  </div>
+
+                  <div className="flex-1 overflow-y-auto space-y-3 pr-1 custom-scrollbar">
+                    {chatMessages.map((msg) => (
+                      <div key={msg.id} className={`flex flex-col ${msg.sender === 'alex' ? 'items-end' : 'items-start'}`}>
+                        <span className="text-[9px] text-zinc-500 mb-0.5 px-1">{msg.sender === 'alex' ? 'Alex' : 'Agente Consultor'} • {msg.time}</span>
+                        <div className={`max-w-[90%] rounded-2xl p-3 text-xs leading-relaxed whitespace-pre-line shadow ${
+                          msg.sender === 'alex' 
+                            ? 'bg-orange-500 text-white font-semibold rounded-tr-none' 
+                            : 'bg-zinc-950 border border-zinc-800 text-zinc-200 rounded-tl-none'
+                        }`}>
+                          {msg.text}
+                        </div>
+                      </div>
+                    ))}
+                    {isChatTyping && (
+                      <div className="text-xs text-orange-400 animate-pulse italic p-2 bg-zinc-950 rounded-lg w-fit border border-zinc-800">
+                        🤖 Agente redactando respuesta estratégica...
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex gap-2 pt-2 border-t border-zinc-800/80">
+                    <input
+                      type="text"
+                      value={chatInput}
+                      onChange={(e) => setChatInput(e.target.value)}
+                      onKeyDown={(e) => e.key === 'Enter' && handleSendChat()}
+                      placeholder="Pídele al agente cualquier ajuste (ej. 'Haz el email más informal')..."
+                      className="flex-1 bg-zinc-950 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-orange-500"
+                    />
+                    <button
+                      onClick={() => handleSendChat()}
+                      className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-4 py-2 rounded-xl text-xs transition">
+                      Enviar
                     </button>
                   </div>
                 </div>
