@@ -10,9 +10,10 @@ import { LeadDetailModal } from '@/components/scout/LeadDetailModal';
 import { TelegramVault } from '@/components/scout/TelegramVault';
 import { MatrixAgentChat } from '@/components/scout/MatrixAgentChat';
 import { OmnichannelSyncView } from '@/components/scout/OmnichannelSyncView';
+import { ScoutRadarGrid } from '@/components/scout/ScoutRadarGrid';
 import { 
   LayoutDashboard, Table, RefreshCw, Shield, Smartphone, Zap, ArrowLeft, 
-  Menu, X, MessageSquare, Cpu, Globe, Lock, ChevronRight, Flame, Award
+  Menu, X, MessageSquare, Cpu, Globe, Lock, ChevronRight, Flame, Award, Grid
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -22,7 +23,7 @@ export default function ScoutCommandCenterPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [isRunningRound, setIsRunningRound] = useState<boolean>(false);
-  const [viewMode, setViewMode] = useState<'kanban' | 'table'>('kanban');
+  const [viewMode, setViewMode] = useState<'radar' | 'kanban' | 'table'>('radar');
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [showInstallTip, setShowInstallTip] = useState<boolean>(false);
   
@@ -121,7 +122,7 @@ export default function ScoutCommandCenterPage() {
 
   const navItems = [
     { id: 'overview', label: 'Centro de Mando & Disparo', icon: LayoutDashboard, badge: 'KPIs' },
-    { id: 'pipeline', label: 'Pipeline & Radiografías', icon: Shield, badge: `${leads.length} Leads` },
+    { id: 'pipeline', label: 'Rejilla Agentes & Radiografías', icon: Shield, badge: `${leads.length} Leads` },
     { id: 'telegram', label: 'Bóveda Telegram (Login)', icon: Lock, badge: 'VIP' },
     { id: 'matrix', label: 'Agente Matriz (Arqui-AI)', icon: Cpu, badge: 'Comandante' },
     { id: 'omnichannel', label: 'Sincronización 360°', icon: Globe, badge: 'Calle & Ads' },
@@ -246,6 +247,14 @@ export default function ScoutCommandCenterPage() {
             {currentSection === 'pipeline' && (
               <div className="bg-zinc-900 p-1 rounded-xl border border-zinc-800 flex items-center">
                 <button
+                  onClick={() => setViewMode('radar')}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition ${
+                    viewMode === 'radar' ? 'bg-orange-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'
+                  }`}>
+                  <Grid className="w-3.5 h-3.5" />
+                  <span>Rejilla Agentes (No CRM)</span>
+                </button>
+                <button
                   onClick={() => setViewMode('kanban')}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition ${
                     viewMode === 'kanban' ? 'bg-orange-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'
@@ -326,13 +335,13 @@ export default function ScoutCommandCenterPage() {
                     <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 mb-4 group-hover:scale-110 transition">
                       <Shield className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-black text-white">Pipeline ({leads.length} Leads)</h3>
+                    <h3 className="text-lg font-black text-white">Rejilla Agentes ({leads.length} Leads)</h3>
                     <p className="text-xs text-zinc-400 mt-1">
-                      Visualiza las radiografías en Kanban espacioso o en Tabla estilo Clay con chat interactivo por lead.
+                      Visualiza las tarjetas autónomas separadas con acciones rápidas en vivo (Chat IA, Copia 0-Links, Alerta Telegram).
                     </p>
                   </div>
                   <div className="mt-4 flex items-center text-xs font-bold text-orange-400 group-hover:translate-x-1 transition">
-                    <span>Abrir Pipeline</span> <ChevronRight className="w-4 h-4 ml-1" />
+                    <span>Abrir Rejilla Agentes</span> <ChevronRight className="w-4 h-4 ml-1" />
                   </div>
                 </div>
 
@@ -373,17 +382,17 @@ export default function ScoutCommandCenterPage() {
             </div>
           )}
 
-          {/* SECCIÓN 2: PIPELINE & RADIOGRAFÍAS (KANBAN Y TABLA) */}
+          {/* SECCIÓN 2: REJILLA DE AGENTES & RADIOGRAFÍAS (NO CRM) */}
           {currentSection === 'pipeline' && (
             <div className="space-y-6 animate-fadeIn">
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div>
                   <h2 className="text-2xl font-black text-white tracking-tight flex items-center gap-2">
                     <Shield className="w-6 h-6 text-orange-400" />
-                    <span>Pipeline y Radiografías de Fuga ({leads.length} Restaurantes)</span>
+                    <span>Rejilla de Agentes y Radiografías de Fuga ({leads.length} Restaurantes)</span>
                   </h2>
                   <p className="text-xs text-zinc-400 mt-1">
-                    💡 Haz clic en cualquier tarjeta para abrir la radiografía completa y el **Chat Visual con el Agente** de ese restaurante.
+                    💡 **Cero CRM:** Cada tarjeta es un agente autónomo separado con botones reales de Chat IA, copia anti-spam y disparo Telegram.
                   </p>
                 </div>
 
@@ -402,7 +411,16 @@ export default function ScoutCommandCenterPage() {
                   <p className="text-sm font-bold">Cargando base de prospectos anti-duplicados...</p>
                 </div>
               ) : (
-                viewMode === 'kanban' ? (
+                viewMode === 'radar' ? (
+                  <ScoutRadarGrid
+                    leads={leads}
+                    onSelectLead={(lead, tab) => {
+                      setSelectedLead(lead);
+                    }}
+                    onRefresh={fetchLeads}
+                    onLogAction={handleLogAction}
+                  />
+                ) : viewMode === 'kanban' ? (
                   <ScoutKanban 
                     leads={leads} 
                     onSelectLead={setSelectedLead}
