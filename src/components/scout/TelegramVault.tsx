@@ -137,9 +137,9 @@ export const TelegramVault: React.FC = () => {
                 value={minIcpScore}
                 onChange={(e) => setMinIcpScore(Number(e.target.value))}
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-3 text-sm font-bold text-orange-400 focus:outline-none focus:border-orange-500">
-                <option value={70}>⭐ Score >= 70 pts (Recomendado - Top ICPs)</option>
-                <option value={80}>⭐⭐ Score >= 80 pts (Alta Prioridad y Fuga > 5.000€)</option>
-                <option value={90}>⭐⭐⭐ Score >= 90 pts (Modo Francotirador VIP)</option>
+                <option value={70}>⭐ Score &gt;= 70 pts (Recomendado - Top ICPs)</option>
+                <option value={80}>⭐⭐ Score &gt;= 80 pts (Alta Prioridad y Fuga &gt; 5.000€)</option>
+                <option value={90}>⭐⭐⭐ Score &gt;= 90 pts (Modo Francotirador VIP)</option>
                 <option value={0}>📢 Recibir el 100% de los leads descubiertos</option>
               </select>
             </div>

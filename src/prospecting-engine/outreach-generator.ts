@@ -141,3 +141,11 @@ export async function generateOutreachForBatch(leads: Lead[]): Promise<Lead[]> {
   }
   return analyzedLeads;
 }
+
+/**
+ * Alias de compatibilidad para la ruta API de Telegram / Webhook
+ */
+export async function generateOutreachPack(lead: Lead): Promise<Lead['outreachCopy']> {
+  const updated = await generateOutreachForLead(lead);
+  return updated.outreachCopy;
+}
