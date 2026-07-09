@@ -36,10 +36,21 @@ export default async function DealRoomPage({ params }: { params: { token: string
   );
 
   const decodedTokenStr = decodeURIComponent(params.token);
-  const payload = decodeTokenPayload(decodedTokenStr);
+  let payload = decodeTokenPayload(decodedTokenStr);
 
+  // Si el token es 'demo' o no se pudo decodificar, proveer el payload de demostración oficial en vivo
   if (!payload) {
-    return notFound();
+    if (decodedTokenStr === 'demo' || decodedTokenStr.includes('demo')) {
+      payload = {
+        name: 'Mesón de Txistu (Demo VIP)',
+        price: '3500',
+        deposit: '500',
+        services: ['infra-ia', 'digital-menu', 'crm-hosteleria'],
+        customTerms: 'Garantía de incremento en ticket medio o devolución íntegra del depósito en 30 días.'
+      };
+    } else {
+      return notFound();
+    }
   }
 
   // Fetch Invitation Status (to see if it's already paid/used)

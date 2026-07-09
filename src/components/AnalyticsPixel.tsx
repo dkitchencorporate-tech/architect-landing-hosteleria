@@ -22,16 +22,16 @@ function AnalyticsPixelLogic() {
         localStorage.setItem('architect_session_id', sessionId);
       }
 
-      // 2. Geolocalización Inteligente (IPAPI)
+      // 2. Geolocalización Inteligente (Proxy Servidor Vercel)
       let geo = { city: 'Desconocido', country_name: 'Desconocido' };
       try {
-        const geoRes = await fetch('https://ipapi.co/json/');
+        const geoRes = await fetch('/api/analytics/geo');
         if (geoRes.ok) {
           const geoData = await geoRes.json();
-          geo = { city: geoData.city, country_name: geoData.country_name };
+          geo = { city: geoData.city || 'Desconocido', country_name: geoData.country_name || 'Desconocido' };
         }
       } catch (err) {
-        console.warn('[Analytics] Bloqueador de anuncios previno la geolocalización.');
+        console.warn('[Analytics] No se pudo obtener la geolocalización local.');
       }
 
       // 3. Capturar UTMs

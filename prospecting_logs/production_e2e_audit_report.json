@@ -1,0 +1,219 @@
+[
+  {
+    "url": "https://hosteleria.architectsys.com/dashboard",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/dashboard/settings",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/admin-architect/overview",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/admin-architect/clients",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/admin-architect/pipeline",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/admin-architect/creative",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "🎨 Botones interactivos en Creative Factory detectados: Continuar con Google, Ingresar al Dashboard, Solo esenciales, Aceptar todas...",
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/admin-architect/protocols",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/admin-architect/events-master",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/admin/scout",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "⚠️ Endpoint de prospectos en Scout devuelve error o no conecta con Supabase real en producción.",
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Error cargando leads: TypeError: Failed to fetch\n    at y (https://hosteleria.architectsys.com/_next/static/chunks/app/admin/scout/page-c1f91f45eb1c10f9.js:1:75402)\n    at https://hosteleria.architectsys.com/_next/static/chunks/app/admin/scout/page-c1f91f45eb1c10f9.js:1:75569\n    at aW (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:73242)\n    at oe (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:84683)\n    at ol (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85321)\n    at or (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85205)\n    at ol (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85301)\n    at or (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85205)\n    at ol (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:86266)\n    at or (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85205)",
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Error cargando leads: TypeError: Failed to fetch\n    at y (https://hosteleria.architectsys.com/_next/static/chunks/app/admin/scout/page-c1f91f45eb1c10f9.js:1:75402)\n    at https://hosteleria.architectsys.com/_next/static/chunks/app/admin/scout/page-c1f91f45eb1c10f9.js:1:75569\n    at aW (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:73242)\n    at oe (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:84683)\n    at ol (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85321)\n    at or (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85205)\n    at ol (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85301)\n    at or (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85205)\n    at ol (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:86266)\n    at or (https://hosteleria.architectsys.com/_next/static/chunks/fd9d1056-ad482beaaaaa6fb9.js:1:85205) | Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/hub",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/demo/carta",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/onboarding",
+    "title": "Architect.Sys | Agencias de Crecimiento para Hostelería",
+    "status": 200,
+    "consoleErrors": [
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [],
+    "findings": [
+      "❌ Errores en consola JS: Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  },
+  {
+    "url": "https://hosteleria.architectsys.com/deal/demo",
+    "title": "404: This page could not be found.",
+    "status": 404,
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 404 ()",
+      "Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+      "Failed to load resource: net::ERR_FAILED"
+    ],
+    "failedNetworkRequests": [
+      "404 - https://hosteleria.architectsys.com/deal/demo"
+    ],
+    "findings": [
+      "❌ Errores en consola JS: Failed to load resource: the server responded with a status of 404 () | Access to fetch at 'https://ipapi.co/json/' from origin 'https://hosteleria.architectsys.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. | Failed to load resource: net::ERR_FAILED",
+      "❌ Peticiones de red fallidas (HTTP 4xx/5xx): 404 - https://hosteleria.architectsys.com/deal/demo"
+    ],
+    "isFullyConnected": false,
+    "hasMockOrStaticData": false
+  }
+]

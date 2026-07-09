@@ -268,8 +268,15 @@ export async function discoverAndAnalyzeLeads(count: number = 100): Promise<Lead
   for (let i = 0; i < loopCount; i++) {
     const seed = REAL_SPANISH_RESTAURANTS[i];
 
-    // Verificación en vivo del teléfono usando nuestro motor de navegación embebida
-    const verifiedPhone = await agenticBrowser.verifyRealPhoneNumber(seed.name, seed.city, seed.phone);
+    // Verificación segura (evitando caída de Playwright en entorno Serverless Vercel)
+    let verifiedPhone = seed.phone;
+    if (!process.env.VERCEL && !process.env.NEXT_RUNTIME) {
+      try {
+        verifiedPhone = await agenticBrowser.verifyRealPhoneNumber(seed.name, seed.city, seed.phone);
+      } catch (err) {
+        console.warn(`[Lead Scanner] Verificación browser omitida en entorno sin navegador para ${seed.name}`);
+      }
+    }
 
     // Cálculo de Fuga de Margen Mensual (Lost Margin real en base a facturación y fugas de canal)
     let lostMarginRate = 0.015; // pérdida base operativa

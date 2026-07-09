@@ -52,8 +52,13 @@ export class AgenticBrowserEngine {
   constructor(profileName: string = 'alex_master_session') {
     const profilesDir = path.resolve(process.cwd(), 'browser_profiles', profileName);
     
-    if (!fs.existsSync(profilesDir)) {
-      fs.mkdirSync(profilesDir, { recursive: true });
+    try {
+      if (!fs.existsSync(profilesDir)) {
+        fs.mkdirSync(profilesDir, { recursive: true });
+      }
+    } catch (err) {
+      // En Vercel / AWS Lambda el sistema de archivos es de solo lectura (/var/task)
+      console.warn(`[AgenticBrowser] Sistema de archivos de solo lectura en entorno Serverless. Directorio omitido.`);
     }
 
     this.config = {
