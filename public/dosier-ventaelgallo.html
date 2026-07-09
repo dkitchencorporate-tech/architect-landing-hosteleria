@@ -553,7 +553,7 @@
             <div class="options-grid">
                 <label class="option-label"><input type="radio" name="s3_delivery" checked> Envío por Email / WeTransfer</label>
                 <label class="option-label"><input type="radio" name="s3_delivery"> Enlace a Google Drive / Dropbox</label>
-                <label class="option-label"><input type="radio" name="s3_delivery"> WhatsApp al +34 611 499 674</label>
+                <label class="option-label"><input type="radio" name="s3_delivery"> WhatsApp al +34 622 56 26 59</label>
                 <label class="option-label"><input type="radio" name="s3_delivery"> Tratar en Reunión Personal</label>
             </div>
         </div>
@@ -611,6 +611,15 @@
             <div class="field-group full-width">
                 <label>Descripción Artística e Información Adicional del Espectáculo:</label>
                 <textarea placeholder="Ej. Cuadro flamenco de prestigio con 8 artistas en escena (cante, guitarra, baile masculino y femenino). Duración aproximada: 60 minutos. Ambiente íntimo en cueva gitana del siglo XVI..."></textarea>
+            </div>
+        </div>
+
+        <div class="section-footer-options">
+            <strong>¿Por qué vía prefiere remitir los textos y detalles de las secciones 5.1 y 5.2?</strong>
+            <div class="options-grid">
+                <label class="option-label"><input type="radio" name="s51_delivery" checked> Rellenado en este formulario</label>
+                <label class="option-label"><input type="radio" name="s51_delivery"> Enlace a Google Drive / Dropbox</label>
+                <label class="option-label"><input type="radio" name="s51_delivery"> WhatsApp al +34 622 56 26 59</label>
             </div>
         </div>
     </div>
@@ -853,7 +862,7 @@
     function sendViaWhatsApp() {
         syncFields();
         const msg = encodeURIComponent("Hola equipo de Architect.Sys, adjunto remitimos la información / confirmación del Dosier Operativo de Venta El Gallo completado.");
-        window.open("https://wa.me/34611499674?text=" + msg, "_blank");
+        window.open("https://wa.me/34622562659?text=" + msg, "_blank");
         setTimeout(() => { window.print(); }, 800);
     }
 
