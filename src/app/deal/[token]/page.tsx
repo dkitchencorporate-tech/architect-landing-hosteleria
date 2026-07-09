@@ -38,15 +38,18 @@ export default async function DealRoomPage({ params }: { params: { token: string
   const decodedTokenStr = decodeURIComponent(params.token);
   let payload = decodeTokenPayload(decodedTokenStr);
 
-  // Si el token es 'demo' o no se pudo decodificar, proveer el payload de demostración oficial en vivo
+  // Si el token es 'demo' o no se pudo decodificar, proveer el payload de demostración oficial en vivo (Tarifa real de la Base Operativa según Knowledge Base)
   if (!payload) {
     if (decodedTokenStr === 'demo' || decodedTokenStr.includes('demo')) {
       payload = {
-        name: 'Mesón de Txistu (Demo VIP)',
-        price: '3500',
-        deposit: '500',
-        services: ['infra-ia', 'digital-menu', 'crm-hosteleria'],
-        customTerms: 'Garantía de incremento en ticket medio o devolución íntegra del depósito en 30 días.'
+        name: 'Mesón de Txistu (Demo VIP - Base Operativa)',
+        price: '700',
+        setup: '0',
+        plan: 'base',
+        paymentTerms: '2_pagos',
+        notes: 'Base Operativa Digital: Incluye Carta Digital Interactiva PWA, Motor de Reservas propio sin comisiones y 2 meses de mantenimiento GRATIS. A partir del 3er mes: 69 €/mes sin permanencia.',
+        services: ['digital-menu', 'motor-reservas', 'pwa-infra'],
+        customTerms: 'Entrega del MVP en 14 días hábiles tras recibir material. Incluye garantía SLA de velocidad (0.2s) y 2 rondas de revisión gastronómica incluidas.'
       };
     } else {
       return notFound();
@@ -76,7 +79,12 @@ export default async function DealRoomPage({ params }: { params: { token: string
     deal_notes: payload.notes || '',
     paymentTerms: payload.paymentTerms || '1_pago',
     discounts: payload.discountAmount > 0 ? [{ name: payload.discountName || 'Descuento', amount: Number(payload.discountAmount), type: payload.discountType }] : [],
-    bonuses: []
+    bonuses: payload.bonuses || (decodedTokenStr === 'demo' || decodedTokenStr.includes('demo') ? [
+      'Carta Digital PWA ultrarrápida (0.2s)',
+      'Motor de reservas sin comisiones de terceros (El Tenedor)',
+      '2 Meses de Mantenimiento y Hosting Cloud GRATIS',
+      '2 Rondas de Revisión Gastronómica incluidas'
+    ] : [])
   };
 
   const totalDiscounts = deal.discounts.reduce((sum: number, d: any) => sum + d.amount, 0);
