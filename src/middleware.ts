@@ -53,6 +53,7 @@ export async function middleware(request: NextRequest) {
   // Rutas exclusivas de administrador
   const isAdminRoute = 
     url.pathname.startsWith('/admin-architect') || 
+    url.pathname.startsWith('/admin') || 
     url.pathname.startsWith('/manuals');
 
   if ((isProtectedRoute || isAdminRoute) && !user) {
@@ -83,5 +84,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/creative-factory/:path*', '/admin-architect/:path*', '/auth/:path*', '/manuals/:path*'],
+  matcher: ['/dashboard/:path*', '/creative-factory/:path*', '/admin-architect/:path*', '/admin/:path*', '/auth/:path*', '/manuals/:path*'],
 };
+

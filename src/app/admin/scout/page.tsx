@@ -16,6 +16,7 @@ import {
   Menu, X, MessageSquare, Cpu, Globe, Lock, ChevronRight, Flame, Award, Grid
 } from 'lucide-react';
 import Link from 'next/link';
+import { MasterSecurityShield } from '@/components/admin/MasterSecurityShield';
 
 type NavSection = 'overview' | 'pipeline' | 'telegram' | 'matrix' | 'omnichannel';
 
@@ -129,172 +130,175 @@ export default function ScoutCommandCenterPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white flex flex-col md:flex-row selection:bg-orange-500 selection:text-white">
-      
-      {/* MENÚ LATERAL (SIDEBAR / HAMBURGUESA) */}
-      <aside
-        className={`fixed md:sticky top-0 left-0 z-50 h-screen bg-zinc-950 border-r border-zinc-800/80 transition-all duration-300 flex flex-col justify-between ${
-          sidebarOpen ? 'w-72 translate-x-0' : '-translate-x-full md:translate-x-0 md:w-20'
-        }`}>
+    <MasterSecurityShield
+      title="CENTRO DE MANDO SCOUT PWA — BLINDADO"
+      subtitle="Protección Criptográfica Anti-Spam & Bóveda de Prospección IA. Exclusivo Dirección Técnica."
+    >
+      <div className="min-h-screen bg-zinc-950 text-white flex flex-col md:flex-row selection:bg-orange-500 selection:text-white">
         
-        {/* Cabecera del Sidebar */}
-        <div className="p-4 border-b border-zinc-800/80 flex items-center justify-between">
-          <div className={`flex items-center gap-3 overflow-hidden transition-opacity ${!sidebarOpen && 'md:opacity-0 md:w-0'}`}>
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-500 to-amber-500 flex items-center justify-center font-black text-black text-sm shrink-0 shadow-lg shadow-orange-500/20">
-              A
+        {/* MENÚ LATERAL (SIDEBAR / HAMBURGUESA) */}
+        <aside
+          className={`fixed md:sticky top-0 left-0 z-50 h-screen bg-zinc-950 border-r border-zinc-800/80 transition-all duration-300 flex flex-col justify-between ${
+            sidebarOpen ? 'w-72 translate-x-0' : '-translate-x-full md:translate-x-0 md:w-20'
+          }`}>
+          
+          {/* Cabecera del Sidebar */}
+          <div className="p-4 border-b border-zinc-800/80 flex items-center justify-between">
+            <div className={`flex items-center gap-3 overflow-hidden transition-opacity ${!sidebarOpen && 'md:opacity-0 md:w-0'}`}>
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-500 to-amber-500 flex items-center justify-center font-black text-black text-sm shrink-0 shadow-lg shadow-orange-500/20">
+                A
+              </div>
+              <div className="flex flex-col">
+                <span className="font-black text-sm text-white tracking-tight leading-none">Architect.Sys</span>
+                <span className="text-[10px] text-orange-400 font-bold mt-0.5 uppercase tracking-wider">Scout Engine PWA</span>
+              </div>
             </div>
-            <div className="flex flex-col">
-              <span className="font-black text-sm text-white tracking-tight leading-none">Architect.Sys</span>
-              <span className="text-[10px] text-orange-400 font-bold mt-0.5 uppercase tracking-wider">Scout Engine PWA</span>
-            </div>
-          </div>
 
-          <button
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="p-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white transition border border-zinc-800">
-            {sidebarOpen ? <X className="w-4 h-4 md:hidden" /> : <Menu className="w-4 h-4" />}
-            <Menu className="w-4 h-4 hidden md:block" />
-          </button>
-        </div>
-
-        {/* Lista de Secciones */}
-        <nav className="p-3 space-y-1.5 flex-1 overflow-y-auto">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = currentSection === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => {
-                  setCurrentSection(item.id as NavSection);
-                  if (window.innerWidth < 768) setSidebarOpen(false);
-                }}
-                className={`w-full flex items-center justify-between p-3 rounded-2xl transition font-bold text-xs group ${
-                  isActive
-                    ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/20'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-900/80'
-                }`}>
-                <div className="flex items-center gap-3.5">
-                  <Icon className={`w-4 h-4 shrink-0 transition ${isActive ? 'text-white' : 'text-orange-400 group-hover:scale-110'}`} />
-                  <span className={`transition-opacity whitespace-nowrap ${!sidebarOpen && 'md:hidden'}`}>
-                    {item.label}
-                  </span>
-                </div>
-                {sidebarOpen && (
-                  <span className={`text-[9px] px-2 py-0.5 rounded-full font-extrabold uppercase ${
-                    isActive ? 'bg-black/30 text-white' : 'bg-zinc-900 text-zinc-500 border border-zinc-800'
-                  }`}>
-                    {item.badge}
-                  </span>
-                )}
-              </button>
-            );
-          })}
-        </nav>
-
-        {/* Pie del Sidebar / Botón Volver e Instalación PWA */}
-        <div className="p-3 border-t border-zinc-800/80 space-y-2">
-          <button
-            onClick={() => setShowInstallTip(!showInstallTip)}
-            className={`w-full flex items-center gap-3 p-3 rounded-2xl bg-zinc-900/80 hover:bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold transition ${
-              !sidebarOpen && 'md:justify-center'
-            }`}>
-            <Smartphone className="w-4 h-4 text-orange-400 shrink-0" />
-            <span className={`transition-opacity whitespace-nowrap ${!sidebarOpen && 'md:hidden'}`}>
-              Instalar en Móvil
-            </span>
-          </button>
-
-          <Link
-            href="/"
-            className={`w-full flex items-center gap-3 p-3 rounded-2xl text-zinc-500 hover:text-white hover:bg-zinc-900/60 text-xs font-semibold transition ${
-              !sidebarOpen && 'md:justify-center'
-            }`}>
-            <ArrowLeft className="w-4 h-4 shrink-0" />
-            <span className={`transition-opacity whitespace-nowrap ${!sidebarOpen && 'md:hidden'}`}>
-              Volver a la Landing
-            </span>
-          </Link>
-        </div>
-
-      </aside>
-
-      {/* ÁREA DE CONTENIDO PRINCIPAL */}
-      <div className="flex-1 flex flex-col min-h-screen overflow-x-hidden">
-        
-        {/* Barra Superior Superior (Header del Área Principal) */}
-        <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/80 px-4 md:px-8 py-4 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="p-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 md:hidden border border-zinc-800">
-              <Menu className="w-5 h-5" />
+              className="p-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white transition border border-zinc-800">
+              {sidebarOpen ? <X className="w-4 h-4 md:hidden" /> : <Menu className="w-4 h-4" />}
+              <Menu className="w-4 h-4 hidden md:block" />
             </button>
-
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-emerald-400 font-bold flex items-center gap-1.5 bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-full">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                Gemini 3 Pro Sincronizado
-              </span>
-              <span className="hidden sm:inline-flex text-xs text-orange-400 font-bold items-center gap-1.5 bg-orange-950/60 border border-orange-500/30 px-3 py-1 rounded-full">
-                <Flame className="w-3.5 h-3.5 fill-current" />
-                Agresividad: 93/100
-              </span>
-            </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            {currentSection === 'pipeline' && (
-              <div className="bg-zinc-900 p-1 rounded-xl border border-zinc-800 flex items-center">
+          {/* Lista de Secciones */}
+          <nav className="p-3 space-y-1.5 flex-1 overflow-y-auto">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = currentSection === item.id;
+              return (
                 <button
-                  onClick={() => setViewMode('radar')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition ${
-                    viewMode === 'radar' ? 'bg-orange-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'
-                  }`}>
-                  <Grid className="w-3.5 h-3.5" />
-                  <span>Rejilla Agentes (No CRM)</span>
+                  key={item.id}
+                  onClick={() => {
+                    setCurrentSection(item.id as NavSection);
+                    if (window.innerWidth < 768) setSidebarOpen(false);
+                  }}
+                  className={`w-full flex items-center justify-between p-3 rounded-2xl transition font-medium text-xs ${
+                    isActive 
+                      ? 'bg-gradient-to-r from-orange-500/20 via-orange-500/10 to-transparent border border-orange-500/30 text-white font-bold shadow-sm' 
+                      : 'text-zinc-400 hover:text-white hover:bg-zinc-900/60 border border-transparent'
+                  } ${!sidebarOpen && 'md:justify-center'}`}>
+                  <div className="flex items-center gap-3 overflow-hidden">
+                    <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-orange-500' : 'text-zinc-500'}`} />
+                    <span className={`transition-opacity whitespace-nowrap ${!sidebarOpen && 'md:hidden'}`}>
+                      {item.label}
+                    </span>
+                  </div>
+                  {sidebarOpen && (
+                    <span className={`text-[9px] px-2 py-0.5 rounded-full font-extrabold uppercase ${
+                      isActive ? 'bg-black/30 text-white' : 'bg-zinc-900 text-zinc-500 border border-zinc-800'
+                    }`}>
+                      {item.badge}
+                    </span>
+                  )}
                 </button>
-                <button
-                  onClick={() => setViewMode('kanban')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition ${
-                    viewMode === 'kanban' ? 'bg-orange-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'
-                  }`}>
-                  <LayoutDashboard className="w-3.5 h-3.5" />
-                  <span>Kanban</span>
-                </button>
-                <button
-                  onClick={() => setViewMode('table')}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition ${
-                    viewMode === 'table' ? 'bg-orange-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'
-                  }`}>
-                  <Table className="w-3.5 h-3.5" />
-                  <span>Tabla Clay</span>
-                </button>
-              </div>
-            )}
+              );
+            })}
+          </nav>
 
+          {/* Pie del Sidebar / Botón Volver e Instalación PWA */}
+          <div className="p-3 border-t border-zinc-800/80 space-y-2">
             <button
-              onClick={fetchLeads}
-              disabled={loading}
-              title="Recargar base de datos"
-              className="bg-zinc-900 hover:bg-zinc-800 text-white p-2.5 rounded-xl border border-zinc-800 transition">
-              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-orange-400' : ''}`} />
-            </button>
-          </div>
-        </header>
-
-        {/* Alerta PWA */}
-        {showInstallTip && (
-          <div className="bg-gradient-to-r from-orange-950/60 to-zinc-900 border-b border-orange-500/30 px-4 md:px-8 py-3 text-xs text-zinc-300 flex items-center justify-between animate-fadeIn">
-            <div className="flex items-center gap-3">
-              <Zap className="w-4 h-4 text-orange-400 shrink-0" />
-              <span>
-                <b>Para instalar como App en tu móvil:</b> En iPhone (Safari), pulsa compartir <span className="underline">"Añadir a pantalla de inicio"</span>. En Android/PC, pulsa en menú y <span className="underline">"Instalar aplicación"</span>.
+              onClick={() => setShowInstallTip(!showInstallTip)}
+              className={`w-full flex items-center gap-3 p-3 rounded-2xl bg-zinc-900/80 hover:bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold transition ${
+                !sidebarOpen && 'md:justify-center'
+              }`}>
+              <Smartphone className="w-4 h-4 text-orange-400 shrink-0" />
+              <span className={`transition-opacity whitespace-nowrap ${!sidebarOpen && 'md:hidden'}`}>
+                Instalar en Móvil
               </span>
-            </div>
-            <button onClick={() => setShowInstallTip(false)} className="text-zinc-400 hover:text-white font-bold ml-4">✕</button>
+            </button>
+
+            <Link
+              href="/"
+              className={`w-full flex items-center gap-3 p-3 rounded-2xl text-zinc-500 hover:text-white hover:bg-zinc-900/60 text-xs font-semibold transition ${
+                !sidebarOpen && 'md:justify-center'
+              }`}>
+              <ArrowLeft className="w-4 h-4 shrink-0" />
+              <span className={`transition-opacity whitespace-nowrap ${!sidebarOpen && 'md:hidden'}`}>
+                Volver a la Landing
+              </span>
+            </Link>
           </div>
-        )}
+        </aside>
+
+        {/* ÁREA DE CONTENIDO PRINCIPAL */}
+        <div className="flex-1 flex flex-col min-h-screen overflow-x-hidden">
+          
+          {/* Barra Superior (Header del Área Principal) */}
+          <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800/80 px-4 md:px-8 py-4 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setSidebarOpen(!sidebarOpen)}
+                className="p-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 md:hidden border border-zinc-800">
+                <Menu className="w-5 h-5" />
+              </button>
+
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-emerald-400 font-bold flex items-center gap-1.5 bg-emerald-950/60 border border-emerald-500/30 px-3 py-1 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  Gemini 3 Pro Sincronizado
+                </span>
+                <span className="hidden sm:inline-flex text-xs text-orange-400 font-bold items-center gap-1.5 bg-orange-950/60 border border-orange-500/30 px-3 py-1 rounded-full">
+                  <Flame className="w-3.5 h-3.5 fill-current" />
+                  Agresividad: 93/100
+                </span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              {currentSection === 'pipeline' && (
+                <div className="bg-zinc-900 p-1 rounded-xl border border-zinc-800 flex items-center">
+                  <button
+                    onClick={() => setViewMode('radar')}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition ${
+                      viewMode === 'radar' ? 'bg-orange-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'
+                    }`}>
+                    <Grid className="w-3.5 h-3.5" />
+                    <span>Rejilla Agentes (No CRM)</span>
+                  </button>
+                  <button
+                    onClick={() => setViewMode('kanban')}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition ${
+                      viewMode === 'kanban' ? 'bg-orange-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'
+                    }`}>
+                    <LayoutDashboard className="w-3.5 h-3.5" />
+                    <span>Kanban</span>
+                  </button>
+                  <button
+                    onClick={() => setViewMode('table')}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 transition ${
+                      viewMode === 'table' ? 'bg-orange-500 text-white shadow-md' : 'text-zinc-400 hover:text-white'
+                    }`}>
+                    <Table className="w-3.5 h-3.5" />
+                    <span>Tabla Clay</span>
+                  </button>
+                </div>
+              )}
+
+              <button
+                onClick={fetchLeads}
+                disabled={loading}
+                title="Recargar base de datos"
+                className="bg-zinc-900 hover:bg-zinc-800 text-white p-2.5 rounded-xl border border-zinc-800 transition">
+                <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin text-orange-400' : ''}`} />
+              </button>
+            </div>
+          </header>
+
+          {/* Alerta PWA */}
+          {showInstallTip && (
+            <div className="bg-gradient-to-r from-orange-950/60 to-zinc-900 border-b border-orange-500/30 px-4 md:px-8 py-3 text-xs text-zinc-300 flex items-center justify-between animate-fadeIn">
+              <div className="flex items-center gap-3">
+                <Zap className="w-4 h-4 text-orange-400 shrink-0" />
+                <span>
+                  <b>Para instalar como App en tu móvil:</b> En iPhone (Safari), pulsa compartir <span className="underline">"Añadir a pantalla de inicio"</span>. En Android/PC, pulsa en menú y <span className="underline">"Instalar aplicación"</span>.
+                </span>
+              </div>
+              <button onClick={() => setShowInstallTip(false)} className="text-zinc-400 hover:text-white font-bold ml-4">✕</button>
+            </div>
+          )}
 
         {/* CONTENIDO PRINCIPAL SEGÚN LA SECCIÓN SELECCIONADA */}
         <main className="p-4 md:p-8 flex-1 max-w-[1800px] w-full mx-auto">
@@ -460,14 +464,13 @@ export default function ScoutCommandCenterPage() {
 
       </div>
 
-      {/* Modal Interactivo de Detalle del Lead y Chat Visual */}
       <LeadDetailModal
         lead={selectedLead}
         onClose={() => setSelectedLead(null)}
         onLogAction={handleLogAction}
         onStatusChange={handleStatusChange}
       />
-
-    </div>
+      </div>
+    </MasterSecurityShield>
   );
 }

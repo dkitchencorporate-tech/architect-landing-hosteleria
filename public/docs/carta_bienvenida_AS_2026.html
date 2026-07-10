@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo de Inicio y Bienvenida - Architect.Sys</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-orange: #FF4500;
+            --brand-gold: #B8862A;
+            --text-main: #111111;
+            --text-secondary: #444444;
+            --border-warm: #DDD0B8;
+            --surface-light: #F9F7F2;
+        }
+
+        @page {
+            size: 210mm 297mm;
+            margin: 18mm 20mm 18mm 20mm;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        /* ── PANTALLA ── */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #EDEAE4;
+            color: var(--text-main);
+            padding: 48px 20px;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .doc-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid var(--border-warm);
+            border-radius: 10px;
+            box-shadow: 0 12px 40px rgba(0,0,0,.09);
+            padding: 56px 60px;
+        }
+
+        /* ── HEADER ── */
+        .doc-header {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            border-bottom: 2.5px solid var(--brand-gold);
+            padding-bottom: 14px; margin-bottom: 24px;
+        }
+        .brand-logo { font-size: 2rem; font-weight: 700; letter-spacing: -.03em; }
+        .brand-logo span { color: var(--brand-orange); }
+        .brand-subtitle { font-size: .85rem; color: var(--brand-gold); font-weight: 600; margin-top: 3px; }
+        .doc-meta { text-align: right; font-size: .88rem; color: var(--text-secondary); line-height: 1.55; }
+        .doc-meta strong { display: block; font-size: 1rem; color: var(--text-main); font-weight: 700; }
+
+        /* ── BADGE ── */
+        .welcome-badge {
+            display: inline-block; background: #FFFDF0; color: var(--brand-gold);
+            border: 1px solid var(--brand-gold); padding: 5px 14px; border-radius: 20px;
+            font-size: .78rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: .06em; margin-bottom: 18px;
+        }
+
+        h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 14px; line-height: 1.3; }
+        .lead { font-size: 1rem; color: var(--text-main); font-weight: 600; margin-bottom: 10px; }
+        .intro-text { font-size: .93rem; color: var(--text-secondary); margin-bottom: 26px; line-height: 1.62; }
+
+        /* ── FASES ── */
+        .step-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 14px; margin-bottom: 30px;
+        }
+        .step-card {
+            background: var(--surface-light); border: 1px solid var(--border-warm);
+            border-left: 4px solid var(--brand-orange); border-radius: 7px; padding: 16px 18px;
+        }
+        .step-card h4 { font-size: .92rem; color: var(--text-main); font-weight: 700; margin-bottom: 6px; }
+        .step-card p { font-size: .88rem; color: var(--text-secondary); line-height: 1.55; }
+
+        /* ── CTA ── */
+        .cta-section {
+            background: linear-gradient(135deg, #FFFDF5, var(--surface-light));
+            border: 2px solid var(--brand-gold); border-radius: 10px;
+            padding: 30px 32px; text-align: center; margin-bottom: 28px;
+        }
+        .cta-section h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .cta-section p { font-size: .91rem; color: var(--text-secondary); max-width: 520px; margin: 0 auto 20px; line-height: 1.58; }
+        .cta-btn {
+            display: inline-block; background: var(--brand-orange); color: #fff !important;
+            text-decoration: none; font-weight: 700; font-size: .97rem;
+            padding: 14px 36px; border-radius: 7px;
+            box-shadow: 0 6px 18px -4px rgba(255,69,0,.38);
+        }
+        .cta-btn:hover { background: #CC3700; }
+
+        /* ── PRINT BTN ── */
+        .print-btn {
+            display: block; max-width: 300px; margin: 0 auto 26px;
+            background: var(--text-main); color: #fff; font-size: .93rem;
+            font-weight: 600; padding: 13px; border: none; border-radius: 7px; cursor: pointer;
+        }
+
+        /* ── FOOTER ── */
+        .doc-footer {
+            display: flex; justify-content: space-between;
+            font-size: .78rem; color: var(--text-secondary);
+            padding-top: 14px; border-top: 1px solid var(--border-warm);
+        }
+
+        /* ══════════════════════════════════════════
+           PRINT — Carta una página, fuentes grandes
+        ══════════════════════════════════════════ */
+        @media print {
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+            body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
+
+            .doc-wrap {
+                box-shadow: none !important; border: none !important; border-radius: 0 !important;
+                padding: 0 !important; max-width: 100% !important; width: 100% !important; margin: 0 !important;
+            }
+
+            .doc-header { padding-bottom: 12pt !important; margin-bottom: 18pt !important; }
+            .brand-logo     { font-size: 20pt !important; }
+            .brand-subtitle { font-size: 9pt !important; }
+            .doc-meta       { font-size: 9pt !important; }
+            .doc-meta strong { font-size: 11pt !important; }
+
+            .welcome-badge  { font-size: 7.5pt !important; padding: 4pt 12pt !important; margin-bottom: 14pt !important; }
+
+            h1              { font-size: 15pt !important; margin-bottom: 12pt !important; }
+            .lead           { font-size: 11.5pt !important; margin-bottom: 9pt !important; }
+            .intro-text     { font-size: 10.5pt !important; margin-bottom: 20pt !important; line-height: 1.6 !important; }
+
+            .step-grid      { gap: 10pt !important; margin-bottom: 22pt !important; }
+            .step-card      { padding: 14pt 16pt !important; }
+            .step-card h4   { font-size: 10pt !important; margin-bottom: 6pt !important; }
+            .step-card p    { font-size: 9.5pt !important; line-height: 1.5 !important; }
+
+            .cta-section    { padding: 24pt 26pt !important; margin-bottom: 0 !important; }
+            .cta-section h3 { font-size: 12pt !important; margin-bottom: 9pt !important; }
+            .cta-section p  { font-size: 10pt !important; margin-bottom: 16pt !important; line-height: 1.55 !important; }
+            .cta-btn        { font-size: 10pt !important; padding: 10pt 26pt !important; background: #FF4500 !important; color: #fff !important; }
+
+            .print-btn      { display: none !important; }
+            .doc-footer     { font-size: 8pt !important; padding-top: 11pt !important; margin-top: 20pt !important; }
+        }
+    </style>
+</head>
+<body>
+<div class="doc-wrap">
+
+    <div class="doc-header">
+        <div>
+            <div class="brand-logo">ARCHITECT<span>.SYS</span></div>
+            <div class="brand-subtitle">División de Arquitectura Web</div>
+        </div>
+        <div class="doc-meta">
+            <strong>Protocolo Oficial de Inicio</strong>
+            Ref: AS-2026-INIT-VEG<br>Fecha: Julio 2026
+        </div>
+    </div>
+
+    <div class="welcome-badge">✨ Protocolo Ejecutivo de Inicio de Proyecto</div>
+
+    <h1>Bienvenida y Hoja de Ruta para su Nueva Web</h1>
+
+    <p class="lead">Estimado equipo directivo de <strong>Venta El Gallo</strong>,</p>
+
+    <p class="intro-text">Le damos la bienvenida desde el equipo técnico de <strong>Architect.Sys</strong>. Para garantizar que su nueva plataforma web refleje con absoluta fidelidad la identidad y oferta gastronómica de su establecimiento en el Sacromonte, hemos activado nuestro protocolo rápido de personalización.</p>
+
+    <div class="step-grid">
+        <div class="step-card">
+            <h4>Fase 1 — Confirmación de Acuerdo y Toma de Datos</h4>
+            <p>Con la realización del abono confirmamos el acuerdo. A continuación les pedimos acceder al portal de toma de datos y completar la información necesaria para comenzar.</p>
+        </div>
+        <div class="step-card">
+            <h4>Fase 2 — Adaptación y Maquetación</h4>
+            <p>Nuestros ingenieros implementarán sus textos, fotografías y precios en el diseño base desarrollado exclusivamente para Venta El Gallo.</p>
+        </div>
+        <div class="step-card">
+            <h4>Fase 3 — Revisión y Ajustes</h4>
+            <p>Podrán ver una versión de prueba para perfilar cualquier detalle estético o textual antes de hacer la web pública.</p>
+        </div>
+        <div class="step-card">
+            <h4>Fase 4 — Despliegue Oficial en IONOS</h4>
+            <p>Nos conectamos directamente a su servidor IONOS, subimos todos los archivos y dejamos la web 100% funcionando bajo su propio dominio.</p>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h3>Siguiente Paso: Acceder al Portal de Toma de Datos</h3>
+        <p>Para agilizar el proceso y comenzar a trabajar en su diseño de inmediato, acceda a nuestro <strong>Portal Seguro de Toma de Datos</strong> haciendo clic en el botón. Allí podrá facilitarnos sus datos de forma interactiva.</p>
+        <a href="https://hosteleria.architectsys.com/dosier-ventaelgallo.html" target="_blank" class="cta-btn">📂 ABRIR DOSIER DE TOMA DE DATOS</a>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Guardar como PDF / Imprimir</button>
+
+    <div class="doc-footer">
+        <span>Architect.Sys · Diseño Web</span>
+        <span>Soporte Directo: +34 622 56 26 59</span>
+    </div>
+
+</div>
+</body>
+</html>

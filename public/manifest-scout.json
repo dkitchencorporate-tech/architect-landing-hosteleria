@@ -1,8 +1,8 @@
 {
-  "name": "Architect.Sys | Agencias de Crecimiento para Hostelería",
-  "short_name": "Architect.Sys",
-  "description": "Ingeniería de Procesos para Hostelería. Ecosistemas digitales sin comisiones y Agentes IA.",
-  "start_url": "/",
+  "name": "Architect.Sys Scout Command Center",
+  "short_name": "Scout PWA",
+  "description": "Motor AI de Prospección Agresiva, Auditoría EBITDA y Cierre High-Ticket para Hostelería",
+  "start_url": "/admin/scout",
   "display": "standalone",
   "background_color": "#09090b",
   "theme_color": "#f97316",
