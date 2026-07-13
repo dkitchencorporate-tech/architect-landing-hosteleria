@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura 2026-AS-1001 - Venta El Gallo (Architect.Sys)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0a0a0c;
+            --bg-card: #141418;
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --text-main: #f0f0f0;
+            --text-muted: #a0a0a8;
+            --border-color: #2a2a32;
+            --accent-green: #10b981;
+            --accent-orange: #f97316;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .invoice-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-accent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-primary), #f59e0b, var(--gold-primary));
+        }
+
+        /* ── HEADER ── */
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .brand-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .brand-section p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .invoice-meta {
+            text-align: right;
+        }
+
+        .invoice-meta .invoice-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .invoice-meta .invoice-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold-primary);
+            border: 1px solid var(--gold-primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ── ENTITIES (EMISOR & RECEPTOR) ── */
+        .entities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .entity-card {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+        }
+
+        .entity-card h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--gold-primary);
+            margin-bottom: 12px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .entity-card .entity-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .entity-card .entity-sub {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .entity-card p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+
+        .entity-card strong {
+            color: #fff;
+        }
+
+        /* ── TABLE ── */
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 35px;
+        }
+
+        .items-table th {
+            background: var(--bg-main);
+            color: var(--gold-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: left;
+            padding: 16px 20px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+        .items-table td {
+            padding: 24px 20px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+            font-size: 0.98rem;
+        }
+
+        .item-title {
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.08rem;
+            margin-bottom: 6px;
+        }
+
+        .item-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ── TOTALS ── */
+        .totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .totals-box {
+            width: 100%;
+            max-width: 380px;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 0.98rem;
+            color: #ccc;
+        }
+
+        .total-row.tax {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+        }
+
+        .total-row.grand {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+        }
+
+        /* ── PAYMENT TERMS BOX ── */
+        .terms-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(10, 10, 12, 0.95));
+            border: 1.5px solid var(--gold-primary);
+            border-radius: 12px;
+            padding: 26px;
+            margin-bottom: 35px;
+        }
+
+        .terms-box h4 {
+            font-size: 1.05rem;
+            color: var(--gold-light);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .term-item {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .term-item span {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        .term-item strong {
+            font-size: 1.15rem;
+            color: #fff;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* ── PAYMENT BANKING METHODS ── */
+        .banking-section {
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 26px;
+            margin-bottom: 35px;
+        }
+
+        .banking-section h4 {
+            font-size: 1rem;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .banking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .bank-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .bank-card .bank-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .bank-card .bank-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            word-break: break-all;
+        }
+
+        /* ── FOOTER & SIGNATURE ── */
+        .invoice-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-sig {
+            text-align: right;
+        }
+
+        .footer-sig strong {
+            color: #fff;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .print-btn {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            margin: 40px auto 0 auto;
+            background: linear-gradient(135deg, var(--gold-primary), #b89728);
+            color: #000;
+            text-align: center;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ── PRINT STYLES ── */
+        @media print {
+            body {
+                background-color: #fff;
+                color: #111;
+                padding: 0;
+            }
+            .invoice-wrapper {
+                box-shadow: none;
+                border: none;
+                max-width: 100%;
+                padding: 10px;
+                background-color: #fff;
+                color: #111;
+            }
+            .print-btn {
+                display: none;
+            }
+            .brand-section h1, .invoice-meta .invoice-num, .entity-card h3, .total-row.grand, .terms-box h4, .banking-section h4 {
+                color: #000;
+            }
+            .invoice-meta .invoice-title, .entity-card .entity-name, .item-title, .term-item strong, .footer-sig strong, .entity-card strong {
+                color: #000;
+            }
+            .entity-card .entity-sub, .bank-card .bank-value {
+                color: #222;
+            }
+            .entity-card, .items-table th, .totals-box, .terms-box, .banking-section, .bank-card, .term-item {
+                background: #fafafa !important;
+                border: 1px solid #ddd !important;
+                color: #111 !important;
+            }
+            .items-table td, .items-table th {
+                border-color: #ccc;
+            }
+            .top-accent {
+                background: #000;
+            }
+            .status-badge {
+                background: #eee;
+                color: #000;
+                border-color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="invoice-wrapper">
+    <div class="top-accent"></div>
+
+    <!-- HEADER -->
+    <header class="invoice-header">
+        <div class="brand-section">
+            <h1>ARCHITECT.SYS</h1>
+            <p>División de Arquitectura Web & Software Gastronómico</p>
+        </div>
+        <div class="invoice-meta">
+            <div class="invoice-title">FACTURA COMERCIAL</div>
+            <div class="invoice-num">Nº 2026-AS-1001</div>
+            <div class="status-badge">⚡ EMISIÓN OFICIAL / PAGO FRACCIONADO</div>
+        </div>
+    </header>
+
+    <!-- EMISOR Y RECEPTOR -->
+    <section class="entities-grid">
+        <div class="entity-card">
+            <h3>Proveedor / Emisor (Architect.Sys)</h3>
+            <div class="entity-name">Elisabet Moreno Gea</div>
+            <div class="entity-sub">Directora de Operaciones & Gestión Clientela (Socia Co-Fundadora)</div>
+            <p><strong>NIF / Fiscal ID:</strong> 74019799A</p>
+            <p><strong>Entidad:</strong> ARCHITECT.SYS ENGINEERING</p>
+            <p><strong>Domicilio Operativo:</strong> Granada / Andalucía, España</p>
+            <p><strong>Contacto Oficial:</strong> +34 622 56 26 59 | facturacion@architectsys.com</p>
+        </div>
+
+        <div class="entity-card">
+            <h3>Cliente / Receptor Fiscal</h3>
+            <div class="entity-name">VENTA EL GALLO</div>
+            <div class="entity-sub">Encarnación Heredia Robles</div>
+            <p><strong>NIF / CIF:</strong> 44299158P</p>
+            <p><strong>Domicilio Fiscal:</strong> Barranco de los Negros, 5</p>
+            <p><strong>Localidad:</strong> 18010 Granada, España</p>
+            <p><strong>Proyecto Ref:</strong> AS-2026-VEG-01</p>
+        </div>
+    </section>
+
+    <!-- DETALLE DE CONCEPTOS -->
+    <table class="items-table">
+        <thead>
+            <tr>
+                <th style="width: 70%;">Descripción del Servicio / Proyecto Tecnológico</th>
+                <th style="width: 30%; text-align: right;">Importe (Base Imponible)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="item-title">Diseño Web Profesional PWA - Proyecto Venta El Gallo (Ref: AS-2026-VEG-01)</div>
+                    <div class="item-desc">
+                        Desarrollo e ingeniería de aplicación web progresiva (PWA) de alta velocidad en Next.js / React 19, estructurada con diseño de alto standing (Deep Black & Gold) y sistema bilingüe (Español/Inglés) para turismo internacional.<br/><br/>
+                        <strong>Alcance e Inclusiones del Acuerdo Técnico (400 € Pago Único):</strong>
+                        <ul style="margin-top: 6px; margin-left: 18px; color: var(--text-muted);">
+                            <li>Inyección y estructuración integral de cartas gastronómicas, horarios de pases de flamenco e historia de las cuevas del Sacromonte.</li>
+                            <li>Cesión perpetua y exclusiva de propiedad intelectual del código fuente y build estático (`Static Export`), sin cuotas mensuales de mantenimiento (0 €/mes).</li>
+                            <li>Despliegue y configuración técnica completa por parte de ingeniería en servidor contratado en IONOS vía FTP/SSH.</li>
+                        </ul>
+                    </div>
+                </td>
+                <td style="text-align: right; font-weight: 700; font-size: 1.15rem; color: #fff;">
+                    400,00 €
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- TOTALES -->
+    <section class="totals-section">
+        <div class="totals-box">
+            <div class="total-row">
+                <span>Base Imponible:</span>
+                <strong>400,00 €</strong>
+            </div>
+            <div class="total-row tax">
+                <span>IVA Aplicable (21%):</span>
+                <strong>84,00 €</strong>
+            </div>
+            <div class="total-row grand">
+                <span>IMPORTE TOTAL:</span>
+                <span>484,00 €</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONDICIONES DE PAGO ACORDADAS (OBSERVACIONES OBLIGATORIAS) -->
+    <section class="terms-box">
+        <h4>📌 CONDICIONES DE PAGO ACORDADAS (HITO 1 & HITO 2)</h4>
+        <p style="font-size: 0.95rem; color: #d0d0d0; line-height: 1.6;">
+            De conformidad con el acuerdo de producción fraccionada, el importe total de esta factura se divide en dos abonos del 50% exactamente iguales para facilitar el inicio y finalización técnica del proyecto:
+        </p>
+        <div class="terms-grid">
+            <div class="term-item" style="border-left: 3px solid var(--gold-primary);">
+                <span>Abono 1 (50% - Inicio Producción)</span>
+                <strong>242,00 € (IVA Incluido)</strong>
+                <span style="font-size: 0.8rem; color: #aaa; margin-top: 4px;">Abonar a la emisión de este documento para iniciar el desarrollo y despliegue en 48-72h.</span>
+            </div>
+            <div class="term-item" style="border-left: 3px solid var(--accent-green);">
+                <span>Abono 2 (50% - Entrega e Instalación)</span>
+                <strong>242,00 € (IVA Incluido)</strong>
+                <span style="font-size: 0.8rem; color: #aaa; margin-top: 4px;">Abonar a la finalización y publicación definitiva del proyecto en el servidor IONOS del cliente.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATOS BANCARIOS Y PASARELAS DE PAGO -->
+    <section class="banking-section">
+        <h4>🏦 INFORMACIÓN DE PAGO EN CUENTA / CANALES OFICIALES</h4>
+        <div class="banking-grid">
+            <div class="bank-card">
+                <span class="bank-label">Titular Bancario</span>
+                <div class="bank-value" style="font-size: 0.95rem; color: #fff;">Elisabet Moreno Gea</div>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Architect.Sys Engineering</span>
+            </div>
+            <div class="bank-card">
+                <span class="bank-label">Transferencia Bancaria (IBAN SEPA)</span>
+                <div class="bank-value">ES37 2100 4445 1813 0016 3823</div>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Cuenta Corporativa / Entidad</span>
+            </div>
+            <div class="bank-card">
+                <span class="bank-label">Bizum Empresarial Inmediato</span>
+                <div class="bank-value">+34 623 55 01 19</div>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Concepto: "Abono 1 Venta El Gallo"</span>
+            </div>
+            <div class="bank-card">
+                <span class="bank-label">Pasarela Segura Tarjeta (Whop)</span>
+                <div class="bank-value" style="font-size: 0.85rem;"><a href="https://whop.com/checkout/plan_f9aEoj2HXUUGy" target="_blank" style="color: var(--gold-primary); text-decoration: underline;">Pagar en Whop Checkout</a></div>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Pago con Tarjeta Bancaria / Apple Pay</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="invoice-footer">
+        <div>
+            <p><strong>Architect.Sys Engineering</strong> · División de Software Gastronómico</p>
+            <p>Documento emitido conforme a la legislación fiscal vigente · NIF Emisor: 74019799A</p>
+            <p style="margin-top: 4px; font-size: 0.8rem; color: #666;">Fecha de expedición: 13/07/2026 · Granada, España</p>
+        </div>
+        <div class="footer-sig">
+            <span>Firma Autorizada de Emisión:</span>
+            <strong>Elisabet Moreno Gea</strong>
+            <span style="font-size: 0.8rem; color: var(--gold-primary);">Directora de Operaciones (Architect.Sys)</span>
+        </div>
+    </footer>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Descargar Factura en PDF / Imprimir</button>
+
+</div>
+
+</body>
+</html>
