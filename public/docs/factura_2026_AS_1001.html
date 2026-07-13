@@ -210,6 +210,7 @@
             font-size: 0.81rem;
             line-height: 1.5;
             color: var(--text-secondary);
+            text-align: justify;
         }
 
         .item-details ul {
@@ -219,6 +220,7 @@
 
         .item-details li {
             margin-bottom: 5px;
+            text-align: left;
         }
 
         .guarantee-box {
@@ -336,6 +338,7 @@
             color: var(--text-secondary);
             line-height: 1.4;
             margin-bottom: 12px;
+            text-align: justify;
         }
 
         .milestones-grid {
@@ -449,7 +452,7 @@
             display: block;
         }
 
-        /* ── PIE INSTITUCIONAL (ANCLADO EXACTAMENTE AL FONDO DE CADA PÁGINA) ── */
+        /* ── PIE INSTITUCIONAL SIMÉTRICO E IMPECABLE (ANCLADO AL FONDO) ── */
         .a4-footer {
             border-top: 1px solid var(--border-warm);
             padding-top: 10px;
@@ -459,16 +462,32 @@
             font-size: 0.76rem;
             color: var(--text-muted);
             width: 100%;
+            white-space: nowrap; /* Evita cortes o saltos abruptos de palabras */
         }
 
-        .a4-footer strong {
+        .a4-footer .footer-left {
+            text-align: left;
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .a4-footer .footer-left strong {
             color: var(--text-main);
-            font-size: 0.8rem;
+            font-weight: 700;
         }
 
-        .a4-footer .page-number {
+        .a4-footer .footer-center {
+            text-align: center;
+            color: var(--text-secondary);
+            font-weight: 500;
+            flex: 1;
+        }
+
+        .a4-footer .footer-right {
+            text-align: right;
             font-weight: 700;
             color: var(--brand-orange);
+            flex: 1;
         }
 
         /* ── BOTÓN DE IMPRESIÓN (SOLO PANTALLA) ── */
@@ -606,13 +625,16 @@
             </table>
         </div>
 
-        <!-- PIE INSTITUCIONAL PÁGINA 1 -->
+        <!-- PIE INSTITUCIONAL SIMÉTRICO PÁGINA 1 -->
         <footer class="a4-footer">
-            <div>
-                <strong>Architect.Sys · División de Arquitectura Web y Software</strong> · Granada, España
+            <div class="footer-left">
+                <strong>Architect.Sys</strong> · Arquitectura Web & Software
             </div>
-            <div>
-                <span class="page-number">Página 1 de 2</span> · Factura Oficial Nº 2026-AS-1001
+            <div class="footer-center">
+                Factura Oficial Nº 2026-AS-1001
+            </div>
+            <div class="footer-right">
+                Página 1 de 2
             </div>
         </footer>
     </div>
@@ -698,13 +720,16 @@
             </section>
         </div>
 
-        <!-- PIE INSTITUCIONAL PÁGINA 2 -->
+        <!-- PIE INSTITUCIONAL SIMÉTRICO PÁGINA 2 -->
         <footer class="a4-footer">
-            <div>
-                <strong>Architect.Sys · División de Arquitectura Web y Software</strong> · Granada, España
+            <div class="footer-left">
+                <strong>Elisabet Moreno Gea</strong> · Directora de Operaciones
             </div>
-            <div>
-                Elisabet Moreno Gea · Directora de Operaciones · <span class="page-number">Página 2 de 2</span>
+            <div class="footer-center">
+                Factura Oficial Nº 2026-AS-1001
+            </div>
+            <div class="footer-right">
+                Página 2 de 2
             </div>
         </footer>
     </div>
