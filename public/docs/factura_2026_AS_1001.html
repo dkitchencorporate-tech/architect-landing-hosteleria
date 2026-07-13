@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factura Oficial Nº 2026-AS-1001 - Venta El Gallo</title>
+    <title>Factura Oficial Nº 2026-AS-1001 - Venta El Gallo (Página 1 y 2)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -41,20 +41,28 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Contenedor milimétrico A4: 210mm x 297mm */
-        .a4-container {
+        .document-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        /* Cada contenedor es exactamente una página A4 física: 210mm x 297mm */
+        .a4-page {
             width: 210mm;
             min-height: 297mm;
-            margin: 0 auto;
             background: var(--surface-white);
             border: 1px solid #CCC3B2;
             border-radius: 4px;
-            padding: 16mm 18mm 16mm 18mm;
+            padding: 16mm 18mm 14mm 18mm;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
             position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            page-break-after: always;
+            break-after: page;
         }
 
         /* ── CABECERA INSTITUCIONAL ── */
@@ -64,7 +72,7 @@
             align-items: flex-start;
             border-bottom: 2px solid var(--brand-gold);
             padding-bottom: 14px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .brand-logo {
@@ -118,7 +126,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .entity-box {
@@ -164,11 +172,11 @@
             color: var(--text-main);
         }
 
-        /* ── TABLA DE CONCEPTOS ── */
+        /* ── TABLA DE CONCEPTOS (PÁGINA 1) ── */
         .concepts-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 18px;
+            margin-bottom: 12px;
         }
 
         .concepts-table th {
@@ -196,22 +204,22 @@
             font-weight: 700;
             font-size: 0.96rem;
             color: var(--text-main);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .item-details {
             font-size: 0.82rem;
-            line-height: 1.5;
+            line-height: 1.55;
             color: var(--text-secondary);
         }
 
         .item-details ul {
-            margin-top: 6px;
+            margin-top: 8px;
             margin-left: 18px;
         }
 
         .item-details li {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
 
         .guarantee-box {
@@ -219,21 +227,21 @@
             background: #FFF8F0;
             color: #A03B0B;
             border: 1px solid #E6B588;
-            padding: 4px 11px;
+            padding: 5px 12px;
             border-radius: 3px;
             font-size: 0.75rem;
             font-weight: 600;
-            margin-top: 8px;
+            margin-top: 10px;
             letter-spacing: 0.01em;
         }
 
-        /* ── DESGLOSE ECONÓMICO Y TOTALES (IZQUIERDA EXPLICATIVO / DERECHA TOTAL) ── */
+        /* ── DESGLOSE ECONÓMICO Y TOTAL (PÁGINA 2) ── */
         .financial-summary-section {
             background: var(--surface-light);
             border: 1px solid var(--border-warm);
             border-radius: 5px;
-            padding: 14px 18px;
-            margin-bottom: 20px;
+            padding: 16px 20px;
+            margin-bottom: 22px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -241,7 +249,7 @@
 
         .breakdown-left {
             display: flex;
-            gap: 28px;
+            gap: 36px;
         }
 
         .breakdown-item {
@@ -258,7 +266,7 @@
         }
 
         .breakdown-item .value {
-            font-size: 0.98rem;
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--text-main);
             margin-top: 2px;
@@ -267,11 +275,11 @@
         .grand-total-right {
             text-align: right;
             border-left: 2px solid var(--brand-gold);
-            padding-left: 24px;
+            padding-left: 28px;
         }
 
         .grand-total-right .label {
-            font-size: 0.76rem;
+            font-size: 0.78rem;
             font-weight: 700;
             color: var(--text-main);
             text-transform: uppercase;
@@ -279,24 +287,24 @@
         }
 
         .grand-total-right .amount {
-            font-size: 1.35rem;
+            font-size: 1.45rem;
             font-weight: 700;
             color: var(--brand-orange);
-            margin-top: 1px;
+            margin-top: 2px;
             line-height: 1.1;
         }
 
-        /* ── OBSERVACIONES Y CONDICIONES DE ABONO ACORDADAS ── */
+        /* ── OBSERVACIONES Y CONDICIONES DE PAGO ACORDADAS (PÁGINA 2) ── */
         .terms-section {
             border: 1px solid var(--border-warm);
             border-left: 3.5px solid var(--brand-gold);
             border-radius: 5px;
-            padding: 14px 16px;
-            margin-bottom: 20px;
+            padding: 16px 18px;
+            margin-bottom: 22px;
         }
 
         .terms-section h4 {
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             font-weight: 700;
             color: var(--text-main);
             text-transform: uppercase;
@@ -308,20 +316,20 @@
             font-size: 0.82rem;
             color: var(--text-secondary);
             line-height: 1.45;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
 
         .milestones-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 14px;
+            gap: 16px;
         }
 
         .milestone-card {
             background: var(--surface-light);
             border: 1px solid var(--border-warm);
             border-radius: 4px;
-            padding: 11px 14px;
+            padding: 12px 14px;
         }
 
         .milestone-card .title {
@@ -333,22 +341,33 @@
         }
 
         .milestone-card .price {
-            font-size: 0.98rem;
+            font-size: 1.02rem;
             font-weight: 700;
             color: var(--brand-orange);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .milestone-card .concept-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-main);
+        .milestone-card .concept-box {
             background: #FFFFFF;
-            border: 1px solid #E0D7C9;
-            padding: 3px 8px;
+            border: 1px solid #D8CEBE;
+            border-left: 3px solid var(--brand-gold);
+            padding: 6px 9px;
             border-radius: 3px;
-            margin-bottom: 6px;
-            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .milestone-card .concept-box .c-title {
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .milestone-card .concept-box .c-val {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 1px;
         }
 
         .milestone-card .note {
@@ -357,21 +376,21 @@
             line-height: 1.4;
         }
 
-        /* ── INFORMACIÓN BANCARIA ── */
+        /* ── INFORMACIÓN BANCARIA (PÁGINA 2) ── */
         .payment-info-section {
             border: 1px solid var(--border-warm);
             border-radius: 5px;
-            padding: 14px 16px;
-            margin-bottom: 22px;
+            padding: 16px 18px;
+            margin-bottom: 12px;
         }
 
         .payment-info-section h4 {
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             font-weight: 700;
             color: var(--text-main);
             text-transform: uppercase;
             letter-spacing: 0.03em;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             border-bottom: 1px solid var(--border-warm);
             padding-bottom: 6px;
         }
@@ -379,14 +398,14 @@
         .payment-methods-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+            gap: 14px;
         }
 
         .pay-method {
             background: var(--surface-light);
             border: 1px solid var(--border-warm);
             border-radius: 4px;
-            padding: 10px 12px;
+            padding: 12px 14px;
         }
 
         .pay-method .label {
@@ -394,7 +413,7 @@
             font-weight: 600;
             color: var(--text-muted);
             text-transform: uppercase;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             display: block;
         }
 
@@ -408,12 +427,12 @@
         .pay-method .sub {
             font-size: 0.74rem;
             color: var(--text-muted);
-            margin-top: 2px;
+            margin-top: 3px;
             display: block;
         }
 
-        /* ── PIE INSTITUCIONAL DE FACTURA (SOBRIO, LIMPIO Y REALISTA) ── */
-        .invoice-footer {
+        /* ── PIE INSTITUCIONAL DE PÁGINA (PÁGINA 1 Y 2) ── */
+        .a4-footer {
             border-top: 1px solid var(--border-warm);
             padding-top: 14px;
             display: flex;
@@ -423,31 +442,21 @@
             color: var(--text-muted);
         }
 
-        .footer-left strong {
+        .a4-footer strong {
             color: var(--text-main);
-            font-size: 0.84rem;
-            display: block;
+            font-size: 0.82rem;
         }
 
-        .footer-right {
-            text-align: right;
-        }
-
-        .footer-right .issuer-name {
+        .a4-footer .page-number {
             font-weight: 700;
-            color: var(--text-main);
-            font-size: 0.88rem;
-        }
-
-        .footer-right .issuer-details {
-            font-size: 0.76rem;
-            color: var(--text-secondary);
+            color: var(--brand-orange);
         }
 
         /* ── BOTÓN DE IMPRESIÓN (SOLO PANTALLA) ── */
         .print-btn-wrap {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 10px;
+            margin-bottom: 30px;
         }
 
         .print-button {
@@ -456,7 +465,7 @@
             color: #ffffff;
             font-weight: 700;
             font-size: 0.95rem;
-            padding: 14px 32px;
+            padding: 14px 34px;
             border-radius: 6px;
             text-decoration: none;
             border: none;
@@ -469,24 +478,29 @@
             background: #e03c00;
         }
 
-        /* ── REGLAS DE IMPRESIÓN MILIMÉTRICAS A4 PÁGINA 1 DE 1 ── */
+        /* ── REGLAS DE IMPRESIÓN MILIMÉTRICAS A4 ── */
         @media print {
             body {
                 background: #ffffff !important;
                 padding: 0 !important;
             }
-            .a4-container {
+            .document-wrapper {
+                gap: 0 !important;
+            }
+            .a4-page {
                 width: 100% !important;
-                min-height: 100% !important;
+                min-height: 100vh !important;
                 margin: 0 !important;
-                padding: 0 !important;
+                padding: 12mm 15mm 12mm 15mm !important;
                 border: none !important;
                 box-shadow: none !important;
+                page-break-after: always !important;
+                break-after: page !important;
             }
             .print-btn-wrap {
                 display: none !important;
             }
-            .entity-box, .terms-section, .milestone-card, .payment-info-section, .pay-method, .concepts-table th, .guarantee-box, .financial-summary-section {
+            .entity-box, .terms-section, .milestone-card, .payment-info-section, .pay-method, .concepts-table th, .guarantee-box, .financial-summary-section, .milestone-card .concept-box {
                 background: #FDFCF9 !important;
                 border-color: #D6CBB8 !important;
                 -webkit-print-color-adjust: exact;
@@ -497,155 +511,194 @@
 </head>
 <body>
 
-<div class="a4-container">
+<div class="document-wrapper">
 
-    <div>
-        <!-- CABECERA -->
-        <header class="invoice-header">
-            <div class="brand-info">
-                <div class="brand-logo">ARCHITECT.<span>SYS</span></div>
-                <div class="brand-subtitle">Arquitectura Web & Software de Alto Standing</div>
-            </div>
-            <div class="header-meta">
-                <div class="title">FACTURA COMERCIAL</div>
-                <div class="invoice-number">Nº 2026-AS-1001</div>
-                <div class="date">Fecha de Emisión: 13 de Julio de 2026</div>
-            </div>
-        </header>
+    <!-- ════════════════════════════════════════════════════════════════════════
+         PÁGINA 1 DE 2: CABECERA, ENTIDADES Y DESCRIPCIÓN TÉCNICA DEL SERVICIO
+    ════════════════════════════════════════════════════════════════════════ -->
+    <div class="a4-page">
+        <div>
+            <!-- CABECERA -->
+            <header class="invoice-header">
+                <div class="brand-info">
+                    <div class="brand-logo">ARCHITECT.<span>SYS</span></div>
+                    <div class="brand-subtitle">Arquitectura Web & Software de Alto Standing</div>
+                </div>
+                <div class="header-meta">
+                    <div class="title">FACTURA COMERCIAL</div>
+                    <div class="invoice-number">Nº 2026-AS-1001</div>
+                    <div class="date">Fecha de Emisión: 13 de Julio de 2026</div>
+                </div>
+            </header>
 
-        <!-- EMISOR Y RECEPTOR -->
-        <section class="entities-grid">
-            <div class="entity-box">
-                <h3>Proveedor / Emisor Fiscal</h3>
-                <div class="name">Elisabet Moreno Gea</div>
-                <div class="role">Directora de Operaciones (Architect.Sys)</div>
-                <p><strong>NIF / CIF:</strong> 74019799A</p>
-                <p><strong>Entidad:</strong> Architect.Sys</p>
-                <p><strong>Domicilio Operativo:</strong> Granada / Andalucía, España</p>
-                <p><strong>Teléfono Oficial:</strong> +34 622 56 26 59</p>
-            </div>
+            <!-- EMISOR Y RECEPTOR -->
+            <section class="entities-grid">
+                <div class="entity-box">
+                    <h3>Proveedor / Emisor Fiscal</h3>
+                    <div class="name">Elisabet Moreno Gea</div>
+                    <div class="role">Directora de Operaciones (Architect.Sys)</div>
+                    <p><strong>NIF / CIF:</strong> 74019799A</p>
+                    <p><strong>Entidad:</strong> Architect.Sys</p>
+                    <p><strong>Domicilio Operativo:</strong> Granada / Andalucía, España</p>
+                    <p><strong>Teléfono Oficial:</strong> +34 622 56 26 59</p>
+                </div>
 
-            <div class="entity-box">
-                <h3>Cliente / Receptor Fiscal</h3>
-                <div class="name">VENTA EL GALLO</div>
-                <div class="role">Encarnación Heredia Robles</div>
-                <p><strong>NIF / CIF:</strong> 44299158P</p>
-                <p><strong>Domicilio Fiscal:</strong> Barranco de los Negros, 5</p>
-                <p><strong>Localidad:</strong> 18010 Granada, España</p>
-                <p><strong>Proyecto Ref:</strong> AS-2026-VEG-01</p>
-            </div>
-        </section>
+                <div class="entity-box">
+                    <h3>Cliente / Receptor Fiscal</h3>
+                    <div class="name">VENTA EL GALLO</div>
+                    <div class="role">Encarnación Heredia Robles</div>
+                    <p><strong>NIF / CIF:</strong> 44299158P</p>
+                    <p><strong>Domicilio Fiscal:</strong> Barranco de los Negros, 5</p>
+                    <p><strong>Localidad:</strong> 18010 Granada, España</p>
+                    <p><strong>Proyecto Ref:</strong> AS-2026-VEG-01</p>
+                </div>
+            </section>
 
-        <!-- TABLA DE CONCEPTOS -->
-        <table class="concepts-table">
-            <thead>
-                <tr>
-                    <th style="width: 76%;">Descripción del Servicio / Proyecto Tecnológico (Factura Nº 2026-AS-1001)</th>
-                    <th style="width: 24%; text-align: right;">Importe (Base Imponible)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="item-header">Diseño e Ingeniería Web PWA - Proyecto Venta El Gallo (Ref: AS-2026-VEG-01)</div>
-                        <div class="item-details">
-                            Desarrollo y arquitectura de aplicación web progresiva (PWA) bilingüe (Español/Inglés) de ultra-alta velocidad construida bajo Next.js / React 19, con estética corporativa de alto standing y sistema optimizado de conversión turística para el Sacromonte.<br/>
-                            <ul>
-                                <li><strong>Inyección y Estructuración Integral:</strong> Carga y maquetación de cartas gastronómicas actualizadas, horarios de pases de espectáculo flamenco, historia del local y galería multimedia oficial.</li>
-                                <li><strong>Plazo de Entrega Operativa:</strong> Despliegue en producción garantizado en un plazo exacto de <strong>48 a 72 horas hábiles</strong> tras la recepción del Dosier de Onboarding con contenido y credenciales.</li>
-                                <li><strong>Garantía de Servicio en Servidor IONOS:</strong> Cobertura técnica y garantía de funcionamiento 100% activa hasta verificar y certificar la publicación, certificado SSL y perfecta operativa en el servidor IONOS del cliente (`0 €/mes` de cuotas de mantenimiento recurrentes posteriores).</li>
-                                <li><strong>Cesión Perpetua de Propiedad (`Static Export`):</strong> Entrega total e irrevocable de los archivos compilados y código para su explotación autónoma en el dominio oficial del cliente sin licencias de terceros.</li>
-                            </ul>
-                            <div class="guarantee-box">[ Certificación de Garantía: Despliegue 100% Funcional y Verificado en Servidores IONOS ]</div>
-                        </div>
-                    </td>
-                    <td style="text-align: right; font-weight: 700; font-size: 1.05rem; color: var(--text-main);">
-                        400,00 €
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+            <!-- TABLA DE CONCEPTOS -->
+            <table class="concepts-table">
+                <thead>
+                    <tr>
+                        <th style="width: 76%;">Descripción del Servicio / Proyecto Tecnológico (Factura Nº 2026-AS-1001)</th>
+                        <th style="width: 24%; text-align: right;">Importe (Base Imponible)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="item-header">Diseño e Ingeniería Web PWA - Proyecto Venta El Gallo (Ref: AS-2026-VEG-01)</div>
+                            <div class="item-details">
+                                Desarrollo y arquitectura de aplicación web progresiva (PWA) bilingüe (Español/Inglés) de ultra-alta velocidad construida bajo Next.js / React 19, con estética corporativa de alto standing y sistema optimizado de conversión turística para el Sacromonte.<br/>
+                                <ul>
+                                    <li><strong>Inyección y Estructuración Integral:</strong> Carga y maquetación de cartas gastronómicas actualizadas, horarios de pases de espectáculo flamenco, historia de las cuevas y galería multimedia oficial.</li>
+                                    <li><strong>Plazo de Entrega Operativa:</strong> Despliegue en producción garantizado en un plazo exacto de <strong>48 a 72 horas hábiles</strong> tras la recepción del Dosier de Onboarding con contenido y credenciales.</li>
+                                    <li><strong>Garantía de Servicio en Servidor IONOS:</strong> Cobertura técnica y garantía de funcionamiento 100% activa hasta verificar y certificar la correcta publicación, certificado SSL y perfecta navegación en el servidor IONOS del cliente (`0 €/mes` de cuotas de mantenimiento recurrentes posteriores).</li>
+                                    <li><strong>Cesión Perpetua de Propiedad (`Static Export`):</strong> Entrega total e irrevocable de los archivos compilados y código fuente para su explotación autónoma en el dominio oficial del cliente sin licencias de terceros.</li>
+                                </ul>
+                                <div class="guarantee-box">[ Certificación de Garantía: Despliegue 100% Funcional y Verificado en Servidores IONOS ]</div>
+                            </div>
+                        </td>
+                        <td style="text-align: right; font-weight: 700; font-size: 1.05rem; color: var(--text-main);">
+                            400,00 €
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <!-- DESGLOSE ECONÓMICO Y TOTAL (IZQUIERDA EXPLICATIVO / DERECHA TOTAL DESTACADO) -->
-        <section class="financial-summary-section">
-            <div class="breakdown-left">
-                <div class="breakdown-item">
-                    <span class="label">Base Imponible</span>
-                    <span class="value">400,00 €</span>
-                </div>
-                <div class="breakdown-item">
-                    <span class="label">Tipo de IVA (21%)</span>
-                    <span class="value">84,00 €</span>
-                </div>
+        <!-- PIE INSTITUCIONAL PÁGINA 1 -->
+        <footer class="a4-footer">
+            <div>
+                <strong>Architect.Sys · División de Arquitectura Web y Software</strong> · Granada, España
             </div>
-            <div class="grand-total-right">
-                <div class="label">Importe Total a Pagar</div>
-                <div class="amount">484,00 €</div>
+            <div>
+                <span class="page-number">Página 1 de 2</span> · Factura Oficial Nº 2026-AS-1001
             </div>
-        </section>
-
-        <!-- OBSERVACIONES Y CONDICIONES DE PAGO ACORDADAS (SIN "LABORATORIO" + CONCEPTOS EXACTOS) -->
-        <section class="terms-section">
-            <h4>Observaciones y Condiciones de Pago Acordadas</h4>
-            <p>
-                El pago total del proyecto se fracciona en dos abonos exactos del 50%, garantizando máxima transparencia operativa y seguridad para ambas partes:
-            </p>
-            <div class="milestones-grid">
-                <div class="milestone-card" style="border-left: 3px solid var(--brand-orange);">
-                    <div class="title">Primer Abono (50% - Inicio de Proyecto)</div>
-                    <div class="price">242,00 € (IVA Incluido)</div>
-                    <div class="concept-label">Concepto a indicar: "Abono 1 Venta El Gallo"</div>
-                    <div class="note">Destinado al inicio de la ingeniería, maquetación del contenido gastronómico y configuración estructural del sistema en un plazo de 48 a 72 horas hábiles.</div>
-                </div>
-                <div class="milestone-card" style="border-left: 3px solid var(--brand-gold);">
-                    <div class="title">Segundo Abono (50% - Entrega Final)</div>
-                    <div class="price">242,00 € (IVA Incluido)</div>
-                    <div class="concept-label">Concepto a indicar: "Abono 2 Venta El Gallo"</div>
-                    <div class="note">Destinado a la entrega definitiva, verificación técnica, instalación del certificado SSL y publicación funcional del proyecto en los servidores IONOS del cliente.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- INFORMACIÓN DE PAGO EN CUENTA -->
-        <section class="payment-info-section">
-            <h4>Información de Pago en Cuenta / Canales de Cobro</h4>
-            <div class="payment-methods-grid">
-                <div class="pay-method">
-                    <span class="label">Titular Bancario</span>
-                    <div class="value">Elisabet Moreno Gea</div>
-                    <span class="sub">Architect.Sys</span>
-                </div>
-                <div class="pay-method">
-                    <span class="label">Transferencia SEPA (IBAN)</span>
-                    <div class="value" style="font-size: 0.8rem;">ES37 2100 4445 1813 0016 3823</div>
-                    <span class="sub">Ingreso en Cuenta Corporativa</span>
-                </div>
-                <div class="pay-method">
-                    <span class="label">Bizum Empresarial Inmediato</span>
-                    <div class="value">+34 623 55 01 19</div>
-                    <span class="sub">Ref: Abono 1 Venta El Gallo</span>
-                </div>
-            </div>
-        </section>
+        </footer>
     </div>
 
-    <!-- PIE DE FACTURA SOBRIO Y REALISTA (ESTÁNDAR CONSULTORÍA ESPAÑA) -->
-    <footer class="invoice-footer">
-        <div class="footer-left">
-            <strong>Architect.Sys · División de Arquitectura Web y Software</strong>
-            <span>Referencia de Expediente: AS-2026-1001-VEG · Granada, España</span>
+
+    <!-- ════════════════════════════════════════════════════════════════════════
+         PÁGINA 2 DE 2: DESGLOSE ECONÓMICO, CONDICIONES DE PAGO Y CANALES
+    ════════════════════════════════════════════════════════════════════════ -->
+    <div class="a4-page">
+        <div>
+            <!-- MINI CABECERA PÁGINA 2 -->
+            <header class="invoice-header" style="margin-bottom: 24px;">
+                <div class="brand-info">
+                    <div class="brand-logo" style="font-size: 1.35rem;">ARCHITECT.<span>SYS</span></div>
+                    <div class="brand-subtitle">Factura Nº 2026-AS-1001 · Desglose Económico y Canales de Pago</div>
+                </div>
+                <div class="header-meta">
+                    <div class="title" style="font-size: 1rem;">CONTINUACIÓN DOCUMENTO</div>
+                    <div class="date">Cliente: Venta El Gallo (AS-2026-VEG-01)</div>
+                </div>
+            </header>
+
+            <!-- DESGLOSE ECONÓMICO Y TOTAL DESTACADO -->
+            <section class="financial-summary-section">
+                <div class="breakdown-left">
+                    <div class="breakdown-item">
+                        <span class="label">Base Imponible</span>
+                        <span class="value">400,00 €</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="label">Tipo de IVA (21%)</span>
+                        <span class="value">84,00 €</span>
+                    </div>
+                </div>
+                <div class="grand-total-right">
+                    <div class="label">Importe Total a Pagar</div>
+                    <div class="amount">484,00 €</div>
+                </div>
+            </section>
+
+            <!-- OBSERVACIONES Y CONDICIONES DE PAGO ACORDADAS (CONCEPTOS BANCARIOS PROFESIONALES Y AFINES) -->
+            <section class="terms-section">
+                <h4>Observaciones y Condiciones de Pago Acordadas</h4>
+                <p>
+                    El pago total del proyecto se fracciona en dos abonos exactos del 50%, garantizando máxima transparencia operativa y trazabilidad en la facturación:
+                </p>
+                <div class="milestones-grid">
+                    <div class="milestone-card" style="border-top: 3px solid var(--brand-orange);">
+                        <div class="title">Primer Abono (50% - Inicio de Proyecto)</div>
+                        <div class="price">242,00 € (IVA Incluido)</div>
+                        <div class="concept-box">
+                            <div class="c-title">Concepto bancario exacto a indicar:</div>
+                            <div class="c-val">"FAC 2026-AS-1001 / Abono 1 / PWA Web Venta El Gallo"</div>
+                        </div>
+                        <div class="note">Destinado al inicio de la ingeniería, maquetación del contenido gastronómico y configuración estructural del sistema en un plazo de 48 a 72 horas hábiles.</div>
+                    </div>
+                    <div class="milestone-card" style="border-top: 3px solid var(--brand-gold);">
+                        <div class="title">Segundo Abono (50% - Entrega Final)</div>
+                        <div class="price">242,00 € (IVA Incluido)</div>
+                        <div class="concept-box">
+                            <div class="c-title">Concepto bancario exacto a indicar:</div>
+                            <div class="c-val">"FAC 2026-AS-1001 / Abono 2 / PWA Web Venta El Gallo"</div>
+                        </div>
+                        <div class="note">Destinado a la entrega definitiva, verificación técnica, instalación del certificado SSL y publicación funcional del proyecto en los servidores IONOS del cliente.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INFORMACIÓN BANCARIA Y CANALES DE COBRO -->
+            <section class="payment-info-section">
+                <h4>Información de Pago en Cuenta / Canales de Cobro</h4>
+                <div class="payment-methods-grid">
+                    <div class="pay-method">
+                        <span class="label">Titular Bancario</span>
+                        <div class="value">Elisabet Moreno Gea</div>
+                        <span class="sub">Architect.Sys</span>
+                    </div>
+                    <div class="pay-method">
+                        <span class="label">Transferencia SEPA (IBAN)</span>
+                        <div class="value" style="font-size: 0.82rem;">ES37 2100 4445 1813 0016 3823</div>
+                        <span class="sub">Ingreso en Cuenta Corporativa</span>
+                    </div>
+                    <div class="pay-method">
+                        <span class="label">Bizum Empresarial Inmediato</span>
+                        <div class="value">+34 623 55 01 19</div>
+                        <span class="sub">Ref: FAC 1001 Abono 1 PWA</span>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="footer-right">
-            <div class="issuer-name">Elisabet Moreno Gea</div>
-            <div class="issuer-details">Directora de Operaciones · NIF: 74019799A</div>
-        </div>
-    </footer>
+
+        <!-- PIE INSTITUCIONAL PÁGINA 2 -->
+        <footer class="a4-footer">
+            <div>
+                <strong>Architect.Sys · División de Arquitectura Web y Software</strong> · Ref: AS-2026-1001-VEG
+            </div>
+            <div>
+                Elisabet Moreno Gea · Directora de Operaciones · <span class="page-number">Página 2 de 2</span>
+            </div>
+        </footer>
+    </div>
 
 </div>
 
 <!-- BOTÓN IMPRIMIR PANTALLA -->
 <div class="print-btn-wrap">
-    <button class="print-button" onclick="window.print()">Descargar Factura Oficial en PDF (Formato A4)</button>
+    <button class="print-button" onclick="window.print()">Descargar Factura Oficial en PDF (Página 1 y 2 en A4)</button>
 </div>
 
 </body>
