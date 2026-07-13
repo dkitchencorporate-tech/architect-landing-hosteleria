@@ -168,7 +168,7 @@
         .concepts-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .concepts-table th {
@@ -227,50 +227,67 @@
             letter-spacing: 0.01em;
         }
 
-        /* ── TOTALES Y RESUMEN ECONÓMICO ── */
-        .totals-wrapper {
+        /* ── DESGLOSE ECONÓMICO Y TOTALES (IZQUIERDA EXPLICATIVO / DERECHA TOTAL) ── */
+        .financial-summary-section {
+            background: var(--surface-light);
+            border: 1px solid var(--border-warm);
+            border-radius: 5px;
+            padding: 14px 18px;
+            margin-bottom: 20px;
             display: flex;
-            justify-content: flex-end;
-            margin-bottom: 22px;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .totals-table {
-            width: 320px;
-            border-collapse: collapse;
+        .breakdown-left {
+            display: flex;
+            gap: 28px;
         }
 
-        .totals-table td {
-            padding: 6px 10px;
-            font-size: 0.88rem;
-            color: var(--text-secondary);
+        .breakdown-item {
+            display: flex;
+            flex-direction: column;
         }
 
-        .totals-table td.label {
-            text-align: left;
-            font-weight: 500;
-        }
-
-        .totals-table td.amount {
-            text-align: right;
+        .breakdown-item .label {
+            font-size: 0.74rem;
             font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .breakdown-item .value {
+            font-size: 0.98rem;
+            font-weight: 700;
             color: var(--text-main);
+            margin-top: 2px;
         }
 
-        .totals-table tr.tax-row td {
-            border-bottom: 1px solid var(--border-warm);
-            padding-bottom: 10px;
+        .grand-total-right {
+            text-align: right;
+            border-left: 2px solid var(--brand-gold);
+            padding-left: 24px;
         }
 
-        .totals-table tr.grand-total td {
-            padding-top: 12px;
-            font-size: 1.15rem;
+        .grand-total-right .label {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .grand-total-right .amount {
+            font-size: 1.35rem;
             font-weight: 700;
             color: var(--brand-orange);
+            margin-top: 1px;
+            line-height: 1.1;
         }
 
-        /* ── OBSERVACIONES Y CONDICIONES DE PAGO ── */
+        /* ── OBSERVACIONES Y CONDICIONES DE ABONO ACORDADAS ── */
         .terms-section {
-            background: var(--surface-light);
             border: 1px solid var(--border-warm);
             border-left: 3.5px solid var(--brand-gold);
             border-radius: 5px;
@@ -291,20 +308,20 @@
             font-size: 0.82rem;
             color: var(--text-secondary);
             line-height: 1.45;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .milestones-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 14px;
         }
 
         .milestone-card {
-            background: #fff;
+            background: var(--surface-light);
             border: 1px solid var(--border-warm);
             border-radius: 4px;
-            padding: 10px 12px;
+            padding: 11px 14px;
         }
 
         .milestone-card .title {
@@ -312,20 +329,32 @@
             font-weight: 700;
             color: var(--text-main);
             text-transform: uppercase;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
         .milestone-card .price {
             font-size: 0.98rem;
             font-weight: 700;
             color: var(--brand-orange);
-            margin-bottom: 3px;
+            margin-bottom: 6px;
+        }
+
+        .milestone-card .concept-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-main);
+            background: #FFFFFF;
+            border: 1px solid #E0D7C9;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-bottom: 6px;
+            display: inline-block;
         }
 
         .milestone-card .note {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            line-height: 1.35;
+            font-size: 0.76rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
         }
 
         /* ── INFORMACIÓN BANCARIA ── */
@@ -383,62 +412,36 @@
             display: block;
         }
 
-        /* ── PIE INSTITUCIONAL DE FACTURA & FIRMA (SIN EMOJIS NI HASH COMPLEJO) ── */
+        /* ── PIE INSTITUCIONAL DE FACTURA (SOBRIO, LIMPIO Y REALISTA) ── */
         .invoice-footer {
             border-top: 1px solid var(--border-warm);
-            padding-top: 16px;
+            padding-top: 14px;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: center;
             font-size: 0.78rem;
             color: var(--text-muted);
         }
 
-        .legal-block {
-            line-height: 1.5;
-        }
-
-        .legal-block strong {
+        .footer-left strong {
             color: var(--text-main);
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             display: block;
-            margin-bottom: 2px;
         }
 
-        .signature-block {
+        .footer-right {
             text-align: right;
         }
 
-        .signature-block .sig-title {
-            font-size: 0.76rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            margin-bottom: 3px;
-        }
-
-        .signature-block .sig-name {
-            font-size: 0.98rem;
+        .footer-right .issuer-name {
             font-weight: 700;
             color: var(--text-main);
+            font-size: 0.88rem;
         }
 
-        .signature-block .sig-role {
-            font-size: 0.78rem;
-            color: var(--brand-orange);
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-
-        .signature-block .sig-stamp {
-            display: inline-block;
-            border: 1px solid var(--brand-gold);
-            color: var(--brand-gold);
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 2px 8px;
-            border-radius: 3px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
+        .footer-right .issuer-details {
+            font-size: 0.76rem;
+            color: var(--text-secondary);
         }
 
         /* ── BOTÓN DE IMPRESIÓN (SOLO PANTALLA) ── */
@@ -483,7 +486,7 @@
             .print-btn-wrap {
                 display: none !important;
             }
-            .entity-box, .terms-section, .milestone-card, .payment-info-section, .pay-method, .concepts-table th, .guarantee-box {
+            .entity-box, .terms-section, .milestone-card, .payment-info-section, .pay-method, .concepts-table th, .guarantee-box, .financial-summary-section {
                 background: #FDFCF9 !important;
                 border-color: #D6CBB8 !important;
                 -webkit-print-color-adjust: exact;
@@ -537,8 +540,8 @@
         <table class="concepts-table">
             <thead>
                 <tr>
-                    <th style="width: 74%;">Descripción del Servicio / Proyecto Tecnológico (Factura Nº 2026-AS-1001)</th>
-                    <th style="width: 26%; text-align: right;">Importe (Base Imponible)</th>
+                    <th style="width: 76%;">Descripción del Servicio / Proyecto Tecnológico (Factura Nº 2026-AS-1001)</th>
+                    <th style="width: 24%; text-align: right;">Importe (Base Imponible)</th>
                 </tr>
             </thead>
             <tbody>
@@ -549,7 +552,7 @@
                             Desarrollo y arquitectura de aplicación web progresiva (PWA) bilingüe (Español/Inglés) de ultra-alta velocidad construida bajo Next.js / React 19, con estética corporativa de alto standing y sistema optimizado de conversión turística para el Sacromonte.<br/>
                             <ul>
                                 <li><strong>Inyección y Estructuración Integral:</strong> Carga y maquetación de cartas gastronómicas actualizadas, horarios de pases de espectáculo flamenco, historia del local y galería multimedia oficial.</li>
-                                <li><strong>Plazo de Entrega Operativa:</strong> Despliegue en entorno de producción garantizado en un plazo exacto de <strong>48 a 72 horas hábiles</strong> tras la recepción del Dosier de Onboarding con contenido y credenciales.</li>
+                                <li><strong>Plazo de Entrega Operativa:</strong> Despliegue en producción garantizado en un plazo exacto de <strong>48 a 72 horas hábiles</strong> tras la recepción del Dosier de Onboarding con contenido y credenciales.</li>
                                 <li><strong>Garantía de Servicio en Servidor IONOS:</strong> Cobertura técnica y garantía de funcionamiento 100% activa hasta verificar y certificar la publicación, certificado SSL y perfecta operativa en el servidor IONOS del cliente (`0 €/mes` de cuotas de mantenimiento recurrentes posteriores).</li>
                                 <li><strong>Cesión Perpetua de Propiedad (`Static Export`):</strong> Entrega total e irrevocable de los archivos compilados y código para su explotación autónoma en el dominio oficial del cliente sin licencias de terceros.</li>
                             </ul>
@@ -563,40 +566,42 @@
             </tbody>
         </table>
 
-        <!-- TOTALES -->
-        <div class="totals-wrapper">
-            <table class="totals-table">
-                <tr>
-                    <td class="label">Base Imponible:</td>
-                    <td class="amount">400,00 €</td>
-                </tr>
-                <tr class="tax-row">
-                    <td class="label">Tipo de IVA (21%):</td>
-                    <td class="amount">84,00 €</td>
-                </tr>
-                <tr class="grand-total">
-                    <td class="label">IMPORTE TOTAL:</td>
-                    <td class="amount">484,00 €</td>
-                </tr>
-            </table>
-        </div>
+        <!-- DESGLOSE ECONÓMICO Y TOTAL (IZQUIERDA EXPLICATIVO / DERECHA TOTAL DESTACADO) -->
+        <section class="financial-summary-section">
+            <div class="breakdown-left">
+                <div class="breakdown-item">
+                    <span class="label">Base Imponible</span>
+                    <span class="value">400,00 €</span>
+                </div>
+                <div class="breakdown-item">
+                    <span class="label">Tipo de IVA (21%)</span>
+                    <span class="value">84,00 €</span>
+                </div>
+            </div>
+            <div class="grand-total-right">
+                <div class="label">Importe Total a Pagar</div>
+                <div class="amount">484,00 €</div>
+            </div>
+        </section>
 
-        <!-- OBSERVACIONES Y CONDICIONES DE PAGO ACORDADAS -->
+        <!-- OBSERVACIONES Y CONDICIONES DE PAGO ACORDADAS (SIN "LABORATORIO" + CONCEPTOS EXACTOS) -->
         <section class="terms-section">
             <h4>Observaciones y Condiciones de Pago Acordadas</h4>
             <p>
-                Condiciones de pago acordadas: Primer abono del 50% (242,00 €) a la emisión de este documento para inicio de producción. Segundo abono restante del 50% (242,00 €) a la entrega y despliegue final del proyecto en servidores IONOS.
+                El pago total del proyecto se fracciona en dos abonos exactos del 50%, garantizando máxima transparencia operativa y seguridad para ambas partes:
             </p>
             <div class="milestones-grid">
                 <div class="milestone-card" style="border-left: 3px solid var(--brand-orange);">
-                    <div class="title">Primer Abono (50% - Inicio Producción)</div>
+                    <div class="title">Primer Abono (50% - Inicio de Proyecto)</div>
                     <div class="price">242,00 € (IVA Incluido)</div>
-                    <div class="note">Abonar a la emisión de este documento para activar la arquitectura en laboratorio en 48-72h.</div>
+                    <div class="concept-label">Concepto a indicar: "Abono 1 Venta El Gallo"</div>
+                    <div class="note">Destinado al inicio de la ingeniería, maquetación del contenido gastronómico y configuración estructural del sistema en un plazo de 48 a 72 horas hábiles.</div>
                 </div>
                 <div class="milestone-card" style="border-left: 3px solid var(--brand-gold);">
-                    <div class="title">Segundo Abono (50% - Despliegue en IONOS)</div>
+                    <div class="title">Segundo Abono (50% - Entrega Final)</div>
                     <div class="price">242,00 € (IVA Incluido)</div>
-                    <div class="note">Abonar a la entrega final y certificación de funcionamiento en el servidor IONOS del cliente.</div>
+                    <div class="concept-label">Concepto a indicar: "Abono 2 Venta El Gallo"</div>
+                    <div class="note">Destinado a la entrega definitiva, verificación técnica, instalación del certificado SSL y publicación funcional del proyecto en los servidores IONOS del cliente.</div>
                 </div>
             </div>
         </section>
@@ -624,18 +629,15 @@
         </section>
     </div>
 
-    <!-- PIE INSTITUCIONAL DE FACTURA & FIRMA (SIN HASH COMPLEJO NI EMOJIS) -->
+    <!-- PIE DE FACTURA SOBRIO Y REALISTA (ESTÁNDAR CONSULTORÍA ESPAÑA) -->
     <footer class="invoice-footer">
-        <div class="legal-block">
+        <div class="footer-left">
             <strong>Architect.Sys · División de Arquitectura Web y Software</strong>
-            <span>Referencia de Expediente: AS-2026-1001-VEG</span><br/>
-            <span>Documento oficial emitido conforme al RD 1619/2012 (Reglamento de Facturación en España).</span>
+            <span>Referencia de Expediente: AS-2026-1001-VEG · Granada, España</span>
         </div>
-        <div class="signature-block">
-            <div class="sig-title">Firma Electrónica y Certificación de Emisión:</div>
-            <div class="sig-name">Elisabet Moreno Gea</div>
-            <div class="sig-role">Directora de Operaciones (Architect.Sys)</div>
-            <div class="sig-stamp">Firma Digital Autorizada · RD 1619/2012</div>
+        <div class="footer-right">
+            <div class="issuer-name">Elisabet Moreno Gea</div>
+            <div class="issuer-details">Directora de Operaciones · NIF: 74019799A</div>
         </div>
     </footer>
 
