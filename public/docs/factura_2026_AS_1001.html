@@ -6,7 +6,7 @@
     <title>Factura Oficial Nº 2026-AS-1001 - Venta El Gallo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --brand-orange: #FF4500;
@@ -41,7 +41,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Contenedor exactamente dimensionado en ancho A4 (210mm) con alto min A4 (297mm) para previsualización idéntica al impreso */
+        /* Contenedor milimétrico A4: 210mm x 297mm */
         .a4-container {
             width: 210mm;
             min-height: 297mm;
@@ -214,16 +214,17 @@
             margin-bottom: 4px;
         }
 
-        .guarantee-badge {
+        .guarantee-box {
             display: inline-block;
-            background: #FFF5EC;
-            color: #C2410C;
-            border: 1px solid #FDBA74;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 0.76rem;
+            background: #FFF8F0;
+            color: #A03B0B;
+            border: 1px solid #E6B588;
+            padding: 4px 11px;
+            border-radius: 3px;
+            font-size: 0.75rem;
             font-weight: 600;
             margin-top: 8px;
+            letter-spacing: 0.01em;
         }
 
         /* ── TOTALES Y RESUMEN ECONÓMICO ── */
@@ -373,7 +374,6 @@
             font-weight: 700;
             color: var(--text-main);
             word-break: break-all;
-            font-family: 'JetBrains Mono', monospace;
         }
 
         .pay-method .sub {
@@ -383,33 +383,26 @@
             display: block;
         }
 
-        /* ── PIE DE FACTURA, FIRMA Y CÓDIGO DE ENCRIPTACIÓN / INTEGRIDAD ── */
+        /* ── PIE INSTITUCIONAL DE FACTURA & FIRMA (SIN EMOJIS NI HASH COMPLEJO) ── */
         .invoice-footer {
             border-top: 1px solid var(--border-warm);
             padding-top: 16px;
-            display: grid;
-            grid-template-columns: 1.4fr 1.6fr;
-            gap: 20px;
+            display: flex;
+            justify-content: space-between;
             align-items: flex-end;
-        }
-
-        .security-box {
-            background: #F8F6F0;
-            border: 1px dashed var(--brand-gold);
-            border-radius: 4px;
-            padding: 10px 12px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.72rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            line-height: 1.4;
         }
 
-        .security-box strong {
+        .legal-block {
+            line-height: 1.5;
+        }
+
+        .legal-block strong {
             color: var(--text-main);
+            font-size: 0.82rem;
             display: block;
             margin-bottom: 2px;
-            font-size: 0.74rem;
-            text-transform: uppercase;
         }
 
         .signature-block {
@@ -424,7 +417,7 @@
         }
 
         .signature-block .sig-name {
-            font-size: 1rem;
+            font-size: 0.98rem;
             font-weight: 700;
             color: var(--text-main);
         }
@@ -433,19 +426,19 @@
             font-size: 0.78rem;
             color: var(--brand-orange);
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
 
         .signature-block .sig-stamp {
             display: inline-block;
-            border: 1.5px solid var(--brand-gold);
+            border: 1px solid var(--brand-gold);
             color: var(--brand-gold);
-            font-size: 0.68rem;
-            font-weight: 700;
+            font-size: 0.7rem;
+            font-weight: 600;
             padding: 2px 8px;
             border-radius: 3px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
         /* ── BOTÓN DE IMPRESIÓN (SOLO PANTALLA) ── */
@@ -490,15 +483,9 @@
             .print-btn-wrap {
                 display: none !important;
             }
-            .entity-box, .terms-section, .milestone-card, .payment-info-section, .pay-method, .concepts-table th, .security-box {
+            .entity-box, .terms-section, .milestone-card, .payment-info-section, .pay-method, .concepts-table th, .guarantee-box {
                 background: #FDFCF9 !important;
                 border-color: #D6CBB8 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .guarantee-badge {
-                background: #FFF5EC !important;
-                border-color: #FDBA74 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -546,7 +533,7 @@
             </div>
         </section>
 
-        <!-- TABLA DE CONCEPTOS CON GARANTÍA MILIMÉTRICA DE SERVICIO -->
+        <!-- TABLA DE CONCEPTOS -->
         <table class="concepts-table">
             <thead>
                 <tr>
@@ -566,7 +553,7 @@
                                 <li><strong>Garantía de Servicio en Servidor IONOS:</strong> Cobertura técnica y garantía de funcionamiento 100% activa hasta verificar y certificar la publicación, certificado SSL y perfecta operativa en el servidor IONOS del cliente (`0 €/mes` de cuotas de mantenimiento recurrentes posteriores).</li>
                                 <li><strong>Cesión Perpetua de Propiedad (`Static Export`):</strong> Entrega total e irrevocable de los archivos compilados y código para su explotación autónoma en el dominio oficial del cliente sin licencias de terceros.</li>
                             </ul>
-                            <div class="guarantee-badge">✅ Garantía Operativa: Despliegue 100% Funcional y Verificado en Servidores IONOS</div>
+                            <div class="guarantee-box">[ Certificación de Garantía: Despliegue 100% Funcional y Verificado en Servidores IONOS ]</div>
                         </div>
                     </td>
                     <td style="text-align: right; font-weight: 700; font-size: 1.05rem; color: var(--text-main);">
@@ -620,7 +607,7 @@
             <div class="payment-methods-grid">
                 <div class="pay-method">
                     <span class="label">Titular Bancario</span>
-                    <div class="value" style="font-family: 'Inter', sans-serif;">Elisabet Moreno Gea</div>
+                    <div class="value">Elisabet Moreno Gea</div>
                     <span class="sub">Architect.Sys</span>
                 </div>
                 <div class="pay-method">
@@ -637,13 +624,12 @@
         </section>
     </div>
 
-    <!-- PIE DE FACTURA CON CÓDIGO DE ENCRIPTACIÓN / VERIFICACIÓN ELECTRÓNICA Y FIRMA -->
+    <!-- PIE INSTITUCIONAL DE FACTURA & FIRMA (SIN HASH COMPLEJO NI EMOJIS) -->
     <footer class="invoice-footer">
-        <div class="security-box">
-            <strong>🔒 CÓDIGO DE CONTROL E INTEGRIDAD (CVE)</strong>
-            <span>HASH SHA-256: 8f9a2b1c4e7d6f5a3b2c1e9d8f7a6b5c4d3e</span><br/>
-            <span>TRACKING REF: AS-2026-1001-VEG-74019799A</span><br/>
-            <span style="color: #2e7d32; font-weight: 600;">ESTADO: DOCUMENTO FISCAL VERIFICADO & BLOQUEADO</span>
+        <div class="legal-block">
+            <strong>Architect.Sys · División de Arquitectura Web y Software</strong>
+            <span>Referencia de Expediente: AS-2026-1001-VEG</span><br/>
+            <span>Documento oficial emitido conforme al RD 1619/2012 (Reglamento de Facturación en España).</span>
         </div>
         <div class="signature-block">
             <div class="sig-title">Firma Electrónica y Certificación de Emisión:</div>
@@ -657,7 +643,7 @@
 
 <!-- BOTÓN IMPRIMIR PANTALLA -->
 <div class="print-btn-wrap">
-    <button class="print-button" onclick="window.print()">🖨️ Descargar Factura en PDF (Formato A4 Milimétrico)</button>
+    <button class="print-button" onclick="window.print()">Descargar Factura Oficial en PDF (Formato A4)</button>
 </div>
 
 </body>
