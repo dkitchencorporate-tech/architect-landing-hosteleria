@@ -207,8 +207,9 @@ try {
   await conConexion(async (c) => {
     const { rows } = await c.query(
       `SELECT rolname, rolbypassrls, rolsuper, rolcreaterole FROM pg_roles
-        WHERE rolname IN ('dk_app','dk_anon','dk_auth','neondb_owner') ORDER BY 1`);
-    comprobar('existen los cuatro roles del diseño', rows.length === 4,
+        WHERE rolname IN ('dk_app','dk_anon','dk_auth','dk_sync','dk_sincronizacion','neondb_owner')
+        ORDER BY 1`);
+    comprobar('existen los seis roles del diseño', rows.length === 6,
       rows.map((r) => r.rolname).join(', '));
     for (const r of rows) {
       if (r.rolname === 'neondb_owner') {
@@ -222,6 +223,22 @@ try {
 
     const { rows: [pub] } = await c.query(`SELECT has_schema_privilege('public','public','USAGE') u`);
     comprobar('PUBLIC ya no tiene acceso al esquema public', pub.u === false);
+
+    // La comprobación que de verdad importa de la caché de resiliencia: la
+    // capacidad de enumerar todos los códigos de QR no puede llegar al
+    // despliegue público por ningún camino de herencia. Si esto alguna vez
+    // deja de ser false, el despliegue podría recorrer el catálogo entero de
+    // códigos de todos los clientes.
+    const { rows: [herencia] } = await c.query(
+      `SELECT pg_has_role('dk_app', 'dk_sincronizacion', 'usage') puede`);
+    comprobar('dk_app NO puede adoptar dk_sincronizacion (la caché no llega al despliegue)',
+      herencia.puede === false);
+
+    const { rows: [herenciaSync] } = await c.query(
+      `SELECT pg_has_role('dk_sync', 'dk_anon', 'usage') anon,
+              pg_has_role('dk_sync', 'dk_auth', 'usage') auth`);
+    comprobar('dk_sync no hereda dk_anon ni dk_auth: solo sabe ser dk_sincronizacion',
+      herenciaSync.anon === false && herenciaSync.auth === false);
 
     // Una tabla sin RLS forzado es una puerta abierta esperando a que alguien
     // se conecte con el rol equivocado. Se comprueba por barrido, no de memoria.
@@ -250,6 +267,21 @@ try {
                          WHERE cfg LIKE 'search_path=%')`);
     comprobar('toda función SECURITY DEFINER fija su search_path', sinRuta.length === 0,
       'sin fijar: ' + sinRuta.map((r) => r.proname).join(', '));
+  });
+
+  console.log('\nCACHÉ DE RESILIENCIA (aislamiento de dk_sincronizacion)');
+  await comoRol('dk_anon', async (c) => {
+    const negado = await debeFallar(c, `SELECT * FROM dk.listar_qr_activos()`);
+    comprobar('un visitante anónimo NO puede enumerar los códigos de QR', !!negado, 'devolvió filas');
+  });
+  await comoRol('dk_auth', async (c) => {
+    const negado = await debeFallar(c, `SELECT * FROM dk.listar_qr_activos()`);
+    comprobar('un cliente con sesión NO puede enumerar los códigos de QR', !!negado, 'devolvió filas');
+  });
+  await comoRol('dk_sincronizacion', async (c) => {
+    const r = await c.query(`SELECT codigo, slug FROM dk.listar_qr_activos() WHERE codigo = 'abc12345'`);
+    comprobar('dk_sincronizacion sí puede enumerar los códigos activos',
+      r.rows.length === 1 && r.rows[0].slug === 'casa-pepe');
   });
 
   console.log('\nFRENO DE FRECUENCIA (dk.limite_superado)');

@@ -1,0 +1,46 @@
+# Mantiene viva la caché de resiliencia del motor de QR (ver
+# src/lib/cache-resiliencia.ts y db/sincronizar-cache-resiliencia.mjs).
+#
+# POR QUÉ ESTO NO CORRE EN VERCEL: el token que puede escribir en Global
+# Config no se puede acotar solo a esa capacidad —el más restringido que
+# ofrece Vercel sigue pudiendo tocar despliegues, dominios y variables de
+# entorno del proyecto—. Meterlo en una variable de entorno del despliegue lo
+# pondría al alcance de cualquier ruta pública de la aplicación, repitiendo
+# exactamente el fallo que se cerró con Neon (un despliegue con más autoridad
+# de la que necesita), solo que sobre la cuenta de Vercel en vez de la base
+# de datos. Aquí, en cambio, el token vive en un secreto de GitHub Actions,
+# que no es alcanzable desde ninguna petición HTTP a la aplicación.
+name: Sincronizar caché de resiliencia
+
+on:
+  schedule:
+    # Cada 5 minutos. Es la ventana máxima de antigüedad que puede tener el
+    # menú servido durante una caída real de Neon.
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {} # para forzar una sincronización manual desde GitHub
+
+concurrency:
+  group: sincronizar-cache-resiliencia
+  cancel-in-progress: true
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias mínimas
+        run: npm install --no-save @neondatabase/serverless ws
+
+      - name: Sincronizar
+        env:
+          DK_DATABASE_URL: ${{ secrets.DK_DATABASE_URL }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN_CACHE_RESILIENCIA }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_TEAM_ID }}
+          GLOBAL_CONFIG_ID: ${{ secrets.GLOBAL_CONFIG_ID }}
+        run: node db/sincronizar-cache-resiliencia.mjs

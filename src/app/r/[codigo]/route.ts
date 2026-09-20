@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { resolverCodigo } from '@/lib/menu';
 import { claveDeLimite, ipDeLaPeticion, limiteSuperado } from '@/lib/limite-frecuencia';
+import { resolverCodigoDeRespaldo } from '@/lib/cache-resiliencia';
 
 /**
  * LO QUE HAY DETRÁS DEL QR IMPRESO
@@ -29,6 +30,17 @@ import { claveDeLimite, ipDeLaPeticion, limiteSuperado } from '@/lib/limite-frec
  * pruebas locales; contra el despliegue real de Vercel, 35 peticiones seguidas
  * pasaron 35 de 35, porque cada función serverless tiene la suya propia y
  * nunca comparten el contador. Ver `src/lib/limite-frecuencia.ts`.
+ *
+ * PUNTO ÚNICO DE FALLO, y su respuesta: si Neon falla, esta ruta ya no
+ * responde igual para todos los restaurantes a la vez. Antes de rendirse con
+ * `/carta-no-disponible`, intenta resolver el código contra la caché de
+ * resiliencia (`src/lib/cache-resiliencia.ts`), un espejo de sólo lectura en
+ * Vercel Global Config, ajeno a Neon, sincronizado cada pocos minutos desde
+ * fuera del despliegue. El escaneo resuelto así no se cuenta —esa tabla vive
+ * solo en Neon—, y se sirve con hasta unos minutos de antigüedad. Es
+ * degradación deliberada: un cliente sentado a la mesa ve su carta aunque
+ * Neon esté caído, y el peor efecto real es un umbral de escaneos con una
+ * cifra ligeramente por debajo de la real, no un servicio caído para todos.
  */
 
 export const runtime = 'nodejs';
@@ -85,6 +97,7 @@ export async function GET(
   }
 
   let destino: { slug: string } | null = null;
+  let sirvioDeRespaldo = false;
   try {
     destino = await resolverCodigo(
       codigo,
@@ -94,16 +107,25 @@ export async function GET(
       peticion.headers.get('x-vercel-ip-country')
     );
   } catch (error) {
-    // Si la base falla, quien está en la mesa no tiene la culpa: ve una página
-    // que le explica qué hacer, no una traza de error.
-    console.error('No se pudo resolver el código de QR:', error);
-    return sinCache(NextResponse.redirect(`${origen}/carta-no-disponible`, 302));
+    // Neon no respondió. Antes de dejar a quien está en la mesa sin carta,
+    // se intenta el espejo de sólo lectura. Si tampoco tiene el código, sí se
+    // rinde a /carta-no-disponible: no hay nada más que ofrecer.
+    console.error('No se pudo resolver el código de QR contra Neon, se intenta la caché de resiliencia:', error);
+    destino = await resolverCodigoDeRespaldo(codigo);
+    sirvioDeRespaldo = destino !== null;
+    if (!destino) {
+      return sinCache(NextResponse.redirect(`${origen}/carta-no-disponible`, 302));
+    }
   }
 
   if (!destino) {
     // Un código inexistente y uno desactivado responden igual. Distinguirlos
     // permitiría recorrer el catálogo de clientes probando códigos.
     return sinCache(NextResponse.redirect(`${origen}/carta-no-disponible`, 302));
+  }
+
+  if (sirvioDeRespaldo) {
+    console.warn(`Código ${codigo} resuelto desde la caché de resiliencia: Neon no respondió.`);
   }
 
   // 302 y no 301: la redirección permanente se queda guardada en el navegador,

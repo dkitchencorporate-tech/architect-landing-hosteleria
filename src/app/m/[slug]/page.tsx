@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { obtenerCarta, type PlatoCarta, type SeccionCarta } from '@/lib/menu';
+import { type PlatoCarta, type SeccionCarta } from '@/lib/menu';
+import { obtenerCartaConRespaldo } from '@/lib/cache-resiliencia';
 import { nombreAlergeno } from '@/lib/alergenos';
 
 /**
@@ -19,6 +20,14 @@ import { nombreAlergeno } from '@/lib/alergenos';
  * El aspecto es deliberadamente claro y neutro. Esta pantalla es del
  * restaurante, no nuestra: quien la mira es su cliente. DKitchen aparece una
  * vez, al pie, en pequeño.
+ *
+ * PUNTO ÚNICO DE FALLO, y su respuesta: esta página puede recibir tráfico
+ * directo de un buscador, sin pasar por `/r/{codigo}`, así que necesita su
+ * propio respaldo frente a una caída de Neon. `obtenerCartaConRespaldo()`
+ * intenta Neon y, solo si falla, sirve el espejo de sólo lectura en Vercel
+ * Global Config (`src/lib/cache-resiliencia.ts`). Se avisa con un aviso
+ * discreto cuando ocurre, nunca en silencio: los datos pueden tener hasta
+ * unos minutos de antigüedad frente a lo que hay en Neon.
  *
  * SOBRE LAS FOTOS: se usan etiquetas `img` normales, no `next/image`, y es a
  * propósito. El optimizador de Next solo sirve imágenes de los dominios que se
@@ -43,8 +52,9 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const carta = await obtenerCarta(params.slug);
-  if (!carta) return { title: 'Carta no disponible', robots: { index: false } };
+  const resultado = await obtenerCartaConRespaldo(params.slug);
+  if (!resultado) return { title: 'Carta no disponible', robots: { index: false } };
+  const { carta } = resultado;
 
   return {
     title: `Carta de ${carta.nombre}`,
@@ -61,8 +71,9 @@ export async function generateMetadata({
 }
 
 export default async function CartaPublica({ params }: { params: { slug: string } }) {
-  const carta = await obtenerCarta(params.slug);
-  if (!carta) notFound();
+  const resultado = await obtenerCartaConRespaldo(params.slug);
+  if (!resultado) notFound();
+  const { carta, desdeRespaldo } = resultado;
 
   const grupos: SeccionCarta[] = [
     ...carta.secciones,
@@ -93,6 +104,12 @@ export default async function CartaPublica({ params }: { params: { slug: string 
           <p className="text-xs uppercase tracking-[0.2em] text-black/40">Carta</p>
         </div>
       </header>
+
+      {desdeRespaldo && (
+        <p className="border-b border-amber-200 bg-amber-50 px-5 py-2 text-center text-xs text-amber-800">
+          Puede que esta carta no refleje los últimos cambios en los próximos minutos.
+        </p>
+      )}
 
       {/* Índice por anclas: navegar una carta larga sin JavaScript. */}
       {grupos.length > 1 && (
