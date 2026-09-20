@@ -2,6 +2,12 @@
 
 **Actualizado:** 20 de septiembre de 2026, al cerrar el motor de QR de carta.
 
+**Documentos relacionados, más recientes en su tema:**
+`MOTOR_QR_ANALISIS_PROFESIONAL_Y_PLAN.md` (disponibilidad del motor de QR) y
+`VALOR_ANADIDO_QR_PERSONALIZADO_Y_CRECIMIENTO.md` (QR con marca, SEO
+programático, afiliados). Este archivo describe el front en general; para el
+motor de QR en concreto, esos dos mandan.
+
 Este documento existe para que puedas recorrer la web pantalla por pantalla y
 distinguir tres cosas que a simple vista se confunden:
 

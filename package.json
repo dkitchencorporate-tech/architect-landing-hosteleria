@@ -11,7 +11,8 @@
     "guardia": "node scripts/guardia-credenciales.mjs",
     "db:migrar": "node db/migrate.mjs",
     "db:verificar": "node db/verificar-blindaje.mjs",
-    "db:demo": "node db/sembrar-demo.mjs"
+    "db:demo": "node db/sembrar-demo.mjs",
+    "db:generar-qr": "node db/generar-qr.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.2.0",
@@ -23,11 +24,13 @@
     "lucide-react": "^1.20.0",
     "next": "14.2.5",
     "nodemailer": "^8.0.7",
+    "qrcode": "^1.5.4",
     "react": "^18.3.1",
     "react-calendly": "^4.4.0",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
     "server-only": "^0.0.1",
+    "sharp": "^0.35.4",
     "uuid": "^14.0.0",
     "ws": "^8.21.3"
   },
@@ -42,6 +45,7 @@
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.35",
+    "jsqr": "^1.4.0",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

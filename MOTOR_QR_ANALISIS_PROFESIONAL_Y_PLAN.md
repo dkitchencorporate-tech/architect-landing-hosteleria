@@ -318,3 +318,11 @@ Una validación real, para quien tenga el entorno adecuado:
 | 4.3 Multirregión activo-activo | El escenario de caída total de Neon | Alto | Alto; proyecto propio | Solo cuando el volumen de clientes reales lo justifique |
 | Cambiar de Vercel a otra plataforma de cómputo | Nada — Vercel no es el problema | — | — | **No** |
 | Cambiar de Neon a otro Postgres gestionado sin plan de pago | Nada — misma limitación en cualquier proveedor gratuito | — | — | **No** |
+
+---
+
+**Nota aparte, no de disponibilidad:** la misma referencia analizada aquí
+(`javiggil.com/56fc9cb32b97`) contiene ideas de producto y de crecimiento —QR
+con aspecto de marca, SEO programático, programa de afiliados— que no son de
+este documento. Están tratadas en
+[`VALOR_ANADIDO_QR_PERSONALIZADO_Y_CRECIMIENTO.md`](./VALOR_ANADIDO_QR_PERSONALIZADO_Y_CRECIMIENTO.md).
