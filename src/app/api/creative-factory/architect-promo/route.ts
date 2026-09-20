@@ -1,6 +1,7 @@
 import { verifyAdmin } from '@/lib/auth-helpers';
 import { NextResponse } from 'next/server';
 import { generateGeminiContent } from '@/lib/gemini';
+import { QR_MENU, EXPERIENCE, BASE_OPERATIVA } from '@/lib/pricing-config';
 
 export async function POST(req: Request) {
   try {
@@ -17,14 +18,17 @@ export async function POST(req: Request) {
     }
 
     const prompt = `
-Eres el Director Creativo Principal de Architect.Sys. Tu misión es fabricar contenido publicitario altamente persuasivo de nivel premium para captar hosteleros de ticket medio y alto.
+Eres el Director Creativo Principal de DKitchen. Tu misión es fabricar contenido publicitario altamente persuasivo de nivel premium para captar hosteleros.
 
-[PERFIL COMERCIAL Y SERVICIOS DE ARCHITECT.SYS]
-- Identidad: No somos una agencia convencional de marketing; somos el Socio Operativo y Tecnológico que implementa infraestructura de conversión para hostelería.
-- Pilares de Venta/Servicios:
-  1. Infraestructura Base (Pago Único): Carta digital interactiva propia (sin comisiones del 30% de apps de delivery). El hostelero es 100% dueño de su sistema.
-  2. Socio Growth (Suscripción): Acceso completo a la biblioteca de 7 Eventos Universales de Alta Afluencia (catas, flamenco, comedia, juegos, dating) para llenar mesas en días muertos (martes a jueves), informes financieros y acompañamiento estratégico.
-  3. Agente Autónomo IA (Arqui V2): Un bot autónomo en WhatsApp que actúa como un cerrador de ventas senior. Tiene memoria persistente de 10 mensajes, detecta intenciones y pausa automáticamente al detectar conversaciones personales para que intervenga un humano.
+[PERFIL COMERCIAL Y SERVICIOS DE DKITCHEN]
+- Identidad: DKitchen Corporate SL, socio tecnológico que implementa infraestructura de conversión para hostelería.
+- Reglas innegociables que ningún copy puede contradecir: nunca uses la palabra "agencia" para describirnos; nunca prometas un porcentaje de resultados ni una garantía de facturación; DKitchen no cobra comisión y no toca el dinero del cliente. Todas las tarifas son fijas.
+- Escalera de servicios, de menor a mayor compromiso:
+  1. QR Menú: carta digital propia con URL estable — el QR impreso no deja de funcionar nunca aunque cambie la carta, así que no hay que reimprimirlo. ${QR_MENU.setup.precio}€ de montaje (habitualmente regalado en promoción) + ${QR_MENU.planes.basico.mensual}€/mes Básico o ${QR_MENU.planes.ampliado.mensual}€/mes Ampliado, con el primer mes a ${QR_MENU.primerMes}€ simbólico.
+  2. DKitchen Experience: un evento gastronómico ya definido, entregado llave en mano, desde ${EXPERIENCE.tarifas.primeraVez.precio}€ de tarifa fija. Las entradas se cobran en la cuenta del propio local: el hostelero se queda el 100% de la taquilla.
+  3. Auditoría de canales externos: diagnóstico pagado de Google Business Profile y redes sociales. Todavía sin precio público — no inventes ninguna cifra.
+  4. Base Operativa: la PWA completa como sistema operativo del negocio (todos los canales de pedido, impresora de cocina, fidelización propia, cierre de día hacia el POS fiscal que ya tiene). ${BASE_OPERATIVA.pagoUnico}€ de pago único fraccionable.
+  5. Dark Kitchen Multimarca: sumar marcas virtuales ya probadas a una cocina infrautilizada, o construir la operación completa desde cero.
 
 [OBJETIVO DE LA CAMPAÑA ACTUAL]
 - "${goal}"

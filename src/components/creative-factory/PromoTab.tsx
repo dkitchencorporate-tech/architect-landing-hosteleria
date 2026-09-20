@@ -42,8 +42,8 @@ export default function PromoTab({
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="text-2xl font-black text-white mb-2">📢 Hub de Auto-Promoción Architect.Sys</h3>
-        <p className="text-zinc-400 text-sm">Diseña creativos de alto impacto para promocionar nuestros servicios B2B (Pago Único, Socio Growth, y WhatsApp Closers).</p>
+        <h3 className="text-2xl font-black text-white mb-2">📢 Hub de Auto-Promoción DKitchen</h3>
+        <p className="text-zinc-400 text-sm">Diseña creativos de alto impacto para promocionar los peldaños de la escalera: QR Menú, Experience, Base Operativa y Dark Kitchen Multimarca.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -57,8 +57,9 @@ export default function PromoTab({
                 className="w-full bg-black border border-zinc-900 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-orange-500 appearance-none"
               >
                 <option value="Dolor de Comisiones de Delivery (Captar hosteleros quemados con Glovo/UberEats)">Dolor del Delivery (30% comisión)</option>
-                <option value="Up-sell de Eventos Físicos (Convertir hosteleros base a suscripción Socio Growth mediante eventos)">Vender Eventos (Conversión a Growth)</option>
-                <option value="Promocionar a Arqui V2 (WhatsApp Sales Closer autónomo que detecta spam y cierra reservas)">Promocionar WhatsApp Bot Closer (Arqui V2)</option>
+                <option value="Captación de QR Menú (carta digital propia con URL estable, montaje habitualmente regalado y primer mes a 1€ simbólico)">Captar QR Menú (puerta de entrada)</option>
+                <option value="Venta de DKitchen Experience (evento gastronómico llave en mano, tarifa fija sin comisión, la taquilla es 100% del local)">Vender Experience (eventos)</option>
+                <option value="Dark Kitchen Multimarca (sumar marcas virtuales ya probadas a una cocina infrautilizada)">Vender Dark Kitchen Multimarca</option>
               </select>
             </div>
 

@@ -27,7 +27,7 @@ export default function ChatTab({
       <div className="bg-zinc-900/60 p-4 border-b border-zinc-900/60 flex items-center gap-3">
         <div className="w-8 h-8 rounded-full bg-orange-600 flex items-center justify-center font-black text-white text-sm">A</div>
         <div>
-          <h4 className="text-xs font-bold text-white">Arqui (AI Marketing Co-Pilot)</h4>
+          <h4 className="text-xs font-bold text-white">Copiloto de Marketing</h4>
           <span className="text-[9px] font-bold text-green-500 uppercase tracking-widest">En línea - Contexto: {selectedClient.name}</span>
         </div>
       </div>
@@ -68,7 +68,7 @@ export default function ChatTab({
           type="text" 
           value={chatInput}
           onChange={(e) => setChatInput(e.target.value)}
-          placeholder={`Pregúntale a Arqui sobre la campaña de ${selectedClient.name}...`}
+          placeholder={`Pregúntale al copiloto sobre la campaña de ${selectedClient.name}...`}
           className="flex-1 bg-black border border-zinc-900 rounded-xl px-4 text-xs text-white focus:outline-none focus:border-orange-600"
         />
         <button 

@@ -11,21 +11,6 @@ export interface MarketplaceService {
 
 export const marketplaceServices: MarketplaceService[] = [
   {
-    id: "whatsapp-bot-v2",
-    title: "Agente WhatsApp Autónomo (Arqui V2)",
-    category: "Automatización",
-    shortDescription: "Un agente de IA que responde dudas 24/7, capta reservas directamente y vende tus eventos sin intervención humana.",
-    features: [
-      "Respuestas instantáneas 24/7",
-      "Integración con tu sistema de reservas",
-      "Captura de datos de clientes (Leads)",
-      "Venta sugerida (Upselling) en conversaciones"
-    ],
-    priceEst: "Desde 150€/mes",
-    roiEst: "+30% en reservas concretadas fuera de horario comercial.",
-    iconType: "whatsapp"
-  },
-  {
     id: "ads-management",
     title: "Gestión Avanzada de Meta/Google Ads",
     category: "Tráfico y Captación",

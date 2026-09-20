@@ -4,15 +4,11 @@ import DarkKitchen from '@/components/DarkKitchen';
 import DigitalPresenceValue from '@/components/sections/DigitalPresenceValue';
 import TheTrojanHorse from '@/components/sections/TheTrojanHorse';
 import EventLibraryHook from '@/components/sections/EventLibraryHook';
-import HighTicketEcosystem from '@/components/sections/HighTicketEcosystem';
 import AggressiveHero from '@/components/sections/AggressiveHero';
-import WhatsAppHero from '@/components/sections/WhatsAppHero';
 import FAQ from '@/components/sections/FAQ';
 import VisionAndEmpathy from '@/components/sections/VisionAndEmpathy';
 import FounderBio from '@/components/sections/FounderBio';
-import MeetArquiSection from '@/components/sections/MeetArquiSection';
 import LiveDemoCTA from '@/components/sections/LiveDemoCTA';
-import ChatDemoWidget from '@/components/ChatDemoWidget';
 
 export default function Home() {
   return (
@@ -40,10 +36,6 @@ export default function Home() {
             <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>
             <a href="#eventos" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
               Eventos
-            </a>
-            <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>
-            <a href="#automatizacion" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
-              Automatización
             </a>
             <div className="w-px h-4 bg-white/20 shrink-0 mx-1"></div>
             <a href="#dark-kitchen" className="whitespace-nowrap px-4 py-1.5 md:px-5 md:py-2 rounded-full text-[10px] md:text-xs font-bold text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)] focus:bg-[#FF4500] focus:text-white transition-all">
@@ -83,7 +75,7 @@ export default function Home() {
            <div className="w-24 h-24 bg-[#FF4500] text-white rounded-full flex items-center justify-center text-4xl shrink-0 font-black shadow-2xl">📊</div>
            <div>
               <h4 className="text-3xl font-black mb-3">Tu rentabilidad no es suerte, es <span className="text-[#FF4500]">Matemática Pura</span>.</h4>
-              <p className="text-gray-300 text-lg">En Architect.Sys protegemos la privacidad operativa de nuestros clientes. No publicamos facturaciones ajenas para captar curiosos. En su lugar, pronto desplegaremos aquí una **Demo en Vivo**: escanea un QR, navega una carta PWA premium y pon a prueba a nuestro Agente IA haciendo un pedido en tiempo real. Juzga nuestra tecnología por ti mismo.</p>
+              <p className="text-gray-300 text-lg">En Architect.Sys protegemos la privacidad operativa de nuestros clientes. No publicamos facturaciones ajenas para captar curiosos. En su lugar, tienes una **Demo en Vivo**: escanea un QR, navega una carta PWA premium y haz un pedido real de principio a fin. Juzga nuestra tecnología por ti mismo.</p>
            </div>
         </div>
       </section>
@@ -104,9 +96,8 @@ export default function Home() {
             </div>
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-24 h-24 bg-[#FF4500] rounded-full flex items-center justify-center text-3xl font-black text-white shadow-lg mb-6 group-hover:scale-110 transition-all duration-500 shadow-orange-500/40">2</div>
-              <h3 className="text-2xl font-bold mb-1">Cierre Automático</h3>
-              <span className="block text-[10px] text-[#FF4500] font-black uppercase tracking-widest mb-4 border border-[#FF4500]/30 rounded-full px-3 py-1">(Fase Avanzada)</span>
-              <p className="text-gray-600 text-lg">Tu propio CRM con Agente IA atiende el WhatsApp en segundos, gestiona el flujo y cierra reservas sin que toques el móvil.</p>
+              <h3 className="text-2xl font-bold mb-4">Pedido Directo</h3>
+              <p className="text-gray-600 text-lg">Ese tráfico pide por tu propio canal, no por un agregador. Cero comisiones sobre cada ticket y los datos del cliente se quedan contigo.</p>
             </div>
             <div className="relative z-10 flex flex-col items-center text-center group">
               <div className="w-24 h-24 bg-gray-900 rounded-full flex items-center justify-center text-3xl font-black text-white shadow-lg mb-6 group-hover:scale-110 group-hover:bg-black transition-all duration-500">3</div>
@@ -116,15 +107,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ARQUI INVITATION */}
-      <MeetArquiSection />
-
-      {/* TRANSITION TO HIGH TICKET */}
-      <WhatsAppHero />
-      <div id="automatizacion">
-        <HighTicketEcosystem />
-      </div>
 
       {/* TRANSICIÓN DE DOLOR AL MODELO DARK KITCHEN */}
       <section className="py-20 bg-[#050505] text-white relative overflow-hidden border-t border-white/10">
@@ -185,24 +167,8 @@ export default function Home() {
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">4</div>
               <div className="text-4xl mb-4 relative z-10">🤖</div>
               <h3 className="text-xl font-bold mb-2 relative z-10">Escalado Autónomo</h3>
-              <p className="text-gray-600 relative z-10">Implementamos el Agente IA en WhatsApp o KDS multimarca cuando necesites absorber más volumen.</p>
+              <p className="text-gray-600 relative z-10">Implementamos el KDS multimarca cuando necesites absorber más volumen.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TRUST BANNER - KOMMO PARTNER */}
-      <section className="bg-[#1A1A1A] py-12 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-8 text-center">
-          <p className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-6">Integradores Oficiales y Ecosistema Tecnológico</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <div className="flex flex-col items-center">
-              <span className="text-xs text-[#FF4500] font-bold tracking-widest uppercase mb-1">Partner Oficial</span>
-              <div className="text-2xl font-black flex items-center gap-2 text-white"><span className="text-blue-400">Kommo</span> CRM</div>
-            </div>
-            <div className="text-xl md:text-2xl font-black flex items-center gap-2 text-gray-300"><span className="text-green-500">WhatsApp</span> API</div>
-            <div className="text-xl md:text-2xl font-black flex items-center gap-2 text-gray-300"><span className="text-blue-600">Meta</span> Cloud</div>
-            <div className="text-xl md:text-2xl font-black flex items-center gap-2 text-gray-300"><span className="text-red-500">Google</span> Cloud</div>
           </div>
         </div>
       </section>
@@ -237,8 +203,6 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* ARQUI: AGENTE IA FLOTANTE */}
-      <ChatDemoWidget />
     </div>
   );
 }

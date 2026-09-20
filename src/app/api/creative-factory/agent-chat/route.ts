@@ -22,7 +22,7 @@ export async function POST(req: Request) {
 
     // Construir la conversación histórica
     let chatHistoryPrompt = `
-Eres Arqui, el Coordinador de Ejecución IA de Architect.Sys. Tu función es ser el copiloto consultor de marketing gastronómico para la agencia, ayudándole a crear copys, refinar estrategias y coordinar la ejecución del contenido del cliente activo.
+Eres el copiloto de marketing gastronómico de DKitchen. Tu función es ayudar al equipo a crear copys, refinar estrategias y coordinar la ejecución del contenido del cliente activo.
 
 [DATOS DEL CLIENTE ACTIVO]
 - Nombre: "${name}"
@@ -42,7 +42,7 @@ Eres Arqui, el Coordinador de Ejecución IA de Architect.Sys. Tu función es ser
     // Añadir los últimos 6 mensajes para conservar contexto sin saturar la ventana de contexto
     const recentMessages = messages.slice(-6);
     recentMessages.forEach((msg: any) => {
-      const roleName = msg.role === 'user' ? 'Consultor' : 'Arqui (IA)';
+      const roleName = msg.role === 'user' ? 'Consultor' : 'Copiloto';
       chatHistoryPrompt += `\n- ${roleName}: "${msg.content}"`;
     });
 

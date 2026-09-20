@@ -331,7 +331,7 @@ export default function CreativeFactoryPage() {
       console.error(err);
       setChatHistories({
         ...chatHistories,
-        [selectedClient.id]: [...updatedHistory, { role: 'assistant', content: '⚠️ Ocurrió un error de conexión con Arqui.' }]
+        [selectedClient.id]: [...updatedHistory, { role: 'assistant', content: '⚠️ Ocurrió un error de conexión con el copiloto.' }]
       });
     } finally {
       setIsSendingChat(false);
@@ -434,7 +434,7 @@ export default function CreativeFactoryPage() {
   };
 
   const currentChat = selectedClient ? (chatHistories[selectedClient.id] || [
-    { role: 'assistant', content: `¡Hola! Soy **Arqui**, el Coordinador de Ejecución IA de **Architect.Sys**.\n\nEstoy listo para redactar copys de Instagram, refinar el plan de prospección B2B o definir ideas para la carta de **${selectedClient.name}**. ¿Qué campaña o activo quieres estructurar hoy?` }
+    { role: 'assistant', content: `¡Hola! Soy el copiloto de marketing de **DKitchen**.\n\nEstoy listo para redactar copys de Instagram, refinar el plan de prospección B2B o definir ideas para la carta de **${selectedClient.name}**. ¿Qué campaña o activo quieres estructurar hoy?` }
   ]) : [];
 
   return (

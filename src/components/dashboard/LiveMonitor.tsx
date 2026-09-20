@@ -255,7 +255,7 @@ export default function LiveMonitor() {
                   <p>{msg.content}</p>
                   <span className={`flex items-center gap-1.5 text-[9px] mt-3 font-black uppercase tracking-widest opacity-60`}>
                     {msg.role === 'assistant' ? <Bot size={10} /> : <User size={10} />}
-                    {msg.role === 'assistant' ? 'Arqui AI' : 'Visitante'}
+                    {msg.role === 'assistant' ? 'Asistente' : 'Visitante'}
                   </span>
                 </div>
               ))}

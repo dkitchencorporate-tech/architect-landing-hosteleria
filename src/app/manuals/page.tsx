@@ -34,13 +34,6 @@ export default function ManualsIndex() {
       tag: 'Operaciones'
     },
     {
-      title: '5. Agente de Ventas IA (Arqui)',
-      description: 'Leyes operativas del asistente conversacional, integraciones con Kommo CRM y arquitectura de Webhooks.',
-      href: '/manuals/agente-ia',
-      date: '12 Junio 2026',
-      tag: 'Inteligencia Artificial'
-    },
-    {
       title: '6. Centro de Control de Administración',
       description: 'Manejo del panel de monitoreo de clientes, gestión de proyectos y activación del Modo Demo para presentaciones.',
       href: '/manuals/centro-control',
