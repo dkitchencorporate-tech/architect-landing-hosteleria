@@ -258,6 +258,50 @@ datos, los segundos permiten suplantar a la marca.
 clave en Supabase, Meta, Kommo y Whop) y después limpiar el entorno de Vercel. No las
 he borrado yo: son el entorno de producción y Whop no sé qué sostiene.
 
+### V-18 · Crítico · Documentos con datos personales reales, servidos en abierto desde `public/`
+
+Auditoría del 20/09/2026, a raíz de que Alex señalara que la web en producción no
+reflejaba ningún cambio: al revisar qué hay bajo `public/` en cada rama (no solo el
+código de `src/`), aparecieron cuatro archivos HTML servidos por Next.js de forma
+estática, sin autenticación ni `noindex`, en la rama `main` (la que de verdad está en
+producción en `hosteleria.architectsys.com`):
+
+| Archivo | Contenido | Verificado en vivo |
+|---|---|---|
+| `public/docs/factura_2026_AS_1001.html` | **Factura real**, con nombre completo, NIF personal (`74019799A`) y CIF de una clienta real ("Elisabet Moreno Gea", "Venta El Gallo"), más importes y referencia de transferencia SEPA | `curl` → `200` en `hosteleria.architectsys.com/docs/factura_2026_AS_1001.html` |
+| `public/dosier-ventaelgallo.html` | Formulario operativo de onboarding para ese mismo cliente real (pide credenciales de panel IONOS/FTP, enlaces de Drive) | `200` |
+| `public/docs/contrato_AS_2026.html` | Plantilla de contrato de servicios (sin rellenar en esta rama) | `200` |
+| `public/docs/carta_bienvenida_AS_2026.html` | Carta de bienvenida, plantilla | `200` |
+
+Esto es una fuga de datos personales de un tercero real, indexable por cualquier
+buscador, con cero controles — la misma familia de fallo que V-05 y V-08, pero peor:
+V-05 y V-08 exponían rutas de la aplicación; esto son archivos estáticos con datos ya
+rellenados de un cliente real, puestos ahí casi con toda seguridad por un agente
+anterior para que Alex pudiera descargarlos rápido por URL directa, y nunca retirados.
+
+**La rama de trabajo de DKitchen (`claude/github-repository-access-1cf0ss`) solo
+arrastraba una de las cuatro** (`contrato_AS_2026.html`), y sin datos reales — los
+campos del cliente están vacíos (plantilla). Aun así, es del mismo tipo de exposición
+y no debía estar en `public/`.
+
+**Estado:**
+- **Rama DKitchen: remediado.** `contrato_AS_2026.html` se movió fuera de `public/`
+  (a `docs/plantillas/`, fuera del árbol que Next.js sirve) en este mismo commit — no
+  hay ninguna referencia a esa ruta en `src/`, así que no rompe nada.
+- **`main`: sigue expuesto ahora mismo.** Esta sesión no tiene autorización para
+  empujar a `main` sin permiso explícito del propietario (regla de la propia tarea),
+  así que no se ha tocado. Dos formas de cerrarlo, cualquiera de las dos basta:
+  1. Repuntar la rama de producción de Vercel a `claude/github-repository-access-1cf0ss`
+     (tarea #13 — deja de servirse cualquier cosa de `main`, incluidos estos archivos).
+  2. Autorizar explícitamente un commit mínimo sobre `main` que borre únicamente estos
+     cuatro archivos, sin tocar nada más.
+
+**Remedio permanente, para que no se repita con datos del próximo cliente real:**
+ningún archivo con datos de un cliente concreto (factura, contrato firmado, dosier
+operativo) debe vivir en `public/`. Si hace falta compartir un documento así, se
+genera bajo una ruta autenticada o se envía como adjunto — nunca como archivo estático
+en el repositorio.
+
 ### V-16 · Bajo · Validación de formularios solo en el cliente
 
 Los formularios validan en el navegador. `/api/lead` comprueba que los campos existan,
