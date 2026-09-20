@@ -6,7 +6,7 @@ import CookieConsent from "@/components/CookieConsent";
 export const metadata = {
   title: "Architect.Sys | Agencias de Crecimiento para Hostelería",
   description: "Ingeniería de Procesos para Hostelería. Ecosistemas digitales sin comisiones, Agentes IA Híbridos en WhatsApp y sistemas Dark Kitchen Enterprise.",
-  keywords: ["ingeniería hostelería", "kds dark kitchen", "agente ia whatsapp restaurantes", "consultoría restaurantes", "automatización hostelería", "growth partner"],
+  keywords: ["carta digital qr restaurante", "kds dark kitchen", "menu qr hostelería", "digitalización restaurantes", "eventos gastronómicos llave en mano", "dark kitchen multimarca"],
   authors: [{ name: "Architect.Sys" }],
   robots: {
     index: true,

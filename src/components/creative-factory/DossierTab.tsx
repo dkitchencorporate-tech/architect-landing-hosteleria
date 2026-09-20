@@ -38,7 +38,7 @@ export default function DossierTab() {
             <h4 className="text-sm font-black text-white uppercase tracking-wider border-b border-zinc-900 pb-2">Leyes Operativas del Consultor Gastronómico B2B</h4>
             <ol className="list-decimal pl-5 space-y-4 text-xs">
               <li><strong>Ley del Apalancamiento del Dolor:</strong> Nunca vendas "más ventas". Vende detener el sangrado de las comisiones del 30% del delivery o rentabilizar mesas vacías de martes a jueves.</li>
-              <li><strong>Ley del Variable sin Riesgo:</strong> La entrada inicial debe ser libre de fricción, garantizando un porcentaje por afluencia (20% variable) para anular el escepticismo.</li>
+              <li><strong>Ley de la Tarifa Cerrada:</strong> Nunca prometas un porcentaje de resultados ni una garantía de facturación. El precio se publica cerrado y no se negocia caso a caso: la confianza la da saber exactamente lo que cuesta, no una promesa condicional.</li>
               <li><strong>Ley de la Exclusividad Local:</strong> No captes a dos restaurantes de la misma categoría en un radio menor a 3 km. La exclusividad multiplica la lealtad del cliente.</li>
               <li><strong>Ley del Anclaje Inesperado:</strong> Utiliza fotografías gastronómicas de impacto extremo en Ads (formato 4:5 vertical) para romper el scroll del móvil.</li>
               <li><strong>Ley del Dossier Explicativo:</strong> Cada evento o propuesta debe ir respaldada por un dossier financiero detallado con costos fijos y retorno neto proyectado.</li>

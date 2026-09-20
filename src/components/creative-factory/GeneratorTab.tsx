@@ -81,7 +81,7 @@ export default function GeneratorTab({
                 <option value="">Selecciona...</option>
                 <option value="El sangrado financiero silencioso: Demuestra con números agresivos la cantidad de dinero que pierden al mes.">El Sangrado Financiero (Agresivo)</option>
                 <option value="Estatus y Modernización: Posiciona el restaurante como parte del 5% tecnológico superior de la ciudad.">El Restaurante del Futuro (Estatus)</option>
-                <option value="El variable sin riesgo: Garantía del 20% solo por resultados de afluencia conseguidos.">Modelo 20% Variable (Garantía)</option>
+                <option value="La taquilla íntegra: el dinero de cada entrada cae directo en la cuenta del propio local, sin comisión ni intermediación.">La Taquilla Es Tuya (Sin Comisión)</option>
               </select>
             </div>
           </div>

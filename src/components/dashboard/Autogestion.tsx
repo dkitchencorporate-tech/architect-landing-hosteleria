@@ -2,17 +2,13 @@
 
 import React from "react";
 
-interface AutogestionProps {
-  isGrowthPlan: boolean;
-}
-
-export default function Autogestion({ isGrowthPlan }: AutogestionProps) {
+export default function Autogestion() {
   return (
     <div className="space-y-6 relative">
       <div className="mb-8">
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Autogestión del Ecosistema</h2>
         <p className="text-dash-text-secondary text-sm max-w-2xl">
-          Edita los textos de tu carta, modifica horarios, y actualiza los elementos de tu web y bot de forma autónoma.
+          Edita los textos de tu carta, modifica horarios y actualiza los elementos de tu web de forma autónoma.
         </p>
       </div>
 
@@ -40,18 +36,6 @@ export default function Autogestion({ isGrowthPlan }: AutogestionProps) {
         <p className="text-dash-text-secondary max-w-md mb-6">
           Actualmente estamos construyendo y afinando tu ecosistema base. Esta sección de autogestión se desbloqueará dinámicamente cuando tu web y sistemas estén 100% entregados y aprobados.
         </p>
-
-        {!isGrowthPlan && (
-          <div className="mt-4 bg-brand/10 border border-brand/30 rounded-lg p-6 max-w-lg shadow-premium">
-            <h4 className="text-brand font-bold mb-2 uppercase tracking-wide text-sm">Aviso Importante</h4>
-            <p className="text-white text-sm mb-4">
-              Como usuario de <strong>Plan Base (Pago Único)</strong>, tendrás acceso a funciones limitadas aquí. Desbloquea el Agente de WhatsApp Autónomo, 6 Eventos premium y analíticas avanzadas actualizando a Socio Growth.
-            </p>
-            <button className="bg-brand text-white px-6 py-2 rounded text-sm font-bold hover:bg-brandHover transition-colors w-full">
-              Ver Ventajas del Plan Growth (299€/mes)
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );

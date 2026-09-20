@@ -35,7 +35,7 @@ export default function VisionAndEmpathy() {
               La mayoría de "agencias de marketing" te venderán <span className="line-through text-gray-400">likes</span>, fotos bonitas y promesas vacías que no pagan las facturas de fin de mes. Nosotros operamos de forma diferente.
             </p>
             <p className="text-gray-900 font-bold text-xl md:text-2xl pt-6 border-t border-gray-200 mt-8">
-              En Architect.Sys no somos informáticos ni community managers. Somos tu Socio de Crecimiento (Growth Partner).
+              En Architect.Sys no somos informáticos ni community managers. Somos tu socio tecnológico.
             </p>
             <p>
               Nuestro único objetivo es construirte un ecosistema digital propio para que atraigas más clientes, sirvas más rápido y recuperes el control total de tu facturación. Sin depender de terceros.

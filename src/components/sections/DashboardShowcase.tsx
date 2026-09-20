@@ -68,8 +68,8 @@ export default function DashboardShowcase() {
             
             {activeTab === 'events' && (
               <div className="animate-fade-in-up pointer-events-none">
-                {/* Lo ponemos con pointer-events-none para que sea solo de visualización y el candado haga su trabajo persuasivo */}
-                <EventsLibrary isGrowthPlan={false} />
+                {/* Solo visualización: es un escaparate del panel, no el panel real */}
+                <EventsLibrary />
               </div>
             )}
           </div>

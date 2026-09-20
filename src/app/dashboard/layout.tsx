@@ -3,20 +3,16 @@
 import React, { useState, useEffect } from "react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { CalendarDays, LayoutDashboard, ShoppingBag, BarChart3, Settings, Menu, LogOut, ShieldAlert, Zap } from 'lucide-react';
+import { CalendarDays, LayoutDashboard, ShoppingBag, BarChart3, Menu, LogOut, ShieldAlert } from 'lucide-react';
 import { supabaseClient } from '@/lib/supabase-client';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-  const [isGrowthPlan, setIsGrowthPlan] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDesktopExpanded, setIsDesktopExpanded] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const plan = localStorage.getItem("saas_plan");
-    if (plan === "growth") setIsGrowthPlan(true);
-
     const checkAdmin = async () => {
       // Forzar botón activo en modo local para evitar bloqueos en la presentación
       if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
@@ -32,13 +28,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     };
     checkAdmin();
   }, []);
-
-  const togglePlan = () => {
-    const newPlan = !isGrowthPlan;
-    setIsGrowthPlan(newPlan);
-    localStorage.setItem("saas_plan", newPlan ? "growth" : "base");
-    window.dispatchEvent(new Event('storage'));
-  };
 
   const navItems = [
     { name: 'Eventos', href: '#events', icon: CalendarDays },
@@ -57,13 +46,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="text-white p-2">
           <Menu size={24} />
         </button>
-        <div className="flex items-center space-x-2">
-          <span className="text-xs font-bold text-zinc-400">BASE</span>
-          <button onClick={togglePlan} className={`w-10 h-5 rounded-full relative transition-colors ${isGrowthPlan ? 'bg-orange-500' : 'bg-zinc-700'}`}>
-            <div className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${isGrowthPlan ? 'translate-x-5' : 'translate-x-0'}`}></div>
-          </button>
-          <span className="text-xs font-black text-white">GROWTH</span>
-        </div>
       </div>
 
       {/* Sidebar V3 */}
@@ -128,21 +110,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               </span>
             </Link>
           )}
-
-          <div className={`bg-zinc-900/80 rounded-xl p-4 border border-white/5 ${!isDesktopExpanded ? 'hidden md:hidden' : 'block'}`}>
-            <p className="text-[10px] uppercase tracking-widest text-zinc-500 font-black mb-2">Plan Actual</p>
-            <p className="text-sm font-black text-white mb-3 flex items-center gap-2">
-              {isGrowthPlan ? <><Zap size={14} className="text-orange-500"/> Growth (Sub)</> : <><Settings size={14} className="text-zinc-400"/> Base (Pago Único)</>}
-            </p>
-
-            <div className="flex items-center space-x-2 bg-zinc-950 p-2 rounded-lg border border-white/5">
-              <span className="text-xs font-bold text-zinc-400">Base</span>
-              <button onClick={togglePlan} className={`w-10 h-5 rounded-full relative transition-colors ${isGrowthPlan ? 'bg-orange-500' : 'bg-zinc-700'}`}>
-                <div className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${isGrowthPlan ? 'translate-x-5' : 'translate-x-0'}`}></div>
-              </button>
-              <span className="text-xs font-black text-white">Growth</span>
-            </div>
-          </div>
 
           <button className={`mt-2 flex items-center text-zinc-500 hover:text-white transition-colors w-full rounded-xl hover:bg-zinc-800/50 ${isDesktopExpanded ? 'px-4 py-3' : 'p-3 justify-center'}`} title={!isDesktopExpanded ? "Cerrar Sesión" : undefined}>
             <LogOut size={isDesktopExpanded ? 18 : 22} />

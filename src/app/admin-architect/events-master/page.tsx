@@ -94,11 +94,6 @@ export default function EventsMasterPage() {
               <div key={ev.id} className="bg-zinc-900/40 border border-white/10 rounded-2xl p-6 hover:border-orange-500/30 transition-all flex flex-col h-full group">
                 <div className="flex justify-between items-start mb-4">
                   <span className="text-xs font-bold text-orange-500 uppercase tracking-wider bg-orange-500/10 px-3 py-1 rounded-full">{ev.category}</span>
-                  {ev.is_unlocked_for_base ? (
-                    <span className="text-[10px] font-bold text-green-400 bg-green-500/10 border border-green-500/20 px-2 py-1 rounded">PLAN BASE</span>
-                  ) : (
-                    <span className="text-[10px] font-bold text-orange-400 bg-orange-500/10 border border-orange-500/20 px-2 py-1 rounded">SOLO GROWTH</span>
-                  )}
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{ev.title}</h3>
                 <p className="text-sm text-zinc-400 line-clamp-2 mb-6 flex-1">{ev.description}</p>

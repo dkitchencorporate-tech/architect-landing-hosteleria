@@ -10,7 +10,6 @@ import { createClient } from "@/lib/supabase-browser";
 
 export default function DashboardPage() {
   const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState<boolean | null>(null);
-  const [isGrowthPlan, setIsGrowthPlan] = useState(false);
   const [activeTab, setActiveTab] = useState("events");
   const [isAdminDemo, setIsAdminDemo] = useState(false);
   const [userProfile, setUserProfile] = useState<any>(null);
@@ -36,7 +35,6 @@ export default function DashboardPage() {
       if (isAdmin) {
         // Modo Demo para presentaciones
         setHasCompletedOnboarding(true);
-        setIsGrowthPlan(true);
       } else {
         // Cliente Real: Leer de Base de Datos
         if (session && session.user) {
@@ -49,7 +47,6 @@ export default function DashboardPage() {
           if (profile) {
             setUserProfile(profile);
             setHasCompletedOnboarding(profile.onboarding_completed);
-            setIsGrowthPlan(profile.plan === 'growth');
           } else {
             setHasCompletedOnboarding(false);
           }
@@ -89,15 +86,15 @@ export default function DashboardPage() {
   const renderView = () => {
     switch (activeTab) {
       case "events":
-        return <EventsLibrary isGrowthPlan={isGrowthPlan} />;
+        return <EventsLibrary />;
       case "autogestion":
-        return <Autogestion isGrowthPlan={isGrowthPlan} />;
+        return <Autogestion />;
       case "marketplace":
         return <Marketplace />;
       case "pipeline":
         return <Pipeline />;
       default:
-        return <EventsLibrary isGrowthPlan={isGrowthPlan} />;
+        return <EventsLibrary />;
     }
   };
 

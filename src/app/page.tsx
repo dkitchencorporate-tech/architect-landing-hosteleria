@@ -161,7 +161,7 @@ export default function Home() {
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">3</div>
               <div className="text-4xl mb-4 relative z-10">🔥</div>
               <h3 className="text-xl font-bold mb-2 relative z-10">Inyección de Tráfico</h3>
-              <p className="text-gray-600 relative z-10">Activamos el Plan Growth. Llenamos tus mesas los días valle y recuperamos tu inversión inicial.</p>
+              <p className="text-gray-600 relative z-10">Montamos un evento con fecha fija y campaña propia. Llenamos tus mesas los días valle sin que pongas capital de marketing por adelantado.</p>
             </div>
             <div className="bg-[#FDFCF8] p-8 rounded-2xl shadow-lg border border-gray-100 relative group hover:-translate-y-2 transition-transform duration-300">
               <div className="text-6xl font-black text-gray-50 absolute top-4 right-4 group-hover:text-orange-50 transition-colors">4</div>
