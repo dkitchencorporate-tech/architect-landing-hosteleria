@@ -22,12 +22,12 @@ export default function ArquitecturaSaasManual() {
       <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
         <h1>2. Arquitectura SaaS y Base de Datos Integrada</h1>
         <p className="lead">
-          Documentación técnica sobre el ecosistema de base de datos relacional (PostgreSQL en Supabase) y las reglas de seguridad que sostienen el Multi-Tenant de Architect.Sys.
+          Documentación técnica sobre el ecosistema de base de datos relacional (PostgreSQL en Supabase) y las reglas de seguridad que sostienen el Multi-Tenant de DKitchen.
         </p>
 
         <h2>Infraestructura Backend</h2>
         <p>
-          Architect.Sys no utiliza una base de datos local ni archivos estáticos para la persistencia. Todo el sistema está conectado a <strong>Supabase</strong>, un backend como servicio escalable basado en PostgreSQL.
+          DKitchen no utiliza una base de datos local ni archivos estáticos para la persistencia. Todo el sistema está conectado a <strong>Supabase</strong>, un backend como servicio escalable basado en PostgreSQL.
         </p>
         <p>
           El acceso a la base de datos desde el frontend de Next.js se realiza mediante <code>@supabase/ssr</code>, lo que garantiza que las cookies de sesión se lean y verifichen de forma segura en el lado del servidor (SSR) antes de renderizar páginas críticas.

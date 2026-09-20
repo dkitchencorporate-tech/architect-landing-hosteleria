@@ -7,7 +7,7 @@ export default function ManualsIndex() {
   const manuals = [
     {
       title: '1. Mapa Integral de Navegación y URLs',
-      description: 'Directorio completo de todos los enlaces y rutas de Architect.Sys, incluyendo los niveles de acceso requeridos.',
+      description: 'Directorio completo de todos los enlaces y rutas de DKitchen, incluyendo los niveles de acceso requeridos.',
       href: '/manuals/mapa-navegacion',
       date: '12 Junio 2026',
       tag: 'Directorio'
@@ -53,7 +53,7 @@ export default function ManualsIndex() {
     <div className="space-y-8 print:block">
       <div>
         <h2 className="text-3xl font-black text-white print:text-black tracking-tighter">Índice Operativo</h2>
-        <p className="text-zinc-400 print:text-zinc-600 mt-2">Protocolos y manuales (SOP) estandarizados de Architect.Sys.</p>
+        <p className="text-zinc-400 print:text-zinc-600 mt-2">Protocolos y manuales (SOP) estandarizados de DKitchen.</p>
       </div>
 
       <div className="grid gap-4 print:grid-cols-1">

@@ -22,7 +22,7 @@ export default function CentroControlManual() {
       <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
         <h1>6. Centro de Control de Administración</h1>
         <p className="lead">
-          Documentación técnica sobre las vistas de "God Mode". Cómo el equipo interno de Architect.Sys monitoriza a los clientes reales y cómo funciona la inyección de datos para las presentaciones de venta.
+          Documentación técnica sobre las vistas de "God Mode". Cómo el equipo interno de DKitchen monitoriza a los clientes reales y cómo funciona la inyección de datos para las presentaciones de venta.
         </p>
 
         <h2>El Panel de Clientes (Clients List)</h2>

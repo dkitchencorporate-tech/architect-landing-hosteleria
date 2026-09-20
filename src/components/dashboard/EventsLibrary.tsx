@@ -184,7 +184,7 @@ export default function EventsLibrary() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-white mb-3">Nuestro Rol (Architect.Sys)</h3>
+                    <h3 className="text-lg font-semibold text-white mb-3">Nuestro Rol (DKitchen)</h3>
                     <ul className="space-y-3">
                       {selectedEvent.agencyRole.map((item, idx) => (
                         <li key={idx} className="flex items-start text-sm text-zinc-400 bg-orange-500/5 p-3 rounded-xl border border-orange-500/20">

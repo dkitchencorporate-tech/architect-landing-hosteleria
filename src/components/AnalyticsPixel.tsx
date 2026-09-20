@@ -16,10 +16,10 @@ function AnalyticsPixelLogic() {
       if (!supabaseClient) return;
 
       // 1. Gestionar Session ID
-      let sessionId = localStorage.getItem('architect_session_id');
+      let sessionId = localStorage.getItem('dkitchen_session_id');
       if (!sessionId) {
         sessionId = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substring(2, 15);
-        localStorage.setItem('architect_session_id', sessionId);
+        localStorage.setItem('dkitchen_session_id', sessionId);
       }
 
       // 2. Geolocalización Inteligente (IPAPI)

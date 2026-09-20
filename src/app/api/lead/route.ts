@@ -35,7 +35,7 @@ export async function POST(request: Request) {
           </div>
           
           <div style="text-align: center; margin-top: 30px;">
-            <a href="https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=Hola%20${encodeURIComponent(name)},%20soy%20de%20Architect.Sys.%20He%20visto%20que%20has%20solicitado%20nuestros%20bonos%20de%20digitalizaci%C3%B3n..." style="background-color: #25D366; color: white; padding: 12px 24px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block;">
+            <a href="https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=Hola%20${encodeURIComponent(name)},%20soy%20de%20DKitchen.%20He%20visto%20que%20has%20solicitado%20nuestros%20bonos%20de%20digitalizaci%C3%B3n..." style="background-color: #25D366; color: white; padding: 12px 24px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block;">
               Abrir chat de WhatsApp
             </a>
           </div>

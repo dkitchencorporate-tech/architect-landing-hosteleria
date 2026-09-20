@@ -54,7 +54,7 @@ export default function TheTrojanHorse() {
                   ¿Por qué el bar de la competencia sale primero cuando alguien busca "dónde cenar"? Te entregamos un <strong>análisis de 14 factores de posicionamiento en Google Maps</strong>, y un informe en PDF de 8 páginas con acciones priorizadas que tú o tu encargado debéis aplicar hoy mismo para robarle ese tráfico.
                 </p>
                 <div className="mt-auto border-t border-gray-100 pt-6">
-                  <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Precio habitual en agencia:</div>
+                  <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Precio habitual en el mercado:</div>
                   <div className="flex items-center gap-4">
                     <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">180€</span>
                     <span className="text-[#FF4500] font-black text-4xl">GRATIS</span>
@@ -105,7 +105,7 @@ export default function TheTrojanHorse() {
                   Tu modernización debe hacer ruido. Para quitarte el "síndrome de la página en blanco", te entregamos <strong>12 publicaciones profesionales</strong> (imágenes y textos persuasivos generados por IA). Solo tienes que copiar, pegar en tu Instagram y empezar a atraer miradas.
                 </p>
                 <div className="mt-auto border-t border-gray-100 pt-6">
-                  <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Valor de agencia de contenidos:</div>
+                  <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Valor de producciÃ³n de contenidos:</div>
                   <div className="flex items-center gap-4">
                     <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">250€</span>
                     <span className="text-[#FF4500] font-black text-4xl">GRATIS</span>
@@ -203,7 +203,7 @@ export default function TheTrojanHorse() {
                   Agendar Consultoría y Activar
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                 </button>
-                <a href="https://wa.me/34611499674?text=Hola,%20tengo%20dudas%20urgentes%20sobre%20la%20Base%20Operativa." className="text-gray-500 font-bold hover:text-[#25D366] transition-colors underline decoration-transparent hover:decoration-[#25D366] underline-offset-4 text-sm mt-2">
+                <a href="https://wa.me/34622652659?text=Hola,%20tengo%20dudas%20urgentes%20sobre%20la%20Base%20Operativa." className="text-gray-500 font-bold hover:text-[#25D366] transition-colors underline decoration-transparent hover:decoration-[#25D366] underline-offset-4 text-sm mt-2">
                   ¿Tienes dudas urgentes? Habla con un asesor por WhatsApp
                 </a>
               </div>

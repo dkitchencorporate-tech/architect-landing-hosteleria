@@ -338,8 +338,8 @@ export default function CreativeFactoryPage() {
     }
   };
 
-  // 7. Generar Campaña de Auto-Promoción de Architect.Sys
-  const handleGenerateArchitectPromo = async () => {
+  // 7. Generar Campaña de Auto-Promoción de DKitchen
+  const handleGenerateBrandPromo = async () => {
     setIsGeneratingPromo(true);
     setPromoData(null);
     setCarouselImages({});
@@ -577,7 +577,7 @@ export default function CreativeFactoryPage() {
               />
             )}
 
-            {/* 6. TAB: PROMO (Auto-Promoción Architect.Sys) */}
+            {/* 6. TAB: PROMO (Auto-Promoción DKitchen) */}
             {activeTab === 'promo' && (
               <PromoTab 
                 promoGoal={promoGoal}
@@ -585,7 +585,7 @@ export default function CreativeFactoryPage() {
                 promoFormat={promoFormat}
                 setPromoFormat={setPromoFormat}
                 isGeneratingPromo={isGeneratingPromo}
-                handleGenerateArchitectPromo={handleGenerateArchitectPromo}
+                handleGenerateBrandPromo={handleGenerateBrandPromo}
                 generalError={generalError}
                 promoData={promoData}
                 generatedImage={generatedImage}

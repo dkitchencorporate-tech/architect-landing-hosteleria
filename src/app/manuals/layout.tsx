@@ -19,7 +19,7 @@ export default function ManualsLayout({
               A
             </div>
             <div>
-              <h1 className="text-lg font-black tracking-tight text-white">Architect.Sys Hub</h1>
+              <h1 className="text-lg font-black tracking-tight text-white">DKitchen Hub</h1>
               <span className="text-[10px] uppercase tracking-widest text-zinc-500 font-black block leading-none mt-1">Manuales y SOPs</span>
             </div>
           </Link>
@@ -39,7 +39,7 @@ export default function ManualsLayout({
       <main className="max-w-[1000px] mx-auto px-6 py-12 print:py-0 print:px-0">
         {/* Cabecera corporativa de impresión (Solo visible al imprimir) */}
         <div className="hidden print:block border-b-2 border-black pb-4 mb-8">
-          <h1 className="text-3xl font-black uppercase tracking-tighter">Architect.Sys</h1>
+          <h1 className="text-3xl font-black uppercase tracking-tighter">DKitchen</h1>
           <p className="text-sm font-bold text-zinc-500 uppercase">Documentación Operativa y Protocolos (SOP)</p>
           <p className="text-xs text-zinc-400 mt-1">Generado automáticamente desde la matriz central.</p>
         </div>
@@ -51,7 +51,7 @@ export default function ManualsLayout({
 
         {/* Pie de página de impresión */}
         <div className="hidden print:block mt-12 pt-4 border-t border-zinc-200 text-xs text-center text-zinc-500 font-medium">
-          DOCUMENTO CONFIDENCIAL - USO INTERNO ARCHITECT.SYS
+          DOCUMENTO CONFIDENCIAL - USO INTERNO DKITCHEN
         </div>
       </main>
 

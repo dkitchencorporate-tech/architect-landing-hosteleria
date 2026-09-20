@@ -4,7 +4,7 @@ import AdminSidebar from '@/components/admin/AdminSidebar';
 
 export const metadata = {
   title: 'Architect Agency Hub',
-  description: 'Central de Operaciones de la Agencia',
+  description: 'Central de Operaciones',
 };
 
 export default function AdminLayout({

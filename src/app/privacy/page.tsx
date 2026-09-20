@@ -1,9 +1,9 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Política de Privacidad | Architect.Sys",
-  description: "Detalles sobre el tratamiento de datos personales y compromiso de confidencialidad en el ecosistema Architect.Sys, cumpliendo con el RGPD.",
-  alternates: { canonical: 'https://hosteleria.architectsys.com/privacy' }
+  title: "Política de Privacidad | DKitchen",
+  description: "Detalles sobre el tratamiento de datos personales y compromiso de confidencialidad en el ecosistema DKitchen, cumpliendo con el RGPD.",
+  alternates: { canonical: 'https://dkitchencorporate.es/privacy' }
 };
 
 export default function PrivacyPolicy() {
@@ -20,7 +20,7 @@ export default function PrivacyPolicy() {
           <div>
             <h2 className="text-xl font-bold text-zinc-900 mb-4">1. Identidad del Tratamiento</h2>
             <p>
-              Architect.Sys (en adelante, "la Plataforma"), operando bajo el dominio <strong>hosteleria.architectsys.com</strong>,
+              DKitchen (en adelante, "la Plataforma"), operando bajo el dominio <strong>dkitchencorporate.es</strong>,
               garantiza la protección de los datos personales de sus usuarios y clientes conforme al Reglamento General 
               de Protección de Datos (RGPD) y las normativas locales vigentes.
             </p>
@@ -64,13 +64,13 @@ export default function PrivacyPolicy() {
             <p className="text-sm">
               Para ejercer sus derechos de acceso, rectificación o cancelación, contacte con nuestra delegación de datos en:
               <br />
-              <span className="font-bold text-[#FF4500]">privacy@architectsys.com</span>
+              <span className="font-bold text-[#FF4500]">hola@dkitchencorporate.es</span>
             </p>
           </div>
         </section>
 
         <footer className="mt-24 pt-12 border-t border-zinc-100 text-center">
-          <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">© Architect.Sys Ecosystem | Secure Node</p>
+          <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">© DKitchen Ecosystem | Secure Node</p>
         </footer>
       </div>
     </div>

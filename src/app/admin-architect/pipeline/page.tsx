@@ -82,7 +82,7 @@ export default function PipelinePage() {
       <header className="mb-8 border-b border-white/10 pb-4">
         <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Master Control</span>
         <h1 className="text-3xl font-black text-white tracking-tighter mt-1 flex items-center gap-3">
-          Pipeline de Agencia
+          Pipeline de Proyectos
         </h1>
         <p className="text-zinc-400 font-medium mt-2">Flujo de vida, estado de entregables y configuración de clientes B2B.</p>
       </header>

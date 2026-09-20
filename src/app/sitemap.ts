@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://architect-sys.com' // Ajustar con tu dominio real luego
+  const baseUrl = 'https://dkitchencorporate.es' // Ajustar con tu dominio real luego
 
   return [
     {

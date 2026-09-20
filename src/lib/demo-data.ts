@@ -208,7 +208,7 @@ export const UI_TRANSLATIONS: any = {
     ai_placeholder: "Pregúntale al camarero IA...",
     smart_waiter: "🤵 Camarero Inteligente",
     add_to_order_modal: "➕ Añadir al Pedido",
-    back_to_architect: "← Volver a Architect.Sys"
+    back_to_home: "← Volver a DKitchen"
   },
   en: {
     menu_title: "Our Menu", table_prefix: "TABLE", add_to_order: "Add",
@@ -256,7 +256,7 @@ export const UI_TRANSLATIONS: any = {
     ai_placeholder: "Ask the AI waiter...",
     smart_waiter: "🤵 Smart Waiter",
     add_to_order_modal: "➕ Add to Order",
-    back_to_architect: "← Back to Architect.Sys"
+    back_to_home: "← Back to DKitchen"
   },
   fr: {
     menu_title: "Notre Carte", table_prefix: "TABLE", add_to_order: "Ajouter",
@@ -304,6 +304,6 @@ export const UI_TRANSLATIONS: any = {
     ai_placeholder: "Demandez au serveur IA...",
     smart_waiter: "🤵 Serveur Intelligent",
     add_to_order_modal: "➕ Ajouter à la Commande",
-    back_to_architect: "← Retour à Architect.Sys"
+    back_to_home: "← Retour à DKitchen"
   }
 };

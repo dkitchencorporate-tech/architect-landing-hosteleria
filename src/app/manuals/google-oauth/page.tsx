@@ -22,7 +22,7 @@ export default function GoogleOAuthManual() {
       <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
         <h1>Protocolo de Configuración: Google OAuth y Verificación de Aplicación</h1>
         <p className="lead">
-          Este documento detalla el procedimiento operativo estándar (SOP) para activar y escalar la autenticación con Google en la plataforma SaaS de Architect.Sys, gestionada a través de Supabase y Google Cloud Console.
+          Este documento detalla el procedimiento operativo estándar (SOP) para activar y escalar la autenticación con Google en la plataforma SaaS de DKitchen, gestionada a través de Supabase y Google Cloud Console.
         </p>
 
         <h2>1. Objetivo</h2>
@@ -63,11 +63,11 @@ export default function GoogleOAuthManual() {
 
         <h3>3.2. Procedimiento de Verificación (Aumento de Límite)</h3>
         <p>
-          Una vez que el flujo de usuarios se acerque a los 100 registros, el administrador debe solicitar la verificación formal en la misma pantalla de Google Cloud. Se requerirán dos enlaces operativos de Architect.Sys:
+          Una vez que el flujo de usuarios se acerque a los 100 registros, el administrador debe solicitar la verificación formal en la misma pantalla de Google Cloud. Se requerirán dos enlaces operativos de DKitchen:
         </p>
         <ol>
-          <li><strong>Política de Privacidad:</strong> <code>https://hosteleria.architectsys.com/privacy</code></li>
-          <li><strong>Términos de Servicio (TOS):</strong> <code>https://hosteleria.architectsys.com/terms</code></li>
+          <li><strong>Política de Privacidad:</strong> <code>https://dkitchencorporate.es/privacy</code></li>
+          <li><strong>Términos de Servicio (TOS):</strong> <code>https://dkitchencorporate.es/terms</code></li>
         </ol>
         <p>
           <em>Nota Técnica:</em> Ambas rutas ya están programadas y desplegadas en la infraestructura de Vercel. Al proveer estos enlaces al equipo de revisión de Google, el límite de 100 usuarios será removido permanentemente.

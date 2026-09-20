@@ -22,13 +22,13 @@ export default function MapaNavegacionManual() {
       <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
         <h1>1. Mapa Integral de Navegación y URLs</h1>
         <p className="lead">
-          Directorio completo de enrutamiento del ecosistema Architect.Sys. Este documento funciona como el mapa cartográfico de toda la aplicación, dividiendo las áreas por nivel de seguridad.
+          Directorio completo de enrutamiento del ecosistema DKitchen. Este documento funciona como el mapa cartográfico de toda la aplicación, dividiendo las áreas por nivel de seguridad.
         </p>
 
         <h2>Área Pública (Sin Autenticación)</h2>
         <p>Estas rutas están abiertas al internet y son el frente de captación de clientes.</p>
         <ul>
-          <li><strong>Landing Page Principal:</strong> <code>https://hosteleria.architectsys.com/</code> <br/>El funnel B2B, presentación de servicios, matriz de precios y FAQs.</li>
+          <li><strong>Landing Page Principal:</strong> <code>https://dkitchencorporate.es/</code> <br/>El funnel B2B, presentación de servicios, matriz de precios y FAQs.</li>
           <li><strong>Carta Digital Demo:</strong> <code>/demo/carta</code> <br/>Simulación de cómo se ve una carta digital interactiva en el móvil.</li>
           <li><strong>Legal - Privacidad:</strong> <code>/privacy</code> <br/>Obligatorio para Google OAuth y normativas europeas.</li>
           <li><strong>Legal - Términos:</strong> <code>/terms</code> <br/>Condiciones de uso y contratación del servicio SaaS.</li>
@@ -46,7 +46,7 @@ export default function MapaNavegacionManual() {
         <p>Protegida por el <em>Middleware</em>. Solo accesible si existe una sesión válida de Supabase en las cookies del navegador.</p>
         <ul>
           <li><strong>Dashboard Principal:</strong> <code>/dashboard</code> <br/>Centro de control del cliente. Muestra el estado del negocio, conexión con métricas y el asistente de Onboarding inicial.</li>
-          <li><strong>Creative Factory:</strong> <code>/creative-factory</code> <br/>La biblioteca de eventos y campañas. Permite al cliente explorar catálogos de marketing (Navidad, Verano, Halloween) y solicitarlas al equipo de Architect.Sys.</li>
+          <li><strong>Creative Factory:</strong> <code>/creative-factory</code> <br/>La biblioteca de eventos y campañas. Permite al cliente explorar catálogos de marketing (Navidad, Verano, Halloween) y solicitarlas al equipo de DKitchen.</li>
         </ul>
 
         <h2>Área de Administración (God Mode)</h2>

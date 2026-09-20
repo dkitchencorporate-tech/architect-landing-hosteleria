@@ -741,7 +741,7 @@ function CartaContent() {
           {/* GLOBAL BACK BUTTON (MOVED HERE) */}
           <div className="flex justify-center mt-2 pointer-events-auto">
             <a href="/" className="text-white/70 hover:text-white text-[10px] uppercase tracking-widest font-bold flex items-center gap-2 transition-colors py-2 px-4 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:bg-black/60">
-              {t.back_to_architect}
+              {t.back_to_home}
             </a>
           </div>
         </div>
@@ -785,7 +785,7 @@ function CartaContent() {
               <a href="https://calendly.com/dkitchencorporate/30min" target="_blank" rel="noopener noreferrer" className="block w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest bg-[#10b981] text-black hover:bg-[#059669]">
                 {t.sales_btn_calendly}
               </a>
-              <a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer" className="block w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest border border-[#10b981] text-[#10b981] hover:bg-[#10b981]/10">
+              <a href="https://wa.me/34622652659" target="_blank" rel="noopener noreferrer" className="block w-full py-4 rounded-xl text-xs font-bold uppercase tracking-widest border border-[#10b981] text-[#10b981] hover:bg-[#10b981]/10">
                 {t.sales_btn_whatsapp}
               </a>
             </div>
@@ -951,7 +951,7 @@ function CartaContent() {
               {/* Mensaje de Bienvenida */}
               <div className="flex justify-start">
                 <div className={`p-5 rounded-2xl rounded-tl-sm max-w-[85%] ${theme.card} ${theme.text} border ${theme.border} font-medium leading-relaxed shadow-sm`}>
-                  ¡Hola! Soy el asistente inteligente de Architect.Sys. Estoy conectado a la carta de este restaurante. Puedo recomendarte maridajes, explicarte ingredientes o añadir platos a tu comanda. ¿Qué te apetece hoy?
+                  ¡Hola! Soy el asistente inteligente de DKitchen. Estoy conectado a la carta de este restaurante. Puedo recomendarte maridajes, explicarte ingredientes o añadir platos a tu comanda. ¿Qué te apetece hoy?
                 </div>
               </div>
               

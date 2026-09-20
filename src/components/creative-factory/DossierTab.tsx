@@ -7,7 +7,7 @@ export default function DossierTab() {
     <div className="space-y-6">
       <div>
         <h3 className="text-2xl font-black text-white mb-2">Dossier de Protocolos Operativos</h3>
-        <p className="text-zinc-400 text-sm">Biblioteca estratégica y de procedimientos estándar de la agencia **Architect.Sys**.</p>
+        <p className="text-zinc-400 text-sm">Biblioteca estratégica y de procedimientos estándar de DKitchen.</p>
       </div>
 
       <div className="flex border-b border-zinc-900 gap-6">

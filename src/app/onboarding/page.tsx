@@ -119,7 +119,7 @@ function OnboardingContent() {
     <div className="min-h-screen bg-[#050505] flex items-center justify-center p-4">
       <div className="bg-zinc-950 p-8 rounded-3xl shadow-2xl border border-zinc-900 max-w-md w-full">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-black text-white tracking-tight">Architect<span className="text-orange-500">.Sys</span></h1>
+          <h1 className="text-3xl font-black text-white tracking-tight">D<span className="text-orange-500">Kitchen</span></h1>
           <p className="text-zinc-400 text-xs font-medium mt-2 uppercase tracking-widest">Activación de Cuenta Privada</p>
         </div>
 

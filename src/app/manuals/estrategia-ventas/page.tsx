@@ -22,12 +22,12 @@ export default function EstrategiaVentasManual() {
       <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
         <h1>3. Embudos de Venta y Psicología B2B</h1>
         <p className="lead">
-          Protocolo de persuasión comercial de Architect.Sys. Análisis de la propuesta de valor, estructura de la Landing Page y posicionamiento de marca (Socio Operativo vs. Agencia).
+          Protocolo de persuasión comercial de DKitchen. Análisis de la propuesta de valor, estructura de la Landing Page y posicionamiento de marca (Socio Operativo vs. Agencia).
         </p>
 
         <h2>Posicionamiento de Marca</h2>
         <p>
-          Architect.Sys rompe intencionalmente con la semántica tradicional del marketing para hostelería. 
+          DKitchen rompe intencionalmente con la semántica tradicional del marketing para hostelería. 
         </p>
         <ul>
           <li><strong>NO somos:</strong> "Una agencia de marketing", "Creadores de posts", "Prometedores de locales llenos".</li>

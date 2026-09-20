@@ -78,7 +78,7 @@ function LoginForm() {
         <div className="text-center mb-8">
           <Link href="/">
             <h1 className="text-3xl font-black text-white tracking-tighter mb-2 hover:opacity-80 transition-opacity inline-block cursor-pointer">
-              Architect<span className="text-[#FF4500]">.Sys</span>
+              D<span className="text-[#FF4500]">Kitchen</span>
             </h1>
           </Link>
           <p className="text-zinc-400 text-sm font-medium">Inicia sesión en tu Ecosistema</p>

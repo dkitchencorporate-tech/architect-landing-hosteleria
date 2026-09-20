@@ -6,7 +6,7 @@ interface PromoTabProps {
   promoFormat: string;
   setPromoFormat: (v: string) => void;
   isGeneratingPromo: boolean;
-  handleGenerateArchitectPromo: () => void;
+  handleGenerateBrandPromo: () => void;
   generalError: string | null;
   promoData: any;
   generatedImage: string | null;
@@ -26,7 +26,7 @@ export default function PromoTab({
   promoFormat,
   setPromoFormat,
   isGeneratingPromo,
-  handleGenerateArchitectPromo,
+  handleGenerateBrandPromo,
   generalError,
   promoData,
   generatedImage,
@@ -89,7 +89,7 @@ export default function PromoTab({
           </div>
 
           <button
-            onClick={handleGenerateArchitectPromo}
+            onClick={handleGenerateBrandPromo}
             disabled={isGeneratingPromo}
             className="w-full bg-white text-black font-black uppercase text-xs py-4 rounded-xl hover:bg-zinc-200 transition-all disabled:opacity-50 flex items-center justify-center gap-2 mt-8"
           >
@@ -244,7 +244,7 @@ export default function PromoTab({
             <div className="border border-dashed border-zinc-800 rounded-3xl p-16 text-center flex flex-col items-center justify-center bg-zinc-950/20 py-24">
               <span className="text-4xl mb-4">📢</span>
               <h4 className="text-lg font-bold text-white mb-1">Campaña de Auto-Promoción Vacía</h4>
-              <p className="text-zinc-500 text-xs max-w-sm mx-auto mb-6">Elige el objetivo del embudo de Architect.Sys en el panel izquierdo y haz clic en Generar Campaña B2B.</p>
+              <p className="text-zinc-500 text-xs max-w-sm mx-auto mb-6">Elige el objetivo del embudo de DKitchen en el panel izquierdo y haz clic en Generar Campaña B2B.</p>
             </div>
           )}
         </div>

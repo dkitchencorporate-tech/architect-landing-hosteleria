@@ -67,7 +67,7 @@ Estructura para carousel:
     {
       "slideNumber": 5,
       "hook": "LLAMADA A LA ACCIÓN (CTA)",
-      "description": "Cómo contactar y cerrar con Architect.Sys.",
+      "description": "Cómo contactar y cerrar con DKitchen.",
       "imagePrompt": "Prompt de Imagen 4 detallado en inglés para la slide 5."
     }
   ]

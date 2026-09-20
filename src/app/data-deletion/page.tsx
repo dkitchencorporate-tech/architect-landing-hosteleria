@@ -1,9 +1,9 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Instrucciones de Eliminación de Datos | Architect.Sys",
-  description: "Protocolo oficial para la solicitud de borrado permanente de datos personales en el ecosistema Architect.Sys, conforme al RGPD y políticas de Meta.",
-  alternates: { canonical: 'https://hosteleria.architectsys.com/data-deletion' }
+  title: "Instrucciones de Eliminación de Datos | DKitchen",
+  description: "Protocolo oficial para la solicitud de borrado permanente de datos personales en el ecosistema DKitchen, conforme al RGPD y políticas de Meta.",
+  alternates: { canonical: 'https://dkitchencorporate.es/data-deletion' }
 };
 
 export default function DataDeletion() {
@@ -21,7 +21,7 @@ export default function DataDeletion() {
             <h2 className="text-xl font-bold text-zinc-900 mb-4">Instrucciones de Eliminación</h2>
             <p>
               Conforme a los requerimientos de la plataforma Meta y el cumplimiento del RGPD, 
-              Architect.Sys provee un mecanismo directo para que los usuarios soliciten la 
+              DKitchen provee un mecanismo directo para que los usuarios soliciten la 
               eliminación total de su rastro digital en nuestro ecosistema.
             </p>
           </div>
@@ -33,7 +33,7 @@ export default function DataDeletion() {
             </div>
             <div className="bg-white p-8 rounded-3xl border border-zinc-100">
               <h3 className="font-bold text-zinc-900 mb-2">Vía Email</h3>
-              <p className="text-sm">Envíe un correo a <span className="font-bold text-[#FF4500]">support@architectsys.com</span> indicando su número de teléfono. La purga se completará en un plazo máximo de 48 horas.</p>
+              <p className="text-sm">Envíe un correo a <span className="font-bold text-[#FF4500]">hola@dkitchencorporate.es</span> indicando su número de teléfono. La purga se completará en un plazo máximo de 48 horas.</p>
             </div>
           </div>
 
@@ -51,7 +51,7 @@ export default function DataDeletion() {
         </section>
 
         <footer className="mt-24 pt-12 border-t border-zinc-100 text-center">
-          <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">© Architect.Sys Ecosystem | Secure Node</p>
+          <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">© DKitchen Ecosystem | Secure Node</p>
         </footer>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 
 export const metadata = {
-  title: "Condiciones del Servicio | Architect.Sys",
-  description: "Términos y condiciones de uso de la plataforma de automatización y servicios digitales de Architect.Sys.",
-  alternates: { canonical: 'https://hosteleria.architectsys.com/terms' }
+  title: "Condiciones del Servicio | DKitchen",
+  description: "Términos y condiciones de uso de la plataforma de automatización y servicios digitales de DKitchen.",
+  alternates: { canonical: 'https://dkitchencorporate.es/terms' }
 };
 
 export default function TermsOfService() {
@@ -20,41 +20,44 @@ export default function TermsOfService() {
           <div>
             <h2 className="text-xl font-bold text-zinc-900 mb-4">1. Aceptación de Términos</h2>
             <p>
-              Al utilizar los servicios de automatización de Architect.Sys (vía WhatsApp o Web), 
-              el usuario acepta estas condiciones. Los servicios están diseñados para la gestión 
-              de reservas y comunicación comercial automatizada.
+              Al contratar cualquiera de los servicios de DKitchen Corporate SL —carta digital con QR,
+              eventos gastronómicos, auditoría de canales, digitalización a medida o marcas virtuales—
+              el cliente acepta estas condiciones.
             </p>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-zinc-900 mb-4">2. Uso de la IA y Automatización</h2>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4">2. Contenido y disponibilidad</h2>
             <p>
-              Nuestra plataforma utiliza tecnología de Inteligencia Artificial para responder consultas. 
-              Aunque el sistema está calibrado para ser preciso, las confirmaciones finales de reserva 
-              están sujetas a la disponibilidad real del establecimiento gestor.
+              El contenido de la carta digital (platos, precios, alérgenos y disponibilidad) es
+              responsabilidad exclusiva del establecimiento, que puede editarlo en cualquier momento desde
+              su panel. DKitchen provee la infraestructura que lo publica, no valida ni garantiza la
+              exactitud de esa información frente al consumidor final.
             </p>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-zinc-900 mb-4">3. Responsabilidad del Usuario</h2>
+            <h2 className="text-xl font-bold text-zinc-900 mb-4">3. Cobros de terceros</h2>
             <p>
-              El usuario se compromete a proporcionar información veraz y a no utilizar el canal de 
-              automatización para fines ilícitos o envío de spam.
+              En los eventos, la venta de entradas se cobra directamente en la cuenta de la pasarela de pago
+              titularidad del propio establecimiento. DKitchen configura esa conexión pero en ningún momento
+              recibe, retiene ni intermedia los fondos, ni percibe comisión alguna sobre esas ventas.
             </p>
           </div>
 
           <div className="bg-zinc-900 text-white p-8 rounded-[2rem] shadow-xl">
             <h2 className="text-xl font-bold mb-4">Aviso de Facturación</h2>
             <p className="text-zinc-400 text-sm">
-              Los servicios de Architect.Sys pueden incluir cargos por mantenimiento de IA o gestión 
-              publicitaria, los cuales habrán sido acordados previamente mediante factura comercial 
-              independiente.
+              Las tarifas de DKitchen son fijas y se acuerdan por escrito antes de la contratación. La cuota
+              mensual de la carta digital se factura de forma recurrente hasta que el cliente la cancele; el
+              resto de servicios se facturan como pago único. Ninguna tarifa incluye un componente variable
+              ni un porcentaje sobre la facturación del establecimiento.
             </p>
           </div>
         </section>
 
         <footer className="mt-24 pt-12 border-t border-zinc-100 text-center">
-          <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">© Architect.Sys Ecosystem | Secure Node</p>
+          <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest">© DKitchen Ecosystem | Secure Node</p>
         </footer>
       </div>
     </div>

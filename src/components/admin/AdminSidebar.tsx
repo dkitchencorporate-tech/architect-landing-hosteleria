@@ -26,7 +26,7 @@ export default function AdminSidebar() {
     { name: 'Directorio de Clientes', href: '/admin-architect/clients', icon: Users },
     { name: 'Base de Eventos', href: '/admin-architect/events-master', icon: Calendar },
     { name: 'Creative Factory', href: '/admin-architect/creative', icon: Wand2 },
-    { name: 'Pipeline de Agencia', href: '/admin-architect/pipeline', icon: Rocket },
+    { name: 'Pipeline de Proyectos', href: '/admin-architect/pipeline', icon: Rocket },
     { name: 'SOPs y Manuales', href: '/manuals', icon: BookOpen },
     { name: 'Visión SaaS (Demo)', href: '/dashboard', icon: Monitor }
   ];
@@ -39,7 +39,7 @@ export default function AdminSidebar() {
           <div className="w-8 h-8 bg-gradient-to-br from-zinc-200 to-zinc-400 rounded-lg flex items-center justify-center font-black text-black shadow-[0_0_15px_rgba(255,255,255,0.2)]">
             A.
           </div>
-          <span className="text-white font-black tracking-tighter">ARCHITECT.</span>
+          <span className="text-white font-black tracking-tighter">DKITCHEN</span>
         </div>
         <button 
           onClick={() => setIsOpen(!isOpen)}
@@ -83,7 +83,7 @@ export default function AdminSidebar() {
             </div>
             {isDesktopExpanded && (
               <div className="overflow-hidden whitespace-nowrap animate-in fade-in slide-in-from-left-2 duration-300">
-                <h1 className="text-xl font-black tracking-tighter text-white">ARCHITECT.</h1>
+                <h1 className="text-xl font-black tracking-tighter text-white">DKITCHEN</h1>
                 <p className="text-[9px] text-zinc-400 font-bold uppercase tracking-widest">Master Console</p>
               </div>
             )}

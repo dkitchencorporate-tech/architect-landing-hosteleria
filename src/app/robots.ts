@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*', // Permite a todos los bots (Google, GPTBot, Perplexity)
       allow: '/',
     },
-    sitemap: 'https://architect-sys.com/sitemap.xml',
+    sitemap: 'https://dkitchencorporate.es/sitemap.xml',
   }
 }

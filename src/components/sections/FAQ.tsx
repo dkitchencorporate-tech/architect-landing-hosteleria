@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "¿De quién es la web, el dominio y los datos de clientes?",
-    answer: "Son tuyos desde el minuto uno. A diferencia de agencias que secuestran tu dominio o plataformas de delivery que ocultan los datos de tus clientes, con Architect.Sys tú eres el único propietario de tus bases de datos, código y presencia digital."
+    answer: "Son tuyos desde el minuto uno. A diferencia de quienes registran tu dominio a su nombre, o de las plataformas de delivery que te ocultan los datos de tus clientes, con DKitchen tú eres el único propietario de tus bases de datos, tu código y tu presencia digital."
   },
   {
     question: "¿Qué son exactamente los Agentes IA que instaláis?",

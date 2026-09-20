@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     }
 
     const prompt = `
-Eres el Director de Estrategia Gastronómica de Architect.Sys. Tu especialidad es diseñar planes de guerrilla de 30 días de captación y retención para hostelería de alto ticket.
+Eres el Director de Estrategia Gastronómica de DKitchen. Tu especialidad es diseñar planes de guerrilla de 30 días de captación y retención para hostelería de alto ticket.
 Diseña un plan de marketing y optimización detallado para nuestro cliente activo:
 
 [DATOS DEL CLIENTE]

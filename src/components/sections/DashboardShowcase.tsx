@@ -21,7 +21,7 @@ export default function DashboardShowcase() {
           onClick={() => setActiveTab('pipeline')}
           className={`px-6 py-2 rounded-full font-bold text-sm transition-all ${activeTab === 'pipeline' ? 'bg-[#FF4500] text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
         >
-          Vista: Pipeline de Agencia
+          Vista: Pipeline de Proyectos
         </button>
         <button 
           onClick={() => setActiveTab('events')}
@@ -39,7 +39,7 @@ export default function DashboardShowcase() {
           <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
           <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
           <div className="mx-auto text-gray-500 text-xs font-bold font-mono tracking-widest uppercase">
-            Architect.Sys / Panel de Control
+            DKitchen / Panel de Control
           </div>
         </div>
 

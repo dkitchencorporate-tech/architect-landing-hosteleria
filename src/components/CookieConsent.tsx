@@ -7,7 +7,7 @@ export default function CookieConsent() {
 
   useEffect(() => {
     // Verificar si ya se aceptaron las cookies previamente
-    const consent = localStorage.getItem('architect_cookie_consent');
+    const consent = localStorage.getItem('dkitchen_cookie_consent');
     if (!consent) {
       // Pequeño retraso para que no sea lo primero que vea de golpe
       const timer = setTimeout(() => setIsVisible(true), 1500);
@@ -16,12 +16,12 @@ export default function CookieConsent() {
   }, []);
 
   const acceptAll = () => {
-    localStorage.setItem('architect_cookie_consent', 'all');
+    localStorage.setItem('dkitchen_cookie_consent', 'all');
     setIsVisible(false);
   };
 
   const rejectNonEssential = () => {
-    localStorage.setItem('architect_cookie_consent', 'essential');
+    localStorage.setItem('dkitchen_cookie_consent', 'essential');
     setIsVisible(false);
   };
 

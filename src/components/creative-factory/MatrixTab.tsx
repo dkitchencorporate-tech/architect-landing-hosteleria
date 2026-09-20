@@ -40,7 +40,7 @@ export default function MatrixTab({ approvedCreatives, setActiveTab }: { approve
                   </p>
                 </div>
                 <div className="border-t border-zinc-900/60 pt-4 flex gap-4">
-                  <button onClick={() => alert('Campaña integrada en el embudo comercial de Architect.Sys.')} className="flex-1 bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs py-3 rounded-xl transition-colors">
+                  <button onClick={() => alert('Campaña integrada en el embudo comercial de DKitchen.')} className="flex-1 bg-orange-600 hover:bg-orange-500 text-white font-bold text-xs py-3 rounded-xl transition-colors">
                     🚀 Lanzar Publicidad Local
                   </button>
                 </div>
