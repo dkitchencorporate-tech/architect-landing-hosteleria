@@ -1,15 +1,20 @@
 /**
  * ÚNICA FRONTERA ENTRE LA APLICACIÓN Y SU BASE DE DATOS
  *
- * Supabase se eliminó por completo del proyecto. El destino es Neon, todavía sin
- * provisionar. Hasta que lo esté, `BACKEND_CONFIGURED` es false y este módulo:
+ * Supabase se eliminó por completo del proyecto. Neon ya está provisionado y
+ * cableado —ver `src/lib/db.ts`—, pero el esquema que hay en producción cubre el
+ * motor de QR de carta: restaurantes, secciones, platos, códigos y escaneos.
+ *
+ * Las pantallas que consume este módulo (perfiles de cliente, invitaciones,
+ * catálogo de eventos, campañas, analítica) NO tienen tabla detrás todavía. Por
+ * eso `BACKEND_CONFIGURED` sigue en false, y este módulo:
  *
  *   - devuelve colecciones vacías en las lecturas, nunca datos inventados;
  *   - rechaza las escrituras con un error explícito que la interfaz puede mostrar.
  *
- * La regla es que ninguna pantalla finja tener datos que no tiene. Cuando Neon
- * esté conectado, solo cambia este archivo: los componentes ya no saben de dónde
- * vienen los datos.
+ * La regla es que ninguna pantalla finja tener datos que no tiene. Tener la base
+ * conectada no es tener las tablas: mientras no existan, esto no miente sobre
+ * ellas. El inventario de lo que se ve sin respaldo real está en ESTADO_FRONT.md.
  */
 
 export const BACKEND_CONFIGURED = false;

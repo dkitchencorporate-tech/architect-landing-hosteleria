@@ -20,17 +20,15 @@ function AnalyticsPixelLogic() {
         localStorage.setItem('dkitchen_session_id', sessionId);
       }
 
-      // 2. Geolocalización Inteligente (IPAPI)
-      let geo = { city: 'Desconocido', country_name: 'Desconocido' };
-      try {
-        const geoRes = await fetch('https://ipapi.co/json/');
-        if (geoRes.ok) {
-          const geoData = await geoRes.json();
-          geo = { city: geoData.city, country_name: geoData.country_name };
-        }
-      } catch (err) {
-        console.warn('[Analytics] Bloqueador de anuncios previno la geolocalización.');
-      }
+      // 2. Geolocalización: retirada (V-10)
+      //
+      // Aquí se llamaba a ipapi.co en cada visita. Eso entrega la dirección IP
+      // de quien navega —un dato personal— a una empresa ajena, sin haberlo
+      // pedido y sin que aparezca en la política de privacidad. A cambio de
+      // nada: el resultado no se guardaba en ninguna parte.
+      //
+      // Cuando haga falta saber el país, lo sabe el propio borde de Vercel a
+      // partir de la petición, sin terceros y sin almacenar la IP.
 
       // 3. Capturar UTMs
       const utm_source = searchParams.get('utm_source');
@@ -58,8 +56,6 @@ function AnalyticsPixelLogic() {
           screen_height: window.innerHeight,
           language: navigator.language,
           timestamp: new Date().toISOString(),
-          city: geo.city,
-          country: geo.country_name,
           event: 'page_view'
         }
       };

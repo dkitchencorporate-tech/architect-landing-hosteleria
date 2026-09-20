@@ -6,11 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prebuild": "node scripts/guardia-credenciales.mjs",
+    "guardia": "node scripts/guardia-credenciales.mjs",
+    "db:migrar": "node db/migrate.mjs",
+    "db:verificar": "node db/verificar-blindaje.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.2.0",
     "@neondatabase/serverless": "^1.1.0",
+    "@types/ws": "^8.18.1",
     "csv-stringify": "^6.7.0",
     "date-fns": "^4.2.1",
     "lucide-react": "^1.20.0",
@@ -20,7 +25,9 @@
     "react-calendly": "^4.4.0",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
-    "uuid": "^14.0.0"
+    "server-only": "^0.0.1",
+    "uuid": "^14.0.0",
+    "ws": "^8.21.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.20",

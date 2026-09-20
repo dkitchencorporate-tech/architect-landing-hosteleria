@@ -1,7 +1,9 @@
 # Seguridad y persistencia en Neon
 
 **Actualizado:** 20 de septiembre de 2026
-**Estado:** especificación previa a la provisión de Neon. Nada de esto está implementado todavía.
+**Estado:** aplicado y verificado sobre `main`. Las Secciones 1 a 6 son el análisis y el
+diseño; la **Sección 8** describe lo que está realmente ejecutado, y la **Sección 7**
+dice qué falta y por qué. Lo que no esté en la 8, no está puesto.
 
 Este documento existe para que el backend no se improvise. Recoge, uno a uno, los
 agujeros encontrados durante la migración, y define cómo debe quedar cada cosa en
@@ -176,12 +178,16 @@ real: no se carga nada en producción hasta que esté cerrado.
 geolocalizarlo. Ocurre **al margen del banner de cookies**, antes de que nadie acepte
 nada.
 
-**Estado:** la llamada sigue ahí; el registro ya no se guarda en ninguna parte.
-**Remedio:** o se condiciona al consentimiento, o la geolocalización se resuelve del
-lado del servidor a partir de la cabecera que ya aporta Vercel, sin terceros. La
-segunda opción es mejor: menos dependencias y menos superficie legal.
+**Estado: CERRADO (20/09/2026).** La llamada se ha eliminado. Entregaba un dato
+personal a una empresa ajena, sin pedirlo y sin figurar en la política de privacidad,
+a cambio de nada: el resultado no se guardaba en ninguna parte. Cuando haga falta el
+país, lo resuelve el borde de Vercel a partir de la petición, sin terceros y sin
+almacenar la IP. La CSP añadida en `next.config.js` (`connect-src 'self'`) impide
+además que vuelva a aparecer una llamada así sin que se note.
 
 ### V-11 · Alto · Credenciales de correo en el despliegue
+
+**Sigue abierto:** no lo puede cerrar el código, exige dar de alta un proveedor.
 
 `src/app/api/lead/route.ts` usa `SMTP_EMAIL` y `SMTP_PASSWORD` con Gmail. Son
 credenciales de una cuenta de correo real viviendo en variables de entorno del
@@ -196,11 +202,9 @@ no el sistema de registro.
 
 ### V-12 · Medio · Clave de Gemini en el despliegue
 
-`GEMINI_API_KEY` vive en el entorno del despliegue. Es inevitable que la clave esté
-donde se hace la llamada, pero sí es evitable que su uso no tenga techo.
-
-**Remedio:** límite de gasto en el proyecto de Google Cloud, y límite de frecuencia
-por identidad antes de llegar a la llamada (§6.3).
+**Estado: CERRADO.** Gemini se eliminó del proyecto por decisión de producto, y la
+variable se borró del despliegue. Queda revocarla en Google Cloud, que solo puede
+hacer el titular de la cuenta.
 
 ### V-13 · Alto · Sin límite de frecuencia en ninguna parte
 
@@ -208,8 +212,15 @@ Ninguna ruta de la aplicación tiene control de frecuencia. `/api/lead` envía u
 correo por petición: un script puede inundar la bandeja de entrada y, de paso,
 quemar la reputación del remitente. Las rutas de IA cuestan dinero por llamada.
 
-**Remedio:** §6.3, con contador en Neon para que el límite sea global y no por
-instancia del despliegue.
+**Estado: MITIGADO (20/09/2026).** Las rutas de IA ya no existen —se eliminaron con
+Gemini— así que la única superficie viva era `/api/lead`, que ahora limita a 5 envíos
+por IP cada 10 minutos y valida el correo y el teléfono antes de enviar nada.
+
+El contador vive en memoria del proceso, y eso hay que decirlo con precisión: las
+funciones de Vercel son efímeras y hay varias a la vez, así que el límite es por
+instancia, no global. Quita de en medio el bucle trivial desde una consola; no frena
+a quien reparta las peticiones. El límite global con contador en Neon (§6.3) sigue
+pendiente, y se vuelve necesario el día que la captación de leads entre en la base.
 
 ### V-14 · Bajo · Redirección a una ruta inexistente
 
@@ -622,16 +633,150 @@ y se queda a medio aprovisionar es peor que uno que no ha podido pagar.
 
 Nada de esto se carga con datos reales hasta que estén los ocho puntos:
 
-- [ ] `REVOKE ALL ON SCHEMA public FROM PUBLIC` ejecutado y verificado
-- [ ] RLS activo y **forzado** en todas las tablas con datos
-- [ ] El despliegue conecta con un rol sin privilegios, nunca con el propietario
+- [x] `REVOKE ALL ON SCHEMA public FROM PUBLIC` ejecutado y verificado
+- [x] RLS activo y **forzado** en todas las tablas con datos
+- [x] El despliegue conecta con un rol sin privilegios, nunca con el propietario
 - [ ] `/dashboard` y `/admin-architect` cerrados con sesión (V-09)
-- [ ] Exportación de datos personales: exige `admin`, audita y limita (V-05)
-- [ ] Límite de frecuencia operativo en las rutas de correo e IA (V-13)
+- [x] Exportación de datos personales: **neutralizada**, no habilitada (V-05)
+- [x] Límite de frecuencia operativo en la única ruta de correo viva (V-13)
 - [ ] Credenciales de correo migradas fuera de Gmail (V-11)
-- [ ] Geolocalización resuelta sin terceros o bajo consentimiento (V-10)
+- [x] Geolocalización resuelta sin terceros (V-10)
 
-**Prueba final**, y es la que de verdad cierra el asunto: coger la cadena de conexión
-del despliegue, abrirla desde fuera con un cliente de Postgres, y comprobar que **no
-se puede leer ni una fila de un cliente**. Si se puede, la regla inamovible no se está
-cumpliendo, por mucho que el código esté ordenado.
+Sobre los dos que siguen abiertos, para que no se lean como olvidos:
+
+- **V-09** depende de que exista sesión, y la sesión depende de BetterAuth, que se
+  configura cuando haya a quién autenticar (Sección 6.bis). Mientras tanto esas
+  pantallas no muestran datos: `data-source.ts` devuelve colecciones vacías, así que
+  lo que queda expuesto es la maqueta, no información de nadie. Sigue siendo un
+  punto a cerrar antes del primer cliente, no antes del primer despliegue.
+- **V-11** no lo puede hacer el código: exige dar de alta un proveedor de correo
+  transaccional y retirar la contraseña de aplicación de Gmail. Es una decisión y un
+  alta de servicio, ambas del titular de la cuenta.
+
+- [x] **Prueba final**, y es la que de verdad cierra el asunto: coger la cadena de
+  conexión del despliegue, abrirla desde fuera, y comprobar que **no se puede leer
+  ni una fila de un cliente**.
+
+Esa prueba ya no es un párrafo: es código que se ejecuta.
+
+```
+npm run db:verificar <entorno-propietario> <entorno-aplicación>
+```
+
+La última sección de `db/verificar-blindaje.mjs` abre literalmente la cadena que
+tiene el despliegue y comprueba, tabla por tabla, que no responde. El 20/09/2026
+sobre `main`: **43 comprobaciones, 0 fallidas**.
+
+---
+
+## 8. El blindaje, tal como está ejecutado
+
+Esta sección describe lo que hay puesto, no lo que se pretende poner.
+
+### 8.1 Qué se aplicó y dónde
+
+Cuatro migraciones, en `db/migrations/`, aplicadas primero sobre una rama de prueba
+creada desde `main` y solo después sobre `main`:
+
+| Archivo | Qué instala |
+|---|---|
+| `0001_fundacion.sql` | Cierra el acceso que Postgres da a `PUBLIC` por defecto, crea el esquema `dk` y los roles `dk_anon` y `dk_auth` |
+| `0002_identidad_auditoria.sql` | `dk.identidad_actual()`, tabla `identidades`, `dk.es_admin()` y la auditoría que nadie puede modificar |
+| `0003_motor_qr.sql` | Restaurantes, carta, códigos y escaneos, con sus políticas y el tope de productos como restricción |
+| `0004_rol_aplicacion.sql` | `dk_app`, el rol con el que se conecta el despliegue |
+
+`db/migrate.mjs` las aplica en orden, una transacción por archivo, y lleva registro
+en `dk_migraciones`: repetir la ejecución no hace daño.
+
+### 8.2 Por qué `dk_app` existe
+
+Es la pieza que sostiene la regla inamovible, y conviene entender la trampa que evita.
+
+La integración de Neon inyecta en Vercel quince variables (`DATABASE_URL`,
+`POSTGRES_URL`, `PGPASSWORD`…) que llevan la credencial de `neondb_owner`. Ese rol
+tiene `BYPASSRLS`. **Con él, todas las políticas de este documento serían adorno.**
+Es exactamente el papel que hacía `SUPABASE_SERVICE_KEY` en la etapa anterior, y el
+motivo de que aparezca como V-17.
+
+Así que la aplicación no usa ninguna de esas quince. Usa `DK_DATABASE_URL`, que
+apunta a `dk_app`: sin `BYPASSRLS`, sin superusuario y —esto es lo importante— con
+`NOINHERIT`. Recién conectado, `dk_app` **no puede leer una sola fila de ninguna
+tabla**. Para hacer algo tiene que declarar con qué sombrero, dentro de la
+transacción:
+
+```sql
+BEGIN;
+SET LOCAL ROLE dk_anon;              -- el visitante que escanea un QR
+...
+
+BEGIN;
+SELECT auth.jwt_session_init($1);    -- Postgres verifica la firma, no nosotros
+SET LOCAL ROLE dk_auth;              -- el cliente con sesión demostrada
+...
+```
+
+Olvidar esa línea no abre nada: deja la consulta sin permisos y falla. **El error por
+omisión es denegar**, que es la única forma segura de equivocarse.
+
+`LOCAL` no es decorativo: la conexión viene de PgBouncer en modo transacción, donde
+el estado de sesión se comparte entre peticiones. `LOCAL` hace que el rol muera con
+la transacción y no viaje a la petición siguiente.
+
+La contraseña de `dk_app` la genera `db/crear-credencial-app.mjs`, que la escribe una
+sola vez fuera del repositorio y se niega a escribirla si el rol resulta tener
+privilegios que no debería. No está en ningún archivo versionado. Si se pierde, se
+vuelve a ejecutar y se rota.
+
+### 8.3 Tres cosas que impiden que esto se deshaga solo
+
+Un blindaje que depende de que nadie se equivoque no es un blindaje.
+
+**La guardia de credenciales** (`scripts/guardia-credenciales.mjs`) se ejecuta en
+`prebuild`. Si alguien escribe `process.env.DATABASE_URL` en `src/`, **el despliegue
+falla antes de existir**. Cubre también los restos de la etapa anterior: Supabase,
+Gemini, Groq, Whop, Kommo, Woztell y Meta. Nombrar una variable en un comentario es
+legítimo; leerla del entorno, no.
+
+**Una sola puerta.** `src/lib/db.ts` es el único módulo del proyecto que abre una
+conexión, y no exporta el pool: exporta `comoVisitante()` y `comoCliente(jwt)`. No hay
+forma de consultar la base sin pasar por un rol declarado. Además comprueba al
+arrancar que la cadena no apunta al propietario, por si la variable se cambiara a mano.
+
+**La suite se ejecuta, no se lee.** `db/verificar-blindaje.mjs` no inspecciona el SQL:
+siembra datos, adopta los roles y observa qué pasa. Comprueba por barrido que *toda*
+tabla tiene RLS forzado y que *toda* función `SECURITY DEFINER` fija su `search_path`
+—la vía clásica de escalada—, de modo que una tabla nueva sin blindar la delata el
+barrido, no la memoria de quien revise. Se limpia al empezar y al terminar, así que
+puede lanzarse contra `main` sin dejar rastro.
+
+### 8.4 Cabeceras del borde
+
+`next.config.js` envía CSP, HSTS, `X-Frame-Options`, `nosniff`, `Referrer-Policy`,
+`Permissions-Policy` y las dos cabeceras de aislamiento entre orígenes.
+
+Importa el orden de las capas: de poco sirve lo bien cerradas que estén las políticas
+por fila si un tercero puede incrustar el panel en un iframe y hacer clic por encima
+del usuario, o inyectar un script que use la sesión legítima de quien está delante.
+
+`connect-src 'self'` merece una nota: la base de datos se consulta **siempre** desde
+el servidor. Si algún día aparece un dominio de Neon en esa lista, es que algo se ha
+cableado por el lado equivocado, y la cabecera lo convierte en un fallo visible.
+
+Deuda consciente, anotada para que no se olvide: `script-src` aún admite
+`'unsafe-inline'`, que Next.js necesita para la hidratación. Retirarlo exige nonces
+por petición, y eso obliga a mover las páginas a renderizado dinámico. Se hará; no
+es un descuido.
+
+### 8.5 Estado de la conexión
+
+| Dato | Valor |
+|---|---|
+| Proyecto Neon | `dkitchen-db` · `withered-scene-00256195` |
+| Región | `aws-eu-central-1` (Fráncfort) |
+| Postgres | 18.6 |
+| Rol de la aplicación | `dk_app` · sin `BYPASSRLS` · `NOINHERIT` |
+| Variable en Vercel | `DK_DATABASE_URL` (producción, preview y desarrollo) |
+| Rol del propietario | `neondb_owner` · reservado para migraciones, nunca para la aplicación |
+
+Queda viva la rama de pruebas `prueba-esquema` (`br-red-wave-b2s6nuo6`). No tiene
+datos, pero sí un compute que consume cuota: se puede borrar cuando quieras.
