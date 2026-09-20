@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { resolverCodigo } from '@/lib/menu';
-import { demasiadoSeguido, ipDeLaPeticion } from '@/lib/limite-frecuencia';
+import { claveDeLimite, ipDeLaPeticion, limiteSuperado } from '@/lib/limite-frecuencia';
 
 /**
  * LO QUE HAY DETRÁS DEL QR IMPRESO
@@ -23,6 +23,12 @@ import { demasiadoSeguido, ipDeLaPeticion } from '@/lib/limite-frecuencia';
  * comercial con un cliente —o con un competidor— sin acercarse siquiera a
  * adivinar un código ajeno. El límite es generoso a propósito: una mesa entera
  * escaneando a la vez desde el wifi del local comparte la misma IP.
+ *
+ * El freno vive en Neon (`dk.limite_superado`, migración 0005), no en memoria
+ * del proceso. Una primera versión sí la llevaba en memoria, y pasó todas las
+ * pruebas locales; contra el despliegue real de Vercel, 35 peticiones seguidas
+ * pasaron 35 de 35, porque cada función serverless tiene la suya propia y
+ * nunca comparten el contador. Ver `src/lib/limite-frecuencia.ts`.
  */
 
 export const runtime = 'nodejs';
@@ -33,8 +39,8 @@ export const dynamic = 'force-dynamic';
 // evita ir a la base a preguntar por algo que no puede existir.
 const CODIGO_VALIDO = /^[a-z0-9]{8,16}$/;
 
-const LIMITE_POR_IP = 30;      // resoluciones de código
-const VENTANA_MS = 60 * 1000;  // por minuto
+const LIMITE_POR_IP = 30;         // resoluciones de código
+const VENTANA_SEGUNDOS = 60;      // por minuto
 
 export async function GET(
   peticion: Request,
@@ -47,14 +53,19 @@ export async function GET(
     return NextResponse.redirect(`${origen}/carta-no-disponible`, 302);
   }
 
-  const ip = ipDeLaPeticion(peticion);
-  if (demasiadoSeguido(`qr:${ip}`, LIMITE_POR_IP, VENTANA_MS)) {
-    // Ni se consulta la base: el freno actúa antes de gastar una conexión o
-    // de dejar que se inserte una fila más en escaneos.
-    return new NextResponse('Demasiadas peticiones. Inténtalo de nuevo en un momento.', {
-      status: 429,
-      headers: { 'Retry-After': '30' },
-    });
+  try {
+    const clave = claveDeLimite('qr', ipDeLaPeticion(peticion));
+    if (await limiteSuperado(clave, LIMITE_POR_IP, VENTANA_SEGUNDOS)) {
+      return new NextResponse('Demasiadas peticiones. Inténtalo de nuevo en un momento.', {
+        status: 429,
+        headers: { 'Retry-After': '30' },
+      });
+    }
+  } catch (error) {
+    // Si el propio freno falla —Neon caído, por ejemplo— se deja pasar la
+    // petición. Negar el servicio entero porque el contador no responde sería
+    // peor que el riesgo que el contador está ahí para acotar.
+    console.error('No se pudo comprobar el freno de frecuencia:', error);
   }
 
   let destino: { slug: string } | null = null;

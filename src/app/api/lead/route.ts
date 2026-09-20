@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import { demasiadoSeguido, ipDeLaPeticion } from '@/lib/limite-frecuencia';
+import { claveDeLimite, ipDeLaPeticion, limiteSuperado } from '@/lib/limite-frecuencia';
 
 /**
  * Formulario de contacto del popup de salida.
@@ -15,16 +15,18 @@ import { demasiadoSeguido, ipDeLaPeticion } from '@/lib/limite-frecuencia';
  *     Un nombre con etiquetas se convertía en HTML dentro del buzón de quien lo
  *     recibe: enlaces falsos, imágenes que delatan la apertura, texto que
  *     suplanta al propio aviso. Ahora todo pasa por `escapar()`.
- *  2. No tenía freno. Un bucle desde una consola convertía el formulario en un
- *     generador de correo hasta tumbar la cuenta de envío.
+ *  2. No tenía freno, y el primero que se le puso tampoco servía: vivía en
+ *     memoria del proceso, y las funciones de Vercel no comparten memoria
+ *     entre invocaciones. Contra el despliegue real, un bucle lo atravesaba
+ *     entero. El freno de verdad vive en Neon (`src/lib/limite-frecuencia.ts`).
  *  3. Devolvía el mensaje de error del servidor de correo al cliente, que
  *     describe la infraestructura a quien está probando.
  */
 
 export const runtime = 'nodejs';
 
-const LIMITE_POR_IP = 5;           // envíos
-const VENTANA_MS = 10 * 60 * 1000; // por cada diez minutos
+const LIMITE_POR_IP = 5;         // envíos
+const VENTANA_SEGUNDOS = 10 * 60; // por cada diez minutos
 
 /** Convierte texto en texto. Sin esto, un nombre puede ser HTML. */
 function escapar(valor: unknown): string {
@@ -40,13 +42,18 @@ function escapar(valor: unknown): string {
 const CORREO_VALIDO = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
 export async function POST(request: Request) {
-  const ip = ipDeLaPeticion(request);
-
-  if (demasiadoSeguido(`lead:${ip}`, LIMITE_POR_IP, VENTANA_MS)) {
-    return NextResponse.json(
-      { error: 'Demasiadas solicitudes seguidas. Inténtalo en unos minutos.' },
-      { status: 429 }
-    );
+  try {
+    const clave = claveDeLimite('lead', ipDeLaPeticion(request));
+    if (await limiteSuperado(clave, LIMITE_POR_IP, VENTANA_SEGUNDOS)) {
+      return NextResponse.json(
+        { error: 'Demasiadas solicitudes seguidas. Inténtalo en unos minutos.' },
+        { status: 429 }
+      );
+    }
+  } catch (error) {
+    // Igual que en /r/{codigo}: si el freno no responde, se dispara el
+    // objetivo real de la ruta antes que negar el servicio por su culpa.
+    console.error('No se pudo comprobar el freno de frecuencia:', error);
   }
 
   if (!process.env.SMTP_EMAIL || !process.env.SMTP_PASSWORD) {

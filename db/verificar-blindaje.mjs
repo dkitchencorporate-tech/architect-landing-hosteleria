@@ -244,6 +244,32 @@ try {
       'sin fijar: ' + sinRuta.map((r) => r.proname).join(', '));
   });
 
+  console.log('\nFRENO DE FRECUENCIA (dk.limite_superado)');
+  {
+    // Con una clave dedicada, para no interferir con contadores reales que
+    // ya pudiera haber en la tabla por tráfico de verdad.
+    const clave = 'verificacion:' + Math.random().toString(36).slice(2);
+
+    await comoRol('dk_anon', async (c) => {
+      const t1 = await debeFallar(c, `SELECT * FROM dk.limite_frecuencia`);
+      comprobar('dk_anon no puede leer la tabla de contadores directamente', !!t1, 'devolvió filas');
+
+      let superado = false;
+      for (let i = 0; i < 4; i++) {
+        const { rows } = await c.query(`SELECT dk.limite_superado($1, 3, interval '1 minute') AS s`, [clave]);
+        superado = rows[0].s;
+      }
+      comprobar('el cuarto intento supera un límite de 3', superado === true);
+    });
+
+    await comoRol('dk_auth', async (c) => {
+      const t2 = await debeFallar(c, `INSERT INTO dk.limite_frecuencia (clave) VALUES ('intento-directo')`);
+      comprobar('dk_auth no puede escribir en la tabla de contadores directamente', !!t2, 'la inserción funcionó');
+    });
+
+    await conConexion((c) => c.query(`DELETE FROM dk.limite_frecuencia WHERE clave = $1`, [clave]));
+  }
+
   // ---- Prueba de fuego --------------------------------------------------
   // Todo lo anterior se ejecuta desde el propietario adoptando roles. Esto es
   // distinto: es la cadena de conexión real del despliegue, tal cual, sin
