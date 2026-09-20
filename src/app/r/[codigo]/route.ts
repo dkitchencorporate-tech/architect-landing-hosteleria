@@ -42,6 +42,20 @@ const CODIGO_VALIDO = /^[a-z0-9]{8,16}$/;
 const LIMITE_POR_IP = 30;         // resoluciones de código
 const VENTANA_SEGUNDOS = 60;      // por minuto
 
+/**
+ * Todas las respuestas de esta ruta llevan `Cache-Control: no-store`, sin
+ * excepción. `dynamic = 'force-dynamic'` evita que Next.js la trate como
+ * estática, pero eso decide cómo se genera la respuesta, no si un proxy o una
+ * CDN intermedios pueden quedarse con una copia. Explícito y no implícito: es
+ * la misma razón por la que la redirección va en 302 y no en 301 —si un
+ * escaneo se sirve desde una caché, nunca llega a esta función y nunca se
+ * cuenta—, y aquí no había ninguna cabecera que lo garantizara.
+ */
+function sinCache<T extends NextResponse>(respuesta: T): T {
+  respuesta.headers.set('Cache-Control', 'no-store');
+  return respuesta;
+}
+
 export async function GET(
   peticion: Request,
   { params }: { params: { codigo: string } }
@@ -50,16 +64,18 @@ export async function GET(
   const origen = new URL(peticion.url).origin;
 
   if (!CODIGO_VALIDO.test(codigo)) {
-    return NextResponse.redirect(`${origen}/carta-no-disponible`, 302);
+    return sinCache(NextResponse.redirect(`${origen}/carta-no-disponible`, 302));
   }
 
   try {
     const clave = claveDeLimite('qr', ipDeLaPeticion(peticion));
     if (await limiteSuperado(clave, LIMITE_POR_IP, VENTANA_SEGUNDOS)) {
-      return new NextResponse('Demasiadas peticiones. Inténtalo de nuevo en un momento.', {
-        status: 429,
-        headers: { 'Retry-After': '30' },
-      });
+      return sinCache(
+        new NextResponse('Demasiadas peticiones. Inténtalo de nuevo en un momento.', {
+          status: 429,
+          headers: { 'Retry-After': '30' },
+        })
+      );
     }
   } catch (error) {
     // Si el propio freno falla —Neon caído, por ejemplo— se deja pasar la
@@ -81,17 +97,17 @@ export async function GET(
     // Si la base falla, quien está en la mesa no tiene la culpa: ve una página
     // que le explica qué hacer, no una traza de error.
     console.error('No se pudo resolver el código de QR:', error);
-    return NextResponse.redirect(`${origen}/carta-no-disponible`, 302);
+    return sinCache(NextResponse.redirect(`${origen}/carta-no-disponible`, 302));
   }
 
   if (!destino) {
     // Un código inexistente y uno desactivado responden igual. Distinguirlos
     // permitiría recorrer el catálogo de clientes probando códigos.
-    return NextResponse.redirect(`${origen}/carta-no-disponible`, 302);
+    return sinCache(NextResponse.redirect(`${origen}/carta-no-disponible`, 302));
   }
 
   // 302 y no 301: la redirección permanente se queda guardada en el navegador,
   // y a partir de la segunda visita el teléfono iría directo a la carta sin
   // pasar por aquí. Los escaneos dejarían de contarse sin que nadie se entere.
-  return NextResponse.redirect(`${origen}/m/${destino.slug}`, 302);
+  return sinCache(NextResponse.redirect(`${origen}/m/${destino.slug}`, 302));
 }

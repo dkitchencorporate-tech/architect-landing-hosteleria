@@ -48,8 +48,15 @@ export interface Carta {
  * Devuelve null si no hay nada que mostrar, sin distinguir entre "no existe" y
  * "está desactivado". Quien pregunta no tiene por qué poder deducir qué
  * restaurantes son clientes nuestros probando slugs.
+ *
+ * El slug se normaliza a minúsculas aquí, en la frontera, igual que
+ * `/r/{codigo}` ya hacía con el código. La restricción de la tabla solo
+ * admite slugs en minúsculas, así que sin esto una URL tecleada o compartida
+ * con una mayúscula de más devuelve un 404 en vez del menú, en lugar de
+ * resolver como cabría esperar.
  */
-export async function obtenerCarta(slug: string): Promise<Carta | null> {
+export async function obtenerCarta(slugOriginal: string): Promise<Carta | null> {
+  const slug = slugOriginal.toLowerCase();
   return comoVisitante(async (c) => {
     const { rows: restaurantes } = await c.query<{
       id: string;

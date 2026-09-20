@@ -225,13 +225,21 @@ try {
 
     // Una tabla sin RLS forzado es una puerta abierta esperando a que alguien
     // se conecte con el rol equivocado. Se comprueba por barrido, no de memoria.
+    //
+    // Corregido el 20/09/2026: este barrido solo miraba `public`, y una tabla
+    // de la migración 0005 se creó en `dk` sin RLS. El barrido dijo "todas las
+    // tablas tienen RLS" con una tabla sin blindar delante, porque nunca la
+    // miró. Ahora cubre los dos esquemas con datos —los mismos que ya cubre
+    // el barrido de funciones SECURITY DEFINER, un poco más abajo—, para que
+    // una tabla nueva en cualquiera de los dos no pueda repetir el mismo hueco.
     const { rows: sinRls } = await c.query(`
-      SELECT relname FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
-       WHERE n.nspname = 'public' AND c.relkind = 'r'
-         AND relname <> 'dk_migraciones'
+      SELECT n.nspname || '.' || c.relname AS tabla
+      FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
+       WHERE n.nspname IN ('public', 'dk') AND c.relkind = 'r'
+         AND c.relname <> 'dk_migraciones'
          AND (c.relrowsecurity = false OR c.relforcerowsecurity = false)`);
     comprobar('todas las tablas tienen RLS activado y forzado', sinRls.length === 0,
-      'sin blindar: ' + sinRls.map((r) => r.relname).join(', '));
+      'sin blindar: ' + sinRls.map((r) => r.tabla).join(', '));
 
     // Una función SECURITY DEFINER sin search_path fijo es la vía clásica de
     // escalada: basta con crear un objeto que se resuelva antes.
@@ -251,7 +259,7 @@ try {
     const clave = 'verificacion:' + Math.random().toString(36).slice(2);
 
     await comoRol('dk_anon', async (c) => {
-      const t1 = await debeFallar(c, `SELECT * FROM dk.limite_frecuencia`);
+      const t1 = await debeFallar(c, `SELECT * FROM limite_frecuencia`);
       comprobar('dk_anon no puede leer la tabla de contadores directamente', !!t1, 'devolvió filas');
 
       let superado = false;
@@ -263,11 +271,11 @@ try {
     });
 
     await comoRol('dk_auth', async (c) => {
-      const t2 = await debeFallar(c, `INSERT INTO dk.limite_frecuencia (clave) VALUES ('intento-directo')`);
+      const t2 = await debeFallar(c, `INSERT INTO limite_frecuencia (clave) VALUES ('intento-directo')`);
       comprobar('dk_auth no puede escribir en la tabla de contadores directamente', !!t2, 'la inserción funcionó');
     });
 
-    await conConexion((c) => c.query(`DELETE FROM dk.limite_frecuencia WHERE clave = $1`, [clave]));
+    await conConexion((c) => c.query(`DELETE FROM limite_frecuencia WHERE clave = $1`, [clave]));
   }
 
   // ---- Prueba de fuego --------------------------------------------------

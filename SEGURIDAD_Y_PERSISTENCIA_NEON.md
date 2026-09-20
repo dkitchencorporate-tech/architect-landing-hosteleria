@@ -904,3 +904,55 @@ Lo que sí cambia con el dominio, y conviene tenerlo presente:
 - No hay nada en la cadena `/r/` → `/m/` que dependa de cookies, sesión ni estado del
   navegador: es exactamente tan seguro en un dominio propio como en cualquier otro,
   porque toda la autoridad vive en Neon, no en el dominio.
+
+### 8.9 Auditoría contra un diseño equivalente, y dos correcciones que salieron de ahí
+
+El 20/09/2026 se releyó con detalle el diseño de referencia que se usó al proyectar
+esta pieza (`javiggil.com/56fc9cb32b97`, el mismo QR corto → registro → redirección
+que ya se citó al diseñar el motor), esta vez para confirmar dato por dato y proceso
+por proceso, no solo la idea general. Coinciden las dos piezas mínimas (algo
+equivalente a `codigos` y `escaneos`) y el verbo (`GET /r/{id}`: registra y
+redirige). Dos diferencias, y una advertencia de la referencia que aquí seguía sin
+resolverse:
+
+**Diferencia deliberada: el destino no es un campo de texto editable.** La
+referencia guarda un `destino` como URL suelta que se puede reapuntar a cualquier
+sitio. Aquí `codigos_qr.restaurante_id` es una clave foránea: el destino siempre es
+la carta *actual* de un restaurante del sistema, nunca una URL arbitraria. Es más
+rígido a propósito —este motor no es un acortador de enlaces genérico, es la puerta
+de un producto con datos estructurados detrás— y esa rigidez es la que permite que
+el slug cambie sin reimprimir nada.
+
+**Advertencia de la referencia que aplica igual aquí, sin resolver todavía:** *"si tu
+redirect se cae, todos los códigos impresos dejan de funcionar de golpe"*. Es un
+riesgo real y compartido por diseño: `/r/{codigo}` vive en el mismo despliegue y la
+misma base que todo lo demás, así que una caída de Neon o del propio despliegue deja
+sin servicio a la vez a todos los restaurantes con QR impresos, no a uno. La ruta ya
+degrada con cuidado —un fallo de base de datos lleva a `/carta-no-disponible` en vez
+de a un error— pero eso es cortesía con quien está delante del QR, no tolerancia a
+fallos: el resultado final para todos los clientes es el mismo servicio caído. No se
+ha construido ninguna redundancia frente a esto, y no correspondía hacerlo con cero
+clientes reales; queda anotado para revisarlo cuando haya QR impresos de verdad,
+donde entra en juego el nivel de disponibilidad real de Neon y de Vercel, no una
+solución de código.
+
+**Dos hallazgos propios, no de la referencia, que salieron de comparar con lupa:**
+
+1. `dk.limite_frecuencia` (migración 0005) se creó en el esquema `dk`, rompiendo la
+   convención de 0001 —tablas en `public`, `dk` solo para funciones— y quedando
+   **fuera del barrido** que comprueba "toda tabla tiene RLS forzado", porque ese
+   barrido solo miraba `public`. El test decía "todas las tablas tienen RLS" con una
+   tabla sin RLS delante, porque nunca la miró. No era explotable —ni `dk_anon` ni
+   `dk_auth` tenían ningún privilegio directo sobre ella—, pero es exactamente el
+   descuido que un barrido automático existe para atrapar. Corregido en la migración
+   0006: la tabla vuelve a `public`, con RLS activado y forzado, y el barrido ahora
+   cubre los dos esquemas con datos.
+2. La redirección de `/r/{codigo}` no llevaba ninguna cabecera `Cache-Control`
+   explícita, pese a que el propio código ya razonaba —al elegir 302 en vez de
+   301— que un escaneo servido desde una caché nunca llega a la función y nunca se
+   cuenta. Confiar en que ningún intermediario decida cachear un 302 por su cuenta
+   era un supuesto implícito, no una garantía. Ahora todas las respuestas de la ruta
+   llevan `Cache-Control: no-store` de forma explícita.
+
+Los dos se verificaron en `next start` local y quedaron cubiertos por
+`db/verificar-blindaje.mjs` (46/46) antes de darse por cerrados.
