@@ -959,6 +959,18 @@ Los dos se verificaron en `next start` local y quedaron cubiertos por
 
 ## 9. Punto único de fallo: resuelto, no solo señalado
 
+**Corrección del 20/09/2026, misma tarde:** esta sección se escribió tras
+construir la caché de resiliencia con GitHub Actions como disparador. El
+titular del proyecto rechazó ese disparador por no ser un montaje
+profesional para la disponibilidad de un sistema con clientes de pago, con
+razón. Esta sección se deja como registro de lo que se construyó y por qué,
+pero **el análisis vigente y la decisión recomendada están en
+[`MOTOR_QR_ANALISIS_PROFESIONAL_Y_PLAN.md`](./MOTOR_QR_ANALISIS_PROFESIONAL_Y_PLAN.md)**,
+que corrige el marco de la pregunta (no es un problema de escala, es de
+disponibilidad y de plan de Neon), retira la dependencia de GitHub Actions, y
+deja un plan de tres pasos, en orden de coste, para quien continúe. Léase ese
+documento antes de tocar nada de lo descrito aquí abajo.
+
 El riesgo de la Sección 8.9 —"si Neon o el despliegue caen, todos los QR
 impresos de todos los clientes dejan de funcionar a la vez"— dejó de ser un
 párrafo pendiente el 20/09/2026. Esta sección documenta la solución tal como

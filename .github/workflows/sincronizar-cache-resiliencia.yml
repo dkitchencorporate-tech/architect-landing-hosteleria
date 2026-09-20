@@ -1,23 +1,35 @@
+# DESACTIVADO el 20/09/2026 a petición explícita del titular del proyecto:
+# un programador de tareas de CI de mejor esfuerzo, sin garantía de horario,
+# no es un disparador profesional para la disponibilidad de un sistema del
+# que dependen clientes de pago. Ver MOTOR_QR_ANALISIS_PROFESIONAL_Y_PLAN.md,
+# Sección 4.2, antes de reactivar el `schedule` de más abajo.
+#
+# El código de este flujo sigue siendo correcto y queda disponible para un
+# disparador profesional (Vercel Cron Job) si tras subir Neon a un plan de
+# pago sin scale-to-zero (Sección 4.1 del documento citado) se decide que
+# aún hace falta una capa de resiliencia adicional.
+#
 # Mantiene viva la caché de resiliencia del motor de QR (ver
 # src/lib/cache-resiliencia.ts y db/sincronizar-cache-resiliencia.mjs).
 #
-# POR QUÉ ESTO NO CORRE EN VERCEL: el token que puede escribir en Global
-# Config no se puede acotar solo a esa capacidad —el más restringido que
-# ofrece Vercel sigue pudiendo tocar despliegues, dominios y variables de
-# entorno del proyecto—. Meterlo en una variable de entorno del despliegue lo
-# pondría al alcance de cualquier ruta pública de la aplicación, repitiendo
+# POR QUÉ NO CORRÍA EN VERCEL: el token que puede escribir en Global Config
+# no se puede acotar solo a esa capacidad —el más restringido que ofrece
+# Vercel sigue pudiendo tocar despliegues, dominios y variables de entorno
+# del proyecto—. Meterlo en una variable de entorno del despliegue lo pondría
+# al alcance de cualquier ruta pública de la aplicación, repitiendo
 # exactamente el fallo que se cerró con Neon (un despliegue con más autoridad
 # de la que necesita), solo que sobre la cuenta de Vercel en vez de la base
-# de datos. Aquí, en cambio, el token vive en un secreto de GitHub Actions,
-# que no es alcanzable desde ninguna petición HTTP a la aplicación.
-name: Sincronizar caché de resiliencia
+# de datos. Esa parte del razonamiento sigue vigente; lo que se retira es
+# solo el disparador, no el diseño del aislamiento de credenciales.
+name: Sincronizar caché de resiliencia (desactivado)
 
 on:
-  schedule:
-    # Cada 5 minutos. Es la ventana máxima de antigüedad que puede tener el
-    # menú servido durante una caída real de Neon.
-    - cron: '*/5 * * * *'
-  workflow_dispatch: {} # para forzar una sincronización manual desde GitHub
+  # El disparador programado queda comentado, no borrado, para que quede
+  # constancia de qué había y por qué se quitó. No reactivar sin haber leído
+  # MOTOR_QR_ANALISIS_PROFESIONAL_Y_PLAN.md, Sección 4.2.
+  # schedule:
+  #   - cron: '*/5 * * * *'
+  workflow_dispatch: {} # solo ejecución manual, para pruebas puntuales
 
 concurrency:
   group: sincronizar-cache-resiliencia
