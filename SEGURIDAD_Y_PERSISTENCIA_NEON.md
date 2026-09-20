@@ -827,16 +827,14 @@ cerrado se comprobó explícitamente:
    contado por `dk.escaneos_del_mes()`, confirmando que la transacción con
    `SET LOCAL ROLE` —la que dependía del WebSocket roto— se completaba de verdad.
 
-**Lo que queda pendiente de verificar, y por qué.** Todo lo anterior se probó contra
-un `next start` local, que es el binario más cercano a Vercel pero no es Vercel: no
-reproduce el entorno de función serverless real (empaquetado con Node File Trace,
-arranque en frío, red del proveedor). El despliegue de vista previa de este mismo
-commit está protegido por el SSO de Vercel —correcto para preview, no un fallo—, así
-que no se ha podido golpear su URL pública desde aquí sin generar un secreto de
-"Protection Bypass for Automation", que es un cambio de ajuste del proyecto y no se
-ha activado sin pedirlo. **Queda como el último paso antes de imprimir un solo QR
-real**: probar contra la URL de producción real, o generar ese bypass para probar
-el preview exacto.
+**Verificado también contra la infraestructura real de Vercel, no solo `next start`.**
+Con autorización expresa, se generó un secreto de "Protection Bypass for Automation"
+(`PATCH /v1/projects/{id}/protection-bypass`, con `{"generate": {...}}` — el endpoint
+no está documentado en la guía de uso, solo en el esquema OpenAPI público) y se probó
+el commit `9da2218` en su URL real de preview: control, `/r/demo2026`, código
+inexistente, la carta y las cabeceras de seguridad, todo correcto y sin rastro del
+fallo original. El secreto se revocó en cuanto terminó la comprobación
+(`{"revoke": {...}}`); no queda ningún bypass activo en el proyecto.
 
 ### 8.7 Freno de frecuencia en el motor de QR
 
@@ -856,11 +854,33 @@ entera escaneando desde el wifi del local comparte una sola IP). Probado con 35
 peticiones seguidas: las primeras 30 pasan, el resto recibe `429` sin llegar a tocar
 la base de datos, y el servidor sigue sirviendo la carta con normalidad después.
 
-Sigue siendo, con la misma honestidad de siempre, un freno **por instancia, no
-global**: las funciones de Vercel son efímeras y corren varias a la vez, así que
-quien reparta las peticiones entre IPs o instancias no lo nota. Un límite global de
-verdad exige un contador compartido en Neon. No es urgente hoy —el motor no tiene
-tráfico real— pero se vuelve necesario en cuanto haya clientes con QR impresos.
+**Corrección, 20/09/2026, misma tarde:** ese párrafo describía el freno en memoria,
+que resultó no servir de nada en producción (ver más abajo). Se sustituyó por un
+contador en Neon —tabla `dk.limite_frecuencia`, función `dk.limite_superado()`,
+migración 0005— que sí es global: cualquier instancia de cualquier función
+serverless que consulte la misma clave ve el mismo contador, porque vive en la base,
+no en el proceso. La IP nunca se guarda en claro ni como hash simple —un SHA-256 sin
+secreto de una IPv4 se revierte en segundos probando las 4300 millones posibles—,
+así que se usa HMAC con `DK_IP_HASH_PEPPER`, un secreto que no sale nunca de la
+aplicación.
+
+**Verificación honesta, sin inflar lo que se probó.** Contra `next start` local, con
+una IP de origen fija (loopback), el corte en la petición 31 de 35 fue exacto y
+repetible. Contra la infraestructura real de Vercel, con el bypass de protección
+activado para esta comprobación, **no se pudo reproducir el mismo corte**: cada
+petición del entorno de pruebas llegó con una IP de salida distinta —confirmado
+consultando `ifconfig.me` seis veces seguidas y obteniendo seis direcciones
+distintas—, así que cada una generó su propia clave y ninguna acumuló las 30. Esto
+no es un fallo del freno: es que el entorno desde el que se prueba usa un proxy que
+rota de IP en cada conexión, y por tanto no puede simular "un solo atacante" contra
+el borde real de Vercel. Lo que sí queda demostrado con esa misma prueba, y no es
+poco: la función llegó a Postgres, calculó el HMAC, e insertó o actualizó una fila
+de forma atómica por cada IP real que vio Vercel —quince filas distintas, contadores
+correctos en cada una—, confirmado consultando `dk.limite_frecuencia` directamente
+después del aluvión. La tubería completa funciona en serverless real; lo único que
+no se ha podido reproducir aquí es un atacante de IP fija golpeando el borde de
+Vercel, y para eso hace falta un origen de pruebas que no rote de dirección, no un
+cambio más en el código.
 
 ### 8.8 Sobre llevarlo a un dominio propio
 
