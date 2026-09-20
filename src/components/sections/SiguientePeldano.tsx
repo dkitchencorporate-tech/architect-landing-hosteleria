@@ -6,6 +6,7 @@ const PELDANOS: Record<string, { href: string; etiqueta: string; descripcion: st
   auditoria: { href: '/auditoria', etiqueta: 'Auditoría de canales', descripcion: 'Diagnóstico de tu presencia digital.' },
   'base-operativa': { href: '/base-operativa', etiqueta: 'Base Operativa', descripcion: 'La PWA completa como sistema operativo del negocio.' },
   'dark-kitchen': { href: '/dark-kitchen', etiqueta: 'Dark Kitchen Multimarca', descripcion: 'Suma marcas virtuales a tu cocina.' },
+  marcas: { href: '/marcas', etiqueta: 'Catálogo de marcas', descripcion: 'Seis marcas ya operadas, listas para tu cocina.' },
 };
 
 /** Bloque "¿Qué sigue después de esto?" — cierra cada página de producto enlazando al siguiente peldaño lógico. */

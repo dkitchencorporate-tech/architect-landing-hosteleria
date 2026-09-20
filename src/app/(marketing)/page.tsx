@@ -97,7 +97,7 @@ export default function Home() {
             >
               <div className="text-3xl mb-3">🔥</div>
               <h3 className="text-xl font-bold mb-2 group-hover:text-[#FF4500] transition-colors">Dark Kitchen</h3>
-              <p className="text-gray-600 text-sm">Exprime la capacidad ociosa de tus fogones con marcas virtuales.</p>
+              <p className="text-gray-600 text-sm">Exprime la capacidad ociosa de tus fogones con nuestro catálogo de marcas virtuales.</p>
             </Link>
           </div>
         </div>

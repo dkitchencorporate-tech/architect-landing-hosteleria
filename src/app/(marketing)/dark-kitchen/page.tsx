@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import DarkKitchen from '@/components/DarkKitchen';
+import RutaSelectorDarkKitchen from '@/components/RutaSelectorDarkKitchen';
+import SiguientePeldano from '@/components/sections/SiguientePeldano';
 
 export const metadata: Metadata = {
   title: 'Dark Kitchen Enterprise | DKitchen',
@@ -32,7 +33,8 @@ export default function PaginaDarkKitchen() {
         </div>
       </section>
 
-      <DarkKitchen />
+      <RutaSelectorDarkKitchen />
+      <SiguientePeldano siguiente="marcas" />
     </div>
   );
 }

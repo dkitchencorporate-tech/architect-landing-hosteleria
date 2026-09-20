@@ -36,6 +36,8 @@ export default function Footer() {
             <span>|</span>
             <Link href="/dark-kitchen" className="hover:text-[#FF4500] transition-colors">Dark Kitchen</Link>
             <span>|</span>
+            <Link href="/marcas" className="hover:text-[#FF4500] transition-colors">Marcas</Link>
+            <span>|</span>
             <Link href="/faq" className="hover:text-[#FF4500] transition-colors">Preguntas</Link>
             <span>|</span>
             <Link href="/privacy" className="hover:text-[#FF4500] transition-colors">Privacidad</Link>
