@@ -4,10 +4,12 @@ import AnalyticsPixel from "@/components/AnalyticsPixel";
 import CookieConsent from "@/components/CookieConsent";
 
 export const metadata = {
+  metadataBase: new URL("https://dkitchencorporate.es"),
   title: "DKitchen | Carta digital QR y digitalización para hostelería",
   description: "Carta digital con QR que no tienes que reimprimir nunca, eventos gastronómicos llave en mano y dark kitchen multimarca. Sin comisiones sobre tus ventas y sin tocar tu dinero.",
   keywords: ["carta digital qr restaurante", "kds dark kitchen", "menu qr hostelería", "digitalización restaurantes", "eventos gastronómicos llave en mano", "dark kitchen multimarca"],
   authors: [{ name: "DKitchen" }],
+  alternates: { canonical: "/" },
   robots: {
     index: true,
     follow: true,
@@ -39,10 +41,39 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const jsonLdOrganizacion = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "DKitchen",
+  legalName: "DKitchen Corporate SL",
+  url: "https://dkitchencorporate.es",
+  logo: "https://dkitchencorporate.es/icon.svg",
+  description: "Digitalización para hostelería: carta digital con QR, eventos gastronómicos llave en mano y dark kitchen multimarca.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Calle La Granja 1",
+    addressLocality: "Alcobendas",
+    postalCode: "28108",
+    addressCountry: "ES",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+34-622-65-26-59",
+    contactType: "customer service",
+    areaServed: "ES",
+    availableLanguage: "Spanish",
+  },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
       <body className={`${inter.className} bg-background text-foreground antialiased`}>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganizacion) }}
+        />
         <AnalyticsPixel />
         {children}
         <CookieConsent />
