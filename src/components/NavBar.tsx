@@ -16,8 +16,10 @@ import { usePathname } from 'next/navigation';
  */
 
 const ENLACES = [
-  { href: '/precios', etiqueta: 'Precios' },
-  { href: '/eventos', etiqueta: 'Eventos' },
+  { href: '/qr', etiqueta: 'QR' },
+  { href: '/experience', etiqueta: 'Experience' },
+  { href: '/auditoria', etiqueta: 'Auditoría' },
+  { href: '/base-operativa', etiqueta: 'Base Operativa' },
   { href: '/dark-kitchen', etiqueta: 'Dark Kitchen' },
   { href: '/faq', etiqueta: 'Preguntas' },
 ] as const;
@@ -40,7 +42,7 @@ export default function NavBar() {
         </Link>
 
         {/* Escritorio: enlaces en línea */}
-        <div className="hidden md:flex items-center bg-[#1A1A1A]/90 border border-white/10 rounded-full p-1.5 shadow-[0_4px_30px_rgba(255,69,0,0.2)] backdrop-blur-md">
+        <div className="hidden lg:flex items-center bg-[#1A1A1A]/90 border border-white/10 rounded-full p-1.5 shadow-[0_4px_30px_rgba(255,69,0,0.2)] backdrop-blur-md">
           {ENLACES.map((enlace, i) => {
             const activo = pathname === enlace.href;
             return (
@@ -49,7 +51,7 @@ export default function NavBar() {
                 <Link
                   href={enlace.href}
                   aria-current={activo ? 'page' : undefined}
-                  className={`whitespace-nowrap px-5 py-2 rounded-full text-xs font-bold transition-all ${
+                  className={`whitespace-nowrap px-3 xl:px-4 py-2 rounded-full text-xs font-bold transition-all ${
                     activo
                       ? 'bg-[#FF4500] text-white shadow-[0_0_15px_rgba(255,69,0,0.5)]'
                       : 'text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)]'
@@ -64,17 +66,17 @@ export default function NavBar() {
 
         <a
           href={WHATSAPP_AUDITORIA}
-          className="hidden md:inline-flex bg-[#FF4500] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
+          className="hidden lg:inline-flex bg-[#FF4500] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
         >
           Auditoría Gratuita
         </a>
 
-        {/* Móvil: botón de menú */}
+        {/* Móvil/tablet: botón de menú */}
         <button
           onClick={() => setMenuAbierto((v) => !v)}
           aria-expanded={menuAbierto}
           aria-label={menuAbierto ? 'Cerrar menú' : 'Abrir menú'}
-          className="md:hidden text-white p-2 -mr-2"
+          className="lg:hidden text-white p-2 -mr-2"
         >
           {menuAbierto ? (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,9 +90,9 @@ export default function NavBar() {
         </button>
       </div>
 
-      {/* Móvil: panel desplegable */}
+      {/* Móvil/tablet: panel desplegable */}
       {menuAbierto && (
-        <div className="md:hidden border-t border-white/10 bg-black/95 backdrop-blur-md px-4 py-4 flex flex-col gap-1">
+        <div className="lg:hidden border-t border-white/10 bg-black/95 backdrop-blur-md px-4 py-4 flex flex-col gap-1">
           {ENLACES.map((enlace) => (
             <Link
               key={enlace.href}

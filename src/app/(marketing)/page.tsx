@@ -51,33 +51,55 @@ export default function Home() {
 
       <LiveDemoCTA />
 
-      {/* ENLACES AL RESTO DEL SITIO — sustituye a las anclas de la versión de una sola página */}
+      {/* ENLACES AL RESTO DEL SITIO — la escalera de valor completa, un peldaño por tarjeta */}
       <section className="py-16 md:py-20 bg-white border-y border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 md:px-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <Link
-            href="/precios"
-            className="group rounded-2xl border-2 border-gray-100 p-8 text-center hover:border-[#FF4500] hover:shadow-xl transition-all"
-          >
-            <div className="text-3xl mb-3">💰</div>
-            <h3 className="text-xl font-bold mb-2 group-hover:text-[#FF4500] transition-colors">Precios</h3>
-            <p className="text-gray-600 text-sm">La Fundación Digital y qué incluye desde el primer día.</p>
-          </Link>
-          <Link
-            href="/eventos"
-            className="group rounded-2xl border-2 border-gray-100 p-8 text-center hover:border-[#FF4500] hover:shadow-xl transition-all"
-          >
-            <div className="text-3xl mb-3">🎉</div>
-            <h3 className="text-xl font-bold mb-2 group-hover:text-[#FF4500] transition-colors">Eventos</h3>
-            <p className="text-gray-600 text-sm">Llena tus días valle con formatos ya diseñados.</p>
-          </Link>
-          <Link
-            href="/dark-kitchen"
-            className="group rounded-2xl border-2 border-gray-100 p-8 text-center hover:border-[#FF4500] hover:shadow-xl transition-all"
-          >
-            <div className="text-3xl mb-3">🔥</div>
-            <h3 className="text-xl font-bold mb-2 group-hover:text-[#FF4500] transition-colors">Dark Kitchen</h3>
-            <p className="text-gray-600 text-sm">Exprime la capacidad ociosa de tus fogones con marcas virtuales.</p>
-          </Link>
+        <div className="max-w-6xl mx-auto px-6 md:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-2xl md:text-3xl font-black text-balance">Una escalera, no un catálogo suelto</h2>
+            <p className="text-gray-600 mt-3">Cada peldaño se apoya en el anterior. Entra por donde tenga sentido para ti.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Link
+              href="/qr"
+              className="group rounded-2xl border-2 border-gray-100 p-8 text-center hover:border-[#FF4500] hover:shadow-xl transition-all"
+            >
+              <div className="text-3xl mb-3">📱</div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-[#FF4500] transition-colors">QR Menú</h3>
+              <p className="text-gray-600 text-sm">La puerta de entrada: carta digital con checkout propio, desde 19€/mes.</p>
+            </Link>
+            <Link
+              href="/experience"
+              className="group rounded-2xl border-2 border-gray-100 p-8 text-center hover:border-[#FF4500] hover:shadow-xl transition-all"
+            >
+              <div className="text-3xl mb-3">🎉</div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-[#FF4500] transition-colors">Experience</h3>
+              <p className="text-gray-600 text-sm">Llena tus días valle con formatos de evento ya diseñados.</p>
+            </Link>
+            <Link
+              href="/auditoria"
+              className="group rounded-2xl border-2 border-gray-100 p-8 text-center hover:border-[#FF4500] hover:shadow-xl transition-all"
+            >
+              <div className="text-3xl mb-3">🔎</div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-[#FF4500] transition-colors">Auditoría</h3>
+              <p className="text-gray-600 text-sm">Diagnóstico de tu presencia digital, sin promesas vacías.</p>
+            </Link>
+            <Link
+              href="/base-operativa"
+              className="group rounded-2xl border-2 border-gray-100 p-8 text-center hover:border-[#FF4500] hover:shadow-xl transition-all"
+            >
+              <div className="text-3xl mb-3">🏗️</div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-[#FF4500] transition-colors">Base Operativa</h3>
+              <p className="text-gray-600 text-sm">La PWA completa como sistema operativo de tu negocio.</p>
+            </Link>
+            <Link
+              href="/dark-kitchen"
+              className="group rounded-2xl border-2 border-gray-100 p-8 text-center hover:border-[#FF4500] hover:shadow-xl transition-all"
+            >
+              <div className="text-3xl mb-3">🔥</div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-[#FF4500] transition-colors">Dark Kitchen</h3>
+              <p className="text-gray-600 text-sm">Exprime la capacidad ociosa de tus fogones con marcas virtuales.</p>
+            </Link>
+          </div>
         </div>
       </section>
 

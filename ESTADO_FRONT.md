@@ -53,10 +53,12 @@ silencio para el visitante — conviene probarlo antes de dar tráfico.
 
 | Ruta | Estado | Notas |
 |---|---|---|
-| `/` | ✅ Funciona | Home de entrada: hero, en tres pasos, CTA a la demo, enlaces al resto del sitio, bio del fundador |
-| `/precios` | ✅ Funciona | Fundación Digital, Pack de Arranque, proceso de trabajo (Fase 4) |
-| `/eventos` | ✅ Funciona | Catálogo de formatos de evento (Fase 4) |
-| `/dark-kitchen` | ✅ Funciona | Ruta B, admisión de proyectos +3k€ (Fase 4). El catálogo `/marcas` sigue pendiente (tarea #11) |
+| `/` | ✅ Funciona | Home de entrada: hero, en tres pasos, CTA a la demo, tarjetas a los 5 peldaños, bio del fundador |
+| `/qr` | ✅ Funciona | Peldaño 1 — QR Menú: valor de la carta interactiva + tarjetas de precio Básico/Ampliado leídas de `pricing-config.ts` |
+| `/experience` | ✅ Funciona | Peldaño 2 — catálogo de formatos de evento (antes `/eventos`) |
+| `/auditoria` | ✅ Funciona | Peldaño 3 — Auditoría de canales externos. Sin precio público (no está cerrado), CTA a WhatsApp para presupuesto |
+| `/base-operativa` | ✅ Funciona | Peldaño 4 — Fundación Digital, Pack de Arranque (antes `/precios`) |
+| `/dark-kitchen` | ✅ Funciona | Peldaño 4b, Ruta A — admisión de proyectos +3k€. El catálogo `/marcas` y la Ruta B siguen pendientes (tarea #11) |
 | `/faq` | ✅ Funciona | Preguntas frecuentes (Fase 4) |
 | `/demo/carta` | ✅ Funciona | Carta interactiva de **demostración**, con datos en el código. Es la pieza de venta, no el producto. Fuera del layout de marketing a propósito: no debe romper la inmersión con nuestra barra de ventas |
 | `/m/{slug}` | ✅ **Con base de datos** | La carta real de un cliente, leída de Neon. HTML puro, sin JavaScript. Fuera del layout de marketing a propósito: es la pantalla del restaurante, no la nuestra |
@@ -66,7 +68,7 @@ silencio para el visitante — conviene probarlo antes de dar tráfico.
 | `/terms` | ✅ Funciona | Reescrito: describía un bot de WhatsApp que ya no existe. Movida al grupo `(marketing)` |
 | `/data-deletion` | ✅ Funciona | Ya no menciona Supabase ni Meta. Movida al grupo `(marketing)` |
 | `/robots.txt` | ✅ Funciona | Excluye `/r/`, paneles y manuales; deja indexar las cartas |
-| `/sitemap.xml` | ✅ Funciona | Lista las 8 páginas de marketing reales. **Las cartas de clientes (`/m/{slug}`) aún no entran**: exige leer Neon en tiempo de build, se completa en la Fase SEO |
+| `/sitemap.xml` | ✅ Funciona | Lista las páginas de marketing reales, una por peldaño. **Las cartas de clientes (`/m/{slug}`) aún no entran**: exige leer Neon en tiempo de build, se completa en la Fase SEO |
 
 **Sobre la reestructura de la Fase 4:** las páginas de marketing viven bajo
 `src/app/(marketing)/` —un grupo de rutas de Next.js que no aparece en la

@@ -14,8 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const paginas: Array<{ ruta: string; prioridad: number; frecuencia: MetadataRoute.Sitemap[number]['changeFrequency'] }> = [
     { ruta: '/', prioridad: 1, frecuencia: 'weekly' },
-    { ruta: '/precios', prioridad: 0.9, frecuencia: 'weekly' },
-    { ruta: '/eventos', prioridad: 0.8, frecuencia: 'weekly' },
+    { ruta: '/qr', prioridad: 0.9, frecuencia: 'weekly' },
+    { ruta: '/experience', prioridad: 0.8, frecuencia: 'weekly' },
+    { ruta: '/auditoria', prioridad: 0.7, frecuencia: 'weekly' },
+    { ruta: '/base-operativa', prioridad: 0.9, frecuencia: 'weekly' },
     { ruta: '/dark-kitchen', prioridad: 0.8, frecuencia: 'weekly' },
     { ruta: '/faq', prioridad: 0.6, frecuencia: 'monthly' },
     { ruta: '/demo/carta', prioridad: 0.5, frecuencia: 'monthly' },

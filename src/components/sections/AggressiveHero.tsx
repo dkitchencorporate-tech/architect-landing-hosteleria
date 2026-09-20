@@ -32,7 +32,7 @@ export default function AggressiveHero() {
 
         {/* Call To Actions de Alta Fricción y Baja Fricción */}
         <div className="flex flex-col sm:flex-row gap-6 w-full max-w-2xl animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-          <Link href="/precios" className="flex-1 bg-[#FF4500] text-white px-8 py-5 rounded-full font-black text-xl hover:bg-orange-600 transition-all shadow-[0_0_40px_rgba(255,69,0,0.4)] hover:shadow-[0_0_60px_rgba(255,69,0,0.6)] hover:-translate-y-1 flex items-center justify-center gap-3">
+          <Link href="/qr" className="flex-1 bg-[#FF4500] text-white px-8 py-5 rounded-full font-black text-xl hover:bg-orange-600 transition-all shadow-[0_0_40px_rgba(255,69,0,0.4)] hover:shadow-[0_0_60px_rgba(255,69,0,0.6)] hover:-translate-y-1 flex items-center justify-center gap-3">
             Ver Sistema Base
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
           </Link>

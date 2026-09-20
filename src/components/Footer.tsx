@@ -26,9 +26,13 @@ export default function Footer() {
             </a>
           </div>
           <nav className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-gray-500 font-medium">
-            <Link href="/precios" className="hover:text-[#FF4500] transition-colors">Precios</Link>
+            <Link href="/qr" className="hover:text-[#FF4500] transition-colors">QR Menú</Link>
             <span>|</span>
-            <Link href="/eventos" className="hover:text-[#FF4500] transition-colors">Eventos</Link>
+            <Link href="/experience" className="hover:text-[#FF4500] transition-colors">Experience</Link>
+            <span>|</span>
+            <Link href="/auditoria" className="hover:text-[#FF4500] transition-colors">Auditoría</Link>
+            <span>|</span>
+            <Link href="/base-operativa" className="hover:text-[#FF4500] transition-colors">Base Operativa</Link>
             <span>|</span>
             <Link href="/dark-kitchen" className="hover:text-[#FF4500] transition-colors">Dark Kitchen</Link>
             <span>|</span>

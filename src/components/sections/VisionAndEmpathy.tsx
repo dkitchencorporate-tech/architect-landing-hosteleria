@@ -46,7 +46,7 @@ export default function VisionAndEmpathy() {
 
         {/* Botones (CTAs) */}
         <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-          <Link href="/precios" className="w-full sm:w-auto bg-[#FF4500] text-white px-8 py-4 rounded-full font-black text-lg hover:bg-orange-600 transition-all shadow-[0_10px_30px_rgba(255,69,0,0.2)] hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+          <Link href="/qr" className="w-full sm:w-auto bg-[#FF4500] text-white px-8 py-4 rounded-full font-black text-lg hover:bg-orange-600 transition-all shadow-[0_10px_30px_rgba(255,69,0,0.2)] hover:-translate-y-1 text-center flex items-center justify-center gap-2">
             Ver Soluciones de Digitalización
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
           </Link>
