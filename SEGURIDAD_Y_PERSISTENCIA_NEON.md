@@ -956,3 +956,155 @@ solución de código.
 
 Los dos se verificaron en `next start` local y quedaron cubiertos por
 `db/verificar-blindaje.mjs` (46/46) antes de darse por cerrados.
+
+## 9. Punto único de fallo: resuelto, no solo señalado
+
+El riesgo de la Sección 8.9 —"si Neon o el despliegue caen, todos los QR
+impresos de todos los clientes dejan de funcionar a la vez"— dejó de ser un
+párrafo pendiente el 20/09/2026. Esta sección documenta la solución tal como
+quedó implementada y probada, no como se planeó.
+
+### 9.1 El diseño, en una frase
+
+`/r/{codigo}` y `/m/{slug}` intentan Neon primero, siempre. Solo si Neon
+falla, sirven desde un espejo de solo lectura —la **caché de resiliencia**—
+que vive en Vercel Global Config, ajeno a Neon, con lo mismo que un
+visitante anónimo ya podía ver: la carta de cada restaurante activo y el
+código de cada QR activo. No es una segunda fuente de verdad ni un sistema
+paralelo: es una copia de datos ya públicos, sincronizada cada cinco minutos
+desde fuera del despliegue.
+
+### 9.2 Por qué Global Config y no otra cosa
+
+Se consideró y se descartó duplicar Neon en otra región (exige automatizar
+un failover que nadie está en condiciones de operar todavía, y no protege
+frente a un fallo del propio Vercel) y una réplica de lectura de Neon
+(comparte el mismo almacenamiento subyacente: si el proyecto de Neon cae de
+verdad, la réplica cae con él, así que no cubre justo el escenario que
+preocupa). Global Config es infraestructura del mismo proveedor que aloja el
+despliegue —no un tercero nuevo—, y la propia documentación de Vercel lo
+dice sin adornos: *"tiene un uptime casi idéntico al de tu propio
+despliegue"*. Comparte el riesgo de "Vercel entero cae", que es un riesgo
+que ningún diseño razonable a esta escala puede eliminar sin multiplicar la
+complejidad operativa por diez; y desacopla por completo el riesgo de "Neon
+cae", que es el que de verdad estaba sin cubrir.
+
+### 9.3 La decisión difícil: dónde vive el poder de escribir
+
+Vercel no ofrece ninguna forma de acotar un token a "solo escribir en este
+Global Config": el más restringido que existe sigue pudiendo tocar
+despliegues, dominios y variables de entorno de todo el proyecto. Meter ese
+token en una variable de entorno del despliegue habría repetido, sobre
+Vercel, exactamente el fallo que se cerró con Neon —un despliegue público
+con más autoridad de la que necesita para responder una petición—.
+
+La solución: **quien escribe corre fuera del despliegue.** Un flujo de
+GitHub Actions (`.github/workflows/sincronizar-cache-resiliencia.yml`),
+programado cada cinco minutos, ejecuta
+`db/sincronizar-cache-resiliencia.mjs` con el token de escritura guardado
+como secreto de GitHub —nunca como variable de entorno de Vercel—. El
+despliegue público solo tiene `GLOBAL_CONFIG`, un token de **solo lectura**,
+generado aparte del de escritura, que no puede modificar ni una clave.
+
+Verificación concreta, no solo la intención: `src/lib/cache-resiliencia.ts`
+importa únicamente `get` del SDK de Global Config. No hay una sola línea en
+todo el despliegue que pueda invocar una escritura, ni aunque quisiera.
+
+### 9.4 La segunda decisión difícil: qué puede ver la sincronización dentro de Neon
+
+Sincronizar exige enumerar **todos** los códigos de QR activos de **todos**
+los restaurantes a la vez. Ningún rol existente podía hacer eso, y ninguno
+debía poder hacerlo por accidente: `dk_anon` no tiene ningún privilegio
+sobre `codigos_qr` desde 0003, exactamente para que los códigos —aleatorios,
+de 8 a 16 caracteres— no se puedan recorrer. Ampliar `dk_anon` para que
+sirviera también a la sincronización habría reabierto esa puerta para
+cualquier visitante.
+
+En vez de eso, la migración 0007 crea:
+
+- **`dk_sincronizacion`**, un rol sin `LOGIN` con exactamente los privilegios
+  que hacen falta: `SELECT` sobre restaurantes/secciones/platos activos
+  (política nueva en la migración 0008, espejo exacto de la de `dk_anon`), y
+  ejecución de `dk.listar_qr_activos()`, una función `SECURITY DEFINER`
+  nueva que **no registra ningún escaneo** —sincronizar la caché diez veces
+  por hora no puede contar como diez visitas de cliente—.
+- **`dk_sync`**, el rol de conexión del flujo de GitHub Actions, con su
+  propia credencial (`db/crear-credencial-sincronizacion.mjs`). Solo sabe
+  convertirse en `dk_sincronizacion`; no hereda `dk_anon` ni `dk_auth`, y no
+  los necesita.
+
+Lo crítico, comprobado con una consulta a `pg_has_role` en
+`db/verificar-blindaje.mjs`, no solo declarado en un comentario: **`dk_app`
+—el rol con el que se conecta la aplicación pública— no es miembro de
+`dk_sincronizacion` y no puede llegar a serlo por herencia.** La capacidad de
+enumerar todos los códigos de todos los restaurantes no existe desde
+ninguna ruta pública, bajo ninguna circunstancia.
+
+Un hallazgo real durante la construcción, no un detalle menor: la primera
+versión concedió el `GRANT SELECT` a `dk_sincronizacion` pero olvidó las
+políticas de RLS que lo acompañan. Con RLS **forzado**, eso no da un error
+de permisos: filtra todas las filas en silencio. La primera sincronización
+real escribió *"0 restaurantes"* sin que nada avisara del motivo. Se corrigió
+en la migración 0008 y quedó anotado aquí para que no se repita el mismo
+error de lectura de RLS en otro sitio del proyecto.
+
+### 9.5 Qué degrada, y cómo se dice
+
+Durante una caída de Neon:
+
+- La carta puede tener hasta unos minutos de antigüedad frente al estado
+  real —un plato recién marcado como agotado podría seguir apareciendo un
+  rato—. `/m/{slug}` lo dice con un aviso visible, no en silencio:
+  *"Puede que esta carta no refleje los últimos cambios en los próximos
+  minutos."*
+- Un escaneo resuelto desde la caché **no se cuenta**: la tabla `escaneos`
+  vive solo en Neon. El umbral comercial de 600/mes puede quedar
+  ligeramente por debajo del real durante el incidente.
+- Un restaurante o código que se dio de baja hace menos de cinco minutos
+  podría, en teoría, seguir resolviendo desde la caché si Neon cayera justo
+  en ese margen. Es una ventana de segundos a minutos, y el mismo
+  sincronizador retira las claves huérfanas en cuanto vuelve a correr.
+
+Es degradación deliberada, no un descuido: se prefiere servir el menú con
+datos ligeramente desactualizados y sin contar ese escaneo, antes que dejar
+a un cliente sentado en una mesa sin poder ver la carta.
+
+### 9.6 Probado con una caída real, no solo con la lectura del código
+
+El 20/09/2026 se construyó un build de producción (`next build && next
+start`) con `DK_DATABASE_URL` apuntando a un host que no existe —Neon
+completamente inalcanzable, no un simple error controlado— y `GLOBAL_CONFIG`
+apuntando al espejo real:
+
+- `/r/demo2026` resolvió correctamente contra la caché y redirigió a la
+  carta.
+- `/m/dkitchen-demo` sirvió la carta completa —nombre, secciones, precios—
+  con el aviso de posible desactualización visible.
+- Un código que no existía en ninguno de los dos sitios siguió degradando
+  con normalidad a `/carta-no-disponible`.
+- El proceso no se cayó en ningún momento; cada intento fallido contra Neon
+  quedó registrado, con el aviso explícito de que se recurría a la caché.
+
+Restaurado `DK_DATABASE_URL` a la conexión real, la misma ruta volvió a
+servir desde Neon sin ningún aviso, confirmando que la conmutación es en
+los dos sentidos, no solo hacia el respaldo.
+
+### 9.7 Lo que queda pendiente, y de quién es
+
+Cuatro secretos de GitHub Actions (`DK_DATABASE_URL` de `dk_sync`, el token
+de Vercel, el id de equipo, el id del Global Config) para que la
+sincronización corra sola cada cinco minutos. No existe ninguna herramienta
+en el entorno de trabajo de este agente que permita crear secretos de
+repositorio sin salirse de los límites del acceso concedido —es
+deliberadamente así—, así que es una acción manual, de dos minutos, en la
+configuración del repositorio. Hasta que se añadan, la caché refleja el
+estado en el que quedó la última sincronización manual de esta sesión, no
+se actualiza sola.
+
+Anotado también, sin urgencia pero sin ocultarlo: el token de escritura que
+usa el flujo de GitHub Actions hoy es el mismo token amplio de la cuenta de
+Vercel que se usó para operar durante toda esta migración. Funciona y está
+fuera del despliegue, que es lo que importaba resolver hoy. Cuando el
+titular de la cuenta quiera cerrar del todo el círculo, generar un token de
+Vercel acotado a "Contributor, Project Administrator, solo este proyecto" y
+sustituirlo en el secreto de GitHub no exige tocar ni una línea de código.
