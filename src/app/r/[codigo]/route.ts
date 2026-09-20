@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { resolverCodigo } from '@/lib/menu';
+import { demasiadoSeguido, ipDeLaPeticion } from '@/lib/limite-frecuencia';
 
 /**
  * LO QUE HAY DETRÁS DEL QR IMPRESO
@@ -15,6 +16,13 @@ import { resolverCodigo } from '@/lib/menu';
  *  2. **Hay escaneos que contar.** El umbral de 600 al mes del marco
  *     Sostener / Evolucionar / Soltar necesita un sitio donde sumarse. Si el QR
  *     llevara directo a la carta, ese número no existiría.
+ *
+ * Precisamente por el punto 2 esta ruta necesita freno de frecuencia, y no por
+ * costes: cada golpe con un código válido inserta una fila real en `escaneos`.
+ * Sin freno, alguien podría inflar a voluntad la cifra que decide la relación
+ * comercial con un cliente —o con un competidor— sin acercarse siquiera a
+ * adivinar un código ajeno. El límite es generoso a propósito: una mesa entera
+ * escaneando a la vez desde el wifi del local comparte la misma IP.
  */
 
 export const runtime = 'nodejs';
@@ -25,6 +33,9 @@ export const dynamic = 'force-dynamic';
 // evita ir a la base a preguntar por algo que no puede existir.
 const CODIGO_VALIDO = /^[a-z0-9]{8,16}$/;
 
+const LIMITE_POR_IP = 30;      // resoluciones de código
+const VENTANA_MS = 60 * 1000;  // por minuto
+
 export async function GET(
   peticion: Request,
   { params }: { params: { codigo: string } }
@@ -34,6 +45,16 @@ export async function GET(
 
   if (!CODIGO_VALIDO.test(codigo)) {
     return NextResponse.redirect(`${origen}/carta-no-disponible`, 302);
+  }
+
+  const ip = ipDeLaPeticion(peticion);
+  if (demasiadoSeguido(`qr:${ip}`, LIMITE_POR_IP, VENTANA_MS)) {
+    // Ni se consulta la base: el freno actúa antes de gastar una conexión o
+    // de dejar que se inserte una fila más en escaneos.
+    return new NextResponse('Demasiadas peticiones. Inténtalo de nuevo en un momento.', {
+      status: 429,
+      headers: { 'Retry-After': '30' },
+    });
   }
 
   let destino: { slug: string } | null = null;

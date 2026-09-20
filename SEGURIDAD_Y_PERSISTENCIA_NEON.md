@@ -778,5 +778,109 @@ es un descuido.
 | Variable en Vercel | `DK_DATABASE_URL` (producción, preview y desarrollo) |
 | Rol del propietario | `neondb_owner` · reservado para migraciones, nunca para la aplicación |
 
-Queda viva la rama de pruebas `prueba-esquema` (`br-red-wave-b2s6nuo6`). No tiene
-datos, pero sí un compute que consume cuota: se puede borrar cuando quieras.
+La rama de pruebas `prueba-esquema` ya se ha eliminado. Solo queda `main`.
+
+### 8.6 El fallo del motor de QR en desarrollo: diagnóstico completo
+
+El 20/09/2026, al probar `/r/{codigo}` por primera vez, el servidor de desarrollo
+moría con `TypeError: bufferUtil.mask is not a function` o con `Connection terminated
+unexpectedly`, según el intento. Esto merece una explicación completa porque **no
+era un fallo intermitente ni de la base de datos**: era determinista, y su causa
+había que encontrarla con precisión antes de dar el motor por bueno.
+
+**Qué no era.** No es una vulnerabilidad. No es un problema de Neon: la misma
+consulta, ejecutada con el mismo driver fuera de Next.js (`node script.mjs`),
+funcionaba a la primera. La base de datos nunca estuvo en duda.
+
+**Qué era.** El driver `@neondatabase/serverless` necesita WebSocket para abrir
+transacciones (`SET LOCAL ROLE`, que es la pieza central de todo el blindaje, solo
+existe dentro de una). Ese WebSocket lo aporta el paquete `ws`, y `ws` intenta cargar
+dos aceleradores nativos opcionales (`bufferutil`, `utf-8-validate`) dentro de un
+`try/catch`: si no están instalados, cae a una implementación en JavaScript puro sin
+problema.
+
+El problema es que **webpack no dejaba fallar ese `try/catch` con naturalidad**. Al
+empaquetar el código del servidor, resolvía esos dos módulos inexistentes a un objeto
+vacío en lugar de lanzar el error de módulo no encontrado que Node lanzaría. `ws`
+entonces creía tener el acelerador nativo cuando no tenía nada, y se caía al primer
+uso real. El síntoma no menciona en ningún momento a webpack ni a `ws`: dice
+`bufferUtil.mask is not a function`, que en una búsqueda apunta a mil sitios menos al
+correcto.
+
+**El remedio, y por qué el primer intento no bastó.** El driver y `ws` se declaran
+externos al empaquetado en `next.config.js`, por dos vías a la vez: la opción de Next
+`serverComponentsExternalPackages`, y una entrada explícita en `config.externals` de
+webpack. Esta segunda hizo falta porque el primer intento se colocó **detrás** de la
+función que Next añade a `externals`, y esa función resuelve todo lo que le llega:
+la regla nueva no llegaba a consultarse nunca. Va delante, y con eso desapareció.
+
+**Verificación, no solo un intento que por fin funcionó.** Antes de darlo por
+cerrado se comprobó explícitamente:
+
+1. `next build` en modo producción real (no `next dev`, que empaqueta distinto):
+   compila limpio.
+2. `next build && next start` — el proceso más parecido a lo que ejecuta Vercel — y
+   contra ese binario: 5 peticiones consecutivas a `/r/demo2026`, todas 302
+   correctas; la carta (`/m/dkitchen-demo`) responde después con 200; cero
+   apariciones del síntoma original en el registro.
+3. Contra el propio Neon: el escaneo de la prueba quedó insertado en `escaneos` y
+   contado por `dk.escaneos_del_mes()`, confirmando que la transacción con
+   `SET LOCAL ROLE` —la que dependía del WebSocket roto— se completaba de verdad.
+
+**Lo que queda pendiente de verificar, y por qué.** Todo lo anterior se probó contra
+un `next start` local, que es el binario más cercano a Vercel pero no es Vercel: no
+reproduce el entorno de función serverless real (empaquetado con Node File Trace,
+arranque en frío, red del proveedor). El despliegue de vista previa de este mismo
+commit está protegido por el SSO de Vercel —correcto para preview, no un fallo—, así
+que no se ha podido golpear su URL pública desde aquí sin generar un secreto de
+"Protection Bypass for Automation", que es un cambio de ajuste del proyecto y no se
+ha activado sin pedirlo. **Queda como el último paso antes de imprimir un solo QR
+real**: probar contra la URL de producción real, o generar ese bypass para probar
+el preview exacto.
+
+### 8.7 Freno de frecuencia en el motor de QR
+
+Al revisar el motor con lupa apareció un hallazgo real, distinto del bug de arranque:
+`/r/{codigo}` no tenía ningún límite de frecuencia. Los códigos son aleatorios de
+8 a 16 caracteres —no se pueden recorrer por fuerza bruta en un tiempo razonable—,
+pero eso no es lo que importa aquí: **un código válido, golpeado en bucle, inserta
+una fila real en `escaneos` cada vez**. Sin freno, cualquiera podría inflar a
+voluntad la cifra de escaneos de un restaurante —el suyo o el de un competidor—, que
+es exactamente la cifra de la que depende el umbral comercial de 600/mes. No es un
+problema de coste de infraestructura: es manipular la métrica de negocio.
+
+**Estado: CERRADO (20/09/2026).** `src/lib/limite-frecuencia.ts` centraliza un freno
+por IP en memoria del proceso, ya usado por `/api/lead` y ahora también por
+`/r/{codigo}` (30 resoluciones por minuto y por IP, generoso a propósito: una mesa
+entera escaneando desde el wifi del local comparte una sola IP). Probado con 35
+peticiones seguidas: las primeras 30 pasan, el resto recibe `429` sin llegar a tocar
+la base de datos, y el servidor sigue sirviendo la carta con normalidad después.
+
+Sigue siendo, con la misma honestidad de siempre, un freno **por instancia, no
+global**: las funciones de Vercel son efímeras y corren varias a la vez, así que
+quien reparta las peticiones entre IPs o instancias no lo nota. Un límite global de
+verdad exige un contador compartido en Neon. No es urgente hoy —el motor no tiene
+tráfico real— pero se vuelve necesario en cuanto haya clientes con QR impresos.
+
+### 8.8 Sobre llevarlo a un dominio propio
+
+`/r/{codigo}` y `/m/{slug}` no tienen nada que las ate a un dominio concreto: leen el
+origen de la propia petición (`new URL(peticion.url).origin`), así que responden
+igual en `*.vercel.app`, en un dominio de prueba o en `dkitchencorporate.es` el día
+del cutover (Sección 13 del plan). No hace falta tocar el código del motor para eso.
+
+Lo que sí cambia con el dominio, y conviene tenerlo presente:
+
+- **Los QR impresos deben llevar el dominio final**, no uno de Vercel. Cambiar el
+  dominio después de imprimir cartelería física es exactamente el coste que la capa
+  `/r/{codigo}` existe para evitar en el *slug*, pero no protege frente al dominio
+  del que cuelga.
+- **HSTS** (Sección 8.4) ya está puesto con `includeSubDomains`. Conviene enviarlo
+  para el dominio final a la lista de precarga de HSTS del navegador antes de
+  imprimir el primer QR, para que ni la primera visita viaje sin cifrar.
+- **El SSO de Vercel deja de aplicar** en el dominio propio de producción una vez
+  asignado (`ssoProtection.deploymentType: all_except_custom_domains`), así que el
+  motor queda accesible tal cual sin ningún ajuste adicional de protección.
+- No hay nada en la cadena `/r/` → `/m/` que dependa de cookies, sesión ni estado del
+  navegador: es exactamente tan seguro en un dominio propio como en cualquier otro,
+  porque toda la autoridad vive en Neon, no en el dominio.

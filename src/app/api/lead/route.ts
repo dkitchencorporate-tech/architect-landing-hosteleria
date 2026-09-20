@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { demasiadoSeguido, ipDeLaPeticion } from '@/lib/limite-frecuencia';
 
 /**
  * Formulario de contacto del popup de salida.
@@ -22,28 +23,8 @@ import nodemailer from 'nodemailer';
 
 export const runtime = 'nodejs';
 
-const LIMITE_POR_IP = 5;          // envíos
+const LIMITE_POR_IP = 5;           // envíos
 const VENTANA_MS = 10 * 60 * 1000; // por cada diez minutos
-
-// En memoria a propósito: las funciones de Vercel son efímeras y esto no
-// pretende ser una defensa perfecta, sino quitar de en medio el bucle trivial.
-// Una defensa real vive en el borde, no en el proceso.
-const visitas = new Map<string, number[]>();
-
-function demasiadoSeguido(ip: string): boolean {
-  const ahora = Date.now();
-  const previas = (visitas.get(ip) ?? []).filter((t) => ahora - t < VENTANA_MS);
-  previas.push(ahora);
-  visitas.set(ip, previas);
-
-  // El mapa no puede crecer sin fin en una instancia de larga vida.
-  if (visitas.size > 5000) {
-    for (const [clave, marcas] of visitas) {
-      if (marcas.every((t) => ahora - t >= VENTANA_MS)) visitas.delete(clave);
-    }
-  }
-  return previas.length > LIMITE_POR_IP;
-}
 
 /** Convierte texto en texto. Sin esto, un nombre puede ser HTML. */
 function escapar(valor: unknown): string {
@@ -59,10 +40,9 @@ function escapar(valor: unknown): string {
 const CORREO_VALIDO = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
 export async function POST(request: Request) {
-  const ip =
-    request.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? 'desconocida';
+  const ip = ipDeLaPeticion(request);
 
-  if (demasiadoSeguido(ip)) {
+  if (demasiadoSeguido(`lead:${ip}`, LIMITE_POR_IP, VENTANA_MS)) {
     return NextResponse.json(
       { error: 'Demasiadas solicitudes seguidas. Inténtalo en unos minutos.' },
       { status: 429 }
