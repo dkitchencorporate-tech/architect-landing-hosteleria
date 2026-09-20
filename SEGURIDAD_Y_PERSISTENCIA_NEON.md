@@ -464,7 +464,26 @@ personales no se protege solo con contraseña.
 | Equipo | **`architect-sys-projects`** ("Architect Sys' projects") · `team_h4JhRvWvayMJYeKS0fRwU48u` |
 | Plan | Hobby (1 build concurrente) |
 | Proyecto | `architect-landing-hosteleria` · `prj_dbMUUwegDIGl0vfGVF2APCjvO8pU` |
-| Neon | **No instalado.** Bloqueado en la aceptación de términos del marketplace |
+| Instalación de marketplace | `icfg_8D37UEjqAk4SVDX0lkiD4neM` |
+| **Base de datos** | **`dkitchen-db`** · `withered-scene-00256195` · **`aws-eu-central-1` (Fráncfort)** · Postgres 18.6 |
+| Conexión | Solo por HTTPS con `@neondatabase/serverless`. El TCP al 5432 no sale de todos los entornos |
+
+**Por qué Fráncfort y no la región por defecto.** El aprovisionamiento del marketplace
+crea la base en `us-east-1` si no se le dice otra cosa, y ahí se creó la primera. Se
+rehizo en Fráncfort antes de escribir una sola tabla: la región de un proyecto Neon no
+se puede cambiar después, y vamos a guardar nombres, teléfonos y correos de hosteleros
+españoles. Tenerlos en Estados Unidos es una transferencia a un tercer país que exige
+salvaguardas propias bajo RGPD, y además suma latencia en cada consulta.
+
+Para volver a crearla con región explícita, el campo es obligatorio y se pasa así:
+
+```
+vercel integration add neon --installation-id icfg_8D37UEjqAk4SVDX0lkiD4neM \
+  --metadata region=fra1 --metadata auth=true --non-interactive
+```
+
+Las regiones que acepta el producto son `cle1`, `iad1`, `pdx1`, `fra1`, `lhr1`, `syd1`,
+`sin1` y `gru1`. Para España, `fra1`.
 
 Dos cosas a tener presentes:
 
@@ -563,6 +582,41 @@ Retención y restauración probadas. Una copia que nunca se ha restaurado no es 
 copia, es una suposición.
 
 ---
+
+## 6.bis Decisiones aplazadas a propósito
+
+No son olvidos: se han valorado y se ha decidido no hacerlas todavía.
+
+### Inicio de sesión con Google y Apple
+
+BetterAuth viene habilitado en el proyecto de Neon, pero los botones de Google y Apple
+quedan **para más adelante**. La razón es que hoy no hay a quién autenticar: el único
+flujo que crearía cuentas es el checkout del QR Menú, y mientras el alta se haga a mano
+no hacen falta proveedores externos.
+
+Cuando toque, hay que tener en cuenta que las credenciales solo las puede emitir el
+titular de las cuentas:
+
+- **Google** — cliente OAuth 2.0 en Google Cloud Console: *Client ID* y *Client Secret*.
+- **Apple** — Apple Developer, que es de pago (99 $/año): *Services ID*, *Team ID*,
+  *Key ID* y el archivo de clave `.p8`.
+
+Sin esos datos no se puede configurar nada del lado de la aplicación.
+
+### Alta de cuentas en el checkout del QR
+
+El peldaño de QR Menú se diseñó como autoservicio: el visitante paga 1 € y el sistema
+aprovisiona cuenta, menú y QR sin intervención humana. **De momento el alta se hace a
+mano, siempre.**
+
+Tiene sentido mientras el volumen sea bajo: cada alta manual es una conversación con el
+cliente, y el aprovisionamiento automático es la pieza de mayor complejidad técnica de
+todo el peldaño (checkout, webhook con verificación de firma, transacción única que
+crea cuenta, menú y QR o no crea nada). Automatizarlo antes de tener demanda sería
+construir la parte cara sin haber validado la barata.
+
+Cuando se automatice, el punto crítico está en la Sección 5.3: un cliente que ha pagado
+y se queda a medio aprovisionar es peor que uno que no ha podido pagar.
 
 ## 7. Antes de que entre el primer cliente real
 
