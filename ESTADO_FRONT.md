@@ -53,16 +53,31 @@ silencio para el visitante — conviene probarlo antes de dar tráfico.
 
 | Ruta | Estado | Notas |
 |---|---|---|
-| `/` | ✅ Funciona | Home completa. Pendiente de la reestructura multipágina (Fase 4) |
-| `/demo/carta` | ✅ Funciona | Carta interactiva de **demostración**, con datos en el código. Es la pieza de venta, no el producto |
-| `/m/{slug}` | ✅ **Con base de datos** | La carta real de un cliente, leída de Neon. HTML puro, sin JavaScript |
+| `/` | ✅ Funciona | Home de entrada: hero, en tres pasos, CTA a la demo, enlaces al resto del sitio, bio del fundador |
+| `/precios` | ✅ Funciona | Fundación Digital, Pack de Arranque, proceso de trabajo (Fase 4) |
+| `/eventos` | ✅ Funciona | Catálogo de formatos de evento (Fase 4) |
+| `/dark-kitchen` | ✅ Funciona | Ruta B, admisión de proyectos +3k€ (Fase 4). El catálogo `/marcas` sigue pendiente (tarea #11) |
+| `/faq` | ✅ Funciona | Preguntas frecuentes (Fase 4) |
+| `/demo/carta` | ✅ Funciona | Carta interactiva de **demostración**, con datos en el código. Es la pieza de venta, no el producto. Fuera del layout de marketing a propósito: no debe romper la inmersión con nuestra barra de ventas |
+| `/m/{slug}` | ✅ **Con base de datos** | La carta real de un cliente, leída de Neon. HTML puro, sin JavaScript. Fuera del layout de marketing a propósito: es la pantalla del restaurante, no la nuestra |
 | `/r/{codigo}` | ✅ **Con base de datos** | Lo que hay detrás del QR impreso: registra el escaneo y redirige a la carta |
 | `/carta-no-disponible` | ✅ Funciona | Lo que ve quien escanea un QR que ya no resuelve |
-| `/privacy` | ✅ Funciona | Identidad migrada a DKitchen |
-| `/terms` | ✅ Funciona | Reescrito: describía un bot de WhatsApp que ya no existe |
-| `/data-deletion` | ✅ Funciona | Ya no menciona Supabase ni Meta |
+| `/privacy` | ✅ Funciona | Identidad migrada a DKitchen. Movida al grupo de rutas `(marketing)`: misma URL, ahora con navegación |
+| `/terms` | ✅ Funciona | Reescrito: describía un bot de WhatsApp que ya no existe. Movida al grupo `(marketing)` |
+| `/data-deletion` | ✅ Funciona | Ya no menciona Supabase ni Meta. Movida al grupo `(marketing)` |
 | `/robots.txt` | ✅ Funciona | Excluye `/r/`, paneles y manuales; deja indexar las cartas |
-| `/sitemap.xml` | ⚠️ Mínimo | Solo lista la home. **Las cartas de clientes aún no entran**: se completa en la Fase SEO |
+| `/sitemap.xml` | ✅ Funciona | Lista las 8 páginas de marketing reales. **Las cartas de clientes (`/m/{slug}`) aún no entran**: exige leer Neon en tiempo de build, se completa en la Fase SEO |
+
+**Sobre la reestructura de la Fase 4:** las páginas de marketing viven bajo
+`src/app/(marketing)/` —un grupo de rutas de Next.js que no aparece en la
+URL— y comparten un layout con navegación real (`src/components/NavBar.tsx`,
+antes eran anclas `#suscripciones`, `#eventos`, `#dark-kitchen` en una sola
+página larga), pie de página (`src/components/Footer.tsx`) y un botón
+flotante de WhatsApp (`src/components/FloatingWhatsApp.tsx`), distinto del
+CTA de la barra. Deliberadamente **no** envuelve `/m/{slug}`, `/demo/carta`,
+`/dashboard`, `/admin-architect`, `/manuals` ni `/onboarding`, cada una con su
+propia identidad — verificado sirviendo cada ruta y comprobando que la marca
+del botón de WhatsApp (`25D366`) no aparece fuera del grupo de marketing.
 
 ### Detrás de acceso (hueco, sin base de datos)
 
