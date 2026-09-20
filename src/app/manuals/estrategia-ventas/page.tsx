@@ -22,15 +22,15 @@ export default function EstrategiaVentasManual() {
       <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
         <h1>3. Embudos de Venta y Psicología B2B</h1>
         <p className="lead">
-          Protocolo de persuasión comercial de DKitchen. Análisis de la propuesta de valor, estructura de la Landing Page y posicionamiento de marca (Socio Operativo vs. Agencia).
+          Protocolo de persuasión comercial de DKitchen. Análisis de la propuesta de valor, estructura de la Landing Page y posicionamiento de marca (Socio Operativo vs. proveedor genérico de marketing).
         </p>
 
         <h2>Posicionamiento de Marca</h2>
         <p>
-          DKitchen rompe intencionalmente con la semántica tradicional del marketing para hostelería. 
+          DKitchen rompe intencionalmente con la semántica tradicional del marketing para hostelería. Regla permanente de copy: la palabra que describe a los proveedores genéricos de marketing ("posts", "likes", "locales llenos por arte de magia") no se usa nunca para describir a DKitchen, ni siquiera en negación — el encuadre en sí mismo es lo que se evita, no solo la promesa vacía.
         </p>
         <ul>
-          <li><strong>NO somos:</strong> "Una agencia de marketing", "Creadores de posts", "Prometedores de locales llenos".</li>
+          <li><strong>NO somos:</strong> un proveedor que factura por publicar contenido o prometer resultados que no controla.</li>
           <li><strong>SÍ somos:</strong> "Un ecosistema SaaS", "Tu socio operativo", "Ingenieros de automatización", "Rentabilidad medible".</li>
         </ul>
         <p>
@@ -41,7 +41,7 @@ export default function EstrategiaVentasManual() {
         <p>La página principal está diseñada bajo un embudo de dolor y resolución:</p>
 
         <h3>1. Hero Section (El Gancho)</h3>
-        <p><strong>Titular:</strong> "Ecosistema de Crecimiento para Hostelería Profesional." <br/>Diseñado para denotar autoridad. El fondo dinámico y oscuro (Glassmorphism) crea un efecto "Premium/High-Ticket" inmediato, similar al que usan marcas como Apple o Stripe.</p>
+        <p><strong>Titular real, en producción:</strong> "Atrae más clientes, agiliza tu servicio y domina tu presencia digital." <br/>Diseñado para denotar autoridad. El fondo dinámico y oscuro (Glassmorphism) crea un efecto "Premium/High-Ticket" inmediato, similar al que usan marcas como Apple o Stripe.</p>
 
         <h3>2. Sección de Dolor (Agitación)</h3>
         <p>Menciona directamente los problemas reales: Comisiones abusivas de Uber Eats, camareros estresados, descontrol de pedidos. Demuestra empatía profunda con el sector.</p>
@@ -56,17 +56,29 @@ export default function EstrategiaVentasManual() {
           intermediario conversacional.
         </p>
 
-        <h3>4. Matriz de Precios (Anclaje Psicológico)</h3>
-        <p>Se utiliza la estrategia de tres pilares:</p>
-        <ol>
-          <li><strong>Base Infraestructura (90€):</strong> El ancla inferior. Resuelve lo básico (cartas digitales), pero deja claro que la optimización mayor requiere más.</li>
-          <li><strong>Growth Partner All-in-One (499€):</strong> El producto estrella "Decoy". Posicionado centralmente.</li>
-          <li><strong>AI Autónomo (600€+):</strong> El ancla superior. Hace que el plan de 499€ parezca una inversión razonable en contraste con contratar un empleado humano.</li>
-        </ol>
+        <h3>4. La escalera de valor (reemplaza cualquier matriz de 3 planes con "decoy" central)</h3>
+        <p className="text-sm italic">
+          Esta sección describía un anclaje de 3 planos (Base 90€ / Growth Partner 499€ "decoy" / AI Autónomo 600€+) que pertenece al modelo de negocio ya desmontado (Fase 2, 19/09/2026). DKitchen no vende un plan de suscripción con garantía de resultado — vende una escalera de 5 peldaños de compromiso creciente, sin plan "señuelo" central. La psicología de cada peldaño es distinta, no una única técnica de anclaje repetida:
+        </p>
+        <table>
+          <thead>
+            <tr><th>Peldaño</th><th>Principio dominante</th><th>Cómo se aplica</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>QR Menú</td><td>Reciprocidad + prueba antes de compromiso</td><td>Montaje regalado con fecha de corte visible; primer mes a 1€ simbólico, nunca "gratis" indefinido</td></tr>
+            <tr><td>Experience</td><td>Escasez real (fecha del evento) + prueba social diferida</td><td>Fecha límite genuina, nunca artificial; el informe de cierre de cada evento es prueba social para el siguiente cliente</td></tr>
+            <tr><td>Auditoría de canales</td><td>Autoridad + brecha (gap)</td><td>Se muestra un gap concreto y cuantificado del propio negocio del cliente antes de ofrecer la solución</td></tr>
+            <tr><td>Base Operativa</td><td>Anclaje de valor + filtro de autoridad</td><td>Se establece el valor completo (con los 4 bonos consultivos) antes de revelar el precio en 2 pasos</td></tr>
+            <tr><td>Dark Kitchen</td><td>Exclusividad (Ruta A) + aversión a la pérdida (Ruta B)</td><td>Ruta A mantiene exclusividad trimestral; Ruta B ancla la capacidad de cocina ociosa no monetizada</td></tr>
+          </tbody>
+        </table>
+        <p>
+          Detalle completo de precios y mecanismos en <code>DKITCHEN_MIGRACION_COMPLETA.md</code>, Secciones 2 y 11 — esta tabla es un resumen para consulta rápida, esa fuente manda si hay alguna diferencia.
+        </p>
 
         <h2>Eliminación de Falsas Promesas</h2>
         <p>
-          En mayo de 2026, el ecosistema pasó por un refactor completo de copy. Se eliminaron frases como "Te llenamos el local", que legalmente y estratégicamente generan fricción en ventas de High-Ticket.
+          Se eliminaron frases como "Te llenamos el local" o cualquier garantía de resultado — no solo por friccionar la venta, sino porque el modelo actual no cobra comisión ni gestiona el dinero del cliente en ningún peldaño salvo el checkout propio del QR Menú, así que prometer un resultado sobre dinero que DKitchen no controla es, además de mala venta, inexacto.
         </p>
         <p>
           En su lugar, el funnel garantiza <strong>Trazabilidad, Retención, Base de Datos Propia y Experiencia Premium</strong>. Al vender infraestructura operativa, el valor del producto es intrínseco e innegable desde el primer mes, asegurando una retención a largo plazo.
