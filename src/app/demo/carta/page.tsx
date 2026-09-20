@@ -686,26 +686,18 @@ function CartaContent() {
     sendToAi(userMsg, activeDishContext);
   };
 
-  const sendToAi = async (userMsg: string, context: string | null) => {
+  // "Llamar al camarero" en el producto real es un aviso al personal de sala, no una
+  // conversación: el pedido lo compone el comensal desde la carta. Aquí se confirma
+  // la llamada en local; el aviso a cocina se conecta con el motor de QR.
+  const sendToAi = async (_userMsg: string, _context: string | null) => {
     setIsTyping(true);
-    try {
-      const res = await fetch('/api/demo/waiter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: [...chatMessages, { role: 'user', content: userMsg }], language: lang, contextDish: context, template: activeTemplate })
-      });
-      const jsonRes = await res.json();
-      if (jsonRes.status === 'ok') {
-        const { text, action } = jsonRes.data;
-        setChatMessages(prev => [...prev, { role: 'assistant', content: text }]);
-        if (action && action.type === 'ADD_MULTIPLE') {
-          action.items.forEach((actItem: any) => {
-            const menuItem = currentMenu.find(m => m.id === actItem.itemId);
-            if (menuItem) addToCart(menuItem, actItem.qty);
-          });
-        }
-      } else { setChatMessages(prev => [...prev, { role: 'assistant', content: "Error." }]); }
-    } catch (e) { setChatMessages(prev => [...prev, { role: 'assistant', content: "Error." }]); } finally { setIsTyping(false); }
+    setTimeout(() => {
+      setChatMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'Aviso enviado a sala. Un camarero se acerca a tu mesa enseguida.',
+      }]);
+      setIsTyping(false);
+    }, 600);
   };
 
   return (
