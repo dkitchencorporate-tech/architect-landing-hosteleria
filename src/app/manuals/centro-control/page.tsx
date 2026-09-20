@@ -22,52 +22,45 @@ export default function CentroControlManual() {
       <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
         <h1>6. Centro de Control de Administración</h1>
         <p className="lead">
-          Documentación técnica sobre las vistas de "God Mode". Cómo el equipo interno de DKitchen monitoriza a los clientes reales y cómo funciona la inyección de datos para las presentaciones de venta.
+          Documentación técnica sobre el panel interno de DKitchen y su estado real de acceso.
+        </p>
+        <p className="text-sm italic">
+          Esta página describía, como si fuera una funcionalidad legítima, un "Modo Demo" que
+          concedía datos falsos y acceso especial a un correo concreto (<code>klarx94@gmail.com</code>)
+          comparado en el propio código. Eso no era una funcionalidad: era el hallazgo <strong>V-02</strong>
+          de <code>SEGURIDAD_Y_PERSISTENCIA_NEON.md</code> — un privilegio concedido por un <code>if</code>
+          en el cliente, agravado por V-01 (el middleware fabricaba ese mismo usuario en desarrollo) y
+          V-03 (cualquier correo que contuviera la subcadena <code>klar</code> pasaba el control de
+          administrador). **Los tres están eliminados.** Esta página se reescribe para que ningún agente
+          futuro los lea como una feature a preservar o reintroducir.
         </p>
 
-        <h2>El Panel de Clientes (Clients List)</h2>
+        <h2>El Panel de Clientes</h2>
         <p>
-          Ruta: <code>/admin-architect/clients</code>
+          Ruta: <code>/admin-architect/clients</code> — junto con el resto de <code>/admin-architect/*</code> y
+          <code> /dashboard</code>.
         </p>
         <p>
-          Esta interfaz es el verdadero "cerebro administrativo" del software. Cuando accedes a esta ruta, el código ejecuta una petición de alto nivel a Supabase utilizando la <code>SUPABASE_SERVICE_KEY</code>. Esta llave mágica ignora las barreras RLS (Row Level Security), permitiendo ver a TODOS los clientes registrados.
-        </p>
-
-        <h3>Datos Monitoreados:</h3>
-        <ul>
-          <li><strong>Email:</strong> Extraído de la base de datos de usuarios (<code>profiles</code>).</li>
-          <li><strong>Restaurante:</strong> Extraído de la tabla <code>projects</code> (si el cliente ya terminó el Onboarding).</li>
-          <li><strong>Estado del Ecosistema:</strong> Muestra etiquetas visuales (Verde = Activo, Amarillo = Pendiente) para saber qué módulos ha activado cada cliente (Cartas, WhatsApp, etc.).</li>
-        </ul>
-
-        <h2>La Lógica del "Modo Demo" (Ventas en Vivo)</h2>
-        <p>
-          Las presentaciones de software B2B sufren del "síndrome de la base de datos vacía". Si muestras un Dashboard real recién creado, el cliente verá puros "0" en las métricas y perderá el impacto emocional.
-        </p>
-        <p>
-          Para resolver esto, hemos programado un <strong>Bypass Condicional (Modo Demo)</strong>.
+          Estado real hoy: rutas públicas, sin protección — porque están vacías (V-09, todavía abierto).
+          No hay middleware que las proteja porque el que existía dependía de Supabase y se eliminó junto
+          con V-01. <strong>Esto bloquea la entrada del primer cliente real</strong>: antes de cargar datos
+          reales aquí hay que cerrar el acceso con la identidad de Neon (<code>dk.es_admin()</code>,
+          Sección 3 de <code>arquitectura-saas</code>), nunca con una comparación de correo.
         </p>
 
-        <h3>¿Cómo se activa?</h3>
+        <h2>Cómo se resuelve el acceso administrativo ahora</h2>
         <p>
-          El sistema lee el correo con el que se ha iniciado sesión. Si el correo coincide exactamente con:
+          La pertenencia al rol <code>admin</code> es una fila en una tabla de identidades, verificada
+          contra el token de la petición — nunca una cadena de correo, nunca un valor por defecto en
+          desarrollo. Revocar el acceso de alguien es un <code>UPDATE</code> (<code>activo = false</code>),
+          no un despliegue de código. Cualquier lectura con rol <code>admin</code> queda registrada en la
+          tabla <code>auditoria</code>, que ninguna conexión del despliegue puede escribir directamente.
         </p>
-        <ul>
-          <li><code>klarx94@gmail.com</code></li>
-        </ul>
         <p>
-          El Dashboard y la Creative Factory ignoran la base de datos real y cargan <strong>Data Ficticia Hardcodeada</strong> (Mock Data). 
-        </p>
-
-        <h3>Efectos Visuales del Modo Demo:</h3>
-        <ol>
-          <li><strong>Métricas Disparadas:</strong> Se muestran gráficos con facturación mensual altísima, base de datos de 5000+ clientes y picos de retención.</li>
-          <li><strong>Proyectos Falsos:</strong> El panel muestra "Burger Queen" y "Sushi Master" como clientes activos para demostrar capacidad multi-restaurante.</li>
-          <li><strong>Eventos Desbloqueados:</strong> La sección de Creative Factory permite "solicitar eventos" sin chocar contra límites de servidor, mostrando alertas de éxito inmediatas para asombrar al prospecto durante la llamada de Zoom.</li>
-        </ol>
-        
-        <p>
-          <strong>Alerta de Seguridad:</strong> Este Modo Demo <em>solo</em> afecta a la parte visual del frontend de estos correos específicos. Las reglas de la base de datos en Supabase permanecen intactas, por lo que nunca se insertarán estos datos falsos en producción.
+          Si en el futuro hace falta una cuenta de demostración para ventas, la forma correcta es una fila
+          más en la base con un rol propio (<code>demo</code>), sujeta exactamente a las mismas políticas
+          de RLS que cualquier otro cliente — nunca un atajo de frontend que decide por correo qué datos
+          mostrar.
         </p>
       </div>
     </div>

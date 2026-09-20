@@ -22,7 +22,15 @@ export default function GoogleOAuthManual() {
       <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
         <h1>Protocolo de Configuración: Google OAuth y Verificación de Aplicación</h1>
         <p className="lead">
-          Este documento detalla el procedimiento operativo estándar (SOP) para activar y escalar la autenticación con Google en la plataforma SaaS de DKitchen, gestionada a través de Supabase y Google Cloud Console.
+          Este documento detalla el procedimiento operativo estándar (SOP) para activar la autenticación con Google en DKitchen, vía Google Cloud Console.
+        </p>
+        <p className="text-sm italic">
+          Estado real: el login social (Google/Apple) está <strong>aplazado a propósito</strong>
+          (tarea pendiente en el roadmap de migración) — no hay ningún botón de login funcionando
+          hoy. Los pasos de Google Cloud Console de abajo siguen siendo válidos tal cual para cuando
+          se implemente, pero la sección de sincronización final se actualiza: el proyecto ya no usa
+          Supabase Auth, y el proveedor de identidad al que conectar estas credenciales será
+          Neon Auth (ya provisionado como parte del marketplace de Neon en Vercel), no Supabase.
         </p>
 
         <h2>1. Objetivo</h2>
@@ -47,8 +55,8 @@ export default function GoogleOAuthManual() {
         </p>
         <ul>
           <li><strong>Tipo de aplicación:</strong> Aplicación Web.</li>
-          <li><strong>Orígenes autorizados de JavaScript:</strong> <code>https://ytzgfgzwrjwbmjudvwgc.supabase.co</code> (La raíz del proyecto en Supabase).</li>
-          <li><strong>URI de redireccionamiento autorizados:</strong> <code>https://ytzgfgzwrjwbmjudvwgc.supabase.co/auth/v1/callback</code> (La ruta oficial que procesa el retorno del token).</li>
+          <li><strong>Orígenes autorizados de JavaScript:</strong> el dominio de producción (<code>https://dkitchencorporate.es</code>) y el que exponga Neon Auth para este proyecto en el momento de implementarlo — a confirmar entonces, no es la URL de Supabase que aparecía aquí antes.</li>
+          <li><strong>URI de redireccionamiento autorizados:</strong> la ruta de callback que exponga Neon Auth (equivalente al antiguo <code>/auth/v1/callback</code> de Supabase, pero servida por Neon).</li>
         </ul>
 
         <h2>3. Límite Inicial de 100 Usuarios y Verificación</h2>
@@ -73,13 +81,12 @@ export default function GoogleOAuthManual() {
           <em>Nota Técnica:</em> Ambas rutas ya están programadas y desplegadas en la infraestructura de Vercel. Al proveer estos enlaces al equipo de revisión de Google, el límite de 100 usuarios será removido permanentemente.
         </p>
 
-        <h2>4. Sincronización con Supabase</h2>
+        <h2>4. Sincronización con el proveedor de identidad</h2>
         <p>
-          El último paso requiere insertar el <strong>Client ID</strong> y el <strong>Client Secret</strong> (obtenidos en el paso 2.2) dentro de: 
-          <br/><code>Supabase Dashboard &gt; Authentication &gt; Providers &gt; Google</code>.
-        </p>
-        <p>
-          Una vez guardado, el botón en la interfaz de la Landing Page funcionará instantáneamente en el entorno de producción.
+          El último paso, cuando se implemente esta fase, es insertar el <strong>Client ID</strong> y el
+          <strong> Client Secret</strong> (obtenidos en el paso 2.2) en la configuración de Google como
+          proveedor dentro de Neon Auth — el equivalente al panel de proveedores que antes ofrecía
+          Supabase, ya sobre la infraestructura de Neon de este proyecto.
         </p>
 
       </div>
