@@ -223,6 +223,30 @@ hubiera completado el alta habría acabado en un 404.
 `src/lib/events-data.ts` declara `EventDossier` dos veces. TypeScript lo tolera
 porque fusiona interfaces, así que nunca dio error. Es un copia-pega a limpiar.
 
+### V-17 · Crítico · Trece credenciales vivas de servicios que ya no existen
+
+Auditadas las variables de entorno del proyecto en Vercel el 20/09/2026, el código
+solo usa cinco: `GEMINI_API_KEY`, `GROQ_API_KEY`, `USE_GROQ`, `SMTP_EMAIL` y
+`SMTP_PASSWORD`. Las otras trece siguen cargadas y activas sin que nada las llame:
+
+| Variable | Servicio | Riesgo |
+|---|---|---|
+| `SUPABASE_SERVICE_KEY` | Supabase | **La clave de servicio: se salta RLS por completo.** Si el proyecto de Supabase sigue existiendo, quien la tenga tiene lectura y escritura totales sobre él |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase | Revela el proyecto contra el que usar la anterior |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase | Pública por diseño, pero ya no protege nada |
+| `KOMMO_ACCESS_TOKEN`, `KOMMO_BASE_URL`, `KOMMO_INTEGRATION_ID` | Kommo CRM | Acceso al CRM con los leads históricos |
+| `WHATSAPP_TOKEN`, `WHATSAPP_BUSINESS_ACCOUNT_ID`, `WHATSAPP_PHONE_NUMBER_ID`, `WHATSAPP_VERIFY_TOKEN` | Meta Cloud API | Permiten **enviar WhatsApp como DKitchen** |
+| `WHOP_API_KEY`, `WHOP_COMPANY_ID`, `WHOP_WEBHOOK_SECRET` | Whop | **No hay ni una línea de código que los use.** Whop es una plataforma de pagos y membresías: conviene averiguar qué se conectó y cerrarlo |
+
+Una credencial huérfana es la peor clase de credencial: conserva todo su poder y ya
+no protege nada, así que nadie la echa de menos si se usa. `SUPABASE_SERVICE_KEY` y
+los tokens de WhatsApp son los urgentes — el primero da acceso total a una base de
+datos, los segundos permiten suplantar a la marca.
+
+**Remedio:** revocar en origen (no basta con borrar la variable: hay que invalidar la
+clave en Supabase, Meta, Kommo y Whop) y después limpiar el entorno de Vercel. No las
+he borrado yo: son el entorno de producción y Whop no sé qué sostiene.
+
 ### V-16 · Bajo · Validación de formularios solo en el cliente
 
 Los formularios validan en el navegador. `/api/lead` comprueba que los campos existan,
@@ -431,6 +455,26 @@ Para el panel interno, además, segundo factor. Un rol que puede exportar datos
 personales no se protege solo con contraseña.
 
 ---
+
+## 3.bis Dónde vive todo esto (verificado el 20/09/2026)
+
+| Qué | Valor |
+|---|---|
+| Cuenta Vercel | `klarx94@gmail.com` · usuario `klarx94-architect` |
+| Equipo | **`architect-sys-projects`** ("Architect Sys' projects") · `team_h4JhRvWvayMJYeKS0fRwU48u` |
+| Plan | Hobby (1 build concurrente) |
+| Proyecto | `architect-landing-hosteleria` · `prj_dbMUUwegDIGl0vfGVF2APCjvO8pU` |
+| Neon | **No instalado.** Bloqueado en la aceptación de términos del marketplace |
+
+Dos cosas a tener presentes:
+
+1. **El equipo de Vercel se llama `architect-sys-projects`.** La marca vieja sigue en
+   el nombre y en la URL del panel. Renombrarlo entra en el cutover, junto al dominio
+   y al repositorio.
+2. **El correo de la cuenta es `klarx94@gmail.com`**, que es exactamente el que estaba
+   cableado en las puertas traseras V-02 y V-03. No es casualidad: eran atajos del
+   propietario. Conviene recordarlo al montar la identidad en Neon, para no repetir el
+   patrón de "mi correo es el administrador".
 
 ## 4. Secretos
 
