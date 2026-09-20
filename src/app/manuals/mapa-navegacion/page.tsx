@@ -10,7 +10,7 @@ export default function MapaNavegacionManual() {
         <Link href="/manuals" className="text-sm font-bold text-zinc-400 hover:text-white transition-colors">
           &larr; Volver al Índice
         </Link>
-        <button 
+        <button
           onClick={() => window.print()}
           className="bg-white text-black text-xs font-black uppercase tracking-widest px-4 py-2 rounded-lg hover:bg-zinc-200 transition-colors flex items-center gap-2"
         >
@@ -22,49 +22,62 @@ export default function MapaNavegacionManual() {
       <div className="prose prose-invert prose-orange max-w-none print:prose-p:text-black print:prose-headings:text-black print:prose-strong:text-black print:prose-li:text-black print:prose-a:text-blue-700">
         <h1>1. Mapa Integral de Navegación y URLs</h1>
         <p className="lead">
-          Directorio completo de enrutamiento del ecosistema DKitchen. Este documento funciona como el mapa cartográfico de toda la aplicación, dividiendo las áreas por nivel de seguridad.
+          Directorio completo de enrutamiento del ecosistema DKitchen. Refleja el
+          código realmente desplegado, no un diseño planeado: una ruta que
+          aparece aquí existe en <code>src/app/</code> con este comportamiento
+          exacto en la fecha indicada abajo.
+        </p>
+        <p><em>Actualizado: 20 de septiembre de 2026.</em></p>
+
+        <h2>Área pública (sin autenticación)</h2>
+        <ul>
+          <li><strong>Landing principal:</strong> <code>/</code> <br/>Presentación de servicios y matriz de precios (fuente única: <code>src/lib/pricing-config.ts</code>).</li>
+          <li><strong>Carta interactiva de demostración:</strong> <code>/demo/carta</code> <br/>Simulación con datos de ejemplo, para enseñar el producto a un prospecto. No lee de Neon.</li>
+          <li><strong>Carta viva de un restaurante real:</strong> <code>/m/[slug]</code> <br/>Se renderiza en el servidor, lee de Neon (con respaldo si Neon falla, ver <code>src/lib/cache-resiliencia.ts</code>). Indexable.</li>
+          <li><strong>Redirector de QR:</strong> <code>/r/[codigo]</code> <br/>No tiene interfaz: registra el escaneo y redirige a <code>/m/[slug]</code>. Ver <code>MOTOR_QR_ANALISIS_PROFESIONAL_Y_PLAN.md</code>.</li>
+          <li><strong>Carta no disponible:</strong> <code>/carta-no-disponible</code> <br/>Lo que ve quien escanea un QR que ya no resuelve.</li>
+          <li><strong>Legal:</strong> <code>/privacy</code>, <code>/terms</code>, <code>/data-deletion</code>.</li>
+          <li><strong>Onboarding comercial:</strong> <code>/onboarding</code> <br/>Sin backend real todavía (ver <code>ESTADO_FRONT.md</code>).</li>
+        </ul>
+
+        <h2>Área de autenticación</h2>
+        <p>
+          <strong>No existe todavía.</strong> El middleware y las rutas
+          <code>/auth/*</code> que hubo con Supabase se eliminaron por completo
+          en la migración (Fase 2c). BetterAuth (Neon Auth) está aprovisionado
+          en el proyecto de Neon pero sin cablear: es una decisión aplazada a
+          propósito (tarea #15) hasta que haya a quién autenticar de verdad.
+          Ahora mismo, <code>/dashboard</code> y <code>/admin-architect</code>
+          son rutas públicas de facto — están en la lista de cierre antes del
+          primer cliente real (Sección 7 de <code>SEGURIDAD_Y_PERSISTENCIA_NEON.md</code>).
         </p>
 
-        <h2>Área Pública (Sin Autenticación)</h2>
-        <p>Estas rutas están abiertas al internet y son el frente de captación de clientes.</p>
+        <h2>Área privada (hueca, sin backend detrás)</h2>
+        <p>Renderizan interfaz, pero <code>data-source.ts</code> devuelve listas vacías: no hay datos reales que mostrar todavía.</p>
         <ul>
-          <li><strong>Landing Page Principal:</strong> <code>https://dkitchencorporate.es/</code> <br/>El funnel B2B, presentación de servicios, matriz de precios y FAQs.</li>
-          <li><strong>Carta Digital Demo:</strong> <code>/demo/carta</code> <br/>Simulación de cómo se ve una carta digital interactiva en el móvil.</li>
-          <li><strong>Legal - Privacidad:</strong> <code>/privacy</code> <br/>Obligatorio para Google OAuth y normativas europeas.</li>
-          <li><strong>Legal - Términos:</strong> <code>/terms</code> <br/>Condiciones de uso y contratación del servicio SaaS.</li>
+          <li><strong>Dashboard de cliente:</strong> <code>/dashboard</code></li>
+          <li><strong>Panel de administración:</strong> <code>/admin-architect</code>, <code>/admin-architect/clients</code>, <code>/admin-architect/overview</code>, <code>/admin-architect/pipeline</code>, <code>/admin-architect/events-master</code></li>
+        </ul>
+        <p><strong>Ya no existe:</strong> <code>/creative-factory</code> y todas sus rutas de API — se eliminó junto con Gemini (Fase 2c).</p>
+
+        <h2>Centro de manuales</h2>
+        <ul>
+          <li><strong>Índice:</strong> <code>/manuals</code> <br/><code>noindex, nofollow</code>, pero accesible a quien conozca la URL — no hay control de acceso real (V-08, pendiente de cerrar con autenticación).</li>
         </ul>
 
-        <h2>Área de Autenticación</h2>
-        <p>El puente de seguridad entre los usuarios anónimos y el ecosistema operativo.</p>
+        <h2>APIs de servidor (rutas reales, no planeadas)</h2>
         <ul>
-          <li><strong>Login:</strong> <code>/auth/login</code> <br/>Pantalla de inicio de sesión con Email o Google.</li>
-          <li><strong>Registro:</strong> <code>/auth/register</code> <br/>Pantalla para crear cuentas nuevas. Redirige a callback al completarse.</li>
-          <li><strong>OAuth Callback (Servidor):</strong> <code>/auth/callback</code> <br/>Ruta invisible que procesa los tokens de Google y establece las cookies seguras. No tiene interfaz gráfica.</li>
+          <li><strong>Formulario de contacto:</strong> <code>POST /api/lead</code> <br/>Único endpoint de escritura vivo del despliegue. Con límite de frecuencia respaldado por Neon y HTML escapado (V-11 sigue abierto: usa Gmail, pendiente de un proveedor transaccional).</li>
+          <li><strong>Exportación de leads:</strong> <code>POST /api/admin/export-leads</code> <br/>Neutralizada, devuelve 503. Era el hallazgo más grave de la auditoría (V-05: no tenía ninguna autenticación).</li>
         </ul>
-
-        <h2>Área Privada (Clientes SaaS)</h2>
-        <p>Protegida por el <em>Middleware</em>. Solo accesible si existe una sesión válida de Supabase en las cookies del navegador.</p>
-        <ul>
-          <li><strong>Dashboard Principal:</strong> <code>/dashboard</code> <br/>Centro de control del cliente. Muestra el estado del negocio, conexión con métricas y el asistente de Onboarding inicial.</li>
-          <li><strong>Creative Factory:</strong> <code>/creative-factory</code> <br/>La biblioteca de eventos y campañas. Permite al cliente explorar catálogos de marketing (Navidad, Verano, Halloween) y solicitarlas al equipo de DKitchen.</li>
-        </ul>
-
-        <h2>Área de Administración (God Mode)</h2>
-        <p>Rutas exclusivas para monitorizar a los clientes. Están ocultas de los menús principales y protegidas por Middleware.</p>
-        <ul>
-          <li><strong>Centro de Clientes:</strong> <code>/admin-architect/clients</code> <br/>Tabla de monitoreo en tiempo real. Extrae datos de Supabase de todos los usuarios registrados, sus proyectos y el estado del Onboarding.</li>
-          <li><strong>Overview de Sistema:</strong> <code>/admin-architect/overview</code> <br/>Métricas globales de facturación (Pendiente de conexión futura con pasarela de pagos).</li>
-          <li><strong>Centro de Manuales (SOPs):</strong> <code>/manuals</code> <br/>Directorio de protocolos operativos protegido para uso exclusivo del administrador.</li>
-        </ul>
-
-        <h2>APIs y Webhooks (Rutas de Servidor)</h2>
-        <p>Puntos de conexión máquina-a-máquina.</p>
-        <ul>
-          <li><strong>Diagnóstico de Lead:</strong> <code>/api/diagnostic</code> <br/>Evalúa si un restaurante califica o no para el servicio.</li>
-          <li><strong>Procesamiento de Leads:</strong> <code>/api/lead</code> <br/>Recibe datos del formulario y los envía a CRM.</li>
-          <li><strong>Kommo Webhook:</strong> <code>/api/webhooks/kommo</code> <br/>Recibe actualizaciones de estado desde el CRM de ventas.</li>
-          <li><strong>Woztell Webhook:</strong> <code>/api/webhooks/woztell</code> <br/>Conexión bidireccional con WhatsApp para el bot Arqui.</li>
-        </ul>
+        <p>
+          <strong>Ya no existen:</strong> <code>/api/diagnostic</code>,
+          <code>/api/webhooks/kommo</code>, <code>/api/webhooks/woztell</code>,
+          <code>/api/demo/*</code>, <code>/api/creative-factory/*</code>,
+          <code>/api/leads/from-assistant</code> — eliminadas con Kommo,
+          Woztell, Meta Cloud API y el bot de WhatsApp ("Arqui"), por decisión
+          explícita: se erradicaron del proyecto, no se aplazaron.
+        </p>
       </div>
     </div>
   );

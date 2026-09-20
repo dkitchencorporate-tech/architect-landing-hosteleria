@@ -47,9 +47,16 @@ export default function OnboardingManual() {
         <h2>Dashboard Principal</h2>
         <p>El dashboard actúa como el "lobby" del Ecosistema Operativo. Está diseñado para mantener al cliente informado y enganchado al servicio SaaS.</p>
         <ul>
-          <li><strong>Conexión CRM:</strong> Muestra un resumen visual de cómo los leads están entrando al embudo (Métricas).</li>
-          <li><strong>Estado del Ecosistema:</strong> Informa si la cuenta de WhatsApp Business está conectada, si la Carta Digital está activa, y si el agente Arqui está operativo.</li>
+          <li><strong>Estado del Ecosistema:</strong> Informa si la Carta Digital está activa y qué escaneos ha tenido.</li>
         </ul>
+        <p className="text-sm italic">
+          Nota del 20/09/2026: la conexión con CRM y el "agente Arqui" que
+          describían las versiones anteriores de este manual se erradicaron
+          del proyecto por decisión explícita (Kommo, Woztell, el bot de
+          WhatsApp). No hay bot de ventas ni CRM externo en este ecosistema, ni
+          está previsto que lo haya. Ver <code>ESTADO_FRONT.md</code> para el
+          estado real del dashboard.
+        </p>
 
         <h2>Creative Factory (Retención de Clientes)</h2>
         <p>

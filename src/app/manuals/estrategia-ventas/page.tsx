@@ -46,8 +46,15 @@ export default function EstrategiaVentasManual() {
         <h3>2. Sección de Dolor (Agitación)</h3>
         <p>Menciona directamente los problemas reales: Comisiones abusivas de Uber Eats, camareros estresados, descontrol de pedidos. Demuestra empatía profunda con el sector.</p>
 
-        <h3>3. El Agente de Ventas Autónomo (Arqui)</h3>
-        <p>Se presenta no como un "bot de chat", sino como un "Empleado Virtual" que no duerme. La interfaz muestra demostraciones prácticas de cómo Arqui responde al público.</p>
+        <h3>3. (Retirado) El agente de ventas autónomo</h3>
+        <p className="text-sm italic">
+          Esta sección describía un bot de WhatsApp ("Arqui") como parte de la
+          estrategia de venta. Se erradicó del proyecto por decisión explícita
+          del 19/09/2026 — ni siquiera como upsell — junto con Kommo, Woztell
+          y Meta Cloud API: son desarrollos a medida que el negocio decidió no
+          sostener. La web es hoy el sistema de venta: precios claros, sin
+          intermediario conversacional.
+        </p>
 
         <h3>4. Matriz de Precios (Anclaje Psicológico)</h3>
         <p>Se utiliza la estrategia de tres pilares:</p>
