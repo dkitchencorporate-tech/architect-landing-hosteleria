@@ -2,7 +2,7 @@
 
 import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { supabaseClient } from '@/lib/supabase-client';
+import { registrarEventoWeb } from '@/lib/data-source';
 
 function AnalyticsPixelLogic() {
   const pathname = usePathname();
@@ -13,8 +13,6 @@ function AnalyticsPixelLogic() {
     if (pathname.startsWith('/admin-architect')) return;
 
     const trackView = async () => {
-      if (!supabaseClient) return;
-
       // 1. Gestionar Session ID
       let sessionId = localStorage.getItem('dkitchen_session_id');
       if (!sessionId) {
@@ -66,10 +64,8 @@ function AnalyticsPixelLogic() {
         }
       };
 
-      console.log("[Analytics] Lead Detectado:", payload);
-
-      // 6. Inserción en Supabase
-      await supabaseClient.from('web_analytics').insert([payload]);
+      // 6. Registro (sin destino mientras no haya base de datos conectada)
+      await registrarEventoWeb(payload);
     };
 
     trackView();

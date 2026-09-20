@@ -1,11 +1,9 @@
 'use client';
 
 import React, { useState, useEffect, Suspense } from 'react';
-import { supabaseClient } from '@/lib/supabase-client';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 function OnboardingContent() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const token = searchParams.get('token');
 
@@ -19,79 +17,21 @@ function OnboardingContent() {
   const [signingUp, setSigningUp] = useState(false);
 
   useEffect(() => {
-    const validateToken = async () => {
-      if (!token) {
-        setError("Enlace inválido. No se ha proporcionado un token de acceso.");
-        setLoading(false);
-        return;
-      }
-      if (!supabaseClient) return;
-
-      const { data, error } = await supabaseClient
-        .from('invitations')
-        .select('*')
-        .eq('token', token)
-        .single();
-
-      if (error || !data) {
-        setError("Token de invitación inválido o caducado.");
-      } else if (data.used) {
-        setError("Esta invitación ya ha sido utilizada.");
-      } else {
-        setInvitation(data);
-      }
-      setLoading(false);
-    };
-
-    validateToken();
+    // Los tokens de invitación viven en la base de datos. Sin ella no hay nada
+    // contra lo que validarlos, así que el alta queda cerrada en lugar de
+    // aceptar a cualquiera que acierte la URL.
+    setError(
+      token
+        ? 'El alta de clientes está cerrada mientras no haya base de datos conectada.'
+        : 'Enlace inválido. No se ha proporcionado un token de acceso.'
+    );
+    setLoading(false);
   }, [token]);
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!supabaseClient || !invitation) return;
-
-    setSigningUp(true);
-    setError(null);
-
-    // 1. Crear el usuario en Supabase Auth
-    const { data: authData, error: authError } = await supabaseClient.auth.signUp({
-      email,
-      password,
-    });
-
-    if (authError) {
-      setError(authError.message);
-      setSigningUp(false);
-      return;
-    }
-
-    if (authData.user) {
-      // 2. Actualizar profile con plan_type y marcar status active automáticamente por ser invitado
-      await supabaseClient.from('profiles').update({
-        business_name: businessName,
-        plan_type: invitation.plan_type,
-        status: 'active'
-      }).eq('id', authData.user.id);
-
-      // 2.5 Crear el registro base de business_profiles
-      await supabaseClient.from('business_profiles').insert({
-        id: authData.user.id,
-        cuisine_type: 'Pendiente de Configurar',
-        average_ticket: '0',
-        address: 'No indicada'
-      });
-
-      // 3. Marcar token como usado
-      await supabaseClient.from('invitations').update({
-        used: true
-      }).eq('id', invitation.id);
-
-      // Redirigir al cliente a su Dashboard
-      router.push('/client');
-    } else {
-      setError("No se pudo crear el usuario. Por favor, intenta de nuevo.");
-      setSigningUp(false);
-    }
+    setError('No se puede completar el alta: no hay base de datos conectada.');
+    setSigningUp(false);
   };
 
   if (loading) {

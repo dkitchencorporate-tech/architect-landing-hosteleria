@@ -1,113 +1,19 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import LiveMonitor from '@/components/dashboard/LiveMonitor';
+import React from 'react';
 import TrafficMonitor from '@/components/dashboard/TrafficMonitor';
 import Link from 'next/link';
-import { Download, Activity, Globe, MessageSquare, HeartHandshake, Zap, Target, Laptop } from 'lucide-react';
-import { supabaseClient } from '@/lib/supabase-client';
-
+import { Download, Activity, Globe, Zap, Laptop } from 'lucide-react';
 
 export default function AdminDashboard() {
-  const [stats, setStats] = useState({
-    conversations: 0,
-    closingRate: 0,
-    rejectionRate: 0,
-    topTopic: 'Analizando...',
-    actionStage: 0,
-    sentiment: 'Neutro'
-  });
-
-  const [trafficStats, setTrafficStats] = useState({
+  // Las métricas de conversación se retiraron con el bot: medían una tabla de
+  // chats que ya no existe. Queda el tráfico web, que sí sobrevive a la migración
+  // y volverá a llenarse cuando Neon esté conectado.
+  const trafficStats = {
     totalVisits: 0,
     mobilePercentage: 0,
-    topSource: 'Calculando...'
-  });
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      if (!supabaseClient) return;
-
-      // 1. Fetch Chats Stats
-      let { data: chats, error } = await supabaseClient
-        .from('chats')
-        .select('intent, sentiment, topic, closing_stage, phone')
-        .or('status.eq.active,status.is.null');
-
-      if (error && error.code === '42703') {
-        const fallback = await supabaseClient
-          .from('chats')
-          .select('intent, sentiment, topic, closing_stage, phone');
-        chats = fallback.data;
-        error = fallback.error;
-      }
-
-      if (chats) {
-        const total = chats.length;
-        const sales = chats.filter(c => c.intent === 'venta').length;
-        const rejections = chats.filter(c => c.intent === 'rechazo').length;
-        const positive = chats.filter(c => c.sentiment === 'positivo').length;
-        const actionLeads = chats.filter(c => c.closing_stage === 'accion').length;
-
-        const topics = chats.map(c => c.topic).filter(Boolean);
-        const topTopic = topics.length > 0
-          ? topics.sort((a,b) => topics.filter(v => v===a).length - topics.filter(v => v===b).length).pop()
-          : 'Ninguno';
-
-        const rate = total > 0 ? Math.round((sales / total) * 100) : 0;
-        const rejectRate = total > 0 ? Math.round((rejections / total) * 100) : 0;
-
-        let avgSent = 'Neutro';
-        if (positive > total / 2) avgSent = 'Positivo';
-        else if (total > 0 && positive < total / 4) avgSent = 'Alerta';
-
-        setStats({
-          conversations: total,
-          closingRate: rate,
-          rejectionRate: rejectRate,
-          topTopic: topTopic || 'Chat',
-          actionStage: actionLeads,
-          sentiment: avgSent
-        });
-      }
-
-      // 2. Fetch Traffic Stats
-      const { data: traffic } = await supabaseClient
-        .from('web_analytics')
-        .select('utm_source, device_type');
-
-      if (traffic) {
-        const totalVisits = traffic.length;
-        const mobile = traffic.filter(t => t.device_type === 'mobile').length;
-        const mobilePercentage = totalVisits > 0 ? Math.round((mobile / totalVisits) * 100) : 0;
-
-        const sources = traffic.map(t => t.utm_source).filter(Boolean);
-        const topSource = sources.length > 0
-          ? sources.sort((a,b) => sources.filter(v => v===a).length - sources.filter(v => v===b).length).pop()
-          : 'Directo / Orgánico';
-
-        setTrafficStats({
-          totalVisits,
-          mobilePercentage,
-          topSource: topSource || 'Directo'
-        });
-      }
-    };
-
-    fetchStats();
-
-    let channel: any = null;
-    if (supabaseClient) {
-      channel = supabaseClient.channel('stats-sync-heavy')
-        .on('postgres_changes', { event: '*', schema: 'public', table: 'chats' }, () => fetchStats())
-        .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'web_analytics' }, () => fetchStats())
-        .subscribe();
-    }
-
-    return () => {
-      if (channel && supabaseClient) supabaseClient.removeChannel(channel);
-    };
-  }, []);
+    topSource: '—',
+  };
 
   return (
 
@@ -116,7 +22,7 @@ export default function AdminDashboard() {
           <div className="max-w-[1600px] mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="hidden md:flex w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg items-center justify-center font-black text-white text-xs shadow-[0_0_15px_rgba(249,115,22,0.3)]">
-                A.
+                DK
               </div>
               <div>
                 <h1 className="text-lg md:text-xl font-black tracking-tighter text-white leading-none">Console</h1>
@@ -143,9 +49,6 @@ export default function AdminDashboard() {
           {/* GRID DE KPIs DE ALTA DENSIDAD (Conversaciones) */}
           <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { label: 'Conversaciones', value: stats.conversations, color: 'text-orange-400', trend: 'Live', icon: MessageSquare },
-              { label: 'IA Sentiment', value: stats.sentiment, color: 'text-green-400', trend: 'Análisis', icon: HeartHandshake },
-              { label: 'Tasa de Cierre', value: `${stats.closingRate}%`, color: 'text-zinc-200', trend: 'ROI', icon: Target },
               { label: 'Visitas Totales', value: trafficStats.totalVisits, color: 'text-blue-400', trend: 'Orgánico', icon: Zap },
               { label: 'Dispositivo', value: trafficStats.mobilePercentage > 50 ? 'Móvil' : 'Desktop', color: 'text-purple-400', trend: `${trafficStats.mobilePercentage}% Móvil`, icon: Laptop },
               { label: 'Top Origen', value: trafficStats.topSource, color: 'text-orange-400', trend: 'UTM', icon: Globe },
@@ -167,35 +70,15 @@ export default function AdminDashboard() {
             })}
           </section>
 
-          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Left Column: WhatsApp / IA */}
-            <div>
-              <div className="mb-4 flex justify-between items-end px-1">
-                <div>
-                  <h2 className="text-xl md:text-2xl font-black tracking-tighter text-white flex items-center gap-2">
-                    <Activity className="text-orange-500" size={20} /> Live AI Agent Stream
-                  </h2>
-                </div>
-              </div>
-
-              <div className="bg-zinc-950/50 border border-white/5 p-2 rounded-[2.5rem] shadow-[0_15px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl">
-                <LiveMonitor />
-              </div>
+          <section>
+            <div className="mb-4 flex justify-between items-end px-1">
+              <h2 className="text-xl md:text-2xl font-black tracking-tighter text-white flex items-center gap-2">
+                <Activity className="text-blue-500" size={20} /> Tráfico web
+              </h2>
             </div>
 
-            {/* Right Column: Traffic Analytics */}
-            <div>
-              <div className="mb-4 flex justify-between items-end px-1 mt-8 lg:mt-0">
-                <div>
-                  <h2 className="text-xl md:text-2xl font-black tracking-tighter text-white flex items-center gap-2">
-                    <Globe className="text-blue-500" size={20} /> Live Traffic Monitor
-                  </h2>
-                </div>
-              </div>
-
-              <div className="bg-zinc-950/50 border border-white/5 p-3 md:p-4 rounded-[2.5rem] shadow-[0_15px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl h-[500px]">
-                <TrafficMonitor />
-              </div>
+            <div className="bg-zinc-950/50 border border-white/5 p-3 md:p-4 rounded-[2.5rem] shadow-[0_15px_40px_rgba(0,0,0,0.4)] backdrop-blur-xl h-[500px]">
+              <TrafficMonitor />
             </div>
           </section>
         </main>

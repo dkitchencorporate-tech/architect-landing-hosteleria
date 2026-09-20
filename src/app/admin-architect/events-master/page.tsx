@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { supabaseClient } from "@/lib/supabase-client";
+import { listarEventosMaestros, BackendNoConfigurado } from "@/lib/data-source";
 import { Plus, Edit2, CheckCircle, Clock, Search, AlertCircle, RefreshCw } from "lucide-react";
 
 export default function EventsMasterPage() {
@@ -16,38 +16,16 @@ export default function EventsMasterPage() {
 
   const fetchData = async () => {
     setLoading(true);
-    try {
-      if (activeTab === 'catalog') {
-        const { data, error } = await supabaseClient.from('master_events').select('*').order('created_at', { ascending: true });
-        if (error) throw error;
-        setEvents(data || []);
-      } else {
-        const { data, error } = await supabaseClient.from('client_events')
-          .select(`
-            *,
-            profiles(restaurant_name, email),
-            master_events(title)
-          `)
-          .order('created_at', { ascending: false });
-        if (error) throw error;
-        setRequests(data || []);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setLoading(false);
+    if (activeTab === 'catalog') {
+      setEvents(await listarEventosMaestros());
+    } else {
+      setRequests([]);
     }
+    setLoading(false);
   };
 
-  const updateRequestStatus = async (id: string, newStatus: string) => {
-    try {
-      const { error } = await supabaseClient.from('client_events').update({ status: newStatus }).eq('id', id);
-      if (error) throw error;
-      fetchData();
-    } catch (err) {
-      console.error(err);
-      alert("Error al actualizar estado");
-    }
+  const updateRequestStatus = async (_id: string, _newStatus: string) => {
+    alert(new BackendNoConfigurado('cambiar el estado de la solicitud').message);
   };
 
   return (

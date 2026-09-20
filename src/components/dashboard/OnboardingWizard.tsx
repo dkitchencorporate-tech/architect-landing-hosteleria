@@ -58,36 +58,20 @@ export default function OnboardingWizard({ onComplete }: OnboardingWizardProps) 
     e.preventDefault();
     if (step < 2) {
       setStep(step + 1);
-    } else {
-      const { createClient } = await import("@/lib/supabase-browser");
-      const supabase = createClient();
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      const email = session?.user?.email || '';
-      const isAdmin = email === 'klarx94@gmail.com';
+      return;
+    }
 
-      if (isAdmin) {
-        localStorage.setItem("onboarding_completed", "true");
-        onComplete();
-        return;
-      }
-
-      if (session) {
-        // Save project data
-        await supabase.from('projects').insert([{
-          profile_id: session.user.id,
-          restaurant_name: formData.businessName,
-          restaurant_type: formData.cuisineType,
-          monthly_revenue: formData.averageTicket, // Mapping for now
-          main_problem: "N/A", // From chat or default
-          team_size: formData.capacity // Mapping for now
-        }]);
-
-        // Update profile onboarding status
-        await supabase.from('profiles').update({ onboarding_completed: true }).eq('id', session.user.id);
-      }
-      
+    try {
+      const { guardarOnboarding } = await import("@/lib/data-source");
+      await guardarOnboarding({
+        restaurant_name: formData.businessName,
+        restaurant_type: formData.cuisineType,
+        average_ticket: formData.averageTicket,
+        capacity: formData.capacity,
+      });
       onComplete();
+    } catch (err) {
+      alert(err instanceof Error ? err.message : String(err));
     }
   };
 

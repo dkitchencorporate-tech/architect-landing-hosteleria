@@ -12,7 +12,7 @@ import ChatTab from '@/components/creative-factory/ChatTab';
 import PromoTab from '@/components/creative-factory/PromoTab';
 import DossierTab from '@/components/creative-factory/DossierTab';
 
-// No mock clients - Data fetched entirely from Supabase
+// Los clientes provienen de la base de datos, no hay datos de ejemplo.
 
 export default function CreativeFactoryPage() {
   const [activeTab, setActiveTab] = useState('matrix');
@@ -62,33 +62,18 @@ export default function CreativeFactoryPage() {
   // Ref for auto-scroll in chat
   const chatEndRef = useRef<HTMLDivElement>(null);
 
-  // Cargar todos los clientes reales desde Supabase (Vista de Admin)
+  // Los clientes salen de la base de datos; sin ella la lista queda vacía.
   useEffect(() => {
     const fetchAllClients = async () => {
       try {
-        const { supabaseClient } = await import('@/lib/supabase-client');
-        if (!supabaseClient) return;
-
-        // Fetch all client profiles
-        const { data: profiles } = await supabaseClient
-          .from('profiles')
-          .select('id, business_name, business_profiles(cuisine_type, average_ticket)')
-          .eq('role', 'client');
+        const { listarPerfilesCliente, listarPlatos } = await import('@/lib/data-source');
+        const profiles = await listarPerfilesCliente();
 
         if (profiles) {
           const mappedClients = await Promise.all(profiles.map(async (p: any) => {
             const biz = p.business_profiles?.[0] || {};
-            
-            // Fetch real dishes
-            const { data: dishesData } = await supabaseClient
-              .from('creative_dishes')
-              .select('*')
-              .eq('profile_id', p.id);
-              
-            const dishes = dishesData && dishesData.length > 0 ? dishesData : [
-              { id: 'mock-1', name: 'Plato Principal', desc: 'Especialidad basada en ' + (biz.cuisine_type || 'General') },
-              { id: 'mock-2', name: 'Postre de la casa', desc: 'El postre más vendido.' }
-            ];
+
+            const dishes = await listarPlatos(p.id);
 
             return {
               id: p.id,
@@ -401,21 +386,19 @@ export default function CreativeFactoryPage() {
     if (!copyData || !generatedImage || !selectedClient) return;
     
     try {
-      const { supabaseClient } = await import('@/lib/supabase-client');
-      if (supabaseClient) {
-        await supabaseClient.from('creative_campaigns').insert({
-           profile_id: selectedClient.id,
-           dish_id: targetDishId.startsWith('mock') ? null : targetDishId,
-           pain_point: selectedPain,
-           angle: selectedAngle,
-           hook: copyData.hook,
-           primary_text: copyData.primaryText,
-           visual_prompt: customVisualPrompt || copyData.visualPrompt,
-           image_url: generatedImage
-        });
-      }
+      const { guardarCampana } = await import('@/lib/data-source');
+      await guardarCampana({
+        profile_id: selectedClient.id,
+        dish_id: targetDishId.startsWith('mock') ? null : targetDishId,
+        pain_point: selectedPain,
+        angle: selectedAngle,
+        hook: copyData.hook,
+        primary_text: copyData.primaryText,
+        visual_prompt: customVisualPrompt || copyData.visualPrompt,
+        image_url: generatedImage,
+      });
     } catch (err) {
-      console.error("Error guardando campaña en base de datos:", err);
+      console.error("No se pudo guardar la campaña:", err);
     }
 
     const newCreative = {

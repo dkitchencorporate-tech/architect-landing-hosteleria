@@ -1,51 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { createBrowserClient } from '@supabase/ssr';
+import React, { useState } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import { es } from 'date-fns/locale';
 import { Activity, Smartphone, Monitor, MapPin, Loader, Radio } from 'lucide-react';
 
 export default function TrafficMonitor() {
-  const [visits, setVisits] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
-
-  useEffect(() => {
-    fetchVisits();
-
-    const channel = supabase.channel('realtime_traffic')
-      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'web_analytics' }, payload => {
-        setVisits(prev => [payload.new, ...prev].slice(0, 50));
-      })
-      .subscribe();
-
-    return () => {
-      supabase.removeChannel(channel);
-    };
-  }, []);
-
-  const fetchVisits = async () => {
-    try {
-      const { data, error } = await supabase
-        .from('web_analytics')
-        .select('*')
-        .order('created_at', { ascending: false })
-        .limit(50);
-
-      if (!error && data) {
-        setVisits(data);
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // El seguimiento en tiempo real dependía de las suscripciones de Supabase.
+  // Neon no las trae de serie: cuando se conecte, esto arranca con sondeo periódico.
+  const [visits] = useState<any[]>([]);
+  const [loading] = useState(false);
 
   if (loading) {
     return (
@@ -60,8 +24,8 @@ export default function TrafficMonitor() {
     return (
       <div className="flex flex-col items-center justify-center h-48 text-zinc-500">
         <Radio className="w-10 h-10 mb-3 opacity-50" />
-        <p className="font-bold text-zinc-400">Esperando señal de tráfico...</p>
-        <p className="text-xs mt-1 opacity-60">Asegúrate de que la tabla 'web_analytics' exista en Supabase.</p>
+        <p className="font-bold text-zinc-400">Sin registro de tráfico</p>
+        <p className="text-xs mt-1 opacity-60">No hay base de datos conectada todavía.</p>
       </div>
     );
   }

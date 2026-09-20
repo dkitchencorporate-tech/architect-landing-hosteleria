@@ -1,33 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { supabaseClient } from "@/lib/supabase-client";
+import React from "react";
 
 export default function Pipeline() {
-  const [status, setStatus] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchStatus = async () => {
-      try {
-        if (!supabaseClient) return;
-        const { data: { session } } = await supabaseClient.auth.getSession();
-        if (session?.user) {
-          const { data } = await supabaseClient
-            .from('profiles')
-            .select('status')
-            .eq('id', session.user.id)
-            .single();
-          if (data) setStatus(data.status);
-        }
-      } catch (err) {
-        console.error("Error fetching pipeline status", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchStatus();
-  }, []);
+  // Sin base de datos no hay estado de proyecto que leer: se muestra el pipeline
+  // en su primer peldaño, que es lo que vería un cliente recién dado de alta.
+  const status: string | null = null;
 
   const isDevelopment = status === 'development';
   const isDelivered = status === 'delivered';
@@ -75,14 +53,6 @@ export default function Pipeline() {
       progress: 0
     }
   ];
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center py-20">
-        <div className="w-8 h-8 border-4 border-brand border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    );
-  }
 
   return (
     <div className="space-y-6">

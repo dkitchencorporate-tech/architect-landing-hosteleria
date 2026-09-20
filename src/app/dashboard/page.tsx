@@ -1,64 +1,22 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import OnboardingWizard from "@/components/dashboard/OnboardingWizard";
 import EventsLibrary from "@/components/dashboard/EventsLibrary";
 import Autogestion from "@/components/dashboard/Autogestion";
 import Marketplace from "@/components/dashboard/Marketplace";
 import Pipeline from "@/components/dashboard/Pipeline";
-import { createClient } from "@/lib/supabase-browser";
 
 export default function DashboardPage() {
-  const [hasCompletedOnboarding, setHasCompletedOnboarding] = useState<boolean | null>(null);
+  // Sin base de datos no hay perfil que consultar. Se renderiza el panel ya
+  // "onboardeado" para que sus pantallas sean revisables; el asistente de alta
+  // vive en su propia ruta, /onboarding.
+  const [hasCompletedOnboarding] = useState<boolean | null>(true);
   const [activeTab, setActiveTab] = useState("events");
-  const [isAdminDemo, setIsAdminDemo] = useState(false);
-  const [userProfile, setUserProfile] = useState<any>(null);
-  
-  const supabase = createClient();
+  const isAdminDemo = false;
+  const userProfile = null;
 
   useEffect(() => {
-    const checkState = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      let email = session?.user?.email;
-      
-      // BYPASS LOCAL para no bloquear renderizado en localhost sin sesión
-      if (!session && process.env.NODE_ENV === 'development') {
-        email = 'klarx94@gmail.com';
-      }
-
-      if (!email) return;
-      
-      const isAdmin = email === 'klarx94@gmail.com';
-      setIsAdminDemo(isAdmin);
-
-      if (isAdmin) {
-        // Modo Demo para presentaciones
-        setHasCompletedOnboarding(true);
-      } else {
-        // Cliente Real: Leer de Base de Datos
-        if (session && session.user) {
-          const { data: profile } = await supabase
-            .from('profiles')
-            .select('*')
-            .eq('id', session.user.id)
-            .single();
-          
-          if (profile) {
-            setUserProfile(profile);
-            setHasCompletedOnboarding(profile.onboarding_completed);
-          } else {
-            setHasCompletedOnboarding(false);
-          }
-        } else {
-          setHasCompletedOnboarding(false);
-        }
-      }
-    };
-
-    checkState();
-
-    // Listen to hash changes for navigation
+    // Navegación por hash entre las pestañas del panel
     const handleHashChange = () => {
       const hash = window.location.hash.replace("#", "");
       if (["events", "autogestion", "marketplace", "pipeline"].includes(hash)) {
@@ -76,10 +34,6 @@ export default function DashboardPage() {
 
   if (hasCompletedOnboarding === null) {
     return <div className="min-h-screen flex items-center justify-center text-white">Cargando ecosistema...</div>;
-  }
-
-  if (!hasCompletedOnboarding) {
-    return <OnboardingWizard onComplete={() => setHasCompletedOnboarding(true)} />;
   }
 
   // Render the appropriate view based on active tab

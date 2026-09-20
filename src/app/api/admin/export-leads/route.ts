@@ -1,32 +1,20 @@
 import { NextResponse } from 'next/server';
-import { getLeadAnalytics } from '@/lib/analytics';
+import { bloqueoSinBackend } from '@/lib/api-guard';
 
-export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-    const { from, to, columns } = body || {};
-    if (!from || !to) return NextResponse.json({ status: 'error', message: 'missing range' }, { status: 400 });
+/**
+ * Exportación de leads a CSV.
+ *
+ * ATENCIÓN AL RECONECTAR NEON: esta ruta nunca tuvo comprobación de identidad.
+ * Era un POST abierto que devolvía nombre, teléfono y correo de todos los leads
+ * a quien lo pidiera. Antes de volver a habilitarla hay que exigir sesión de
+ * administrador, no solo que exista base de datos.
+ */
+export async function POST() {
+  const bloqueo = bloqueoSinBackend();
+  if (bloqueo) return bloqueo;
 
-    const { leads } = await getLeadAnalytics(from, to);
-
-    const cols = Array.isArray(columns) && columns.length ? columns : ['name','phone','email','source','utm_source','utm_campaign','created_at'];
-
-    // Build CSV rows
-    const rows = leads.map(l => cols.map((c: string) => (l[c] ?? '')));
-    const header = cols;
-
-    // csv-stringify is not in deps; build simple CSV
-    const csv = [header.join(','), ...rows.map(r => r.map(v => `"${String(v).replace(/"/g,'""')}"`).join(','))].join('\n');
-
-    return new Response(csv, {
-      status: 200,
-      headers: {
-        'Content-Type': 'text/csv',
-        'Content-Disposition': `attachment; filename="leads_export_${from}_${to}.csv"`,
-      },
-    });
-  } catch (err: any) {
-    console.error('[export-leads] error', err);
-    return NextResponse.json({ status: 'error', message: 'internal' }, { status: 500 });
-  }
+  return NextResponse.json(
+    { status: 'error', message: 'Exportación no disponible.' },
+    { status: 501 }
+  );
 }

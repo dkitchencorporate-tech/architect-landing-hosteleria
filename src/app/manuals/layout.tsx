@@ -1,6 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 
+// Son procedimientos internos: se declaran confidenciales en su propio pie, así
+// que no tiene sentido que los buscadores los indexen.
+export const metadata = {
+  robots: { index: false, follow: false },
+};
+
 export default function ManualsLayout({
   children,
 }: {
@@ -16,7 +22,7 @@ export default function ManualsLayout({
         <div className="max-w-[1000px] mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/manuals" className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-to-br from-white to-zinc-400 text-black font-black text-lg flex items-center justify-center rounded-lg shadow-lg">
-              A
+              D
             </div>
             <div>
               <h1 className="text-lg font-black tracking-tight text-white">DKitchen Hub</h1>

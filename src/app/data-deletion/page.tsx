@@ -29,7 +29,7 @@ export default function DataDeletion() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white p-8 rounded-3xl border border-zinc-100">
               <h3 className="font-bold text-zinc-900 mb-2">Vía WhatsApp</h3>
-              <p className="text-sm">Escriba <span className="font-bold text-[#FF4500]">"ELIMINAR MIS DATOS"</span> al número oficial del establecimiento. Nuestro sistema de soporte automatizado procesará la solicitud e informará al administrador para el borrado permanente del historial en Supabase.</p>
+              <p className="text-sm">Escriba <span className="font-bold text-[#FF4500]">"ELIMINAR MIS DATOS"</span> al número oficial del establecimiento, o al WhatsApp de DKitchen. Revisamos la solicitud de forma manual y procedemos al borrado permanente de sus datos.</p>
             </div>
             <div className="bg-white p-8 rounded-3xl border border-zinc-100">
               <h3 className="font-bold text-zinc-900 mb-2">Vía Email</h3>

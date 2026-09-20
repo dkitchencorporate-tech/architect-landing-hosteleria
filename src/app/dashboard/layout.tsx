@@ -4,30 +4,16 @@ import React, { useState, useEffect } from "react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { CalendarDays, LayoutDashboard, ShoppingBag, BarChart3, Menu, LogOut, ShieldAlert } from 'lucide-react';
-import { supabaseClient } from '@/lib/supabase-client';
+import SinBackendAviso from '@/components/SinBackendAviso';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDesktopExpanded, setIsDesktopExpanded] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const checkAdmin = async () => {
-      // Forzar botón activo en modo local para evitar bloqueos en la presentación
-      if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-        setIsAdmin(true);
-        return;
-      }
-      
-      if (!supabaseClient) return;
-      const { data } = await supabaseClient.auth.getUser();
-      if (data?.user?.email?.includes('klar')) {
-        setIsAdmin(true);
-      }
-    };
-    checkAdmin();
-  }, []);
+  // Sin autenticación no hay forma de distinguir a un administrador, así que el
+  // acceso al panel interno queda oculto hasta que Neon aporte sesiones reales.
+  const isAdmin = false;
 
   const navItems = [
     { name: 'Eventos', href: '#events', icon: CalendarDays },
@@ -122,6 +108,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* Main Content Area */}
       <main className="flex-1 h-full overflow-y-auto relative z-10 custom-scrollbar p-4 md:p-8 max-w-7xl mx-auto">
+        <SinBackendAviso detalle="El panel de cliente se muestra vacío a propósito: no hay base de datos ni autenticación conectadas." />
         {children}
       </main>
 

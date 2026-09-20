@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { supabaseClient } from '@/lib/supabase-client';
-import { v4 as uuidv4 } from 'uuid';
+import { listarPerfilesCliente, listarInvitaciones, BackendNoConfigurado } from '@/lib/data-source';
 import { Plus, X, Copy, CheckCircle2, Server, Zap, Users } from 'lucide-react';
 
 export default function AdminClientsPage() {
@@ -15,23 +14,12 @@ export default function AdminClientsPage() {
 
   const fetchData = async () => {
     setLoading(true);
-    if (!supabaseClient) return;
-
-    const [clientsRes, invitesRes] = await Promise.all([
-      supabaseClient
-        .from('profiles')
-        .select('id, business_name, status, role, created_at, business_profiles(address, cuisine_type, average_ticket)')
-        .eq('role', 'client')
-        .order('created_at', { ascending: false }),
-      supabaseClient
-        .from('invitations')
-        .select('*')
-        .order('created_at', { ascending: false })
+    const [perfiles, invitaciones] = await Promise.all([
+      listarPerfilesCliente(),
+      listarInvitaciones(),
     ]);
-
-    if (clientsRes.data) setClients(clientsRes.data);
-    if (invitesRes.data) setInvitations(invitesRes.data);
-    
+    setClients(perfiles);
+    setInvitations(invitaciones);
     setLoading(false);
   };
 
@@ -39,40 +27,13 @@ export default function AdminClientsPage() {
     fetchData();
   }, []);
 
-  const handleApprove = async (id: string) => {
-    if (!supabaseClient) return;
-    const { error } = await supabaseClient
-      .from('profiles')
-      .update({ status: 'active' })
-      .eq('id', id);
-
-    if (!error) {
-      fetchData();
-    } else {
-      alert("Error: " + error.message);
-    }
+  const handleApprove = async (_id: string) => {
+    alert(new BackendNoConfigurado('aprobar al cliente').message);
   };
 
-  const handleGenerate = async (planType: 'base_pago_unico' | 'suscripcion') => {
-    if (!supabaseClient) return;
+  const handleGenerate = async (_planType: 'base_pago_unico' | 'suscripcion') => {
     setGenerating(true);
-
-    const token = uuidv4();
-    const { data: { session } } = await supabaseClient.auth.getSession();
-
-    const { error } = await supabaseClient
-      .from('invitations')
-      .insert({
-        token,
-        plan_type: planType,
-        created_by: session?.user?.id
-      });
-
-    if (!error) {
-      fetchData();
-    } else {
-      alert("Error al generar: " + error.message);
-    }
+    alert(new BackendNoConfigurado('generar la invitación').message);
     setGenerating(false);
   };
 

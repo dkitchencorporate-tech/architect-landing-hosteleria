@@ -28,5 +28,5 @@ export interface EventDossier {
   imagePlaceholder?: string;
 }
 
-// Fallback vacío, los datos ahora provienen de Supabase (master_events)
+// Fallback vacío: el catálogo de eventos vive en la base de datos.
 export const eventsLibrary: EventDossier[] = [];

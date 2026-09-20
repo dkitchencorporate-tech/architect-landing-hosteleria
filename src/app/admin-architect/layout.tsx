@@ -1,10 +1,11 @@
 import React from 'react';
 import AdminSidebar from '@/components/admin/AdminSidebar';
-// AuthLayer removed: middleware.ts handles secure SSR authentication
+import SinBackendAviso from '@/components/SinBackendAviso';
 
 export const metadata = {
-  title: 'Architect Agency Hub',
+  title: 'DKitchen · Central de Operaciones',
   description: 'Central de Operaciones',
+  robots: { index: false, follow: false },
 };
 
 export default function AdminLayout({
@@ -21,6 +22,9 @@ export default function AdminLayout({
         {/* Main Content Area */}
         <main className="flex-1 flex flex-col h-screen overflow-hidden">
           <div className="flex-1 overflow-y-auto">
+             <div className="px-6 pt-6">
+               <SinBackendAviso detalle="El panel interno se muestra vacío a propósito: no hay base de datos ni autenticación conectadas." />
+             </div>
              {children}
           </div>
         </main>

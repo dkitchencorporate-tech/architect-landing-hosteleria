@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { supabaseClient } from '@/lib/supabase-client';
+import { listarPerfilesCliente, BackendNoConfigurado } from '@/lib/data-source';
 import { Target, Zap, CheckCircle2, ChevronDown } from 'lucide-react';
 
 export default function PipelinePage() {
@@ -10,17 +10,7 @@ export default function PipelinePage() {
 
   const fetchData = async () => {
     setLoading(true);
-    if (!supabaseClient) return;
-
-    const { data, error } = await supabaseClient
-      .from('profiles')
-      .select('id, business_name, status, role, created_at, business_profiles(address, cuisine_type, average_ticket)')
-      .eq('role', 'client')
-      .order('created_at', { ascending: false });
-
-    if (data) {
-      setClients(data);
-    }
+    setClients(await listarPerfilesCliente());
     setLoading(false);
   };
 
@@ -28,18 +18,8 @@ export default function PipelinePage() {
     fetchData();
   }, []);
 
-  const updateStatus = async (id: string, newStatus: string) => {
-    if (!supabaseClient) return;
-    const { error } = await supabaseClient
-      .from('profiles')
-      .update({ status: newStatus })
-      .eq('id', id);
-
-    if (!error) {
-      fetchData();
-    } else {
-      alert("Error: " + error.message);
-    }
+  const updateStatus = async (_id: string, _newStatus: string) => {
+    alert(new BackendNoConfigurado('mover al cliente de fase').message);
   };
 
   // Grouping logic (we use 'status' as the pipeline stage)

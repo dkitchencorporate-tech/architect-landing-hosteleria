@@ -2,74 +2,35 @@
 
 import React, { useState, useEffect } from "react";
 import { EventDossier } from "@/lib/events-data";
-import { supabaseClient } from "@/lib/supabase-client";
+import { listarEventosMaestros, solicitarEvento } from "@/lib/data-source";
 
 export default function EventsLibrary() {
   const [selectedEvent, setSelectedEvent] = useState<EventDossier | null>(null);
   const [eventsList, setEventsList] = useState<EventDossier[]>([]);
   const [requestedEventIds, setRequestedEventIds] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [userId, setUserId] = useState<string | null>(null);
+  const [error] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        if (!supabaseClient) throw new Error("Supabase no inicializado");
-        
-        // Obtener usuario actual
-        const { data: authData } = await supabaseClient.auth.getUser();
-        const currentUserId = authData?.user?.id;
-        if (currentUserId) setUserId(currentUserId);
-
-        // Fetch master events
-        const { data: masterData, error: masterError } = await supabaseClient
-          .from('master_events')
-          .select('*')
-          .order('created_at', { ascending: true });
-
-        if (masterError) throw masterError;
-
-        if (masterData) {
-          // Transform snake_case to camelCase
-          const formatted: EventDossier[] = masterData.map(ev => ({
+    listarEventosMaestros()
+      .then((eventos) => {
+        setEventsList(
+          eventos.map((ev) => ({
             id: ev.id,
             title: ev.title,
             category: ev.category,
             description: ev.description,
-            targetAudience: ev.target_audience,
-            preparationTime: ev.preparation_time,
-            clientRole: ev.client_role || [],
-            agencyRole: ev.agency_role || [],
-            deliverables: ev.deliverables || [],
-            preEventProtocol: ev.pre_event_protocol,
-            isUnlockedForBase: ev.is_unlocked_for_base,
-            imagePlaceholder: ev.image_placeholder
-          }));
-          setEventsList(formatted);
-        }
-
-        // Fetch user's requested events if logged in
-        if (currentUserId) {
-          const { data: clientEvents } = await supabaseClient
-            .from('client_events')
-            .select('event_id')
-            .eq('profile_id', currentUserId);
-            
-          if (clientEvents) {
-            const requested = new Set(clientEvents.map(ce => ce.event_id));
-            setRequestedEventIds(requested);
-          }
-        }
-      } catch (err: any) {
-        console.error("Error fetching events:", err);
-        setError("No se pudieron cargar los eventos. ¿Migración SQL pendiente?");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchEvents();
+            targetAudience: '',
+            preparationTime: '',
+            clientRole: [],
+            agencyRole: [],
+            deliverables: [],
+            preEventProtocol: '',
+            isUnlockedForBase: true,
+          }))
+        );
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   const handleEventClick = (event: EventDossier) => {
@@ -77,23 +38,14 @@ export default function EventsLibrary() {
   };
 
   const requestEvent = async () => {
-    if (!selectedEvent || !userId) return;
-    
+    if (!selectedEvent) return;
+
     try {
-      const { error } = await supabaseClient.from('client_events').insert([{
-        profile_id: userId,
-        event_id: selectedEvent.id,
-        status: 'requested'
-      }]);
-      
-      if (error) throw error;
-      
-      alert("Protocolo Iniciado. El equipo técnico ha recibido tu solicitud y se pondrá en contacto pronto.");
-      setRequestedEventIds(prev => new Set(prev).add(selectedEvent.id));
+      await solicitarEvento(selectedEvent.id);
+      setRequestedEventIds((prev) => new Set(prev).add(selectedEvent.id));
       setSelectedEvent(null);
-    } catch (err: any) {
-      console.error("Error requesting event:", err);
-      alert("Hubo un error al iniciar el protocolo. Intenta de nuevo.");
+    } catch (err) {
+      alert(err instanceof Error ? err.message : String(err));
     }
   };
 
@@ -227,7 +179,6 @@ export default function EventsLibrary() {
                   ) : (
                     <button 
                       onClick={requestEvent}
-                      disabled={!userId}
                       className="bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-gray-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Iniciar Protocolo de Lanzamiento
