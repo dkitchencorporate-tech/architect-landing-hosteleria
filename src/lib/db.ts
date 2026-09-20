@@ -28,8 +28,15 @@ import ws from 'ws';
  * Quien añada consultas debe usar estas dos funciones. No se exporta el pool.
  */
 
-// El driver necesita WebSocket para transacciones; en HTTP solo hay consultas
-// sueltas, y aquí todo va en transacción a propósito.
+// El driver necesita WebSocket para transacciones; sobre HTTP solo caben
+// consultas sueltas, y aquí todo va en transacción a propósito.
+//
+// Importa: el driver y `ws` van declarados en `serverComponentsExternalPackages`
+// (next.config.js). Si se dejan empaquetar por webpack, la conexión se cae nada
+// más abrirse, y el mensaje —«Connection terminated unexpectedly», o bien
+// «bufferUtil.mask is not a function»— no menciona en ningún momento que la
+// causa sea el empaquetado. Se pierde una tarde buscándolo en el sitio
+// equivocado, así que queda escrito aquí.
 neonConfig.webSocketConstructor = ws;
 
 let pool: Pool | null = null;

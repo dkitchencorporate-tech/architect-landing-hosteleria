@@ -1,6 +1,6 @@
 # Estado del front — qué se ve y qué hay detrás
 
-**Actualizado:** 20 de septiembre de 2026, al cerrar la Fase 2c de la migración.
+**Actualizado:** 20 de septiembre de 2026, al cerrar el motor de QR de carta.
 
 Este documento existe para que puedas recorrer la web pantalla por pantalla y
 distinguir tres cosas que a simple vista se confunden:
@@ -9,10 +9,14 @@ distinguir tres cosas que a simple vista se confunden:
 2. Lo que **se ve pero está hueco** porque no hay base de datos detrás.
 3. Lo que está **mal** y hay que arreglar.
 
-Supabase se eliminó por completo. Neon todavía no está provisionado. Entre medias,
-la regla que se ha seguido es que **ninguna pantalla finja tener datos que no tiene**:
-donde antes había una consulta, ahora hay una lista vacía y un aviso visible, nunca
-datos de ejemplo disfrazados de reales.
+Supabase se eliminó por completo. Neon ya está provisionado, blindado y **cableado
+para el motor de QR de carta**: `/r/{codigo}` y `/m/{slug}` leen de la base de verdad.
+
+El resto de pantallas —paneles, invitaciones, campañas, analítica— siguen huecas, y
+eso no es un descuido: esas tablas no existen todavía. Tener la base conectada no es
+tener las tablas. La regla que se sigue es que **ninguna pantalla finja tener datos
+que no tiene**: donde antes había una consulta, hay una lista vacía y un aviso
+visible, nunca datos de ejemplo disfrazados de reales.
 
 Para verlo en local: `npm install && npm run dev` → http://localhost:3000
 
@@ -44,11 +48,15 @@ silencio para el visitante — conviene probarlo antes de dar tráfico.
 | Ruta | Estado | Notas |
 |---|---|---|
 | `/` | ✅ Funciona | Home completa. Pendiente de la reestructura multipágina (Fase 4) |
-| `/demo/carta` | ✅ Funciona | Carta interactiva real. El "llamar al camarero" usa Gemini |
+| `/demo/carta` | ✅ Funciona | Carta interactiva de **demostración**, con datos en el código. Es la pieza de venta, no el producto |
+| `/m/{slug}` | ✅ **Con base de datos** | La carta real de un cliente, leída de Neon. HTML puro, sin JavaScript |
+| `/r/{codigo}` | ✅ **Con base de datos** | Lo que hay detrás del QR impreso: registra el escaneo y redirige a la carta |
+| `/carta-no-disponible` | ✅ Funciona | Lo que ve quien escanea un QR que ya no resuelve |
 | `/privacy` | ✅ Funciona | Identidad migrada a DKitchen |
 | `/terms` | ✅ Funciona | Reescrito: describía un bot de WhatsApp que ya no existe |
 | `/data-deletion` | ✅ Funciona | Ya no menciona Supabase ni Meta |
-| `/robots.txt`, `/sitemap.xml` | ⚠️ Mínimos | El sitemap solo lista la home. Se completa en la Fase SEO |
+| `/robots.txt` | ✅ Funciona | Excluye `/r/`, paneles y manuales; deja indexar las cartas |
+| `/sitemap.xml` | ⚠️ Mínimo | Solo lista la home. **Las cartas de clientes aún no entran**: se completa en la Fase SEO |
 
 ### Detrás de acceso (hueco, sin base de datos)
 

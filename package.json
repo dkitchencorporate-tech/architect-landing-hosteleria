@@ -10,7 +10,8 @@
     "prebuild": "node scripts/guardia-credenciales.mjs",
     "guardia": "node scripts/guardia-credenciales.mjs",
     "db:migrar": "node db/migrate.mjs",
-    "db:verificar": "node db/verificar-blindaje.mjs"
+    "db:verificar": "node db/verificar-blindaje.mjs",
+    "db:demo": "node db/sembrar-demo.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.2.0",

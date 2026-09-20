@@ -98,6 +98,43 @@ const nextConfig = {
     remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
   },
 
+  experimental: {
+    // El driver de Neon abre sockets y no sobrevive al empaquetado de webpack:
+    // la conexión se cae al abrirse, con un mensaje que no menciona la causa.
+    // Se deja fuera del bundle y se carga como módulo de Node normal.
+    serverComponentsExternalPackages: ['@neondatabase/serverless', 'ws'],
+  },
+
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      // Cinturón y tirantes sobre lo anterior.
+      //
+      // `ws` carga `bufferutil` y `utf-8-validate` de forma opcional, dentro de
+      // un try/catch: si no están, usa una implementación en JavaScript. El
+      // problema es que webpack no deja que ese try/catch falle limpiamente —
+      // resuelve el módulo a un objeto vacío— y entonces `ws` cree que tiene el
+      // acelerador nativo cuando en realidad tiene nada. El síntoma es
+      // «bufferUtil.mask is not a function», que no menciona ni a webpack ni a
+      // `ws` opcional, y tumba el proceso entero del servidor.
+      //
+      // Declararlos como externos devuelve el control a Node, que sí puede no
+      // encontrarlos y seguir adelante.
+      // El orden importa y es la razón por la que el primer intento no sirvió:
+      // webpack recorre `externals` de principio a fin y Next pone ahí una
+      // función que resuelve todo lo que le llega. Si esta regla va detrás, no
+      // llega a consultarse nunca. Va delante.
+      config.externals = [
+        {
+          ws: 'commonjs ws',
+          bufferutil: 'commonjs bufferutil',
+          'utf-8-validate': 'commonjs utf-8-validate',
+        },
+        ...(Array.isArray(config.externals) ? config.externals : [config.externals]),
+      ].filter(Boolean);
+    }
+    return config;
+  },
+
   async headers() {
     return [{ source: '/:path*', headers: cabecerasDeSeguridad }];
   },
