@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import EnterpriseModal from './EnterpriseModal';
 import ObjectionHandling from './sections/ObjectionHandling';
+import TiltCard from './motion/TiltCard';
 import { MARCAS } from '@/lib/marcas-data';
 import { DARK_KITCHEN, formatPrecio } from '@/lib/pricing-config';
 
@@ -111,15 +112,16 @@ export default function DarkKitchen() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
             {MARCAS.map((m) => (
-              <Link
-                key={m.slug}
-                href={`/marcas#${m.slug}`}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#D9531E]/50 hover:bg-white/10 transition-all"
-              >
-                <div className="text-4xl mb-3">{m.emoji}</div>
-                <p className="font-bold text-white text-sm mb-1">{m.nombre}</p>
-                <p className="text-xs text-gray-500">{m.concepto}</p>
-              </Link>
+              <TiltCard key={m.slug}>
+                <Link
+                  href={`/marcas#${m.slug}`}
+                  className="block bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#D9531E]/50 hover:bg-white/10 transition-all"
+                >
+                  <div className="text-4xl mb-3">{m.emoji}</div>
+                  <p className="font-bold text-white text-sm mb-1">{m.nombre}</p>
+                  <p className="text-xs text-gray-500">{m.concepto}</p>
+                </Link>
+              </TiltCard>
             ))}
           </div>
         </div>

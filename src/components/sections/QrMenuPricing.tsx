@@ -1,5 +1,6 @@
 import { QR_MENU, formatPrecio } from '@/lib/pricing-config';
 import ActivarPlanBoton from './ActivarPlanBoton';
+import TiltCard from '@/components/motion/TiltCard';
 
 export default function QrMenuPricing() {
   const { basico, ampliado } = QR_MENU.planes;
@@ -22,7 +23,7 @@ export default function QrMenuPricing() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div className="bg-white rounded-3xl border-2 border-gray-100 p-8 flex flex-col">
+          <TiltCard className="bg-white rounded-3xl border-2 border-gray-100 p-8 flex flex-col">
             <h3 className="text-2xl font-black mb-1">{basico.nombre}</h3>
             <div className="flex items-baseline gap-1 mb-6">
               <span className="text-5xl font-black">{formatPrecio(basico.mensual)}</span>
@@ -40,9 +41,9 @@ export default function QrMenuPricing() {
               etiqueta="Activar Básico"
               className="mt-8 text-center bg-gray-900 text-white px-6 py-3.5 rounded-full font-bold hover:bg-black transition-colors"
             />
-          </div>
+          </TiltCard>
 
-          <div className="bg-white rounded-3xl border-2 border-[#D9531E] p-8 flex flex-col relative shadow-xl">
+          <TiltCard className="bg-white rounded-3xl border-2 border-[#D9531E] p-8 flex flex-col relative shadow-xl">
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D9531E] text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full">
               Más elegido
             </div>
@@ -63,7 +64,7 @@ export default function QrMenuPricing() {
               etiqueta="Activar Ampliado"
               className="mt-8 text-center bg-[#D9531E] text-white px-6 py-3.5 rounded-full font-bold hover:bg-orange-600 transition-colors shadow-lg"
             />
-          </div>
+          </TiltCard>
         </div>
 
         <p className="text-center text-gray-500 text-sm mt-10 max-w-2xl mx-auto">

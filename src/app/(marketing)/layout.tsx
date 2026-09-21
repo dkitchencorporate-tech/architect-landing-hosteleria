@@ -2,6 +2,8 @@ import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import ExitIntent from '@/components/ExitIntent';
+import LenisProvider from '@/components/motion/LenisProvider';
+import PageTransition from '@/components/motion/PageTransition';
 
 /**
  * Layout compartido de las páginas de marketing.
@@ -18,6 +20,7 @@ import ExitIntent from '@/components/ExitIntent';
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
+      <LenisProvider />
       <ExitIntent />
       <NavBar />
       {/*
@@ -27,7 +30,9 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
         AggressiveHero con `pt-32 md:pt-20`). Ponerlo aquí también lo
         duplicaría en la home.
       */}
-      <main>{children}</main>
+      <main>
+        <PageTransition>{children}</PageTransition>
+      </main>
       <Footer />
       <FloatingWhatsApp />
     </>

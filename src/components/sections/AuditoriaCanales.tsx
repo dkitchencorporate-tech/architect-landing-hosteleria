@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Hero3DLazy from '@/components/motion/Hero3DLazy';
 
 const WHATSAPP_AUDITORIA_CANALES =
   'https://wa.me/34622652659?text=Hola,%20quiero%20pedir%20presupuesto%20para%20la%20Auditor%C3%ADa%20de%20canales%20externos.';
@@ -34,6 +35,11 @@ export default function AuditoriaCanales() {
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] max-w-3xl mx-auto text-balance">
           Un diagnóstico,<br/>no una promesa.
         </h1>
+
+        {/* Elemento 3D del hero (Parte 7, Sección 2.3): un dial que gira
+            hasta señalar la zona "en riesgo" al entrar en viewport. */}
+        <Hero3DLazy preset="auditoria" className="w-full h-48 md:h-64 mt-6" />
+
         <p className="text-lg md:text-xl text-gray-400 text-pretty max-w-2xl mx-auto mt-8">
           Diagnóstico de pago único sobre tu Google Business Profile y tus redes sociales: qué te está costando
           dinero ahora mismo en presencia digital, con acciones concretas — sin garantía de resultado, porque es

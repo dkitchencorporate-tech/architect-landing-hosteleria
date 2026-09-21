@@ -1,4 +1,6 @@
 import { MARCAS } from '@/lib/marcas-data';
+import Hero3DLazy from '@/components/motion/Hero3DLazy';
+import TiltCard from '@/components/motion/TiltCard';
 
 const WHATSAPP_MARCA = (nombre: string) =>
   `https://wa.me/34622652659?text=${encodeURIComponent(`Hola, quiero sumar la marca ${nombre} a mi cocina.`)}`;
@@ -7,7 +9,7 @@ export default function CatalogoMarcas() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-6 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-[#D9531E] text-sm font-bold tracking-widest uppercase">
             Marcas virtuales
           </div>
@@ -21,12 +23,17 @@ export default function CatalogoMarcas() {
           </p>
         </div>
 
+        {/* Elemento 3D del hero (Parte 7, Sección 2.3): estante de las 6
+            marcas, rotable al arrastrar o con auto-rotación lenta. */}
+        <Hero3DLazy preset="marcas" className="w-full h-64 md:h-80 mb-14" />
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {MARCAS.map((marca) => (
-            <div
+            <TiltCard
               key={marca.slug}
-              className="bg-[#FDFCF8] rounded-3xl border border-gray-100 p-7 flex flex-col hover:shadow-xl hover:border-[#D9531E]/30 transition-all"
+              className="bg-[#FDFCF8] rounded-3xl border border-gray-100 p-7 flex flex-col hover:shadow-xl hover:border-[#D9531E]/30 transition-all scroll-mt-28"
             >
+              <span id={marca.slug} className="block h-0" aria-hidden />
               <div className="text-4xl mb-3">{marca.emoji}</div>
               <h3 className="text-xl font-black mb-1">{marca.nombre}</h3>
               <p className="text-xs font-bold uppercase tracking-widest text-[#D9531E] mb-3">{marca.concepto}</p>
@@ -51,7 +58,7 @@ export default function CatalogoMarcas() {
               >
                 Sumar {marca.nombre} a mi cocina
               </a>
-            </div>
+            </TiltCard>
           ))}
         </div>
       </div>

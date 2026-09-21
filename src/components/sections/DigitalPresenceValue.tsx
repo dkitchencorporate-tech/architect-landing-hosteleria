@@ -1,4 +1,5 @@
 import React from 'react';
+import Hero3DLazy from '@/components/motion/Hero3DLazy';
 
 export default function DigitalPresenceValue() {
   return (
@@ -12,9 +13,14 @@ export default function DigitalPresenceValue() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-bold tracking-widest uppercase mb-6">
             QR Menú
           </div>
-          <h1 className="text-4xl md:text-6xl font-black leading-[1.1] mb-10 text-balance">
+          <h1 className="text-4xl md:text-6xl font-black leading-[1.1] mb-6 text-balance">
             La tecnología no es un gasto.<br/>Es tu mejor empleado.
           </h1>
+
+          {/* Elemento 3D del hero (Parte 7, Sección 2.3): carta/QR flotando
+              con inclinación reactiva al cursor. */}
+          <Hero3DLazy preset="qr" className="w-full h-48 md:h-64 mb-6" />
+
           <div className="flex flex-col sm:flex-row gap-5 justify-center max-w-2xl mx-auto">
             <div className="flex-1 bg-white/5 border border-white/10 rounded-2xl p-6">
               <p className="text-4xl font-black text-[#D9531E] mb-1">14h/semana</p>

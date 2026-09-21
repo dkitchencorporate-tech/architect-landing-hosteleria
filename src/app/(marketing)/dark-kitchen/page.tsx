@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import RutaSelectorDarkKitchen from '@/components/RutaSelectorDarkKitchen';
 import SiguientePeldano from '@/components/sections/SiguientePeldano';
+import Hero3DLazy from '@/components/motion/Hero3DLazy';
 
 export const metadata: Metadata = {
   title: 'Dark Kitchen Enterprise | DKitchen',
@@ -23,9 +24,14 @@ export default function PaginaDarkKitchen() {
             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
             El precio de improvisar
           </div>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-8 text-balance">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 text-balance">
             Si tu sistema es un caos, <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D9531E] to-orange-400 border-b-4 border-[#D9531E]/50 pb-1">más clientes significará tu ruina.</span>
           </h1>
+
+          {/* Elemento 3D del hero (Parte 7, Sección 2.3): cajas apilándose,
+              marcas apilables bajo una sola cocina. */}
+          <Hero3DLazy preset="dark-kitchen" className="w-full h-56 md:h-72 mb-6" />
+
           <p className="text-lg md:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed font-medium text-pretty mb-12">
             Muchos negocios intentan escalar abriendo canales en 5 apps de delivery a la vez. ¿El resultado? Pierden hasta el 30% de rentabilidad en comisiones, colapsan los fogones y queman al equipo. El verdadero crecimiento exige una infraestructura quirúrgica.
           </p>

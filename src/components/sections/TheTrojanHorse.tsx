@@ -4,6 +4,7 @@ import ConsultingModal from './ConsultingModal';
 import DashboardShowcase from './DashboardShowcase';
 import FeatureSplit from './FeatureSplit';
 import PowerStatement from './PowerStatement';
+import Hero3DLazy from '@/components/motion/Hero3DLazy';
 
 export default function TheTrojanHorse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,6 +24,11 @@ export default function TheTrojanHorse() {
             Moderniza tu local y dispara tu rentabilidad hoy.<br/>
             <span className="text-[#D9531E]">Recupera el control de tu negocio.</span>
           </h2>
+
+          {/* Elemento 3D del hero (Parte 7, Sección 2.3): pantalla flotante
+              con el flujo de pedido en bucle. */}
+          <Hero3DLazy preset="base-operativa" className="w-full h-56 md:h-72" />
+
           <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
             La infraestructura tecnológica premium que necesitas para que tus clientes pidan más rápido, reserven directamente en tu web y tu equipo trabaje sin estrés. Todo el control, bajo tu propia marca y sin depender de terceros.
           </p>

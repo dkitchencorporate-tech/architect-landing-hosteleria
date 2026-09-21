@@ -1,6 +1,8 @@
 import React from 'react';
 import { EXPERIENCE, formatPrecio } from '@/lib/pricing-config';
 import PowerStatement from './PowerStatement';
+import Hero3DLazy from '@/components/motion/Hero3DLazy';
+import TiltCard from '@/components/motion/TiltCard';
 
 const WHATSAPP = 'https://wa.me/34622652659';
 
@@ -37,6 +39,11 @@ export default function EventLibraryHook() {
             Un evento entero, montado.<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D9531E] to-orange-400">La taquilla entera, tuya.</span>
           </h2>
+
+          {/* Elemento 3D del hero (Parte 7, Sección 2.3): composición ligada
+              al caso Alhambra, entrada tipo "reveal". */}
+          <Hero3DLazy preset="experience" className="w-full h-48 md:h-64" />
+
           <p className="text-lg md:text-xl text-gray-400 leading-relaxed text-pretty">
             Te entregamos un evento ya definido: concepto, guía de desarrollo, procesos, piezas de marketing,
             campaña de anuncios y la landing de venta de entradas. Tú lo ejecutas en tu local y cobras en tu propia cuenta.
@@ -186,11 +193,11 @@ export default function EventLibraryHook() {
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
           {FORMATOS.map((f) => (
-            <div key={f.nombre} className="bg-[#1A1A1A] border border-white/10 rounded-2xl p-6 hover:border-orange-500/30 transition-colors">
+            <TiltCard key={f.nombre} className="bg-[#1A1A1A] border border-white/10 rounded-2xl p-6 hover:border-orange-500/30 transition-colors">
               <div className="text-white font-bold text-lg mb-1">{f.nombre}</div>
               <div className="text-[11px] font-black uppercase tracking-widest text-orange-400 mb-3">{f.marca}</div>
               <p className="text-xs text-gray-400 leading-relaxed">{f.nota}</p>
-            </div>
+            </TiltCard>
           ))}
         </div>
 

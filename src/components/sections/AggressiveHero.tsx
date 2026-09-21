@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Hero3DLazy from '@/components/motion/Hero3DLazy';
 
 export default function AggressiveHero() {
   return (
@@ -12,7 +13,11 @@ export default function AggressiveHero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#D9531E] rounded-full blur-[150px] opacity-[0.15] pointer-events-none"></div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-8 w-full text-center flex flex-col items-center">
-        
+
+        {/* Elemento 3D del hero (Parte 7, Sección 2.3): la escalera completa
+            como composición — 5 formas flotando en distintos planos. */}
+        <Hero3DLazy preset="home" className="w-full h-56 md:h-72 mb-6" />
+
         {/* Etiqueta de Autoridad */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-bold tracking-widest uppercase mb-8 animate-fade-in-up">
           <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
