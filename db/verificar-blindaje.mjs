@@ -207,9 +207,10 @@ try {
   await conConexion(async (c) => {
     const { rows } = await c.query(
       `SELECT rolname, rolbypassrls, rolsuper, rolcreaterole FROM pg_roles
-        WHERE rolname IN ('dk_app','dk_anon','dk_auth','dk_sync','dk_sincronizacion','neondb_owner')
+        WHERE rolname IN ('dk_app','dk_anon','dk_auth','dk_sync','dk_sincronizacion',
+                          'dk_webhook','dk_aprovisionamiento','neondb_owner')
         ORDER BY 1`);
-    comprobar('existen los seis roles del diseño', rows.length === 6,
+    comprobar('existen los ocho roles del diseño', rows.length === 8,
       rows.map((r) => r.rolname).join(', '));
     for (const r of rows) {
       if (r.rolname === 'neondb_owner') {
@@ -239,6 +240,22 @@ try {
               pg_has_role('dk_sync', 'dk_auth', 'usage') auth`);
     comprobar('dk_sync no hereda dk_anon ni dk_auth: solo sabe ser dk_sincronizacion',
       herenciaSync.anon === false && herenciaSync.auth === false);
+
+    // El aprovisionamiento (creación de identidades y restaurantes saltándose
+    // el INSERT que ningún rol de aplicación tiene) es tan sensible como la
+    // caché de resiliencia: no puede llegar al despliegue público por ningún
+    // camino de herencia.
+    const { rows: [herenciaApp] } = await c.query(
+      `SELECT pg_has_role('dk_app', 'dk_aprovisionamiento', 'usage') puede`);
+    comprobar('dk_app NO puede adoptar dk_aprovisionamiento (el alta de clientes no llega al despliegue público)',
+      herenciaApp.puede === false);
+
+    const { rows: [herenciaWebhook] } = await c.query(
+      `SELECT pg_has_role('dk_webhook', 'dk_anon', 'usage') anon,
+              pg_has_role('dk_webhook', 'dk_auth', 'usage') auth,
+              pg_has_role('dk_webhook', 'dk_sincronizacion', 'usage') sync`);
+    comprobar('dk_webhook no hereda dk_anon, dk_auth ni dk_sincronizacion: solo sabe ser dk_aprovisionamiento',
+      herenciaWebhook.anon === false && herenciaWebhook.auth === false && herenciaWebhook.sync === false);
 
     // Una tabla sin RLS forzado es una puerta abierta esperando a que alguien
     // se conecte con el rol equivocado. Se comprueba por barrido, no de memoria.
@@ -282,6 +299,56 @@ try {
     const r = await c.query(`SELECT codigo, slug FROM dk.listar_qr_activos() WHERE codigo = 'abc12345'`);
     comprobar('dk_sincronizacion sí puede enumerar los códigos activos',
       r.rows.length === 1 && r.rows[0].slug === 'casa-pepe');
+  });
+
+  console.log('\nAPROVISIONAMIENTO TRAS EL PAGO (dk.aprovisionar_cliente_qr)');
+  await comoRol('dk_anon', async (c) => {
+    const negado = await debeFallar(c,
+      `SELECT * FROM dk.aprovisionar_cliente_qr('evt_falso', gen_random_uuid(), 'x@x.test', 'X', 'basico', 'X', 'x', 'cus_x', 'sub_x')`);
+    comprobar('un visitante anónimo NO puede aprovisionar clientes', !!negado, 'la llamada funcionó');
+  });
+  await comoRol('dk_auth', async (c) => {
+    const negado = await debeFallar(c,
+      `SELECT * FROM dk.aprovisionar_cliente_qr('evt_falso', gen_random_uuid(), 'x@x.test', 'X', 'basico', 'X', 'x', 'cus_x', 'sub_x')`);
+    comprobar('un cliente con sesión NO puede aprovisionar clientes', !!negado, 'la llamada funcionó');
+  });
+  await comoRol('dk_aprovisionamiento', async (c) => {
+    const idCliente = 'a0000000-0000-4000-8000-000000000001';
+    const evento = 'evt_verificacion_' + Math.random().toString(36).slice(2);
+
+    const { rows: [alta] } = await c.query(
+      `SELECT * FROM dk.aprovisionar_cliente_qr($1, $2, 'cliente@prueba.test', 'Cliente Prueba', 'basico', 'Restaurante Prueba', 'restaurante-prueba', 'cus_prueba', 'sub_prueba')`,
+      [evento, idCliente]);
+    comprobar('dk_aprovisionamiento crea identidad + restaurante + QR en un solo paso',
+      !!alta && alta.slug === 'restaurante-prueba');
+
+    // dk_aprovisionamiento solo tiene USAGE sobre el esquema dk: no puede leer
+    // `identidades` ni `codigos_qr` directamente, solo a través de la función.
+    // Se vuelve al rol de conexión (el propietario) para comprobar el efecto.
+    await c.query('RESET ROLE');
+
+    const { rows: [ident] } = await c.query(`SELECT email FROM identidades WHERE id = $1`, [idCliente]);
+    comprobar('la identidad queda creada con el correo del pago', ident?.email === 'cliente@prueba.test');
+
+    const { rows: [codigo] } = await c.query(
+      `SELECT count(*)::int n FROM codigos_qr WHERE restaurante_id = $1`, [alta.restaurante_id]);
+    comprobar('se genera un código de QR para el restaurante nuevo', codigo.n === 1);
+
+    await c.query('SET LOCAL ROLE dk_aprovisionamiento');
+
+    // Reintento del mismo evento (Stripe reentrega webhooks): debe devolver el
+    // mismo restaurante, nunca crear un segundo.
+    const { rows: [reintento] } = await c.query(
+      `SELECT * FROM dk.aprovisionar_cliente_qr($1, $2, 'cliente@prueba.test', 'Cliente Prueba', 'basico', 'Restaurante Prueba', 'restaurante-prueba', 'cus_prueba', 'sub_prueba')`,
+      [evento, idCliente]);
+    comprobar('reintentar el mismo evento de Stripe no duplica el restaurante',
+      reintento.restaurante_id === alta.restaurante_id);
+
+    await c.query('RESET ROLE');
+
+    const { rows: [total] } = await c.query(
+      `SELECT count(*)::int n FROM restaurantes WHERE propietario = $1`, [idCliente]);
+    comprobar('sigue existiendo un único restaurante tras el reintento', total.n === 1);
   });
 
   console.log('\nFRENO DE FRECUENCIA (dk.limite_superado)');

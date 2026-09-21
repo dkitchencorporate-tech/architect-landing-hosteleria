@@ -1,7 +1,5 @@
 import { QR_MENU, formatPrecio } from '@/lib/pricing-config';
-
-const WHATSAPP_QR =
-  'https://wa.me/34622652659?text=Hola,%20quiero%20activar%20el%20QR%20Men%C3%BA%20para%20mi%20negocio.';
+import ActivarPlanBoton from './ActivarPlanBoton';
 
 export default function QrMenuPricing() {
   const { basico, ampliado } = QR_MENU.planes;
@@ -37,12 +35,11 @@ export default function QrMenuPricing() {
               <li>✓ Hasta {basico.topeProductos} productos</li>
               <li className="text-gray-400">QR de acceso genérico, sin personalización</li>
             </ul>
-            <a
-              href={WHATSAPP_QR}
+            <ActivarPlanBoton
+              plan="basico"
+              etiqueta="Activar Básico"
               className="mt-8 text-center bg-gray-900 text-white px-6 py-3.5 rounded-full font-bold hover:bg-black transition-colors"
-            >
-              Activar Básico
-            </a>
+            />
           </div>
 
           <div className="bg-white rounded-3xl border-2 border-[#D9531E] p-8 flex flex-col relative shadow-xl">
@@ -61,12 +58,11 @@ export default function QrMenuPricing() {
               <li>✓ Botón de &quot;llamar al camarero&quot;</li>
               <li>✓ Hasta {ampliado.topeProductos} productos</li>
             </ul>
-            <a
-              href={WHATSAPP_QR}
+            <ActivarPlanBoton
+              plan="ampliado"
+              etiqueta="Activar Ampliado"
               className="mt-8 text-center bg-[#D9531E] text-white px-6 py-3.5 rounded-full font-bold hover:bg-orange-600 transition-colors shadow-lg"
-            >
-              Activar Ampliado
-            </a>
+            />
           </div>
         </div>
 

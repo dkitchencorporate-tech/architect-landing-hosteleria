@@ -145,3 +145,58 @@ export class SesionNoValida extends Error {
 
 /** True cuando el despliegue tiene cableada la conexión de la aplicación. */
 export const HAY_BASE_DE_DATOS = Boolean(process.env.DK_DATABASE_URL);
+
+// ---------------------------------------------------------------------------
+// Webhook de Stripe — segunda conexión, con su propio rol (0010)
+// ---------------------------------------------------------------------------
+//
+// dk_webhook es un rol aparte de dk_app, con su propia credencial
+// (DK_WEBHOOK_DATABASE_URL): solo sabe convertirse en dk_aprovisionamiento, que
+// solo sabe ejecutar dk.aprovisionar_cliente_qr(). Si esta credencial se
+// filtrara, quien la tenga puede aprovisionar un cliente falso; no puede leer
+// ni una fila de otro cliente, porque no tiene privilegio directo sobre
+// ninguna tabla, solo EXECUTE sobre esa única función.
+
+let poolWebhook: Pool | null = null;
+
+function obtenerPoolWebhook(): Pool {
+  if (poolWebhook) return poolWebhook;
+
+  const cadena = process.env.DK_WEBHOOK_DATABASE_URL;
+  if (!cadena) {
+    throw new Error('Falta DK_WEBHOOK_DATABASE_URL.');
+  }
+  if (/:\/\/neondb_owner:/.test(cadena)) {
+    throw new Error(
+      'DK_WEBHOOK_DATABASE_URL apunta al propietario de la base. El webhook solo ' +
+        'puede conectarse con dk_webhook.'
+    );
+  }
+
+  poolWebhook = new Pool({ connectionString: cadena });
+  return poolWebhook;
+}
+
+/** Ejecuta como el rol dedicado al aprovisionamiento tras el pago (0010). */
+export function comoAprovisionamiento<T>(fn: (c: PoolClient) => Promise<T>): Promise<T> {
+  return (async () => {
+    const c = await obtenerPoolWebhook().connect();
+    try {
+      await c.query('BEGIN');
+      try {
+        await c.query('SET LOCAL ROLE dk_aprovisionamiento');
+        const r = await fn(c);
+        await c.query('COMMIT');
+        return r;
+      } catch (e) {
+        await c.query('ROLLBACK').catch(() => {});
+        throw e;
+      }
+    } finally {
+      c.release();
+    }
+  })();
+}
+
+/** True cuando el despliegue tiene cableada la conexión del webhook. */
+export const HAY_WEBHOOK_DATABASE = Boolean(process.env.DK_WEBHOOK_DATABASE_URL);
