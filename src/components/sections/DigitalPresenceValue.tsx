@@ -2,14 +2,39 @@ import React from 'react';
 
 export default function DigitalPresenceValue() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gray-900">La tecnología no es un gasto.<br/>Es tu mejor empleado.</h2>
-          <p className="text-xl text-gray-600">Entiende por qué los negocios que se digitalizan aplastan a la competencia local en menos de 3 meses.</p>
+    <>
+      {/* HERO propio de /qr (Parte 6, Sección 3): titular + las dos cifras de
+          prueba como badges visuales grandes, no como texto corrido. */}
+      <header className="relative bg-[#171008] text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#D9531E] rounded-full blur-[150px] opacity-[0.15] pointer-events-none"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-bold tracking-widest uppercase mb-6">
+            QR Menú
+          </div>
+          <h1 className="text-4xl md:text-6xl font-black leading-[1.1] mb-10 text-balance">
+            La tecnología no es un gasto.<br/>Es tu mejor empleado.
+          </h1>
+          <div className="flex flex-col sm:flex-row gap-5 justify-center max-w-2xl mx-auto">
+            <div className="flex-1 bg-white/5 border border-white/10 rounded-2xl p-6">
+              <p className="text-4xl font-black text-[#D9531E] mb-1">14h/semana</p>
+              <p className="text-gray-400 text-sm">recuperadas de paseos de camarero con la carta</p>
+            </div>
+            <div className="flex-1 bg-white/5 border border-white/10 rounded-2xl p-6">
+              <p className="text-4xl font-black text-[#D9531E] mb-1">+15%</p>
+              <p className="text-gray-400 text-sm">de ticket medio por upselling automático con fotos</p>
+            </div>
+          </div>
         </div>
+      </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <p className="text-xl text-gray-600">Entiende por qué los negocios que se digitalizan aplastan a la competencia local en menos de 3 meses.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Beneficio 1 */}
           <div className="bg-[#FDFCF8] p-10 rounded-[2rem] border border-gray-100 hover:shadow-xl transition-shadow">
             <div className="w-16 h-16 bg-orange-100 text-[#D9531E] rounded-2xl flex items-center justify-center text-3xl mb-6">⏳</div>
@@ -44,7 +69,8 @@ export default function DigitalPresenceValue() {
             <span className="bg-white/20 px-2 py-1 rounded text-xs">GRATIS</span>
           </a>
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

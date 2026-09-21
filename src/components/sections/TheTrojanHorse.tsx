@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import ConsultingModal from './ConsultingModal';
 import DashboardShowcase from './DashboardShowcase';
+import FeatureSplit from './FeatureSplit';
+import PowerStatement from './PowerStatement';
 
 export default function TheTrojanHorse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,7 +27,39 @@ export default function TheTrojanHorse() {
             La infraestructura tecnológica premium que necesitas para que tus clientes pidan más rápido, reserven directamente en tu web y tu equipo trabaje sin estrés. Todo el control, bajo tu propia marca y sin depender de terceros.
           </p>
         </div>
+      </div>
 
+      {/* FEATURE-SPLIT × 4 — la profundidad real de la PWA (Parte 6, Sección 6:
+          "esto es lo más urgente de toda la Parte 6"). Cada bloque agrupa las
+          funciones relacionadas de Parte 3, Sección 1, en vez de listarlas
+          todas por igual en tarjetas idénticas. */}
+      <FeatureSplit icono="🛎️" titulo="Todo pedido, un solo sitio" fondo="crema">
+        Autopedido en mesa, por teléfono, para recoger o desde casa, y modo camarero para cuando el cliente
+        prefiere que tome nota tu equipo. Cada pedido genera su ticket de cocina y de barra automáticamente —
+        nadie transcribe nada a mano dos veces.
+      </FeatureSplit>
+
+      <FeatureSplit icono="📡" titulo="El cliente ve su pedido en vivo" invertido fondo="claro">
+        Tracking persistente de principio a fin: recibido → en preparación → en reparto → entregado. La cocina
+        imprime directo en tu impresora térmica ya conectada — sin pasar por una app externa que se queda con
+        parte de la información del pedido.
+      </FeatureSplit>
+
+      <FeatureSplit icono="📋" titulo="Catálogo que nunca miente" fondo="crema">
+        Reactivo y atómico: un producto que se agota desaparece o se marca &quot;agotado&quot; al instante en
+        todos los canales, sin reimprimir nada. Disponible en varios idiomas para la carta que ve tu cliente
+        turista, sin duplicar el trabajo de mantenerla.
+      </FeatureSplit>
+
+      <FeatureSplit icono="🚨" titulo="Control incluso en el peor momento" invertido fondo="claro">
+        Bloqueo de emergencia para frenar la entrada de pedidos ante un pico que tu cocina no puede absorber,
+        fidelización propia integrada para que cada cliente repita, y cierre de día que migra la venta al
+        sistema fiscal (Verifactu) que ya usas — no uno nuevo que aprender.
+      </FeatureSplit>
+
+      <PowerStatement texto="Cada función existe para que factures más, no para que gestiones más." fondo="dark" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24">
         {/* Sección de Bonus "El Pack de Arranque" */}
         <div className="max-w-6xl mx-auto mb-20 relative">
           <div className="absolute -inset-1 bg-gradient-to-r from-[#D9531E] to-orange-300 rounded-[2.5rem] blur-xl opacity-20"></div>

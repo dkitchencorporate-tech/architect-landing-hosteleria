@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PaginaAuditoria() {
   return (
-    <div className="bg-white pt-24 md:pt-28">
+    <div className="bg-white">
       <AuditoriaCanales />
       <SiguientePeldano siguiente="base-operativa" />
     </div>

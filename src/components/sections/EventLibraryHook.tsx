@@ -1,5 +1,6 @@
 import React from 'react';
 import { EXPERIENCE, formatPrecio } from '@/lib/pricing-config';
+import PowerStatement from './PowerStatement';
 
 const WHATSAPP = 'https://wa.me/34622652659';
 
@@ -42,7 +43,13 @@ export default function EventLibraryHook() {
             <strong className="text-white"> Sin comisión, sin porcentaje y sin que toquemos tu dinero en ningún momento.</strong>
           </p>
         </div>
+      </div>
 
+      {/* POWER-STATEMENT (Parte 6, Sección 4): cierra "¿de qué vive DKitchen
+          entonces?" antes de que el visitante lo pregunte. */}
+      <PowerStatement texto="Cero comisión. El dinero es tuyo desde el primer euro." fondo="brand" />
+
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
           <div className="flex gap-6">
             <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#D9531E] to-orange-600 flex items-center justify-center text-2xl shadow-lg shadow-orange-500/20 shrink-0">🎯</div>
@@ -78,31 +85,40 @@ export default function EventLibraryHook() {
           </div>
         </div>
 
-        {/* TARIFAS FIJAS */}
+        {/* PRICING-BLOCK — escalera de fidelización, no tabla plana (Parte 6,
+            Sección 4): el mensaje visual es "cuanto más repites, menos pagas",
+            así que el orden y el tamaño decreciente lo comunican solos. */}
         <div className="max-w-5xl mx-auto mb-20">
           <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-black text-white">Cuatro tarifas fijas. Sin letra pequeña.</h3>
+            <h3 className="text-2xl md:text-3xl font-black text-white">Cuanto más repites, menos pagas.</h3>
             <p className="text-gray-400 text-sm mt-3 max-w-2xl mx-auto">
-              Cuanto más repites, menos cuesta — porque el trabajo pesado ya está hecho y amortizado.
-              Ninguna tarifa lleva componente variable.
+              Cuatro tarifas fijas, sin letra pequeña — ninguna lleva componente variable. El trabajo pesado ya está
+              hecho y amortizado, así que el precio baja con cada repetición.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {TARIFAS.map((t) => (
+          <div className="flex flex-col gap-3 max-w-2xl mx-auto">
+            {TARIFAS.map((t, i) => (
               <div
                 key={t.etiqueta}
-                className={`rounded-2xl p-6 border transition-colors ${
+                className={`rounded-2xl border transition-colors flex items-center gap-6 ${
                   t.destacada
-                    ? 'bg-gradient-to-br from-orange-500/10 to-transparent border-orange-500/40'
-                    : 'bg-[#1A1A1A] border-white/10 hover:border-white/20'
+                    ? 'bg-gradient-to-r from-orange-500/10 to-transparent border-orange-500/40 p-7'
+                    : 'bg-[#1A1A1A] border-white/10 hover:border-white/20 p-5'
                 }`}
+                style={{ marginLeft: `${i * 8}px` }}
               >
-                <div className={`text-[11px] font-black uppercase tracking-widest mb-3 ${t.destacada ? 'text-orange-400' : 'text-gray-500'}`}>
-                  {t.etiqueta}
+                <div
+                  className={`shrink-0 font-black text-white ${t.destacada ? 'text-5xl' : 'text-3xl'}`}
+                >
+                  {formatPrecio(t.precio)}
                 </div>
-                <div className="text-4xl font-black text-white mb-3">{formatPrecio(t.precio)}</div>
-                <p className="text-xs text-gray-400 leading-relaxed">{t.detalle}</p>
+                <div>
+                  <div className={`text-[11px] font-black uppercase tracking-widest mb-1 ${t.destacada ? 'text-orange-400' : 'text-gray-500'}`}>
+                    {t.etiqueta}
+                  </div>
+                  <p className="text-xs text-gray-400 leading-relaxed">{t.detalle}</p>
+                </div>
               </div>
             ))}
           </div>

@@ -1,6 +1,10 @@
 'use client';
 import React, { useState } from 'react';
+import Link from 'next/link';
 import EnterpriseModal from './EnterpriseModal';
+import ObjectionHandling from './sections/ObjectionHandling';
+import { MARCAS } from '@/lib/marcas-data';
+import { DARK_KITCHEN, formatPrecio } from '@/lib/pricing-config';
 
 /**
  * src/components/DarkKitchen.tsx
@@ -33,30 +37,34 @@ export default function DarkKitchen() {
           </p>
         </div>
 
-        {/* --- CALCULADOR DE HEMORRAGIA (Mantenido porque el dolor es real) --- */}
-        <div className="mb-24 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-[#1A1A1A] p-8 rounded-3xl border border-red-500/30 flex items-center justify-between group hover:border-red-500/60 transition-colors shadow-[0_10px_30px_rgba(239,68,68,0.05)] relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full blur-2xl"></div>
-                <div className="relative z-10">
-                    <p className="text-red-500 font-bold uppercase text-[10px] tracking-[0.2em] mb-2">Dependencia de Apps</p>
-                    <p className="text-2xl font-black text-white tracking-tight">Facturar 10.000€</p>
-                </div>
-                <div className="text-right relative z-10">
-                    <p className="text-red-500 font-black text-3xl">- 3.000€</p>
-                    <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Hemorragia Fija</p>
-                </div>
-            </div>
-            <div className="bg-[#1A1A1A] p-8 rounded-3xl border border-[#D9531E]/30 flex items-center justify-between group hover:border-[#D9531E]/60 transition-colors shadow-[0_10px_30px_rgba(255,69,0,0.1)] relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-32 h-32 bg-[#D9531E]/10 rounded-full blur-2xl"></div>
-                <div className="relative z-10">
-                    <p className="text-[#D9531E] font-bold uppercase text-[10px] tracking-[0.2em] mb-2">Ecosistema PWA Propio</p>
-                    <p className="text-2xl font-black text-white tracking-tight">Facturar 10.000€</p>
-                </div>
-                <div className="text-right relative z-10">
-                    <p className="text-[#25D366] font-black text-3xl">0€</p>
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1">Margen Limpio</p>
-                </div>
-            </div>
+        {/* POWER-STATEMENT — la hemorragia de comisión como cifra sola, sin
+            comparación de tarjetas al lado (Parte 6, Sección 7: "el mejor
+            gancho numérico de toda la página", hoy diluido en texto corrido). */}
+        <div className="mb-24 max-w-3xl mx-auto text-center">
+          <p className="text-red-500 font-bold uppercase text-xs tracking-[0.3em] mb-4">
+            Facturar 10.000€ en apps de delivery
+          </p>
+          <p className="text-6xl md:text-8xl font-black text-white tracking-tight mb-4">
+            −3.000€
+          </p>
+          <p className="text-gray-400 text-lg">
+            Con tu propio ecosistema PWA, esa misma factura deja{' '}
+            <span className="text-[#25D366] font-black">0€</span> en comisiones. El margen que hoy regalas es tuyo.
+          </p>
+        </div>
+
+        {/* Ancla de precio — Parte 6, Sección 7: "sin precio visible nadie
+            evalúa si le interesa". Ruta A sigue siendo venta consultiva (sin
+            cifra exacta), pero un rango real es mejor que ningún número. */}
+        <div className="mb-24 max-w-2xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Rango de inversión</p>
+          <p className="text-3xl font-black text-white">
+            Desde {formatPrecio(DARK_KITCHEN.rutaA.rangoMin)} hasta {formatPrecio(DARK_KITCHEN.rutaA.rangoMax)}
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            La cifra exacta depende del alcance y se cierra en la auditoría de viabilidad — es venta consultiva, no
+            un plan de catálogo.
+          </p>
         </div>
 
         {/* LOS TRES PILARES OPERATIVOS */}
@@ -65,7 +73,7 @@ export default function DarkKitchen() {
             <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-gray-900 text-white rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-inner border border-white/5">🍔</div>
             <h3 className="text-xl font-bold mb-4 text-white tracking-wide">Marcas Virtuales Listas para Operar (Llave en Mano)</h3>
             <p className="text-gray-400 flex-1 leading-relaxed text-sm">
-                No inventes recetas. Te damos acceso a nuestro catálogo de marcas virtuales probadas (Smash Burgers, Sushi, Kebab de Autor). Te entregamos las <strong>fichas técnicas de cocina, proveedores y tiempos de elaboración</strong>. Tu equipo solo tiene que seguir el protocolo y empaquetar.
+                No inventes recetas. Te damos acceso a nuestro catálogo de seis marcas virtuales ya operadas en una cocina real (Santa Brazza, My Latin Bowl, Seven Food Fries...). Te entregamos las <strong>fichas técnicas de cocina, proveedores y tiempos de elaboración</strong>. Tu equipo solo tiene que seguir el protocolo y empaquetar.
             </p>
           </div>
           
@@ -83,6 +91,36 @@ export default function DarkKitchen() {
             <p className="text-gray-400 flex-1 leading-relaxed text-sm">
                 La arquitectura tecnológica para operar hasta 7 marcas desde una sola cocina. <strong>Centralizamos todos los pedidos en una única Pantalla de Cocina (KDS).</strong> El chef solo ve lo que tiene que cocinar y en qué orden. Evitamos el estrés cognitivo y el colapso del pase.
             </p>
+          </div>
+        </div>
+
+        {/* FEATURE-SPLIT — catálogo de marcas virtuales, de lista de texto a
+            galería visual (Parte 6, Sección 7). Los seis nombres son reales,
+            de marcas ya operadas — no ejemplos inventados. */}
+        <div className="max-w-5xl mx-auto mb-24">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-black text-white mb-3">Seis marcas, probadas en cocina real</h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Cada una operó 2020-2022 en una dark kitchen en Madrid. Ficha técnica, proveedores y carta ya
+              cerrados —{' '}
+              <Link href="/marcas" className="text-[#D9531E] font-semibold hover:underline">
+                ver el catálogo completo
+              </Link>
+              .
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+            {MARCAS.map((m) => (
+              <Link
+                key={m.slug}
+                href={`/marcas#${m.slug}`}
+                className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#D9531E]/50 hover:bg-white/10 transition-all"
+              >
+                <div className="text-4xl mb-3">{m.emoji}</div>
+                <p className="font-bold text-white text-sm mb-1">{m.nombre}</p>
+                <p className="text-xs text-gray-500">{m.concepto}</p>
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -136,15 +174,40 @@ export default function DarkKitchen() {
           <button onClick={() => setIsModalOpen(true)} className="inline-block w-full sm:w-auto bg-white text-black px-10 py-5 rounded-full font-black text-lg md:text-xl hover:bg-gray-200 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:scale-105">
             Solicitar Entrevista de Admisión
           </button>
-          <div className="mt-6 p-4 border border-red-500/20 bg-red-500/5 rounded-xl inline-block text-left max-w-2xl mx-auto">
-            <p className="text-[11px] text-gray-400 leading-relaxed">
-              <strong className="text-red-400 uppercase tracking-widest block mb-1">Aviso de Exclusividad:</strong>
-              Reservado estrictamente para operaciones consolidadas o inversores de capital privado. Para garantizar el retorno de inversión y la excelencia operativa, <strong className="text-white">limitamos el desarrollo a 2 proyectos simultáneos por trimestre</strong>.
-            </p>
-          </div>
         </div>
 
       </div>
+
+      {/* OBJECTION-HANDLING con tratamiento de escasez real (Parte 6, Sección 7):
+          "2 proyectos simultáneos por trimestre" es un límite operativo real,
+          no una táctica de urgencia artificial — se trata con el mismo peso
+          visual que el resto del bloque, no como letra pequeña al final. */}
+      <ObjectionHandling
+        titulo="Antes de solicitar la entrevista"
+        fondo="oscuro"
+        preguntas={[
+          {
+            pregunta: '¿Por qué solo 2 proyectos por trimestre?',
+            respuesta:
+              'Es un límite operativo real, no una táctica: cada proyecto exige ingeniería de procesos a medida, y solo podemos garantizar ese nivel de atención en dos operaciones a la vez.',
+          },
+          {
+            pregunta: '¿Qué pasa si no supero la evaluación de viabilidad?',
+            respuesta:
+              'Rechazamos el proyecto antes de que gastes un euro. Si tu food cost o tu capacidad instalada no garantizan rentabilidad, te lo decimos en la Fase 1, no después de firmar.',
+          },
+          {
+            pregunta: '¿Puedo usar mi propia carta en vez del catálogo?',
+            respuesta:
+              'Sí. El catálogo de seis marcas acelera el arranque, pero la ingeniería de procesos y la infraestructura PWA se aplican igual sobre tu propio menú.',
+          },
+          {
+            pregunta: '¿Esto reemplaza Glovo, Uber Eats o Just Eat?',
+            respuesta:
+              'No tiene por qué: puedes seguir vendiendo ahí sin ninguna atadura. El ecosistema propio es el canal donde no pagas comisión, no el único canal posible.',
+          },
+        ]}
+      />
 
       <EnterpriseModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
