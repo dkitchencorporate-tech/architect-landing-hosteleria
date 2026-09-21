@@ -1,20 +1,19 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { obtenerStripe } from '@/lib/stripe';
-import { crearCuentaCliente, enviarEnlaceDeContrasena, ErrorNeonAuth } from '@/lib/neon-auth';
-import { comoAprovisionamiento } from '@/lib/db';
+import { obtenerStripe } from '@/lib/payments/stripe';
+import { aprovisionarClienteQr } from '@/lib/payments/aprovisionar';
 
 export const runtime = 'nodejs';
 
 /**
- * Cierra el círculo del checkout de QR Menú (Parte 6, Sección 3, ampliado por
- * Alex): pago confirmado → cuenta real en Neon Auth → enlace para fijar
- * contraseña → restaurante + menú vacío + QR aprovisionados, todo en una sola
- * llamada a `dk.aprovisionar_cliente_qr` (migración 0010/0011).
+ * Cierra el círculo del checkout de QR Menú cuando el proveedor activo es
+ * Stripe (`PAYMENT_PROVIDER=stripe`, ver `lib/payments/provider.ts`). La
+ * lógica de negocio (cuenta Neon Auth + enlace de contraseña +
+ * aprovisionamiento) vive en `aprovisionarClienteQr` — este archivo solo
+ * verifica la firma y traduce el evento de Stripe a ese contrato común.
  *
  * El cuerpo se lee como texto sin procesar a propósito: la verificación de
- * firma de Stripe necesita los bytes exactos que Stripe firmó, y un
- * `request.json()` previo ya los habría reformateado.
+ * firma de Stripe necesita los bytes exactos que Stripe firmó.
  */
 export async function POST(request: Request) {
   const firma = request.headers.get('stripe-signature');
@@ -51,9 +50,8 @@ export async function POST(request: Request) {
   const plan = session.metadata?.plan;
   const restauranteNombre = session.metadata?.restauranteNombre;
   const slugBase = session.metadata?.slugBase;
+  const nombreContacto = session.metadata?.nombreContacto;
   const email = session.customer_details?.email ?? session.customer_email;
-  const nombreContacto =
-    session.custom_fields?.find((c) => c.key === 'nombre_contacto')?.text?.value || restauranteNombre;
 
   const customerId = typeof session.customer === 'string' ? session.customer : session.customer?.id;
   const subscriptionId =
@@ -63,10 +61,11 @@ export async function POST(request: Request) {
     console.error(`Webhook de Stripe: sesión ${session.id} sin plan válido en metadata.`);
     return NextResponse.json({ recibido: true });
   }
-  if (!restauranteNombre || !slugBase || !email || !customerId || !subscriptionId) {
+  if (!restauranteNombre || !slugBase || !nombreContacto || !email || !customerId || !subscriptionId) {
     console.error(`Webhook de Stripe: sesión ${session.id} incompleta, no se aprovisiona.`, {
       restauranteNombre: !!restauranteNombre,
       slugBase: !!slugBase,
+      nombreContacto: !!nombreContacto,
       email: !!email,
       customerId: !!customerId,
       subscriptionId: !!subscriptionId,
@@ -74,50 +73,26 @@ export async function POST(request: Request) {
     return NextResponse.json({ recibido: true });
   }
 
-  let identidadId: string;
-  try {
-    const cuenta = await crearCuentaCliente({ email, nombre: nombreContacto! });
-    identidadId = cuenta.id;
-  } catch (error) {
-    // Caso no cubierto por autoservicio: un cliente que ya tiene cuenta en
-    // Neon Auth por otro peldaño (p. ej. el panel interno) intentando activar
-    // QR Menú con el mismo correo. El login de cliente sigue aplazado (tarea
-    // #15), así que no hay forma automática de recuperar su identidad real
-    // aquí sin arriesgar una suplantación. Se registra con detalle para
-    // resolución manual en vez de reintentar indefinidamente contra el mismo
-    // error o adivinar un uuid.
-    console.error(
-      `No se pudo crear la cuenta de Neon Auth para ${email} (evento ${evento.id}, sesión ${session.id}):`,
-      error instanceof ErrorNeonAuth ? `${error.codigo ?? ''} ${error.message}` : error
-    );
+  const resultado = await aprovisionarClienteQr({
+    idEvento: evento.id,
+    email,
+    nombreContacto,
+    plan,
+    restauranteNombre,
+    slugBase,
+    referenciaCliente: customerId,
+    referenciaSuscripcion: subscriptionId,
+  });
+
+  if (!resultado.ok) {
+    // Un fallo de Neon Auth (correo ya existente) no se reintenta: el error
+    // sería idéntico en cada reentrega. Un fallo de base de datos sí puede
+    // ser transitorio, y la idempotencia de dk.aprovisionar_cliente_qr hace
+    // que el reintento de Stripe sea seguro.
+    if (resultado.motivo === 'db_fallo') {
+      return NextResponse.json({ error: 'Fallo aprovisionando' }, { status: 500 });
+    }
     return NextResponse.json({ recibido: true, aprovisionado: false });
-  }
-
-  try {
-    await enviarEnlaceDeContrasena(email);
-  } catch (error) {
-    // No se aborta el aprovisionamiento por esto: el cliente puede pedir el
-    // enlace de nuevo desde /panel/nueva-contrasena; quedarse sin restaurante
-    // aprovisionado tras haber pagado sería el fallo peor.
-    console.error(`No se pudo enviar el enlace de contraseña a ${email}:`, error);
-  }
-
-  try {
-    const { rows } = await comoAprovisionamiento((c) =>
-      c.query<{ restaurante_id: string; slug: string }>(
-        `SELECT * FROM dk.aprovisionar_cliente_qr($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
-        [evento.id, identidadId, email, nombreContacto, plan, restauranteNombre, slugBase, customerId, subscriptionId]
-      )
-    );
-    console.log(`Aprovisionado: restaurante ${rows[0]?.slug} (${rows[0]?.restaurante_id}) para ${email}.`);
-  } catch (error) {
-    console.error(`Fallo aprovisionando el restaurante para ${email} (evento ${evento.id}):`, error);
-    // Se devuelve 500 aquí sí: a diferencia del fallo de Neon Auth (donde
-    // reintentar repetiría el mismo error de forma determinista), un fallo de
-    // base de datos puede ser transitorio, y Stripe reintenta la entrega del
-    // mismo evento — la idempotencia de dk.aprovisionar_cliente_qr hace que
-    // ese reintento sea seguro.
-    return NextResponse.json({ error: 'Fallo aprovisionando' }, { status: 500 });
   }
 
   return NextResponse.json({ recibido: true, aprovisionado: true });

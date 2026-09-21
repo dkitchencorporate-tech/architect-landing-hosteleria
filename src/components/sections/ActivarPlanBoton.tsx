@@ -19,6 +19,7 @@ export default function ActivarPlanBoton({
 }) {
   const [abierto, setAbierto] = useState(false);
   const [nombre, setNombre] = useState('');
+  const [nombreContacto, setNombreContacto] = useState('');
   const [email, setEmail] = useState('');
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -31,7 +32,7 @@ export default function ActivarPlanBoton({
       const respuesta = await fetch('/api/checkout/qr', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan, restauranteNombre: nombre, email }),
+        body: JSON.stringify({ plan, restauranteNombre: nombre, nombreContacto, email }),
       });
       const datos = await respuesta.json();
       if (!respuesta.ok || !datos.url) throw new Error(datos?.error ?? 'No se pudo iniciar el pago.');
@@ -68,6 +69,17 @@ export default function ActivarPlanBoton({
               maxLength={80}
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
+              className="w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 focus:border-[#D9531E] outline-none"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-1">Tu nombre</label>
+            <input
+              type="text"
+              required
+              maxLength={80}
+              value={nombreContacto}
+              onChange={(e) => setNombreContacto(e.target.value)}
               className="w-full border-2 border-gray-200 rounded-xl px-4 py-2.5 focus:border-[#D9531E] outline-none"
             />
           </div>
