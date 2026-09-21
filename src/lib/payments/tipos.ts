@@ -1,8 +1,7 @@
 /**
- * Contrato común de "crear checkout" para cualquier pasarela. La ruta
- * `/api/checkout/qr` no sabe si detrás hay Stripe o Whop — solo llama a la
- * función que exponga el proveedor activo (ver `provider.ts`) y redirige a
- * la URL que devuelva.
+ * Datos para crear un checkout de QR Menú. Whop es el único proveedor de
+ * pago de este proyecto — decisión explícita de Alex (2026-09-21), Stripe
+ * queda fuera por completo, no como opción de repuesto.
  */
 export interface DatosCheckoutQr {
   plan: 'basico' | 'ampliado';
@@ -10,11 +9,6 @@ export interface DatosCheckoutQr {
   slugBase: string;
   email: string;
   nombreContacto: string;
-  /** Origen de la petición (para construir success_url/redirect_url). */
+  /** Origen de la petición (para construir redirect_url). */
   origen: string;
-}
-
-export interface ProveedorPagoQr {
-  nombre: string;
-  crearCheckout(datos: DatosCheckoutQr): Promise<{ url: string }>;
 }

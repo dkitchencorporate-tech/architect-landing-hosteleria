@@ -1,14 +1,16 @@
 import 'server-only';
 import { QR_MENU } from '@/lib/pricing-config';
-import type { DatosCheckoutQr, ProveedorPagoQr } from './tipos';
+import type { DatosCheckoutQr } from './tipos';
 
 /**
  * Implementación contra la API real de Whop (docs.whop.com, verificado el
  * 2026-09-21 — no se ha adivinado ningún endpoint ni forma de payload).
+ * Único proveedor de pago del proyecto — decisión de Alex, no hay Stripe ni
+ * selector de proveedor.
  *
- * A diferencia de Stripe, Whop soporta un precio de primer cobro distinto del
- * recurrente de forma nativa (`initial_price` vs `renewal_price` en el mismo
- * plan): no hace falta el cupón "once" que sí requiere Stripe.
+ * Whop soporta un precio de primer cobro distinto del recurrente de forma
+ * nativa (`initial_price` vs `renewal_price` en el mismo plan) — no hace
+ * falta ningún cupón para el "primer mes a 1€".
  *
  * Pendiente de probar en vivo: código completo contra la documentación
  * pública, pero sin ejecutar todavía un pago real — eso exige
@@ -29,7 +31,7 @@ interface RespuestaCheckoutConfiguration {
   purchase_url: string;
 }
 
-async function crearCheckout(datos: DatosCheckoutQr): Promise<{ url: string }> {
+export async function crearCheckoutQr(datos: DatosCheckoutQr): Promise<{ url: string }> {
   const apiKey = requerirEnv('WHOP_API_KEY');
   const companyId = requerirEnv('WHOP_COMPANY_ID');
 
@@ -84,8 +86,3 @@ async function crearCheckout(datos: DatosCheckoutQr): Promise<{ url: string }> {
 
   return { url: datosRespuesta.purchase_url };
 }
-
-export const proveedorWhop: ProveedorPagoQr = {
-  nombre: 'whop',
-  crearCheckout,
-};

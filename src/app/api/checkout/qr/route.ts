@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { proveedorActivo } from '@/lib/payments/provider';
+import { crearCheckoutQr } from '@/lib/payments/whop';
 import { claveDeLimite, ipDeLaPeticion, limiteSuperado } from '@/lib/limite-frecuencia';
 
 export const runtime = 'nodejs';
@@ -22,11 +22,11 @@ function normalizarSlug(nombre: string): string {
 }
 
 /**
- * Crea el checkout para activar QR Menú (Parte 6, Sección 3 — CONFIRMADO por
- * Alex). Deliberadamente agnóstica de proveedor: `proveedorActivo()` decide
- * si esto llama a Stripe o a Whop según `PAYMENT_PROVIDER`. El webhook de
- * cada proveedor (`/api/webhooks/stripe` o `/api/webhooks/whop`) es quien
- * aprovisiona de verdad tras el pago — esta ruta nunca toca la base de datos.
+ * Crea el checkout de Whop para activar QR Menú (Parte 6, Sección 3 —
+ * CONFIRMADO por Alex). Whop es el único proveedor de pago del proyecto —
+ * decisión explícita, no hay selector ni alternativa. `/api/webhooks/whop`
+ * es quien aprovisiona de verdad tras el pago — esta ruta nunca toca la
+ * base de datos.
  */
 export async function POST(request: Request) {
   try {
@@ -70,8 +70,7 @@ export async function POST(request: Request) {
   const origen = new URL(request.url).origin;
 
   try {
-    const proveedor = proveedorActivo();
-    const { url } = await proveedor.crearCheckout({
+    const { url } = await crearCheckoutQr({
       plan,
       restauranteNombre,
       nombreContacto,

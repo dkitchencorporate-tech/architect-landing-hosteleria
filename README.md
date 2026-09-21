@@ -24,7 +24,7 @@ Migraciones en `db/migrations/`, aplicadas con `node db/migrate.mjs <entorno-pro
 
 ## Pagos
 
-El checkout de QR Menú es agnóstico de proveedor (`src/lib/payments/`). El proveedor activo se elige con la variable de entorno `PAYMENT_PROVIDER` (`stripe` o `whop`).
+El checkout de QR Menú corre sobre Whop (`src/lib/payments/`), único proveedor de pago del proyecto — decisión explícita, no hay Stripe ni selector. Necesita `WHOP_API_KEY`, `WHOP_COMPANY_ID` y `WHOP_WEBHOOK_SECRET` en el entorno.
 
 ## Buenas prácticas de despliegue (Vercel)
 
