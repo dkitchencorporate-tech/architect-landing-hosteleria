@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
 export default function AdminArchitectRoot() {
-  redirect('/admin-architect/overview');
+  redirect('/admin-dkitchen/overview');
 }

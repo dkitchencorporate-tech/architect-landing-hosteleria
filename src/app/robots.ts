@@ -15,7 +15,7 @@ export default function robots(): MetadataRoute.Robots {
         '/carta-no-disponible',
         // Superficie interna. El `noindex` de cada página es la defensa real;
         // esto solo evita el rastreo.
-        '/admin-architect/',
+        '/admin-dkitchen/',
         '/dashboard',
         '/manuals/',
         '/api/',

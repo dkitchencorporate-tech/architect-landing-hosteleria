@@ -10,7 +10,7 @@ function AnalyticsPixelLogic() {
 
   useEffect(() => {
     // 0. EXCLUIR DASHBOARD ADMINISTRATIVO
-    if (pathname.startsWith('/admin-architect')) return;
+    if (pathname.startsWith('/admin-dkitchen')) return;
 
     const trackView = async () => {
       // 1. Gestionar Session ID

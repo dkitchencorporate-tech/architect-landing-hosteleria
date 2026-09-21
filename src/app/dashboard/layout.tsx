@@ -89,7 +89,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         <div className="p-4 border-t border-white/10">
           {isAdmin && (
-            <Link href="/admin-architect/overview" className={`flex items-center gap-2 mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 hover:bg-red-500/20 hover:text-red-400 transition-colors group ${!isDesktopExpanded ? 'justify-center' : ''}`} title={!isDesktopExpanded ? "Volver a Admin" : undefined}>
+            <Link href="/admin-dkitchen/overview" className={`flex items-center gap-2 mb-4 p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 hover:bg-red-500/20 hover:text-red-400 transition-colors group ${!isDesktopExpanded ? 'justify-center' : ''}`} title={!isDesktopExpanded ? "Volver a Admin" : undefined}>
               <ShieldAlert size={isDesktopExpanded ? 18 : 22} />
               <span className={`font-bold text-sm whitespace-nowrap transition-all duration-300 ${isDesktopExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0 md:hidden'}`}>
                 Admin Console

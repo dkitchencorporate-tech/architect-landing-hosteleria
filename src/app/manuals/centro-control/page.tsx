@@ -37,7 +37,7 @@ export default function CentroControlManual() {
 
         <h2>El Panel de Clientes</h2>
         <p>
-          Ruta: <code>/admin-architect/clients</code> — junto con el resto de <code>/admin-architect/*</code> y
+          Ruta: <code>/admin-dkitchen/clients</code> — junto con el resto de <code>/admin-dkitchen/*</code> y
           <code> /dashboard</code>.
         </p>
         <p>

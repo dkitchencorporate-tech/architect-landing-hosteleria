@@ -10,7 +10,7 @@ import ExitIntent from '@/components/ExitIntent';
  * que no debe llevar nuestra navegación encima — es la pantalla del cliente,
  * no la nuestra), ni `/demo/carta` (la simulación de la experiencia del
  * comensal, que rompería su inmersión con una barra de ventas), ni
- * `/dashboard`, `/admin-architect`, `/manuals` (superficie interna con su
+ * `/dashboard`, `/admin-dkitchen`, `/manuals` (superficie interna con su
  * propio layout), ni `/onboarding` (un flujo, no una página de captación).
  * El grupo de rutas `(marketing)` no aparece en la URL: es solo una forma de
  * compartir este layout entre las páginas que sí lo necesitan.

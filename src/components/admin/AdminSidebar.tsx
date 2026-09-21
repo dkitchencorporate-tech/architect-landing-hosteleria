@@ -22,11 +22,11 @@ export default function AdminSidebar() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Live Overview', href: '/admin-architect/overview', icon: LayoutDashboard },
-    { name: 'Directorio de Clientes', href: '/admin-architect/clients', icon: Users },
-    { name: 'Base de Eventos', href: '/admin-architect/events-master', icon: Calendar },
-    { name: 'Creative Factory', href: '/admin-architect/creative', icon: Wand2 },
-    { name: 'Pipeline de Proyectos', href: '/admin-architect/pipeline', icon: Rocket },
+    { name: 'Live Overview', href: '/admin-dkitchen/overview', icon: LayoutDashboard },
+    { name: 'Directorio de Clientes', href: '/admin-dkitchen/clients', icon: Users },
+    { name: 'Base de Eventos', href: '/admin-dkitchen/events-master', icon: Calendar },
+    { name: 'Creative Factory', href: '/admin-dkitchen/creative', icon: Wand2 },
+    { name: 'Pipeline de Proyectos', href: '/admin-dkitchen/pipeline', icon: Rocket },
     { name: 'SOPs y Manuales', href: '/manuals', icon: BookOpen },
     { name: 'Visión SaaS (Demo)', href: '/dashboard', icon: Monitor }
   ];

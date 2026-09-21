@@ -6,7 +6,7 @@ import { MetadataRoute } from 'next';
  * Deliberadamente no incluye `/m/{slug}` (las cartas de restaurantes reales):
  * eso exige leer Neon en tiempo de build/petición para listar los slugs
  * activos, que es trabajo de la Fase SEO (tarea #7), no de esta reestructura.
- * Tampoco incluye `/dashboard`, `/admin-architect`, `/manuals` (privadas o
+ * Tampoco incluye `/dashboard`, `/admin-dkitchen`, `/manuals` (privadas o
  * semipúblicas) ni `/onboarding` (un flujo, no una página de captación).
  */
 export default function sitemap(): MetadataRoute.Sitemap {
