@@ -147,13 +147,13 @@ export default function ExitIntent() {
         <div className="text-center flex flex-col items-center mt-2 sm:mt-0 h-full w-full min-h-0">
           
           <div className="flex-shrink-0 text-center w-full">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-[#FF4500] rounded-full flex items-center justify-center text-xl sm:text-2xl mb-3 mx-auto group animate-bounce">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 text-[#D9531E] rounded-full flex items-center justify-center text-xl sm:text-2xl mb-3 mx-auto group animate-bounce">
               🎁
             </div>
             <h2 className="text-xl sm:text-2xl font-black leading-tight text-gray-900 mb-2 text-balance">
-              ¿Te vas tan pronto? Llévate nuestro <span className="text-[#FF4500]">Pack de Arranque</span>
+              ¿Te vas tan pronto? Llévate nuestro <span className="text-[#D9531E]">Pack de Arranque</span>
             </h2>
-            <div className="text-[#FF4500] font-black text-[10px] sm:text-xs uppercase tracking-widest mb-2">
+            <div className="text-[#D9531E] font-black text-[10px] sm:text-xs uppercase tracking-widest mb-2">
                Totalmente GRATIS (Valor: 980€)
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function ExitIntent() {
             {/* CTA Secundario: Scroll suave */}
             <button 
               onClick={handleOpenCalendly}
-              className="w-full text-gray-500 font-bold hover:text-[#FF4500] transition-colors text-xs sm:text-sm py-2 underline decoration-transparent hover:decoration-[#FF4500] underline-offset-4"
+              className="w-full text-gray-500 font-bold hover:text-[#D9531E] transition-colors text-xs sm:text-sm py-2 underline decoration-transparent hover:decoration-[#D9531E] underline-offset-4"
             >
               O leer más detalles sobre la Base Operativa
             </button>

@@ -13,13 +13,13 @@ export default function TheTrojanHorse() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-[#FF4500] text-sm font-bold tracking-widest uppercase">
-            <span className="w-2 h-2 rounded-full bg-[#FF4500] animate-pulse"></span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-[#D9531E] text-sm font-bold tracking-widest uppercase">
+            <span className="w-2 h-2 rounded-full bg-[#D9531E] animate-pulse"></span>
             🔥 FUNDACIÓN DIGITAL
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-gray-900 text-balance">
             Moderniza tu local y dispara tu rentabilidad hoy.<br/>
-            <span className="text-[#FF4500]">Recupera el control de tu negocio.</span>
+            <span className="text-[#D9531E]">Recupera el control de tu negocio.</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
             La infraestructura tecnológica premium que necesitas para que tus clientes pidan más rápido, reserven directamente en tu web y tu equipo trabaje sin estrés. Todo el control, bajo tu propia marca y sin depender de terceros.
@@ -28,7 +28,7 @@ export default function TheTrojanHorse() {
 
         {/* Sección de Bonus "El Pack de Arranque" */}
         <div className="max-w-6xl mx-auto mb-20 relative">
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#FF4500] to-orange-300 rounded-[2.5rem] blur-xl opacity-20"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-[#D9531E] to-orange-300 rounded-[2.5rem] blur-xl opacity-20"></div>
           <div className="relative bg-[#FDFCF8] rounded-[2.5rem] p-8 sm:p-10 lg:p-16 border border-orange-200 shadow-2xl">
             <div className="text-center mb-16">
               <div className="inline-block bg-red-100 text-red-600 px-6 py-2.5 rounded-full text-sm font-black tracking-widest uppercase mb-6 border border-red-200 shadow-sm">
@@ -36,10 +36,10 @@ export default function TheTrojanHorse() {
               </div>
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight text-balance">
                 Tu Pack de Arranque Exclusivo,<br/>
-                <span className="text-[#FF4500]">incluido en tu activación.</span>
+                <span className="text-[#D9531E]">incluido en tu activación.</span>
               </h3>
               <p className="text-gray-800 text-xl max-w-4xl mx-auto font-medium leading-relaxed">
-                Nuestros clientes no empiezan desde cero. Activando hoy nuestra Base Operativa, te incluimos <strong className="bg-[#FF4500] text-white px-3 py-1 rounded-md mx-1 shadow-md">consultorías y activos premium</strong> que normalmente solo están al alcance de grandes cadenas. Queremos que la imagen de tu negocio brille con luz propia desde el primer día. Sin costes ocultos.
+                Nuestros clientes no empiezan desde cero. Activando hoy nuestra Base Operativa, te incluimos <strong className="bg-[#D9531E] text-white px-3 py-1 rounded-md mx-1 shadow-md">consultorías y activos premium</strong> que normalmente solo están al alcance de grandes cadenas. Queremos que la imagen de tu negocio brille con luz propia desde el primer día. Sin costes ocultos.
               </p>
             </div>
 
@@ -57,7 +57,7 @@ export default function TheTrojanHorse() {
                   <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Precio habitual en el mercado:</div>
                   <div className="flex items-center gap-4">
                     <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">180€</span>
-                    <span className="text-[#FF4500] font-black text-4xl">GRATIS</span>
+                    <span className="text-[#D9531E] font-black text-4xl">GRATIS</span>
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function TheTrojanHorse() {
                   <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Valor de diseño estratégico:</div>
                   <div className="flex items-center gap-4">
                     <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">250€</span>
-                    <span className="text-[#FF4500] font-black text-4xl">GRATIS</span>
+                    <span className="text-[#D9531E] font-black text-4xl">GRATIS</span>
                   </div>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function TheTrojanHorse() {
               {/* Bonus 3 */}
               <div className="bg-white border-2 border-gray-100 rounded-3xl p-8 sm:p-10 hover:border-orange-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
-                <div className="w-16 h-16 bg-orange-100 text-[#FF4500] rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-sm">🔥</div>
+                <div className="w-16 h-16 bg-orange-100 text-[#D9531E] rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-sm">🔥</div>
                 <h4 className="text-gray-900 font-black text-2xl mb-4">Estrategia de Inyección de Tráfico (Días Valle)</h4>
                 <p className="text-gray-700 text-lg mb-8 flex-grow leading-relaxed font-medium">
                   Los martes vacíos matan la rentabilidad. Te diseñamos un gancho irresistible (ej. un menú maridaje o tardeo) y la táctica paso a paso para promocionarlo en tu local usando tu nueva carta digital. <strong>El objetivo: llenar mesas el día más flojo de tu semana.</strong>
@@ -91,7 +91,7 @@ export default function TheTrojanHorse() {
                   <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Consultoría de negocio:</div>
                   <div className="flex items-center gap-4">
                     <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">300€</span>
-                    <span className="text-[#FF4500] font-black text-4xl">GRATIS</span>
+                    <span className="text-[#D9531E] font-black text-4xl">GRATIS</span>
                   </div>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function TheTrojanHorse() {
                   <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Valor de producciÃ³n de contenidos:</div>
                   <div className="flex items-center gap-4">
                     <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">250€</span>
-                    <span className="text-[#FF4500] font-black text-4xl">GRATIS</span>
+                    <span className="text-[#D9531E] font-black text-4xl">GRATIS</span>
                   </div>
                 </div>
               </div>
@@ -122,10 +122,10 @@ export default function TheTrojanHorse() {
 
         {/* Pricing Card Unica: Base Operativa Digital (Luminosa/Confiable) */}
         <div className="max-w-4xl mx-auto mt-16 animate-fade-in-up">
-          <div className="bg-[#FDFCF8] rounded-[2.5rem] shadow-2xl relative flex flex-col overflow-hidden border-2 border-[#FF4500]">
+          <div className="bg-[#FDFCF8] rounded-[2.5rem] shadow-2xl relative flex flex-col overflow-hidden border-2 border-[#D9531E]">
             
             {/* Header del Servicio */}
-            <div className="bg-[#FF4500] p-6 text-center">
+            <div className="bg-[#D9531E] p-6 text-center">
               <h3 className="text-3xl md:text-4xl font-black text-white mb-2">Base Operativa Digital</h3>
               <p className="text-orange-100 font-bold text-lg">La infraestructura indispensable para recuperar el control de tu local.</p>
             </div>
@@ -135,7 +135,7 @@ export default function TheTrojanHorse() {
                 <div className="flex justify-center items-baseline gap-2 text-gray-900 mb-2">
                   <span className="text-7xl font-black">700€</span>
                 </div>
-                <div className="inline-block bg-orange-50 text-[#FF4500] font-black px-4 py-2 rounded-full text-sm mt-2 border border-orange-200 shadow-sm">
+                <div className="inline-block bg-orange-50 text-[#D9531E] font-black px-4 py-2 rounded-full text-sm mt-2 border border-orange-200 shadow-sm">
                   PAGO FRACCIONADO DISPONIBLE: 2 cuotas de 350€
                 </div>
                 <p className="text-gray-600 font-medium mt-4 max-w-lg mx-auto text-lg">
@@ -178,9 +178,9 @@ export default function TheTrojanHorse() {
                 </div>
 
                 <div className="flex items-start gap-4 bg-orange-50 p-4 rounded-2xl border border-orange-100">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-200 text-[#FF4500] shrink-0 text-xl font-bold mt-1 shadow-sm">🎁</span>
+                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-orange-200 text-[#D9531E] shrink-0 text-xl font-bold mt-1 shadow-sm">🎁</span>
                   <div>
-                    <span className="font-black text-[#FF4500] text-xl block mb-1">Los 4 Bonos Consultivos Incluidos.</span>
+                    <span className="font-black text-[#D9531E] text-xl block mb-1">Los 4 Bonos Consultivos Incluidos.</span>
                     <p className="text-gray-700 font-medium leading-relaxed">Al reservar tu activación hoy, te llevas los 980€ en valor de los bonos estratégicos sin ningún tipo de coste adicional.</p>
                   </div>
                 </div>
@@ -188,8 +188,8 @@ export default function TheTrojanHorse() {
 
               {/* Soporte continuo y Bono 2 meses */}
               <div className="bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-200/50 rounded-2xl p-6 mb-10 text-center shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FF4500] to-orange-400"></div>
-                <h4 className="text-[#FF4500] font-black text-lg mb-2">🎁 Bono Especial: 2 Meses de Mantenimiento GRATIS</h4>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#D9531E] to-orange-400"></div>
+                <h4 className="text-[#D9531E] font-black text-lg mb-2">🎁 Bono Especial: 2 Meses de Mantenimiento GRATIS</h4>
                 <p className="text-gray-700 font-medium leading-relaxed">
                   Queremos que tu única preocupación sea atender mesas. Como regalo extra, cubrimos los primeros 2 meses de alojamiento en servidores ultrarrápidos a coste cero. Tiempo de sobra para afinar el sistema juntos. Después, el soporte premium será de solo <strong className="text-gray-900 font-black">69€/mes</strong>, cubriendo el servidor, protección anti-caídas y actualizaciones de seguridad. Sin permanencia.
                 </p>
@@ -198,7 +198,7 @@ export default function TheTrojanHorse() {
               <div className="flex flex-col items-center gap-4">
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full sm:w-auto bg-[#FF4500] text-white px-10 py-5 rounded-full font-black text-xl md:text-2xl hover:bg-orange-600 transition-colors shadow-[0_10px_30px_rgba(255,69,0,0.4)] hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(255,69,0,0.6)] flex items-center justify-center gap-3"
+                  className="w-full sm:w-auto bg-[#D9531E] text-white px-10 py-5 rounded-full font-black text-xl md:text-2xl hover:bg-orange-600 transition-colors shadow-[0_10px_30px_rgba(255,69,0,0.4)] hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(255,69,0,0.6)] flex items-center justify-center gap-3"
                 >
                   Agendar Consultoría y Activar
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>

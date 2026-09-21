@@ -10,7 +10,7 @@ export default function QrMenuPricing() {
     <section className="py-16 md:py-24 bg-[#FDFCF8]">
       <div className="max-w-6xl mx-auto px-6 md:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-[#FF4500] text-sm font-bold tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-[#D9531E] text-sm font-bold tracking-widest uppercase">
             QR Menú
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-balance">
@@ -45,8 +45,8 @@ export default function QrMenuPricing() {
             </a>
           </div>
 
-          <div className="bg-white rounded-3xl border-2 border-[#FF4500] p-8 flex flex-col relative shadow-xl">
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FF4500] text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full">
+          <div className="bg-white rounded-3xl border-2 border-[#D9531E] p-8 flex flex-col relative shadow-xl">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#D9531E] text-white text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full">
               Más elegido
             </div>
             <h3 className="text-2xl font-black mb-1">{ampliado.nombre}</h3>
@@ -63,7 +63,7 @@ export default function QrMenuPricing() {
             </ul>
             <a
               href={WHATSAPP_QR}
-              className="mt-8 text-center bg-[#FF4500] text-white px-6 py-3.5 rounded-full font-bold hover:bg-orange-600 transition-colors shadow-lg"
+              className="mt-8 text-center bg-[#D9531E] text-white px-6 py-3.5 rounded-full font-bold hover:bg-orange-600 transition-colors shadow-lg"
             >
               Activar Ampliado
             </a>

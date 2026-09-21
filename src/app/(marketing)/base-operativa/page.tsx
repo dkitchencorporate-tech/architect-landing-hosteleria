@@ -19,14 +19,14 @@ export default function PaginaBaseOperativa() {
         <div className="max-w-3xl mx-auto px-6 md:px-8 text-center space-y-4">
           <p className="text-gray-600 text-lg">
             ¿Todavía no sabes qué te falta en presencia digital?{' '}
-            <Link href="/auditoria" className="text-[#FF4500] font-bold hover:underline">
+            <Link href="/auditoria" className="text-[#D9531E] font-bold hover:underline">
               Pide antes la Auditoría de canales
             </Link>
             .
           </p>
           <p className="text-gray-600 text-lg">
             ¿Quieres ver la carta interactiva antes de decidir?{' '}
-            <Link href="/demo/carta" className="text-[#FF4500] font-bold hover:underline">
+            <Link href="/demo/carta" className="text-[#D9531E] font-bold hover:underline">
               Prueba la demo en vivo
             </Link>
             .

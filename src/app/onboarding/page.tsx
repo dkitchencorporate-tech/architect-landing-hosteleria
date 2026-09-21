@@ -36,7 +36,7 @@ function OnboardingContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#050505] flex items-center justify-center">
+      <div className="min-h-screen bg-[#171008] flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
@@ -44,7 +44,7 @@ function OnboardingContent() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-[#050505] flex items-center justify-center p-4">
+      <div className="min-h-screen bg-[#171008] flex items-center justify-center p-4">
         <div className="bg-zinc-950 p-8 rounded-3xl border border-red-900 max-w-md w-full text-center">
           <div className="text-4xl mb-4">⛔</div>
           <h2 className="text-xl font-black text-white mb-2 uppercase tracking-tight">Acceso Denegado</h2>
@@ -56,7 +56,7 @@ function OnboardingContent() {
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#171008] flex items-center justify-center p-4">
       <div className="bg-zinc-950 p-8 rounded-3xl shadow-2xl border border-zinc-900 max-w-md w-full">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-black text-white tracking-tight">D<span className="text-orange-500">Kitchen</span></h1>
@@ -128,7 +128,7 @@ function OnboardingContent() {
 export default function PrivateOnboardingPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-[#050505] flex items-center justify-center">
+      <div className="min-h-screen bg-[#171008] flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
     }>

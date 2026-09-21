@@ -8,10 +8,10 @@ export const metadata = {
 
 export default function TermsOfService() {
   return (
-    <div className="min-h-screen bg-[#FDFCF8] text-zinc-900 font-sans p-8 md:p-24 selection:bg-[#FF4500] selection:text-white">
+    <div className="min-h-screen bg-[#FDFCF8] text-zinc-900 font-sans p-8 md:p-24 selection:bg-[#D9531E] selection:text-white">
       <div className="max-w-3xl mx-auto">
         <header className="mb-16 border-b border-zinc-100 pb-8 text-center md:text-left">
-          <h1 className="text-sm font-black uppercase tracking-[0.3em] text-[#FF4500] mb-4">Protocolo de Servicio</h1>
+          <h1 className="text-sm font-black uppercase tracking-[0.3em] text-[#D9531E] mb-4">Protocolo de Servicio</h1>
           <p className="text-4xl md:text-5xl font-black tracking-tighter">Condiciones del Servicio</p>
           <p className="text-zinc-400 mt-4 font-medium">Última actualización: 21 de Abril, 2026</p>
         </header>

@@ -17,7 +17,7 @@ export default function AdminDashboard() {
 
   return (
 
-      <div className="min-h-screen bg-[#050505] text-zinc-100 selection:bg-orange-500/30">
+      <div className="min-h-screen bg-[#171008] text-zinc-100 selection:bg-orange-500/30">
         <header className="border-b border-white/5 bg-[#0A0A0A]/50 backdrop-blur-md sticky top-0 z-40">
           <div className="max-w-[1600px] mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
             <div className="flex items-center gap-3">

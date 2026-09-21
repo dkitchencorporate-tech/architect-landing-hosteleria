@@ -122,7 +122,7 @@ export default async function CartaPublica({ params }: { params: { slug: string 
               <li key={g.id} className="shrink-0">
                 <a
                   href={`#s-${g.id}`}
-                  className="block rounded-full border border-black/10 px-3 py-1.5 text-xs font-medium text-black/70 transition-colors hover:border-[#FF4500] hover:text-[#FF4500]"
+                  className="block rounded-full border border-black/10 px-3 py-1.5 text-xs font-medium text-black/70 transition-colors hover:border-[#D9531E] hover:text-[#D9531E]"
                 >
                   {g.nombre}
                 </a>

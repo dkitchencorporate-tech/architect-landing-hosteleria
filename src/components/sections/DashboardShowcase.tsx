@@ -19,13 +19,13 @@ export default function DashboardShowcase() {
       <div className="flex justify-center gap-4 mb-8">
         <button 
           onClick={() => setActiveTab('pipeline')}
-          className={`px-6 py-2 rounded-full font-bold text-sm transition-all ${activeTab === 'pipeline' ? 'bg-[#FF4500] text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+          className={`px-6 py-2 rounded-full font-bold text-sm transition-all ${activeTab === 'pipeline' ? 'bg-[#D9531E] text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
         >
           Vista: Pipeline de Proyectos
         </button>
         <button 
           onClick={() => setActiveTab('events')}
-          className={`px-6 py-2 rounded-full font-bold text-sm transition-all ${activeTab === 'events' ? 'bg-[#FF4500] text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+          className={`px-6 py-2 rounded-full font-bold text-sm transition-all ${activeTab === 'events' ? 'bg-[#D9531E] text-white shadow-lg' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
         >
           Vista: Biblioteca de Eventos
         </button>
@@ -47,7 +47,7 @@ export default function DashboardShowcase() {
         <div className="bg-[#020202] text-white h-[600px] overflow-y-auto overflow-x-hidden p-6 md:p-10 relative">
           
           {/* Falso Sidebar para dar contexto */}
-          <div className="absolute top-0 left-0 bottom-0 w-64 border-r border-[#1A1A1A] bg-[#050505] hidden lg:block opacity-50 pointer-events-none">
+          <div className="absolute top-0 left-0 bottom-0 w-64 border-r border-[#1A1A1A] bg-[#171008] hidden lg:block opacity-50 pointer-events-none">
             <div className="p-6 border-b border-[#1A1A1A]">
               <div className="h-6 w-32 bg-[#1A1A1A] rounded"></div>
             </div>

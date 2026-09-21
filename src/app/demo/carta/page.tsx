@@ -463,10 +463,10 @@ function ListTapasLayout({ menu, categories, lang, t, activeDiner, setActiveDine
 function GridBurgerLayout({ menu, categories, lang, t, activeDiner, setActiveDiner, tableParam, setLang, onAdd, onAsk, onImageClick }: any) {
   const [isSubscribed, setIsSubscribed] = useState(false);
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans pb-48 selection:bg-[#ff003c] selection:text-white">
+    <div className="min-h-screen bg-[#171008] text-white font-sans pb-48 selection:bg-[#ff003c] selection:text-white">
       
       {/* 1. Unique Header (Cyberpunk / Delivery App style) */}
-      <header className="sticky top-0 z-30 bg-[#050505]/90 backdrop-blur-xl border-b border-white/5 px-4 py-3">
+      <header className="sticky top-0 z-30 bg-[#171008]/90 backdrop-blur-xl border-b border-white/5 px-4 py-3">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-[#ff003c] rounded-xl flex items-center justify-center font-black text-2xl italic shadow-[0_0_15px_rgba(255,0,60,0.5)] animate-pulse">
@@ -632,7 +632,7 @@ function CartaContent() {
       btnText: 'text-white', sendBtn: 'bg-[#2c3e2e] text-white hover:bg-[#1e2a1f]', secondaryBtn: 'border border-[#2c3e2e]/20 text-[#2c3e2e] hover:bg-[#2c3e2e]/5'
     },
     burger: { 
-      bg: 'bg-[#050505]', card: 'bg-[#111]', border: 'border-zinc-800', text: 'text-white', textSec: 'text-zinc-400',
+      bg: 'bg-[#171008]', card: 'bg-[#111]', border: 'border-zinc-800', text: 'text-white', textSec: 'text-zinc-400',
       primary: 'bg-[#ff003c]', primaryHover: 'hover:bg-[#ff3366]', textPrimary: 'text-[#ff003c]', 
       btnText: 'text-white', sendBtn: 'bg-[#ff003c] text-white hover:bg-[#ff3366]', secondaryBtn: 'border border-zinc-700 text-white hover:bg-zinc-800'
     }

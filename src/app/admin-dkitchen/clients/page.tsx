@@ -47,7 +47,7 @@ export default function AdminClientsPage() {
   if (loading) return <div className="p-8 text-white flex items-center justify-center min-h-screen">Cargando ecosistema de clientes...</div>;
 
   return (
-    <div className="p-4 md:p-6 lg:p-8 min-h-screen bg-[#050505] text-zinc-100 selection:bg-orange-500/30">
+    <div className="p-4 md:p-6 lg:p-8 min-h-screen bg-[#171008] text-zinc-100 selection:bg-orange-500/30">
       <header className="mb-8 max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between md:items-end gap-4">
         <div>
           <h1 className="text-xl md:text-2xl font-black text-white tracking-tighter flex items-center gap-2">
@@ -66,7 +66,7 @@ export default function AdminClientsPage() {
       {/* MODAL GENERADOR DE TOKENS */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-2xl p-4">
-          <div className="bg-[#050505] border border-white/10 rounded-[2.5rem] w-full max-w-5xl max-h-[90vh] overflow-y-auto relative shadow-[0_20px_60px_rgba(0,0,0,0.6)] animate-in fade-in zoom-in duration-300">
+          <div className="bg-[#171008] border border-white/10 rounded-[2.5rem] w-full max-w-5xl max-h-[90vh] overflow-y-auto relative shadow-[0_20px_60px_rgba(0,0,0,0.6)] animate-in fade-in zoom-in duration-300">
             <button 
               onClick={() => setIsModalOpen(false)}
               className="absolute top-8 right-8 w-12 h-12 bg-white/5 hover:bg-white/10 border border-white/5 rounded-full flex items-center justify-center text-zinc-400 hover:text-white transition-all z-20"

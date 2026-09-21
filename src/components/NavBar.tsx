@@ -38,7 +38,7 @@ export default function NavBar() {
           href="/"
           className="text-xl md:text-2xl font-black tracking-tighter text-white hover:scale-105 transition-transform shrink-0"
         >
-          D<span className="text-[#FF4500]">Kitchen</span>
+          D<span className="text-[#D9531E]">Kitchen</span>
         </Link>
 
         {/* Escritorio: enlaces en línea */}
@@ -53,8 +53,8 @@ export default function NavBar() {
                   aria-current={activo ? 'page' : undefined}
                   className={`whitespace-nowrap px-3 xl:px-4 py-2 rounded-full text-xs font-bold transition-all ${
                     activo
-                      ? 'bg-[#FF4500] text-white shadow-[0_0_15px_rgba(255,69,0,0.5)]'
-                      : 'text-gray-300 hover:text-white hover:bg-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)]'
+                      ? 'bg-[#D9531E] text-white shadow-[0_0_15px_rgba(255,69,0,0.5)]'
+                      : 'text-gray-300 hover:text-white hover:bg-[#D9531E] hover:shadow-[0_0_15px_rgba(255,69,0,0.5)]'
                   }`}
                 >
                   {enlace.etiqueta}
@@ -66,7 +66,7 @@ export default function NavBar() {
 
         <a
           href={WHATSAPP_AUDITORIA}
-          className="hidden lg:inline-flex bg-[#FF4500] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
+          className="hidden lg:inline-flex bg-[#D9531E] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
         >
           Auditoría de Canales
         </a>
@@ -99,7 +99,7 @@ export default function NavBar() {
               href={enlace.href}
               onClick={() => setMenuAbierto(false)}
               className={`px-4 py-3 rounded-lg text-sm font-bold ${
-                pathname === enlace.href ? 'bg-[#FF4500] text-white' : 'text-gray-300 hover:bg-white/5'
+                pathname === enlace.href ? 'bg-[#D9531E] text-white' : 'text-gray-300 hover:bg-white/5'
               }`}
             >
               {enlace.etiqueta}
@@ -107,7 +107,7 @@ export default function NavBar() {
           ))}
           <a
             href={WHATSAPP_AUDITORIA}
-            className="mt-2 bg-[#FF4500] text-white px-4 py-3 rounded-lg font-bold text-sm text-center"
+            className="mt-2 bg-[#D9531E] text-white px-4 py-3 rounded-lg font-bold text-sm text-center"
           >
             Auditoría de Canales
           </a>
