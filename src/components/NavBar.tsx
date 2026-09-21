@@ -25,7 +25,7 @@ const ENLACES = [
 ] as const;
 
 const WHATSAPP_AUDITORIA =
-  'https://wa.me/34622652659?text=Hola,%20quiero%20solicitar%20la%20Auditoría%20Gratuita.';
+  'https://wa.me/34622652659?text=Hola,%20quiero%20información%20sobre%20la%20Auditoría%20de%20canales.';
 
 export default function NavBar() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -68,7 +68,7 @@ export default function NavBar() {
           href={WHATSAPP_AUDITORIA}
           className="hidden lg:inline-flex bg-[#FF4500] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
         >
-          Auditoría Gratuita
+          Auditoría de Canales
         </a>
 
         {/* Móvil/tablet: botón de menú */}
@@ -109,7 +109,7 @@ export default function NavBar() {
             href={WHATSAPP_AUDITORIA}
             className="mt-2 bg-[#FF4500] text-white px-4 py-3 rounded-lg font-bold text-sm text-center"
           >
-            Auditoría Gratuita
+            Auditoría de Canales
           </a>
         </div>
       )}

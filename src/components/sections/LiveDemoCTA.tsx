@@ -32,9 +32,9 @@ export default function LiveDemoCTA() {
 
           <div className="shrink-0 flex flex-col items-center">
             <div className="bg-white p-4 rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500 border-8 border-gray-800">
-              <img 
-                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://dkitchencorporate.es/demo/carta&color=FF4500" 
-                alt="QR Code Demo" 
+              <img
+                src="/images/demo-qr-carta.png"
+                alt="QR de la carta demo de DKitchen"
                 className="w-48 h-48 rounded-xl"
               />
             </div>

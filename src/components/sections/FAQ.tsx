@@ -15,12 +15,12 @@ const faqs = [
     answer: "Son tuyos desde el minuto uno. A diferencia de quienes registran tu dominio a su nombre, o de las plataformas de delivery que te ocultan los datos de tus clientes, con DKitchen tú eres el único propietario de tus bases de datos, tu código y tu presencia digital."
   },
   {
-    question: "¿Qué son exactamente los Agentes IA que instaláis?",
-    answer: "Son sistemas híbridos entrenados específicamente para hostelería. Se conectan a tu WhatsApp o CRM para responder preguntas, captar datos de reservas y derivarlas a tu equipo. Solo se recomiendan para locales con alto volumen de consultas que ya no dan abasto respondiendo manualmente."
+    question: "¿Qué pasa si cancelo el QR Menú antes de que acabe el mes a 1€?",
+    answer: "Cancelas cuando quieras, sin permanencia. Si cancelas dentro del primer mes simbólico, no se te cobra el precio completo del plan. El montaje de 159€ es un regalo permanente de activación, no algo que tengas que devolver."
   },
   {
-    question: "¿Cuánto control pierdo si la IA responde por mí?",
-    answer: "Ninguno. El sistema es híbrido. Tú puedes ver todas las conversaciones en tiempo real en tu teléfono. Si un cliente hace una petición muy específica (ej. un evento privado), puedes intervenir en el chat, pausar a la IA y cerrar la venta tú mismo."
+    question: "¿Qué pasa con mis datos si dejo de ser cliente?",
+    answer: "Son tuyos desde el minuto uno, en cualquier peldaño de la escalera. Si te vas, te llevas tu carta, tu QR y tus datos — nosotros no los retenemos ni los usamos para nada distinto de lo que ya te prestamos como servicio."
   },
   {
     question: "¿Existen costes ocultos o comisiones por reserva?",
