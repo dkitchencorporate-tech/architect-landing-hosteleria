@@ -7,19 +7,21 @@ export default function FounderBio() {
         <div className="bg-[#FDFCF8] rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center gap-10">
           {/* Fondo sutil */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-[80px] -z-10"></div>
-          
+
           {/* Foto del Fundador */}
           <div className="w-40 h-40 shrink-0 relative flex items-center justify-center rounded-full border-4 border-white shadow-xl bg-black">
             <img src="/images/founder_ugc.png" alt="Alex, CEO de DKitchen" className="w-full h-full object-cover rounded-full" />
           </div>
 
-          {/* Texto y Contacto */}
+          {/* PROOF-BLOCK: cifra grande + una línea de contexto (Parte 6, Sección 2) */}
           <div className="text-center md:text-left flex-grow">
-            <h3 className="text-2xl font-black text-gray-900 mb-2">Tu acceso directo a la Dirección Estratégica</h3>
-            <p className="text-gray-700 font-medium text-lg mb-6 leading-relaxed text-pretty">
-              "Soy <strong className="text-gray-900">Alex</strong>. Construí este ecosistema tras años siendo propietario de bares, restaurantes y locales recreativos, además de invertir en discotecas. En 2020, fundé una Dark Kitchen en Madrid donde desarrollamos 7 marcas propias desde cero. He vivido en carne propia lo que es pagar comisiones abusivas y trabajar con sistemas lentos. Por eso creamos DKitchen: para devolverte el control absoluto de tu negocio digital y tus márgenes."
+            <p className="text-4xl sm:text-5xl font-black text-gray-900 mb-3 leading-tight">
+              7 marcas <span className="text-brand">operadas</span>,<br className="hidden sm:block" /> no vendidas.
             </p>
-            
+            <p className="text-gray-700 font-medium text-lg mb-6 leading-relaxed text-pretty">
+              <strong className="text-gray-900">Alex</strong> — bares, restaurantes y una dark kitchen con 7 marcas virtuales en Madrid desde 2020. Esto no lo vendemos, lo hemos operado.
+            </p>
+
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <a 
                 href="https://wa.me/34622652659?text=Hola%20Alex,%20vengo%20de%20la%20web." 

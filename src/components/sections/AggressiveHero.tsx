@@ -25,8 +25,13 @@ export default function AggressiveHero() {
           tu presencia digital.
         </h1>
 
-        {/* Subtítulo Orientado a Beneficio Rápido */}
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed font-medium mb-12 animate-fade-in-up text-pretty px-4 sm:px-0" style={{animationDelay: '0.2s'}}>
+        {/* Subtítulo — qué es DKitchen en una línea (Parte 6, Sección 2) */}
+        <p className="text-xl sm:text-2xl md:text-3xl text-white font-bold max-w-3xl leading-snug mb-6 animate-fade-in-up text-balance" style={{animationDelay: '0.15s'}}>
+          El socio tecnológico que digitaliza tu restaurante sin comisiones ni intermediarios — tú decides hasta dónde subir.
+        </p>
+
+        {/* Subtítulo secundario, de apoyo */}
+        <p className="text-base sm:text-lg text-gray-400 max-w-2xl leading-relaxed font-medium mb-10 animate-fade-in-up text-pretty px-4 sm:px-0" style={{animationDelay: '0.2s'}}>
           Desde Cartas QR interactivas hasta Fichas de Google optimizadas y Redes Sociales impulsadas por IA. Te damos el sistema completo para modernizar tu negocio paso a paso.
         </p>
 
@@ -36,12 +41,20 @@ export default function AggressiveHero() {
             Ver Sistema Base
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
           </Link>
-          
-          <a href="https://wa.me/34622652659?text=Hola,%20quiero%20una%20auditoría%20gratuita%20de%20mis%20tiempos%20de%20mesa." className="flex-1 bg-white/10 text-white border border-white/20 px-8 py-5 rounded-full font-bold text-xl hover:bg-white/20 transition-all backdrop-blur-sm flex items-center justify-center gap-2">
-            Auditoría Gratuita
+
+          <a href="https://wa.me/34622652659?text=Hola,%20quiero%20información%20sobre%20la%20Auditoría%20de%20canales." className="flex-1 bg-white/10 text-white border border-white/20 px-8 py-5 rounded-full font-bold text-xl hover:bg-white/20 transition-all backdrop-blur-sm flex items-center justify-center gap-2">
+            Auditoría de Canales
           </a>
         </div>
-        
+
+        {/* Badge de autoridad del fundador (Parte 6: junto al CTA, no como párrafo al final) */}
+        <div className="mt-8 inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.35s'}}>
+          <span className="text-2xl">🔥</span>
+          <span className="text-sm text-gray-300 font-medium">
+            <strong className="text-white">7 marcas virtuales</strong> operadas en una dark kitchen real en Madrid desde 2020 — esto no lo vendemos, lo hemos operado.
+          </span>
+        </div>
+
         {/* Prueba Social / SEO Ticker */}
         <div className="mt-16 pt-8 w-full border-t border-white/10 flex flex-col items-center animate-fade-in-up overflow-hidden" style={{animationDelay: '0.4s'}}>
            <p className="text-gray-400 text-sm font-medium mb-8">
