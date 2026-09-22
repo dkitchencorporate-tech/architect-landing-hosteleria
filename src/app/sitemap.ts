@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { ruta: '/base-operativa', prioridad: 0.9, frecuencia: 'weekly' },
     { ruta: '/dark-kitchen', prioridad: 0.8, frecuencia: 'weekly' },
     { ruta: '/marcas', prioridad: 0.7, frecuencia: 'weekly' },
+    { ruta: '/casos-de-exito', prioridad: 0.8, frecuencia: 'weekly' },
     { ruta: '/faq', prioridad: 0.6, frecuencia: 'monthly' },
     { ruta: '/demo/carta', prioridad: 0.5, frecuencia: 'monthly' },
     { ruta: '/privacy', prioridad: 0.2, frecuencia: 'yearly' },
