@@ -23,11 +23,13 @@ function CampoContrasena({
   label,
   valor,
   onChange,
+  error,
 }: {
   id: string;
   label: string;
   valor: string;
   onChange: (v: string) => void;
+  error?: string | null;
 }) {
   const [visible, setVisible] = useState(false);
 
@@ -44,7 +46,12 @@ function CampoContrasena({
           onChange={(e) => onChange(e.target.value)}
           minLength={8}
           required
-          className="w-full border-2 border-gray-200 rounded-xl px-4 py-3 pr-12 focus:border-[#D9531E] outline-none"
+          aria-invalid={!!error}
+          className={`w-full border-2 rounded-xl px-4 py-3 pr-12 outline-none transition-colors ${
+            error
+              ? 'border-red-400 focus:border-red-500'
+              : 'border-gray-200 focus:border-[#D9531E]'
+          }`}
         />
         <button
           type="button"
@@ -65,6 +72,15 @@ function CampoContrasena({
           )}
         </button>
       </div>
+      {error && (
+        <p className="mt-1.5 text-sm text-red-600 font-medium flex items-center gap-1">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="shrink-0">
+            <circle cx="12" cy="12" r="10" fillOpacity="0.15" />
+            <path d="M12 7v6M12 16.5v.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
+          </svg>
+          {error}
+        </p>
+      )}
     </div>
   );
 }
@@ -75,11 +91,18 @@ export default function FormularioNuevaContrasena() {
 
   const [contrasena, setContrasena] = useState('');
   const [confirmacion, setConfirmacion] = useState('');
+  const [tocoConfirmacion, setTocoConfirmacion] = useState(false);
   const [enviando, setEnviando] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [errorGeneral, setErrorGeneral] = useState<string | null>(null);
   const [hecho, setHecho] = useState(false);
 
   const fortaleza = useMemo(() => calcularFortaleza(contrasena), [contrasena]);
+
+  // Se calcula en cada tecla, no solo al enviar — así el campo se marca en
+  // rojo en cuanto deja de coincidir, en vez de que el aviso solo aparezca
+  // después de pulsar "Fijar contraseña".
+  const noCoinciden = tocoConfirmacion && confirmacion.length > 0 && contrasena !== confirmacion;
+  const erroCorta = contrasena.length > 0 && contrasena.length < 8;
 
   if (!token) {
     return (
@@ -101,14 +124,13 @@ export default function FormularioNuevaContrasena() {
 
   async function enviar(e: React.FormEvent) {
     e.preventDefault();
-    setError(null);
+    setErrorGeneral(null);
+    setTocoConfirmacion(true);
 
     if (contrasena.length < 8) {
-      setError('La contraseña debe tener al menos 8 caracteres.');
       return;
     }
     if (contrasena !== confirmacion) {
-      setError('Las dos contraseñas no coinciden.');
       return;
     }
 
@@ -123,7 +145,7 @@ export default function FormularioNuevaContrasena() {
       if (!respuesta.ok) throw new Error(datos?.error ?? 'No se pudo fijar la contraseña.');
       setHecho(true);
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'No se pudo fijar la contraseña.');
+      setErrorGeneral(e instanceof Error ? e.message : 'No se pudo fijar la contraseña.');
     } finally {
       setEnviando(false);
     }
@@ -132,8 +154,14 @@ export default function FormularioNuevaContrasena() {
   return (
     <form onSubmit={enviar} className="space-y-4">
       <div>
-        <CampoContrasena id="contrasena" label="Nueva contraseña" valor={contrasena} onChange={setContrasena} />
-        {contrasena.length > 0 && (
+        <CampoContrasena
+          id="contrasena"
+          label="Nueva contraseña"
+          valor={contrasena}
+          onChange={setContrasena}
+          error={erroCorta ? 'Necesita al menos 8 caracteres.' : null}
+        />
+        {contrasena.length > 0 && !erroCorta && (
           <div className="mt-2">
             <div className="flex gap-1">
               {[1, 2, 3].map((i) => (
@@ -154,9 +182,18 @@ export default function FormularioNuevaContrasena() {
         )}
       </div>
 
-      <CampoContrasena id="confirmacion" label="Repite la contraseña" valor={confirmacion} onChange={setConfirmacion} />
+      <CampoContrasena
+        id="confirmacion"
+        label="Repite la contraseña"
+        valor={confirmacion}
+        onChange={(v) => {
+          setConfirmacion(v);
+          setTocoConfirmacion(true);
+        }}
+        error={noCoinciden ? 'No coincide con la contraseña de arriba.' : null}
+      />
 
-      {error && <p className="text-red-600 text-sm">{error}</p>}
+      {errorGeneral && <p className="text-red-600 text-sm">{errorGeneral}</p>}
       <button
         type="submit"
         disabled={enviando}
