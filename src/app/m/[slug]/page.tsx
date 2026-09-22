@@ -50,9 +50,10 @@ const euros = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const resultado = await obtenerCartaConRespaldo(params.slug);
+  const { slug } = await params;
+  const resultado = await obtenerCartaConRespaldo(slug);
   if (!resultado) return { title: 'Carta no disponible', robots: { index: false } };
   const { carta } = resultado;
 
@@ -70,8 +71,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function CartaPublica({ params }: { params: { slug: string } }) {
-  const resultado = await obtenerCartaConRespaldo(params.slug);
+export default async function CartaPublica({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const resultado = await obtenerCartaConRespaldo(slug);
   if (!resultado) notFound();
   const { carta, desdeRespaldo } = resultado;
 
