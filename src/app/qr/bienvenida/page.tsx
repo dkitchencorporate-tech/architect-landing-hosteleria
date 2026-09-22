@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function BienvenidaQr({
+export default async function BienvenidaQr({
   searchParams,
 }: {
-  searchParams: { email?: string; nombre?: string; restaurante?: string; auditoria?: string };
+  searchParams: Promise<{ email?: string; nombre?: string; restaurante?: string; auditoria?: string }>;
 }) {
-  const { email = '', nombre = '', restaurante = '', auditoria } = searchParams;
+  const { email = '', nombre = '', restaurante = '', auditoria } = await searchParams;
 
   return (
     <div className="min-h-screen bg-[#FDFCF8] flex items-center justify-center px-6 py-24">
