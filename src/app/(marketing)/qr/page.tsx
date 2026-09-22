@@ -8,7 +8,7 @@ import SiguientePeldano from '@/components/sections/SiguientePeldano';
 export const metadata: Metadata = {
   title: 'QR Menú | DKitchen',
   description:
-    'Carta digital con QR estable: imprime una vez y cambia tu carta las veces que quieras. Plan Básico 19€/mes o Ampliado 49€/mes, primer mes a 1€.',
+    'Carta digital con QR estable: imprime una vez y cambia tu carta las veces que quieras. Plan Básico 9€/mes o Ampliado 25€/mes, primer mes a 1€.',
   alternates: { canonical: 'https://dkitchencorporate.es/qr' },
 };
 
@@ -42,7 +42,7 @@ export default function PaginaQr() {
         preguntas={[
           {
             pregunta: '¿Qué pasa después del primer mes a 1€?',
-            respuesta: 'Se cobra automáticamente el plan completo (19€ o 49€/mes) a la misma tarjeta. Puedes cancelar antes desde tu panel si no quieres continuar.',
+            respuesta: 'Se cobra automáticamente el plan completo (9€ o 25€/mes) a la misma tarjeta. Puedes cancelar antes desde tu panel si no quieres continuar.',
           },
           {
             pregunta: '¿Puedo cambiar de plan luego?',

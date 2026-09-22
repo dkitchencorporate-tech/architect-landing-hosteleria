@@ -33,7 +33,9 @@ export const QR_MENU = {
     basico: {
       id: 'basico',
       nombre: 'Básico',
-      mensual: 19,
+      // 9€/mes — revisado en PARTE 11 (análisis competitivo PARTE 10: banda real
+      // de mercado en QR digital 4-12€/mes). Sustituye a los 19€ originales.
+      mensual: 9,
       topeProductos: 50,
       plantillas: 3,
       personalizacionQr: false,
@@ -43,18 +45,30 @@ export const QR_MENU = {
     ampliado: {
       id: 'ampliado',
       nombre: 'Ampliado',
-      mensual: 49,
+      // 25€/mes — revisado en PARTE 11, sustituye a los 49€ originales.
+      mensual: 25,
       topeProductos: 150,
       plantillas: 3,
       personalizacionQr: true,
       promocionesVisibles: true,
       llamarCamarero: true,
+      // CONFIRMADO en PARTE 11: absorbidos sin coste adicional dentro de los
+      // 25€/mes — la antigua tarifa puente de +10€ (59€/mes total, ver
+      // motorReservas más abajo) queda retirada.
+      sincronizacionGoogleBusiness: true,
+      motorReservasIncluido: true,
+      botonResenas: true,
     },
   },
-  /** Mecanismo puente del marco de ciclo de vida. Se activa como upsell, no desde el lanzamiento. */
+  /**
+   * Histórico — RETIRADO en PARTE 11: esta tarifa puente (+10€ sobre Ampliado,
+   * 59€/mes total) ya no existe. El motor de reservas, la sincronización con
+   * Google Business y el botón de reseñas van incluidos en Ampliado sin coste
+   * adicional (ver `planes.ampliado` arriba). Se conserva el campo para no
+   * romper importaciones existentes, pero no debe usarse en copy ni en cobro.
+   */
   motorReservas: {
-    suplemento: 10,
-    totalSobreAmpliado: 59,
+    retirado: true,
   },
 } as const;
 
@@ -104,9 +118,15 @@ export const EXPERIENCE = {
 // ─────────────────────────────────────────────────────────────
 
 /** Sin cifra cerrada. No publicar precio hasta que Alex lo fije. */
+/**
+ * CONFIRMADO en PARTE 8, Sección 3 (citado en PARTE 12/14): 297€ de ancla,
+ * 47€ de oferta especial — producto 1 a 1 con reunión, no automatizado.
+ * Sustituye el "sin definir" que traía esta constante.
+ */
 export const AUDITORIA_CANALES = {
-  precio: null,
-  publicable: false,
+  precioAncla: 297,
+  precioOferta: 47,
+  publicable: true,
 } as const;
 
 // ─────────────────────────────────────────────────────────────

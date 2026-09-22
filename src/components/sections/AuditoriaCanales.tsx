@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Hero3DLazy from '@/components/motion/Hero3DLazy';
+import { AUDITORIA_CANALES, formatPrecio } from '@/lib/pricing-config';
 
 const WHATSAPP_AUDITORIA_CANALES =
-  'https://wa.me/34622652659?text=Hola,%20quiero%20pedir%20presupuesto%20para%20la%20Auditor%C3%ADa%20de%20canales%20externos.';
+  'https://wa.me/34622652659?text=Hola,%20quiero%20reservar%20mi%20Auditor%C3%ADa%20de%20canales%20externos.';
 
 const PASOS = [
   {
@@ -62,16 +63,25 @@ export default function AuditoriaCanales() {
             ))}
           </div>
 
-          <p className="text-center text-sm text-gray-400 mb-10">
+          <p className="text-center text-sm text-gray-400 mb-16">
             Distinta de la Auditoría de Escandallos y Rentabilidad (esa audita costes de carta, no presencia digital).
           </p>
 
-          <div className="text-center">
+          {/* PRICING-BLOCK (Parte 6, Sección 5; precio confirmado en Parte 8,
+              Sección 3): producto 1 a 1 con reunión, no automatizado — el
+              precio se muestra, la reserva sigue siendo por contacto directo. */}
+          <div className="max-w-md mx-auto bg-white border-2 border-[#D9531E] rounded-3xl p-8 text-center shadow-xl">
+            <p className="text-xs font-black uppercase tracking-widest text-gray-400 mb-3">Pago único · sin garantía de resultado</p>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <span className="text-2xl text-gray-400 line-through">{formatPrecio(AUDITORIA_CANALES.precioAncla)}</span>
+              <span className="text-5xl font-black text-gray-900">{formatPrecio(AUDITORIA_CANALES.precioOferta)}</span>
+            </div>
+            <p className="text-gray-600 mb-8">Oferta especial de lanzamiento — producto 1 a 1, con reunión incluida.</p>
             <a
               href={WHATSAPP_AUDITORIA_CANALES}
-              className="inline-flex bg-[#D9531E] text-white px-8 py-4 rounded-full font-black text-lg hover:bg-orange-600 transition-all shadow-xl hover:shadow-orange-500/30 hover:-translate-y-1"
+              className="inline-flex w-full justify-center bg-[#D9531E] text-white px-8 py-4 rounded-full font-black text-lg hover:bg-orange-600 transition-all shadow-lg"
             >
-              Pedir presupuesto
+              Reservar mi Auditoría
             </a>
           </div>
 

@@ -45,7 +45,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl md:text-4xl font-black mb-2 group-hover:text-[#D9531E] transition-colors">QR Menú</h3>
                 <p className="text-gray-600 text-base md:text-lg max-w-xl">
-                  La puerta de entrada: carta digital con checkout propio, desde 19€/mes. Imprime una vez, cambia tu carta las veces que quieras.
+                  La puerta de entrada: carta digital con checkout propio, desde 9€/mes. Imprime una vez, cambia tu carta las veces que quieras.
                 </p>
               </div>
               <div className="shrink-0 text-[#D9531E] font-black text-lg group-hover:translate-x-1 transition-transform">
