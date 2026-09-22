@@ -1,0 +1,51 @@
+'use client';
+
+import type { EscaneosPorDia } from '@/lib/escaneos-cliente';
+
+export default function MisEscaneos({
+  escaneosMes,
+  escaneos30d,
+}: {
+  escaneosMes: number;
+  escaneos30d: EscaneosPorDia[];
+}) {
+  const maximo = Math.max(1, ...escaneos30d.map((d) => d.total));
+  const mapa = new Map(escaneos30d.map((d) => [d.fecha, d.total]));
+
+  const dias: { fecha: string; total: number }[] = [];
+  for (let i = 29; i >= 0; i--) {
+    const fecha = new Date();
+    fecha.setDate(fecha.getDate() - i);
+    const clave = fecha.toISOString().slice(0, 10);
+    dias.push({ fecha: clave, total: mapa.get(clave) ?? 0 });
+  }
+
+  return (
+    <div className="space-y-8">
+      <h2 className="text-xl font-bold">Mis Escaneos</h2>
+
+      <div className="bg-[#1c140b] border border-white/10 rounded-2xl p-6">
+        <p className="text-white/50 text-sm">Este mes</p>
+        <p className="text-4xl font-black text-[#D9531E] mt-1">{escaneosMes}</p>
+        <p className="text-white/40 text-xs mt-1">
+          Cuenta cada vez que alguien escanea tu QR — el umbral que usamos para saber si conviene subir
+          de plan es 600/mes sostenido.
+        </p>
+      </div>
+
+      <div className="bg-[#1c140b] border border-white/10 rounded-2xl p-6">
+        <p className="text-white/50 text-sm mb-4">Últimos 30 días</p>
+        <div className="flex items-end gap-0.5 h-32">
+          {dias.map((d) => (
+            <div
+              key={d.fecha}
+              title={`${d.fecha}: ${d.total}`}
+              className="flex-1 bg-[#D9531E] rounded-t-sm min-h-[2px]"
+              style={{ height: `${Math.max(2, (d.total / maximo) * 100)}%` }}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
