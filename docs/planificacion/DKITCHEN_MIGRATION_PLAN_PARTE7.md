@@ -50,6 +50,8 @@ El sitio pasa de single-page-scroll a multi-página con navegación fija (Parte 
 
   **Requisito nuevo, CONFIRMADO en la Parte 11 — bloque SALTO-CUÁNTICO:** los elementos 3D de `/qr` y `/base-operativa` (nombre público "Núcleo Operativo", ver Parte 6 Sección 6) no se construyen como dos escenas aisladas — deben compartir sistema de coordenadas/escala desde el principio, porque la Parte 6, Sección 3, especifica una transición en scroll donde la tarjeta QR flotante de `/qr` se transforma directamente en el dispositivo/pantalla de Núcleo Operativo (interpolación de geometría o cross-fade entre ambas escenas). Construir estas dos piezas por separado y adaptarlas después es más caro que coordinarlas desde el diseño inicial de la escena — el agente de código debe tratarlas como un único sistema con dos estados, no como dos componentes independientes.
 
+  > **CORRECCIÓN aplicada 2026-09-22 (ver Parte 15):** esto NO es lo que se construyó, y quedó aceptado así por Alex. `src/components/motion/Hero3D.tsx` implementa **dos escenas independientes** (una instancia por página, `/qr` y `/base-operativa`), cada una autosuficiente, corriendo su propio bucle entre el estado "carta QR" y el estado "pantalla de Núcleo Operativo", con salto de escala en el cruce y énfasis de tiempo propio por página — no un sistema de coordenadas compartido ni interpolación de geometría entre dos escenas. Verificado por auditoría de código (2026-09-22) contra `claude/github-repository-access-1cf0ss`. Es más simple de mantener que lo especificado aquí originalmente; se deja este párrafo como registro de la especificación original, no como instrucción vigente.
+
 ### 2.4 Transiciones entre páginas
 
 - **Mecanismo:** `AnimatePresence` de Framer Motion sobre el App Router de Next.js.
