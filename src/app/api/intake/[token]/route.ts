@@ -13,7 +13,7 @@ const VENTANA_SEGUNDOS = 10 * 60;
  * Núcleo Operativo/Dark Kitchen Ruta B — así que se valida siempre dentro
  * de `dk.guardar_intake` (0013), nunca confiando en lo que diga esta ruta.
  */
-export async function POST(request: Request, { params }: { params: { token: string } }) {
+export async function POST(request: Request, { params }: { params: Promise<{ token: string }> }) {
   try {
     const clave = claveDeLimite('intake', ipDeLaPeticion(request));
     if (await limiteSuperado(clave, LIMITE_POR_IP, VENTANA_SEGUNDOS)) {
@@ -26,7 +26,7 @@ export async function POST(request: Request, { params }: { params: { token: stri
     console.error('No se pudo comprobar el freno de frecuencia:', error);
   }
 
-  const token = params.token;
+  const { token } = await params;
   if (!token || token.length > 200) {
     return NextResponse.json({ error: 'Enlace no válido.' }, { status: 400 });
   }
@@ -51,8 +51,9 @@ export async function POST(request: Request, { params }: { params: { token: stri
   }
 }
 
-export async function GET(_request: Request, { params }: { params: { token: string } }) {
-  const pedido = await pedidoPorToken(params.token).catch(() => null);
+export async function GET(_request: Request, { params }: { params: Promise<{ token: string }> }) {
+  const { token } = await params;
+  const pedido = await pedidoPorToken(token).catch(() => null);
   if (!pedido) return NextResponse.json({ error: 'Enlace no válido.' }, { status: 404 });
   return NextResponse.json({
     producto: pedido.producto,
