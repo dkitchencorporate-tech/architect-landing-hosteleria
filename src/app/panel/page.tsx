@@ -10,48 +10,68 @@ import PanelShell from '@/components/panel/PanelShell';
 export const dynamic = 'force-dynamic';
 
 export default async function Panel() {
-  const jwt = await obtenerJwtDeSesion();
-  const identidad = await identidadActual();
+  let jwt: string | null = null;
+  let identidad: { id: string; nombre: string; email: string } | null = null;
+  try {
+    jwt = await obtenerJwtDeSesion();
+    identidad = await identidadActual();
+  } catch (error) {
+    const mensaje = error instanceof Error ? `${error.name}: ${error.message}\n${error.stack}` : String(error);
+    return (
+      <pre style={{ color: 'red', background: 'black', padding: 20, whiteSpace: 'pre-wrap', fontSize: 12 }}>
+        FASE 1 (sesion): {mensaje}
+      </pre>
+    );
+  }
 
   if (!jwt || !identidad) {
     redirect('/panel/iniciar-sesion');
   }
 
-  const restaurante = await obtenerMiRestaurante(jwt);
+  try {
+    const restaurante = await obtenerMiRestaurante(jwt);
 
-  if (!restaurante) {
-    return (
-      <div className="min-h-screen bg-[#171008] flex items-center justify-center px-6 text-center">
-        <div className="max-w-md">
-          <h1 className="text-xl font-bold text-white mb-2">Todavía no tienes un restaurante activo</h1>
-          <p className="text-white/50 text-sm">
-            Si acabas de pagar, espera unos minutos a que se aprovisione tu cuenta. Si el problema
-            continúa, escríbenos por WhatsApp.
-          </p>
+    if (!restaurante) {
+      return (
+        <div className="min-h-screen bg-[#171008] flex items-center justify-center px-6 text-center">
+          <div className="max-w-md">
+            <h1 className="text-xl font-bold text-white mb-2">Todavía no tienes un restaurante activo</h1>
+            <p className="text-white/50 text-sm">
+              Si acabas de pagar, espera unos minutos a que se aprovisione tu cuenta. Si el problema
+              continúa, escríbenos por WhatsApp.
+            </p>
+          </div>
         </div>
-      </div>
+      );
+    }
+
+    const [codigoQr, carta, escaneosMes, escaneos30d, solicitudesQr, tickets] = await Promise.all([
+      obtenerCodigoQr(jwt, restaurante.id),
+      listarMiCarta(jwt, restaurante.id),
+      escaneosDelMes(jwt, restaurante.id),
+      escaneosUltimos30Dias(jwt, restaurante.id),
+      listarMisSolicitudesQrFisico(jwt, restaurante.id),
+      listarMisTickets(jwt, restaurante.id),
+    ]);
+
+    return (
+      <PanelShell
+        identidad={identidad}
+        restaurante={restaurante}
+        codigoQr={codigoQr}
+        carta={carta}
+        escaneosMes={escaneosMes}
+        escaneos30d={escaneos30d}
+        solicitudesQr={solicitudesQr}
+        tickets={tickets}
+      />
+    );
+  } catch (error) {
+    const mensaje = error instanceof Error ? `${error.name}: ${error.message}\n${error.stack}` : String(error);
+    return (
+      <pre style={{ color: 'red', background: 'black', padding: 20, whiteSpace: 'pre-wrap', fontSize: 12 }}>
+        FASE 2 (datos): {mensaje}
+      </pre>
     );
   }
-
-  const [codigoQr, carta, escaneosMes, escaneos30d, solicitudesQr, tickets] = await Promise.all([
-    obtenerCodigoQr(jwt, restaurante.id),
-    listarMiCarta(jwt, restaurante.id),
-    escaneosDelMes(jwt, restaurante.id),
-    escaneosUltimos30Dias(jwt, restaurante.id),
-    listarMisSolicitudesQrFisico(jwt, restaurante.id),
-    listarMisTickets(jwt, restaurante.id),
-  ]);
-
-  return (
-    <PanelShell
-      identidad={identidad}
-      restaurante={restaurante}
-      codigoQr={codigoQr}
-      carta={carta}
-      escaneosMes={escaneosMes}
-      escaneos30d={escaneos30d}
-      solicitudesQr={solicitudesQr}
-      tickets={tickets}
-    />
-  );
 }
