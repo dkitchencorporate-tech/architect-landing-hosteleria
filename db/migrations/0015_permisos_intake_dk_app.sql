@@ -1,24 +1,21 @@
--- 0015 · Permisos de dk_app sobre el intake de Nivel B (Parte 8, Sección 5-bis)
+-- 0015 · CORREGIDA 2026-09-22 — esta migracion quedo revertida, ver abajo
 --
--- MOTIVO: auditoría del 22/09/2026 encontró que dk_app (el rol de conexión
--- de la app principal, DK_DATABASE_URL) no tenía forma de ejecutar
--- dk.pedido_por_token() ni dk.guardar_intake() -- ninguna de las dos estaba
--- concedida a dk_app ni a dk_anon/dk_auth (de los que dk_app es miembro).
--- El endpoint /api/intake/[token] (src/app/api/intake/[token]/route.ts)
--- habría fallado con "permission denied" en cuanto un cliente real hubiera
--- llegado a usarlo -- la Fase 5 estaba construida en código pero no
--- alcanzable en producción.
+-- Version original (aplicada y luego revertida el mismo dia): concedia
+-- EXECUTE sobre dk.pedido_por_token(text) y dk.guardar_intake(text, jsonb)
+-- a dk_app, basandose en la suposicion de que /api/intake/[token]
+-- conectaba con DK_DATABASE_URL (dk_app).
 --
--- dk_webhook ya llegaba a estas funciones por su membresía en
--- dk_aprovisionamiento (0013) -- no necesita ningún cambio.
+-- Esa suposicion era incorrecta: src/lib/pedidos-nivel-b.ts usa
+-- comoAprovisionamiento() (src/lib/db.ts), que conecta con
+-- DK_WEBHOOK_DATABASE_URL (dk_webhook) y hace SET LOCAL ROLE
+-- dk_aprovisionamiento -- rol que YA tenia EXECUTE sobre ambas funciones
+-- desde 0013. No existia ningun hueco de permisos en la Fase 5 -- el
+-- diagnostico de esta migracion fue un error, no un fix real.
 --
--- dk.limite_superado() ya era alcanzable por dk_app vía su membresía en
--- dk_anon/dk_auth (0007/0008) -- tampoco necesita cambio.
+-- Revertido en la misma sesion:
+--   REVOKE EXECUTE ON FUNCTION dk.pedido_por_token(text) FROM dk_app;
+--   REVOKE EXECUTE ON FUNCTION dk.guardar_intake(text, jsonb) FROM dk_app;
 --
--- Se concede EXECUTE puntual sobre exactamente las dos funciones que la
--- ruta de intake necesita -- nunca acceso directo a las tablas
--- (pedidos_nivel_b, intake_formularios), que siguen sin GRANT directo a
--- ningún rol de aplicación, tal como especifica 0013.
-
-GRANT EXECUTE ON FUNCTION dk.pedido_por_token(text) TO dk_app;
-GRANT EXECUTE ON FUNCTION dk.guardar_intake(text, jsonb) TO dk_app;
+-- Se deja este archivo como registro honesto del error y su correccion, en
+-- vez de borrarlo -- coherente con el resto del proyecto (Parte 15 del plan,
+-- seccion de correcciones documentadas).
