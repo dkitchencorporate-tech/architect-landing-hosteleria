@@ -214,7 +214,7 @@ export default function ExitIntent() {
               onClick={handleOpenCalendly}
               className="w-full text-gray-500 font-bold hover:text-[#D9531E] transition-colors text-xs sm:text-sm py-2 underline decoration-transparent hover:decoration-[#D9531E] underline-offset-4"
             >
-              O leer más detalles sobre la Base Operativa
+              O leer más detalles sobre Núcleo Operativo
             </button>
           </div>
 

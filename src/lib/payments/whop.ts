@@ -1,6 +1,6 @@
 import 'server-only';
-import { QR_MENU } from '@/lib/pricing-config';
-import type { DatosCheckoutQr } from './tipos';
+import { QR_MENU, AUDITORIA_CANALES } from '@/lib/pricing-config';
+import type { DatosCheckoutQr, DatosCheckoutAuditoria } from './tipos';
 
 /**
  * Implementación contra la API real de Whop (docs.whop.com, verificado el
@@ -55,14 +55,79 @@ export async function crearCheckoutQr(datos: DatosCheckoutQr): Promise<{ url: st
     },
     // Todo lo que el webhook necesita para aprovisionar viaja aquí — el
     // payload de payment.succeeded documentado no trae email ni nombre.
+    // `producto` distingue este pago del order-bump de Auditoría (Parte 8,
+    // Sección 3.1-b) en el mismo webhook.
     metadata: {
+      producto: 'qr-menu',
       plan: datos.plan,
       restauranteNombre: datos.restauranteNombre,
       slugBase: datos.slugBase,
       email: datos.email,
       nombreContacto: datos.nombreContacto,
     },
-    redirect_url: `${datos.origen}/qr/bienvenida`,
+    // Lleva el correo y el nombre a la pantalla de confirmación para que el
+    // order-bump de Auditoría (Sección 3.1-b) no le pida al cliente que los
+    // teclee otra vez — es nuestra propia URL, no algo que Whop nos imponga.
+    redirect_url: `${datos.origen}/qr/bienvenida?email=${encodeURIComponent(datos.email)}&nombre=${encodeURIComponent(datos.nombreContacto)}&restaurante=${encodeURIComponent(datos.restauranteNombre)}`,
+  };
+
+  const respuesta = await fetch(`${BASE}/checkout_configurations`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(cuerpo),
+  });
+
+  const json = await respuesta.json().catch(() => null);
+  if (!respuesta.ok) {
+    throw new Error(`Whop respondió ${respuesta.status}: ${json?.message ?? 'sin detalle'}`);
+  }
+
+  const datosRespuesta = json as RespuestaCheckoutConfiguration;
+  if (!datosRespuesta.purchase_url) {
+    throw new Error('Whop no devolvió purchase_url en la configuración de checkout.');
+  }
+
+  return { url: datosRespuesta.purchase_url };
+}
+
+/**
+ * Order-bump de Auditoría+Escandallo (Parte 8, Sección 3.1-b): pago único de
+ * 47€, sin renovación — a diferencia de `crearCheckoutQr`, `plan_type` es
+ * `one_time` y no lleva `renewal_price` ni `billing_period`.
+ *
+ * PENDIENTE DE VERIFICAR EN VIVO: la forma exacta de un plan `one_time` no
+ * se ha probado todavía contra la API real de Whop en este proyecto (el
+ * checkout de QR sí, Sección "Backend de checkout QR Menú" del historial) —
+ * antes del primer pago real, conviene repetir la misma prueba controlada
+ * que se hizo para QR (crear una configuración real, sin que nadie llegue a
+ * pagar, y comparar la respuesta con lo que aquí se asume).
+ */
+export async function crearCheckoutAuditoria(datos: DatosCheckoutAuditoria): Promise<{ url: string }> {
+  const apiKey = requerirEnv('WHOP_API_KEY');
+  const companyId = requerirEnv('WHOP_COMPANY_ID');
+
+  const cuerpo = {
+    mode: 'payment',
+    plan: {
+      company_id: companyId,
+      currency: 'eur',
+      plan_type: 'one_time',
+      initial_price: AUDITORIA_CANALES.precioOferta,
+      product: {
+        title: 'Auditoría de canales + Escandallo',
+        external_identifier: 'dk-auditoria-canales',
+      },
+    },
+    metadata: {
+      producto: 'auditoria',
+      email: datos.email,
+      nombreContacto: datos.nombreContacto,
+      restauranteNombre: datos.restauranteNombre ?? '',
+    },
+    redirect_url: `${datos.origen}/qr/bienvenida?auditoria=ok`,
   };
 
   const respuesta = await fetch(`${BASE}/checkout_configurations`, {

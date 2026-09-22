@@ -31,29 +31,137 @@ function GrupoConTilt({ children, intensidad = 0.35 }: { children: React.ReactNo
   return <group ref={grupo}>{children}</group>;
 }
 
-/** `/qr` — una carta/QR flotando con inclinación reactiva al cursor (Sección 2.3). */
-function EscenaQr() {
+/**
+ * Fase de la evolución "QR estático → PWA de Núcleo Operativo", en bucle.
+ * No es un morph disparado por scroll entre dos páginas (eso exigiría que
+ * ambos Hero3D compartieran una sola instancia) — cada página tiene su
+ * propia escena, contando la misma historia con distinto énfasis: `/qr`
+ * vive la mayor parte del bucle como carta y solo asoma brevemente lo que
+ * llega después; `/base-operativa` hace lo contrario. `dwellQr`/`dwellPwa`
+ * son la fracción del ciclo en cada extremo; el resto se reparte a partes
+ * iguales entre las dos transiciones.
+ */
+function useFaseEvolucion(dwellQr: number, dwellPwa: number, periodoSeg = 7) {
+  const fase = useRef(0);
+  const transicion = (1 - dwellQr - dwellPwa) / 2;
+
+  useFrame(({ clock }) => {
+    const t = (clock.getElapsedTime() % periodoSeg) / periodoSeg;
+    let f: number;
+    if (t < dwellQr) {
+      f = 0;
+    } else if (t < dwellQr + transicion) {
+      f = (t - dwellQr) / transicion;
+    } else if (t < dwellQr + transicion + dwellPwa) {
+      f = 1;
+    } else if (t < dwellQr + 2 * transicion + dwellPwa) {
+      f = 1 - (t - (dwellQr + transicion + dwellPwa)) / transicion;
+    } else {
+      f = 0;
+    }
+    // Suavizado (smoothstep) para que la transición no se sienta lineal/mecánica.
+    fase.current = f * f * (3 - 2 * f);
+  });
+
+  return fase;
+}
+
+/**
+ * Escena compartida por `/qr` y `/base-operativa` (Núcleo Operativo): un
+ * mismo panel que alterna entre "carta QR" (cuatro esquinas + recuadro
+ * blanco) y "pantalla de pedido en curso" (filas de menú + indicador que
+ * sube) — la evolución de un producto al otro, contada dentro de cada
+ * página por separado, nunca como una única instancia repartida entre dos
+ * rutas.
+ */
+function EscenaEvolucionQrPwa({ enfasis }: { enfasis: 'qr' | 'pwa' }) {
+  const dwellQr = enfasis === 'qr' ? 0.6 : 0.15;
+  const dwellPwa = enfasis === 'qr' ? 0.15 : 0.6;
+  const fase = useFaseEvolucion(dwellQr, dwellPwa);
+  const grupoPulso = useRef<THREE.Group>(null);
+  const indicador = useRef<THREE.Mesh>(null);
+  const cuadroQr = useRef<THREE.Mesh>(null);
+  const esquinas = useRef<THREE.Group>(null);
+  const pantalla = useRef<THREE.Mesh>(null);
+  const filas = useRef<THREE.Group>(null);
+
+  useFrame(({ clock }) => {
+    const f = fase.current;
+
+    // Pequeño "salto" de escala justo durante la transición, para que se
+    // sienta como una transformación puntual y no un simple fundido.
+    if (grupoPulso.current) {
+      const pulso = 1 + 0.05 * Math.sin(f * Math.PI);
+      grupoPulso.current.scale.setScalar(pulso);
+    }
+
+    const opacidad = (m: THREE.Mesh | null, valor: number) => {
+      if (!m) return;
+      const mat = m.material as THREE.MeshStandardMaterial;
+      mat.opacity = valor;
+    };
+    opacidad(cuadroQr.current, 1 - f);
+    if (esquinas.current) esquinas.current.children.forEach((c) => opacidad(c as THREE.Mesh, 1 - f));
+    opacidad(pantalla.current, f);
+    if (filas.current) filas.current.children.forEach((c) => opacidad(c as THREE.Mesh, f));
+
+    if (indicador.current) {
+      const t = (clock.getElapsedTime() % 4) / 4;
+      indicador.current.position.y = THREE.MathUtils.lerp(-0.7, 0.7, t);
+      indicador.current.scale.setScalar(f);
+    }
+  });
+
   return (
-    <GrupoConTilt intensidad={0.5}>
-      <Float speed={1.6} rotationIntensity={0.4} floatIntensity={0.8}>
-        <RoundedBox args={[2.2, 2.8, 0.12]} radius={0.15} smoothness={4}>
-          <meshStandardMaterial color="#171008" />
-        </RoundedBox>
-        <mesh position={[0, 0, 0.07]}>
-          <planeGeometry args={[1.5, 1.5]} />
-          <meshStandardMaterial color="#FDFCF8" />
-        </mesh>
-        {[-1, 1].map((x) =>
-          [-1, 1].map((y) => (
-            <mesh key={`${x}-${y}`} position={[x * 0.5, y * 0.5, 0.08]}>
-              <boxGeometry args={[0.35, 0.35, 0.02]} />
-              <meshStandardMaterial color="#171008" />
-            </mesh>
-          ))
-        )}
-      </Float>
+    <GrupoConTilt intensidad={enfasis === 'qr' ? 0.5 : 0.3}>
+      <group ref={grupoPulso}>
+        <Float speed={1.4} rotationIntensity={0.3} floatIntensity={0.7}>
+          <RoundedBox args={[2, 2.9, 0.14]} radius={0.18} smoothness={4}>
+            <meshStandardMaterial color="#171008" />
+          </RoundedBox>
+
+          {/* Estado QR: recuadro blanco + cuatro esquinas de posicionamiento. */}
+          <mesh ref={cuadroQr} position={[0, 0, 0.08]}>
+            <planeGeometry args={[1.4, 1.4]} />
+            <meshStandardMaterial color="#FDFCF8" transparent />
+          </mesh>
+          <group ref={esquinas}>
+            {[-1, 1].map((x) =>
+              [-1, 1].map((y) => (
+                <mesh key={`${x}-${y}`} position={[x * 0.47, y * 0.47, 0.09]}>
+                  <boxGeometry args={[0.32, 0.32, 0.02]} />
+                  <meshStandardMaterial color="#171008" transparent />
+                </mesh>
+              ))
+            )}
+          </group>
+
+          {/* Estado PWA: pantalla oscura + filas de menú + indicador de pedido. */}
+          <mesh ref={pantalla} position={[0, 0, 0.08]}>
+            <planeGeometry args={[1.5, 2.6]} />
+            <meshStandardMaterial color="#1f1f1f" transparent />
+          </mesh>
+          <group ref={filas}>
+            {[-0.7, 0, 0.7].map((y) => (
+              <mesh key={y} position={[0, y, 0.09]}>
+                <planeGeometry args={[1.2, 0.35]} />
+                <meshStandardMaterial color="#2a2a2a" transparent />
+              </mesh>
+            ))}
+          </group>
+          <mesh ref={indicador} position={[-0.55, -0.7, 0.11]}>
+            <circleGeometry args={[0.1, 24]} />
+            <meshStandardMaterial color={NARANJA} emissive={NARANJA} emissiveIntensity={0.6} transparent />
+          </mesh>
+        </Float>
+      </group>
     </GrupoConTilt>
   );
+}
+
+/** `/qr` — la carta vive la mayor parte del bucle; solo asoma brevemente el sistema completo en que se convierte. */
+function EscenaQr() {
+  return <EscenaEvolucionQrPwa enfasis="qr" />;
 }
 
 /** `/dark-kitchen` — cajas apilándose bajo una sola cocina (marcas apilables). */
@@ -110,38 +218,9 @@ function EscenaAuditoria() {
   );
 }
 
-/** `/base-operativa` — pantalla flotante con el flujo de pedido en bucle. */
+/** `/base-operativa` (Núcleo Operativo) — el sistema completo domina el bucle; solo asoma brevemente de dónde viene (la carta QR). */
 function EscenaBaseOperativa() {
-  const indicador = useRef<THREE.Mesh>(null);
-  useFrame(({ clock }) => {
-    if (!indicador.current) return;
-    const t = (clock.getElapsedTime() % 4) / 4; // 0→1 en bucle de 4s
-    indicador.current.position.y = THREE.MathUtils.lerp(-0.7, 0.7, t);
-  });
-
-  return (
-    <GrupoConTilt intensidad={0.3}>
-      <Float speed={1.2} rotationIntensity={0.25} floatIntensity={0.5}>
-        <RoundedBox args={[1.8, 3, 0.15]} radius={0.2} smoothness={4}>
-          <meshStandardMaterial color="#171008" />
-        </RoundedBox>
-        <mesh position={[0, 0, 0.09]}>
-          <planeGeometry args={[1.5, 2.6]} />
-          <meshStandardMaterial color="#1f1f1f" />
-        </mesh>
-        {[-0.7, 0, 0.7].map((y) => (
-          <mesh key={y} position={[0, y, 0.1]}>
-            <planeGeometry args={[1.2, 0.35]} />
-            <meshStandardMaterial color="#2a2a2a" />
-          </mesh>
-        ))}
-        <mesh ref={indicador} position={[-0.5, -0.7, 0.12]}>
-          <circleGeometry args={[0.1, 24]} />
-          <meshStandardMaterial color={NARANJA} emissive={NARANJA} emissiveIntensity={0.6} />
-        </mesh>
-      </Float>
-    </GrupoConTilt>
-  );
+  return <EscenaEvolucionQrPwa enfasis="pwa" />;
 }
 
 /** `/experience` — copa/plato del caso Alhambra, entrada tipo reveal. */

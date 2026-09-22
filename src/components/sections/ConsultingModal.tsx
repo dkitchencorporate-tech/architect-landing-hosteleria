@@ -67,7 +67,7 @@ export default function ConsultingModal({ isOpen, onClose }: ConsultingModalProp
     try {
       const payload = {
         ...formData,
-        source: 'Consulting Modal (Base Operativa)',
+        source: 'Consulting Modal (Núcleo Operativo)',
         answers: answers
       };
       
@@ -162,7 +162,7 @@ export default function ConsultingModal({ isOpen, onClose }: ConsultingModalProp
         </div>
         <div className="flex items-start gap-2 pt-2 bg-gray-50 p-3 rounded-lg border border-gray-100">
           <input required type="checkbox" id="consent" checked={formData.consent} onChange={e=>setFormData({...formData, consent: e.target.checked})} className="mt-1" />
-          <label htmlFor="consent" className="text-xs text-gray-600 leading-tight">Acepto la política de privacidad y autorizo el contacto para agendar la consultoría de la Base Operativa.</label>
+          <label htmlFor="consent" className="text-xs text-gray-600 leading-tight">Acepto la política de privacidad y autorizo el contacto para agendar la consultoría de Núcleo Operativo.</label>
         </div>
         <button 
           type="submit" 

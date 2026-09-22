@@ -32,11 +32,13 @@ export default function Footer() {
             <span>|</span>
             <Link href="/auditoria" className="hover:text-[#D9531E] transition-colors">Auditoría</Link>
             <span>|</span>
-            <Link href="/base-operativa" className="hover:text-[#D9531E] transition-colors">Base Operativa</Link>
+            <Link href="/base-operativa" className="hover:text-[#D9531E] transition-colors">Núcleo Operativo</Link>
             <span>|</span>
             <Link href="/dark-kitchen" className="hover:text-[#D9531E] transition-colors">Dark Kitchen</Link>
             <span>|</span>
             <Link href="/marcas" className="hover:text-[#D9531E] transition-colors">Marcas</Link>
+            <span>|</span>
+            <Link href="/casos-de-exito" className="hover:text-[#D9531E] transition-colors">Casos de éxito</Link>
             <span>|</span>
             <Link href="/faq" className="hover:text-[#D9531E] transition-colors">Preguntas</Link>
             <span>|</span>

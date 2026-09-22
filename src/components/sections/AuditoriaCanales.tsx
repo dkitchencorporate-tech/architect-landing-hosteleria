@@ -19,7 +19,7 @@ const PASOS = [
   {
     numero: '3',
     titulo: 'Siguiente paso natural',
-    texto: 'Si el diagnóstico revela que necesitas algo más serio que un parche, el paso natural es Base Operativa.',
+    texto: 'Si el diagnóstico revela que necesitas algo más serio que un parche, el paso natural es Núcleo Operativo.',
   },
 ];
 
@@ -64,7 +64,9 @@ export default function AuditoriaCanales() {
           </div>
 
           <p className="text-center text-sm text-gray-400 mb-16">
-            Distinta de la Auditoría de Escandallos y Rentabilidad (esa audita costes de carta, no presencia digital).
+            Incluye, además del diagnóstico de presencia digital, una capa de análisis de rentabilidad/escandallo de tu
+            carta con los datos que aportas al reservar — no es un informe automático aparte, es parte de la misma
+            reunión 1 a 1.
           </p>
 
           {/* PRICING-BLOCK (Parte 6, Sección 5; precio confirmado en Parte 8,
@@ -85,19 +87,19 @@ export default function AuditoriaCanales() {
             </a>
           </div>
 
-          {/* CTA-FINAL — puente visual explícito hacia Base Operativa (Parte 6,
+          {/* CTA-FINAL — puente visual explícito hacia Núcleo Operativo (Parte 6,
               Sección 5), no solo mencionado dentro del paso 3. */}
           <div className="mt-16 bg-[#FDFCF8] border border-orange-100 rounded-3xl p-8 text-center">
             <p className="text-sm font-black uppercase tracking-widest text-[#D9531E] mb-2">¿Y si hace falta más que un parche?</p>
             <p className="text-gray-700 text-lg mb-6">
-              Cuando el diagnóstico revela algo estructural, el siguiente paso es Base Operativa: la PWA completa
+              Cuando el diagnóstico revela algo estructural, el siguiente paso es Núcleo Operativo: la PWA completa
               como sistema operativo del negocio.
             </p>
             <Link
               href="/base-operativa"
               className="inline-flex items-center gap-2 text-gray-900 font-black hover:text-[#D9531E] transition-colors"
             >
-              Ver Base Operativa →
+              Ver Núcleo Operativo →
             </Link>
           </div>
         </div>

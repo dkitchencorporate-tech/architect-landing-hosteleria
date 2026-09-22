@@ -4,9 +4,9 @@ import TheTrojanHorse from '@/components/sections/TheTrojanHorse';
 import SiguientePeldano from '@/components/sections/SiguientePeldano';
 
 export const metadata: Metadata = {
-  title: 'Base Operativa | DKitchen',
+  title: 'Núcleo Operativo | DKitchen',
   description:
-    'Digitalización personalizada: la PWA completa como sistema operativo del negocio, con el Pack de Arranque incluido desde el primer día.',
+    'Núcleo Operativo: la PWA completa como sistema operativo del negocio, conectada a tu TPV y tu gestoría, con el Pack de Arranque incluido desde el primer día.',
   alternates: { canonical: 'https://dkitchencorporate.es/base-operativa' },
 };
 

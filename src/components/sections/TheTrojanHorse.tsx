@@ -21,9 +21,12 @@ export default function TheTrojanHorse() {
             🔥 FUNDACIÓN DIGITAL
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-gray-900 text-balance">
-            Moderniza tu local y dispara tu rentabilidad hoy.<br/>
-            <span className="text-[#D9531E]">Recupera el control de tu negocio.</span>
+            Núcleo Operativo: tu sistema, no una web más.<br/>
+            <span className="text-[#D9531E]">Conectado a tu TPV, sincronizado con tu gestoría.</span>
           </h2>
+          <p className="text-lg text-gray-500 font-bold -mt-2">
+            Moderniza tu local y dispara tu rentabilidad hoy. Recupera el control de tu negocio.
+          </p>
 
           {/* Elemento 3D del hero (Parte 7, Sección 2.3): pantalla flotante
               con el flujo de pedido en bucle. */}
@@ -79,7 +82,7 @@ export default function TheTrojanHorse() {
                 <span className="text-[#D9531E]">incluido en tu activación.</span>
               </h3>
               <p className="text-gray-800 text-xl max-w-4xl mx-auto font-medium leading-relaxed">
-                Nuestros clientes no empiezan desde cero. Activando hoy nuestra Base Operativa, te incluimos <strong className="bg-[#D9531E] text-white px-3 py-1 rounded-md mx-1 shadow-md">consultorías y activos premium</strong> que normalmente solo están al alcance de grandes cadenas. Queremos que la imagen de tu negocio brille con luz propia desde el primer día. Sin costes ocultos.
+                Nuestros clientes no empiezan desde cero. Activando hoy tu Núcleo Operativo, te incluimos <strong className="bg-[#D9531E] text-white px-3 py-1 rounded-md mx-1 shadow-md">consultorías y activos premium</strong> que normalmente solo están al alcance de grandes cadenas. Queremos que la imagen de tu negocio brille con luz propia desde el primer día. Sin costes ocultos.
               </p>
             </div>
 
@@ -145,7 +148,7 @@ export default function TheTrojanHorse() {
                   Tu modernización debe hacer ruido. Para quitarte el "síndrome de la página en blanco", te entregamos <strong>12 publicaciones profesionales</strong> (imágenes y textos persuasivos generados por IA). Solo tienes que copiar, pegar en tu Instagram y empezar a atraer miradas.
                 </p>
                 <div className="mt-auto border-t border-gray-100 pt-6">
-                  <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Valor de producciÃ³n de contenidos:</div>
+                  <div className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-1">Valor de producción de contenidos:</div>
                   <div className="flex items-center gap-4">
                     <span className="line-through decoration-red-500/50 decoration-4 text-gray-400 font-black text-3xl">250€</span>
                     <span className="text-[#D9531E] font-black text-4xl">GRATIS</span>
@@ -166,7 +169,7 @@ export default function TheTrojanHorse() {
             
             {/* Header del Servicio */}
             <div className="bg-[#D9531E] p-6 text-center">
-              <h3 className="text-3xl md:text-4xl font-black text-white mb-2">Base Operativa Digital</h3>
+              <h3 className="text-3xl md:text-4xl font-black text-white mb-2">Núcleo Operativo</h3>
               <p className="text-orange-100 font-bold text-lg">La infraestructura indispensable para recuperar el control de tu local.</p>
             </div>
             
@@ -176,7 +179,7 @@ export default function TheTrojanHorse() {
                   <span className="text-7xl font-black">700€</span>
                 </div>
                 <div className="inline-block bg-orange-50 text-[#D9531E] font-black px-4 py-2 rounded-full text-sm mt-2 border border-orange-200 shadow-sm">
-                  PAGO FRACCIONADO DISPONIBLE: 2 cuotas de 350€
+                  ¿Prefieres fraccionar? 2 cuotas de 375€ (750€ en total)
                 </div>
                 <p className="text-gray-600 font-medium mt-4 max-w-lg mx-auto text-lg">
                   Servicio <strong className="text-gray-900 font-black">100% Llave en Mano</strong>. Nosotros diseñamos, programamos y publicamos todo el ecosistema. Tú solo dedícate a atender mesas. Sin alquileres abusivos: una vez activado, el sistema es tuyo.
@@ -236,14 +239,20 @@ export default function TheTrojanHorse() {
               </div>
 
               <div className="flex flex-col items-center gap-4">
-                <button 
+                <a
+                  href="/casos-de-exito"
+                  className="text-sm text-gray-500 font-bold hover:text-[#D9531E] transition-colors underline decoration-transparent hover:decoration-[#D9531E] underline-offset-4"
+                >
+                  Ver negocios reales que ya lo usan →
+                </a>
+                <button
                   onClick={() => setIsModalOpen(true)}
                   className="w-full sm:w-auto bg-[#D9531E] text-white px-10 py-5 rounded-full font-black text-xl md:text-2xl hover:bg-orange-600 transition-colors shadow-[0_10px_30px_rgba(255,69,0,0.4)] hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(255,69,0,0.6)] flex items-center justify-center gap-3"
                 >
                   Agendar Consultoría y Activar
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                 </button>
-                <a href="https://wa.me/34622652659?text=Hola,%20tengo%20dudas%20urgentes%20sobre%20la%20Base%20Operativa." className="text-gray-500 font-bold hover:text-[#25D366] transition-colors underline decoration-transparent hover:decoration-[#25D366] underline-offset-4 text-sm mt-2">
+                <a href="https://wa.me/34622652659?text=Hola,%20tengo%20dudas%20urgentes%20sobre%20N%C3%BAcleo%20Operativo." className="text-gray-500 font-bold hover:text-[#25D366] transition-colors underline decoration-transparent hover:decoration-[#25D366] underline-offset-4 text-sm mt-2">
                   ¿Tienes dudas urgentes? Habla con un asesor por WhatsApp
                 </a>
               </div>

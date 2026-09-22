@@ -40,6 +40,13 @@ export default function PaginaDarkKitchen() {
       </section>
 
       <RutaSelectorDarkKitchen />
+
+      <section className="py-10 bg-[#FDFCF8] border-t border-gray-100 text-center">
+        <a href="/casos-de-exito" className="text-gray-700 font-black hover:text-[#D9531E] transition-colors">
+          Ver negocios reales que ya usan el sistema →
+        </a>
+      </section>
+
       <SiguientePeldano siguiente="marcas" />
     </div>
   );

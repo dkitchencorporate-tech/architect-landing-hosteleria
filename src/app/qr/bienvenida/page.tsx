@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import OrdenBumpAuditoria from '@/components/OrdenBumpAuditoria';
 
 export const metadata: Metadata = {
   title: 'Pago confirmado | DKitchen',
   robots: { index: false, follow: false },
 };
 
-export default function BienvenidaQr() {
+export default function BienvenidaQr({
+  searchParams,
+}: {
+  searchParams: { email?: string; nombre?: string; restaurante?: string; auditoria?: string };
+}) {
+  const { email = '', nombre = '', restaurante = '', auditoria } = searchParams;
+
   return (
     <div className="min-h-screen bg-[#FDFCF8] flex items-center justify-center px-6 py-24">
       <div className="max-w-lg w-full text-center">
@@ -35,6 +42,15 @@ export default function BienvenidaQr() {
             Volver al inicio
           </Link>
         </div>
+
+        {auditoria === 'ok' ? (
+          <div className="mt-10 bg-green-50 border-2 border-green-200 rounded-3xl p-6 text-center">
+            <p className="text-green-800 font-black">Auditoría reservada.</p>
+            <p className="text-green-700 text-sm mt-1">Te escribimos en breve para agendar tu reunión 1 a 1.</p>
+          </div>
+        ) : (
+          <OrdenBumpAuditoria email={email} nombreContacto={nombre} restauranteNombre={restaurante} />
+        )}
       </div>
     </div>
   );

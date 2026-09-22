@@ -77,7 +77,7 @@ export default function Home() {
               className="group rounded-2xl border-2 border-gray-100 p-6 hover:border-gray-900 hover:shadow-lg transition-all"
             >
               <div className="text-3xl mb-3">🏗️</div>
-              <h3 className="text-lg font-bold mb-1 group-hover:text-gray-900 transition-colors">Base Operativa</h3>
+              <h3 className="text-lg font-bold mb-1 group-hover:text-gray-900 transition-colors">Núcleo Operativo</h3>
               <p className="text-gray-600 text-sm">La PWA completa como sistema operativo de tu negocio.</p>
             </Link>
             <Link
@@ -87,6 +87,14 @@ export default function Home() {
               <div className="text-3xl mb-3">🔥</div>
               <h3 className="text-lg font-bold mb-1 group-hover:text-red-500 transition-colors">Dark Kitchen</h3>
               <p className="text-gray-600 text-sm">Exprime la capacidad ociosa de tus fogones con marcas virtuales.</p>
+            </Link>
+            <Link
+              href="/casos-de-exito"
+              className="group rounded-2xl border-2 border-gray-100 p-6 hover:border-green-500 hover:shadow-lg transition-all"
+            >
+              <div className="text-3xl mb-3">📍</div>
+              <h3 className="text-lg font-bold mb-1 group-hover:text-green-600 transition-colors">Casos de éxito</h3>
+              <p className="text-gray-600 text-sm">Negocios reales que ya usan el sistema, no una promesa.</p>
             </Link>
           </div>
         </div>

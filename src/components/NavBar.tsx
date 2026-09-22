@@ -19,8 +19,9 @@ const ENLACES = [
   { href: '/qr', etiqueta: 'QR' },
   { href: '/experience', etiqueta: 'Experience' },
   { href: '/auditoria', etiqueta: 'Auditoría' },
-  { href: '/base-operativa', etiqueta: 'Base Operativa' },
+  { href: '/base-operativa', etiqueta: 'Núcleo Operativo' },
   { href: '/dark-kitchen', etiqueta: 'Dark Kitchen' },
+  { href: '/casos-de-exito', etiqueta: 'Casos de éxito' },
   { href: '/faq', etiqueta: 'Preguntas' },
 ] as const;
 

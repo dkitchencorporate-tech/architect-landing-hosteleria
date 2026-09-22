@@ -6,6 +6,7 @@ import {
   registrarPagoRecuperado,
   registrarPagoFallido,
 } from '@/lib/payments/aprovisionar';
+import { enviarCorreoInterno, escaparHtml } from '@/lib/email';
 
 export const runtime = 'nodejs';
 
@@ -89,6 +90,35 @@ export async function POST(request: Request) {
     evento = JSON.parse(cuerpo);
   } catch {
     return NextResponse.json({ error: 'Cuerpo inválido' }, { status: 400 });
+  }
+
+  // Order-bump de Auditoría+Escandallo (Parte 8, Sección 3.1-b): pago único,
+  // sin cuenta ni restaurante que aprovisionar — nada que ver con el
+  // calendario de gracia/impago de abajo, que es exclusivo de la
+  // suscripción de QR Menú. Se resuelve aparte y no sigue el resto del flujo.
+  if (evento.data.metadata?.producto === 'auditoria') {
+    if (evento.type === 'payment.succeeded') {
+      const meta = evento.data.metadata;
+      try {
+        await enviarCorreoInterno(
+          `AUDITORÍA PAGADA (47€): ${meta.nombreContacto || meta.email}`,
+          `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h2 style="color: #D9531E;">Order-bump de Auditoría cobrado</h2>
+            <p>Alguien acaba de pagar la Auditoría+Escandallo (47€) justo después de activar su QR Menú.
+            Agenda la reunión 1 a 1 con estos datos:</p>
+            <p><strong>Nombre:</strong> ${escaparHtml(meta.nombreContacto)}</p>
+            <p><strong>Correo:</strong> ${escaparHtml(meta.email)}</p>
+            ${meta.restauranteNombre ? `<p><strong>Restaurante:</strong> ${escaparHtml(meta.restauranteNombre)}</p>` : ''}
+            <p><strong>Id de pago (Whop):</strong> ${escaparHtml(evento.data.id)}</p>
+          </div>`
+        );
+      } catch (error) {
+        // El pago ya entró — un fallo de correo no debe parecer un fallo del
+        // webhook ante Whop (evitaría reintentos que reenvíen el mismo aviso).
+        console.error('No se pudo enviar el aviso de Auditoría pagada:', error);
+      }
+    }
+    return NextResponse.json({ recibido: true });
   }
 
   // Gracia/impago propia (migración 0012): Whop cancela nativamente a los 5
