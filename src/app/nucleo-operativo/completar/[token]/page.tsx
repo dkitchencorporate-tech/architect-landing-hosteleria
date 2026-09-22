@@ -7,8 +7,9 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function CompletarNucleoOperativo({ params }: { params: { token: string } }) {
-  const pedido = await pedidoPorToken(params.token).catch(() => null);
+export default async function CompletarNucleoOperativo({ params }: { params: Promise<{ token: string }> }) {
+  const { token } = await params;
+  const pedido = await pedidoPorToken(token).catch(() => null);
 
   if (!pedido) {
     return (
@@ -25,7 +26,7 @@ export default async function CompletarNucleoOperativo({ params }: { params: { t
 
   return (
     <div className="min-h-screen bg-white">
-      <FormularioIntakeNivelB token={params.token} />
+      <FormularioIntakeNivelB token={token} />
     </div>
   );
 }
