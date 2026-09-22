@@ -8,6 +8,7 @@ import {
 } from '@/lib/payments/aprovisionar';
 import { enviarCorreoInterno, escaparHtml } from '@/lib/email';
 import { crearPedidoNivelB } from '@/lib/pedidos-nivel-b';
+import { crearMarcaRutaB } from '@/lib/marcas';
 import { dispararTuberiaPostPago } from '@/lib/tuberia-nivel-b';
 import { BASE_OPERATIVA } from '@/lib/pricing-config';
 
@@ -157,6 +158,56 @@ export async function POST(request: Request) {
         console.error(`No se pudo procesar el pago de Núcleo Operativo (evento ${evento.data.id}):`, error);
         return NextResponse.json({ error: 'Fallo procesando el pedido' }, { status: 500 });
       }
+    }
+    return NextResponse.json({ recibido: true });
+  }
+
+  // Dark Kitchen Ruta B (Parte 8, Sección 5): cliente que YA opera una
+  // cocina, añadiendo una marca virtual. El precio ya se cobró al orden
+  // correcto (Sección "Backend de checkout Dark Kitchen Ruta B" de whop.ts),
+  // pero `dk.crear_marca_ruta_b` (0016) recalcula orden y precio por su
+  // cuenta al guardar — es la fuente de verdad, no este webhook.
+  //
+  // SIMPLIFICACIÓN DEJADA POR ESCRITO: esto NO dispara la tubería común de
+  // contrato/factura (dispararTuberiaPostPago) — esa tubería está pensada
+  // para pedidos_nivel_b (clientes nuevos sin cuenta), y una marca de un
+  // cliente ya existente no encaja en ese modelo todavía. Por ahora solo se
+  // crea la fila en `marcas` y se avisa a Alex por correo para la
+  // "confirmación humana rápida antes de producción" que pide la Parte 8,
+  // Sección 5, punto 3 — ese aviso es el disparador manual, no automático.
+  if (evento.data.metadata?.producto === 'dark-kitchen-ruta-b') {
+    if (evento.type === 'payment.succeeded') {
+      const meta = evento.data.metadata;
+      try {
+        const marca = await crearMarcaRutaB(meta.restauranteId, meta.nombreMarca, evento.data.id);
+        await enviarCorreoInterno(
+          `DARK KITCHEN — nueva marca pagada: "${escaparHtml(marca.nombre)}"`,
+          `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+            <h2 style="color: #D9531E;">Nueva marca de Dark Kitchen (Ruta B) pagada</h2>
+            <p>Confirma que la cocina puede operar esto antes de disparar producción
+            (Parte 8, Sección 5, punto 3) — no es automático a propósito.</p>
+            <p><strong>Marca:</strong> ${escaparHtml(marca.nombre)} (orden ${marca.orden}, ${marca.precioDesarrolloCentimos / 100}€)</p>
+            <p><strong>Restaurante (id):</strong> ${escaparHtml(meta.restauranteId)}</p>
+            <p><strong>Contacto:</strong> ${escaparHtml(meta.nombreContacto)} — ${escaparHtml(meta.email)}</p>
+            <p><strong>Id de pago (Whop):</strong> ${escaparHtml(evento.data.id)}</p>
+          </div>`
+        );
+      } catch (error) {
+        console.error(`No se pudo procesar la marca de Dark Kitchen (evento ${evento.data.id}):`, error);
+        return NextResponse.json({ error: 'Fallo creando la marca' }, { status: 500 });
+      }
+    }
+    return NextResponse.json({ recibido: true });
+  }
+
+  // Cuota de mantenimiento de Núcleo Operativo (0017): nada que aprovisionar
+  // de nuevo, el restaurante ya opera desde la activación — solo se
+  // confirma que el cobro recurrente entró. Un fallo aquí queda para una
+  // futura Sección de gracia/impago propia de este producto (no construida
+  // todavía, es un ciclo de Whop distinto al de QR Menú).
+  if (evento.data.metadata?.producto === 'nucleo-operativo-mantenimiento') {
+    if (evento.type === 'payment.succeeded') {
+      console.log(`Mantenimiento de Núcleo Operativo cobrado: pedido ${evento.data.metadata?.pedidoId}.`);
     }
     return NextResponse.json({ recibido: true });
   }
