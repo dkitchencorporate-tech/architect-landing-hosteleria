@@ -1,37 +1,57 @@
-import { auth } from '@/lib/auth';
+import { redirect } from 'next/navigation';
+import { obtenerJwtDeSesion, identidadActual } from '@/lib/sesion';
+import { obtenerMiRestaurante, obtenerCodigoQr } from '@/lib/mi-restaurante';
+import { listarMiCarta } from '@/lib/menu-propietario';
+import { escaneosDelMes, escaneosUltimos30Dias } from '@/lib/escaneos-cliente';
+import { listarMisSolicitudesQrFisico } from '@/lib/solicitudes-qr-fisico';
+import { listarMisTickets } from '@/lib/tickets';
+import PanelShell from '@/components/panel/PanelShell';
 
-/** Server components que usan `auth` deben renderizarse de forma dinámica. */
 export const dynamic = 'force-dynamic';
 
-/**
- * Verificación mínima de que el login real funciona — el panel completo
- * (Mi Carta, Mi QR, Mis Escaneos, Mi Plan, Soporte) se construye en cuanto
- * esto quede confirmado en producción.
- */
 export default async function Panel() {
-  const { data: session } = await auth.getSession();
+  const jwt = await obtenerJwtDeSesion();
+  const identidad = await identidadActual();
 
-  if (!session?.user) {
+  if (!jwt || !identidad) {
+    redirect('/panel/iniciar-sesion');
+  }
+
+  const restaurante = await obtenerMiRestaurante(jwt);
+
+  if (!restaurante) {
     return (
       <div className="min-h-screen bg-[#171008] flex items-center justify-center px-6 text-center">
-        <div>
-          <h1 className="text-xl font-bold text-white mb-2">No has iniciado sesión</h1>
-          <a href="/panel/iniciar-sesion" className="text-[#D9531E] underline">
-            Ir a iniciar sesión
-          </a>
+        <div className="max-w-md">
+          <h1 className="text-xl font-bold text-white mb-2">Todavía no tienes un restaurante activo</h1>
+          <p className="text-white/50 text-sm">
+            Si acabas de pagar, espera unos minutos a que se aprovisione tu cuenta. Si el problema
+            continúa, escríbenos por WhatsApp.
+          </p>
         </div>
       </div>
     );
   }
 
+  const [codigoQr, carta, escaneosMes, escaneos30d, solicitudesQr, tickets] = await Promise.all([
+    obtenerCodigoQr(jwt, restaurante.id),
+    listarMiCarta(jwt, restaurante.id),
+    escaneosDelMes(jwt, restaurante.id),
+    escaneosUltimos30Dias(jwt, restaurante.id),
+    listarMisSolicitudesQrFisico(jwt, restaurante.id),
+    listarMisTickets(jwt, restaurante.id),
+  ]);
+
   return (
-    <div className="min-h-screen bg-[#171008] flex items-center justify-center px-6 text-center">
-      <div>
-        <h1 className="text-xl font-bold text-white mb-2">Sesión activa</h1>
-        <p className="text-white/60">
-          {session.user.name} — {session.user.email}
-        </p>
-      </div>
-    </div>
+    <PanelShell
+      identidad={identidad}
+      restaurante={restaurante}
+      codigoQr={codigoQr}
+      carta={carta}
+      escaneosMes={escaneosMes}
+      escaneos30d={escaneos30d}
+      solicitudesQr={solicitudesQr}
+      tickets={tickets}
+    />
   );
 }
