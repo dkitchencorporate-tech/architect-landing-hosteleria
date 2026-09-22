@@ -1,6 +1,11 @@
 import { NextResponse } from 'next/server';
 import { createHmac, timingSafeEqual } from 'node:crypto';
-import { aprovisionarClienteQr } from '@/lib/payments/aprovisionar';
+import {
+  aprovisionarClienteQr,
+  esClienteExistente,
+  registrarPagoRecuperado,
+  registrarPagoFallido,
+} from '@/lib/payments/aprovisionar';
 
 export const runtime = 'nodejs';
 
@@ -86,8 +91,34 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Cuerpo inválido' }, { status: 400 });
   }
 
+  // Gracia/impago propia (migración 0012): Whop cancela nativamente a los 5
+  // días, pero el calendario ya aprobado con el cliente es de 30 — un cobro
+  // fallido solo abre el ciclo de gracia en nuestra propia base de datos,
+  // nunca cancela nada por sí mismo.
+  if (evento.type === 'payment.failed') {
+    const miembroIdFallido = evento.data.member?.id;
+    if (miembroIdFallido) {
+      await registrarPagoFallido(miembroIdFallido);
+    }
+    return NextResponse.json({ recibido: true });
+  }
+
   if (evento.type !== 'payment.succeeded') {
     return NextResponse.json({ recibido: true });
+  }
+
+  const miembroId = evento.data.member?.id;
+  if (!miembroId) {
+    console.error(`Webhook de Whop: pago ${evento.data.id} sin member.id, no se procesa.`);
+    return NextResponse.json({ recibido: true });
+  }
+
+  // Cobro del mes 4 de un cliente que ya existe, no un alta nueva: solo
+  // cierra un ciclo de gracia si lo había, nunca vuelve a crear la cuenta de
+  // Neon Auth ni el restaurante (aprovisionarClienteQr es para el alta).
+  if (await esClienteExistente(miembroId)) {
+    await registrarPagoRecuperado(miembroId);
+    return NextResponse.json({ recibido: true, renovacion: true });
   }
 
   const meta = evento.data.metadata ?? {};
@@ -96,7 +127,6 @@ export async function POST(request: Request) {
   const slugBase = meta.slugBase;
   const nombreContacto = meta.nombreContacto;
   const email = meta.email;
-  const miembroId = evento.data.member?.id;
 
   if (plan !== 'basico' && plan !== 'ampliado') {
     console.error(`Webhook de Whop: pago ${evento.data.id} sin plan válido en metadata.`);

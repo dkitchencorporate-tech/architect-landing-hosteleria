@@ -27,6 +27,36 @@ export type ResultadoAprovisionamiento =
   | { ok: false; motivo: 'cuenta_neon_auth_fallo' }
   | { ok: false; motivo: 'db_fallo'; reintentable: true };
 
+/**
+ * true si ya existe un restaurante para este cliente del proveedor de pago —
+ * distingue el alta (primer payment.succeeded) de una renovación mensual
+ * (mismo cliente, cobro del mes 4), para no intentar crear una cuenta de
+ * Neon Auth duplicada en cada cobro recurrente.
+ */
+export async function esClienteExistente(referenciaCliente: string): Promise<boolean> {
+  return comoAprovisionamiento(async (c) => {
+    const { rows } = await c.query<{ existe: boolean }>(
+      `SELECT dk.es_cliente_existente($1) AS existe`,
+      [referenciaCliente]
+    );
+    return rows[0]?.existe ?? false;
+  });
+}
+
+/**
+ * Un cobro recurrente que sí entra cierra cualquier ciclo de gracia/impago
+ * abierto para ese cliente (0012) — se llama en vez de
+ * `aprovisionarClienteQr` cuando `esClienteExistente` ya dio true.
+ */
+export async function registrarPagoRecuperado(referenciaCliente: string): Promise<void> {
+  await comoAprovisionamiento((c) => c.query(`SELECT dk.registrar_pago_recuperado($1)`, [referenciaCliente]));
+}
+
+/** Un cobro recurrente fallido abre (o mantiene) el ciclo de gracia de 30 días (0012). */
+export async function registrarPagoFallido(referenciaCliente: string): Promise<void> {
+  await comoAprovisionamiento((c) => c.query(`SELECT dk.registrar_pago_fallido($1)`, [referenciaCliente]));
+}
+
 export async function aprovisionarClienteQr(datos: DatosPagoQr): Promise<ResultadoAprovisionamiento> {
   let identidadId: string;
   try {
