@@ -70,9 +70,10 @@ function sinCache<T extends NextResponse>(respuesta: T): T {
 
 export async function GET(
   peticion: Request,
-  { params }: { params: { codigo: string } }
+  { params }: { params: Promise<{ codigo: string }> }
 ) {
-  const codigo = params.codigo.toLowerCase();
+  const { codigo: codigoOriginal } = await params;
+  const codigo = codigoOriginal.toLowerCase();
   const origen = new URL(peticion.url).origin;
 
   if (!CODIGO_VALIDO.test(codigo)) {
