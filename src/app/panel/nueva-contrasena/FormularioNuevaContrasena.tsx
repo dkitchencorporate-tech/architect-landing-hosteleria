@@ -1,7 +1,9 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useState, useMemo, useEffect } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation';
+
+const SEGUNDOS_REDIRECCION = 4;
 
 function calcularFortaleza(contrasena: string): { nivel: 0 | 1 | 2 | 3; etiqueta: string; color: string } {
   if (!contrasena) return { nivel: 0, etiqueta: '', color: 'bg-gray-200' };
@@ -86,6 +88,7 @@ function CampoContrasena({
 }
 
 export default function FormularioNuevaContrasena() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const token = searchParams.get('token') ?? '';
 
@@ -95,8 +98,19 @@ export default function FormularioNuevaContrasena() {
   const [enviando, setEnviando] = useState(false);
   const [errorGeneral, setErrorGeneral] = useState<string | null>(null);
   const [hecho, setHecho] = useState(false);
+  const [segundosRestantes, setSegundosRestantes] = useState(SEGUNDOS_REDIRECCION);
 
   const fortaleza = useMemo(() => calcularFortaleza(contrasena), [contrasena]);
+
+  useEffect(() => {
+    if (!hecho) return;
+    if (segundosRestantes <= 0) {
+      router.push('/panel/iniciar-sesion');
+      return;
+    }
+    const temporizador = setTimeout(() => setSegundosRestantes((s) => s - 1), 1000);
+    return () => clearTimeout(temporizador);
+  }, [hecho, segundosRestantes, router]);
 
   // Se calcula en cada tecla, no solo al enviar — así el campo se marca en
   // rojo en cuanto deja de coincidir, en vez de que el aviso solo aparezca
@@ -117,7 +131,18 @@ export default function FormularioNuevaContrasena() {
     return (
       <div className="text-center bg-green-50 border border-green-200 rounded-xl p-6">
         <p className="text-green-700 font-bold mb-2">Contraseña fijada.</p>
-        <p className="text-gray-600 text-sm">Ya puedes iniciar sesión en tu panel con tu correo y esta contraseña.</p>
+        <p className="text-gray-600 text-sm mb-5">
+          Ya puedes iniciar sesión en tu panel con tu correo y esta contraseña.
+        </p>
+        <a
+          href="/panel/iniciar-sesion"
+          className="inline-block w-full bg-[#D9531E] text-white font-black py-3.5 rounded-full hover:bg-orange-600 transition-colors"
+        >
+          Iniciar sesión ahora
+        </a>
+        <p className="text-gray-400 text-xs mt-3">
+          Te llevamos automáticamente en {segundosRestantes}s…
+        </p>
       </div>
     );
   }
