@@ -1,6 +1,18 @@
 import 'server-only';
-import { QR_MENU, AUDITORIA_CANALES, BASE_OPERATIVA } from '@/lib/pricing-config';
-import type { DatosCheckoutQr, DatosCheckoutAuditoria, DatosCheckoutNucleoOperativo } from './tipos';
+import {
+  QR_MENU,
+  AUDITORIA_CANALES,
+  BASE_OPERATIVA,
+  precioDesarrolloRutaBCentimos,
+  mantenimientoNucleoOperativoCentimos,
+} from '@/lib/pricing-config';
+import type {
+  DatosCheckoutQr,
+  DatosCheckoutAuditoria,
+  DatosCheckoutNucleoOperativo,
+  DatosCheckoutDarkKitchenRutaB,
+  DatosCheckoutMantenimientoNucleoOperativo,
+} from './tipos';
 
 /**
  * Implementación contra la API real de Whop (docs.whop.com, verificado el
@@ -126,6 +138,131 @@ export async function crearCheckoutNucleoOperativo(datos: DatosCheckoutNucleoOpe
       restauranteNombre: datos.restauranteNombre,
     },
     redirect_url: `${datos.origen}/base-operativa/bienvenida`,
+  };
+
+  const respuesta = await fetch(`${BASE}/checkout_configurations`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(cuerpo),
+  });
+
+  const json = await respuesta.json().catch(() => null);
+  if (!respuesta.ok) {
+    throw new Error(`Whop respondió ${respuesta.status}: ${json?.message ?? 'sin detalle'}`);
+  }
+
+  const datosRespuesta = json as RespuestaCheckoutConfiguration;
+  if (!datosRespuesta.purchase_url) {
+    throw new Error('Whop no devolvió purchase_url en la configuración de checkout.');
+  }
+
+  return { url: datosRespuesta.purchase_url };
+}
+
+/**
+ * Dark Kitchen Ruta B (Parte 8, Sección 5): pago único de desarrollo de una
+ * marca nueva. El precio mostrado aquí (`precioDesarrolloRutaBCentimos`) es
+ * el mismo cálculo que hace `dk.crear_marca_ruta_b` (0016) al confirmar el
+ * pago — si alguna vez divergen (p. ej. dos altas casi simultáneas del mismo
+ * restaurante), la fila que se guarda en `marcas` es siempre la que la base
+ * de datos recalculó, nunca el importe cobrado aquí.
+ *
+ * La marca en sí NO se crea aquí — la crea el webhook tras
+ * `payment.succeeded`, igual que el resto de flujos de este archivo.
+ */
+export async function crearCheckoutDarkKitchenRutaB(
+  datos: DatosCheckoutDarkKitchenRutaB
+): Promise<{ url: string }> {
+  const apiKey = requerirEnv('WHOP_API_KEY');
+  const companyId = requerirEnv('WHOP_COMPANY_ID');
+
+  const precioCentimos = precioDesarrolloRutaBCentimos(datos.ordenMarca);
+
+  const cuerpo = {
+    mode: 'payment',
+    plan: {
+      company_id: companyId,
+      currency: 'eur',
+      plan_type: 'one_time',
+      initial_price: precioCentimos / 100,
+      product: {
+        title: `Dark Kitchen — Marca "${datos.nombreMarca}"`,
+        external_identifier: `dk-dark-kitchen-ruta-b-${datos.restauranteId}-${datos.ordenMarca}`,
+      },
+    },
+    metadata: {
+      producto: 'dark-kitchen-ruta-b',
+      restauranteId: datos.restauranteId,
+      nombreMarca: datos.nombreMarca,
+      email: datos.email,
+      nombreContacto: datos.nombreContacto,
+      restauranteNombre: datos.restauranteNombre,
+    },
+    redirect_url: `${datos.origen}/dark-kitchen/bienvenida?marca=${encodeURIComponent(datos.nombreMarca)}`,
+  };
+
+  const respuesta = await fetch(`${BASE}/checkout_configurations`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(cuerpo),
+  });
+
+  const json = await respuesta.json().catch(() => null);
+  if (!respuesta.ok) {
+    throw new Error(`Whop respondió ${respuesta.status}: ${json?.message ?? 'sin detalle'}`);
+  }
+
+  const datosRespuesta = json as RespuestaCheckoutConfiguration;
+  if (!datosRespuesta.purchase_url) {
+    throw new Error('Whop no devolvió purchase_url en la configuración de checkout.');
+  }
+
+  return { url: datosRespuesta.purchase_url };
+}
+
+/**
+ * Cuota de mantenimiento recurrente de Núcleo Operativo (Parte 8, Sección 6).
+ * Disparada únicamente por el cron de la Sección 0017 al cumplirse 60 días
+ * desde la activación — nunca por el cliente ni por la app en el momento del
+ * pago inicial. `plan_type: 'renewal'` sin `initial_price` distinto: aquí no
+ * hay "primer mes simbólico", el cobro es 69€ desde el primer ciclo porque
+ * los meses gratis ya pasaron antes de que este checkout exista.
+ */
+export async function crearCheckoutMantenimientoNucleoOperativo(
+  datos: DatosCheckoutMantenimientoNucleoOperativo
+): Promise<{ url: string }> {
+  const apiKey = requerirEnv('WHOP_API_KEY');
+  const companyId = requerirEnv('WHOP_COMPANY_ID');
+
+  const precioCentimos = mantenimientoNucleoOperativoCentimos();
+
+  const cuerpo = {
+    mode: 'payment',
+    plan: {
+      company_id: companyId,
+      currency: 'eur',
+      plan_type: 'renewal',
+      initial_price: precioCentimos / 100,
+      renewal_price: precioCentimos / 100,
+      billing_period: 30,
+      product: {
+        title: 'Núcleo Operativo — Mantenimiento mensual',
+        external_identifier: 'dk-nucleo-operativo-mantenimiento',
+      },
+    },
+    metadata: {
+      producto: 'nucleo-operativo-mantenimiento',
+      pedidoId: datos.pedidoId,
+      email: datos.email,
+      nombreContacto: datos.nombreContacto,
+    },
+    redirect_url: `${datos.origen}/base-operativa/mantenimiento-activado`,
   };
 
   const respuesta = await fetch(`${BASE}/checkout_configurations`, {
