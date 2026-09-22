@@ -86,3 +86,32 @@ export async function marcarContratoEnviado(id: string): Promise<void> {
 export async function marcarFacturaEmitida(id: string): Promise<void> {
   await comoAprovisionamiento((c) => c.query(`SELECT dk.marcar_factura_emitida($1)`, [id]));
 }
+
+export interface PedidoPendienteMantenimiento {
+  id: string;
+  email: string;
+  nombreContacto: string;
+  restauranteNombre: string | null;
+}
+
+/** Pedidos de Núcleo Operativo con 60+ días desde el pago y sin disparar (0017). */
+export async function pedidosPendientesMantenimientoNucleoOperativo(): Promise<PedidoPendienteMantenimiento[]> {
+  return comoAprovisionamiento(async (c) => {
+    const { rows } = await c.query<{
+      id: string;
+      email: string;
+      nombre_contacto: string;
+      restaurante_nombre: string | null;
+    }>(`SELECT * FROM dk.pedidos_pendientes_mantenimiento_nucleo_operativo()`);
+    return rows.map((fila) => ({
+      id: fila.id,
+      email: fila.email,
+      nombreContacto: fila.nombre_contacto,
+      restauranteNombre: fila.restaurante_nombre,
+    }));
+  });
+}
+
+export async function marcarMantenimientoDisparado(id: string): Promise<void> {
+  await comoAprovisionamiento((c) => c.query(`SELECT dk.marcar_mantenimiento_disparado($1)`, [id]));
+}
