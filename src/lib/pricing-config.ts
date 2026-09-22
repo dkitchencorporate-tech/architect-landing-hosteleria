@@ -179,6 +179,24 @@ export const DARK_KITCHEN = {
 } as const;
 
 /**
+ * Precio de desarrollo de la N-ésima marca de un restaurante en Ruta B, en
+ * céntimos — espejo exacto de `dk.crear_marca_ruta_b` (migración 0016). Solo
+ * para MOSTRAR el precio antes de pagar; el importe que de verdad se guarda
+ * lo recalcula la propia base de datos al confirmar el pago, nunca este
+ * valor calculado en el servidor de la app.
+ */
+export function precioDesarrolloRutaBCentimos(ordenMarca: number): number {
+  if (ordenMarca <= 1) return DARK_KITCHEN.rutaB.desarrolloPorMarca.primera * 100;
+  if (ordenMarca === 2) return DARK_KITCHEN.rutaB.desarrolloPorMarca.segunda * 100;
+  return DARK_KITCHEN.rutaB.desarrolloPorMarca.terceraEnAdelante * 100;
+}
+
+/** Cuota de mantenimiento de Núcleo Operativo, en céntimos. */
+export function mantenimientoNucleoOperativoCentimos(): number {
+  return BASE_OPERATIVA.mantenimiento.mensual * 100;
+}
+
+/**
  * Cuota mensual por marca activa. Cruza número de marcas del cliente con el volumen
  * de pedidos de esa marca medido en la propia PWA (objetivo y verificable, no autodeclarado).
  * El escalón superior es un tope deliberado: seguir subiendo en proporción a la facturación
