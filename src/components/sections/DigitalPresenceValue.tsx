@@ -4,8 +4,12 @@ import Hero3DLazy from '@/components/motion/Hero3DLazy';
 export default function DigitalPresenceValue() {
   return (
     <>
-      {/* HERO propio de /qr (Parte 6, Sección 3): titular + las dos cifras de
-          prueba como badges visuales grandes, no como texto corrido. */}
+      {/* HERO propio de /qr (Parte 6, Sección 3). Las dos cifras de prueba que
+          vivían aquí (14h/semana, +15% ticket medio) se retiraron por
+          corrección explícita de la Parte 11: no hay todavía un cliente real
+          que las respalde, y publicar una cifra sin caso detrás es el mismo
+          riesgo de credibilidad que el resto de la web ya evita. Vuelven
+          cuando /casos-de-exito tenga un caso propio con esa cifra real. */}
       <header className="relative bg-[#171008] text-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#D9531E] rounded-full blur-[150px] opacity-[0.15] pointer-events-none"></div>
@@ -19,18 +23,7 @@ export default function DigitalPresenceValue() {
 
           {/* Elemento 3D del hero (Parte 7, Sección 2.3): carta/QR flotando
               con inclinación reactiva al cursor. */}
-          <Hero3DLazy preset="qr" className="w-full h-48 md:h-64 mb-6" />
-
-          <div className="flex flex-col sm:flex-row gap-5 justify-center max-w-2xl mx-auto">
-            <div className="flex-1 bg-white/5 border border-white/10 rounded-2xl p-6">
-              <p className="text-4xl font-black text-[#D9531E] mb-1">14h/semana</p>
-              <p className="text-gray-400 text-sm">recuperadas de paseos de camarero con la carta</p>
-            </div>
-            <div className="flex-1 bg-white/5 border border-white/10 rounded-2xl p-6">
-              <p className="text-4xl font-black text-[#D9531E] mb-1">+15%</p>
-              <p className="text-gray-400 text-sm">de ticket medio por upselling automático con fotos</p>
-            </div>
-          </div>
+          <Hero3DLazy preset="qr" className="w-full h-48 md:h-64" />
         </div>
       </header>
 
