@@ -7,6 +7,9 @@ import {
   registrarPagoFallido,
 } from '@/lib/payments/aprovisionar';
 import { enviarCorreoInterno, escaparHtml } from '@/lib/email';
+import { crearPedidoNivelB } from '@/lib/pedidos-nivel-b';
+import { dispararTuberiaPostPago } from '@/lib/tuberia-nivel-b';
+import { BASE_OPERATIVA } from '@/lib/pricing-config';
 
 export const runtime = 'nodejs';
 
@@ -116,6 +119,43 @@ export async function POST(request: Request) {
         // El pago ya entró — un fallo de correo no debe parecer un fallo del
         // webhook ante Whop (evitaría reintentos que reenvíen el mismo aviso).
         console.error('No se pudo enviar el aviso de Auditoría pagada:', error);
+      }
+    }
+    return NextResponse.json({ recibido: true });
+  }
+
+  // Núcleo Operativo — Nivel B (Parte 8, Sección 8): pago único, sin cuenta
+  // de Neon Auth que crear (a diferencia de QR) — la tubería común crea el
+  // registro en pedidos_nivel_b y dispara el correo de "qué sigue" al
+  // cliente + el aviso interno con lo que falta automatizar (contrato,
+  // factura). Nada que ver con el calendario de gracia/impago de abajo.
+  if (evento.data.metadata?.producto === 'nucleo-operativo') {
+    if (evento.type === 'payment.succeeded') {
+      const meta = evento.data.metadata;
+      try {
+        const pedido = await crearPedidoNivelB({
+          producto: 'nucleo-operativo',
+          referenciaPago: evento.data.id,
+          email: meta.email,
+          nombreContacto: meta.nombreContacto,
+          restauranteNombre: meta.restauranteNombre || undefined,
+          importeCentimos: BASE_OPERATIVA.pagoUnico * 100,
+        });
+        if (!pedido.yaExistia) {
+          await dispararTuberiaPostPago({
+            id: pedido.id,
+            producto: 'nucleo-operativo',
+            token: pedido.token,
+            email: meta.email,
+            nombreContacto: meta.nombreContacto,
+            restauranteNombre: meta.restauranteNombre || undefined,
+            importeCentimos: BASE_OPERATIVA.pagoUnico * 100,
+            origen: new URL(request.url).origin,
+          });
+        }
+      } catch (error) {
+        console.error(`No se pudo procesar el pago de Núcleo Operativo (evento ${evento.data.id}):`, error);
+        return NextResponse.json({ error: 'Fallo procesando el pedido' }, { status: 500 });
       }
     }
     return NextResponse.json({ recibido: true });

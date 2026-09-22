@@ -5,6 +5,7 @@ import DashboardShowcase from './DashboardShowcase';
 import FeatureSplit from './FeatureSplit';
 import PowerStatement from './PowerStatement';
 import Hero3DLazy from '@/components/motion/Hero3DLazy';
+import ActivarNucleoOperativoBoton from './ActivarNucleoOperativoBoton';
 
 export default function TheTrojanHorse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -245,12 +246,12 @@ export default function TheTrojanHorse() {
                 >
                   Ver negocios reales que ya lo usan →
                 </a>
+                <ActivarNucleoOperativoBoton className="w-full sm:w-auto bg-[#D9531E] text-white px-10 py-5 rounded-full font-black text-xl md:text-2xl hover:bg-orange-600 transition-colors shadow-[0_10px_30px_rgba(255,69,0,0.4)] hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(255,69,0,0.6)]" />
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full sm:w-auto bg-[#D9531E] text-white px-10 py-5 rounded-full font-black text-xl md:text-2xl hover:bg-orange-600 transition-colors shadow-[0_10px_30px_rgba(255,69,0,0.4)] hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(255,69,0,0.6)] flex items-center justify-center gap-3"
+                  className="text-gray-700 font-bold hover:text-[#D9531E] transition-colors underline decoration-transparent hover:decoration-[#D9531E] underline-offset-4 text-sm"
                 >
-                  Agendar Consultoría y Activar
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                  Prefiero hablar antes — agendar consultoría gratuita
                 </button>
                 <a href="https://wa.me/34622652659?text=Hola,%20tengo%20dudas%20urgentes%20sobre%20N%C3%BAcleo%20Operativo." className="text-gray-500 font-bold hover:text-[#25D366] transition-colors underline decoration-transparent hover:decoration-[#25D366] underline-offset-4 text-sm mt-2">
                   ¿Tienes dudas urgentes? Habla con un asesor por WhatsApp

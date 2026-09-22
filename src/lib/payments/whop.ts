@@ -1,6 +1,6 @@
 import 'server-only';
-import { QR_MENU, AUDITORIA_CANALES } from '@/lib/pricing-config';
-import type { DatosCheckoutQr, DatosCheckoutAuditoria } from './tipos';
+import { QR_MENU, AUDITORIA_CANALES, BASE_OPERATIVA } from '@/lib/pricing-config';
+import type { DatosCheckoutQr, DatosCheckoutAuditoria, DatosCheckoutNucleoOperativo } from './tipos';
 
 /**
  * Implementación contra la API real de Whop (docs.whop.com, verificado el
@@ -69,6 +69,63 @@ export async function crearCheckoutQr(datos: DatosCheckoutQr): Promise<{ url: st
     // order-bump de Auditoría (Sección 3.1-b) no le pida al cliente que los
     // teclee otra vez — es nuestra propia URL, no algo que Whop nos imponga.
     redirect_url: `${datos.origen}/qr/bienvenida?email=${encodeURIComponent(datos.email)}&nombre=${encodeURIComponent(datos.nombreContacto)}&restaurante=${encodeURIComponent(datos.restauranteNombre)}`,
+  };
+
+  const respuesta = await fetch(`${BASE}/checkout_configurations`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(cuerpo),
+  });
+
+  const json = await respuesta.json().catch(() => null);
+  if (!respuesta.ok) {
+    throw new Error(`Whop respondió ${respuesta.status}: ${json?.message ?? 'sin detalle'}`);
+  }
+
+  const datosRespuesta = json as RespuestaCheckoutConfiguration;
+  if (!datosRespuesta.purchase_url) {
+    throw new Error('Whop no devolvió purchase_url en la configuración de checkout.');
+  }
+
+  return { url: datosRespuesta.purchase_url };
+}
+
+/**
+ * Núcleo Operativo — Nivel B (Parte 8, Sección 1): pago único al precio fijo
+ * publicado (700€), sin negociar nada antes. El pago fraccionado (2 cuotas
+ * de 375€) queda para cuando se construya esa pieza — Alex fijó el orden de
+ * la Fase 5 y el fraccionado automático va después de este bloque.
+ *
+ * Mismo plan_type `one_time` ya verificado en vivo para el order-bump de
+ * Auditoría (2026-09-22) — misma forma de payload, solo cambian el precio y
+ * el identificador de producto.
+ */
+export async function crearCheckoutNucleoOperativo(datos: DatosCheckoutNucleoOperativo): Promise<{ url: string }> {
+  const apiKey = requerirEnv('WHOP_API_KEY');
+  const companyId = requerirEnv('WHOP_COMPANY_ID');
+
+  const cuerpo = {
+    mode: 'payment',
+    plan: {
+      company_id: companyId,
+      currency: 'eur',
+      plan_type: 'one_time',
+      initial_price: BASE_OPERATIVA.pagoUnico,
+      product: {
+        title: 'Núcleo Operativo — Activación',
+        external_identifier: 'dk-nucleo-operativo',
+      },
+    },
+    metadata: {
+      producto: 'nucleo-operativo',
+      email: datos.email,
+      nombreContacto: datos.nombreContacto,
+      restauranteNombre: datos.restauranteNombre,
+    },
+    redirect_url: `${datos.origen}/base-operativa/bienvenida`,
   };
 
   const respuesta = await fetch(`${BASE}/checkout_configurations`, {

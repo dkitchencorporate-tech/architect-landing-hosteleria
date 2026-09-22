@@ -25,3 +25,17 @@ export interface DatosCheckoutAuditoria {
   /** Origen de la petición (para construir redirect_url). */
   origen: string;
 }
+
+/**
+ * Núcleo Operativo — Nivel B (Parte 8, Sección 1): pago único de 700€ al
+ * precio fijo publicado, sin negociar nada antes. Dispara la tubería común
+ * de post-pago (Sección 8): pedido en `pedidos_nivel_b`, intake, contrato,
+ * factura, ticket de ejecución.
+ */
+export interface DatosCheckoutNucleoOperativo {
+  email: string;
+  nombreContacto: string;
+  restauranteNombre: string;
+  /** Origen de la petición (para construir redirect_url). */
+  origen: string;
+}
