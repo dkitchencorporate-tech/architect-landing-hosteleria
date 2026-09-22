@@ -94,54 +94,26 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
 
-  eslint: {
-    // Migración a Next 16 (2026-09-22): eslint-config-next 16 exige el
-    // formato "flat config" de ESLint 9+, y este proyecto todavía usa
-    // .eslintrc.json (formato antiguo). Migrar el lint es trabajo aparte de
-    // subir de versión Next/React — se desacopla aquí para no bloquear un
-    // build por un problema de formato de configuración, no de código real.
-    ignoreDuringBuilds: true,
-  },
-
   images: {
     remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
   },
 
   // Antes vivía bajo `experimental.serverComponentsExternalPackages`: Next 15
   // lo estabilizó como `serverExternalPackages` de nivel superior. El motivo
-  // de que exista sigue siendo el mismo de abajo (el driver de Neon no
-  // sobrevive al empaquetado de webpack).
-  serverExternalPackages: ['@neondatabase/serverless', 'ws'],
-
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      // Cinturón y tirantes sobre lo anterior.
-      //
-      // `ws` carga `bufferutil` y `utf-8-validate` de forma opcional, dentro de
-      // un try/catch: si no están, usa una implementación en JavaScript. El
-      // problema es que webpack no deja que ese try/catch falle limpiamente —
-      // resuelve el módulo a un objeto vacío— y entonces `ws` cree que tiene el
-      // acelerador nativo cuando en realidad tiene nada. El síntoma es
-      // «bufferUtil.mask is not a function», que no menciona ni a webpack ni a
-      // `ws` opcional, y tumba el proceso entero del servidor.
-      //
-      // Declararlos como externos devuelve el control a Node, que sí puede no
-      // encontrarlos y seguir adelante.
-      // El orden importa y es la razón por la que el primer intento no sirvió:
-      // webpack recorre `externals` de principio a fin y Next pone ahí una
-      // función que resuelve todo lo que le llega. Si esta regla va detrás, no
-      // llega a consultarse nunca. Va delante.
-      config.externals = [
-        {
-          ws: 'commonjs ws',
-          bufferutil: 'commonjs bufferutil',
-          'utf-8-validate': 'commonjs utf-8-validate',
-        },
-        ...(Array.isArray(config.externals) ? config.externals : [config.externals]),
-      ].filter(Boolean);
-    }
-    return config;
-  },
+  // de que exista sigue siendo el mismo de siempre: el driver de Neon abre
+  // sockets y no sobrevive al empaquetado; `ws` carga `bufferutil` y
+  // `utf-8-validate` de forma opcional (try/catch) y un bundler que resuelve
+  // ese try/catch a un objeto vacío en vez de dejarlo fallar produce
+  // «bufferUtil.mask is not a function» en producción. Declararlos aquí
+  // devuelve el control a Node en vez de al bundler.
+  //
+  // Migración a Next 16 (2026-09-22): el workaround anterior usaba una
+  // función `webpack()` a medida para forzar estos externals — Next 16 usa
+  // Turbopack por defecto y no admite mezclar un config de webpack sin su
+  // propio bloque `turbopack`. Se retira esa función: `serverExternalPackages`
+  // por sí solo ya cubre el mismo problema, y es la opción que SÍ respeta
+  // tanto Turbopack como webpack, sin acoplarse a ninguno de los dos.
+  serverExternalPackages: ['@neondatabase/serverless', 'ws', 'bufferutil', 'utf-8-validate'],
 
   async headers() {
     return [{ source: '/:path*', headers: cabecerasDeSeguridad }];
