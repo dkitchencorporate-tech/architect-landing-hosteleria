@@ -39,3 +39,35 @@ export interface DatosCheckoutNucleoOperativo {
   /** Origen de la petición (para construir redirect_url). */
   origen: string;
 }
+
+/**
+ * Dark Kitchen Ruta B (Parte 8, Sección 5): pago único de desarrollo de una
+ * marca nueva sobre una cocina que ya opera. `ordenMarca` es solo para
+ * MOSTRAR el precio correcto antes de pagar (viene de
+ * `contarMarcasActivas` + 1) — `dk.crear_marca_ruta_b` (0016) lo vuelve a
+ * calcular por su cuenta al confirmar el pago, nunca confía en este valor.
+ */
+export interface DatosCheckoutDarkKitchenRutaB {
+  restauranteId: string;
+  nombreMarca: string;
+  ordenMarca: number;
+  email: string;
+  nombreContacto: string;
+  restauranteNombre: string;
+  /** Origen de la petición (para construir redirect_url). */
+  origen: string;
+}
+
+/**
+ * Cuota de mantenimiento recurrente de Núcleo Operativo (Parte 8, Sección 6):
+ * disparada por el cron `/api/cron/mantenimiento-nucleo-operativo` (0017)
+ * al cumplirse 60 días desde la activación, nunca por el cliente ni por la
+ * app directamente.
+ */
+export interface DatosCheckoutMantenimientoNucleoOperativo {
+  pedidoId: string;
+  email: string;
+  nombreContacto: string;
+  /** Origen de la petición (para construir redirect_url). */
+  origen: string;
+}
