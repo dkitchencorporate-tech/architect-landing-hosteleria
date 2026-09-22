@@ -9,6 +9,7 @@ export default function IniciarSesion() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [verContrasena, setVerContrasena] = useState(false);
+  const [recordarme, setRecordarme] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [cargando, setCargando] = useState(false);
 
@@ -17,7 +18,7 @@ export default function IniciarSesion() {
     setError(null);
     setCargando(true);
     try {
-      const { error: errorAuth } = await authClient.signIn.email({ email, password });
+      const { error: errorAuth } = await authClient.signIn.email({ email, password, rememberMe: recordarme });
       if (errorAuth) {
         setError(errorAuth.message ?? 'No se pudo iniciar sesión. Comprueba tu correo y contraseña.');
         setCargando(false);
@@ -93,6 +94,16 @@ export default function IniciarSesion() {
               </button>
             </div>
           </div>
+
+          <label className="flex items-center gap-2 text-sm text-white/60 cursor-pointer select-none">
+            <input
+              type="checkbox"
+              checked={recordarme}
+              onChange={(e) => setRecordarme(e.target.checked)}
+              className="w-4 h-4 rounded border-white/20 bg-black/30 accent-[#D9531E]"
+            />
+            Recordarme en este dispositivo
+          </label>
 
           {error && (
             <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">
