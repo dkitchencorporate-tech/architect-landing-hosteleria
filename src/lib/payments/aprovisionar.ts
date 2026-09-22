@@ -57,6 +57,19 @@ export async function registrarPagoFallido(referenciaCliente: string): Promise<v
   await comoAprovisionamiento((c) => c.query(`SELECT dk.registrar_pago_fallido($1)`, [referenciaCliente]));
 }
 
+/**
+ * Avanza a diario el calendario de gracia de todos los restaurantes con un
+ * ciclo de impago abierto (0012) — la llama únicamente el cron de
+ * `/api/cron/gracia-impago`, nunca el webhook de pago. Devuelve cuántos
+ * restaurantes cambiaron de fase en esta pasada.
+ */
+export async function avanzarCalendarioGracia(): Promise<number> {
+  return comoAprovisionamiento(async (c) => {
+    const { rows } = await c.query<{ avanzar_calendario_gracia: number }>(`SELECT dk.avanzar_calendario_gracia()`);
+    return rows[0]?.avanzar_calendario_gracia ?? 0;
+  });
+}
+
 export async function aprovisionarClienteQr(datos: DatosPagoQr): Promise<ResultadoAprovisionamiento> {
   let identidadId: string;
   try {
