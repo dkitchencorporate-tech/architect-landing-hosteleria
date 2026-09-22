@@ -23,7 +23,7 @@ export async function GET() {
   const url = `https://dkitchencorporate.es/r/${codigo}`;
   const buffer = await QRCode.toBuffer(url, { width: 1024, margin: 2, color: { dark: '#171008', light: '#FDFCF8' } });
 
-  return new NextResponse(buffer, {
+  return new NextResponse(new Uint8Array(buffer), {
     headers: {
       'Content-Type': 'image/png',
       'Content-Disposition': `attachment; filename="qr-${restaurante.slug}.png"`,
